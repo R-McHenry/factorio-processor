@@ -23,21 +23,21 @@
   ],
   "signal_tables": [
     {
-      "unit": 119934,
+      "unit": 140662,
       "slots_written": 2454,
       "slots_failed": 0,
       "sections": 3,
       "entity_number": 3
     },
     {
-      "unit": 119946,
+      "unit": 140674,
       "slots_written": 2454,
       "slots_failed": 0,
       "sections": 3,
       "entity_number": 9
     },
     {
-      "unit": 119952,
+      "unit": 140680,
       "slots_written": 2454,
       "slots_failed": 0,
       "sections": 3,
@@ -50,37 +50,37 @@
       "dy": 11.0
     },
     "entity_number_to_unit_number": {
-      "1": 119932,
-      "2": 119931,
-      "3": 119934,
-      "4": 119933,
-      "5": 119936,
-      "6": 119935,
-      "7": 119938,
-      "8": 119937,
-      "9": 119946,
-      "10": 119948,
-      "11": 119947,
-      "12": 119950,
-      "13": 119949,
-      "14": 119952,
-      "15": 119951,
-      "16": 119939,
-      "17": 119941,
-      "18": 119940,
-      "19": 119944,
-      "20": 119943,
-      "21": 119942,
-      "22": 119945
+      "1": 140660,
+      "2": 140659,
+      "3": 140662,
+      "4": 140661,
+      "5": 140664,
+      "6": 140663,
+      "7": 140666,
+      "8": 140665,
+      "9": 140674,
+      "10": 140676,
+      "11": 140675,
+      "12": 140678,
+      "13": 140677,
+      "14": 140680,
+      "15": 140679,
+      "16": 140667,
+      "17": 140669,
+      "18": 140668,
+      "19": 140672,
+      "20": 140671,
+      "21": 140670,
+      "22": 140673
     },
     "driver_units": {
-      "scalar_membus": 119932,
-      "vec_bus": 119931
+      "scalar_membus": 140660,
+      "vec_bus": 140659
     },
     "output_probes": [
       {
         "name": "membus_out",
-        "unit": 119943,
+        "unit": 140671,
         "wire": "green"
       }
     ],
@@ -88,7 +88,7 @@
   },
   "timeline": [
     {
-      "tick": 876462,
+      "tick": 898228,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -96,7 +96,7 @@
       "step_name": "pre_dead_1"
     },
     {
-      "tick": 876463,
+      "tick": 898229,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -104,7 +104,7 @@
       "step_name": "pre_dead_2"
     },
     {
-      "tick": 876464,
+      "tick": 898230,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "settle",
@@ -112,7 +112,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 876465,
+      "tick": 898231,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "settle",
@@ -120,7 +120,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 876466,
+      "tick": 898232,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "settle",
@@ -128,7 +128,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 876467,
+      "tick": 898233,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "settle",
@@ -136,7 +136,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 876468,
+      "tick": 898234,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "settle",
@@ -144,7 +144,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 876469,
+      "tick": 898235,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "stimulus",
@@ -152,7 +152,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 876470,
+      "tick": 898236,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "stimulus",
@@ -160,7 +160,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 876471,
+      "tick": 898237,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "stimulus",
@@ -168,7 +168,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 876472,
+      "tick": 898238,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "stimulus",
@@ -176,7 +176,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 876473,
+      "tick": 898239,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -189,7 +189,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 876474,
+      "tick": 898240,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -202,7 +202,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 876475,
+      "tick": 898241,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -219,7 +219,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 876476,
+      "tick": 898242,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -238,7 +238,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 876477,
+      "tick": 898243,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -257,7 +257,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 876478,
+      "tick": 898244,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -276,7 +276,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 876479,
+      "tick": 898245,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -295,7 +295,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 876480,
+      "tick": 898246,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -314,7 +314,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 876481,
+      "tick": 898247,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -333,7 +333,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 876482,
+      "tick": 898248,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -352,7 +352,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 876483,
+      "tick": 898249,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -371,7 +371,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 876484,
+      "tick": 898250,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -390,7 +390,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 876485,
+      "tick": 898251,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -409,7 +409,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 876486,
+      "tick": 898252,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -428,7 +428,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 876487,
+      "tick": 898253,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -447,7 +447,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 876488,
+      "tick": 898254,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -466,7 +466,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 876489,
+      "tick": 898255,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -485,7 +485,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 876490,
+      "tick": 898256,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -504,7 +504,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 876491,
+      "tick": 898257,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -523,7 +523,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 876492,
+      "tick": 898258,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -542,7 +542,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 876493,
+      "tick": 898259,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -561,7 +561,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 876494,
+      "tick": 898260,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -580,7 +580,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 876495,
+      "tick": 898261,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -599,7 +599,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 876496,
+      "tick": 898262,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -618,7 +618,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 876497,
+      "tick": 898263,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -637,7 +637,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 876498,
+      "tick": 898264,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -656,7 +656,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 876499,
+      "tick": 898265,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -675,7 +675,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 876500,
+      "tick": 898266,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -694,7 +694,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 876501,
+      "tick": 898267,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -713,7 +713,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 876502,
+      "tick": 898268,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -731,7 +731,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 876503,
+      "tick": 898269,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -744,7 +744,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 876504,
+      "tick": 898270,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -761,7 +761,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 876505,
+      "tick": 898271,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -780,7 +780,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 876506,
+      "tick": 898272,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -799,7 +799,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 876507,
+      "tick": 898273,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -818,7 +818,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 876508,
+      "tick": 898274,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -837,7 +837,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 876509,
+      "tick": 898275,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -856,7 +856,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 876510,
+      "tick": 898276,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -875,7 +875,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 876511,
+      "tick": 898277,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -894,7 +894,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 876512,
+      "tick": 898278,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -912,7 +912,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 876513,
+      "tick": 898279,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -930,7 +930,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 876514,
+      "tick": 898280,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -948,7 +948,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 876515,
+      "tick": 898281,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -966,7 +966,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 876516,
+      "tick": 898282,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -984,7 +984,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 876517,
+      "tick": 898283,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1002,7 +1002,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 876518,
+      "tick": 898284,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1020,7 +1020,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 876519,
+      "tick": 898285,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1038,7 +1038,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 876520,
+      "tick": 898286,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1056,7 +1056,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 876521,
+      "tick": 898287,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1075,7 +1075,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 876522,
+      "tick": 898288,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1094,7 +1094,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 876523,
+      "tick": 898289,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1113,7 +1113,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 876524,
+      "tick": 898290,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1132,7 +1132,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 876525,
+      "tick": 898291,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1151,7 +1151,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 876526,
+      "tick": 898292,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1170,7 +1170,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 876527,
+      "tick": 898293,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1191,7 +1191,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 876528,
+      "tick": 898294,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1212,7 +1212,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 876529,
+      "tick": 898295,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1233,7 +1233,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 876530,
+      "tick": 898296,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1254,7 +1254,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 876531,
+      "tick": 898297,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1275,7 +1275,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 876532,
+      "tick": 898298,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1296,7 +1296,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 876533,
+      "tick": 898299,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1317,7 +1317,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 876534,
+      "tick": 898300,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1338,7 +1338,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 876535,
+      "tick": 898301,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1359,7 +1359,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 876536,
+      "tick": 898302,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1380,7 +1380,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 876537,
+      "tick": 898303,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1401,7 +1401,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 876538,
+      "tick": 898304,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1422,7 +1422,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 876539,
+      "tick": 898305,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1443,7 +1443,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 876540,
+      "tick": 898306,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1464,7 +1464,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 876541,
+      "tick": 898307,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1485,7 +1485,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 876542,
+      "tick": 898308,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1506,7 +1506,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 876543,
+      "tick": 898309,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1527,7 +1527,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 876544,
+      "tick": 898310,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1548,7 +1548,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 876545,
+      "tick": 898311,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1566,7 +1566,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 876546,
+      "tick": 898312,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1584,7 +1584,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 876547,
+      "tick": 898313,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1602,7 +1602,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 876548,
+      "tick": 898314,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1619,7 +1619,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 876549,
+      "tick": 898315,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1636,7 +1636,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 876550,
+      "tick": 898316,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1653,7 +1653,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 876551,
+      "tick": 898317,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1670,7 +1670,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 876552,
+      "tick": 898318,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1687,7 +1687,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 876553,
+      "tick": 898319,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1704,7 +1704,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 876554,
+      "tick": 898320,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1722,7 +1722,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 876555,
+      "tick": 898321,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1740,7 +1740,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 876556,
+      "tick": 898322,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1758,7 +1758,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 876557,
+      "tick": 898323,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1776,7 +1776,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 876558,
+      "tick": 898324,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1794,7 +1794,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 876559,
+      "tick": 898325,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1812,7 +1812,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 876560,
+      "tick": 898326,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1830,7 +1830,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 876561,
+      "tick": 898327,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1848,7 +1848,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 876562,
+      "tick": 898328,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1866,7 +1866,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 876563,
+      "tick": 898329,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1884,7 +1884,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 876564,
+      "tick": 898330,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -1901,7 +1901,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 876565,
+      "tick": 898331,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -1917,7 +1917,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 876566,
+      "tick": 898332,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -1933,7 +1933,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 876567,
+      "tick": 898333,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -1950,7 +1950,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 876568,
+      "tick": 898334,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -1967,7 +1967,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 876569,
+      "tick": 898335,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -1984,7 +1984,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 876570,
+      "tick": 898336,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -2001,7 +2001,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 876571,
+      "tick": 898337,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -2018,7 +2018,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 876572,
+      "tick": 898338,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -2035,7 +2035,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 876573,
+      "tick": 898339,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -2052,7 +2052,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 876574,
+      "tick": 898340,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2070,7 +2070,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 876575,
+      "tick": 898341,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2088,7 +2088,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 876576,
+      "tick": 898342,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2105,7 +2105,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 876577,
+      "tick": 898343,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2122,7 +2122,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 876578,
+      "tick": 898344,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2141,7 +2141,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 876579,
+      "tick": 898345,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2160,7 +2160,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 876580,
+      "tick": 898346,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2179,7 +2179,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 876581,
+      "tick": 898347,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2198,7 +2198,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 876582,
+      "tick": 898348,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2217,7 +2217,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 876583,
+      "tick": 898349,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2236,7 +2236,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 876584,
+      "tick": 898350,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2255,7 +2255,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 876585,
+      "tick": 898351,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2274,7 +2274,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 876586,
+      "tick": 898352,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2293,7 +2293,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 876587,
+      "tick": 898353,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2310,7 +2310,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 876588,
+      "tick": 898354,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2323,7 +2323,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 876589,
+      "tick": 898355,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2336,7 +2336,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 876590,
+      "tick": 898356,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2349,7 +2349,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 876591,
+      "tick": 898357,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2362,7 +2362,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 876592,
+      "tick": 898358,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2375,7 +2375,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 876593,
+      "tick": 898359,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2392,7 +2392,7 @@
     {
       "step_index": 0,
       "step_name": "idle_no_select_no_read",
-      "drive_start_tick": 876463,
+      "drive_start_tick": 898229,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2402,12 +2402,12 @@
       "observed": {},
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876472
+      "last_sample_tick": 898238
     },
     {
       "step_index": 1,
       "step_name": "coord_lane_5_reads_5",
-      "drive_start_tick": 876472,
+      "drive_start_tick": 898238,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2420,12 +2420,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876481
+      "last_sample_tick": 898247
     },
     {
       "step_index": 2,
       "step_name": "coord_lane_100_reads_100",
-      "drive_start_tick": 876481,
+      "drive_start_tick": 898247,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2438,12 +2438,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876490
+      "last_sample_tick": 898256
     },
     {
       "step_index": 3,
       "step_name": "coord_lane_2000_reads_2000",
-      "drive_start_tick": 876490,
+      "drive_start_tick": 898256,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2456,12 +2456,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876499
+      "last_sample_tick": 898265
     },
     {
       "step_index": 4,
       "step_name": "lane_in_writes_one_addressed_lane",
-      "drive_start_tick": 876499,
+      "drive_start_tick": 898265,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2475,12 +2475,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876508
+      "last_sample_tick": 898274
     },
     {
       "step_index": 5,
       "step_name": "lane_in_leaves_neighbouring_lane_empty",
-      "drive_start_tick": 876508,
+      "drive_start_tick": 898274,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2493,12 +2493,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876517
+      "last_sample_tick": 898283
     },
     {
       "step_index": 6,
       "step_name": "lane_in_carries_negatives",
-      "drive_start_tick": 876517,
+      "drive_start_tick": 898283,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2512,12 +2512,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876526
+      "last_sample_tick": 898292
     },
     {
       "step_index": 7,
       "step_name": "lane_out_reads_an_arbitrary_bus_frame",
-      "drive_start_tick": 876526,
+      "drive_start_tick": 898292,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2531,12 +2531,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876535
+      "last_sample_tick": 898301
     },
     {
       "step_index": 8,
       "step_name": "reduction_sums_every_lane",
-      "drive_start_tick": 876535,
+      "drive_start_tick": 898301,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2550,12 +2550,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876544
+      "last_sample_tick": 898310
     },
     {
       "step_index": 9,
       "step_name": "no_read_address_extracts_nothing",
-      "drive_start_tick": 876544,
+      "drive_start_tick": 898310,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2568,12 +2568,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876553
+      "last_sample_tick": 898319
     },
     {
       "step_index": 10,
       "step_name": "vred_count_is_a_popcount_not_a_sum",
-      "drive_start_tick": 876553,
+      "drive_start_tick": 898319,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2586,12 +2586,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876563
+      "last_sample_tick": 898329
     },
     {
       "step_index": 11,
       "step_name": "ones_is_present_in_every_lane",
-      "drive_start_tick": 876563,
+      "drive_start_tick": 898329,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2604,12 +2604,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876573
+      "last_sample_tick": 898339
     },
     {
       "step_index": 12,
       "step_name": "bcast_puts_one_constant_in_every_lane",
-      "drive_start_tick": 876573,
+      "drive_start_tick": 898339,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2624,12 +2624,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876583
+      "last_sample_tick": 898349
     },
     {
       "step_index": 13,
       "step_name": "bcast_of_zero_is_an_empty_frame",
-      "drive_start_tick": 876583,
+      "drive_start_tick": 898349,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2639,7 +2639,7 @@
       "observed": {},
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876593
+      "last_sample_tick": 898359
     }
   ],
   "pass": true

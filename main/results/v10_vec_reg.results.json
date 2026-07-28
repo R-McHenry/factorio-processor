@@ -28,34 +28,34 @@
       "dy": 12.0
     },
     "entity_number_to_unit_number": {
-      "1": 119717,
-      "2": 119722,
-      "3": 119719,
-      "4": 119716,
-      "5": 119721,
-      "6": 119718,
-      "7": 119714,
-      "8": 119715,
-      "9": 119720
+      "1": 140445,
+      "2": 140450,
+      "3": 140447,
+      "4": 140444,
+      "5": 140449,
+      "6": 140446,
+      "7": 140442,
+      "8": 140443,
+      "9": 140448
     },
     "driver_units": {
-      "scalar_membus": 119717,
-      "vec_write_bus": 119722
+      "scalar_membus": 140445,
+      "vec_write_bus": 140450
     },
     "output_probes": [
       {
         "name": "green_face1",
-        "unit": 119714,
+        "unit": 140442,
         "wire": "green"
       },
       {
         "name": "loop1",
-        "unit": 119715,
+        "unit": 140443,
         "wire": "red"
       },
       {
         "name": "loop2",
-        "unit": 119720,
+        "unit": 140448,
         "wire": "red"
       }
     ],
@@ -63,7 +63,7 @@
   },
   "timeline": [
     {
-      "tick": 876065,
+      "tick": 897837,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -71,7 +71,7 @@
       "step_name": "pre_dead_1"
     },
     {
-      "tick": 876066,
+      "tick": 897838,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -79,7 +79,7 @@
       "step_name": "pre_dead_2"
     },
     {
-      "tick": 876067,
+      "tick": 897839,
       "stimulus": {
         "scalar_membus": {
           "signal-alarm": 1.0
@@ -94,7 +94,7 @@
       "step_name": "commit_frame_to_vreg0"
     },
     {
-      "tick": 876068,
+      "tick": 897840,
       "stimulus": {},
       "observed_by_probe": {
         "loop1": {
@@ -107,7 +107,7 @@
       "step_name": "write_head_summed_onto_loop"
     },
     {
-      "tick": 876069,
+      "tick": 897841,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -124,7 +124,7 @@
       "step_name": "write_head_summed_onto_loop"
     },
     {
-      "tick": 876070,
+      "tick": 897842,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -141,7 +141,7 @@
       "step_name": "write_head_summed_onto_loop"
     },
     {
-      "tick": 876071,
+      "tick": 897843,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -158,7 +158,7 @@
       "step_name": "write_head_summed_onto_loop"
     },
     {
-      "tick": 876072,
+      "tick": 897844,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -175,7 +175,7 @@
       "step_name": "write_head_summed_onto_loop"
     },
     {
-      "tick": 876073,
+      "tick": 897845,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -192,24 +192,7 @@
       "step_name": "write_head_summed_onto_loop"
     },
     {
-      "tick": 876074,
-      "stimulus": {},
-      "observed_by_probe": {
-        "green_face1": {
-          "signal-0": 10.0,
-          "signal-0~uncommon": 20.0
-        },
-        "loop1": {
-          "signal-0": 10.0,
-          "signal-0~uncommon": 20.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 2,
-      "step_name": "vreg1_untouched"
-    },
-    {
-      "tick": 876075,
+      "tick": 897846,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -226,7 +209,24 @@
       "step_name": "vreg1_untouched"
     },
     {
-      "tick": 876076,
+      "tick": 897847,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "vreg1_untouched"
+    },
+    {
+      "tick": 897848,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -243,7 +243,7 @@
       "step_name": "vreg1_untouched"
     },
     {
-      "tick": 876077,
+      "tick": 897849,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -260,7 +260,7 @@
       "step_name": "vreg1_untouched"
     },
     {
-      "tick": 876078,
+      "tick": 897850,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -277,7 +277,7 @@
       "step_name": "vreg1_untouched"
     },
     {
-      "tick": 876079,
+      "tick": 897851,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -294,7 +294,7 @@
       "step_name": "green_face_carries_same_frame"
     },
     {
-      "tick": 876080,
+      "tick": 897852,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -311,7 +311,7 @@
       "step_name": "green_face_carries_same_frame"
     },
     {
-      "tick": 876081,
+      "tick": 897853,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -328,7 +328,7 @@
       "step_name": "green_face_carries_same_frame"
     },
     {
-      "tick": 876082,
+      "tick": 897854,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -345,7 +345,7 @@
       "step_name": "green_face_carries_same_frame"
     },
     {
-      "tick": 876083,
+      "tick": 897855,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -362,7 +362,7 @@
       "step_name": "green_face_carries_same_frame"
     },
     {
-      "tick": 876084,
+      "tick": 897856,
       "stimulus": {
         "scalar_membus": {
           "signal-alarm": 1.0
@@ -386,7 +386,7 @@
       "step_name": "commit_same_frame_again"
     },
     {
-      "tick": 876085,
+      "tick": 897857,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -403,7 +403,7 @@
       "step_name": "second_commit_accumulated"
     },
     {
-      "tick": 876086,
+      "tick": 897858,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -420,7 +420,7 @@
       "step_name": "second_commit_accumulated"
     },
     {
-      "tick": 876087,
+      "tick": 897859,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -437,7 +437,7 @@
       "step_name": "second_commit_accumulated"
     },
     {
-      "tick": 876088,
+      "tick": 897860,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -454,7 +454,7 @@
       "step_name": "second_commit_accumulated"
     },
     {
-      "tick": 876089,
+      "tick": 897861,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -471,7 +471,7 @@
       "step_name": "second_commit_accumulated"
     },
     {
-      "tick": 876090,
+      "tick": 897862,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -488,7 +488,7 @@
       "step_name": "second_commit_accumulated"
     },
     {
-      "tick": 876091,
+      "tick": 897863,
       "stimulus": {
         "scalar_membus": {
           "signal-alarm": 2.0
@@ -512,7 +512,7 @@
       "step_name": "commit_different_frame_to_vreg1"
     },
     {
-      "tick": 876092,
+      "tick": 897864,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -532,7 +532,7 @@
       "step_name": "vreg1_received_its_own_frame"
     },
     {
-      "tick": 876093,
+      "tick": 897865,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -552,7 +552,7 @@
       "step_name": "vreg1_received_its_own_frame"
     },
     {
-      "tick": 876094,
+      "tick": 897866,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -572,7 +572,7 @@
       "step_name": "vreg1_received_its_own_frame"
     },
     {
-      "tick": 876095,
+      "tick": 897867,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -592,7 +592,7 @@
       "step_name": "vreg1_received_its_own_frame"
     },
     {
-      "tick": 876096,
+      "tick": 897868,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -612,7 +612,7 @@
       "step_name": "vreg1_received_its_own_frame"
     },
     {
-      "tick": 876097,
+      "tick": 897869,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -632,7 +632,7 @@
       "step_name": "vreg1_received_its_own_frame"
     },
     {
-      "tick": 876098,
+      "tick": 897870,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -652,7 +652,7 @@
       "step_name": "vreg0_isolated_from_that_write"
     },
     {
-      "tick": 876099,
+      "tick": 897871,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -672,7 +672,7 @@
       "step_name": "vreg0_isolated_from_that_write"
     },
     {
-      "tick": 876100,
+      "tick": 897872,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -692,7 +692,7 @@
       "step_name": "vreg0_isolated_from_that_write"
     },
     {
-      "tick": 876101,
+      "tick": 897873,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -712,7 +712,7 @@
       "step_name": "vreg0_isolated_from_that_write"
     },
     {
-      "tick": 876102,
+      "tick": 897874,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -732,7 +732,7 @@
       "step_name": "vreg0_isolated_from_that_write"
     },
     {
-      "tick": 876103,
+      "tick": 897875,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 1.0
@@ -756,7 +756,7 @@
       "step_name": "erase_block_1_zeroes_vreg0"
     },
     {
-      "tick": 876104,
+      "tick": 897876,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 1.0
@@ -772,7 +772,7 @@
       "step_name": "erase_block_1_zeroes_vreg0"
     },
     {
-      "tick": 876105,
+      "tick": 897877,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 1.0
@@ -788,7 +788,7 @@
       "step_name": "erase_block_1_zeroes_vreg0"
     },
     {
-      "tick": 876106,
+      "tick": 897878,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 1.0
@@ -804,7 +804,7 @@
       "step_name": "erase_block_1_zeroes_vreg0"
     },
     {
-      "tick": 876107,
+      "tick": 897879,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 1.0
@@ -820,7 +820,7 @@
       "step_name": "erase_block_1_zeroes_vreg0"
     },
     {
-      "tick": 876108,
+      "tick": 897880,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 1.0
@@ -836,7 +836,7 @@
       "step_name": "erase_block_1_zeroes_vreg0"
     },
     {
-      "tick": 876109,
+      "tick": 897881,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 1.0
@@ -852,7 +852,7 @@
       "step_name": "erase_is_per_block_vreg1_intact"
     },
     {
-      "tick": 876110,
+      "tick": 897882,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 1.0
@@ -868,7 +868,7 @@
       "step_name": "erase_is_per_block_vreg1_intact"
     },
     {
-      "tick": 876111,
+      "tick": 897883,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 1.0
@@ -884,7 +884,7 @@
       "step_name": "erase_is_per_block_vreg1_intact"
     },
     {
-      "tick": 876112,
+      "tick": 897884,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 1.0
@@ -900,7 +900,7 @@
       "step_name": "erase_is_per_block_vreg1_intact"
     },
     {
-      "tick": 876113,
+      "tick": 897885,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 1.0
@@ -916,7 +916,7 @@
       "step_name": "erase_is_per_block_vreg1_intact"
     },
     {
-      "tick": 876114,
+      "tick": 897886,
       "stimulus": {},
       "observed_by_probe": {
         "loop2": {
@@ -928,7 +928,7 @@
       "step_name": "loop_stays_empty_after_erase_releases"
     },
     {
-      "tick": 876115,
+      "tick": 897887,
       "stimulus": {},
       "observed_by_probe": {
         "loop2": {
@@ -940,7 +940,7 @@
       "step_name": "loop_stays_empty_after_erase_releases"
     },
     {
-      "tick": 876116,
+      "tick": 897888,
       "stimulus": {},
       "observed_by_probe": {
         "loop2": {
@@ -952,7 +952,7 @@
       "step_name": "loop_stays_empty_after_erase_releases"
     },
     {
-      "tick": 876117,
+      "tick": 897889,
       "stimulus": {},
       "observed_by_probe": {
         "loop2": {
@@ -964,7 +964,7 @@
       "step_name": "loop_stays_empty_after_erase_releases"
     },
     {
-      "tick": 876118,
+      "tick": 897890,
       "stimulus": {},
       "observed_by_probe": {
         "loop2": {
@@ -976,7 +976,7 @@
       "step_name": "loop_stays_empty_after_erase_releases"
     },
     {
-      "tick": 876119,
+      "tick": 897891,
       "stimulus": {},
       "observed_by_probe": {
         "loop2": {
@@ -988,7 +988,7 @@
       "step_name": "loop_stays_empty_after_erase_releases"
     },
     {
-      "tick": 876120,
+      "tick": 897892,
       "stimulus": {
         "scalar_membus": {
           "signal-alarm": 1.0
@@ -1007,7 +1007,7 @@
       "step_name": "refill_vreg0_after_erase"
     },
     {
-      "tick": 876121,
+      "tick": 897893,
       "stimulus": {},
       "observed_by_probe": {
         "loop1": {
@@ -1022,7 +1022,7 @@
       "step_name": "register_alive_after_erase"
     },
     {
-      "tick": 876122,
+      "tick": 897894,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -1040,7 +1040,7 @@
       "step_name": "register_alive_after_erase"
     },
     {
-      "tick": 876123,
+      "tick": 897895,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -1058,7 +1058,7 @@
       "step_name": "register_alive_after_erase"
     },
     {
-      "tick": 876124,
+      "tick": 897896,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -1076,7 +1076,7 @@
       "step_name": "register_alive_after_erase"
     },
     {
-      "tick": 876125,
+      "tick": 897897,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -1094,7 +1094,7 @@
       "step_name": "register_alive_after_erase"
     },
     {
-      "tick": 876126,
+      "tick": 897898,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -1112,7 +1112,7 @@
       "step_name": "register_alive_after_erase"
     },
     {
-      "tick": 876127,
+      "tick": 897899,
       "stimulus": {
         "scalar_membus": {
           "signal-alarm": 1.0,
@@ -1138,7 +1138,7 @@
       "step_name": "erase_and_write_same_tick_is_a_move"
     },
     {
-      "tick": 876128,
+      "tick": 897900,
       "stimulus": {},
       "observed_by_probe": {
         "loop1": {
@@ -1153,7 +1153,7 @@
       "step_name": "replaced_not_accumulated"
     },
     {
-      "tick": 876129,
+      "tick": 897901,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -1171,7 +1171,7 @@
       "step_name": "replaced_not_accumulated"
     },
     {
-      "tick": 876130,
+      "tick": 897902,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -1189,7 +1189,7 @@
       "step_name": "replaced_not_accumulated"
     },
     {
-      "tick": 876131,
+      "tick": 897903,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -1207,7 +1207,7 @@
       "step_name": "replaced_not_accumulated"
     },
     {
-      "tick": 876132,
+      "tick": 897904,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -1225,7 +1225,7 @@
       "step_name": "replaced_not_accumulated"
     },
     {
-      "tick": 876133,
+      "tick": 897905,
       "stimulus": {},
       "observed_by_probe": {
         "green_face1": {
@@ -1247,19 +1247,19 @@
     {
       "step_index": 0,
       "step_name": "commit_frame_to_vreg0",
-      "drive_start_tick": 876066,
+      "drive_start_tick": 897838,
       "skipped_ticks": 0,
       "expected_probe": "loop1",
       "expected": {},
       "observed": {},
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876067
+      "last_sample_tick": 897839
     },
     {
       "step_index": 1,
       "step_name": "write_head_summed_onto_loop",
-      "drive_start_tick": 876067,
+      "drive_start_tick": 897839,
       "skipped_ticks": 0,
       "expected_probe": "loop1",
       "expected": {
@@ -1272,12 +1272,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876073
+      "last_sample_tick": 897845
     },
     {
       "step_index": 2,
       "step_name": "vreg1_untouched",
-      "drive_start_tick": 876073,
+      "drive_start_tick": 897845,
       "skipped_ticks": 0,
       "expected_probe": "loop2",
       "expected": {
@@ -1287,12 +1287,12 @@
       "observed": {},
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876078
+      "last_sample_tick": 897850
     },
     {
       "step_index": 3,
       "step_name": "green_face_carries_same_frame",
-      "drive_start_tick": 876078,
+      "drive_start_tick": 897850,
       "skipped_ticks": 0,
       "expected_probe": "green_face1",
       "expected": {
@@ -1305,12 +1305,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876083
+      "last_sample_tick": 897855
     },
     {
       "step_index": 4,
       "step_name": "commit_same_frame_again",
-      "drive_start_tick": 876083,
+      "drive_start_tick": 897855,
       "skipped_ticks": 0,
       "expected_probe": "loop1",
       "expected": {},
@@ -1320,12 +1320,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876084
+      "last_sample_tick": 897856
     },
     {
       "step_index": 5,
       "step_name": "second_commit_accumulated",
-      "drive_start_tick": 876084,
+      "drive_start_tick": 897856,
       "skipped_ticks": 0,
       "expected_probe": "loop1",
       "expected": {
@@ -1338,12 +1338,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876090
+      "last_sample_tick": 897862
     },
     {
       "step_index": 6,
       "step_name": "commit_different_frame_to_vreg1",
-      "drive_start_tick": 876090,
+      "drive_start_tick": 897862,
       "skipped_ticks": 0,
       "expected_probe": "loop1",
       "expected": {},
@@ -1353,12 +1353,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876091
+      "last_sample_tick": 897863
     },
     {
       "step_index": 7,
       "step_name": "vreg1_received_its_own_frame",
-      "drive_start_tick": 876091,
+      "drive_start_tick": 897863,
       "skipped_ticks": 0,
       "expected_probe": "loop2",
       "expected": {
@@ -1370,12 +1370,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876097
+      "last_sample_tick": 897869
     },
     {
       "step_index": 8,
       "step_name": "vreg0_isolated_from_that_write",
-      "drive_start_tick": 876097,
+      "drive_start_tick": 897869,
       "skipped_ticks": 0,
       "expected_probe": "loop1",
       "expected": {
@@ -1389,12 +1389,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876102
+      "last_sample_tick": 897874
     },
     {
       "step_index": 9,
       "step_name": "erase_block_1_zeroes_vreg0",
-      "drive_start_tick": 876102,
+      "drive_start_tick": 897874,
       "skipped_ticks": 0,
       "expected_probe": "loop1",
       "expected": {
@@ -1404,12 +1404,12 @@
       "observed": {},
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876108
+      "last_sample_tick": 897880
     },
     {
       "step_index": 10,
       "step_name": "erase_is_per_block_vreg1_intact",
-      "drive_start_tick": 876108,
+      "drive_start_tick": 897880,
       "skipped_ticks": 0,
       "expected_probe": "loop2",
       "expected": {
@@ -1420,12 +1420,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876113
+      "last_sample_tick": 897885
     },
     {
       "step_index": 11,
       "step_name": "loop_stays_empty_after_erase_releases",
-      "drive_start_tick": 876113,
+      "drive_start_tick": 897885,
       "skipped_ticks": 0,
       "expected_probe": "loop1",
       "expected": {
@@ -1435,24 +1435,24 @@
       "observed": {},
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876119
+      "last_sample_tick": 897891
     },
     {
       "step_index": 12,
       "step_name": "refill_vreg0_after_erase",
-      "drive_start_tick": 876119,
+      "drive_start_tick": 897891,
       "skipped_ticks": 0,
       "expected_probe": "loop1",
       "expected": {},
       "observed": {},
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876120
+      "last_sample_tick": 897892
     },
     {
       "step_index": 13,
       "step_name": "register_alive_after_erase",
-      "drive_start_tick": 876120,
+      "drive_start_tick": 897892,
       "skipped_ticks": 0,
       "expected_probe": "loop1",
       "expected": {
@@ -1464,12 +1464,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876126
+      "last_sample_tick": 897898
     },
     {
       "step_index": 14,
       "step_name": "erase_and_write_same_tick_is_a_move",
-      "drive_start_tick": 876126,
+      "drive_start_tick": 897898,
       "skipped_ticks": 0,
       "expected_probe": "loop1",
       "expected": {},
@@ -1478,12 +1478,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876127
+      "last_sample_tick": 897899
     },
     {
       "step_index": 15,
       "step_name": "replaced_not_accumulated",
-      "drive_start_tick": 876127,
+      "drive_start_tick": 897899,
       "skipped_ticks": 0,
       "expected_probe": "loop1",
       "expected": {
@@ -1495,7 +1495,7 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 876133
+      "last_sample_tick": 897905
     }
   ],
   "pass": true

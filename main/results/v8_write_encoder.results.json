@@ -23,7 +23,7 @@
   ],
   "signal_tables": [
     {
-      "unit": 119548,
+      "unit": 140276,
       "slots_written": 2455,
       "slots_failed": 0,
       "sections": 3,
@@ -36,46 +36,46 @@
       "dy": 12.0
     },
     "entity_number_to_unit_number": {
-      "1": 119547,
-      "2": 119540,
-      "3": 119535,
-      "4": 119546,
-      "5": 119545,
-      "6": 119548,
-      "7": 119544,
-      "8": 119534,
-      "9": 119539,
-      "10": 119537,
-      "11": 119542,
-      "12": 119543,
-      "13": 119541,
-      "14": 119536,
-      "15": 119538
+      "1": 140275,
+      "2": 140268,
+      "3": 140263,
+      "4": 140274,
+      "5": 140273,
+      "6": 140276,
+      "7": 140272,
+      "8": 140262,
+      "9": 140267,
+      "10": 140265,
+      "11": 140270,
+      "12": 140271,
+      "13": 140269,
+      "14": 140264,
+      "15": 140266
     },
     "driver_units": {
-      "write_addr": 119547,
-      "write_value": 119540,
-      "write_trig": 119535
+      "write_addr": 140275,
+      "write_value": 140268,
+      "write_trig": 140263
     },
     "output_probes": [
       {
         "name": "encoded_write",
-        "unit": 119538,
+        "unit": 140266,
         "wire": "green"
       },
       {
         "name": "trig_set",
-        "unit": 119536,
+        "unit": 140264,
         "wire": "red"
       },
       {
         "name": "trig_reset",
-        "unit": 119541,
+        "unit": 140269,
         "wire": "green"
       },
       {
         "name": "one_hot",
-        "unit": 119543,
+        "unit": 140271,
         "wire": "red"
       }
     ],
@@ -83,7 +83,7 @@
   },
   "timeline": [
     {
-      "tick": 875689,
+      "tick": 897473,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -91,7 +91,7 @@
       "step_name": "pre_dead_1"
     },
     {
-      "tick": 875690,
+      "tick": 897474,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -99,7 +99,7 @@
       "step_name": "pre_dead_2"
     },
     {
-      "tick": 875691,
+      "tick": 897475,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -117,7 +117,7 @@
       "step_name": "encode_addr3_val555"
     },
     {
-      "tick": 875692,
+      "tick": 897476,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -135,7 +135,7 @@
       "step_name": "encode_addr3_val555"
     },
     {
-      "tick": 875693,
+      "tick": 897477,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -153,7 +153,7 @@
       "step_name": "encode_addr3_val555"
     },
     {
-      "tick": 875694,
+      "tick": 897478,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -175,38 +175,7 @@
       "step_name": "encode_addr3_val555"
     },
     {
-      "tick": 875695,
-      "stimulus": {
-        "write_addr": {
-          "left-arrow": 3.0
-        },
-        "write_value": {
-          "right-arrow": 555.0
-        },
-        "write_trig": {
-          "shape-circle": 1.0
-        }
-      },
-      "observed_by_probe": {
-        "encoded_write": {
-          "signal-0~rare": 555.0
-        },
-        "trig_set": {
-          "signal-0~rare": 1.0
-        },
-        "trig_reset": {
-          "signal-0~rare": 1.0
-        },
-        "one_hot": {
-          "signal-0~rare": 1.0
-        }
-      },
-      "phase": "stimulus",
-      "step_index": 0,
-      "step_name": "encode_addr3_val555"
-    },
-    {
-      "tick": 875696,
+      "tick": 897479,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -237,7 +206,7 @@
       "step_name": "encode_addr3_val555"
     },
     {
-      "tick": 875697,
+      "tick": 897480,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -268,7 +237,38 @@
       "step_name": "encode_addr3_val555"
     },
     {
-      "tick": 875698,
+      "tick": 897481,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "encode_addr3_val555"
+    },
+    {
+      "tick": 897482,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -299,7 +299,7 @@
       "step_name": "one_hot_marks_addr3"
     },
     {
-      "tick": 875699,
+      "tick": 897483,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -330,7 +330,7 @@
       "step_name": "one_hot_marks_addr3"
     },
     {
-      "tick": 875700,
+      "tick": 897484,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -361,7 +361,7 @@
       "step_name": "one_hot_marks_addr3"
     },
     {
-      "tick": 875701,
+      "tick": 897485,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -392,7 +392,7 @@
       "step_name": "one_hot_marks_addr3"
     },
     {
-      "tick": 875702,
+      "tick": 897486,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -423,7 +423,7 @@
       "step_name": "one_hot_marks_addr3"
     },
     {
-      "tick": 875703,
+      "tick": 897487,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -454,7 +454,7 @@
       "step_name": "one_hot_marks_addr3"
     },
     {
-      "tick": 875704,
+      "tick": 897488,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -485,7 +485,7 @@
       "step_name": "one_hot_marks_addr3"
     },
     {
-      "tick": 875705,
+      "tick": 897489,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -516,7 +516,7 @@
       "step_name": "set_product_addr3"
     },
     {
-      "tick": 875706,
+      "tick": 897490,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -547,7 +547,7 @@
       "step_name": "set_product_addr3"
     },
     {
-      "tick": 875707,
+      "tick": 897491,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -578,7 +578,7 @@
       "step_name": "set_product_addr3"
     },
     {
-      "tick": 875708,
+      "tick": 897492,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -609,7 +609,7 @@
       "step_name": "set_product_addr3"
     },
     {
-      "tick": 875709,
+      "tick": 897493,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -640,7 +640,7 @@
       "step_name": "set_product_addr3"
     },
     {
-      "tick": 875710,
+      "tick": 897494,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -671,7 +671,7 @@
       "step_name": "set_product_addr3"
     },
     {
-      "tick": 875711,
+      "tick": 897495,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -702,7 +702,7 @@
       "step_name": "set_product_addr3"
     },
     {
-      "tick": 875712,
+      "tick": 897496,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -733,7 +733,7 @@
       "step_name": "reset_product_addr3"
     },
     {
-      "tick": 875713,
+      "tick": 897497,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -764,7 +764,7 @@
       "step_name": "reset_product_addr3"
     },
     {
-      "tick": 875714,
+      "tick": 897498,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -795,7 +795,7 @@
       "step_name": "reset_product_addr3"
     },
     {
-      "tick": 875715,
+      "tick": 897499,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -826,7 +826,7 @@
       "step_name": "reset_product_addr3"
     },
     {
-      "tick": 875716,
+      "tick": 897500,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -857,7 +857,7 @@
       "step_name": "reset_product_addr3"
     },
     {
-      "tick": 875717,
+      "tick": 897501,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -888,7 +888,7 @@
       "step_name": "reset_product_addr3"
     },
     {
-      "tick": 875718,
+      "tick": 897502,
       "stimulus": {
         "write_addr": {
           "left-arrow": 3.0
@@ -919,7 +919,7 @@
       "step_name": "reset_product_addr3"
     },
     {
-      "tick": 875719,
+      "tick": 897503,
       "stimulus": {
         "write_value": {
           "right-arrow": 555.0
@@ -947,7 +947,7 @@
       "step_name": "latch_holds_after_addr_release"
     },
     {
-      "tick": 875720,
+      "tick": 897504,
       "stimulus": {
         "write_value": {
           "right-arrow": 555.0
@@ -975,7 +975,7 @@
       "step_name": "latch_holds_after_addr_release"
     },
     {
-      "tick": 875721,
+      "tick": 897505,
       "stimulus": {
         "write_value": {
           "right-arrow": 555.0
@@ -1003,7 +1003,7 @@
       "step_name": "latch_holds_after_addr_release"
     },
     {
-      "tick": 875722,
+      "tick": 897506,
       "stimulus": {
         "write_value": {
           "right-arrow": 555.0
@@ -1031,7 +1031,7 @@
       "step_name": "latch_holds_after_addr_release"
     },
     {
-      "tick": 875723,
+      "tick": 897507,
       "stimulus": {
         "write_value": {
           "right-arrow": 555.0
@@ -1059,7 +1059,7 @@
       "step_name": "latch_holds_after_addr_release"
     },
     {
-      "tick": 875724,
+      "tick": 897508,
       "stimulus": {
         "write_value": {
           "right-arrow": 555.0
@@ -1087,7 +1087,7 @@
       "step_name": "latch_holds_after_addr_release"
     },
     {
-      "tick": 875725,
+      "tick": 897509,
       "stimulus": {
         "write_value": {
           "right-arrow": 555.0
@@ -1115,7 +1115,7 @@
       "step_name": "latch_holds_after_addr_release"
     },
     {
-      "tick": 875726,
+      "tick": 897510,
       "stimulus": {
         "write_value": {
           "right-arrow": 555.0
@@ -1143,7 +1143,7 @@
       "step_name": "latch_holds_after_addr_release"
     },
     {
-      "tick": 875727,
+      "tick": 897511,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1171,7 +1171,7 @@
       "step_name": "value_change_while_latched"
     },
     {
-      "tick": 875728,
+      "tick": 897512,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1199,7 +1199,7 @@
       "step_name": "value_change_while_latched"
     },
     {
-      "tick": 875729,
+      "tick": 897513,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1227,7 +1227,7 @@
       "step_name": "value_change_while_latched"
     },
     {
-      "tick": 875730,
+      "tick": 897514,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1255,7 +1255,7 @@
       "step_name": "value_change_while_latched"
     },
     {
-      "tick": 875731,
+      "tick": 897515,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1283,7 +1283,7 @@
       "step_name": "value_change_while_latched"
     },
     {
-      "tick": 875732,
+      "tick": 897516,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1311,7 +1311,7 @@
       "step_name": "value_change_while_latched"
     },
     {
-      "tick": 875733,
+      "tick": 897517,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1339,7 +1339,7 @@
       "step_name": "value_change_while_latched"
     },
     {
-      "tick": 875734,
+      "tick": 897518,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1364,7 +1364,7 @@
       "step_name": "trig_release_stops_set_product"
     },
     {
-      "tick": 875735,
+      "tick": 897519,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1389,7 +1389,7 @@
       "step_name": "trig_release_stops_set_product"
     },
     {
-      "tick": 875736,
+      "tick": 897520,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1408,7 +1408,7 @@
       "step_name": "trig_release_stops_set_product"
     },
     {
-      "tick": 875737,
+      "tick": 897521,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1427,7 +1427,7 @@
       "step_name": "trig_release_stops_set_product"
     },
     {
-      "tick": 875738,
+      "tick": 897522,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1446,7 +1446,7 @@
       "step_name": "trig_release_stops_set_product"
     },
     {
-      "tick": 875739,
+      "tick": 897523,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1465,7 +1465,7 @@
       "step_name": "trig_release_stops_set_product"
     },
     {
-      "tick": 875740,
+      "tick": 897524,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1484,7 +1484,7 @@
       "step_name": "trig_release_stops_set_product"
     },
     {
-      "tick": 875741,
+      "tick": 897525,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1503,7 +1503,7 @@
       "step_name": "value_product_survives_trig_release"
     },
     {
-      "tick": 875742,
+      "tick": 897526,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1522,7 +1522,7 @@
       "step_name": "value_product_survives_trig_release"
     },
     {
-      "tick": 875743,
+      "tick": 897527,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1541,7 +1541,7 @@
       "step_name": "value_product_survives_trig_release"
     },
     {
-      "tick": 875744,
+      "tick": 897528,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1560,7 +1560,7 @@
       "step_name": "value_product_survives_trig_release"
     },
     {
-      "tick": 875745,
+      "tick": 897529,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1579,7 +1579,7 @@
       "step_name": "value_product_survives_trig_release"
     },
     {
-      "tick": 875746,
+      "tick": 897530,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1598,7 +1598,7 @@
       "step_name": "value_product_survives_trig_release"
     },
     {
-      "tick": 875747,
+      "tick": 897531,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -1617,7 +1617,7 @@
       "step_name": "value_product_survives_trig_release"
     },
     {
-      "tick": 875748,
+      "tick": 897532,
       "stimulus": {
         "write_addr": {
           "left-arrow": 5.0
@@ -1642,7 +1642,7 @@
       "step_name": "new_addr5_moves_one_hot"
     },
     {
-      "tick": 875749,
+      "tick": 897533,
       "stimulus": {
         "write_addr": {
           "left-arrow": 5.0
@@ -1667,7 +1667,7 @@
       "step_name": "new_addr5_moves_one_hot"
     },
     {
-      "tick": 875750,
+      "tick": 897534,
       "stimulus": {
         "write_addr": {
           "left-arrow": 5.0
@@ -1698,7 +1698,7 @@
       "step_name": "new_addr5_moves_one_hot"
     },
     {
-      "tick": 875751,
+      "tick": 897535,
       "stimulus": {
         "write_addr": {
           "left-arrow": 5.0
@@ -1729,38 +1729,7 @@
       "step_name": "new_addr5_moves_one_hot"
     },
     {
-      "tick": 875752,
-      "stimulus": {
-        "write_addr": {
-          "left-arrow": 5.0
-        },
-        "write_value": {
-          "right-arrow": 777.0
-        },
-        "write_trig": {
-          "shape-circle": 1.0
-        }
-      },
-      "observed_by_probe": {
-        "encoded_write": {
-          "signal-0~legendary": 777.0
-        },
-        "trig_set": {
-          "signal-0~legendary": 1.0
-        },
-        "trig_reset": {
-          "signal-0~legendary": 1.0
-        },
-        "one_hot": {
-          "signal-0~legendary": 1.0
-        }
-      },
-      "phase": "stimulus",
-      "step_index": 8,
-      "step_name": "new_addr5_moves_one_hot"
-    },
-    {
-      "tick": 875753,
+      "tick": 897536,
       "stimulus": {
         "write_addr": {
           "left-arrow": 5.0
@@ -1791,7 +1760,7 @@
       "step_name": "new_addr5_moves_one_hot"
     },
     {
-      "tick": 875754,
+      "tick": 897537,
       "stimulus": {
         "write_addr": {
           "left-arrow": 5.0
@@ -1822,7 +1791,38 @@
       "step_name": "new_addr5_moves_one_hot"
     },
     {
-      "tick": 875755,
+      "tick": 897538,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 5.0
+        },
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "new_addr5_moves_one_hot"
+    },
+    {
+      "tick": 897539,
       "stimulus": {
         "write_addr": {
           "left-arrow": 5.0
@@ -1853,7 +1853,7 @@
       "step_name": "set_product_follows_to_addr5"
     },
     {
-      "tick": 875756,
+      "tick": 897540,
       "stimulus": {
         "write_addr": {
           "left-arrow": 5.0
@@ -1884,7 +1884,7 @@
       "step_name": "set_product_follows_to_addr5"
     },
     {
-      "tick": 875757,
+      "tick": 897541,
       "stimulus": {
         "write_addr": {
           "left-arrow": 5.0
@@ -1915,7 +1915,7 @@
       "step_name": "set_product_follows_to_addr5"
     },
     {
-      "tick": 875758,
+      "tick": 897542,
       "stimulus": {
         "write_addr": {
           "left-arrow": 5.0
@@ -1946,7 +1946,7 @@
       "step_name": "set_product_follows_to_addr5"
     },
     {
-      "tick": 875759,
+      "tick": 897543,
       "stimulus": {
         "write_addr": {
           "left-arrow": 5.0
@@ -1977,7 +1977,7 @@
       "step_name": "set_product_follows_to_addr5"
     },
     {
-      "tick": 875760,
+      "tick": 897544,
       "stimulus": {
         "write_addr": {
           "left-arrow": 5.0
@@ -2008,7 +2008,7 @@
       "step_name": "set_product_follows_to_addr5"
     },
     {
-      "tick": 875761,
+      "tick": 897545,
       "stimulus": {
         "write_addr": {
           "left-arrow": 5.0
@@ -2039,7 +2039,7 @@
       "step_name": "set_product_follows_to_addr5"
     },
     {
-      "tick": 875762,
+      "tick": 897546,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -2067,7 +2067,7 @@
       "step_name": "latch_holds_addr5"
     },
     {
-      "tick": 875763,
+      "tick": 897547,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -2095,7 +2095,7 @@
       "step_name": "latch_holds_addr5"
     },
     {
-      "tick": 875764,
+      "tick": 897548,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -2123,7 +2123,7 @@
       "step_name": "latch_holds_addr5"
     },
     {
-      "tick": 875765,
+      "tick": 897549,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -2151,7 +2151,7 @@
       "step_name": "latch_holds_addr5"
     },
     {
-      "tick": 875766,
+      "tick": 897550,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -2179,7 +2179,7 @@
       "step_name": "latch_holds_addr5"
     },
     {
-      "tick": 875767,
+      "tick": 897551,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -2207,7 +2207,7 @@
       "step_name": "latch_holds_addr5"
     },
     {
-      "tick": 875768,
+      "tick": 897552,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -2235,7 +2235,7 @@
       "step_name": "latch_holds_addr5"
     },
     {
-      "tick": 875769,
+      "tick": 897553,
       "stimulus": {
         "write_value": {
           "right-arrow": 777.0
@@ -2267,7 +2267,7 @@
     {
       "step_index": 0,
       "step_name": "encode_addr3_val555",
-      "drive_start_tick": 875690,
+      "drive_start_tick": 897474,
       "skipped_ticks": 0,
       "expected_probe": "encoded_write",
       "expected": {
@@ -2278,12 +2278,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875697
+      "last_sample_tick": 897481
     },
     {
       "step_index": 1,
       "step_name": "one_hot_marks_addr3",
-      "drive_start_tick": 875697,
+      "drive_start_tick": 897481,
       "skipped_ticks": 0,
       "expected_probe": "one_hot",
       "expected": {
@@ -2294,12 +2294,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875704
+      "last_sample_tick": 897488
     },
     {
       "step_index": 2,
       "step_name": "set_product_addr3",
-      "drive_start_tick": 875704,
+      "drive_start_tick": 897488,
       "skipped_ticks": 0,
       "expected_probe": "trig_set",
       "expected": {
@@ -2310,12 +2310,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875711
+      "last_sample_tick": 897495
     },
     {
       "step_index": 3,
       "step_name": "reset_product_addr3",
-      "drive_start_tick": 875711,
+      "drive_start_tick": 897495,
       "skipped_ticks": 0,
       "expected_probe": "trig_reset",
       "expected": {
@@ -2326,12 +2326,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875718
+      "last_sample_tick": 897502
     },
     {
       "step_index": 4,
       "step_name": "latch_holds_after_addr_release",
-      "drive_start_tick": 875718,
+      "drive_start_tick": 897502,
       "skipped_ticks": 0,
       "expected_probe": "encoded_write",
       "expected": {
@@ -2342,12 +2342,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875726
+      "last_sample_tick": 897510
     },
     {
       "step_index": 5,
       "step_name": "value_change_while_latched",
-      "drive_start_tick": 875726,
+      "drive_start_tick": 897510,
       "skipped_ticks": 0,
       "expected_probe": "encoded_write",
       "expected": {
@@ -2358,12 +2358,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875733
+      "last_sample_tick": 897517
     },
     {
       "step_index": 6,
       "step_name": "trig_release_stops_set_product",
-      "drive_start_tick": 875733,
+      "drive_start_tick": 897517,
       "skipped_ticks": 0,
       "expected_probe": "trig_set",
       "expected": {
@@ -2372,12 +2372,12 @@
       "observed": {},
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875740
+      "last_sample_tick": 897524
     },
     {
       "step_index": 7,
       "step_name": "value_product_survives_trig_release",
-      "drive_start_tick": 875740,
+      "drive_start_tick": 897524,
       "skipped_ticks": 0,
       "expected_probe": "encoded_write",
       "expected": {
@@ -2388,12 +2388,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875747
+      "last_sample_tick": 897531
     },
     {
       "step_index": 8,
       "step_name": "new_addr5_moves_one_hot",
-      "drive_start_tick": 875747,
+      "drive_start_tick": 897531,
       "skipped_ticks": 0,
       "expected_probe": "encoded_write",
       "expected": {
@@ -2405,12 +2405,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875754
+      "last_sample_tick": 897538
     },
     {
       "step_index": 9,
       "step_name": "set_product_follows_to_addr5",
-      "drive_start_tick": 875754,
+      "drive_start_tick": 897538,
       "skipped_ticks": 0,
       "expected_probe": "trig_set",
       "expected": {
@@ -2422,12 +2422,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875761
+      "last_sample_tick": 897545
     },
     {
       "step_index": 10,
       "step_name": "latch_holds_addr5",
-      "drive_start_tick": 875761,
+      "drive_start_tick": 897545,
       "skipped_ticks": 0,
       "expected_probe": "encoded_write",
       "expected": {
@@ -2438,7 +2438,7 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875769
+      "last_sample_tick": 897553
     }
   ],
   "pass": true

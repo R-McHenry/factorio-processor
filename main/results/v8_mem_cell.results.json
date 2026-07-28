@@ -28,29 +28,29 @@
       "dy": 12.0
     },
     "entity_number_to_unit_number": {
-      "1": 119509,
-      "2": 119511,
-      "3": 119515,
-      "4": 119516,
-      "5": 119510,
-      "6": 119514,
-      "7": 119512,
-      "8": 119513
+      "1": 140237,
+      "2": 140239,
+      "3": 140243,
+      "4": 140244,
+      "5": 140238,
+      "6": 140242,
+      "7": 140240,
+      "8": 140241
     },
     "driver_units": {
-      "write_value": 119509,
-      "trig_set": 119511,
-      "trig_reset": 119515
+      "write_value": 140237,
+      "trig_set": 140239,
+      "trig_reset": 140243
     },
     "output_probes": [
       {
         "name": "mem_state",
-        "unit": 119513,
+        "unit": 140241,
         "wire": "red"
       },
       {
         "name": "mem_out",
-        "unit": 119512,
+        "unit": 140240,
         "wire": "green"
       }
     ],
@@ -58,7 +58,7 @@
   },
   "timeline": [
     {
-      "tick": 875599,
+      "tick": 897385,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -66,7 +66,7 @@
       "step_name": "pre_dead_1"
     },
     {
-      "tick": 875600,
+      "tick": 897386,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -74,7 +74,7 @@
       "step_name": "pre_dead_2"
     },
     {
-      "tick": 875601,
+      "tick": 897387,
       "stimulus": {
         "write_value": {
           "signal-0": 42.0
@@ -92,7 +92,7 @@
       "step_name": "write_addr1_42"
     },
     {
-      "tick": 875602,
+      "tick": 897388,
       "stimulus": {
         "write_value": {
           "signal-0": 42.0
@@ -117,7 +117,7 @@
       "step_name": "write_addr1_42"
     },
     {
-      "tick": 875603,
+      "tick": 897389,
       "stimulus": {
         "write_value": {
           "signal-0": 42.0
@@ -142,7 +142,7 @@
       "step_name": "write_addr1_42"
     },
     {
-      "tick": 875604,
+      "tick": 897390,
       "stimulus": {
         "write_value": {
           "signal-0": 42.0
@@ -167,7 +167,7 @@
       "step_name": "write_addr1_42"
     },
     {
-      "tick": 875605,
+      "tick": 897391,
       "stimulus": {
         "write_value": {
           "signal-0": 42.0
@@ -192,7 +192,7 @@
       "step_name": "write_addr1_42"
     },
     {
-      "tick": 875606,
+      "tick": 897392,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -207,7 +207,7 @@
       "step_name": "release_holds_42"
     },
     {
-      "tick": 875607,
+      "tick": 897393,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -222,7 +222,7 @@
       "step_name": "release_holds_42"
     },
     {
-      "tick": 875608,
+      "tick": 897394,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -237,7 +237,7 @@
       "step_name": "release_holds_42"
     },
     {
-      "tick": 875609,
+      "tick": 897395,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -252,7 +252,7 @@
       "step_name": "release_holds_42"
     },
     {
-      "tick": 875610,
+      "tick": 897396,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -267,7 +267,7 @@
       "step_name": "release_holds_42"
     },
     {
-      "tick": 875611,
+      "tick": 897397,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -282,7 +282,7 @@
       "step_name": "release_holds_42"
     },
     {
-      "tick": 875612,
+      "tick": 897398,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -297,7 +297,7 @@
       "step_name": "green_bus_mirrors_42"
     },
     {
-      "tick": 875613,
+      "tick": 897399,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -312,7 +312,7 @@
       "step_name": "green_bus_mirrors_42"
     },
     {
-      "tick": 875614,
+      "tick": 897400,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -327,7 +327,7 @@
       "step_name": "green_bus_mirrors_42"
     },
     {
-      "tick": 875615,
+      "tick": 897401,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -342,7 +342,7 @@
       "step_name": "green_bus_mirrors_42"
     },
     {
-      "tick": 875616,
+      "tick": 897402,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -357,7 +357,7 @@
       "step_name": "green_bus_mirrors_42"
     },
     {
-      "tick": 875617,
+      "tick": 897403,
       "stimulus": {
         "write_value": {
           "signal-0": 99.0
@@ -382,7 +382,7 @@
       "step_name": "override_addr1_99"
     },
     {
-      "tick": 875618,
+      "tick": 897404,
       "stimulus": {
         "write_value": {
           "signal-0": 99.0
@@ -407,7 +407,7 @@
       "step_name": "override_addr1_99"
     },
     {
-      "tick": 875619,
+      "tick": 897405,
       "stimulus": {
         "write_value": {
           "signal-0": 99.0
@@ -432,7 +432,7 @@
       "step_name": "override_addr1_99"
     },
     {
-      "tick": 875620,
+      "tick": 897406,
       "stimulus": {
         "write_value": {
           "signal-0": 99.0
@@ -457,7 +457,7 @@
       "step_name": "override_addr1_99"
     },
     {
-      "tick": 875621,
+      "tick": 897407,
       "stimulus": {
         "write_value": {
           "signal-0": 99.0
@@ -482,7 +482,7 @@
       "step_name": "override_addr1_99"
     },
     {
-      "tick": 875622,
+      "tick": 897408,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -497,7 +497,7 @@
       "step_name": "release_holds_99"
     },
     {
-      "tick": 875623,
+      "tick": 897409,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -512,7 +512,7 @@
       "step_name": "release_holds_99"
     },
     {
-      "tick": 875624,
+      "tick": 897410,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -527,7 +527,7 @@
       "step_name": "release_holds_99"
     },
     {
-      "tick": 875625,
+      "tick": 897411,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -542,7 +542,7 @@
       "step_name": "release_holds_99"
     },
     {
-      "tick": 875626,
+      "tick": 897412,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -557,7 +557,7 @@
       "step_name": "release_holds_99"
     },
     {
-      "tick": 875627,
+      "tick": 897413,
       "stimulus": {
         "write_value": {
           "signal-1": 7.0
@@ -582,7 +582,7 @@
       "step_name": "write_addr6_7"
     },
     {
-      "tick": 875628,
+      "tick": 897414,
       "stimulus": {
         "write_value": {
           "signal-1": 7.0
@@ -609,34 +609,7 @@
       "step_name": "write_addr6_7"
     },
     {
-      "tick": 875629,
-      "stimulus": {
-        "write_value": {
-          "signal-1": 7.0
-        },
-        "trig_set": {
-          "signal-1": 1.0
-        },
-        "trig_reset": {
-          "signal-1": 1.0
-        }
-      },
-      "observed_by_probe": {
-        "mem_state": {
-          "signal-0": 99.0,
-          "signal-1": 7.0
-        },
-        "mem_out": {
-          "signal-0": 99.0,
-          "signal-1": 7.0
-        }
-      },
-      "phase": "stimulus",
-      "step_index": 5,
-      "step_name": "write_addr6_7"
-    },
-    {
-      "tick": 875630,
+      "tick": 897415,
       "stimulus": {
         "write_value": {
           "signal-1": 7.0
@@ -663,7 +636,7 @@
       "step_name": "write_addr6_7"
     },
     {
-      "tick": 875631,
+      "tick": 897416,
       "stimulus": {
         "write_value": {
           "signal-1": 7.0
@@ -690,7 +663,34 @@
       "step_name": "write_addr6_7"
     },
     {
-      "tick": 875632,
+      "tick": 897417,
+      "stimulus": {
+        "write_value": {
+          "signal-1": 7.0
+        },
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "write_addr6_7"
+    },
+    {
+      "tick": 897418,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -707,7 +707,7 @@
       "step_name": "release_both_held"
     },
     {
-      "tick": 875633,
+      "tick": 897419,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -724,7 +724,7 @@
       "step_name": "release_both_held"
     },
     {
-      "tick": 875634,
+      "tick": 897420,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -741,7 +741,7 @@
       "step_name": "release_both_held"
     },
     {
-      "tick": 875635,
+      "tick": 897421,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -758,7 +758,7 @@
       "step_name": "release_both_held"
     },
     {
-      "tick": 875636,
+      "tick": 897422,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -775,7 +775,7 @@
       "step_name": "release_both_held"
     },
     {
-      "tick": 875637,
+      "tick": 897423,
       "stimulus": {
         "trig_set": {
           "signal-1": 1.0
@@ -799,7 +799,7 @@
       "step_name": "zero_write_clears_addr6"
     },
     {
-      "tick": 875638,
+      "tick": 897424,
       "stimulus": {
         "trig_set": {
           "signal-1": 1.0
@@ -821,7 +821,7 @@
       "step_name": "zero_write_clears_addr6"
     },
     {
-      "tick": 875639,
+      "tick": 897425,
       "stimulus": {
         "trig_set": {
           "signal-1": 1.0
@@ -843,7 +843,7 @@
       "step_name": "zero_write_clears_addr6"
     },
     {
-      "tick": 875640,
+      "tick": 897426,
       "stimulus": {
         "trig_set": {
           "signal-1": 1.0
@@ -865,7 +865,7 @@
       "step_name": "zero_write_clears_addr6"
     },
     {
-      "tick": 875641,
+      "tick": 897427,
       "stimulus": {
         "trig_set": {
           "signal-1": 1.0
@@ -887,7 +887,7 @@
       "step_name": "zero_write_clears_addr6"
     },
     {
-      "tick": 875642,
+      "tick": 897428,
       "stimulus": {
         "trig_set": {
           "signal-1": 1.0
@@ -909,7 +909,7 @@
       "step_name": "zero_write_clears_addr6"
     },
     {
-      "tick": 875643,
+      "tick": 897429,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -924,7 +924,7 @@
       "step_name": "zero_write_holds_after_release"
     },
     {
-      "tick": 875644,
+      "tick": 897430,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -939,7 +939,7 @@
       "step_name": "zero_write_holds_after_release"
     },
     {
-      "tick": 875645,
+      "tick": 897431,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -954,7 +954,7 @@
       "step_name": "zero_write_holds_after_release"
     },
     {
-      "tick": 875646,
+      "tick": 897432,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -969,7 +969,7 @@
       "step_name": "zero_write_holds_after_release"
     },
     {
-      "tick": 875647,
+      "tick": 897433,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -984,7 +984,7 @@
       "step_name": "zero_write_holds_after_release"
     },
     {
-      "tick": 875648,
+      "tick": 897434,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -999,7 +999,7 @@
       "step_name": "zero_write_holds_after_release"
     },
     {
-      "tick": 875649,
+      "tick": 897435,
       "stimulus": {
         "write_value": {
           "signal-2": -5.0
@@ -1024,7 +1024,7 @@
       "step_name": "write_addr11_negative"
     },
     {
-      "tick": 875650,
+      "tick": 897436,
       "stimulus": {
         "write_value": {
           "signal-2": -5.0
@@ -1051,61 +1051,7 @@
       "step_name": "write_addr11_negative"
     },
     {
-      "tick": 875651,
-      "stimulus": {
-        "write_value": {
-          "signal-2": -5.0
-        },
-        "trig_set": {
-          "signal-2": 1.0
-        },
-        "trig_reset": {
-          "signal-2": 1.0
-        }
-      },
-      "observed_by_probe": {
-        "mem_state": {
-          "signal-0": 99.0,
-          "signal-2": -5.0
-        },
-        "mem_out": {
-          "signal-0": 99.0,
-          "signal-2": -5.0
-        }
-      },
-      "phase": "stimulus",
-      "step_index": 9,
-      "step_name": "write_addr11_negative"
-    },
-    {
-      "tick": 875652,
-      "stimulus": {
-        "write_value": {
-          "signal-2": -5.0
-        },
-        "trig_set": {
-          "signal-2": 1.0
-        },
-        "trig_reset": {
-          "signal-2": 1.0
-        }
-      },
-      "observed_by_probe": {
-        "mem_state": {
-          "signal-0": 99.0,
-          "signal-2": -5.0
-        },
-        "mem_out": {
-          "signal-0": 99.0,
-          "signal-2": -5.0
-        }
-      },
-      "phase": "stimulus",
-      "step_index": 9,
-      "step_name": "write_addr11_negative"
-    },
-    {
-      "tick": 875653,
+      "tick": 897437,
       "stimulus": {
         "write_value": {
           "signal-2": -5.0
@@ -1132,7 +1078,61 @@
       "step_name": "write_addr11_negative"
     },
     {
-      "tick": 875654,
+      "tick": 897438,
+      "stimulus": {
+        "write_value": {
+          "signal-2": -5.0
+        },
+        "trig_set": {
+          "signal-2": 1.0
+        },
+        "trig_reset": {
+          "signal-2": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "write_addr11_negative"
+    },
+    {
+      "tick": 897439,
+      "stimulus": {
+        "write_value": {
+          "signal-2": -5.0
+        },
+        "trig_set": {
+          "signal-2": 1.0
+        },
+        "trig_reset": {
+          "signal-2": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "write_addr11_negative"
+    },
+    {
+      "tick": 897440,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1149,7 +1149,7 @@
       "step_name": "release_holds_negative"
     },
     {
-      "tick": 875655,
+      "tick": 897441,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1166,7 +1166,7 @@
       "step_name": "release_holds_negative"
     },
     {
-      "tick": 875656,
+      "tick": 897442,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1183,7 +1183,7 @@
       "step_name": "release_holds_negative"
     },
     {
-      "tick": 875657,
+      "tick": 897443,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1200,7 +1200,7 @@
       "step_name": "release_holds_negative"
     },
     {
-      "tick": 875658,
+      "tick": 897444,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1217,7 +1217,7 @@
       "step_name": "release_holds_negative"
     },
     {
-      "tick": 875659,
+      "tick": 897445,
       "stimulus": {
         "write_value": {
           "artillery-targeting-remote": 5.0
@@ -1241,7 +1241,7 @@
       "step_name": "acc_pulse_add_5"
     },
     {
-      "tick": 875660,
+      "tick": 897446,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1260,7 +1260,7 @@
       "step_name": "acc_settled_at_5"
     },
     {
-      "tick": 875661,
+      "tick": 897447,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1279,7 +1279,7 @@
       "step_name": "acc_settled_at_5"
     },
     {
-      "tick": 875662,
+      "tick": 897448,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1298,7 +1298,7 @@
       "step_name": "acc_settled_at_5"
     },
     {
-      "tick": 875663,
+      "tick": 897449,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1317,7 +1317,7 @@
       "step_name": "acc_settled_at_5"
     },
     {
-      "tick": 875664,
+      "tick": 897450,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1336,7 +1336,7 @@
       "step_name": "acc_settled_at_5"
     },
     {
-      "tick": 875665,
+      "tick": 897451,
       "stimulus": {
         "write_value": {
           "artillery-targeting-remote": 3.0
@@ -1362,7 +1362,7 @@
       "step_name": "acc_pulse_add_3"
     },
     {
-      "tick": 875666,
+      "tick": 897452,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1381,7 +1381,7 @@
       "step_name": "acc_settled_at_8"
     },
     {
-      "tick": 875667,
+      "tick": 897453,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1400,7 +1400,7 @@
       "step_name": "acc_settled_at_8"
     },
     {
-      "tick": 875668,
+      "tick": 897454,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1419,7 +1419,7 @@
       "step_name": "acc_settled_at_8"
     },
     {
-      "tick": 875669,
+      "tick": 897455,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1438,7 +1438,7 @@
       "step_name": "acc_settled_at_8"
     },
     {
-      "tick": 875670,
+      "tick": 897456,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1457,7 +1457,7 @@
       "step_name": "acc_settled_at_8"
     },
     {
-      "tick": 875671,
+      "tick": 897457,
       "stimulus": {
         "trig_set": {
           "artillery-targeting-remote": 1.0
@@ -1483,7 +1483,7 @@
       "step_name": "acc_zero_write_blocked"
     },
     {
-      "tick": 875672,
+      "tick": 897458,
       "stimulus": {
         "trig_set": {
           "artillery-targeting-remote": 1.0
@@ -1509,7 +1509,7 @@
       "step_name": "acc_zero_write_blocked"
     },
     {
-      "tick": 875673,
+      "tick": 897459,
       "stimulus": {
         "trig_set": {
           "artillery-targeting-remote": 1.0
@@ -1535,7 +1535,7 @@
       "step_name": "acc_zero_write_blocked"
     },
     {
-      "tick": 875674,
+      "tick": 897460,
       "stimulus": {
         "trig_set": {
           "artillery-targeting-remote": 1.0
@@ -1561,7 +1561,7 @@
       "step_name": "acc_zero_write_blocked"
     },
     {
-      "tick": 875675,
+      "tick": 897461,
       "stimulus": {
         "trig_set": {
           "artillery-targeting-remote": 1.0
@@ -1587,7 +1587,7 @@
       "step_name": "acc_zero_write_blocked"
     },
     {
-      "tick": 875676,
+      "tick": 897462,
       "stimulus": {
         "trig_set": {
           "artillery-targeting-remote": 1.0
@@ -1613,7 +1613,7 @@
       "step_name": "acc_zero_write_blocked"
     },
     {
-      "tick": 875677,
+      "tick": 897463,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1632,7 +1632,7 @@
       "step_name": "acc_blocked_after_release"
     },
     {
-      "tick": 875678,
+      "tick": 897464,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1651,7 +1651,7 @@
       "step_name": "acc_blocked_after_release"
     },
     {
-      "tick": 875679,
+      "tick": 897465,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1670,7 +1670,7 @@
       "step_name": "acc_blocked_after_release"
     },
     {
-      "tick": 875680,
+      "tick": 897466,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1689,7 +1689,7 @@
       "step_name": "acc_blocked_after_release"
     },
     {
-      "tick": 875681,
+      "tick": 897467,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1708,7 +1708,7 @@
       "step_name": "acc_blocked_after_release"
     },
     {
-      "tick": 875682,
+      "tick": 897468,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1727,7 +1727,7 @@
       "step_name": "green_bus_final_state"
     },
     {
-      "tick": 875683,
+      "tick": 897469,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1746,7 +1746,7 @@
       "step_name": "green_bus_final_state"
     },
     {
-      "tick": 875684,
+      "tick": 897470,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1765,7 +1765,7 @@
       "step_name": "green_bus_final_state"
     },
     {
-      "tick": 875685,
+      "tick": 897471,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1784,7 +1784,7 @@
       "step_name": "green_bus_final_state"
     },
     {
-      "tick": 875686,
+      "tick": 897472,
       "stimulus": {},
       "observed_by_probe": {
         "mem_state": {
@@ -1807,7 +1807,7 @@
     {
       "step_index": 0,
       "step_name": "write_addr1_42",
-      "drive_start_tick": 875600,
+      "drive_start_tick": 897386,
       "skipped_ticks": 0,
       "expected_probe": "mem_state",
       "expected": {
@@ -1818,12 +1818,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875605
+      "last_sample_tick": 897391
     },
     {
       "step_index": 1,
       "step_name": "release_holds_42",
-      "drive_start_tick": 875605,
+      "drive_start_tick": 897391,
       "skipped_ticks": 0,
       "expected_probe": "mem_state",
       "expected": {
@@ -1834,12 +1834,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875611
+      "last_sample_tick": 897397
     },
     {
       "step_index": 2,
       "step_name": "green_bus_mirrors_42",
-      "drive_start_tick": 875611,
+      "drive_start_tick": 897397,
       "skipped_ticks": 0,
       "expected_probe": "mem_out",
       "expected": {
@@ -1850,12 +1850,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875616
+      "last_sample_tick": 897402
     },
     {
       "step_index": 3,
       "step_name": "override_addr1_99",
-      "drive_start_tick": 875616,
+      "drive_start_tick": 897402,
       "skipped_ticks": 0,
       "expected_probe": "mem_state",
       "expected": {
@@ -1866,12 +1866,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875621
+      "last_sample_tick": 897407
     },
     {
       "step_index": 4,
       "step_name": "release_holds_99",
-      "drive_start_tick": 875621,
+      "drive_start_tick": 897407,
       "skipped_ticks": 0,
       "expected_probe": "mem_state",
       "expected": {
@@ -1882,12 +1882,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875626
+      "last_sample_tick": 897412
     },
     {
       "step_index": 5,
       "step_name": "write_addr6_7",
-      "drive_start_tick": 875626,
+      "drive_start_tick": 897412,
       "skipped_ticks": 0,
       "expected_probe": "mem_state",
       "expected": {
@@ -1899,12 +1899,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875631
+      "last_sample_tick": 897417
     },
     {
       "step_index": 6,
       "step_name": "release_both_held",
-      "drive_start_tick": 875631,
+      "drive_start_tick": 897417,
       "skipped_ticks": 0,
       "expected_probe": "mem_state",
       "expected": {
@@ -1917,12 +1917,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875636
+      "last_sample_tick": 897422
     },
     {
       "step_index": 7,
       "step_name": "zero_write_clears_addr6",
-      "drive_start_tick": 875636,
+      "drive_start_tick": 897422,
       "skipped_ticks": 0,
       "expected_probe": "mem_state",
       "expected": {
@@ -1934,12 +1934,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875642
+      "last_sample_tick": 897428
     },
     {
       "step_index": 8,
       "step_name": "zero_write_holds_after_release",
-      "drive_start_tick": 875642,
+      "drive_start_tick": 897428,
       "skipped_ticks": 0,
       "expected_probe": "mem_state",
       "expected": {
@@ -1951,12 +1951,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875648
+      "last_sample_tick": 897434
     },
     {
       "step_index": 9,
       "step_name": "write_addr11_negative",
-      "drive_start_tick": 875648,
+      "drive_start_tick": 897434,
       "skipped_ticks": 0,
       "expected_probe": "mem_state",
       "expected": {
@@ -1968,12 +1968,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875653
+      "last_sample_tick": 897439
     },
     {
       "step_index": 10,
       "step_name": "release_holds_negative",
-      "drive_start_tick": 875653,
+      "drive_start_tick": 897439,
       "skipped_ticks": 0,
       "expected_probe": "mem_state",
       "expected": {
@@ -1986,12 +1986,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875658
+      "last_sample_tick": 897444
     },
     {
       "step_index": 11,
       "step_name": "acc_pulse_add_5",
-      "drive_start_tick": 875658,
+      "drive_start_tick": 897444,
       "skipped_ticks": 0,
       "expected_probe": "mem_state",
       "expected": {},
@@ -2001,12 +2001,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875659
+      "last_sample_tick": 897445
     },
     {
       "step_index": 12,
       "step_name": "acc_settled_at_5",
-      "drive_start_tick": 875659,
+      "drive_start_tick": 897445,
       "skipped_ticks": 0,
       "expected_probe": "mem_state",
       "expected": {
@@ -2019,12 +2019,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875664
+      "last_sample_tick": 897450
     },
     {
       "step_index": 13,
       "step_name": "acc_pulse_add_3",
-      "drive_start_tick": 875664,
+      "drive_start_tick": 897450,
       "skipped_ticks": 0,
       "expected_probe": "mem_state",
       "expected": {},
@@ -2035,12 +2035,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875665
+      "last_sample_tick": 897451
     },
     {
       "step_index": 14,
       "step_name": "acc_settled_at_8",
-      "drive_start_tick": 875665,
+      "drive_start_tick": 897451,
       "skipped_ticks": 0,
       "expected_probe": "mem_state",
       "expected": {
@@ -2053,12 +2053,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875670
+      "last_sample_tick": 897456
     },
     {
       "step_index": 15,
       "step_name": "acc_zero_write_blocked",
-      "drive_start_tick": 875670,
+      "drive_start_tick": 897456,
       "skipped_ticks": 0,
       "expected_probe": "mem_state",
       "expected": {
@@ -2071,12 +2071,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875676
+      "last_sample_tick": 897462
     },
     {
       "step_index": 16,
       "step_name": "acc_blocked_after_release",
-      "drive_start_tick": 875676,
+      "drive_start_tick": 897462,
       "skipped_ticks": 0,
       "expected_probe": "mem_state",
       "expected": {
@@ -2090,12 +2090,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875681
+      "last_sample_tick": 897467
     },
     {
       "step_index": 17,
       "step_name": "green_bus_final_state",
-      "drive_start_tick": 875681,
+      "drive_start_tick": 897467,
       "skipped_ticks": 0,
       "expected_probe": "mem_out",
       "expected": {
@@ -2110,7 +2110,7 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 875686
+      "last_sample_tick": 897472
     }
   ],
   "pass": true
