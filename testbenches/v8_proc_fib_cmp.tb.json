@@ -1,0 +1,78 @@
+{
+  "name": "v8_proc_fib_cmp",
+  "description": "machine_v8-scheduled fib_cmp against the fnet machine's own addresses (config from the signals map): B streams add_res, latched-A copies, CMP-steered absolute jump, halt spin with poison canary.",
+  "pre_stimulus_dead_ticks": 0,
+  "settle_ticks": 1,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -16.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "trig_set": 46
+    },
+    "expected_probe_name": "mem_state",
+    "output_probes": [
+      {
+        "name": "mem_state",
+        "entity_number": 101,
+        "wire": "red"
+      },
+      {
+        "name": "mem_bus",
+        "entity_number": 100,
+        "wire": "green"
+      },
+      {
+        "name": "port_a",
+        "entity_number": 77,
+        "wire": "green"
+      },
+      {
+        "name": "port_b",
+        "entity_number": 83,
+        "wire": "green"
+      },
+      {
+        "name": "instr_port",
+        "entity_number": 99,
+        "wire": "green"
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "trace_first_passes",
+      "settle_ticks": 1,
+      "trace_ticks": 40,
+      "expect_probe": "mem_state",
+      "expect": {}
+    },
+    {
+      "name": "skip_to_completion",
+      "skip_ticks": 320,
+      "settle_ticks": 1,
+      "trace_ticks": 3,
+      "expect_probe": "mem_state",
+      "expect": {
+        "$add_a": 89,
+        "$add_b": 144,
+        "$cmp_m": 144,
+        "$cmp_n": 100,
+        "$mem[206]": 999,
+        "$poison_ctr": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "module": "alu_bench",
+  "probes": [
+    {
+      "net": "alu_out",
+      "entity_number": 12,
+      "wire": "green",
+      "position": {
+        "x": 11.5,
+        "y": -12.5
+      }
+    }
+  ]
+}

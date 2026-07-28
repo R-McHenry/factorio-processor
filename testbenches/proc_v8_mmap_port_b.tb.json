@@ -1,0 +1,75 @@
+{
+  "name": "proc_v8_mmap_port_b",
+  "description": "Memory-mapped port B address: write the shape-circle cell with a target address; port_b_rd streams that cell until re-parked.",
+  "pre_stimulus_dead_ticks": 0,
+  "settle_ticks": 1,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -8.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "trig_set": 15
+    },
+    "expected_probe_name": "mem_state",
+    "output_probes": [
+      {
+        "name": "mem_state",
+        "entity_number": 36,
+        "wire": "red"
+      },
+      {
+        "name": "port_a",
+        "entity_number": 64,
+        "wire": "green"
+      },
+      {
+        "name": "port_b",
+        "entity_number": 65,
+        "wire": "green"
+      },
+      {
+        "name": "instr_port",
+        "entity_number": 66,
+        "wire": "green"
+      },
+      {
+        "name": "out4_inject",
+        "entity_number": 18,
+        "wire": "green"
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "port_b_streams_H",
+      "settle_ticks": 1,
+      "trace_ticks": 20,
+      "expect_probe": "port_b",
+      "expect": {
+        "signal-H": 77
+      }
+    },
+    {
+      "name": "port_b_reparked_on_G",
+      "settle_ticks": 1,
+      "trace_ticks": 14,
+      "expect_probe": "port_b",
+      "expect": {
+        "signal-G": 33,
+        "signal-H": 0
+      }
+    }
+  ]
+}

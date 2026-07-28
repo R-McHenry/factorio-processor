@@ -1,0 +1,119 @@
+# netlist_demo — demo_circuit's memory cell re-expressed in the .fnet DSL.
+# Entity numbering: 1 write stim, 2 memory gate, 3 read-addr stim,
+# 4 address table (signal_space full address space, populated at paste),
+# 5 read gate, 6 probe (auto-added by the debug mark).
+# Bench: testbenches/netlist_demo.tb.json — drives the carrier symbolically
+# ("$read_addr") since it is auto-assigned, and reads at signal_space
+# addresses (signal-k@normal = 5k+1).
+
+# The read-address carrier. Auto-assigned from the obscurity pool and
+# published in the source payload's "signals" map for the testbench.
+signal read_addr;
+
+# The carrier rides the same red net as the address table, so its row must
+# not exist in the address space at all: exclusion happens BEFORE numbering
+# (the space compacts — no gap at its would-be address), and applies to
+# every signal_table in the design.
+exclude read_addr;
+
+# Write stimulus. The testbench rewrites this combinator's sections at runtime
+# (entity_map.write_entity_number = 1); initial filters are the preload state.
+write_stim = constant-combinator({
+  "sections": {
+    "sections": [
+      {
+        "index": 1,
+        "filters": [
+          { "index": 1, "type": "virtual", "name": "signal-1", "quality": "normal", "comparator": "=", "count": 1 },
+          { "index": 2, "type": "virtual", "name": "signal-2", "quality": "normal", "comparator": "=", "count": 111 }
+        ]
+      }
+    ]
+  },
+  "is_on": false
+});
+
+# Memory cell: per signal, hold the red (self-loop) value while green is 0,
+# else take the green (write) value. else_outputs does the write path.
+mem_gate = decider-combinator({
+  "decider_conditions": {
+    "conditions": [
+      { "first_signal": { "type": "virtual", "name": "signal-each" },
+        "comparator": ">",
+        "first_signal_networks": { "red": true, "green": false } },
+      { "first_signal": { "type": "virtual", "name": "signal-each" },
+        "comparator": "=",
+        "first_signal_networks": { "red": false, "green": true },
+        "compare_type": "and" }
+    ],
+    "outputs": [
+      { "signal": { "type": "virtual", "name": "signal-each" },
+        "networks": { "red": true, "green": false } }
+    ],
+    "else_outputs": [
+      { "signal": { "type": "virtual", "name": "signal-each" },
+        "networks": { "red": false, "green": true } }
+    ]
+  }
+});
+
+# Read-address stimulus (testbench drivers.read = 3). [param0] is the carrier;
+# the bench overwrites the count each step via {"$read_addr": <address>}.
+read_addr_stim = constant-combinator({
+  "sections": {
+    "sections": [
+      {
+        "index": 1,
+        "filters": [
+          { "index": 1, [param0], "comparator": "=", "count": 0 }
+        ]
+      }
+    ]
+  }
+});
+
+# Address table: the design's address space (full signal_space minus the
+# `exclude` set above, numbered after exclusion), populated over RCON at
+# paste time via the signal_table marker. The compiler stamps the design's
+# exclusion set onto the marker so the runner regenerates the same numbering.
+addr_table = constant-combinator({
+  "signal_table": { "table": "full_address_space" },
+  "sections": {
+    "sections": [
+      { "index": 1, "filters": [] }
+    ]
+  }
+});
+
+# Read gate: pass the signal whose red address value equals [param0]'s red
+# value, emitting its green (memory) value.
+read_gate = decider-combinator({
+  "decider_conditions": {
+    "conditions": [
+      { "first_signal": { "type": "virtual", "name": "signal-each" },
+        "second_signal": { [param0] },
+        "comparator": "=",
+        "first_signal_networks": { "red": true, "green": false },
+        "second_signal_networks": { "red": true, "green": false } }
+    ],
+    "outputs": [
+      { "signal": { "type": "virtual", "name": "signal-each" },
+        "networks": { "red": false, "green": true } }
+    ],
+    "else_outputs": []
+  }
+});
+
+module main() {
+  net green write_in;
+  net red mem_loop;
+  net green mem_out;
+  net red read_sel;
+  debug net green read_out;
+
+  write_stim(out_g: write_in);
+  mem_gate(in_g: write_in, in_r: mem_loop, out_r: mem_loop, out_g: mem_out);
+  read_addr_stim<read_addr>(out_r: read_sel);
+  addr_table(out_r: read_sel);
+  read_out = read_gate<read_addr>(read_sel, in_g: mem_out);
+}

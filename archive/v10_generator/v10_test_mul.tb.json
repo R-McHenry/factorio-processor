@@ -1,0 +1,64 @@
+{
+  "name": "v10_test_mul",
+  "description": "v10 first live test: write register0.signal-A=6, register1.signal-A=7 (warm writes), select R=9 (VVEC_MUL), expect signal-A=42 on the op farm and (if the read-select gate fires in time) the shared vector bus. Also checks whether the register bank's hold-cell actually latches a written value at all -- unconfirmed until now.",
+  "pre_stimulus_dead_ticks": 0,
+  "settle_ticks": 1,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -100.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "trig_set": 15
+    },
+    "expected_probe_name": "mem_state",
+    "output_probes": [
+      {
+        "name": "mem_state",
+        "entity_number": 36,
+        "wire": "red"
+      },
+      {
+        "name": "reg0_cell",
+        "entity_number": 82,
+        "wire": "red"
+      },
+      {
+        "name": "reg1_cell",
+        "entity_number": 88,
+        "wire": "red"
+      },
+      {
+        "name": "opfarm_mul_raw",
+        "entity_number": 126,
+        "wire": "red"
+      },
+      {
+        "name": "vector_bus",
+        "entity_number": 127,
+        "wire": "red"
+      }
+    ]
+  },
+  "save_after_run": "claude_v10_test_mul",
+  "timeline": [
+    {
+      "name": "observe_write_and_select",
+      "settle_ticks": 1,
+      "trace_ticks": 60,
+      "expect_probe": "mem_state",
+      "expect": {}
+    }
+  ]
+}

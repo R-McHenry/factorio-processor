@@ -1,0 +1,354 @@
+{
+  "name": "v8_port_b_mmap",
+  "surface": "nauvis",
+  "description": "compiled by netlist.py from v8_port_b_mmap.fnet (module port_b_mmap_bench)",
+  "signals": {
+    "file.read_b": {
+      "type": "virtual",
+      "name": "down-arrow",
+      "quality": "uncommon",
+      "display": "down-arrow~uncommon",
+      "auto": true,
+      "excluded": true
+    },
+    "read_b": {
+      "type": "virtual",
+      "name": "down-arrow",
+      "quality": "uncommon",
+      "display": "down-arrow~uncommon",
+      "auto": true,
+      "excluded": true
+    },
+    "file.addr_b_stim": {
+      "type": "virtual",
+      "name": "down-left-arrow",
+      "quality": "uncommon",
+      "display": "down-left-arrow~uncommon",
+      "auto": true
+    },
+    "addr_b_stim": {
+      "type": "virtual",
+      "name": "down-left-arrow",
+      "quality": "uncommon",
+      "display": "down-left-arrow~uncommon",
+      "auto": true
+    },
+    "file.b_reg": {
+      "type": "item",
+      "name": "artillery-wagon-cannon",
+      "quality": "normal",
+      "display": "artillery-wagon-cannon",
+      "auto": false,
+      "address": 310
+    },
+    "b_reg": {
+      "type": "item",
+      "name": "artillery-wagon-cannon",
+      "quality": "normal",
+      "display": "artillery-wagon-cannon",
+      "auto": false,
+      "address": 310
+    }
+  },
+  "blueprint": {
+    "icons": [
+      {
+        "signal": {
+          "name": "constant-combinator"
+        },
+        "index": 1
+      }
+    ],
+    "entities": [
+      {
+        "entity_number": 1,
+        "name": "constant-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -12.5
+        },
+        "player_description": "mem_bus_stim",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 2,
+        "name": "constant-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -11.5
+        },
+        "player_description": "addr_rd_b",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 3,
+        "name": "constant-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -12.5
+        },
+        "player_description": "mmap_addr",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": [
+                  {
+                    "index": 1,
+                    "type": "item",
+                    "name": "artillery-wagon-cannon",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 1
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 4,
+        "name": "decider-combinator",
+        "position": {
+          "x": 1.5,
+          "y": -12.0
+        },
+        "player_description": "mmap_gate",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 5,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 3.5,
+          "y": -12.0
+        },
+        "player_description": "b_carrier",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "down-arrow",
+              "quality": "uncommon"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 6,
+        "name": "constant-combinator",
+        "position": {
+          "x": 5.5,
+          "y": -12.5
+        },
+        "player_description": "address_table",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        },
+        "signal_table": {
+          "table": "full_address_space",
+          "exclude": [
+            {
+              "type": "virtual",
+              "name": "down-arrow",
+              "quality": "uncommon"
+            }
+          ]
+        }
+      },
+      {
+        "entity_number": 7,
+        "name": "decider-combinator",
+        "position": {
+          "x": 4.5,
+          "y": -12.0
+        },
+        "player_description": "port_b_read",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "down-arrow",
+                  "quality": "uncommon"
+                },
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                },
+                "second_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 8,
+        "name": "constant-combinator",
+        "position": {
+          "x": 5.5,
+          "y": -11.5
+        },
+        "player_description": "port_b_rd",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "wires": [
+      [
+        1,
+        2,
+        4,
+        2
+      ],
+      [
+        1,
+        2,
+        7,
+        2
+      ],
+      [
+        2,
+        2,
+        4,
+        4
+      ],
+      [
+        2,
+        2,
+        5,
+        2
+      ],
+      [
+        3,
+        1,
+        4,
+        1
+      ],
+      [
+        5,
+        3,
+        7,
+        1
+      ],
+      [
+        6,
+        1,
+        7,
+        1
+      ],
+      [
+        7,
+        4,
+        8,
+        2
+      ]
+    ],
+    "item": "blueprint",
+    "version": 562954248978435
+  }
+}

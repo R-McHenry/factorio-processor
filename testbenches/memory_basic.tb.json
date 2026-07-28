@@ -1,0 +1,161 @@
+{
+  "name": "memory_basic",
+  "description": "Memory smoke tests with 1-tick semantics and writes over signal-0..signal-8",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 1,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -6.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "write_entity_number": 1,
+    "address_table_entity_number": 4,
+    "read_entity_number": 3,
+    "expected_probe_name": "read_output",
+    "output_probes": [
+      {
+        "name": "read_output",
+        "entity_number": 6,
+        "wire": "green"
+      },
+      {
+        "name": "memory_state_g",
+        "entity_number": 2,
+        "wire": "green"
+      },
+      {
+        "name": "memory_state_r",
+        "entity_number": 2,
+        "wire": "red"
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "seed_initial_input_state",
+      "write": {
+        "signal-1": 1,
+        "signal-2": 111
+      },
+      "read_addr": 2,
+      "expect": {
+        "signal-1": 1
+      }
+    },
+    {
+      "name": "read_preloaded_addr_2",
+      "read_addr": 2,
+      "expect": {
+        "signal-1": 1
+      }
+    },
+    {
+      "name": "read_preloaded_addr_3",
+      "read_addr": 3,
+      "expect": {
+        "signal-2": 111
+      }
+    },
+    {
+      "name": "write_signal_0",
+      "write": {
+        "signal-0": 1000
+      },
+      "read_addr": 1,
+      "expect": {
+        "signal-0": 1000
+      }
+    },
+    {
+      "name": "write_signal_1",
+      "write": {
+        "signal-1": 1001
+      },
+      "read_addr": 2,
+      "expect": {
+        "signal-1": 1001
+      }
+    },
+    {
+      "name": "write_signal_2",
+      "write": {
+        "signal-2": 1002
+      },
+      "read_addr": 3,
+      "expect": {
+        "signal-2": 1002
+      }
+    },
+    {
+      "name": "write_signal_3",
+      "write": {
+        "signal-3": 1003
+      },
+      "read_addr": 4,
+      "expect": {
+        "signal-3": 1003
+      }
+    },
+    {
+      "name": "write_signal_4",
+      "write": {
+        "signal-4": 1004
+      },
+      "read_addr": 5,
+      "expect": {
+        "signal-4": 1004
+      }
+    },
+    {
+      "name": "write_signal_5",
+      "write": {
+        "signal-5": 1005
+      },
+      "read_addr": 6,
+      "expect": {
+        "signal-5": 1005
+      }
+    },
+    {
+      "name": "write_signal_6",
+      "write": {
+        "signal-6": 1006
+      },
+      "read_addr": 7,
+      "expect": {
+        "signal-6": 1006
+      }
+    },
+    {
+      "name": "write_signal_7",
+      "write": {
+        "signal-7": 1007
+      },
+      "read_addr": 8,
+      "expect": {
+        "signal-7": 1007
+      }
+    },
+    {
+      "name": "write_signal_8",
+      "write": {
+        "signal-8": 1008
+      },
+      "read_addr": 9,
+      "expect": {
+        "signal-8": 1008
+      }
+    }
+  ]
+}

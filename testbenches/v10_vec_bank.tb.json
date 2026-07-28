@@ -1,0 +1,482 @@
+{
+  "name": "v10_vec_bank",
+  "description": "fnet v10 component 2: the 12-register vector bank (one-combinator registers + write heads + read mux) driven entirely through chunk1's green memory bus. Proves direct frame write, register-to-register copy through the mux, the FREE vector ADD (R and S both selected, frames sum on the shared write bus), R=S selecting a source once rather than twice, per-block erase, the far end of the bank, the one-tick MOVE primitive (erase+write same tick = replace), and that all four op-farm operand faces (pair A = VREG0 x VREG1, pair B = VREG2 x VREG3) carry what they should - plus pair B's OPPOSITE faces a2g/b2r, which are what let the op farm square a single register with the ordinary each[red] x each[green] shape. The widening to 12 (from 8) is exercised at both ends of the new range: block 12 writes, reads back and erases without disturbing block 9. Registers own mux indices 1..16 with ops from 17, so four more registers can be added later without renumbering anything. Timing rules baked into the step order: a select is PARKED and a mux-sourced write is PULSED; DESELECT LAGS, so changing selects and pulsing W together commits the PREVIOUS selection (caught live 2026-07-27 - VREG7 captured VREG0's stale frame), hence the explicit deselect-settle steps; a DIRECT frame write needs no park, because control and data are in phase with no mirror stage.",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 3,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -6.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "scalar_membus": 1,
+      "vec_write_bus": 2
+    },
+    "expected_probe_name": "vbus",
+    "output_probes": [
+      {
+        "name": "a1",
+        "entity_number": 39,
+        "wire": "red"
+      },
+      {
+        "name": "a2",
+        "entity_number": 40,
+        "wire": "red"
+      },
+      {
+        "name": "a2g",
+        "entity_number": 41,
+        "wire": "green"
+      },
+      {
+        "name": "b1",
+        "entity_number": 42,
+        "wire": "green"
+      },
+      {
+        "name": "b2",
+        "entity_number": 43,
+        "wire": "green"
+      },
+      {
+        "name": "b2r",
+        "entity_number": 44,
+        "wire": "red"
+      },
+      {
+        "name": "vbus",
+        "entity_number": 45,
+        "wire": "red"
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "direct_frame_write_to_vreg0",
+      "settle_ticks": 1,
+      "trace_ticks": 1,
+      "drive": {
+        "scalar_membus": {
+          "$vec_wsel": 1
+        },
+        "vec_write_bus": {
+          "$mem[1]": 10,
+          "$mem[2]": 20
+        }
+      }
+    },
+    {
+      "name": "vreg0_holds_it_on_operand_face_a1",
+      "expect_probe": "a1",
+      "drive": {
+        "scalar_membus": {},
+        "vec_write_bus": {}
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 10,
+        "$mem[2]": 20
+      }
+    },
+    {
+      "name": "bus_empty_with_no_select",
+      "expect": {
+        "$mem[1]": 0,
+        "$mem[2]": 0
+      }
+    },
+    {
+      "name": "park_rsel_on_vreg0",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 1
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 10,
+        "$mem[2]": 20
+      }
+    },
+    {
+      "name": "pulse_wsel_2_copies_vreg0_to_vreg1",
+      "settle_ticks": 1,
+      "trace_ticks": 1,
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 1,
+          "$vec_wsel": 2
+        }
+      }
+    },
+    {
+      "name": "copy_landed_on_operand_face_b1",
+      "expect_probe": "b1",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 1
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 10,
+        "$mem[2]": 20
+      }
+    },
+    {
+      "name": "r_and_s_sum_on_the_bus",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 1,
+          "$vec_ssel": 2
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 20,
+        "$mem[2]": 40
+      }
+    },
+    {
+      "name": "pulse_wsel_3_commits_the_sum_to_vreg2",
+      "settle_ticks": 1,
+      "trace_ticks": 1,
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 1,
+          "$vec_ssel": 2,
+          "$vec_wsel": 3
+        }
+      }
+    },
+    {
+      "name": "deselect_settles_bus_empty",
+      "drive": {
+        "scalar_membus": {}
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 0,
+        "$mem[2]": 0
+      }
+    },
+    {
+      "name": "sum_landed_on_operand_face_a2",
+      "expect_probe": "a2",
+      "expect": {
+        "$mem[1]": 20,
+        "$mem[2]": 40
+      }
+    },
+    {
+      "name": "readback_vreg2_through_the_mux",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 3
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 20,
+        "$mem[2]": 40
+      }
+    },
+    {
+      "name": "same_source_on_both_ports_counts_once",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 1,
+          "$vec_ssel": 1
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 10,
+        "$mem[2]": 20
+      }
+    },
+    {
+      "name": "deselect_before_next_direct_write",
+      "drive": {
+        "scalar_membus": {}
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 0,
+        "$mem[2]": 0
+      }
+    },
+    {
+      "name": "direct_frame_write_to_vreg3",
+      "settle_ticks": 1,
+      "trace_ticks": 1,
+      "drive": {
+        "scalar_membus": {
+          "$vec_wsel": 4
+        },
+        "vec_write_bus": {
+          "$mem[7]": 3
+        }
+      }
+    },
+    {
+      "name": "landed_on_operand_face_b2",
+      "expect_probe": "b2",
+      "drive": {
+        "scalar_membus": {},
+        "vec_write_bus": {}
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[7]": 3
+      }
+    },
+    {
+      "name": "erase_block_3_zeroes_vreg2",
+      "expect_probe": "a2",
+      "drive": {
+        "scalar_membus": {
+          "$vec_erase": 3
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 0,
+        "$mem[2]": 0
+      }
+    },
+    {
+      "name": "erase_is_per_block_vreg0_intact",
+      "expect_probe": "a1",
+      "expect": {
+        "$mem[1]": 10,
+        "$mem[2]": 20
+      }
+    },
+    {
+      "name": "far_end_direct_write_vreg7",
+      "settle_ticks": 1,
+      "trace_ticks": 1,
+      "drive": {
+        "scalar_membus": {
+          "$vec_wsel": 8
+        },
+        "vec_write_bus": {
+          "$mem[9]": 5
+        }
+      }
+    },
+    {
+      "name": "readback_vreg7",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 8
+        },
+        "vec_write_bus": {}
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[9]": 5,
+        "$mem[1]": 0
+      }
+    },
+    {
+      "name": "park_rsel_vreg0_for_the_move",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 1
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 10,
+        "$mem[2]": 20,
+        "$mem[9]": 0
+      }
+    },
+    {
+      "name": "move_vreg0_into_loaded_vreg7",
+      "settle_ticks": 1,
+      "trace_ticks": 1,
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 1,
+          "$vec_wsel": 8,
+          "$vec_erase": 8
+        }
+      }
+    },
+    {
+      "name": "vreg7_replaced_not_accumulated",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 8
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 10,
+        "$mem[2]": 20,
+        "$mem[9]": 0
+      }
+    },
+    {
+      "name": "vreg0_untouched_by_all_of_it",
+      "expect_probe": "a1",
+      "drive": {
+        "scalar_membus": {}
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 10,
+        "$mem[2]": 20,
+        "$mem[9]": 0
+      }
+    },
+    {
+      "name": "vreg3_red_face_mirrors_its_green_one",
+      "expect_probe": "b2r",
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[7]": 3
+      }
+    },
+    {
+      "name": "direct_frame_write_to_vreg2_for_the_face_pair",
+      "settle_ticks": 1,
+      "trace_ticks": 1,
+      "drive": {
+        "scalar_membus": {
+          "$vec_wsel": 3
+        },
+        "vec_write_bus": {
+          "$mem[5]": 11,
+          "$mem[6]": 4
+        }
+      }
+    },
+    {
+      "name": "vreg2_red_face_a2",
+      "expect_probe": "a2",
+      "drive": {
+        "scalar_membus": {},
+        "vec_write_bus": {}
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[5]": 11,
+        "$mem[6]": 4
+      }
+    },
+    {
+      "name": "vreg2_green_face_a2g_carries_the_same_frame",
+      "expect_probe": "a2g",
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[5]": 11,
+        "$mem[6]": 4
+      }
+    },
+    {
+      "name": "widened_bank_direct_write_to_block_12",
+      "settle_ticks": 1,
+      "trace_ticks": 1,
+      "drive": {
+        "scalar_membus": {
+          "$vec_wsel": 12
+        },
+        "vec_write_bus": {
+          "$mem[11]": 77
+        }
+      }
+    },
+    {
+      "name": "readback_vreg11_through_the_mux",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 12
+        },
+        "vec_write_bus": {}
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[11]": 77,
+        "$mem[1]": 0
+      }
+    },
+    {
+      "name": "deselect_settles_before_the_block_9_write",
+      "drive": {
+        "scalar_membus": {}
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[11]": 0
+      }
+    },
+    {
+      "name": "block_ids_9_to_12_are_distinct_writes",
+      "settle_ticks": 1,
+      "trace_ticks": 1,
+      "drive": {
+        "scalar_membus": {
+          "$vec_wsel": 9
+        },
+        "vec_write_bus": {
+          "$mem[12]": 5
+        }
+      }
+    },
+    {
+      "name": "vreg8_got_it_and_vreg11_did_not",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 9
+        },
+        "vec_write_bus": {}
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[12]": 5,
+        "$mem[11]": 0
+      }
+    },
+    {
+      "name": "erase_block_12_leaves_block_9_alone",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 12,
+          "$vec_erase": 12
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[11]": 0
+      }
+    },
+    {
+      "name": "vreg8_still_holds_after_the_erase",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 9
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[12]": 5
+      }
+    }
+  ]
+}

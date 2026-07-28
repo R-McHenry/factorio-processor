@@ -1,0 +1,3058 @@
+{
+  "name": "v8_processor_smoke",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 2,
+  "rebuild": {
+    "removed": 204,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 104,
+    "revived": 104,
+    "placed": 104
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [
+    {
+      "unit": 121344,
+      "slots_written": 2452,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 40
+    },
+    {
+      "unit": 121367,
+      "slots_written": 2452,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 75
+    },
+    {
+      "unit": 121386,
+      "slots_written": 2452,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 81
+    },
+    {
+      "unit": 121375,
+      "slots_written": 2452,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 97
+    }
+  ],
+  "mapping": {
+    "translation": {
+      "dx": -7.0,
+      "dy": 7.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 121284,
+      "2": 121283,
+      "3": 121289,
+      "4": 121288,
+      "5": 121295,
+      "6": 121294,
+      "7": 121302,
+      "8": 121301,
+      "9": 121340,
+      "10": 121346,
+      "11": 121345,
+      "12": 121352,
+      "13": 121351,
+      "14": 121358,
+      "15": 121357,
+      "16": 121286,
+      "17": 121285,
+      "18": 121291,
+      "19": 121290,
+      "20": 121297,
+      "21": 121296,
+      "22": 121304,
+      "23": 121303,
+      "24": 121342,
+      "25": 121341,
+      "26": 121348,
+      "27": 121347,
+      "28": 121354,
+      "29": 121353,
+      "30": 121360,
+      "31": 121359,
+      "32": 121287,
+      "33": 121293,
+      "34": 121292,
+      "35": 121300,
+      "36": 121299,
+      "37": 121298,
+      "38": 121306,
+      "39": 121305,
+      "40": 121344,
+      "41": 121350,
+      "42": 121349,
+      "43": 121356,
+      "44": 121355,
+      "45": 121363,
+      "46": 121362,
+      "47": 121361,
+      "48": 121308,
+      "49": 121307,
+      "50": 121314,
+      "51": 121313,
+      "52": 121312,
+      "53": 121324,
+      "54": 121323,
+      "55": 121334,
+      "56": 121333,
+      "57": 121365,
+      "58": 121370,
+      "59": 121369,
+      "60": 121377,
+      "61": 121376,
+      "62": 121384,
+      "63": 121383,
+      "64": 121309,
+      "65": 121318,
+      "66": 121317,
+      "67": 121316,
+      "68": 121315,
+      "69": 121328,
+      "70": 121327,
+      "71": 121326,
+      "72": 121325,
+      "73": 121336,
+      "74": 121335,
+      "75": 121367,
+      "76": 121373,
+      "77": 121372,
+      "78": 121371,
+      "79": 121379,
+      "80": 121378,
+      "81": 121386,
+      "82": 121385,
+      "83": 121311,
+      "84": 121310,
+      "85": 121322,
+      "86": 121321,
+      "87": 121320,
+      "88": 121319,
+      "89": 121332,
+      "90": 121331,
+      "91": 121330,
+      "92": 121329,
+      "93": 121339,
+      "94": 121338,
+      "95": 121337,
+      "96": 121368,
+      "97": 121375,
+      "98": 121374,
+      "99": 121382,
+      "100": 121381,
+      "101": 121380,
+      "102": 121366,
+      "103": 121364,
+      "104": 121343
+    },
+    "driver_units": {
+      "write_addr_enc": 121284,
+      "write_value_enc": 121283,
+      "trig_set": 121362,
+      "write_value": 121361,
+      "trig_reset": 121308,
+      "rom": 121317,
+      "addr_b": 121316,
+      "addr_a": 121325,
+      "addr_pc": 121310,
+      "inject": 121339
+    },
+    "output_probes": [
+      {
+        "name": "mem_state",
+        "unit": 121380,
+        "wire": "red"
+      },
+      {
+        "name": "mem_bus",
+        "unit": 121381,
+        "wire": "green"
+      },
+      {
+        "name": "port_a",
+        "unit": 121372,
+        "wire": "green"
+      },
+      {
+        "name": "port_b",
+        "unit": 121311,
+        "wire": "green"
+      },
+      {
+        "name": "instr_port",
+        "unit": 121382,
+        "wire": "green"
+      },
+      {
+        "name": "out1",
+        "unit": 121340,
+        "wire": "green"
+      },
+      {
+        "name": "out2",
+        "unit": 121286,
+        "wire": "green"
+      }
+    ],
+    "expected_probe_name": "mem_state"
+  },
+  "timeline": [
+    {
+      "tick": 887089,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 1.0
+        }
+      },
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_1"
+    },
+    {
+      "tick": 887090,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 2.0
+        },
+        "mem_bus": {
+          "shape-curve-3~epic": 1.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_2"
+    },
+    {
+      "tick": 887091,
+      "stimulus": {
+        "trig_set": {
+          "signal-9": 1.0
+        },
+        "write_value": {
+          "signal-9": 42.0
+        },
+        "trig_reset": {
+          "signal-9": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 3.0
+        },
+        "mem_bus": {
+          "shape-curve-3~epic": 2.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "direct_write_row50"
+    },
+    {
+      "tick": 887092,
+      "stimulus": {
+        "trig_set": {
+          "signal-9": 1.0
+        },
+        "write_value": {
+          "signal-9": 42.0
+        },
+        "trig_reset": {
+          "signal-9": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 4.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 3.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "direct_write_row50"
+    },
+    {
+      "tick": 887093,
+      "stimulus": {
+        "trig_set": {
+          "signal-9": 1.0
+        },
+        "write_value": {
+          "signal-9": 42.0
+        },
+        "trig_reset": {
+          "signal-9": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 5.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 4.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "direct_write_row50"
+    },
+    {
+      "tick": 887094,
+      "stimulus": {
+        "trig_set": {
+          "signal-9": 1.0
+        },
+        "write_value": {
+          "signal-9": 42.0
+        },
+        "trig_reset": {
+          "signal-9": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 6.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 5.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "direct_write_row50"
+    },
+    {
+      "tick": 887095,
+      "stimulus": {
+        "trig_set": {
+          "signal-9": 1.0
+        },
+        "write_value": {
+          "signal-9": 42.0
+        },
+        "trig_reset": {
+          "signal-9": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 7.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 6.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "direct_write_row50"
+    },
+    {
+      "tick": 887096,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 8.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 7.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "release_holds_42"
+    },
+    {
+      "tick": 887097,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 9.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 8.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "release_holds_42"
+    },
+    {
+      "tick": 887098,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 10.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 9.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "release_holds_42"
+    },
+    {
+      "tick": 887099,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 11.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 10.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "release_holds_42"
+    },
+    {
+      "tick": 887100,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 12.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 11.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "release_holds_42"
+    },
+    {
+      "tick": 887101,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 13.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 12.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "release_holds_42"
+    },
+    {
+      "tick": 887102,
+      "stimulus": {
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 14.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 13.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "port_a_parks_and_reads_row50"
+    },
+    {
+      "tick": 887103,
+      "stimulus": {
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 15.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 14.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "port_a_parks_and_reads_row50"
+    },
+    {
+      "tick": 887104,
+      "stimulus": {
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 16.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 15.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "port_a_parks_and_reads_row50"
+    },
+    {
+      "tick": 887105,
+      "stimulus": {
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 17.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 16.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "port_a_parks_and_reads_row50"
+    },
+    {
+      "tick": 887106,
+      "stimulus": {
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 18.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 17.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "port_a_parks_and_reads_row50"
+    },
+    {
+      "tick": 887107,
+      "stimulus": {
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 19.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 18.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "port_a_parks_and_reads_row50"
+    },
+    {
+      "tick": 887108,
+      "stimulus": {
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 20.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 19.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "port_a_parks_and_reads_row50"
+    },
+    {
+      "tick": 887109,
+      "stimulus": {
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 21.0
+        },
+        "mem_bus": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 20.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "port_a_parks_and_reads_row50"
+    },
+    {
+      "tick": 887110,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 22.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 21.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "load_rom_write6_99"
+    },
+    {
+      "tick": 887111,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 23.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 22.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "load_rom_write6_99"
+    },
+    {
+      "tick": 887112,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 24.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 23.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "load_rom_write6_99"
+    },
+    {
+      "tick": 887113,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 25.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 24.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "load_rom_write6_99"
+    },
+    {
+      "tick": 887114,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 26.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 25.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "load_rom_write6_99"
+    },
+    {
+      "tick": 887115,
+      "stimulus": {
+        "trig_set": {
+          "shape-curve-3": 1.0
+        },
+        "trig_reset": {
+          "shape-curve-3": 1.0
+        },
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 27.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 26.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "pc_reset_pins_p_at_1"
+    },
+    {
+      "tick": 887116,
+      "stimulus": {
+        "trig_set": {
+          "shape-curve-3": 1.0
+        },
+        "trig_reset": {
+          "shape-curve-3": 1.0
+        },
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 1.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "pc_reset_pins_p_at_1"
+    },
+    {
+      "tick": 887117,
+      "stimulus": {
+        "trig_set": {
+          "shape-curve-3": 1.0
+        },
+        "trig_reset": {
+          "shape-curve-3": 1.0
+        },
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 1.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "pc_reset_pins_p_at_1"
+    },
+    {
+      "tick": 887118,
+      "stimulus": {
+        "trig_set": {
+          "shape-curve-3": 1.0
+        },
+        "trig_reset": {
+          "shape-curve-3": 1.0
+        },
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 1.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "instr_port": {
+          "signal-0": 24832.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "pc_reset_pins_p_at_1"
+    },
+    {
+      "tick": 887119,
+      "stimulus": {
+        "trig_set": {
+          "shape-curve-3": 1.0
+        },
+        "trig_reset": {
+          "shape-curve-3": 1.0
+        },
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 1.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "instr_port": {
+          "signal-0": 24832.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "pc_reset_pins_p_at_1"
+    },
+    {
+      "tick": 887120,
+      "stimulus": {
+        "trig_set": {
+          "shape-curve-3": 1.0
+        },
+        "trig_reset": {
+          "shape-curve-3": 1.0
+        },
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 1.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "instr_port": {
+          "signal-0": 24832.0
+        },
+        "out1": {
+          "signal-0": 6.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "pc_reset_pins_p_at_1"
+    },
+    {
+      "tick": 887121,
+      "stimulus": {
+        "trig_set": {
+          "shape-curve-3": 1.0
+        },
+        "trig_reset": {
+          "shape-curve-3": 1.0
+        },
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 1.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "instr_port": {
+          "signal-0": 24832.0
+        },
+        "out1": {
+          "signal-0": 6.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "pc_reset_pins_p_at_1"
+    },
+    {
+      "tick": 887122,
+      "stimulus": {
+        "trig_set": {
+          "shape-curve-3": 1.0
+        },
+        "trig_reset": {
+          "shape-curve-3": 1.0
+        },
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 1.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "instr_port": {
+          "signal-0": 24832.0
+        },
+        "out1": {
+          "signal-0": 6.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "pc_reset_pins_p_at_1"
+    },
+    {
+      "tick": 887123,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 1.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "instr_port": {
+          "signal-0": 24832.0
+        },
+        "out1": {
+          "signal-0": 6.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887124,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 2.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 1.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "instr_port": {
+          "signal-0": 24832.0
+        },
+        "out1": {
+          "signal-0": 6.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887125,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 3.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 2.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "instr_port": {
+          "signal-0": 24832.0
+        },
+        "out1": {
+          "signal-0": 6.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887126,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 4.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 3.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "out1": {
+          "signal-0": 6.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887127,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 5.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 4.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "instr_port": {
+          "signal-0~rare": 406016.0
+        },
+        "out1": {
+          "signal-0": 6.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887128,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 6.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 5.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887129,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 7.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 6.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "out2": {
+          "signal-0~rare": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887130,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 8.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 7.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887131,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 9.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 8.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887132,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 10.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 9.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887133,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 11.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 10.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887134,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 12.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 11.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887135,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 13.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 12.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887136,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 14.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 13.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887137,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 15.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 14.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887138,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 16.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 15.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887139,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 17.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 16.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887140,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 18.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 17.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887141,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 19.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 18.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887142,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 20.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 19.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887143,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 21.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 20.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887144,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 22.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 21.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887145,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 23.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 22.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887146,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 24.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 23.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887147,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 25.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 24.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release"
+    },
+    {
+      "tick": 887148,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 26.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 25.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "port_a_park_survived_program"
+    },
+    {
+      "tick": 887149,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 27.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 26.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "port_a_park_survived_program"
+    },
+    {
+      "tick": 887150,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 28.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 27.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "port_a_park_survived_program"
+    },
+    {
+      "tick": 887151,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 29.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 28.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "port_a_park_survived_program"
+    },
+    {
+      "tick": 887152,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 30.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 29.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "port_a_park_survived_program"
+    },
+    {
+      "tick": 887153,
+      "stimulus": {
+        "trig_set": {
+          "artillery-wagon-cannon": 1.0
+        },
+        "write_value": {
+          "artillery-wagon-cannon": 6.0
+        },
+        "trig_reset": {
+          "artillery-wagon-cannon": 1.0
+        },
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 31.0
+        },
+        "mem_bus": {
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 30.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "mmap_park_port_b_on_row6"
+    },
+    {
+      "tick": 887154,
+      "stimulus": {
+        "trig_set": {
+          "artillery-wagon-cannon": 1.0
+        },
+        "write_value": {
+          "artillery-wagon-cannon": 6.0
+        },
+        "trig_reset": {
+          "artillery-wagon-cannon": 1.0
+        },
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 32.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 31.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "mmap_park_port_b_on_row6"
+    },
+    {
+      "tick": 887155,
+      "stimulus": {
+        "trig_set": {
+          "artillery-wagon-cannon": 1.0
+        },
+        "write_value": {
+          "artillery-wagon-cannon": 6.0
+        },
+        "trig_reset": {
+          "artillery-wagon-cannon": 1.0
+        },
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 33.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 32.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "mmap_park_port_b_on_row6"
+    },
+    {
+      "tick": 887156,
+      "stimulus": {
+        "trig_set": {
+          "artillery-wagon-cannon": 1.0
+        },
+        "write_value": {
+          "artillery-wagon-cannon": 6.0
+        },
+        "trig_reset": {
+          "artillery-wagon-cannon": 1.0
+        },
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 34.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 33.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "mmap_park_port_b_on_row6"
+    },
+    {
+      "tick": 887157,
+      "stimulus": {
+        "trig_set": {
+          "artillery-wagon-cannon": 1.0
+        },
+        "write_value": {
+          "artillery-wagon-cannon": 6.0
+        },
+        "trig_reset": {
+          "artillery-wagon-cannon": 1.0
+        },
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 35.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 34.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "mmap_park_port_b_on_row6"
+    },
+    {
+      "tick": 887158,
+      "stimulus": {
+        "trig_set": {
+          "artillery-wagon-cannon": 1.0
+        },
+        "write_value": {
+          "artillery-wagon-cannon": 6.0
+        },
+        "trig_reset": {
+          "artillery-wagon-cannon": 1.0
+        },
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 36.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 35.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "mmap_park_port_b_on_row6"
+    },
+    {
+      "tick": 887159,
+      "stimulus": {
+        "trig_set": {
+          "artillery-wagon-cannon": 1.0
+        },
+        "write_value": {
+          "artillery-wagon-cannon": 6.0
+        },
+        "trig_reset": {
+          "artillery-wagon-cannon": 1.0
+        },
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 37.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 36.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "mmap_park_port_b_on_row6"
+    },
+    {
+      "tick": 887160,
+      "stimulus": {
+        "trig_set": {
+          "artillery-wagon-cannon": 1.0
+        },
+        "write_value": {
+          "artillery-wagon-cannon": 6.0
+        },
+        "trig_reset": {
+          "artillery-wagon-cannon": 1.0
+        },
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 38.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 37.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "mmap_park_port_b_on_row6"
+    },
+    {
+      "tick": 887161,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 39.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 38.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "port_b_streams_row6"
+    },
+    {
+      "tick": 887162,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 40.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 39.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "port_b_streams_row6"
+    },
+    {
+      "tick": 887163,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 41.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 40.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "port_b_streams_row6"
+    },
+    {
+      "tick": 887164,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 42.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 41.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "port_b_streams_row6"
+    },
+    {
+      "tick": 887165,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 43.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 42.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "port_b_streams_row6"
+    },
+    {
+      "tick": 887166,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 44.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 43.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "port_b_streams_row6"
+    },
+    {
+      "tick": 887167,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 45.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 44.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "port_b_streams_row6"
+    },
+    {
+      "tick": 887168,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 46.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 45.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "port_b_streams_row6"
+    },
+    {
+      "tick": 887169,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 47.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 46.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "port_b_streams_row6"
+    },
+    {
+      "tick": 887170,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 48.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 47.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "port_b_streams_row6"
+    },
+    {
+      "tick": 887171,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 49.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 48.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "port_b_streams_row6"
+    },
+    {
+      "tick": 887172,
+      "stimulus": {
+        "rom": {
+          "signal-0": 406016.0
+        },
+        "addr_a": {
+          "shape-curve": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 50.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 6.0,
+          "signal-0": 24832.0,
+          "signal-0~rare": 406016.0,
+          "signal-1": 99.0,
+          "signal-9~legendary": 42.0,
+          "shape-curve-3~epic": 49.0,
+          "signal-alarm~epic": 1.0
+        },
+        "port_a": {
+          "signal-9~legendary": 42.0
+        },
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "port_b_streams_row6"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "direct_write_row50",
+      "drive_start_tick": 887090,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-9~legendary": 42
+      },
+      "observed": {
+        "signal-9~legendary": 42.0,
+        "shape-curve-3~epic": 7.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 887095
+    },
+    {
+      "step_index": 1,
+      "step_name": "release_holds_42",
+      "drive_start_tick": 887095,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-9~legendary": 42
+      },
+      "observed": {
+        "signal-9~legendary": 42.0,
+        "shape-curve-3~epic": 13.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 887101
+    },
+    {
+      "step_index": 2,
+      "step_name": "port_a_parks_and_reads_row50",
+      "drive_start_tick": 887101,
+      "skipped_ticks": 0,
+      "expected_probe": "port_a",
+      "expected": {
+        "signal-9~legendary": 42
+      },
+      "observed": {
+        "signal-9~legendary": 42.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 887109
+    },
+    {
+      "step_index": 3,
+      "step_name": "load_rom_write6_99",
+      "drive_start_tick": 887109,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {},
+      "observed": {
+        "signal-9~legendary": 42.0,
+        "shape-curve-3~epic": 26.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 887114
+    },
+    {
+      "step_index": 4,
+      "step_name": "pc_reset_pins_p_at_1",
+      "drive_start_tick": 887114,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {},
+      "observed": {
+        "signal-9~legendary": 42.0,
+        "shape-curve-3~epic": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 887122
+    },
+    {
+      "step_index": 5,
+      "step_name": "program_executes_write_on_release",
+      "drive_start_tick": 887122,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-1": 99,
+        "signal-9~legendary": 42
+      },
+      "observed": {
+        "signal-1": 99.0,
+        "signal-9~legendary": 42.0,
+        "shape-curve-3~epic": 25.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 887147
+    },
+    {
+      "step_index": 6,
+      "step_name": "port_a_park_survived_program",
+      "drive_start_tick": 887147,
+      "skipped_ticks": 0,
+      "expected_probe": "port_a",
+      "expected": {
+        "signal-9~legendary": 42
+      },
+      "observed": {
+        "signal-9~legendary": 42.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 887152
+    },
+    {
+      "step_index": 7,
+      "step_name": "mmap_park_port_b_on_row6",
+      "drive_start_tick": 887152,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {},
+      "observed": {
+        "artillery-wagon-cannon~rare": 6.0,
+        "signal-1": 99.0,
+        "signal-9~legendary": 42.0,
+        "shape-curve-3~epic": 38.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 887160
+    },
+    {
+      "step_index": 8,
+      "step_name": "port_b_streams_row6",
+      "drive_start_tick": 887160,
+      "skipped_ticks": 0,
+      "expected_probe": "port_b",
+      "expected": {
+        "signal-1": 99
+      },
+      "observed": {
+        "signal-1": 99.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 887172
+    }
+  ],
+  "pass": true
+}

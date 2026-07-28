@@ -1,0 +1,292 @@
+{
+  "name": "netlist_demo",
+  "surface": "nauvis",
+  "description": "compiled by netlist.py from netlist_demo.fnet (module main)",
+  "signals": {
+    "file.read_addr": {
+      "type": "virtual",
+      "name": "down-arrow",
+      "quality": "uncommon",
+      "display": "down-arrow~uncommon",
+      "auto": true,
+      "excluded": true
+    },
+    "read_addr": {
+      "type": "virtual",
+      "name": "down-arrow",
+      "quality": "uncommon",
+      "display": "down-arrow~uncommon",
+      "auto": true,
+      "excluded": true
+    }
+  },
+  "blueprint": {
+    "icons": [
+      {
+        "signal": {
+          "name": "constant-combinator"
+        },
+        "index": 1
+      }
+    ],
+    "entities": [
+      {
+        "entity_number": 1,
+        "name": "constant-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -12.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": [
+                  {
+                    "index": 1,
+                    "type": "virtual",
+                    "name": "signal-1",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 1
+                  },
+                  {
+                    "index": 2,
+                    "type": "virtual",
+                    "name": "signal-2",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 111
+                  }
+                ]
+              }
+            ]
+          },
+          "is_on": false
+        }
+      },
+      {
+        "entity_number": 2,
+        "name": "decider-combinator",
+        "position": {
+          "x": 1.5,
+          "y": -12.0
+        },
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "else_outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 3,
+        "name": "constant-combinator",
+        "position": {
+          "x": 3.5,
+          "y": -11.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": [
+                  {
+                    "index": 1,
+                    "type": "virtual",
+                    "name": "down-arrow",
+                    "quality": "uncommon",
+                    "comparator": "=",
+                    "count": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 4,
+        "name": "constant-combinator",
+        "position": {
+          "x": 4.5,
+          "y": -12.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        },
+        "signal_table": {
+          "table": "full_address_space",
+          "exclude": [
+            {
+              "type": "virtual",
+              "name": "down-arrow",
+              "quality": "uncommon"
+            }
+          ]
+        }
+      },
+      {
+        "entity_number": 5,
+        "name": "decider-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -12.0
+        },
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "down-arrow",
+                  "quality": "uncommon"
+                },
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                },
+                "second_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 6,
+        "name": "constant-combinator",
+        "position": {
+          "x": 3.5,
+          "y": -12.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "wires": [
+      [
+        1,
+        2,
+        2,
+        2
+      ],
+      [
+        2,
+        1,
+        2,
+        3
+      ],
+      [
+        2,
+        4,
+        5,
+        2
+      ],
+      [
+        3,
+        1,
+        4,
+        1
+      ],
+      [
+        3,
+        1,
+        5,
+        1
+      ],
+      [
+        5,
+        4,
+        6,
+        2
+      ]
+    ],
+    "item": "blueprint",
+    "version": 562954248978435
+  }
+}

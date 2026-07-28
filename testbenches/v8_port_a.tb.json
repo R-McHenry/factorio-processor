@@ -1,0 +1,68 @@
+{
+  "name": "v8_port_a",
+  "description": "fnet v8 component 5: latched read port A, open loop (stims replace matrix_out3 and the memory bus). proc_v8_latched_read semantics: one address parks the port, the latch holds it after release, data streams from the bus until re-parked. Park addresses ride $addr_a_stim; rows are $mem[N] of the design's space (read_a excluded).",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 4,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -6.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "addr_a": 1,
+      "mem_bus": 2
+    },
+    "expected_probe_name": "port_a",
+    "output_probes": [
+      { "name": "port_a", "entity_number": 7, "wire": "green" }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "park_addr6",
+      "drive": {
+        "addr_a": { "$addr_a_stim": 6 },
+        "mem_bus": { "$mem[6]": 42, "$mem[11]": 7 }
+      },
+      "expect": { "$mem[6]": 42, "$mem[11]": 0 }
+    },
+    {
+      "name": "park_persists_after_release",
+      "drive": { "addr_a": {} },
+      "trace_ticks": 4,
+      "expect": { "$mem[6]": 42 }
+    },
+    {
+      "name": "data_streams_while_parked",
+      "drive": { "mem_bus": { "$mem[6]": 43, "$mem[11]": 7 } },
+      "expect": { "$mem[6]": 43 }
+    },
+    {
+      "name": "repark_addr11",
+      "drive": { "addr_a": { "$addr_a_stim": 11 } },
+      "expect": { "$mem[11]": 7, "$mem[6]": 0 }
+    },
+    {
+      "name": "repark_persists",
+      "drive": { "addr_a": {} },
+      "trace_ticks": 4,
+      "expect": { "$mem[11]": 7 }
+    },
+    {
+      "name": "negative_value_reads",
+      "drive": { "mem_bus": { "$mem[11]": -9 } },
+      "expect": { "$mem[11]": -9 }
+    }
+  ]
+}

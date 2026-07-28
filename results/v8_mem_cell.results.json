@@ -1,0 +1,2117 @@
+{
+  "name": "v8_mem_cell",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 2,
+  "rebuild": {
+    "removed": 7,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 8,
+    "revived": 8,
+    "placed": 8
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [],
+  "mapping": {
+    "translation": {
+      "dx": -3.0,
+      "dy": 12.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 119509,
+      "2": 119511,
+      "3": 119515,
+      "4": 119516,
+      "5": 119510,
+      "6": 119514,
+      "7": 119512,
+      "8": 119513
+    },
+    "driver_units": {
+      "write_value": 119509,
+      "trig_set": 119511,
+      "trig_reset": 119515
+    },
+    "output_probes": [
+      {
+        "name": "mem_state",
+        "unit": 119513,
+        "wire": "red"
+      },
+      {
+        "name": "mem_out",
+        "unit": 119512,
+        "wire": "green"
+      }
+    ],
+    "expected_probe_name": "mem_state"
+  },
+  "timeline": [
+    {
+      "tick": 875599,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_1"
+    },
+    {
+      "tick": 875600,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_2"
+    },
+    {
+      "tick": 875601,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 42.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "write_addr1_42"
+    },
+    {
+      "tick": 875602,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 42.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0
+        },
+        "mem_out": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "write_addr1_42"
+    },
+    {
+      "tick": 875603,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 42.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0
+        },
+        "mem_out": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "write_addr1_42"
+    },
+    {
+      "tick": 875604,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 42.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0
+        },
+        "mem_out": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "write_addr1_42"
+    },
+    {
+      "tick": 875605,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 42.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0
+        },
+        "mem_out": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "write_addr1_42"
+    },
+    {
+      "tick": 875606,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0
+        },
+        "mem_out": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "release_holds_42"
+    },
+    {
+      "tick": 875607,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0
+        },
+        "mem_out": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "release_holds_42"
+    },
+    {
+      "tick": 875608,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0
+        },
+        "mem_out": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "release_holds_42"
+    },
+    {
+      "tick": 875609,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0
+        },
+        "mem_out": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "release_holds_42"
+    },
+    {
+      "tick": 875610,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0
+        },
+        "mem_out": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "release_holds_42"
+    },
+    {
+      "tick": 875611,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0
+        },
+        "mem_out": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "release_holds_42"
+    },
+    {
+      "tick": 875612,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0
+        },
+        "mem_out": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "green_bus_mirrors_42"
+    },
+    {
+      "tick": 875613,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0
+        },
+        "mem_out": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "green_bus_mirrors_42"
+    },
+    {
+      "tick": 875614,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0
+        },
+        "mem_out": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "green_bus_mirrors_42"
+    },
+    {
+      "tick": 875615,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0
+        },
+        "mem_out": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "green_bus_mirrors_42"
+    },
+    {
+      "tick": 875616,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0
+        },
+        "mem_out": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "green_bus_mirrors_42"
+    },
+    {
+      "tick": 875617,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 99.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0
+        },
+        "mem_out": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "override_addr1_99"
+    },
+    {
+      "tick": 875618,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 99.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "override_addr1_99"
+    },
+    {
+      "tick": 875619,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 99.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "override_addr1_99"
+    },
+    {
+      "tick": 875620,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 99.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "override_addr1_99"
+    },
+    {
+      "tick": 875621,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 99.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "override_addr1_99"
+    },
+    {
+      "tick": 875622,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "release_holds_99"
+    },
+    {
+      "tick": 875623,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "release_holds_99"
+    },
+    {
+      "tick": 875624,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "release_holds_99"
+    },
+    {
+      "tick": 875625,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "release_holds_99"
+    },
+    {
+      "tick": 875626,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "release_holds_99"
+    },
+    {
+      "tick": 875627,
+      "stimulus": {
+        "write_value": {
+          "signal-1": 7.0
+        },
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "write_addr6_7"
+    },
+    {
+      "tick": 875628,
+      "stimulus": {
+        "write_value": {
+          "signal-1": 7.0
+        },
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "write_addr6_7"
+    },
+    {
+      "tick": 875629,
+      "stimulus": {
+        "write_value": {
+          "signal-1": 7.0
+        },
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "write_addr6_7"
+    },
+    {
+      "tick": 875630,
+      "stimulus": {
+        "write_value": {
+          "signal-1": 7.0
+        },
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "write_addr6_7"
+    },
+    {
+      "tick": 875631,
+      "stimulus": {
+        "write_value": {
+          "signal-1": 7.0
+        },
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "write_addr6_7"
+    },
+    {
+      "tick": 875632,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "release_both_held"
+    },
+    {
+      "tick": 875633,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "release_both_held"
+    },
+    {
+      "tick": 875634,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "release_both_held"
+    },
+    {
+      "tick": 875635,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "release_both_held"
+    },
+    {
+      "tick": 875636,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "release_both_held"
+    },
+    {
+      "tick": 875637,
+      "stimulus": {
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-1": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "zero_write_clears_addr6"
+    },
+    {
+      "tick": 875638,
+      "stimulus": {
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "zero_write_clears_addr6"
+    },
+    {
+      "tick": 875639,
+      "stimulus": {
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "zero_write_clears_addr6"
+    },
+    {
+      "tick": 875640,
+      "stimulus": {
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "zero_write_clears_addr6"
+    },
+    {
+      "tick": 875641,
+      "stimulus": {
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "zero_write_clears_addr6"
+    },
+    {
+      "tick": 875642,
+      "stimulus": {
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "zero_write_clears_addr6"
+    },
+    {
+      "tick": 875643,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "zero_write_holds_after_release"
+    },
+    {
+      "tick": 875644,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "zero_write_holds_after_release"
+    },
+    {
+      "tick": 875645,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "zero_write_holds_after_release"
+    },
+    {
+      "tick": 875646,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "zero_write_holds_after_release"
+    },
+    {
+      "tick": 875647,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "zero_write_holds_after_release"
+    },
+    {
+      "tick": 875648,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "zero_write_holds_after_release"
+    },
+    {
+      "tick": 875649,
+      "stimulus": {
+        "write_value": {
+          "signal-2": -5.0
+        },
+        "trig_set": {
+          "signal-2": 1.0
+        },
+        "trig_reset": {
+          "signal-2": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0
+        },
+        "mem_out": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 9,
+      "step_name": "write_addr11_negative"
+    },
+    {
+      "tick": 875650,
+      "stimulus": {
+        "write_value": {
+          "signal-2": -5.0
+        },
+        "trig_set": {
+          "signal-2": 1.0
+        },
+        "trig_reset": {
+          "signal-2": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 9,
+      "step_name": "write_addr11_negative"
+    },
+    {
+      "tick": 875651,
+      "stimulus": {
+        "write_value": {
+          "signal-2": -5.0
+        },
+        "trig_set": {
+          "signal-2": 1.0
+        },
+        "trig_reset": {
+          "signal-2": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "write_addr11_negative"
+    },
+    {
+      "tick": 875652,
+      "stimulus": {
+        "write_value": {
+          "signal-2": -5.0
+        },
+        "trig_set": {
+          "signal-2": 1.0
+        },
+        "trig_reset": {
+          "signal-2": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "write_addr11_negative"
+    },
+    {
+      "tick": 875653,
+      "stimulus": {
+        "write_value": {
+          "signal-2": -5.0
+        },
+        "trig_set": {
+          "signal-2": 1.0
+        },
+        "trig_reset": {
+          "signal-2": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "write_addr11_negative"
+    },
+    {
+      "tick": 875654,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "release_holds_negative"
+    },
+    {
+      "tick": 875655,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "release_holds_negative"
+    },
+    {
+      "tick": 875656,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "release_holds_negative"
+    },
+    {
+      "tick": 875657,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "release_holds_negative"
+    },
+    {
+      "tick": 875658,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "release_holds_negative"
+    },
+    {
+      "tick": 875659,
+      "stimulus": {
+        "write_value": {
+          "artillery-targeting-remote": 5.0
+        },
+        "trig_set": {
+          "artillery-targeting-remote": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "acc_pulse_add_5"
+    },
+    {
+      "tick": 875660,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 5.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 5.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 12,
+      "step_name": "acc_settled_at_5"
+    },
+    {
+      "tick": 875661,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 5.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 5.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 12,
+      "step_name": "acc_settled_at_5"
+    },
+    {
+      "tick": 875662,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 5.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 5.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 12,
+      "step_name": "acc_settled_at_5"
+    },
+    {
+      "tick": 875663,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 5.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 5.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 12,
+      "step_name": "acc_settled_at_5"
+    },
+    {
+      "tick": 875664,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 5.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 5.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 12,
+      "step_name": "acc_settled_at_5"
+    },
+    {
+      "tick": 875665,
+      "stimulus": {
+        "write_value": {
+          "artillery-targeting-remote": 3.0
+        },
+        "trig_set": {
+          "artillery-targeting-remote": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 5.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 5.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 13,
+      "step_name": "acc_pulse_add_3"
+    },
+    {
+      "tick": 875666,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 14,
+      "step_name": "acc_settled_at_8"
+    },
+    {
+      "tick": 875667,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 14,
+      "step_name": "acc_settled_at_8"
+    },
+    {
+      "tick": 875668,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 14,
+      "step_name": "acc_settled_at_8"
+    },
+    {
+      "tick": 875669,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 14,
+      "step_name": "acc_settled_at_8"
+    },
+    {
+      "tick": 875670,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 14,
+      "step_name": "acc_settled_at_8"
+    },
+    {
+      "tick": 875671,
+      "stimulus": {
+        "trig_set": {
+          "artillery-targeting-remote": 1.0
+        },
+        "trig_reset": {
+          "artillery-targeting-remote": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 15,
+      "step_name": "acc_zero_write_blocked"
+    },
+    {
+      "tick": 875672,
+      "stimulus": {
+        "trig_set": {
+          "artillery-targeting-remote": 1.0
+        },
+        "trig_reset": {
+          "artillery-targeting-remote": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 15,
+      "step_name": "acc_zero_write_blocked"
+    },
+    {
+      "tick": 875673,
+      "stimulus": {
+        "trig_set": {
+          "artillery-targeting-remote": 1.0
+        },
+        "trig_reset": {
+          "artillery-targeting-remote": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 15,
+      "step_name": "acc_zero_write_blocked"
+    },
+    {
+      "tick": 875674,
+      "stimulus": {
+        "trig_set": {
+          "artillery-targeting-remote": 1.0
+        },
+        "trig_reset": {
+          "artillery-targeting-remote": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 15,
+      "step_name": "acc_zero_write_blocked"
+    },
+    {
+      "tick": 875675,
+      "stimulus": {
+        "trig_set": {
+          "artillery-targeting-remote": 1.0
+        },
+        "trig_reset": {
+          "artillery-targeting-remote": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 15,
+      "step_name": "acc_zero_write_blocked"
+    },
+    {
+      "tick": 875676,
+      "stimulus": {
+        "trig_set": {
+          "artillery-targeting-remote": 1.0
+        },
+        "trig_reset": {
+          "artillery-targeting-remote": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 15,
+      "step_name": "acc_zero_write_blocked"
+    },
+    {
+      "tick": 875677,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 16,
+      "step_name": "acc_blocked_after_release"
+    },
+    {
+      "tick": 875678,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 16,
+      "step_name": "acc_blocked_after_release"
+    },
+    {
+      "tick": 875679,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 16,
+      "step_name": "acc_blocked_after_release"
+    },
+    {
+      "tick": 875680,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 16,
+      "step_name": "acc_blocked_after_release"
+    },
+    {
+      "tick": 875681,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 16,
+      "step_name": "acc_blocked_after_release"
+    },
+    {
+      "tick": 875682,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 17,
+      "step_name": "green_bus_final_state"
+    },
+    {
+      "tick": 875683,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 17,
+      "step_name": "green_bus_final_state"
+    },
+    {
+      "tick": 875684,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 17,
+      "step_name": "green_bus_final_state"
+    },
+    {
+      "tick": 875685,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 17,
+      "step_name": "green_bus_final_state"
+    },
+    {
+      "tick": 875686,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        },
+        "mem_out": {
+          "artillery-targeting-remote~legendary": 8.0,
+          "signal-0": 99.0,
+          "signal-2": -5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 17,
+      "step_name": "green_bus_final_state"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "write_addr1_42",
+      "drive_start_tick": 875600,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-0": 42
+      },
+      "observed": {
+        "signal-0": 42.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875605
+    },
+    {
+      "step_index": 1,
+      "step_name": "release_holds_42",
+      "drive_start_tick": 875605,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-0": 42
+      },
+      "observed": {
+        "signal-0": 42.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875611
+    },
+    {
+      "step_index": 2,
+      "step_name": "green_bus_mirrors_42",
+      "drive_start_tick": 875611,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_out",
+      "expected": {
+        "signal-0": 42
+      },
+      "observed": {
+        "signal-0": 42.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875616
+    },
+    {
+      "step_index": 3,
+      "step_name": "override_addr1_99",
+      "drive_start_tick": 875616,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-0": 99
+      },
+      "observed": {
+        "signal-0": 99.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875621
+    },
+    {
+      "step_index": 4,
+      "step_name": "release_holds_99",
+      "drive_start_tick": 875621,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-0": 99
+      },
+      "observed": {
+        "signal-0": 99.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875626
+    },
+    {
+      "step_index": 5,
+      "step_name": "write_addr6_7",
+      "drive_start_tick": 875626,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-1": 7
+      },
+      "observed": {
+        "signal-0": 99.0,
+        "signal-1": 7.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875631
+    },
+    {
+      "step_index": 6,
+      "step_name": "release_both_held",
+      "drive_start_tick": 875631,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-0": 99,
+        "signal-1": 7
+      },
+      "observed": {
+        "signal-0": 99.0,
+        "signal-1": 7.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875636
+    },
+    {
+      "step_index": 7,
+      "step_name": "zero_write_clears_addr6",
+      "drive_start_tick": 875636,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-1": 0,
+        "signal-0": 99
+      },
+      "observed": {
+        "signal-0": 99.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875642
+    },
+    {
+      "step_index": 8,
+      "step_name": "zero_write_holds_after_release",
+      "drive_start_tick": 875642,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-1": 0,
+        "signal-0": 99
+      },
+      "observed": {
+        "signal-0": 99.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875648
+    },
+    {
+      "step_index": 9,
+      "step_name": "write_addr11_negative",
+      "drive_start_tick": 875648,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-2": -5
+      },
+      "observed": {
+        "signal-0": 99.0,
+        "signal-2": -5.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875653
+    },
+    {
+      "step_index": 10,
+      "step_name": "release_holds_negative",
+      "drive_start_tick": 875653,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-2": -5,
+        "signal-0": 99
+      },
+      "observed": {
+        "signal-0": 99.0,
+        "signal-2": -5.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875658
+    },
+    {
+      "step_index": 11,
+      "step_name": "acc_pulse_add_5",
+      "drive_start_tick": 875658,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {},
+      "observed": {
+        "signal-0": 99.0,
+        "signal-2": -5.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875659
+    },
+    {
+      "step_index": 12,
+      "step_name": "acc_settled_at_5",
+      "drive_start_tick": 875659,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "artillery-targeting-remote~legendary": 5
+      },
+      "observed": {
+        "artillery-targeting-remote~legendary": 5.0,
+        "signal-0": 99.0,
+        "signal-2": -5.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875664
+    },
+    {
+      "step_index": 13,
+      "step_name": "acc_pulse_add_3",
+      "drive_start_tick": 875664,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {},
+      "observed": {
+        "artillery-targeting-remote~legendary": 5.0,
+        "signal-0": 99.0,
+        "signal-2": -5.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875665
+    },
+    {
+      "step_index": 14,
+      "step_name": "acc_settled_at_8",
+      "drive_start_tick": 875665,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "artillery-targeting-remote~legendary": 8
+      },
+      "observed": {
+        "artillery-targeting-remote~legendary": 8.0,
+        "signal-0": 99.0,
+        "signal-2": -5.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875670
+    },
+    {
+      "step_index": 15,
+      "step_name": "acc_zero_write_blocked",
+      "drive_start_tick": 875670,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "artillery-targeting-remote~legendary": 8
+      },
+      "observed": {
+        "artillery-targeting-remote~legendary": 8.0,
+        "signal-0": 99.0,
+        "signal-2": -5.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875676
+    },
+    {
+      "step_index": 16,
+      "step_name": "acc_blocked_after_release",
+      "drive_start_tick": 875676,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "artillery-targeting-remote~legendary": 8,
+        "signal-0": 99
+      },
+      "observed": {
+        "artillery-targeting-remote~legendary": 8.0,
+        "signal-0": 99.0,
+        "signal-2": -5.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875681
+    },
+    {
+      "step_index": 17,
+      "step_name": "green_bus_final_state",
+      "drive_start_tick": 875681,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_out",
+      "expected": {
+        "artillery-targeting-remote~legendary": 8,
+        "signal-2": -5,
+        "signal-0": 99
+      },
+      "observed": {
+        "artillery-targeting-remote~legendary": 8.0,
+        "signal-0": 99.0,
+        "signal-2": -5.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875686
+    }
+  ],
+  "pass": true
+}

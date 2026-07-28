@@ -1,0 +1,14 @@
+{
+  "module": "decoder_matrix_bench",
+  "probes": [
+    {
+      "net": "write_trig",
+      "entity_number": 35,
+      "wire": "red",
+      "position": {
+        "x": 3.5,
+        "y": -8.5
+      }
+    }
+  ]
+}

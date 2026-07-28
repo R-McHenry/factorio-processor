@@ -1,0 +1,43 @@
+# v8_port_a — component 5 of the fnet v8 rebuild (NETLIST_PLAN.md):
+# the latched read port A (masters 17 addr_rd_a, 23 a_rd_latch, 37 each+0
+# -> carrier, 44 address table, 56 port decider, 64 port_a_rd anchor).
+# One address on the park bus parks the port; the latch holds it after
+# release; data streams from the memory bus until re-parked. Behavioral
+# bench: testbenches/v8_port_a.tb.json (proc_v8_latched_read's park/hold/
+# stream semantics, open loop).
+#
+# The read carrier rides the SAME red net as the address table, so it is
+# excluded from the space (the netlist_demo pattern, design-wide).
+#
+# `module port_a` is the reusable component; `port_a_bench` is the
+# live-test harness — build with `--top port_a_bench`.
+#
+# Entity numbering: 1 addr stim, 2 bus stim, 3 park latch, 4 carrier sum,
+# 5 address table, 6 port decider, 7 port_a_rd anchor.
+
+import "lib/v8.fnet";
+
+signal read_a;        # port A read carrier (master signal-R) — on the table net
+exclude read_a;
+signal addr_a_stim;   # bench-facing park-address carrier (any signal sums)
+
+module port_a(in_g addr_in, in_g bus_in, out_g data_out) {
+  net red latch_loop;   # park hold (red face of the latch output)
+  net green latched;    # held park address (green face)
+  net red select;       # address table + carrier — the compare net
+
+  v8_park_latch<"a_rd_latch">(in_g: addr_in, in_r: latch_loop,
+                              out_r: latch_loop, out_g: latched);
+  sum_to<read_a, "a_carrier">(in_g: latched, out_r: select);
+  addr_table(out_r: select);
+  v8_port_read<read_a, "port_a_read">(in_r: select, in_g: bus_in, out_g: data_out);
+  stim<"port_a_rd">(out_g: data_out);
+}
+
+module port_a_bench(out_g data_out) {
+  net green addr_in, bus_in;
+
+  stim<"addr_rd_a">(out_g: addr_in);
+  stim<"mem_bus_stim">(out_g: bus_in);
+  port_a(addr_in: addr_in, bus_in: bus_in, data_out: data_out);
+}

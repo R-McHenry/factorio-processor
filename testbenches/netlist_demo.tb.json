@@ -1,0 +1,142 @@
+{
+  "name": "netlist_demo",
+  "description": "fnet-compiled memory cell with an auto-assigned read carrier and the design's address table (populated at paste, carrier row excluded before numbering). Address-first timeline: memory rows are referenced as $mem[N] (resolved through the design's address table at run time), the carrier as $read_addr — no game-signal literals, so the bench is valid under any exclusion set.",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 1,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -6.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "write": 1,
+      "read": 3
+    },
+    "expected_probe_name": "read_output",
+    "output_probes": [
+      {
+        "name": "read_output",
+        "entity_number": 6,
+        "wire": "green"
+      },
+      {
+        "name": "memory_state_g",
+        "entity_number": 2,
+        "wire": "green"
+      },
+      {
+        "name": "memory_state_r",
+        "entity_number": 2,
+        "wire": "red"
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "seed_initial_input_state",
+      "drive": {
+        "write": { "$mem[6]": 1, "$mem[11]": 111 },
+        "read": { "$read_addr": 6 }
+      },
+      "expect": { "$mem[6]": 1 }
+    },
+    {
+      "name": "read_preloaded_addr_6",
+      "drive": { "read": { "$read_addr": 6 } },
+      "expect": { "$mem[6]": 1 }
+    },
+    {
+      "name": "read_preloaded_addr_11",
+      "drive": { "read": { "$read_addr": 11 } },
+      "expect": { "$mem[11]": 111 }
+    },
+    {
+      "name": "write_addr_1",
+      "drive": {
+        "write": { "$mem[1]": 1000 },
+        "read": { "$read_addr": 1 }
+      },
+      "expect": { "$mem[1]": 1000 }
+    },
+    {
+      "name": "write_addr_6",
+      "drive": {
+        "write": { "$mem[6]": 1001 },
+        "read": { "$read_addr": 6 }
+      },
+      "expect": { "$mem[6]": 1001 }
+    },
+    {
+      "name": "write_addr_11",
+      "drive": {
+        "write": { "$mem[11]": 1002 },
+        "read": { "$read_addr": 11 }
+      },
+      "expect": { "$mem[11]": 1002 }
+    },
+    {
+      "name": "write_addr_16",
+      "drive": {
+        "write": { "$mem[16]": 1003 },
+        "read": { "$read_addr": 16 }
+      },
+      "expect": { "$mem[16]": 1003 }
+    },
+    {
+      "name": "write_addr_21",
+      "drive": {
+        "write": { "$mem[21]": 1004 },
+        "read": { "$read_addr": 21 }
+      },
+      "expect": { "$mem[21]": 1004 }
+    },
+    {
+      "name": "write_addr_26",
+      "drive": {
+        "write": { "$mem[26]": 1005 },
+        "read": { "$read_addr": 26 }
+      },
+      "expect": { "$mem[26]": 1005 }
+    },
+    {
+      "name": "write_addr_31",
+      "drive": {
+        "write": { "$mem[31]": 1006 },
+        "read": { "$read_addr": 31 }
+      },
+      "expect": { "$mem[31]": 1006 }
+    },
+    {
+      "name": "write_addr_36",
+      "drive": {
+        "write": { "$mem[36]": 1007 },
+        "read": { "$read_addr": 36 }
+      },
+      "expect": { "$mem[36]": 1007 }
+    },
+    {
+      "name": "write_addr_41",
+      "drive": {
+        "write": { "$mem[41]": 1008 },
+        "read": { "$read_addr": 41 }
+      },
+      "expect": { "$mem[41]": 1008 }
+    },
+    {
+      "name": "read_quality_row_addr_2_is_empty",
+      "drive": { "read": { "$read_addr": 2 } },
+      "expect": { "$mem[2]": 0 }
+    }
+  ]
+}

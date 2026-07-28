@@ -1,0 +1,2423 @@
+{
+  "name": "v8_proc_fib_cmp",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 0,
+  "rebuild": {
+    "removed": 105,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 104,
+    "revived": 104,
+    "placed": 104
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [
+    {
+      "unit": 121764,
+      "slots_written": 2452,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 40
+    },
+    {
+      "unit": 121787,
+      "slots_written": 2452,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 75
+    },
+    {
+      "unit": 121806,
+      "slots_written": 2452,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 81
+    },
+    {
+      "unit": 121795,
+      "slots_written": 2452,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 97
+    }
+  ],
+  "mapping": {
+    "translation": {
+      "dx": -7.0,
+      "dy": 7.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 121704,
+      "2": 121703,
+      "3": 121709,
+      "4": 121708,
+      "5": 121715,
+      "6": 121714,
+      "7": 121722,
+      "8": 121721,
+      "9": 121760,
+      "10": 121766,
+      "11": 121765,
+      "12": 121772,
+      "13": 121771,
+      "14": 121778,
+      "15": 121777,
+      "16": 121706,
+      "17": 121705,
+      "18": 121711,
+      "19": 121710,
+      "20": 121717,
+      "21": 121716,
+      "22": 121724,
+      "23": 121723,
+      "24": 121762,
+      "25": 121761,
+      "26": 121768,
+      "27": 121767,
+      "28": 121774,
+      "29": 121773,
+      "30": 121780,
+      "31": 121779,
+      "32": 121707,
+      "33": 121713,
+      "34": 121712,
+      "35": 121720,
+      "36": 121719,
+      "37": 121718,
+      "38": 121726,
+      "39": 121725,
+      "40": 121764,
+      "41": 121770,
+      "42": 121769,
+      "43": 121776,
+      "44": 121775,
+      "45": 121783,
+      "46": 121782,
+      "47": 121781,
+      "48": 121728,
+      "49": 121727,
+      "50": 121734,
+      "51": 121733,
+      "52": 121732,
+      "53": 121744,
+      "54": 121743,
+      "55": 121754,
+      "56": 121753,
+      "57": 121785,
+      "58": 121790,
+      "59": 121789,
+      "60": 121797,
+      "61": 121796,
+      "62": 121804,
+      "63": 121803,
+      "64": 121729,
+      "65": 121738,
+      "66": 121737,
+      "67": 121736,
+      "68": 121735,
+      "69": 121748,
+      "70": 121747,
+      "71": 121746,
+      "72": 121745,
+      "73": 121756,
+      "74": 121755,
+      "75": 121787,
+      "76": 121793,
+      "77": 121792,
+      "78": 121791,
+      "79": 121799,
+      "80": 121798,
+      "81": 121806,
+      "82": 121805,
+      "83": 121731,
+      "84": 121730,
+      "85": 121742,
+      "86": 121741,
+      "87": 121740,
+      "88": 121739,
+      "89": 121752,
+      "90": 121751,
+      "91": 121750,
+      "92": 121749,
+      "93": 121759,
+      "94": 121758,
+      "95": 121757,
+      "96": 121788,
+      "97": 121795,
+      "98": 121794,
+      "99": 121802,
+      "100": 121801,
+      "101": 121800,
+      "102": 121786,
+      "103": 121784,
+      "104": 121763
+    },
+    "driver_units": {
+      "trig_set": 121782
+    },
+    "output_probes": [
+      {
+        "name": "mem_state",
+        "unit": 121800,
+        "wire": "red"
+      },
+      {
+        "name": "mem_bus",
+        "unit": 121801,
+        "wire": "green"
+      },
+      {
+        "name": "port_a",
+        "unit": 121792,
+        "wire": "green"
+      },
+      {
+        "name": "port_b",
+        "unit": 121731,
+        "wire": "green"
+      },
+      {
+        "name": "instr_port",
+        "unit": 121802,
+        "wire": "green"
+      }
+    ],
+    "expected_probe_name": "mem_state"
+  },
+  "timeline": [
+    {
+      "tick": 887300,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 1.0
+        },
+        "mem_bus": {
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887301,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 2.0
+        },
+        "mem_bus": {
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 1.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887302,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 3.0
+        },
+        "mem_bus": {
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 2.0,
+          "signal-alarm~epic": 1.0
+        },
+        "instr_port": {
+          "signal-0": 8696064.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887303,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 4.0
+        },
+        "mem_bus": {
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 3.0,
+          "signal-alarm~epic": 1.0
+        },
+        "instr_port": {
+          "signal-0~uncommon": 8696064.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887304,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 5.0
+        },
+        "mem_bus": {
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 4.0,
+          "signal-alarm~epic": 1.0
+        },
+        "instr_port": {
+          "signal-0~rare": 8696064.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887305,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 6.0
+        },
+        "mem_bus": {
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 5.0,
+          "signal-alarm~epic": 1.0
+        },
+        "instr_port": {
+          "signal-0~epic": 8659200.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887306,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 7.0
+        },
+        "mem_bus": {
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 6.0,
+          "signal-alarm~epic": 1.0
+        },
+        "instr_port": {
+          "signal-0~legendary": 410112.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887307,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 8.0
+        },
+        "mem_bus": {
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 7.0,
+          "signal-alarm~epic": 1.0
+        },
+        "instr_port": {
+          "signal-1": 4608.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887308,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 9.0
+        },
+        "mem_bus": {
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 8.0,
+          "signal-alarm~epic": 1.0
+        },
+        "instr_port": {
+          "signal-1~uncommon": 1270016.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887309,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 10.0
+        },
+        "mem_bus": {
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 9.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887310,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 11.0
+        },
+        "mem_bus": {
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 10.0,
+          "signal-alarm~epic": 1.0
+        },
+        "instr_port": {
+          "signal-1~epic": 8663552.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887311,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 12.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 11.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887312,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 13.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 12.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "instr_port": {
+          "signal-2": 8659968.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887313,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 14.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 13.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 1.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~rare": 100.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887314,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "shape-curve-3~epic": 15.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 14.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 1.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~rare": 100.0
+        },
+        "instr_port": {
+          "signal-2~rare": 8655104.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887315,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 16.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 15.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 1.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~rare": 100.0
+        },
+        "instr_port": {
+          "signal-2~epic": 8659200.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887316,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 17.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 16.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 1.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~rare": 100.0
+        },
+        "instr_port": {
+          "signal-2~legendary": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887317,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 18.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 17.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 1.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_a": {
+          "shape-t-3~uncommon": 1.0
+        },
+        "instr_port": {
+          "signal-3": 32.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887318,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 19.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 18.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 1.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_a": {
+          "shape-t-3~uncommon": 1.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887319,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 20.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 19.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 1.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_a": {
+          "shape-t-3~uncommon": 1.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887320,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 21.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 20.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 1.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_a": {
+          "shape-t-3~uncommon": 1.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887321,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 22.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 21.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 1.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_a": {
+          "shape-t-3~uncommon": 1.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 1.0
+        },
+        "instr_port": {
+          "signal-3~legendary": 8691968.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887322,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 23.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 22.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_a": {
+          "shape-t-3~uncommon": 1.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887323,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 24.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 23.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_a": {
+          "shape-t-3~uncommon": 1.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 2.0
+        },
+        "instr_port": {
+          "signal-4~uncommon": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887324,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 25.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 24.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_a": {
+          "shape-t-3~uncommon": 1.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887325,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 26.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 25.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_a": {
+          "shape-t-3~uncommon": 1.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 2.0
+        },
+        "instr_port": {
+          "signal-4~epic": 8709120.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887326,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 27.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 26.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_a": {
+          "shape-t-3~uncommon": 1.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887327,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 28.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 27.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_a": {
+          "shape-t-3~uncommon": 1.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887328,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 29.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 28.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_a": {
+          "shape-t-3~uncommon": 1.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887329,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 30.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 29.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_a": {
+          "shape-t-3~uncommon": 1.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 2.0
+        },
+        "instr_port": {
+          "signal-5~rare": 8585473.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887330,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 31.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 30.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~uncommon": 1.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887331,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 32.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 31.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~uncommon": 1.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 2.0
+        },
+        "instr_port": {
+          "signal-5~legendary": 41472.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887332,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 33.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 32.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~uncommon": 1.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887333,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 34.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 33.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~uncommon": 1.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887334,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 35.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 34.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~uncommon": 1.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887335,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 36.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 35.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~uncommon": 1.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887336,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 11.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 10.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~uncommon": 1.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887337,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 12.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 11.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~uncommon": 1.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887338,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 13.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 12.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~uncommon": 1.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 2.0
+        },
+        "instr_port": {
+          "signal-2": 8659968.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887339,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "shape-curve-3~epic": 14.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "shape-curve-3~epic": 13.0,
+          "shape-t-4~legendary": 1.0,
+          "shape-t-3": 1.0,
+          "shape-t-3~uncommon": 1.0,
+          "shape-t-3~rare": 2.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~uncommon": 1.0,
+          "signal-alarm~rare": 100.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "trace_first_passes"
+    },
+    {
+      "tick": 887660,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-pink~epic": 999.0,
+          "shape-curve-3~epic": 41.0,
+          "shape-curve-3~legendary": 10.0,
+          "shape-t-4~legendary": 144.0,
+          "shape-t-3": 89.0,
+          "shape-t-3~uncommon": 144.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "signal-pink~epic": 999.0,
+          "shape-curve-3~epic": 40.0,
+          "shape-curve-3~legendary": 10.0,
+          "shape-t-4~legendary": 144.0,
+          "shape-t-3": 89.0,
+          "shape-t-3~uncommon": 144.0,
+          "shape-t-3~rare": 233.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~uncommon": 100.0,
+          "signal-alarm~rare": 144.0,
+          "signal-alarm~epic": 1.0,
+          "signal-alarm~legendary": 1.0
+        },
+        "port_a": {
+          "signal-alarm~epic": 1.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 233.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "skip_to_completion"
+    },
+    {
+      "tick": 887661,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-pink~epic": 999.0,
+          "shape-curve-3~epic": 42.0,
+          "shape-curve-3~legendary": 10.0,
+          "shape-t-4~legendary": 144.0,
+          "shape-t-3": 89.0,
+          "shape-t-3~uncommon": 144.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "signal-pink~epic": 999.0,
+          "shape-curve-3~epic": 41.0,
+          "shape-curve-3~legendary": 10.0,
+          "shape-t-4~legendary": 144.0,
+          "shape-t-3": 89.0,
+          "shape-t-3~uncommon": 144.0,
+          "shape-t-3~rare": 233.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~uncommon": 100.0,
+          "signal-alarm~rare": 144.0,
+          "signal-alarm~epic": 1.0,
+          "signal-alarm~legendary": 1.0
+        },
+        "port_a": {
+          "signal-alarm~epic": 1.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 233.0
+        },
+        "instr_port": {
+          "signal-7~legendary": -18432.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "skip_to_completion"
+    },
+    {
+      "tick": 887662,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-pink~epic": 999.0,
+          "shape-curve-3~epic": 43.0,
+          "shape-curve-3~legendary": 10.0,
+          "shape-t-4~legendary": 144.0,
+          "shape-t-3": 89.0,
+          "shape-t-3~uncommon": 144.0,
+          "signal-alarm": 100.0
+        },
+        "mem_bus": {
+          "artillery-wagon-cannon~rare": 2115.0,
+          "signal-0": 8696064.0,
+          "signal-0~uncommon": 8696064.0,
+          "signal-0~rare": 8696064.0,
+          "signal-0~epic": 8659200.0,
+          "signal-0~legendary": 410112.0,
+          "signal-1": 4608.0,
+          "signal-1~uncommon": 1270016.0,
+          "signal-1~epic": 8663552.0,
+          "signal-2": 8659968.0,
+          "signal-2~rare": 8655104.0,
+          "signal-2~epic": 8659200.0,
+          "signal-2~legendary": 2.0,
+          "signal-3": 32.0,
+          "signal-3~legendary": 8691968.0,
+          "signal-4~uncommon": 2.0,
+          "signal-4~epic": 8709120.0,
+          "signal-5~rare": 8585473.0,
+          "signal-5~legendary": 41472.0,
+          "signal-7~uncommon": 844032.0,
+          "signal-7~epic": 4092416.0,
+          "signal-7~legendary": -18432.0,
+          "signal-8~legendary": 1233152.0,
+          "signal-9~uncommon": 455168.0,
+          "signal-pink~epic": 999.0,
+          "shape-curve-3~epic": 42.0,
+          "shape-curve-3~legendary": 10.0,
+          "shape-t-4~legendary": 144.0,
+          "shape-t-3": 89.0,
+          "shape-t-3~uncommon": 144.0,
+          "shape-t-3~rare": 233.0,
+          "signal-alarm": 100.0,
+          "signal-alarm~uncommon": 100.0,
+          "signal-alarm~rare": 144.0,
+          "signal-alarm~epic": 1.0,
+          "signal-alarm~legendary": 1.0
+        },
+        "port_a": {
+          "signal-alarm~epic": 1.0
+        },
+        "port_b": {
+          "shape-t-3~rare": 233.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "skip_to_completion"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "trace_first_passes",
+      "drive_start_tick": 887299,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {},
+      "observed": {
+        "artillery-wagon-cannon~rare": 2115.0,
+        "shape-curve-3~epic": 14.0,
+        "shape-t-4~legendary": 1.0,
+        "shape-t-3": 1.0,
+        "shape-t-3~uncommon": 1.0,
+        "signal-alarm": 100.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 887339
+    },
+    {
+      "step_index": 1,
+      "step_name": "skip_to_completion",
+      "drive_start_tick": 887339,
+      "skipped_ticks": 320,
+      "expected_probe": "mem_state",
+      "expected": {
+        "shape-t-3": 89,
+        "shape-t-3~uncommon": 144,
+        "shape-t-4~legendary": 144,
+        "signal-alarm": 100,
+        "signal-pink~epic": 999,
+        "artillery-turret~epic": 0
+      },
+      "observed": {
+        "artillery-wagon-cannon~rare": 2115.0,
+        "signal-pink~epic": 999.0,
+        "shape-curve-3~epic": 43.0,
+        "shape-curve-3~legendary": 10.0,
+        "shape-t-4~legendary": 144.0,
+        "shape-t-3": 89.0,
+        "shape-t-3~uncommon": 144.0,
+        "signal-alarm": 100.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 887662
+    }
+  ],
+  "pass": true
+}

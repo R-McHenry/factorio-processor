@@ -1,0 +1,177 @@
+{
+  "name": "proc_cmp",
+  "description": "CMP unit test (v7 write interface): write M,N cells via write_value/trig_set/trig_reset, release, then observe O=M>N / Q=M>=N flags (1 tick) and T=max/S=min (2 ticks) on the green output bus. While the triggers are held the cell suppresses its own output for the written signals, so each write step releases before checking. Also verifies T is port-readable at its address and that the old signal-R carrier leak stays gone. NOTE: this legacy bench runs against the non-fnet master, which has no signals map, so the port-A read address is a bare NUMBER (signal-T's row) rather than a symbolic reference. It shifts whenever signal_space changes - it moved 2091 -> 2066 on 2026-07-27 when the five non-transmitting parameter signals left the address space. Re-derive it with signal_space.address_of('signal-T'), never copy it forward.",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 4,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -8.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "write_value": 16,
+      "trig_set": 15,
+      "trig_reset": 19,
+      "addr_a": 17
+    },
+    "expected_probe_name": "alu_bus",
+    "output_probes": [
+      {
+        "name": "alu_bus",
+        "entity_number": 56,
+        "wire": "green"
+      },
+      {
+        "name": "mem_state",
+        "entity_number": 36,
+        "wire": "red"
+      },
+      {
+        "name": "port_a",
+        "entity_number": 64,
+        "wire": "green"
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "write_m7_n3",
+      "drive": {
+        "write_value": {
+          "signal-M": 7,
+          "signal-N": 3
+        },
+        "trig_set": {
+          "signal-M": 1,
+          "signal-N": 1
+        },
+        "trig_reset": {
+          "signal-M": 1,
+          "signal-N": 1
+        }
+      },
+      "settle_ticks": 2,
+      "expect": {}
+    },
+    {
+      "name": "m7_n3_max7_min3_flags_on",
+      "drive": {
+        "write_value": {},
+        "trig_set": {},
+        "trig_reset": {}
+      },
+      "settle_ticks": 4,
+      "trace_ticks": 8,
+      "expect": {
+        "signal-T": 7,
+        "signal-S": 3,
+        "signal-O": 1,
+        "signal-Q": 1
+      }
+    },
+    {
+      "name": "write_m2_n9",
+      "drive": {
+        "write_value": {
+          "signal-M": 2,
+          "signal-N": 9
+        },
+        "trig_set": {
+          "signal-M": 1,
+          "signal-N": 1
+        },
+        "trig_reset": {
+          "signal-M": 1,
+          "signal-N": 1
+        }
+      },
+      "settle_ticks": 2,
+      "expect": {}
+    },
+    {
+      "name": "m2_n9_max9_min2_flags_off",
+      "drive": {
+        "write_value": {},
+        "trig_set": {},
+        "trig_reset": {}
+      },
+      "expect": {
+        "signal-T": 9,
+        "signal-S": 2,
+        "signal-O": 0,
+        "signal-Q": 0
+      }
+    },
+    {
+      "name": "write_m5_n5",
+      "drive": {
+        "write_value": {
+          "signal-M": 5,
+          "signal-N": 5
+        },
+        "trig_set": {
+          "signal-M": 1,
+          "signal-N": 1
+        },
+        "trig_reset": {
+          "signal-M": 1,
+          "signal-N": 1
+        }
+      },
+      "settle_ticks": 2,
+      "expect": {}
+    },
+    {
+      "name": "m5_n5_equal_gte_fires",
+      "drive": {
+        "write_value": {},
+        "trig_set": {},
+        "trig_reset": {}
+      },
+      "expect": {
+        "signal-T": 5,
+        "signal-S": 5,
+        "signal-O": 0,
+        "signal-Q": 1
+      }
+    },
+    {
+      "name": "max_port_readable_at_its_own_row",
+      "drive": {
+        "addr_a": {
+          "signal-R": 2066
+        }
+      },
+      "settle_ticks": 3,
+      "expect_probe": "port_a",
+      "expect": {
+        "signal-T": 5
+      }
+    },
+    {
+      "name": "carrier_leak_gone_read_empty_addr1",
+      "drive": {
+        "addr_a": {
+          "signal-R": 1
+        }
+      },
+      "settle_ticks": 3,
+      "expect_probe": "port_a",
+      "expect": {
+        "signal-R": 0,
+        "signal-T": 0
+      }
+    }
+  ]
+}

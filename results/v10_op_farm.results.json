@@ -1,0 +1,6181 @@
+{
+  "name": "v10_op_farm",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 2,
+  "rebuild": {
+    "removed": 47,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 44,
+    "revived": 44,
+    "placed": 44
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [],
+  "mapping": {
+    "translation": {
+      "dx": -7.0,
+      "dy": 10.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 119898,
+      "2": 119905,
+      "3": 119906,
+      "4": 119866,
+      "5": 119887,
+      "6": 119863,
+      "7": 119883,
+      "8": 119899,
+      "9": 119876,
+      "10": 119901,
+      "11": 119885,
+      "12": 119900,
+      "13": 119889,
+      "14": 119903,
+      "15": 119888,
+      "16": 119902,
+      "17": 119893,
+      "18": 119904,
+      "19": 119892,
+      "20": 119870,
+      "21": 119891,
+      "22": 119874,
+      "23": 119890,
+      "24": 119865,
+      "25": 119873,
+      "26": 119884,
+      "27": 119897,
+      "28": 119869,
+      "29": 119886,
+      "30": 119896,
+      "31": 119895,
+      "32": 119877,
+      "33": 119864,
+      "34": 119879,
+      "35": 119868,
+      "36": 119878,
+      "37": 119867,
+      "38": 119881,
+      "39": 119872,
+      "40": 119880,
+      "41": 119871,
+      "42": 119882,
+      "43": 119875,
+      "44": 119894
+    },
+    "driver_units": {
+      "scalar_membus": 119898,
+      "operand_a1": 119905,
+      "operand_b1": 119906,
+      "operand_a2": 119866,
+      "operand_b2": 119887,
+      "operand_a2g": 119863,
+      "operand_b2r": 119883
+    },
+    "output_probes": [
+      {
+        "name": "vbus",
+        "unit": 119894,
+        "wire": "red"
+      }
+    ],
+    "expected_probe_name": "vbus"
+  },
+  "timeline": [
+    {
+      "tick": 876296,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_1"
+    },
+    {
+      "tick": 876297,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_2"
+    },
+    {
+      "tick": 876298,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 2.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "park_operands_no_select"
+    },
+    {
+      "tick": 876299,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 2.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "park_operands_no_select"
+    },
+    {
+      "tick": 876300,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 2.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "park_operands_no_select"
+    },
+    {
+      "tick": 876301,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 2.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "park_operands_no_select"
+    },
+    {
+      "tick": 876302,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 2.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "park_operands_no_select"
+    },
+    {
+      "tick": 876303,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 2.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "park_operands_no_select"
+    },
+    {
+      "tick": 876304,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 17.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "read_a_mul"
+    },
+    {
+      "tick": 876305,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 17.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 48.0,
+          "signal-0~uncommon": 30.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "read_a_mul"
+    },
+    {
+      "tick": 876306,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 17.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 48.0,
+          "signal-0~uncommon": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "read_a_mul"
+    },
+    {
+      "tick": 876307,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 17.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 48.0,
+          "signal-0~uncommon": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "read_a_mul"
+    },
+    {
+      "tick": 876308,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 17.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 48.0,
+          "signal-0~uncommon": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "read_a_mul"
+    },
+    {
+      "tick": 876309,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 17.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 48.0,
+          "signal-0~uncommon": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "read_a_mul"
+    },
+    {
+      "tick": 876310,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 18.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 48.0,
+          "signal-0~uncommon": 30.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "read_a_sub_keeps_one_sided_lanes"
+    },
+    {
+      "tick": 876311,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 18.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 8.0,
+          "signal-0~uncommon": -1.0,
+          "signal-0~rare": 9.0,
+          "signal-0~epic": -6.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "read_a_sub_keeps_one_sided_lanes"
+    },
+    {
+      "tick": 876312,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 18.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 8.0,
+          "signal-0~uncommon": -1.0,
+          "signal-0~rare": 9.0,
+          "signal-0~epic": -6.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "read_a_sub_keeps_one_sided_lanes"
+    },
+    {
+      "tick": 876313,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 18.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 8.0,
+          "signal-0~uncommon": -1.0,
+          "signal-0~rare": 9.0,
+          "signal-0~epic": -6.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "read_a_sub_keeps_one_sided_lanes"
+    },
+    {
+      "tick": 876314,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 18.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 8.0,
+          "signal-0~uncommon": -1.0,
+          "signal-0~rare": 9.0,
+          "signal-0~epic": -6.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "read_a_sub_keeps_one_sided_lanes"
+    },
+    {
+      "tick": 876315,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 18.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 8.0,
+          "signal-0~uncommon": -1.0,
+          "signal-0~rare": 9.0,
+          "signal-0~epic": -6.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "read_a_sub_keeps_one_sided_lanes"
+    },
+    {
+      "tick": 876316,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 19.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 8.0,
+          "signal-0~uncommon": -1.0,
+          "signal-0~rare": 9.0,
+          "signal-0~epic": -6.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "read_a_max"
+    },
+    {
+      "tick": 876317,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 19.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 12.0,
+          "signal-0~uncommon": 6.0,
+          "signal-0~rare": 9.0,
+          "signal-0~epic": 6.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "read_a_max"
+    },
+    {
+      "tick": 876318,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 19.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 12.0,
+          "signal-0~uncommon": 6.0,
+          "signal-0~rare": 9.0,
+          "signal-0~epic": 6.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "read_a_max"
+    },
+    {
+      "tick": 876319,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 19.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 12.0,
+          "signal-0~uncommon": 6.0,
+          "signal-0~rare": 9.0,
+          "signal-0~epic": 6.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "read_a_max"
+    },
+    {
+      "tick": 876320,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 19.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 12.0,
+          "signal-0~uncommon": 6.0,
+          "signal-0~rare": 9.0,
+          "signal-0~epic": 6.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "read_a_max"
+    },
+    {
+      "tick": 876321,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 19.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 12.0,
+          "signal-0~uncommon": 6.0,
+          "signal-0~rare": 9.0,
+          "signal-0~epic": 6.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "read_a_max"
+    },
+    {
+      "tick": 876322,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 21.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 12.0,
+          "signal-0~uncommon": 6.0,
+          "signal-0~rare": 9.0,
+          "signal-0~epic": 6.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "read_a_div"
+    },
+    {
+      "tick": 876323,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 21.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 3.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "read_a_div"
+    },
+    {
+      "tick": 876324,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 21.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "read_a_div"
+    },
+    {
+      "tick": 876325,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 21.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "read_a_div"
+    },
+    {
+      "tick": 876326,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 21.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "read_a_div"
+    },
+    {
+      "tick": 876327,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 21.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "read_a_div"
+    },
+    {
+      "tick": 876328,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 22.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 3.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "read_a_mod"
+    },
+    {
+      "tick": 876329,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 22.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "read_a_mod"
+    },
+    {
+      "tick": 876330,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 22.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "read_a_mod"
+    },
+    {
+      "tick": 876331,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 22.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "read_a_mod"
+    },
+    {
+      "tick": 876332,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 22.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "read_a_mod"
+    },
+    {
+      "tick": 876333,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 22.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "read_a_mod"
+    },
+    {
+      "tick": 876334,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 25.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "read_b_mul"
+    },
+    {
+      "tick": 876335,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 25.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 14.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "read_b_mul"
+    },
+    {
+      "tick": 876336,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 25.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 14.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "read_b_mul"
+    },
+    {
+      "tick": 876337,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 25.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 14.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "read_b_mul"
+    },
+    {
+      "tick": 876338,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 25.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 14.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "read_b_mul"
+    },
+    {
+      "tick": 876339,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 25.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 14.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "read_b_mul"
+    },
+    {
+      "tick": 876340,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 26.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 14.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "read_b_sub"
+    },
+    {
+      "tick": 876341,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 26.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "read_b_sub"
+    },
+    {
+      "tick": 876342,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 26.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "read_b_sub"
+    },
+    {
+      "tick": 876343,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 26.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "read_b_sub"
+    },
+    {
+      "tick": 876344,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 26.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "read_b_sub"
+    },
+    {
+      "tick": 876345,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 26.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "read_b_sub"
+    },
+    {
+      "tick": 876346,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 27.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "read_b_sq_vreg2_squared"
+    },
+    {
+      "tick": 876347,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 27.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 49.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "read_b_sq_vreg2_squared"
+    },
+    {
+      "tick": 876348,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 27.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 49.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "read_b_sq_vreg2_squared"
+    },
+    {
+      "tick": 876349,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 27.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 49.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "read_b_sq_vreg2_squared"
+    },
+    {
+      "tick": 876350,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 27.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 49.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "read_b_sq_vreg2_squared"
+    },
+    {
+      "tick": 876351,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 27.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 49.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "read_b_sq_vreg2_squared"
+    },
+    {
+      "tick": 876352,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 49.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 9,
+      "step_name": "read_b_sqg_vreg3_squared"
+    },
+    {
+      "tick": 876353,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 4.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 9,
+      "step_name": "read_b_sqg_vreg3_squared"
+    },
+    {
+      "tick": 876354,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "read_b_sqg_vreg3_squared"
+    },
+    {
+      "tick": 876355,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "read_b_sqg_vreg3_squared"
+    },
+    {
+      "tick": 876356,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "read_b_sqg_vreg3_squared"
+    },
+    {
+      "tick": 876357,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "read_b_sqg_vreg3_squared"
+    },
+    {
+      "tick": 876358,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 29.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 4.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "read_b_sqdiff"
+    },
+    {
+      "tick": 876359,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 29.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 45.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "read_b_sqdiff"
+    },
+    {
+      "tick": 876360,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 29.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 45.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "read_b_sqdiff"
+    },
+    {
+      "tick": 876361,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 29.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 45.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "read_b_sqdiff"
+    },
+    {
+      "tick": 876362,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 29.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 45.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "read_b_sqdiff"
+    },
+    {
+      "tick": 876363,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 29.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 45.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "read_b_sqdiff"
+    },
+    {
+      "tick": 876364,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 45.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 11,
+      "step_name": "the_two_squares_sum_on_the_bus_free_r2"
+    },
+    {
+      "tick": 876365,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 53.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 11,
+      "step_name": "the_two_squares_sum_on_the_bus_free_r2"
+    },
+    {
+      "tick": 876366,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 53.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "the_two_squares_sum_on_the_bus_free_r2"
+    },
+    {
+      "tick": 876367,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 53.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "the_two_squares_sum_on_the_bus_free_r2"
+    },
+    {
+      "tick": 876368,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 53.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "the_two_squares_sum_on_the_bus_free_r2"
+    },
+    {
+      "tick": 876369,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 53.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "the_two_squares_sum_on_the_bus_free_r2"
+    },
+    {
+      "tick": 876370,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 33.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 53.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 12,
+      "step_name": "read_vs_mul_and_no_control_row_leak"
+    },
+    {
+      "tick": 876371,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 33.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 24.0,
+          "signal-0~uncommon": 10.0,
+          "signal-0~rare": 18.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 12,
+      "step_name": "read_vs_mul_and_no_control_row_leak"
+    },
+    {
+      "tick": 876372,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 33.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 24.0,
+          "signal-0~uncommon": 10.0,
+          "signal-0~rare": 18.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 12,
+      "step_name": "read_vs_mul_and_no_control_row_leak"
+    },
+    {
+      "tick": 876373,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 33.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 24.0,
+          "signal-0~uncommon": 10.0,
+          "signal-0~rare": 18.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 12,
+      "step_name": "read_vs_mul_and_no_control_row_leak"
+    },
+    {
+      "tick": 876374,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 33.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 24.0,
+          "signal-0~uncommon": 10.0,
+          "signal-0~rare": 18.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 12,
+      "step_name": "read_vs_mul_and_no_control_row_leak"
+    },
+    {
+      "tick": 876375,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 33.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 24.0,
+          "signal-0~uncommon": 10.0,
+          "signal-0~rare": 18.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 12,
+      "step_name": "read_vs_mul_and_no_control_row_leak"
+    },
+    {
+      "tick": 876376,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 35.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 24.0,
+          "signal-0~uncommon": 10.0,
+          "signal-0~rare": 18.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 13,
+      "step_name": "read_vs_sub"
+    },
+    {
+      "tick": 876377,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 35.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 3.0,
+          "signal-0~rare": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 13,
+      "step_name": "read_vs_sub"
+    },
+    {
+      "tick": 876378,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 35.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 3.0,
+          "signal-0~rare": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 13,
+      "step_name": "read_vs_sub"
+    },
+    {
+      "tick": 876379,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 35.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 3.0,
+          "signal-0~rare": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 13,
+      "step_name": "read_vs_sub"
+    },
+    {
+      "tick": 876380,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 35.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 3.0,
+          "signal-0~rare": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 13,
+      "step_name": "read_vs_sub"
+    },
+    {
+      "tick": 876381,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 35.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 3.0,
+          "signal-0~rare": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 13,
+      "step_name": "read_vs_sub"
+    },
+    {
+      "tick": 876382,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 36.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 3.0,
+          "signal-0~rare": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 14,
+      "step_name": "read_vs_div"
+    },
+    {
+      "tick": 876383,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 36.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 6.0,
+          "signal-0~uncommon": 2.0,
+          "signal-0~rare": 4.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 14,
+      "step_name": "read_vs_div"
+    },
+    {
+      "tick": 876384,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 36.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 6.0,
+          "signal-0~uncommon": 2.0,
+          "signal-0~rare": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 14,
+      "step_name": "read_vs_div"
+    },
+    {
+      "tick": 876385,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 36.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 6.0,
+          "signal-0~uncommon": 2.0,
+          "signal-0~rare": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 14,
+      "step_name": "read_vs_div"
+    },
+    {
+      "tick": 876386,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 36.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 6.0,
+          "signal-0~uncommon": 2.0,
+          "signal-0~rare": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 14,
+      "step_name": "read_vs_div"
+    },
+    {
+      "tick": 876387,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 36.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 6.0,
+          "signal-0~uncommon": 2.0,
+          "signal-0~rare": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 14,
+      "step_name": "read_vs_div"
+    },
+    {
+      "tick": 876388,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 37.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 6.0,
+          "signal-0~uncommon": 2.0,
+          "signal-0~rare": 4.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 15,
+      "step_name": "read_vs_mod"
+    },
+    {
+      "tick": 876389,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 37.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 1.0,
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 15,
+      "step_name": "read_vs_mod"
+    },
+    {
+      "tick": 876390,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 37.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 1.0,
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 15,
+      "step_name": "read_vs_mod"
+    },
+    {
+      "tick": 876391,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 37.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 1.0,
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 15,
+      "step_name": "read_vs_mod"
+    },
+    {
+      "tick": 876392,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 37.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 1.0,
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 15,
+      "step_name": "read_vs_mod"
+    },
+    {
+      "tick": 876393,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 37.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 1.0,
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 15,
+      "step_name": "read_vs_mod"
+    },
+    {
+      "tick": 876394,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 38.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 1.0,
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 16,
+      "step_name": "read_vs_gt_escape_mask"
+    },
+    {
+      "tick": 876395,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 38.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 1.0,
+          "signal-0~uncommon": 1.0,
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 16,
+      "step_name": "read_vs_gt_escape_mask"
+    },
+    {
+      "tick": 876396,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 38.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 1.0,
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 16,
+      "step_name": "read_vs_gt_escape_mask"
+    },
+    {
+      "tick": 876397,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 38.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 1.0,
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 16,
+      "step_name": "read_vs_gt_escape_mask"
+    },
+    {
+      "tick": 876398,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 38.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 1.0,
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 16,
+      "step_name": "read_vs_gt_escape_mask"
+    },
+    {
+      "tick": 876399,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 38.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 1.0,
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 16,
+      "step_name": "read_vs_gt_escape_mask"
+    },
+    {
+      "tick": 876400,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 25.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 1.0,
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 17,
+      "step_name": "two_op_outputs_sum_on_the_bus"
+    },
+    {
+      "tick": 876401,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 25.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 62.0,
+          "signal-0~uncommon": 30.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 17,
+      "step_name": "two_op_outputs_sum_on_the_bus"
+    },
+    {
+      "tick": 876402,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 25.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 62.0,
+          "signal-0~uncommon": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 17,
+      "step_name": "two_op_outputs_sum_on_the_bus"
+    },
+    {
+      "tick": 876403,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 25.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 62.0,
+          "signal-0~uncommon": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 17,
+      "step_name": "two_op_outputs_sum_on_the_bus"
+    },
+    {
+      "tick": 876404,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 25.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 62.0,
+          "signal-0~uncommon": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 17,
+      "step_name": "two_op_outputs_sum_on_the_bus"
+    },
+    {
+      "tick": 876405,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 25.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 62.0,
+          "signal-0~uncommon": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 17,
+      "step_name": "two_op_outputs_sum_on_the_bus"
+    },
+    {
+      "tick": 876406,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 17.0
+        },
+        "operand_a1": {
+          "signal-0": -3.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 62.0,
+          "signal-0~uncommon": 30.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 18,
+      "step_name": "negative_operand_multiplies"
+    },
+    {
+      "tick": 876407,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 17.0
+        },
+        "operand_a1": {
+          "signal-0": -3.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 48.0,
+          "signal-0~uncommon": 30.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 18,
+      "step_name": "negative_operand_multiplies"
+    },
+    {
+      "tick": 876408,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 17.0
+        },
+        "operand_a1": {
+          "signal-0": -3.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -12.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 18,
+      "step_name": "negative_operand_multiplies"
+    },
+    {
+      "tick": 876409,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 17.0
+        },
+        "operand_a1": {
+          "signal-0": -3.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -12.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 18,
+      "step_name": "negative_operand_multiplies"
+    },
+    {
+      "tick": 876410,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 17.0
+        },
+        "operand_a1": {
+          "signal-0": -3.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -12.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 18,
+      "step_name": "negative_operand_multiplies"
+    },
+    {
+      "tick": 876411,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 17.0
+        },
+        "operand_a1": {
+          "signal-0": -3.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -12.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 18,
+      "step_name": "negative_operand_multiplies"
+    },
+    {
+      "tick": 876412,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 36.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -12.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 19,
+      "step_name": "negative_division_truncates_toward_zero"
+    },
+    {
+      "tick": 876413,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 36.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 19,
+      "step_name": "negative_division_truncates_toward_zero"
+    },
+    {
+      "tick": 876414,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 36.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -3.0,
+          "signal-0~uncommon": 3.0,
+          "signal-0~rare": -4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 19,
+      "step_name": "negative_division_truncates_toward_zero"
+    },
+    {
+      "tick": 876415,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 36.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -3.0,
+          "signal-0~uncommon": 3.0,
+          "signal-0~rare": -4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 19,
+      "step_name": "negative_division_truncates_toward_zero"
+    },
+    {
+      "tick": 876416,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 36.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -3.0,
+          "signal-0~uncommon": 3.0,
+          "signal-0~rare": -4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 19,
+      "step_name": "negative_division_truncates_toward_zero"
+    },
+    {
+      "tick": 876417,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 36.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -3.0,
+          "signal-0~uncommon": 3.0,
+          "signal-0~rare": -4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 19,
+      "step_name": "negative_division_truncates_toward_zero"
+    },
+    {
+      "tick": 876418,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 37.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -3.0,
+          "signal-0~uncommon": 3.0,
+          "signal-0~rare": -4.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 20,
+      "step_name": "negative_modulo_takes_the_dividend_sign"
+    },
+    {
+      "tick": 876419,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 37.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -1.0,
+          "signal-0~uncommon": 1.0,
+          "signal-0~rare": -1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 20,
+      "step_name": "negative_modulo_takes_the_dividend_sign"
+    },
+    {
+      "tick": 876420,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 37.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -1.0,
+          "signal-0~uncommon": 1.0,
+          "signal-0~rare": -1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 20,
+      "step_name": "negative_modulo_takes_the_dividend_sign"
+    },
+    {
+      "tick": 876421,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 37.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -1.0,
+          "signal-0~uncommon": 1.0,
+          "signal-0~rare": -1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 20,
+      "step_name": "negative_modulo_takes_the_dividend_sign"
+    },
+    {
+      "tick": 876422,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 37.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -1.0,
+          "signal-0~uncommon": 1.0,
+          "signal-0~rare": -1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 20,
+      "step_name": "negative_modulo_takes_the_dividend_sign"
+    },
+    {
+      "tick": 876423,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 37.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -1.0,
+          "signal-0~uncommon": 1.0,
+          "signal-0~rare": -1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 20,
+      "step_name": "negative_modulo_takes_the_dividend_sign"
+    },
+    {
+      "tick": 876424,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 29.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -1.0,
+          "signal-0~uncommon": 1.0,
+          "signal-0~rare": -1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 21,
+      "step_name": "squares_of_negatives_are_positive"
+    },
+    {
+      "tick": 876425,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 29.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 45.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 21,
+      "step_name": "squares_of_negatives_are_positive"
+    },
+    {
+      "tick": 876426,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 29.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 45.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 21,
+      "step_name": "squares_of_negatives_are_positive"
+    },
+    {
+      "tick": 876427,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 29.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -16.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 21,
+      "step_name": "squares_of_negatives_are_positive"
+    },
+    {
+      "tick": 876428,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 29.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -16.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 21,
+      "step_name": "squares_of_negatives_are_positive"
+    },
+    {
+      "tick": 876429,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 29.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -16.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 21,
+      "step_name": "squares_of_negatives_are_positive"
+    },
+    {
+      "tick": 876430,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -16.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 22,
+      "step_name": "squares_of_negatives_sum"
+    },
+    {
+      "tick": 876431,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 34.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 22,
+      "step_name": "squares_of_negatives_sum"
+    },
+    {
+      "tick": 876432,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 22,
+      "step_name": "squares_of_negatives_sum"
+    },
+    {
+      "tick": 876433,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 22,
+      "step_name": "squares_of_negatives_sum"
+    },
+    {
+      "tick": 876434,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 22,
+      "step_name": "squares_of_negatives_sum"
+    },
+    {
+      "tick": 876435,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": -9.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 22,
+      "step_name": "squares_of_negatives_sum"
+    },
+    {
+      "tick": 876436,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 20.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 34.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 23,
+      "step_name": "read_a_min_collapses_one_sided_lanes"
+    },
+    {
+      "tick": 876437,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 20.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -7.0,
+          "signal-0~rare": -9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 23,
+      "step_name": "read_a_min_collapses_one_sided_lanes"
+    },
+    {
+      "tick": 876438,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 20.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 4.0,
+          "signal-0~uncommon": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 23,
+      "step_name": "read_a_min_collapses_one_sided_lanes"
+    },
+    {
+      "tick": 876439,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 20.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 4.0,
+          "signal-0~uncommon": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 23,
+      "step_name": "read_a_min_collapses_one_sided_lanes"
+    },
+    {
+      "tick": 876440,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 20.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 4.0,
+          "signal-0~uncommon": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 23,
+      "step_name": "read_a_min_collapses_one_sided_lanes"
+    },
+    {
+      "tick": 876441,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 20.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 4.0,
+          "signal-0~uncommon": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 23,
+      "step_name": "read_a_min_collapses_one_sided_lanes"
+    },
+    {
+      "tick": 876442,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 34.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 4.0,
+          "signal-0~uncommon": 5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 24,
+      "step_name": "read_vs_add"
+    },
+    {
+      "tick": 876443,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 34.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 14.0,
+          "signal-0~uncommon": 7.0,
+          "signal-0~rare": 11.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 24,
+      "step_name": "read_vs_add"
+    },
+    {
+      "tick": 876444,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 34.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 14.0,
+          "signal-0~uncommon": 7.0,
+          "signal-0~rare": 11.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 24,
+      "step_name": "read_vs_add"
+    },
+    {
+      "tick": 876445,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 34.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 14.0,
+          "signal-0~uncommon": 7.0,
+          "signal-0~rare": 11.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 24,
+      "step_name": "read_vs_add"
+    },
+    {
+      "tick": 876446,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 34.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 14.0,
+          "signal-0~uncommon": 7.0,
+          "signal-0~rare": 11.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 24,
+      "step_name": "read_vs_add"
+    },
+    {
+      "tick": 876447,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 34.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 14.0,
+          "signal-0~uncommon": 7.0,
+          "signal-0~rare": 11.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 24,
+      "step_name": "read_vs_add"
+    },
+    {
+      "tick": 876448,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 39.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 14.0,
+          "signal-0~uncommon": 7.0,
+          "signal-0~rare": 11.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 25,
+      "step_name": "read_vs_lt_is_the_complement_of_gt"
+    },
+    {
+      "tick": 876449,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 39.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 25,
+      "step_name": "read_vs_lt_is_the_complement_of_gt"
+    },
+    {
+      "tick": 876450,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 39.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 25,
+      "step_name": "read_vs_lt_is_the_complement_of_gt"
+    },
+    {
+      "tick": 876451,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 39.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 25,
+      "step_name": "read_vs_lt_is_the_complement_of_gt"
+    },
+    {
+      "tick": 876452,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 39.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 25,
+      "step_name": "read_vs_lt_is_the_complement_of_gt"
+    },
+    {
+      "tick": 876453,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 39.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 25,
+      "step_name": "read_vs_lt_is_the_complement_of_gt"
+    },
+    {
+      "tick": 876454,
+      "stimulus": {
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 26,
+      "step_name": "no_select_leaves_bus_empty"
+    },
+    {
+      "tick": 876455,
+      "stimulus": {
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 26,
+      "step_name": "no_select_leaves_bus_empty"
+    },
+    {
+      "tick": 876456,
+      "stimulus": {
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 26,
+      "step_name": "no_select_leaves_bus_empty"
+    },
+    {
+      "tick": 876457,
+      "stimulus": {
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 26,
+      "step_name": "no_select_leaves_bus_empty"
+    },
+    {
+      "tick": 876458,
+      "stimulus": {
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 26,
+      "step_name": "no_select_leaves_bus_empty"
+    },
+    {
+      "tick": 876459,
+      "stimulus": {
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": -3.0
+        },
+        "operand_b2": {
+          "signal-0": -5.0
+        },
+        "operand_a2g": {
+          "signal-0": -3.0
+        },
+        "operand_b2r": {
+          "signal-0": -5.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 26,
+      "step_name": "no_select_leaves_bus_empty"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "park_operands_no_select",
+      "drive_start_tick": 876297,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 0,
+        "signal-0~uncommon": 0
+      },
+      "observed": {},
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876303
+    },
+    {
+      "step_index": 1,
+      "step_name": "read_a_mul",
+      "drive_start_tick": 876303,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 48,
+        "signal-0~uncommon": 30,
+        "signal-0~rare": 0,
+        "signal-0~epic": 0
+      },
+      "observed": {
+        "signal-0": 48.0,
+        "signal-0~uncommon": 30.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876309
+    },
+    {
+      "step_index": 2,
+      "step_name": "read_a_sub_keeps_one_sided_lanes",
+      "drive_start_tick": 876309,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 8,
+        "signal-0~uncommon": -1,
+        "signal-0~rare": 9,
+        "signal-0~epic": -6
+      },
+      "observed": {
+        "signal-0": 8.0,
+        "signal-0~uncommon": -1.0,
+        "signal-0~rare": 9.0,
+        "signal-0~epic": -6.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876315
+    },
+    {
+      "step_index": 3,
+      "step_name": "read_a_max",
+      "drive_start_tick": 876315,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 12,
+        "signal-0~uncommon": 6,
+        "signal-0~rare": 9,
+        "signal-0~epic": 6
+      },
+      "observed": {
+        "signal-0": 12.0,
+        "signal-0~uncommon": 6.0,
+        "signal-0~rare": 9.0,
+        "signal-0~epic": 6.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876321
+    },
+    {
+      "step_index": 4,
+      "step_name": "read_a_div",
+      "drive_start_tick": 876321,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 3,
+        "signal-0~uncommon": 0
+      },
+      "observed": {
+        "signal-0": 3.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876327
+    },
+    {
+      "step_index": 5,
+      "step_name": "read_a_mod",
+      "drive_start_tick": 876327,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 0,
+        "signal-0~uncommon": 5
+      },
+      "observed": {
+        "signal-0~uncommon": 5.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876333
+    },
+    {
+      "step_index": 6,
+      "step_name": "read_b_mul",
+      "drive_start_tick": 876333,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 14
+      },
+      "observed": {
+        "signal-0": 14.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876339
+    },
+    {
+      "step_index": 7,
+      "step_name": "read_b_sub",
+      "drive_start_tick": 876339,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 5
+      },
+      "observed": {
+        "signal-0": 5.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876345
+    },
+    {
+      "step_index": 8,
+      "step_name": "read_b_sq_vreg2_squared",
+      "drive_start_tick": 876345,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 49
+      },
+      "observed": {
+        "signal-0": 49.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876351
+    },
+    {
+      "step_index": 9,
+      "step_name": "read_b_sqg_vreg3_squared",
+      "drive_start_tick": 876351,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 4
+      },
+      "observed": {
+        "signal-0": 4.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876357
+    },
+    {
+      "step_index": 10,
+      "step_name": "read_b_sqdiff",
+      "drive_start_tick": 876357,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 45
+      },
+      "observed": {
+        "signal-0": 45.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876363
+    },
+    {
+      "step_index": 11,
+      "step_name": "the_two_squares_sum_on_the_bus_free_r2",
+      "drive_start_tick": 876363,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 53
+      },
+      "observed": {
+        "signal-0": 53.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876369
+    },
+    {
+      "step_index": 12,
+      "step_name": "read_vs_mul_and_no_control_row_leak",
+      "drive_start_tick": 876369,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 24,
+        "signal-0~uncommon": 10,
+        "signal-0~rare": 18,
+        "signal-alert": 0,
+        "signal-alert~epic": 0
+      },
+      "observed": {
+        "signal-0": 24.0,
+        "signal-0~uncommon": 10.0,
+        "signal-0~rare": 18.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876375
+    },
+    {
+      "step_index": 13,
+      "step_name": "read_vs_sub",
+      "drive_start_tick": 876375,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 10,
+        "signal-0~uncommon": 3,
+        "signal-0~rare": 7
+      },
+      "observed": {
+        "signal-0": 10.0,
+        "signal-0~uncommon": 3.0,
+        "signal-0~rare": 7.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876381
+    },
+    {
+      "step_index": 14,
+      "step_name": "read_vs_div",
+      "drive_start_tick": 876381,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 6,
+        "signal-0~uncommon": 2,
+        "signal-0~rare": 4
+      },
+      "observed": {
+        "signal-0": 6.0,
+        "signal-0~uncommon": 2.0,
+        "signal-0~rare": 4.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876387
+    },
+    {
+      "step_index": 15,
+      "step_name": "read_vs_mod",
+      "drive_start_tick": 876387,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 0,
+        "signal-0~uncommon": 1,
+        "signal-0~rare": 1
+      },
+      "observed": {
+        "signal-0~uncommon": 1.0,
+        "signal-0~rare": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876393
+    },
+    {
+      "step_index": 16,
+      "step_name": "read_vs_gt_escape_mask",
+      "drive_start_tick": 876393,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 1,
+        "signal-0~uncommon": 0,
+        "signal-0~rare": 1
+      },
+      "observed": {
+        "signal-0": 1.0,
+        "signal-0~rare": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876399
+    },
+    {
+      "step_index": 17,
+      "step_name": "two_op_outputs_sum_on_the_bus",
+      "drive_start_tick": 876399,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 62,
+        "signal-0~uncommon": 30
+      },
+      "observed": {
+        "signal-0": 62.0,
+        "signal-0~uncommon": 30.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876405
+    },
+    {
+      "step_index": 18,
+      "step_name": "negative_operand_multiplies",
+      "drive_start_tick": 876405,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": -12,
+        "signal-0~uncommon": 0
+      },
+      "observed": {
+        "signal-0": -12.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876411
+    },
+    {
+      "step_index": 19,
+      "step_name": "negative_division_truncates_toward_zero",
+      "drive_start_tick": 876411,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": -3,
+        "signal-0~uncommon": 3,
+        "signal-0~rare": -4
+      },
+      "observed": {
+        "signal-0": -3.0,
+        "signal-0~uncommon": 3.0,
+        "signal-0~rare": -4.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876417
+    },
+    {
+      "step_index": 20,
+      "step_name": "negative_modulo_takes_the_dividend_sign",
+      "drive_start_tick": 876417,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": -1,
+        "signal-0~uncommon": 1,
+        "signal-0~rare": -1
+      },
+      "observed": {
+        "signal-0": -1.0,
+        "signal-0~uncommon": 1.0,
+        "signal-0~rare": -1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876423
+    },
+    {
+      "step_index": 21,
+      "step_name": "squares_of_negatives_are_positive",
+      "drive_start_tick": 876423,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": -16
+      },
+      "observed": {
+        "signal-0": -16.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876429
+    },
+    {
+      "step_index": 22,
+      "step_name": "squares_of_negatives_sum",
+      "drive_start_tick": 876429,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 34
+      },
+      "observed": {
+        "signal-0": 34.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876435
+    },
+    {
+      "step_index": 23,
+      "step_name": "read_a_min_collapses_one_sided_lanes",
+      "drive_start_tick": 876435,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 4,
+        "signal-0~uncommon": 5,
+        "signal-0~rare": 0,
+        "signal-0~epic": 0
+      },
+      "observed": {
+        "signal-0": 4.0,
+        "signal-0~uncommon": 5.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876441
+    },
+    {
+      "step_index": 24,
+      "step_name": "read_vs_add",
+      "drive_start_tick": 876441,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 14,
+        "signal-0~uncommon": 7,
+        "signal-0~rare": 11,
+        "signal-0~epic": 0
+      },
+      "observed": {
+        "signal-0": 14.0,
+        "signal-0~uncommon": 7.0,
+        "signal-0~rare": 11.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876447
+    },
+    {
+      "step_index": 25,
+      "step_name": "read_vs_lt_is_the_complement_of_gt",
+      "drive_start_tick": 876447,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 0,
+        "signal-0~uncommon": 1,
+        "signal-0~rare": 0
+      },
+      "observed": {
+        "signal-0~uncommon": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876453
+    },
+    {
+      "step_index": 26,
+      "step_name": "no_select_leaves_bus_empty",
+      "drive_start_tick": 876453,
+      "skipped_ticks": 0,
+      "expected_probe": "vbus",
+      "expected": {
+        "signal-0": 0,
+        "signal-0~uncommon": 0
+      },
+      "observed": {},
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876459
+    }
+  ],
+  "pass": true
+}

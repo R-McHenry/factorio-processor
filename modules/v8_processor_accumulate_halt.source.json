@@ -1,0 +1,4445 @@
+{
+  "name": "v8_processor_accumulate_halt",
+  "surface": "nauvis",
+  "description": "fnet v8 program: write_imm + three add_imm pulses + halt on the fnet machine: counter lands exactly at 3, the plain row holds 7, and the post-halt poison stays 0 (halt spin traps the PC).",
+  "signals": {
+    "file.counter": {
+      "type": "item",
+      "name": "artillery-turret",
+      "quality": "rare",
+      "display": "artillery-turret~rare",
+      "auto": false,
+      "address": 300,
+      "accumulate": true
+    },
+    "counter": {
+      "type": "item",
+      "name": "artillery-turret",
+      "quality": "rare",
+      "display": "artillery-turret~rare",
+      "auto": false,
+      "address": 300,
+      "accumulate": true
+    },
+    "file.wsel": {
+      "type": "virtual",
+      "name": "left-arrow",
+      "quality": "uncommon",
+      "display": "left-arrow~uncommon",
+      "auto": true
+    },
+    "wsel": {
+      "type": "virtual",
+      "name": "left-arrow",
+      "quality": "uncommon",
+      "display": "left-arrow~uncommon",
+      "auto": true
+    },
+    "file.wval": {
+      "type": "virtual",
+      "name": "right-arrow",
+      "quality": "uncommon",
+      "display": "right-arrow~uncommon",
+      "auto": true
+    },
+    "wval": {
+      "type": "virtual",
+      "name": "right-arrow",
+      "quality": "uncommon",
+      "display": "right-arrow~uncommon",
+      "auto": true
+    },
+    "file.wflag": {
+      "type": "virtual",
+      "name": "shape-circle",
+      "quality": "uncommon",
+      "display": "shape-circle~uncommon",
+      "auto": true
+    },
+    "wflag": {
+      "type": "virtual",
+      "name": "shape-circle",
+      "quality": "uncommon",
+      "display": "shape-circle~uncommon",
+      "auto": true
+    },
+    "file.addr_stim": {
+      "type": "virtual",
+      "name": "shape-corner",
+      "quality": "uncommon",
+      "display": "shape-corner~uncommon",
+      "auto": true
+    },
+    "addr_stim": {
+      "type": "virtual",
+      "name": "shape-corner",
+      "quality": "uncommon",
+      "display": "shape-corner~uncommon",
+      "auto": true
+    },
+    "file.value_stim": {
+      "type": "virtual",
+      "name": "shape-corner-2",
+      "quality": "uncommon",
+      "display": "shape-corner-2~uncommon",
+      "auto": true
+    },
+    "value_stim": {
+      "type": "virtual",
+      "name": "shape-corner-2",
+      "quality": "uncommon",
+      "display": "shape-corner-2~uncommon",
+      "auto": true
+    },
+    "file.trig_stim": {
+      "type": "virtual",
+      "name": "shape-corner-3",
+      "quality": "uncommon",
+      "display": "shape-corner-3~uncommon",
+      "auto": true
+    },
+    "trig_stim": {
+      "type": "virtual",
+      "name": "shape-corner-3",
+      "quality": "uncommon",
+      "display": "shape-corner-3~uncommon",
+      "auto": true
+    },
+    "file.instr_stim": {
+      "type": "virtual",
+      "name": "shape-corner-4",
+      "quality": "uncommon",
+      "display": "shape-corner-4~uncommon",
+      "auto": true
+    },
+    "instr_stim": {
+      "type": "virtual",
+      "name": "shape-corner-4",
+      "quality": "uncommon",
+      "display": "shape-corner-4~uncommon",
+      "auto": true
+    },
+    "file.wsense": {
+      "type": "virtual",
+      "name": "shape-cross",
+      "quality": "uncommon",
+      "display": "shape-cross~uncommon",
+      "auto": true
+    },
+    "wsense": {
+      "type": "virtual",
+      "name": "shape-cross",
+      "quality": "uncommon",
+      "display": "shape-cross~uncommon",
+      "auto": true
+    },
+    "file.sub_a": {
+      "type": "virtual",
+      "name": "shape-t-2",
+      "quality": "rare",
+      "display": "shape-t-2~rare",
+      "auto": false,
+      "address": 2110
+    },
+    "sub_a": {
+      "type": "virtual",
+      "name": "shape-t-2",
+      "quality": "rare",
+      "display": "shape-t-2~rare",
+      "auto": false,
+      "address": 2110
+    },
+    "file.sub_b": {
+      "type": "virtual",
+      "name": "shape-t-2",
+      "quality": "epic",
+      "display": "shape-t-2~epic",
+      "auto": false,
+      "address": 2111
+    },
+    "sub_b": {
+      "type": "virtual",
+      "name": "shape-t-2",
+      "quality": "epic",
+      "display": "shape-t-2~epic",
+      "auto": false,
+      "address": 2111
+    },
+    "file.sub_res": {
+      "type": "virtual",
+      "name": "shape-t-2",
+      "quality": "legendary",
+      "display": "shape-t-2~legendary",
+      "auto": false,
+      "address": 2112
+    },
+    "sub_res": {
+      "type": "virtual",
+      "name": "shape-t-2",
+      "quality": "legendary",
+      "display": "shape-t-2~legendary",
+      "auto": false,
+      "address": 2112
+    },
+    "file.add_a": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "normal",
+      "display": "shape-t-3",
+      "auto": false,
+      "address": 2113
+    },
+    "add_a": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "normal",
+      "display": "shape-t-3",
+      "auto": false,
+      "address": 2113
+    },
+    "file.add_b": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "uncommon",
+      "display": "shape-t-3~uncommon",
+      "auto": false,
+      "address": 2114
+    },
+    "add_b": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "uncommon",
+      "display": "shape-t-3~uncommon",
+      "auto": false,
+      "address": 2114
+    },
+    "file.add_res": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "rare",
+      "display": "shape-t-3~rare",
+      "auto": false,
+      "address": 2115
+    },
+    "add_res": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "rare",
+      "display": "shape-t-3~rare",
+      "auto": false,
+      "address": 2115
+    },
+    "file.div_a": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "epic",
+      "display": "shape-t-3~epic",
+      "auto": false,
+      "address": 2116
+    },
+    "div_a": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "epic",
+      "display": "shape-t-3~epic",
+      "auto": false,
+      "address": 2116
+    },
+    "file.div_b": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "legendary",
+      "display": "shape-t-3~legendary",
+      "auto": false,
+      "address": 2117
+    },
+    "div_b": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "legendary",
+      "display": "shape-t-3~legendary",
+      "auto": false,
+      "address": 2117
+    },
+    "file.div_res": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "normal",
+      "display": "shape-t-4",
+      "auto": false,
+      "address": 2118
+    },
+    "div_res": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "normal",
+      "display": "shape-t-4",
+      "auto": false,
+      "address": 2118
+    },
+    "file.mul_a": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "uncommon",
+      "display": "shape-t-4~uncommon",
+      "auto": false,
+      "address": 2119
+    },
+    "mul_a": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "uncommon",
+      "display": "shape-t-4~uncommon",
+      "auto": false,
+      "address": 2119
+    },
+    "file.mul_b": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "rare",
+      "display": "shape-t-4~rare",
+      "auto": false,
+      "address": 2120
+    },
+    "mul_b": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "rare",
+      "display": "shape-t-4~rare",
+      "auto": false,
+      "address": 2120
+    },
+    "file.mul_res": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "epic",
+      "display": "shape-t-4~epic",
+      "auto": false,
+      "address": 2121
+    },
+    "mul_res": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "epic",
+      "display": "shape-t-4~epic",
+      "auto": false,
+      "address": 2121
+    },
+    "file.cmp_m": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "legendary",
+      "display": "shape-t-4~legendary",
+      "auto": false,
+      "address": 2122
+    },
+    "cmp_m": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "legendary",
+      "display": "shape-t-4~legendary",
+      "auto": false,
+      "address": 2122
+    },
+    "file.cmp_n": {
+      "type": "virtual",
+      "name": "signal-alarm",
+      "quality": "normal",
+      "display": "signal-alarm",
+      "auto": false,
+      "address": 2123
+    },
+    "cmp_n": {
+      "type": "virtual",
+      "name": "signal-alarm",
+      "quality": "normal",
+      "display": "signal-alarm",
+      "auto": false,
+      "address": 2123
+    },
+    "file.cmp_min": {
+      "type": "virtual",
+      "name": "signal-alarm",
+      "quality": "uncommon",
+      "display": "signal-alarm~uncommon",
+      "auto": false,
+      "address": 2124
+    },
+    "cmp_min": {
+      "type": "virtual",
+      "name": "signal-alarm",
+      "quality": "uncommon",
+      "display": "signal-alarm~uncommon",
+      "auto": false,
+      "address": 2124
+    },
+    "file.cmp_max": {
+      "type": "virtual",
+      "name": "signal-alarm",
+      "quality": "rare",
+      "display": "signal-alarm~rare",
+      "auto": false,
+      "address": 2125
+    },
+    "cmp_max": {
+      "type": "virtual",
+      "name": "signal-alarm",
+      "quality": "rare",
+      "display": "signal-alarm~rare",
+      "auto": false,
+      "address": 2125
+    },
+    "file.flag_ge": {
+      "type": "virtual",
+      "name": "signal-alarm",
+      "quality": "epic",
+      "display": "signal-alarm~epic",
+      "auto": false,
+      "address": 2126
+    },
+    "flag_ge": {
+      "type": "virtual",
+      "name": "signal-alarm",
+      "quality": "epic",
+      "display": "signal-alarm~epic",
+      "auto": false,
+      "address": 2126
+    },
+    "file.flag_gt": {
+      "type": "virtual",
+      "name": "signal-alarm",
+      "quality": "legendary",
+      "display": "signal-alarm~legendary",
+      "auto": false,
+      "address": 2127
+    },
+    "flag_gt": {
+      "type": "virtual",
+      "name": "signal-alarm",
+      "quality": "legendary",
+      "display": "signal-alarm~legendary",
+      "auto": false,
+      "address": 2127
+    },
+    "file.read_a": {
+      "type": "virtual",
+      "name": "down-arrow",
+      "quality": "uncommon",
+      "display": "down-arrow~uncommon",
+      "auto": true,
+      "excluded": true
+    },
+    "read_a": {
+      "type": "virtual",
+      "name": "down-arrow",
+      "quality": "uncommon",
+      "display": "down-arrow~uncommon",
+      "auto": true,
+      "excluded": true
+    },
+    "file.addr_a_stim": {
+      "type": "virtual",
+      "name": "shape-curve",
+      "quality": "uncommon",
+      "display": "shape-curve~uncommon",
+      "auto": true
+    },
+    "addr_a_stim": {
+      "type": "virtual",
+      "name": "shape-curve",
+      "quality": "uncommon",
+      "display": "shape-curve~uncommon",
+      "auto": true
+    },
+    "file.read_b": {
+      "type": "virtual",
+      "name": "down-left-arrow",
+      "quality": "uncommon",
+      "display": "down-left-arrow~uncommon",
+      "auto": true,
+      "excluded": true
+    },
+    "read_b": {
+      "type": "virtual",
+      "name": "down-left-arrow",
+      "quality": "uncommon",
+      "display": "down-left-arrow~uncommon",
+      "auto": true,
+      "excluded": true
+    },
+    "file.addr_b_stim": {
+      "type": "virtual",
+      "name": "shape-curve-2",
+      "quality": "uncommon",
+      "display": "shape-curve-2~uncommon",
+      "auto": true
+    },
+    "addr_b_stim": {
+      "type": "virtual",
+      "name": "shape-curve-2",
+      "quality": "uncommon",
+      "display": "shape-curve-2~uncommon",
+      "auto": true
+    },
+    "file.b_reg": {
+      "type": "item",
+      "name": "artillery-wagon-cannon",
+      "quality": "rare",
+      "display": "artillery-wagon-cannon~rare",
+      "auto": false,
+      "address": 310
+    },
+    "b_reg": {
+      "type": "item",
+      "name": "artillery-wagon-cannon",
+      "quality": "rare",
+      "display": "artillery-wagon-cannon~rare",
+      "auto": false,
+      "address": 310
+    },
+    "file.read_pc": {
+      "type": "virtual",
+      "name": "down-right-arrow",
+      "quality": "uncommon",
+      "display": "down-right-arrow~uncommon",
+      "auto": true,
+      "excluded": true
+    },
+    "read_pc": {
+      "type": "virtual",
+      "name": "down-right-arrow",
+      "quality": "uncommon",
+      "display": "down-right-arrow~uncommon",
+      "auto": true,
+      "excluded": true
+    },
+    "file.pc": {
+      "type": "virtual",
+      "name": "shape-curve-3",
+      "quality": "epic",
+      "display": "shape-curve-3~epic",
+      "auto": false,
+      "address": 2096
+    },
+    "pc": {
+      "type": "virtual",
+      "name": "shape-curve-3",
+      "quality": "epic",
+      "display": "shape-curve-3~epic",
+      "auto": false,
+      "address": 2096
+    },
+    "file.pc_stim": {
+      "type": "virtual",
+      "name": "shape-curve-3",
+      "quality": "uncommon",
+      "display": "shape-curve-3~uncommon",
+      "auto": true
+    },
+    "pc_stim": {
+      "type": "virtual",
+      "name": "shape-curve-3",
+      "quality": "uncommon",
+      "display": "shape-curve-3~uncommon",
+      "auto": true
+    },
+    "file.poison_ctr": {
+      "type": "item",
+      "name": "artillery-turret",
+      "quality": "epic",
+      "display": "artillery-turret~epic",
+      "auto": false,
+      "address": 301,
+      "accumulate": true
+    },
+    "poison_ctr": {
+      "type": "item",
+      "name": "artillery-turret",
+      "quality": "epic",
+      "display": "artillery-turret~epic",
+      "auto": false,
+      "address": 301,
+      "accumulate": true
+    }
+  },
+  "blueprint": {
+    "icons": [
+      {
+        "signal": {
+          "name": "constant-combinator"
+        },
+        "index": 1
+      }
+    ],
+    "entities": [
+      {
+        "entity_number": 1,
+        "name": "constant-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -12.5
+        },
+        "player_description": "write_adress",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 2,
+        "name": "constant-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -11.5
+        },
+        "player_description": "write_value_bus",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 3,
+        "name": "constant-combinator",
+        "position": {
+          "x": 1.5,
+          "y": -12.5
+        },
+        "player_description": "br_porta_hi",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 4,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -12.0
+        },
+        "player_description": "imm_shift",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 12,
+            "operation": ">>",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 5,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 3.5,
+          "y": -12.0
+        },
+        "player_description": "route_a1_mask",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 1,
+            "operation": "AND",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 6,
+        "name": "decider-combinator",
+        "position": {
+          "x": 4.5,
+          "y": -12.0
+        },
+        "player_description": "route_a1",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 7,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 5.5,
+          "y": -12.0
+        },
+        "player_description": "route_a2_mask",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 2,
+            "operation": "AND",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 8,
+        "name": "decider-combinator",
+        "position": {
+          "x": 6.5,
+          "y": -12.0
+        },
+        "player_description": "route_a2",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 9,
+        "name": "constant-combinator",
+        "position": {
+          "x": 8.5,
+          "y": -12.5
+        },
+        "player_description": "matrix_out1",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 10,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 9.5,
+          "y": -12.0
+        },
+        "player_description": "route_a3_mask",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 4,
+            "operation": "AND",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 11,
+        "name": "decider-combinator",
+        "position": {
+          "x": 10.5,
+          "y": -12.0
+        },
+        "player_description": "route_a3",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 12,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 11.5,
+          "y": -12.0
+        },
+        "player_description": "route_a4_mask",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 8,
+            "operation": "AND",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 13,
+        "name": "decider-combinator",
+        "position": {
+          "x": 12.5,
+          "y": -12.0
+        },
+        "player_description": "route_a4",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 14,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 13.5,
+          "y": -12.0
+        },
+        "player_description": "route_b1_mask",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 16,
+            "operation": "AND",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 15,
+        "name": "decider-combinator",
+        "position": {
+          "x": 14.5,
+          "y": -12.0
+        },
+        "player_description": "route_b1",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 16,
+        "name": "constant-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -10.5
+        },
+        "player_description": "matrix_out2",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 17,
+        "name": "constant-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -9.5
+        },
+        "player_description": "matrix_out3",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 18,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 1.5,
+          "y": -10.0
+        },
+        "player_description": "route_b2_mask",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 32,
+            "operation": "AND",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 19,
+        "name": "decider-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -10.0
+        },
+        "player_description": "route_b2",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 20,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 3.5,
+          "y": -10.0
+        },
+        "player_description": "route_b3_mask",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 64,
+            "operation": "AND",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 21,
+        "name": "decider-combinator",
+        "position": {
+          "x": 4.5,
+          "y": -10.0
+        },
+        "player_description": "route_b3",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 22,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 5.5,
+          "y": -10.0
+        },
+        "player_description": "route_b4_mask",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 128,
+            "operation": "AND",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 23,
+        "name": "decider-combinator",
+        "position": {
+          "x": 6.5,
+          "y": -10.0
+        },
+        "player_description": "route_b4",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 24,
+        "name": "constant-combinator",
+        "position": {
+          "x": 8.5,
+          "y": -10.5
+        },
+        "player_description": "matrix_out4",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 25,
+        "name": "constant-combinator",
+        "position": {
+          "x": 8.5,
+          "y": -9.5
+        },
+        "player_description": "br_porta_dec",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 26,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 9.5,
+          "y": -10.0
+        },
+        "player_description": "route_c1_mask",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 256,
+            "operation": "AND",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 27,
+        "name": "decider-combinator",
+        "position": {
+          "x": 10.5,
+          "y": -10.0
+        },
+        "player_description": "route_c1",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 28,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 11.5,
+          "y": -10.0
+        },
+        "player_description": "route_c2_mask",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 512,
+            "operation": "AND",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 29,
+        "name": "decider-combinator",
+        "position": {
+          "x": 12.5,
+          "y": -10.0
+        },
+        "player_description": "route_c2",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 30,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 13.5,
+          "y": -10.0
+        },
+        "player_description": "route_c3_mask",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 1024,
+            "operation": "AND",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 31,
+        "name": "decider-combinator",
+        "position": {
+          "x": 14.5,
+          "y": -10.0
+        },
+        "player_description": "route_c3",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 32,
+        "name": "decider-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -8.0
+        },
+        "player_description": "write_trigger_sense",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "shape-cross",
+                  "quality": "uncommon"
+                },
+                "copy_count_from_input": false,
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 33,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 1.5,
+          "y": -8.0
+        },
+        "player_description": "route_c4_mask",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 2048,
+            "operation": "AND",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 34,
+        "name": "decider-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -8.0
+        },
+        "player_description": "route_c4",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 35,
+        "name": "constant-combinator",
+        "position": {
+          "x": 3.5,
+          "y": -8.5
+        },
+        "player_description": "br_trig",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 36,
+        "name": "constant-combinator",
+        "position": {
+          "x": 3.5,
+          "y": -7.5
+        },
+        "player_description": "br_porta_mid",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 37,
+        "name": "constant-combinator",
+        "position": {
+          "x": 4.5,
+          "y": -8.5
+        },
+        "player_description": "br_park_1",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 38,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 5.5,
+          "y": -8.0
+        },
+        "player_description": "write_addr_to_scalar",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "left-arrow",
+              "quality": "uncommon"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 39,
+        "name": "decider-combinator",
+        "position": {
+          "x": 6.5,
+          "y": -8.0
+        },
+        "player_description": "write_addr_latch",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 40,
+        "name": "constant-combinator",
+        "position": {
+          "x": 8.5,
+          "y": -8.5
+        },
+        "player_description": "address_table",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        },
+        "signal_table": {
+          "table": "full_address_space",
+          "exclude": [
+            {
+              "type": "virtual",
+              "name": "down-arrow",
+              "quality": "uncommon"
+            },
+            {
+              "type": "virtual",
+              "name": "down-left-arrow",
+              "quality": "uncommon"
+            },
+            {
+              "type": "virtual",
+              "name": "down-right-arrow",
+              "quality": "uncommon"
+            }
+          ]
+        }
+      },
+      {
+        "entity_number": 41,
+        "name": "decider-combinator",
+        "position": {
+          "x": 9.5,
+          "y": -8.0
+        },
+        "player_description": "write_onehot",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "left-arrow",
+                  "quality": "uncommon"
+                },
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                },
+                "second_signal_networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "copy_count_from_input": false,
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 42,
+        "name": "decider-combinator",
+        "position": {
+          "x": 10.5,
+          "y": -8.0
+        },
+        "player_description": "write_flag",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "shape-circle",
+                  "quality": "uncommon"
+                },
+                "copy_count_from_input": false,
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 43,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 11.5,
+          "y": -8.0
+        },
+        "player_description": "write_trigger_product",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_signal": {
+              "type": "virtual",
+              "name": "shape-circle",
+              "quality": "uncommon"
+            },
+            "operation": "*",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "first_signal_networks": {
+              "red": true,
+              "green": false
+            },
+            "second_signal_networks": {
+              "red": false,
+              "green": true
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 44,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 12.5,
+          "y": -8.0
+        },
+        "player_description": "write_value_to_scalar",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "right-arrow",
+              "quality": "uncommon"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 45,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 13.5,
+          "y": -8.0
+        },
+        "player_description": "write_value_product",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_signal": {
+              "type": "virtual",
+              "name": "right-arrow",
+              "quality": "uncommon"
+            },
+            "operation": "*",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "first_signal_networks": {
+              "red": true,
+              "green": false
+            },
+            "second_signal_networks": {
+              "red": false,
+              "green": true
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 46,
+        "name": "constant-combinator",
+        "position": {
+          "x": 14.5,
+          "y": -8.5
+        },
+        "player_description": "write_trigger_set",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 47,
+        "name": "constant-combinator",
+        "position": {
+          "x": 14.5,
+          "y": -7.5
+        },
+        "player_description": "write_value",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 48,
+        "name": "constant-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -6.5
+        },
+        "player_description": "write_trigger_reset",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 49,
+        "name": "constant-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -5.5
+        },
+        "player_description": "br_porta_r6",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 50,
+        "name": "constant-combinator",
+        "position": {
+          "x": 1.5,
+          "y": -6.5
+        },
+        "player_description": "br_portb",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 51,
+        "name": "constant-combinator",
+        "position": {
+          "x": 1.5,
+          "y": -5.5
+        },
+        "player_description": "br_inject_1",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 52,
+        "name": "constant-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -6.5
+        },
+        "player_description": "accumulate_mask",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": [
+                  {
+                    "index": 1,
+                    "type": "item",
+                    "name": "artillery-turret",
+                    "quality": "rare",
+                    "comparator": "=",
+                    "count": -1
+                  },
+                  {
+                    "index": 2,
+                    "type": "item",
+                    "name": "artillery-turret",
+                    "quality": "epic",
+                    "comparator": "=",
+                    "count": -1
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 53,
+        "name": "decider-combinator",
+        "position": {
+          "x": 3.5,
+          "y": -6.0
+        },
+        "player_description": "injector",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 54,
+        "name": "decider-combinator",
+        "position": {
+          "x": 4.5,
+          "y": -6.0
+        },
+        "player_description": "mem_cell",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "comparator": "\u2264",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 55,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 5.5,
+          "y": -6.0
+        },
+        "player_description": "ALU_SUB",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "shape-t-2",
+              "quality": "rare"
+            },
+            "second_signal": {
+              "type": "virtual",
+              "name": "shape-t-2",
+              "quality": "epic"
+            },
+            "operation": "-",
+            "output_signal": {
+              "type": "virtual",
+              "name": "shape-t-2",
+              "quality": "legendary"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 56,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 6.5,
+          "y": -6.0
+        },
+        "player_description": "ALU_ADD",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "shape-t-3",
+              "quality": "normal"
+            },
+            "second_signal": {
+              "type": "virtual",
+              "name": "shape-t-3",
+              "quality": "uncommon"
+            },
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "shape-t-3",
+              "quality": "rare"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 57,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 8.5,
+          "y": -6.0
+        },
+        "player_description": "ALU_DIV",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "shape-t-3",
+              "quality": "epic"
+            },
+            "second_signal": {
+              "type": "virtual",
+              "name": "shape-t-3",
+              "quality": "legendary"
+            },
+            "operation": "/",
+            "output_signal": {
+              "type": "virtual",
+              "name": "shape-t-4",
+              "quality": "normal"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 58,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 9.5,
+          "y": -6.0
+        },
+        "player_description": "ALU_MUL",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "shape-t-4",
+              "quality": "uncommon"
+            },
+            "second_signal": {
+              "type": "virtual",
+              "name": "shape-t-4",
+              "quality": "rare"
+            },
+            "operation": "*",
+            "output_signal": {
+              "type": "virtual",
+              "name": "shape-t-4",
+              "quality": "epic"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 59,
+        "name": "decider-combinator",
+        "position": {
+          "x": 10.5,
+          "y": -6.0
+        },
+        "player_description": "CMP_MIN",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "legendary"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "signal-alarm",
+                  "quality": "normal"
+                },
+                "comparator": "<"
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "legendary"
+                }
+              }
+            ],
+            "else_outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-alarm",
+                  "quality": "normal"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 60,
+        "name": "decider-combinator",
+        "position": {
+          "x": 11.5,
+          "y": -6.0
+        },
+        "player_description": "CMP_MAX",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "legendary"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "signal-alarm",
+                  "quality": "normal"
+                },
+                "comparator": ">"
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "legendary"
+                }
+              }
+            ],
+            "else_outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-alarm",
+                  "quality": "normal"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 61,
+        "name": "decider-combinator",
+        "position": {
+          "x": 12.5,
+          "y": -6.0
+        },
+        "player_description": "CMP_GE",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "legendary"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "signal-alarm",
+                  "quality": "normal"
+                },
+                "comparator": "\u2265"
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-alarm",
+                  "quality": "epic"
+                },
+                "copy_count_from_input": false
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 62,
+        "name": "decider-combinator",
+        "position": {
+          "x": 13.5,
+          "y": -6.0
+        },
+        "player_description": "CMP_GT",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "legendary"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "signal-alarm",
+                  "quality": "normal"
+                },
+                "comparator": ">"
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-alarm",
+                  "quality": "legendary"
+                },
+                "copy_count_from_input": false
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 63,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 14.5,
+          "y": -6.0
+        },
+        "player_description": "CMP_MIN_scalar",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-alarm",
+              "quality": "uncommon"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 64,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -4.0
+        },
+        "player_description": "CMP_MAX_scalar",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-alarm",
+              "quality": "rare"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 65,
+        "name": "constant-combinator",
+        "position": {
+          "x": 1.5,
+          "y": -4.5
+        },
+        "player_description": "br_instr_2",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 66,
+        "name": "constant-combinator",
+        "position": {
+          "x": 1.5,
+          "y": -3.5
+        },
+        "player_description": "ROM",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": [
+                  {
+                    "index": 1,
+                    "type": "virtual",
+                    "name": "signal-0",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 205056
+                  },
+                  {
+                    "index": 2,
+                    "type": "virtual",
+                    "name": "signal-0",
+                    "quality": "uncommon",
+                    "comparator": "=",
+                    "count": 1229056
+                  },
+                  {
+                    "index": 3,
+                    "type": "virtual",
+                    "name": "signal-0",
+                    "quality": "rare",
+                    "comparator": "=",
+                    "count": 29184
+                  },
+                  {
+                    "index": 4,
+                    "type": "virtual",
+                    "name": "signal-0",
+                    "quality": "epic",
+                    "comparator": "=",
+                    "count": 4608
+                  },
+                  {
+                    "index": 5,
+                    "type": "virtual",
+                    "name": "signal-0",
+                    "quality": "legendary",
+                    "comparator": "=",
+                    "count": 1229056
+                  },
+                  {
+                    "index": 6,
+                    "type": "virtual",
+                    "name": "signal-1",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 1229056
+                  },
+                  {
+                    "index": 7,
+                    "type": "virtual",
+                    "name": "signal-1",
+                    "quality": "uncommon",
+                    "comparator": "=",
+                    "count": 4608
+                  },
+                  {
+                    "index": 8,
+                    "type": "virtual",
+                    "name": "signal-1",
+                    "quality": "rare",
+                    "comparator": "=",
+                    "count": 4608
+                  },
+                  {
+                    "index": 9,
+                    "type": "virtual",
+                    "name": "signal-1",
+                    "quality": "epic",
+                    "comparator": "=",
+                    "count": -18432
+                  },
+                  {
+                    "index": 10,
+                    "type": "virtual",
+                    "name": "signal-2",
+                    "quality": "epic",
+                    "comparator": "=",
+                    "count": 1233152
+                  },
+                  {
+                    "index": 11,
+                    "type": "virtual",
+                    "name": "signal-3",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 455168
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 67,
+        "name": "constant-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -4.5
+        },
+        "player_description": "addr_rd_b",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 68,
+        "name": "constant-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -3.5
+        },
+        "player_description": "br_state_1",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 69,
+        "name": "constant-combinator",
+        "position": {
+          "x": 3.5,
+          "y": -4.5
+        },
+        "player_description": "br_membus_1",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 70,
+        "name": "constant-combinator",
+        "position": {
+          "x": 3.5,
+          "y": -3.5
+        },
+        "player_description": "br_park_2",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 71,
+        "name": "constant-combinator",
+        "position": {
+          "x": 4.5,
+          "y": -4.5
+        },
+        "player_description": "br_membus_2",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 72,
+        "name": "constant-combinator",
+        "position": {
+          "x": 4.5,
+          "y": -3.5
+        },
+        "player_description": "addr_rd_a",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 73,
+        "name": "decider-combinator",
+        "position": {
+          "x": 5.5,
+          "y": -4.0
+        },
+        "player_description": "a_rd_latch",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "second_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 74,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 6.5,
+          "y": -4.0
+        },
+        "player_description": "a_carrier",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "down-arrow",
+              "quality": "uncommon"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 75,
+        "name": "constant-combinator",
+        "position": {
+          "x": 8.5,
+          "y": -4.5
+        },
+        "player_description": "address_table",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        },
+        "signal_table": {
+          "table": "full_address_space",
+          "exclude": [
+            {
+              "type": "virtual",
+              "name": "down-arrow",
+              "quality": "uncommon"
+            },
+            {
+              "type": "virtual",
+              "name": "down-left-arrow",
+              "quality": "uncommon"
+            },
+            {
+              "type": "virtual",
+              "name": "down-right-arrow",
+              "quality": "uncommon"
+            }
+          ]
+        }
+      },
+      {
+        "entity_number": 76,
+        "name": "decider-combinator",
+        "position": {
+          "x": 9.5,
+          "y": -4.0
+        },
+        "player_description": "port_a_read",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "down-arrow",
+                  "quality": "uncommon"
+                },
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                },
+                "second_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 77,
+        "name": "constant-combinator",
+        "position": {
+          "x": 10.5,
+          "y": -4.5
+        },
+        "player_description": "port_a_rd",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 78,
+        "name": "constant-combinator",
+        "position": {
+          "x": 10.5,
+          "y": -3.5
+        },
+        "player_description": "mmap_addr",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": [
+                  {
+                    "index": 1,
+                    "type": "item",
+                    "name": "artillery-wagon-cannon",
+                    "quality": "rare",
+                    "comparator": "=",
+                    "count": 1
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 79,
+        "name": "decider-combinator",
+        "position": {
+          "x": 11.5,
+          "y": -4.0
+        },
+        "player_description": "mmap_gate",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 80,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 12.5,
+          "y": -4.0
+        },
+        "player_description": "b_carrier",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "down-left-arrow",
+              "quality": "uncommon"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 81,
+        "name": "constant-combinator",
+        "position": {
+          "x": 13.5,
+          "y": -4.5
+        },
+        "player_description": "address_table",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        },
+        "signal_table": {
+          "table": "full_address_space",
+          "exclude": [
+            {
+              "type": "virtual",
+              "name": "down-arrow",
+              "quality": "uncommon"
+            },
+            {
+              "type": "virtual",
+              "name": "down-left-arrow",
+              "quality": "uncommon"
+            },
+            {
+              "type": "virtual",
+              "name": "down-right-arrow",
+              "quality": "uncommon"
+            }
+          ]
+        }
+      },
+      {
+        "entity_number": 82,
+        "name": "decider-combinator",
+        "position": {
+          "x": 14.5,
+          "y": -4.0
+        },
+        "player_description": "port_b_read",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "down-left-arrow",
+                  "quality": "uncommon"
+                },
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                },
+                "second_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 83,
+        "name": "constant-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -2.5
+        },
+        "player_description": "port_b_rd",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 84,
+        "name": "constant-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -1.5
+        },
+        "player_description": "addr_rd_pc",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 85,
+        "name": "constant-combinator",
+        "position": {
+          "x": 1.5,
+          "y": -2.5
+        },
+        "player_description": "br_state_2",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 86,
+        "name": "constant-combinator",
+        "position": {
+          "x": 1.5,
+          "y": -1.5
+        },
+        "player_description": "br_instr_3",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 87,
+        "name": "constant-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -2.5
+        },
+        "player_description": "br_inject_3",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 88,
+        "name": "constant-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -1.5
+        },
+        "player_description": "br_membus_3",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 89,
+        "name": "constant-combinator",
+        "position": {
+          "x": 3.5,
+          "y": -2.5
+        },
+        "player_description": "br_state_3",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 90,
+        "name": "constant-combinator",
+        "position": {
+          "x": 3.5,
+          "y": -1.5
+        },
+        "player_description": "br_membus_4",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 91,
+        "name": "constant-combinator",
+        "position": {
+          "x": 4.5,
+          "y": -2.5
+        },
+        "player_description": "br_inject_4",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 92,
+        "name": "constant-combinator",
+        "position": {
+          "x": 4.5,
+          "y": -1.5
+        },
+        "player_description": "br_park_3",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 93,
+        "name": "constant-combinator",
+        "position": {
+          "x": 5.5,
+          "y": -2.5
+        },
+        "player_description": "pc_inject",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 94,
+        "name": "constant-combinator",
+        "position": {
+          "x": 5.5,
+          "y": -1.5
+        },
+        "player_description": "pc_autoincrement",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": [
+                  {
+                    "index": 1,
+                    "type": "virtual",
+                    "name": "shape-curve-3",
+                    "quality": "epic",
+                    "comparator": "=",
+                    "count": 1
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 95,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 6.5,
+          "y": -2.0
+        },
+        "player_description": "pc_inject_sum",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "shape-curve-3",
+              "quality": "epic"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 96,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 8.5,
+          "y": -2.0
+        },
+        "player_description": "pc_carrier",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "shape-curve-3",
+              "quality": "epic"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "down-right-arrow",
+              "quality": "uncommon"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 97,
+        "name": "constant-combinator",
+        "position": {
+          "x": 9.5,
+          "y": -2.5
+        },
+        "player_description": "address_table",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        },
+        "signal_table": {
+          "table": "full_address_space",
+          "exclude": [
+            {
+              "type": "virtual",
+              "name": "down-arrow",
+              "quality": "uncommon"
+            },
+            {
+              "type": "virtual",
+              "name": "down-left-arrow",
+              "quality": "uncommon"
+            },
+            {
+              "type": "virtual",
+              "name": "down-right-arrow",
+              "quality": "uncommon"
+            }
+          ]
+        }
+      },
+      {
+        "entity_number": 98,
+        "name": "decider-combinator",
+        "position": {
+          "x": 10.5,
+          "y": -2.0
+        },
+        "player_description": "instruction_read",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "down-right-arrow",
+                  "quality": "uncommon"
+                },
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                },
+                "second_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 99,
+        "name": "constant-combinator",
+        "position": {
+          "x": 11.5,
+          "y": -2.5
+        },
+        "player_description": "instruction_rd",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 100,
+        "name": "constant-combinator",
+        "position": {
+          "x": 11.5,
+          "y": -1.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 101,
+        "name": "constant-combinator",
+        "position": {
+          "x": 12.5,
+          "y": -2.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 102,
+        "name": "constant-combinator",
+        "position": {
+          "x": 7.5,
+          "y": -4.5
+        },
+        "player_description": "repeater_addr_b_bus",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 103,
+        "name": "constant-combinator",
+        "position": {
+          "x": 7.5,
+          "y": -5.5
+        },
+        "player_description": "repeater_alu0_max_raw",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 104,
+        "name": "constant-combinator",
+        "position": {
+          "x": 7.5,
+          "y": -7.5
+        },
+        "player_description": "repeater_value_bus",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "wires": [
+      [
+        1,
+        2,
+        6,
+        4
+      ],
+      [
+        2,
+        2,
+        16,
+        2
+      ],
+      [
+        3,
+        2,
+        6,
+        2
+      ],
+      [
+        4,
+        2,
+        5,
+        2
+      ],
+      [
+        4,
+        4,
+        27,
+        2
+      ],
+      [
+        4,
+        4,
+        34,
+        2
+      ],
+      [
+        5,
+        2,
+        7,
+        2
+      ],
+      [
+        5,
+        2,
+        20,
+        2
+      ],
+      [
+        5,
+        3,
+        6,
+        1
+      ],
+      [
+        6,
+        2,
+        8,
+        2
+      ],
+      [
+        6,
+        2,
+        36,
+        2
+      ],
+      [
+        6,
+        4,
+        9,
+        2
+      ],
+      [
+        6,
+        4,
+        38,
+        2
+      ],
+      [
+        7,
+        3,
+        8,
+        1
+      ],
+      [
+        7,
+        4,
+        18,
+        4
+      ],
+      [
+        7,
+        4,
+        28,
+        4
+      ],
+      [
+        8,
+        2,
+        25,
+        2
+      ],
+      [
+        8,
+        4,
+        19,
+        4
+      ],
+      [
+        8,
+        4,
+        29,
+        4
+      ],
+      [
+        9,
+        2,
+        27,
+        4
+      ],
+      [
+        10,
+        2,
+        12,
+        2
+      ],
+      [
+        10,
+        2,
+        26,
+        2
+      ],
+      [
+        10,
+        3,
+        11,
+        1
+      ],
+      [
+        11,
+        2,
+        13,
+        2
+      ],
+      [
+        11,
+        2,
+        25,
+        2
+      ],
+      [
+        11,
+        4,
+        21,
+        4
+      ],
+      [
+        11,
+        4,
+        31,
+        4
+      ],
+      [
+        12,
+        2,
+        14,
+        2
+      ],
+      [
+        12,
+        3,
+        13,
+        1
+      ],
+      [
+        13,
+        4,
+        24,
+        2
+      ],
+      [
+        14,
+        3,
+        15,
+        1
+      ],
+      [
+        15,
+        2,
+        23,
+        2
+      ],
+      [
+        15,
+        2,
+        82,
+        4
+      ],
+      [
+        15,
+        4,
+        27,
+        4
+      ],
+      [
+        16,
+        2,
+        19,
+        4
+      ],
+      [
+        17,
+        2,
+        21,
+        4
+      ],
+      [
+        18,
+        2,
+        20,
+        2
+      ],
+      [
+        18,
+        2,
+        33,
+        2
+      ],
+      [
+        18,
+        3,
+        19,
+        1
+      ],
+      [
+        18,
+        4,
+        32,
+        2
+      ],
+      [
+        19,
+        2,
+        21,
+        2
+      ],
+      [
+        19,
+        2,
+        50,
+        2
+      ],
+      [
+        20,
+        2,
+        22,
+        2
+      ],
+      [
+        20,
+        3,
+        21,
+        1
+      ],
+      [
+        21,
+        2,
+        23,
+        2
+      ],
+      [
+        21,
+        4,
+        37,
+        2
+      ],
+      [
+        22,
+        2,
+        26,
+        2
+      ],
+      [
+        22,
+        3,
+        23,
+        1
+      ],
+      [
+        23,
+        4,
+        24,
+        2
+      ],
+      [
+        23,
+        4,
+        34,
+        4
+      ],
+      [
+        25,
+        2,
+        77,
+        2
+      ],
+      [
+        26,
+        2,
+        28,
+        2
+      ],
+      [
+        26,
+        3,
+        27,
+        1
+      ],
+      [
+        27,
+        2,
+        29,
+        2
+      ],
+      [
+        28,
+        2,
+        30,
+        2
+      ],
+      [
+        28,
+        2,
+        99,
+        2
+      ],
+      [
+        28,
+        3,
+        29,
+        1
+      ],
+      [
+        29,
+        2,
+        31,
+        2
+      ],
+      [
+        29,
+        4,
+        44,
+        2
+      ],
+      [
+        30,
+        3,
+        31,
+        1
+      ],
+      [
+        32,
+        3,
+        35,
+        1
+      ],
+      [
+        33,
+        2,
+        65,
+        2
+      ],
+      [
+        33,
+        3,
+        34,
+        1
+      ],
+      [
+        34,
+        4,
+        51,
+        2
+      ],
+      [
+        35,
+        1,
+        42,
+        1
+      ],
+      [
+        36,
+        2,
+        49,
+        2
+      ],
+      [
+        37,
+        2,
+        73,
+        2
+      ],
+      [
+        38,
+        4,
+        39,
+        2
+      ],
+      [
+        39,
+        1,
+        39,
+        3
+      ],
+      [
+        39,
+        4,
+        41,
+        2
+      ],
+      [
+        40,
+        1,
+        41,
+        1
+      ],
+      [
+        41,
+        3,
+        43,
+        1
+      ],
+      [
+        42,
+        4,
+        43,
+        2
+      ],
+      [
+        43,
+        1,
+        45,
+        1
+      ],
+      [
+        43,
+        3,
+        46,
+        1
+      ],
+      [
+        43,
+        3,
+        53,
+        1
+      ],
+      [
+        43,
+        4,
+        54,
+        2
+      ],
+      [
+        44,
+        4,
+        45,
+        2
+      ],
+      [
+        45,
+        4,
+        47,
+        2
+      ],
+      [
+        45,
+        4,
+        104,
+        2
+      ],
+      [
+        48,
+        2,
+        52,
+        2
+      ],
+      [
+        50,
+        2,
+        83,
+        2
+      ],
+      [
+        51,
+        2,
+        87,
+        2
+      ],
+      [
+        52,
+        2,
+        54,
+        2
+      ],
+      [
+        53,
+        2,
+        104,
+        2
+      ],
+      [
+        53,
+        3,
+        54,
+        3
+      ],
+      [
+        53,
+        3,
+        68,
+        1
+      ],
+      [
+        53,
+        4,
+        54,
+        4
+      ],
+      [
+        53,
+        4,
+        69,
+        2
+      ],
+      [
+        54,
+        1,
+        54,
+        3
+      ],
+      [
+        54,
+        3,
+        55,
+        1
+      ],
+      [
+        54,
+        4,
+        55,
+        4
+      ],
+      [
+        55,
+        1,
+        56,
+        1
+      ],
+      [
+        55,
+        4,
+        56,
+        4
+      ],
+      [
+        56,
+        1,
+        57,
+        1
+      ],
+      [
+        56,
+        4,
+        57,
+        4
+      ],
+      [
+        57,
+        1,
+        58,
+        1
+      ],
+      [
+        57,
+        4,
+        58,
+        4
+      ],
+      [
+        58,
+        1,
+        59,
+        1
+      ],
+      [
+        58,
+        4,
+        76,
+        2
+      ],
+      [
+        59,
+        1,
+        60,
+        1
+      ],
+      [
+        59,
+        4,
+        63,
+        2
+      ],
+      [
+        60,
+        1,
+        61,
+        1
+      ],
+      [
+        60,
+        4,
+        103,
+        2
+      ],
+      [
+        61,
+        1,
+        62,
+        1
+      ],
+      [
+        61,
+        1,
+        101,
+        1
+      ],
+      [
+        61,
+        4,
+        62,
+        4
+      ],
+      [
+        61,
+        4,
+        79,
+        2
+      ],
+      [
+        62,
+        4,
+        63,
+        4
+      ],
+      [
+        63,
+        4,
+        82,
+        2
+      ],
+      [
+        64,
+        2,
+        103,
+        2
+      ],
+      [
+        64,
+        4,
+        66,
+        2
+      ],
+      [
+        65,
+        2,
+        86,
+        2
+      ],
+      [
+        66,
+        2,
+        69,
+        2
+      ],
+      [
+        66,
+        2,
+        88,
+        2
+      ],
+      [
+        67,
+        2,
+        102,
+        2
+      ],
+      [
+        68,
+        1,
+        85,
+        1
+      ],
+      [
+        68,
+        1,
+        89,
+        1
+      ],
+      [
+        69,
+        2,
+        71,
+        2
+      ],
+      [
+        70,
+        2,
+        72,
+        2
+      ],
+      [
+        72,
+        2,
+        73,
+        2
+      ],
+      [
+        72,
+        2,
+        92,
+        2
+      ],
+      [
+        73,
+        1,
+        73,
+        3
+      ],
+      [
+        73,
+        4,
+        74,
+        2
+      ],
+      [
+        74,
+        3,
+        75,
+        1
+      ],
+      [
+        75,
+        1,
+        76,
+        1
+      ],
+      [
+        76,
+        2,
+        79,
+        2
+      ],
+      [
+        76,
+        2,
+        98,
+        2
+      ],
+      [
+        76,
+        4,
+        77,
+        2
+      ],
+      [
+        78,
+        1,
+        79,
+        1
+      ],
+      [
+        79,
+        4,
+        80,
+        2
+      ],
+      [
+        79,
+        4,
+        102,
+        2
+      ],
+      [
+        80,
+        3,
+        81,
+        1
+      ],
+      [
+        81,
+        1,
+        82,
+        1
+      ],
+      [
+        84,
+        1,
+        96,
+        3
+      ],
+      [
+        87,
+        2,
+        91,
+        2
+      ],
+      [
+        88,
+        2,
+        90,
+        2
+      ],
+      [
+        89,
+        1,
+        94,
+        1
+      ],
+      [
+        91,
+        2,
+        93,
+        2
+      ],
+      [
+        93,
+        2,
+        95,
+        2
+      ],
+      [
+        94,
+        1,
+        95,
+        3
+      ],
+      [
+        95,
+        3,
+        96,
+        1
+      ],
+      [
+        96,
+        3,
+        97,
+        1
+      ],
+      [
+        97,
+        1,
+        98,
+        1
+      ],
+      [
+        98,
+        2,
+        100,
+        2
+      ],
+      [
+        98,
+        4,
+        99,
+        2
+      ]
+    ],
+    "item": "blueprint",
+    "version": 562954248978435
+  }
+}

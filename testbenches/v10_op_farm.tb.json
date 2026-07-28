@@ -1,0 +1,486 @@
+{
+  "name": "v10_op_farm",
+  "description": "fnet v10 component 3: the always-on op farm - two hardwired vec-vec operand pairs (A = VREG0 x VREG1 with MUL/SUB/MAX/MIN/DIV/MOD, B = VREG2 x VREG3 with MUL/SUB plus the SQUARE block) and the vec-scal block (VREG0 against the memory-mapped $vec_bcast row: MUL/ADD/SUB/DIV/MOD and the GT/LT escape masks). Each result is read by parking $vec_rsel on its mux index, exercising the op and its select gate together. Indices are BLOCKED with reserves - registers 1..16, pair A 17..24, pair B 25..32, vec-scal 33..44, generators and I/O 45..52 - so adding a unit renumbers nothing. A_MIN and VS_LT are here so a comparison and its complement are each one op rather than a mask plus an all-ones subtract. THE SQUARE BLOCK squares one register against its own opposite face (the bank exports both faces of VREG2 and VREG3), which keeps it to the ordinary each[red] x each[green] shape; with zx in VREG2 and zy in VREG3 one pair load then yields zx*zy, zx^2, zy^2, zx^2-zy^2 and - by selecting B_SQ and B_SQG together so the frames sum - zx^2+zy^2, i.e. every quantity a mandelbrot iteration needs including its escape test. FOUR SEMANTICS ARE PINNED HERE rather than assumed. (1) each-vs-each ops iterate the UNION of both input networks, a lane missing on one side reading 0: $mem[3] (red only) and $mem[4] (green only) both survive into SUB and MAX while MUL drops them (n*0=0) and MIN collapses them (min(n,0)=0), so MAX and MIN are not symmetric on ragged operands - so operand lane sets must be kept aligned, MUL being self-cleaning and SUB not. (2) each-vs-FIXED-signal ops iterate only the first signal's networks, which is why the vec-scal units can read the whole scalar memory bus for their broadcast without dragging every control row in as a junk lane - asserted by checking $vec_rsel and $vec_bcast are absent from a vec-scal result. (3) integer DIVISION truncates toward zero, not toward negative infinity, and (4) MODULO takes the sign of the dividend - both measured here because the mandelbrot kernel divides signed products by its fixed-point scale every iteration and a Python reference model has to match Factorio exactly.",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 3,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -6.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "scalar_membus": 1,
+      "operand_a1": 2,
+      "operand_b1": 3,
+      "operand_a2": 4,
+      "operand_b2": 5,
+      "operand_a2g": 6,
+      "operand_b2r": 7
+    },
+    "expected_probe_name": "vbus",
+    "output_probes": [
+      {
+        "name": "vbus",
+        "entity_number": 44,
+        "wire": "red"
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "park_operands_no_select",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2
+        },
+        "operand_a1": {
+          "$mem[1]": 12,
+          "$mem[2]": 5,
+          "$mem[3]": 9
+        },
+        "operand_b1": {
+          "$mem[1]": 4,
+          "$mem[2]": 6,
+          "$mem[4]": 6
+        },
+        "operand_a2": {
+          "$mem[1]": 7
+        },
+        "operand_b2": {
+          "$mem[1]": 2
+        },
+        "operand_a2g": {
+          "$mem[1]": 7
+        },
+        "operand_b2r": {
+          "$mem[1]": 2
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 0,
+        "$mem[2]": 0
+      }
+    },
+    {
+      "name": "read_a_mul",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 17
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 48,
+        "$mem[2]": 30,
+        "$mem[3]": 0,
+        "$mem[4]": 0
+      }
+    },
+    {
+      "name": "read_a_sub_keeps_one_sided_lanes",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 18
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 8,
+        "$mem[2]": -1,
+        "$mem[3]": 9,
+        "$mem[4]": -6
+      }
+    },
+    {
+      "name": "read_a_max",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 19
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 12,
+        "$mem[2]": 6,
+        "$mem[3]": 9,
+        "$mem[4]": 6
+      }
+    },
+    {
+      "name": "read_a_div",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 21
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 3,
+        "$mem[2]": 0
+      }
+    },
+    {
+      "name": "read_a_mod",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 22
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 0,
+        "$mem[2]": 5
+      }
+    },
+    {
+      "name": "read_b_mul",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 25
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 14
+      }
+    },
+    {
+      "name": "read_b_sub",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 26
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 5
+      }
+    },
+    {
+      "name": "read_b_sq_vreg2_squared",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 27
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 49
+      }
+    },
+    {
+      "name": "read_b_sqg_vreg3_squared",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 28
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 4
+      }
+    },
+    {
+      "name": "read_b_sqdiff",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 29
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 45
+      }
+    },
+    {
+      "name": "the_two_squares_sum_on_the_bus_free_r2",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 27,
+          "$vec_ssel": 28
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 53
+      }
+    },
+    {
+      "name": "read_vs_mul_and_no_control_row_leak",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 33
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 24,
+        "$mem[2]": 10,
+        "$mem[3]": 18,
+        "$vec_rsel": 0,
+        "$vec_bcast": 0
+      }
+    },
+    {
+      "name": "read_vs_sub",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 35
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 10,
+        "$mem[2]": 3,
+        "$mem[3]": 7
+      }
+    },
+    {
+      "name": "read_vs_div",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 36
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 6,
+        "$mem[2]": 2,
+        "$mem[3]": 4
+      }
+    },
+    {
+      "name": "read_vs_mod",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 37
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 0,
+        "$mem[2]": 1,
+        "$mem[3]": 1
+      }
+    },
+    {
+      "name": "read_vs_gt_escape_mask",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 6,
+          "$vec_rsel": 38
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 1,
+        "$mem[2]": 0,
+        "$mem[3]": 1
+      }
+    },
+    {
+      "name": "two_op_outputs_sum_on_the_bus",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 17,
+          "$vec_ssel": 25
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 62,
+        "$mem[2]": 30
+      }
+    },
+    {
+      "name": "negative_operand_multiplies",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 17
+        },
+        "operand_a1": {
+          "$mem[1]": -3
+        },
+        "operand_b1": {
+          "$mem[1]": 4
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": -12,
+        "$mem[2]": 0
+      }
+    },
+    {
+      "name": "negative_division_truncates_toward_zero",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 36
+        },
+        "operand_a1": {
+          "$mem[1]": -7,
+          "$mem[2]": 7,
+          "$mem[3]": -9
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": -3,
+        "$mem[2]": 3,
+        "$mem[3]": -4
+      }
+    },
+    {
+      "name": "negative_modulo_takes_the_dividend_sign",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 37
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": -1,
+        "$mem[2]": 1,
+        "$mem[3]": -1
+      }
+    },
+    {
+      "name": "squares_of_negatives_are_positive",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 29
+        },
+        "operand_a2": {
+          "$mem[1]": -3
+        },
+        "operand_a2g": {
+          "$mem[1]": -3
+        },
+        "operand_b2": {
+          "$mem[1]": -5
+        },
+        "operand_b2r": {
+          "$mem[1]": -5
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": -16
+      }
+    },
+    {
+      "name": "squares_of_negatives_sum",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 27,
+          "$vec_ssel": 28
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 34
+      }
+    },
+    {
+      "name": "read_a_min_collapses_one_sided_lanes",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 20
+        },
+        "operand_a1": {
+          "$mem[1]": 12,
+          "$mem[2]": 5,
+          "$mem[3]": 9
+        },
+        "operand_b1": {
+          "$mem[1]": 4,
+          "$mem[2]": 6,
+          "$mem[4]": 6
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 4,
+        "$mem[2]": 5,
+        "$mem[3]": 0,
+        "$mem[4]": 0
+      }
+    },
+    {
+      "name": "read_vs_add",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 2,
+          "$vec_rsel": 34
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 14,
+        "$mem[2]": 7,
+        "$mem[3]": 11,
+        "$mem[4]": 0
+      }
+    },
+    {
+      "name": "read_vs_lt_is_the_complement_of_gt",
+      "drive": {
+        "scalar_membus": {
+          "$vec_bcast": 6,
+          "$vec_rsel": 39
+        }
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 0,
+        "$mem[2]": 1,
+        "$mem[3]": 0
+      }
+    },
+    {
+      "name": "no_select_leaves_bus_empty",
+      "drive": {
+        "scalar_membus": {}
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "$mem[1]": 0,
+        "$mem[2]": 0
+      }
+    }
+  ]
+}

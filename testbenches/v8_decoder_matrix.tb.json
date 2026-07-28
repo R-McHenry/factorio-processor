@@ -1,0 +1,359 @@
+{
+  "name": "v8_decoder_matrix",
+  "description": "fnet v8 component 3: instruction decode + 3x4 routing matrix, isolated (stims replace the port output buses). proc_decoder_matrix semantics: bits 1/2/4/8 route portA->out1..4, 16/32/64/128 portB->out1..4, 256/512/1024/2048 (instr>>12)->out1..4; probes are the matrix_out anchor constants. Plus explicit write-trigger checks: the sensor fires on bit 2 only (anything routed to write_value). The instruction rides $instr_stim; port data rides $mem[N] rows. Extended 2026-07-28 to cover the WHOLE crossbar and, more importantly, TWO SOURCES ON ONE OUT. The matrix is a full 3x4 crossbar and half its routes had never been driven; the six missing ones are here now, including a->out4, which is the conditional-relative-jump path. Summation is the keystone: values are NOT normalised inside the matrix (port A's value arrives on its own row signal, const's on the immediate carrier), so two sources sharing a signal sum on the wire while two carrying different signals both ride the net and are added later by the write path's each+0 relabel. That is what makes base+index addressing, add-immediate-in-flight and predicated writes possible without a single new instruction - the philosophy being programmable interconnect rather than opcodes.",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 3,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -6.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "instr": 1,
+      "port_a": 2,
+      "port_b": 3
+    },
+    "expected_probe_name": "out1",
+    "output_probes": [
+      {
+        "name": "out1",
+        "entity_number": 9,
+        "wire": "green"
+      },
+      {
+        "name": "out2",
+        "entity_number": 16,
+        "wire": "green"
+      },
+      {
+        "name": "out3",
+        "entity_number": 17,
+        "wire": "green"
+      },
+      {
+        "name": "out4",
+        "entity_number": 24,
+        "wire": "green"
+      },
+      {
+        "name": "write_trig",
+        "entity_number": 35,
+        "wire": "red"
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "bit1_portA_to_out1",
+      "drive": {
+        "instr": {
+          "$instr_stim": 1
+        },
+        "port_a": {
+          "$mem[21]": 77
+        },
+        "port_b": {}
+      },
+      "expect_probe": "out1",
+      "expect": {
+        "$mem[21]": 77
+      }
+    },
+    {
+      "name": "bit1_no_write_trigger",
+      "expect_probe": "write_trig",
+      "expect": {
+        "$wsense": 0
+      }
+    },
+    {
+      "name": "bit2_portA_to_out2",
+      "drive": {
+        "instr": {
+          "$instr_stim": 2
+        }
+      },
+      "expect_probe": "out2",
+      "expect": {
+        "$mem[21]": 77
+      }
+    },
+    {
+      "name": "bit2_out1_now_clear",
+      "expect_probe": "out1",
+      "expect": {
+        "$mem[21]": 0
+      }
+    },
+    {
+      "name": "bit2_raises_write_trigger",
+      "expect_probe": "write_trig",
+      "expect": {
+        "$wsense": 1
+      }
+    },
+    {
+      "name": "bit64_portB_to_out3",
+      "drive": {
+        "instr": {
+          "$instr_stim": 64
+        },
+        "port_a": {},
+        "port_b": {
+          "$mem[26]": 33
+        }
+      },
+      "expect_probe": "out3",
+      "expect": {
+        "$mem[26]": 33
+      }
+    },
+    {
+      "name": "bit64_trigger_off_again",
+      "expect_probe": "write_trig",
+      "expect": {
+        "$wsense": 0
+      }
+    },
+    {
+      "name": "bit2048_const_to_out4",
+      "drive": {
+        "instr": {
+          "$instr_stim": 50567168
+        },
+        "port_b": {}
+      },
+      "expect_probe": "out4",
+      "expect": {
+        "$instr_stim": 12345
+      }
+    },
+    {
+      "name": "bit512_const_write_raises_trigger",
+      "drive": {
+        "instr": {
+          "$instr_stim": 225792
+        }
+      },
+      "expect_probe": "write_trig",
+      "expect": {
+        "$wsense": 1
+      }
+    },
+    {
+      "name": "bit512_value_on_out2",
+      "expect_probe": "out2",
+      "expect": {
+        "$instr_stim": 55
+      }
+    },
+    {
+      "name": "bit32_portB_write_raises_trigger",
+      "drive": {
+        "instr": {
+          "$instr_stim": 32
+        },
+        "port_b": {
+          "$mem[26]": 5
+        }
+      },
+      "expect_probe": "write_trig",
+      "expect": {
+        "$wsense": 1
+      }
+    },
+    {
+      "name": "multi_route_setup_out1",
+      "drive": {
+        "instr": {
+          "$instr_stim": 407585
+        },
+        "port_a": {
+          "$mem[16]": 11
+        },
+        "port_b": {
+          "$mem[26]": 22
+        }
+      },
+      "expect_probe": "out1",
+      "expect": {
+        "$mem[16]": 11
+      }
+    },
+    {
+      "name": "multi_route_check_out2",
+      "expect_probe": "out2",
+      "expect": {
+        "$mem[26]": 22
+      }
+    },
+    {
+      "name": "multi_route_check_out4",
+      "expect_probe": "out4",
+      "expect": {
+        "$instr_stim": 99
+      }
+    },
+    {
+      "name": "bit4_portA_to_out3",
+      "drive": {
+        "instr": {
+          "$instr_stim": 4
+        },
+        "port_a": {
+          "$mem[21]": 77
+        },
+        "port_b": {}
+      },
+      "expect_probe": "out3",
+      "expect": {
+        "$mem[21]": 77
+      }
+    },
+    {
+      "name": "bit8_portA_to_out4_the_conditional_jump_path",
+      "drive": {
+        "instr": {
+          "$instr_stim": 8
+        }
+      },
+      "expect_probe": "out4",
+      "expect": {
+        "$mem[21]": 77
+      }
+    },
+    {
+      "name": "bit16_portB_to_out1",
+      "drive": {
+        "instr": {
+          "$instr_stim": 16
+        },
+        "port_a": {},
+        "port_b": {
+          "$mem[26]": 33
+        }
+      },
+      "expect_probe": "out1",
+      "expect": {
+        "$mem[26]": 33
+      }
+    },
+    {
+      "name": "bit128_portB_to_out4",
+      "drive": {
+        "instr": {
+          "$instr_stim": 128
+        }
+      },
+      "expect_probe": "out4",
+      "expect": {
+        "$mem[26]": 33
+      }
+    },
+    {
+      "name": "bit1024_const_to_out3",
+      "drive": {
+        "instr": {
+          "$instr_stim": 181248
+        },
+        "port_b": {}
+      },
+      "expect_probe": "out3",
+      "expect": {
+        "$instr_stim": 44
+      }
+    },
+    {
+      "name": "two_ports_sum_on_out1_when_they_share_a_signal",
+      "drive": {
+        "instr": {
+          "$instr_stim": 17
+        },
+        "port_a": {
+          "$mem[21]": 77
+        },
+        "port_b": {
+          "$mem[21]": 33
+        }
+      },
+      "expect_probe": "out1",
+      "expect": {
+        "$mem[21]": 110
+      }
+    },
+    {
+      "name": "const_and_port_sum_on_out2",
+      "drive": {
+        "instr": {
+          "$instr_stim": 20994
+        },
+        "port_a": {
+          "$instr_stim": 7
+        },
+        "port_b": {}
+      },
+      "expect_probe": "out2",
+      "expect": {
+        "$instr_stim": 12
+      }
+    },
+    {
+      "name": "summed_write_still_raises_the_trigger",
+      "drive": {
+        "instr": {
+          "$instr_stim": 20994
+        }
+      },
+      "expect_probe": "write_trig",
+      "expect": {
+        "$wsense": 1
+      }
+    },
+    {
+      "name": "base_plus_index_sums_on_out3",
+      "drive": {
+        "instr": {
+          "$instr_stim": 4097028
+        },
+        "port_a": {
+          "$instr_stim": 7
+        },
+        "port_b": {}
+      },
+      "expect_probe": "out3",
+      "expect": {
+        "$instr_stim": 1007
+      }
+    },
+    {
+      "name": "distinct_signals_both_survive_on_out3",
+      "drive": {
+        "instr": {
+          "$instr_stim": 68
+        },
+        "port_a": {
+          "$mem[21]": 77
+        },
+        "port_b": {
+          "$mem[26]": 33
+        }
+      },
+      "expect_probe": "out3",
+      "expect": {
+        "$mem[21]": 77,
+        "$mem[26]": 33
+      }
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "name": "v10_vec_io",
+  "description": "fnet v10 component 4: the scalar<->vector I/O ports. COORD (mux index 47) is a 'nothing -> vec' source - an address table wired onto a red net, so every lane holds its own index; checked by extracting three widely separated lanes and confirming each returns its own address. LANE_IN (index 48) is the data-in port: a one-hot decode of $vec_wlane_addr times $vec_wlane_value builds a one-lane frame. LANE_OUT is the data-out port: it extracts the lane named by $vec_rlane_addr off the shared bus onto the scalar row $vec_rlane_data. VRED_SUM collapses the whole bus into $vred_sum. NOTE the bench probes ONLY the scalar-side net: selecting COORD puts ~2478 lanes on the vector bus, and probing that would blow the ~4096-byte RCON response limit. Reading vector state through the out-ports is both the realistic access pattern and the only safe one at full width. Extended 2026-07-28 with the frame GENERATORS and the popcount reduction. ONES (45) is 1 in every one of the 2454 lanes and BCAST (46) is `vec_bcast2` in every lane - the only way to put a value on a lane that computed to zero, since zero and absent are the same thing on a wire and `each` against a fixed signal iterates only the first operand's lanes. That distinction cost a live run in the mandelbrot grid seed. VRED_COUNT answers HOW MANY lanes rather than how much: three lanes carrying 5, -3 and 9 count 3 and sum 11, and a BCAST of zero is an empty frame rather than a frame of zeroes, which is the same fact stated from the other side.",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 6,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 4,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -6.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "scalar_membus": 1,
+      "vec_bus": 2
+    },
+    "expected_probe_name": "membus_out",
+    "output_probes": [
+      {
+        "name": "membus_out",
+        "entity_number": 20,
+        "wire": "green"
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "idle_no_select_no_read",
+      "drive": {
+        "scalar_membus": {},
+        "vec_bus": {}
+      },
+      "expect": {
+        "$vec_rlane_data": 0,
+        "$vred_sum": 0
+      }
+    },
+    {
+      "name": "coord_lane_5_reads_5",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 47,
+          "$vec_rlane_addr": 5
+        }
+      },
+      "expect": {
+        "$vec_rlane_data": 5
+      }
+    },
+    {
+      "name": "coord_lane_100_reads_100",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 47,
+          "$vec_rlane_addr": 100
+        }
+      },
+      "expect": {
+        "$vec_rlane_data": 100
+      }
+    },
+    {
+      "name": "coord_lane_2000_reads_2000",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 47,
+          "$vec_rlane_addr": 2000
+        }
+      },
+      "expect": {
+        "$vec_rlane_data": 2000
+      }
+    },
+    {
+      "name": "lane_in_writes_one_addressed_lane",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 48,
+          "$vec_wlane_addr": 7,
+          "$vec_wlane_value": 42,
+          "$vec_rlane_addr": 7
+        }
+      },
+      "expect": {
+        "$vec_rlane_data": 42,
+        "$vred_sum": 42
+      }
+    },
+    {
+      "name": "lane_in_leaves_neighbouring_lane_empty",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 48,
+          "$vec_wlane_addr": 7,
+          "$vec_wlane_value": 42,
+          "$vec_rlane_addr": 8
+        }
+      },
+      "expect": {
+        "$vec_rlane_data": 0,
+        "$vred_sum": 42
+      }
+    },
+    {
+      "name": "lane_in_carries_negatives",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 48,
+          "$vec_wlane_addr": 7,
+          "$vec_wlane_value": -9,
+          "$vec_rlane_addr": 7
+        }
+      },
+      "expect": {
+        "$vec_rlane_data": -9,
+        "$vred_sum": -9
+      }
+    },
+    {
+      "name": "lane_out_reads_an_arbitrary_bus_frame",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rlane_addr": 3
+        },
+        "vec_bus": {
+          "$mem[3]": 77
+        }
+      },
+      "expect": {
+        "$vec_rlane_data": 77,
+        "$vred_sum": 77
+      }
+    },
+    {
+      "name": "reduction_sums_every_lane",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rlane_addr": 4
+        },
+        "vec_bus": {
+          "$mem[3]": 77,
+          "$mem[4]": 23
+        }
+      },
+      "expect": {
+        "$vec_rlane_data": 23,
+        "$vred_sum": 100
+      }
+    },
+    {
+      "name": "no_read_address_extracts_nothing",
+      "drive": {
+        "scalar_membus": {}
+      },
+      "expect": {
+        "$vec_rlane_data": 0,
+        "$vred_sum": 100
+      }
+    },
+    {
+      "name": "vred_count_is_a_popcount_not_a_sum",
+      "drive": {
+        "scalar_membus": {},
+        "vec_bus": {
+          "$mem[1]": 5,
+          "$mem[2]": -3,
+          "$mem[7]": 9
+        }
+      },
+      "trace_ticks": 5,
+      "expect": {
+        "$vred_count": 3,
+        "$vred_sum": 11
+      }
+    },
+    {
+      "name": "ones_is_present_in_every_lane",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 45
+        },
+        "vec_bus": {}
+      },
+      "trace_ticks": 5,
+      "expect": {
+        "$vred_count": 2454,
+        "$vred_sum": 2454
+      }
+    },
+    {
+      "name": "bcast_puts_one_constant_in_every_lane",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 46,
+          "$vec_bcast2": 7,
+          "$vec_rlane_addr": 100
+        }
+      },
+      "trace_ticks": 5,
+      "expect": {
+        "$vred_count": 2454,
+        "$vred_sum": 17178,
+        "$vec_rlane_data": 7
+      }
+    },
+    {
+      "name": "bcast_of_zero_is_an_empty_frame",
+      "drive": {
+        "scalar_membus": {
+          "$vec_rsel": 46,
+          "$vec_bcast2": 0
+        }
+      },
+      "trace_ticks": 5,
+      "expect": {
+        "$vred_count": 0,
+        "$vred_sum": 0
+      }
+    }
+  ]
+}

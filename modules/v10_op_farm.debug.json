@@ -1,0 +1,14 @@
+{
+  "module": "op_farm_bench",
+  "probes": [
+    {
+      "net": "vbus",
+      "entity_number": 44,
+      "wire": "red",
+      "position": {
+        "x": 13.5,
+        "y": -12.5
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "module": "v10_processor",
+  "probes": [
+    {
+      "net": "enc_onehot",
+      "entity_number": 189,
+      "wire": "red",
+      "position": {
+        "x": 2.5,
+        "y": 11.5
+      }
+    },
+    {
+      "net": "membus",
+      "entity_number": 190,
+      "wire": "green",
+      "position": {
+        "x": 2.5,
+        "y": 12.5
+      }
+    },
+    {
+      "net": "processor0.state",
+      "entity_number": 191,
+      "wire": "red",
+      "position": {
+        "x": 3.5,
+        "y": 11.5
+      }
+    }
+  ]
+}

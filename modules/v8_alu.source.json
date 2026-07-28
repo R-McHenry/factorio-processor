@@ -1,0 +1,790 @@
+{
+  "name": "v8_alu",
+  "surface": "nauvis",
+  "description": "compiled by netlist.py from v8_alu.fnet (module alu_bench)",
+  "signals": {
+    "file.sub_a": {
+      "type": "virtual",
+      "name": "shape-diagonal-2",
+      "quality": "legendary",
+      "display": "shape-diagonal-2~legendary",
+      "auto": false,
+      "address": 2110
+    },
+    "sub_a": {
+      "type": "virtual",
+      "name": "shape-diagonal-2",
+      "quality": "legendary",
+      "display": "shape-diagonal-2~legendary",
+      "auto": false,
+      "address": 2110
+    },
+    "file.sub_b": {
+      "type": "virtual",
+      "name": "shape-t-2",
+      "quality": "normal",
+      "display": "shape-t-2",
+      "auto": false,
+      "address": 2111
+    },
+    "sub_b": {
+      "type": "virtual",
+      "name": "shape-t-2",
+      "quality": "normal",
+      "display": "shape-t-2",
+      "auto": false,
+      "address": 2111
+    },
+    "file.sub_res": {
+      "type": "virtual",
+      "name": "shape-t-2",
+      "quality": "uncommon",
+      "display": "shape-t-2~uncommon",
+      "auto": false,
+      "address": 2112
+    },
+    "sub_res": {
+      "type": "virtual",
+      "name": "shape-t-2",
+      "quality": "uncommon",
+      "display": "shape-t-2~uncommon",
+      "auto": false,
+      "address": 2112
+    },
+    "file.add_a": {
+      "type": "virtual",
+      "name": "shape-t-2",
+      "quality": "rare",
+      "display": "shape-t-2~rare",
+      "auto": false,
+      "address": 2113
+    },
+    "add_a": {
+      "type": "virtual",
+      "name": "shape-t-2",
+      "quality": "rare",
+      "display": "shape-t-2~rare",
+      "auto": false,
+      "address": 2113
+    },
+    "file.add_b": {
+      "type": "virtual",
+      "name": "shape-t-2",
+      "quality": "epic",
+      "display": "shape-t-2~epic",
+      "auto": false,
+      "address": 2114
+    },
+    "add_b": {
+      "type": "virtual",
+      "name": "shape-t-2",
+      "quality": "epic",
+      "display": "shape-t-2~epic",
+      "auto": false,
+      "address": 2114
+    },
+    "file.add_res": {
+      "type": "virtual",
+      "name": "shape-t-2",
+      "quality": "legendary",
+      "display": "shape-t-2~legendary",
+      "auto": false,
+      "address": 2115
+    },
+    "add_res": {
+      "type": "virtual",
+      "name": "shape-t-2",
+      "quality": "legendary",
+      "display": "shape-t-2~legendary",
+      "auto": false,
+      "address": 2115
+    },
+    "file.div_a": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "normal",
+      "display": "shape-t-3",
+      "auto": false,
+      "address": 2116
+    },
+    "div_a": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "normal",
+      "display": "shape-t-3",
+      "auto": false,
+      "address": 2116
+    },
+    "file.div_b": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "uncommon",
+      "display": "shape-t-3~uncommon",
+      "auto": false,
+      "address": 2117
+    },
+    "div_b": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "uncommon",
+      "display": "shape-t-3~uncommon",
+      "auto": false,
+      "address": 2117
+    },
+    "file.div_res": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "rare",
+      "display": "shape-t-3~rare",
+      "auto": false,
+      "address": 2118
+    },
+    "div_res": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "rare",
+      "display": "shape-t-3~rare",
+      "auto": false,
+      "address": 2118
+    },
+    "file.mul_a": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "epic",
+      "display": "shape-t-3~epic",
+      "auto": false,
+      "address": 2119
+    },
+    "mul_a": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "epic",
+      "display": "shape-t-3~epic",
+      "auto": false,
+      "address": 2119
+    },
+    "file.mul_b": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "legendary",
+      "display": "shape-t-3~legendary",
+      "auto": false,
+      "address": 2120
+    },
+    "mul_b": {
+      "type": "virtual",
+      "name": "shape-t-3",
+      "quality": "legendary",
+      "display": "shape-t-3~legendary",
+      "auto": false,
+      "address": 2120
+    },
+    "file.mul_res": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "normal",
+      "display": "shape-t-4",
+      "auto": false,
+      "address": 2121
+    },
+    "mul_res": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "normal",
+      "display": "shape-t-4",
+      "auto": false,
+      "address": 2121
+    },
+    "file.cmp_m": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "uncommon",
+      "display": "shape-t-4~uncommon",
+      "auto": false,
+      "address": 2122
+    },
+    "cmp_m": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "uncommon",
+      "display": "shape-t-4~uncommon",
+      "auto": false,
+      "address": 2122
+    },
+    "file.cmp_n": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "rare",
+      "display": "shape-t-4~rare",
+      "auto": false,
+      "address": 2123
+    },
+    "cmp_n": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "rare",
+      "display": "shape-t-4~rare",
+      "auto": false,
+      "address": 2123
+    },
+    "file.cmp_min": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "epic",
+      "display": "shape-t-4~epic",
+      "auto": false,
+      "address": 2124
+    },
+    "cmp_min": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "epic",
+      "display": "shape-t-4~epic",
+      "auto": false,
+      "address": 2124
+    },
+    "file.cmp_max": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "legendary",
+      "display": "shape-t-4~legendary",
+      "auto": false,
+      "address": 2125
+    },
+    "cmp_max": {
+      "type": "virtual",
+      "name": "shape-t-4",
+      "quality": "legendary",
+      "display": "shape-t-4~legendary",
+      "auto": false,
+      "address": 2125
+    },
+    "file.flag_ge": {
+      "type": "virtual",
+      "name": "signal-alarm",
+      "quality": "normal",
+      "display": "signal-alarm",
+      "auto": false,
+      "address": 2126
+    },
+    "flag_ge": {
+      "type": "virtual",
+      "name": "signal-alarm",
+      "quality": "normal",
+      "display": "signal-alarm",
+      "auto": false,
+      "address": 2126
+    },
+    "file.flag_gt": {
+      "type": "virtual",
+      "name": "signal-alarm",
+      "quality": "uncommon",
+      "display": "signal-alarm~uncommon",
+      "auto": false,
+      "address": 2127
+    },
+    "flag_gt": {
+      "type": "virtual",
+      "name": "signal-alarm",
+      "quality": "uncommon",
+      "display": "signal-alarm~uncommon",
+      "auto": false,
+      "address": 2127
+    }
+  },
+  "blueprint": {
+    "icons": [
+      {
+        "signal": {
+          "name": "constant-combinator"
+        },
+        "index": 1
+      }
+    ],
+    "entities": [
+      {
+        "entity_number": 1,
+        "name": "constant-combinator",
+        "position": {
+          "x": 11.5,
+          "y": -11.5
+        },
+        "player_description": "alu_state_stim",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 2,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 4.5,
+          "y": -12.0
+        },
+        "player_description": "ALU_SUB",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "shape-diagonal-2",
+              "quality": "legendary"
+            },
+            "second_signal": {
+              "type": "virtual",
+              "name": "shape-t-2",
+              "quality": "normal"
+            },
+            "operation": "-",
+            "output_signal": {
+              "type": "virtual",
+              "name": "shape-t-2",
+              "quality": "uncommon"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 3,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 5.5,
+          "y": -12.0
+        },
+        "player_description": "ALU_ADD",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "shape-t-2",
+              "quality": "rare"
+            },
+            "second_signal": {
+              "type": "virtual",
+              "name": "shape-t-2",
+              "quality": "epic"
+            },
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "shape-t-2",
+              "quality": "legendary"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 4,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 6.5,
+          "y": -12.0
+        },
+        "player_description": "ALU_DIV",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "shape-t-3",
+              "quality": "normal"
+            },
+            "second_signal": {
+              "type": "virtual",
+              "name": "shape-t-3",
+              "quality": "uncommon"
+            },
+            "operation": "/",
+            "output_signal": {
+              "type": "virtual",
+              "name": "shape-t-3",
+              "quality": "rare"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 5,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 8.5,
+          "y": -12.0
+        },
+        "player_description": "ALU_MUL",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "shape-t-3",
+              "quality": "epic"
+            },
+            "second_signal": {
+              "type": "virtual",
+              "name": "shape-t-3",
+              "quality": "legendary"
+            },
+            "operation": "*",
+            "output_signal": {
+              "type": "virtual",
+              "name": "shape-t-4",
+              "quality": "normal"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 6,
+        "name": "decider-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -12.0
+        },
+        "player_description": "CMP_MIN",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "uncommon"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "rare"
+                },
+                "comparator": "<"
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "uncommon"
+                }
+              }
+            ],
+            "else_outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "rare"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 7,
+        "name": "decider-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -12.0
+        },
+        "player_description": "CMP_MAX",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "uncommon"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "rare"
+                },
+                "comparator": ">"
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "uncommon"
+                }
+              }
+            ],
+            "else_outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "rare"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 8,
+        "name": "decider-combinator",
+        "position": {
+          "x": 9.5,
+          "y": -12.0
+        },
+        "player_description": "CMP_GE",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "uncommon"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "rare"
+                },
+                "comparator": "\u2265"
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-alarm",
+                  "quality": "normal"
+                },
+                "copy_count_from_input": false
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 9,
+        "name": "decider-combinator",
+        "position": {
+          "x": 10.5,
+          "y": -12.0
+        },
+        "player_description": "CMP_GT",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "uncommon"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "shape-t-4",
+                  "quality": "rare"
+                },
+                "comparator": ">"
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-alarm",
+                  "quality": "uncommon"
+                },
+                "copy_count_from_input": false
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 10,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 3.5,
+          "y": -12.0
+        },
+        "player_description": "CMP_MIN_scalar",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "shape-t-4",
+              "quality": "epic"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 11,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 1.5,
+          "y": -12.0
+        },
+        "player_description": "CMP_MAX_scalar",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "shape-t-4",
+              "quality": "legendary"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 12,
+        "name": "constant-combinator",
+        "position": {
+          "x": 11.5,
+          "y": -12.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "wires": [
+      [
+        1,
+        1,
+        9,
+        1
+      ],
+      [
+        2,
+        1,
+        3,
+        1
+      ],
+      [
+        2,
+        1,
+        6,
+        1
+      ],
+      [
+        2,
+        4,
+        3,
+        4
+      ],
+      [
+        2,
+        4,
+        10,
+        4
+      ],
+      [
+        3,
+        1,
+        4,
+        1
+      ],
+      [
+        3,
+        4,
+        4,
+        4
+      ],
+      [
+        4,
+        1,
+        5,
+        1
+      ],
+      [
+        4,
+        4,
+        5,
+        4
+      ],
+      [
+        5,
+        1,
+        8,
+        1
+      ],
+      [
+        5,
+        4,
+        8,
+        4
+      ],
+      [
+        6,
+        1,
+        7,
+        1
+      ],
+      [
+        6,
+        4,
+        10,
+        2
+      ],
+      [
+        7,
+        4,
+        11,
+        2
+      ],
+      [
+        8,
+        1,
+        9,
+        1
+      ],
+      [
+        8,
+        4,
+        9,
+        4
+      ],
+      [
+        9,
+        4,
+        12,
+        2
+      ],
+      [
+        10,
+        4,
+        11,
+        4
+      ]
+    ],
+    "item": "blueprint",
+    "version": 562954248978435
+  }
+}

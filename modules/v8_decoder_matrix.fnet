@@ -1,0 +1,88 @@
+# v8_decoder_matrix — component 3 of the fnet v8 rebuild (NETLIST_PLAN.md):
+# instruction decode + the 3x4 routing matrix (masters 20/27/30/42/47/54/
+# 60/67/69/71/73/75 gates, 21/28/31/43/48/55/61/68/70/72/74/76 masks,
+# 77 imm shift, 5 write-trigger sensor, 7/11/12/18 matrix-out anchors).
+# Route bits: 1/2/4/8 = portA -> out1..4, 16/32/64/128 = portB -> out1..4,
+# 256/512/1024/2048 = (instr >> 12) -> out1..4. The write trigger fires
+# when ANY source routes to out2/write_value: the green output faces of
+# all three out2 masks (bits 2, 32, 512 — masters 28/55/72, wires
+# [28,4,55,4] + [55,4,72,4]) chain into one net feeding the sensor.
+# Behavioral bench: testbenches/v8_decoder_matrix.tb.json
+# (proc_decoder_matrix semantics + explicit write-trigger checks).
+#
+# `module decoder_matrix` is the reusable component; `decoder_matrix_bench`
+# is the live-test harness — build with `--top decoder_matrix_bench`.
+#
+# LAYOUT NOTE: declaration order is chosen so no mask->gate pair straddles
+# a row wrap (14-tile rows, 4-tile pairs drift 2 tiles/row): the four
+# 1-tile matrix-out anchors and the 2-tile shifter/sensor are interleaved
+# as phase adjusters — 1 anchor ends row 1, 2 anchors end row 2, 1 anchor
+# leaves row 3 at 13 tiles (the next mask wraps whole), the sensor fills
+# row 4. Reordering instantiations here WILL trip the reach checker.
+#
+# Entity numbering (bench entity_map relies on it): 1 instr stim, 2 port_a
+# stim, 3 port_b stim, 4 imm shift, 5/6 a1, 7/8 a2, 9 out1 anchor,
+# 10/11 a3, 12/13 a4, 14/15 b1, 16 out2 anchor, 17 out3 anchor, 18/19 b2,
+# 20/21 b3, 22/23 b4, 24 out4 anchor, 25 porta bridge (fills row 3's spare
+# tile; composition needs the hop), 26/27 c1, 28/29 c2, 30/31 c3,
+# 32 write-trigger sensor, 33/34 c4, 35 write_trig debug probe.
+
+import "lib/v8.fnet";
+
+signal instr_stim;   # bench-facing carrier for the instruction word
+signal wsense;       # write-trigger flag (master: signal-W off entity 5)
+
+module decoder_matrix(in_g instr_in, in_g port_a_in, in_g port_b_in,
+                      out_g out1, out_g out2, out_g out3, out_g out4,
+                      out_r write_trig) {
+  net red bit_a1, bit_a2, bit_a3, bit_a4;
+  net red bit_b1, bit_b2, bit_b3, bit_b4;
+  net red bit_c1, bit_c2, bit_c3, bit_c4;
+  net green imm;     # instr >> 12
+  net green w_bit;   # green faces of ALL out2 masks -> write-trigger sensor
+
+  v8_shr12(in_g: instr_in, out_g: imm);
+
+  v8_route_mask<1, "route_a1_mask">(in_g: instr_in, out_r: bit_a1);
+  v8_route_gate<"route_a1">(in_r: bit_a1, in_g: port_a_in, out_g: out1);
+  v8_route_mask<2, "route_a2_mask">(in_g: instr_in, out_r: bit_a2, out_g: w_bit);
+  v8_route_gate<"route_a2">(in_r: bit_a2, in_g: port_a_in, out_g: out2);
+  stim<"matrix_out1">(out_g: out1);
+  v8_route_mask<4, "route_a3_mask">(in_g: instr_in, out_r: bit_a3);
+  v8_route_gate<"route_a3">(in_r: bit_a3, in_g: port_a_in, out_g: out3);
+  v8_route_mask<8, "route_a4_mask">(in_g: instr_in, out_r: bit_a4);
+  v8_route_gate<"route_a4">(in_r: bit_a4, in_g: port_a_in, out_g: out4);
+  v8_route_mask<16, "route_b1_mask">(in_g: instr_in, out_r: bit_b1);
+  v8_route_gate<"route_b1">(in_r: bit_b1, in_g: port_b_in, out_g: out1);
+  stim<"matrix_out2">(out_g: out2);
+  stim<"matrix_out3">(out_g: out3);
+  v8_route_mask<32, "route_b2_mask">(in_g: instr_in, out_r: bit_b2, out_g: w_bit);
+  v8_route_gate<"route_b2">(in_r: bit_b2, in_g: port_b_in, out_g: out2);
+  v8_route_mask<64, "route_b3_mask">(in_g: instr_in, out_r: bit_b3);
+  v8_route_gate<"route_b3">(in_r: bit_b3, in_g: port_b_in, out_g: out3);
+  v8_route_mask<128, "route_b4_mask">(in_g: instr_in, out_r: bit_b4);
+  v8_route_gate<"route_b4">(in_r: bit_b4, in_g: port_b_in, out_g: out4);
+  stim<"matrix_out4">(out_g: out4);
+  stim<"br_porta_dec">(out_g: port_a_in);
+  v8_route_mask<256, "route_c1_mask">(in_g: instr_in, out_r: bit_c1);
+  v8_route_gate<"route_c1">(in_r: bit_c1, in_g: imm, out_g: out1);
+  v8_route_mask<512, "route_c2_mask">(in_g: instr_in, out_r: bit_c2, out_g: w_bit);
+  v8_route_gate<"route_c2">(in_r: bit_c2, in_g: imm, out_g: out2);
+  v8_route_mask<1024, "route_c3_mask">(in_g: instr_in, out_r: bit_c3);
+  v8_route_gate<"route_c3">(in_r: bit_c3, in_g: imm, out_g: out3);
+  v8_flag_if_any_g<wsense, "write_trigger_sense">(in_g: w_bit, out_r: write_trig);
+  v8_route_mask<2048, "route_c4_mask">(in_g: instr_in, out_r: bit_c4);
+  v8_route_gate<"route_c4">(in_r: bit_c4, in_g: imm, out_g: out4);
+}
+
+module decoder_matrix_bench(out_g out1, out_g out2, out_g out3, out_g out4) {
+  net green instr_in, port_a_in, port_b_in;
+  debug net red write_trig;
+
+  stim<"intruction_rd">(out_g: instr_in);
+  stim<"port_a_rd">(out_g: port_a_in);
+  stim<"port_b_rd">(out_g: port_b_in);
+  decoder_matrix(instr_in: instr_in, port_a_in: port_a_in, port_b_in: port_b_in,
+                 out1: out1, out2: out2, out3: out3, out4: out4,
+                 write_trig: write_trig);
+}

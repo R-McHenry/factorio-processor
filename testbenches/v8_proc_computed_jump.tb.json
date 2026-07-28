@@ -1,0 +1,71 @@
+{
+  "name": "v8_proc_computed_jump",
+  "description": "A COMPUTED relative jump: `a->out4` puts the jump distance in a memory row instead of the instruction word, which is how this machine gets an if-statement without an if-instruction - `mem[JV] = flag * skip`, so 0 falls through and 1 skips. Both halves run here. First the inject fires with JV = 0 and execution must CONTINUE: the PC cell emits nothing at zero and the autoincrement re-seeds, which V8.md had only ever recorded as 'suspected self-healing' and which is the path a not-taken branch takes every time. Then JV = 4, chosen so fetch resumes exactly on the far marker: the markers in between stay 0 and the far one is written. The distance is backpatched after scheduling, since it depends on where the scheduler put things - the same backpatch a forward label will need.",
+  "pre_stimulus_dead_ticks": 0,
+  "settle_ticks": 1,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -16.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "trig_set": 46
+    },
+    "expected_probe_name": "mem_state",
+    "output_probes": [
+      {
+        "name": "mem_state",
+        "entity_number": 101,
+        "wire": "red"
+      },
+      {
+        "name": "mem_bus",
+        "entity_number": 100,
+        "wire": "green"
+      },
+      {
+        "name": "port_a",
+        "entity_number": 77,
+        "wire": "green"
+      },
+      {
+        "name": "port_b",
+        "entity_number": 83,
+        "wire": "green"
+      },
+      {
+        "name": "instr_port",
+        "entity_number": 99,
+        "wire": "green"
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "run_to_halt",
+      "skip_ticks": 200,
+      "settle_ticks": 1,
+      "trace_ticks": 3,
+      "expect_probe": "mem_state",
+      "expect": {
+        "$mem[631]": 111,
+        "$mem[632]": 0,
+        "$mem[633]": 0,
+        "$mem[635]": 444,
+        "$mem[630]": 4,
+        "$poison_ctr": 0
+      }
+    }
+  ]
+}

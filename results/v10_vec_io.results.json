@@ -1,0 +1,2646 @@
+{
+  "name": "v10_vec_io",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 2,
+  "rebuild": {
+    "removed": 45,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 22,
+    "revived": 22,
+    "placed": 22
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [
+    {
+      "unit": 119934,
+      "slots_written": 2454,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 3
+    },
+    {
+      "unit": 119946,
+      "slots_written": 2454,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 9
+    },
+    {
+      "unit": 119952,
+      "slots_written": 2454,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 14
+    }
+  ],
+  "mapping": {
+    "translation": {
+      "dx": -7.0,
+      "dy": 11.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 119932,
+      "2": 119931,
+      "3": 119934,
+      "4": 119933,
+      "5": 119936,
+      "6": 119935,
+      "7": 119938,
+      "8": 119937,
+      "9": 119946,
+      "10": 119948,
+      "11": 119947,
+      "12": 119950,
+      "13": 119949,
+      "14": 119952,
+      "15": 119951,
+      "16": 119939,
+      "17": 119941,
+      "18": 119940,
+      "19": 119944,
+      "20": 119943,
+      "21": 119942,
+      "22": 119945
+    },
+    "driver_units": {
+      "scalar_membus": 119932,
+      "vec_bus": 119931
+    },
+    "output_probes": [
+      {
+        "name": "membus_out",
+        "unit": 119943,
+        "wire": "green"
+      }
+    ],
+    "expected_probe_name": "membus_out"
+  },
+  "timeline": [
+    {
+      "tick": 876462,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_1"
+    },
+    {
+      "tick": 876463,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_2"
+    },
+    {
+      "tick": 876464,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "idle_no_select_no_read"
+    },
+    {
+      "tick": 876465,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "idle_no_select_no_read"
+    },
+    {
+      "tick": 876466,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "idle_no_select_no_read"
+    },
+    {
+      "tick": 876467,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "idle_no_select_no_read"
+    },
+    {
+      "tick": 876468,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "idle_no_select_no_read"
+    },
+    {
+      "tick": 876469,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "idle_no_select_no_read"
+    },
+    {
+      "tick": 876470,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "idle_no_select_no_read"
+    },
+    {
+      "tick": 876471,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "idle_no_select_no_read"
+    },
+    {
+      "tick": 876472,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "idle_no_select_no_read"
+    },
+    {
+      "tick": 876473,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 5.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "coord_lane_5_reads_5"
+    },
+    {
+      "tick": 876474,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 5.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "coord_lane_5_reads_5"
+    },
+    {
+      "tick": 876475,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 3012285.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "coord_lane_5_reads_5"
+    },
+    {
+      "tick": 876476,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 5.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "coord_lane_5_reads_5"
+    },
+    {
+      "tick": 876477,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 5.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "coord_lane_5_reads_5"
+    },
+    {
+      "tick": 876478,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 5.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "coord_lane_5_reads_5"
+    },
+    {
+      "tick": 876479,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 5.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "coord_lane_5_reads_5"
+    },
+    {
+      "tick": 876480,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 5.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "coord_lane_5_reads_5"
+    },
+    {
+      "tick": 876481,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 5.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "coord_lane_5_reads_5"
+    },
+    {
+      "tick": 876482,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 5.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "coord_lane_100_reads_100"
+    },
+    {
+      "tick": 876483,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 5.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "coord_lane_100_reads_100"
+    },
+    {
+      "tick": 876484,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 5.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "coord_lane_100_reads_100"
+    },
+    {
+      "tick": 876485,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 100.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "coord_lane_100_reads_100"
+    },
+    {
+      "tick": 876486,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 100.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "coord_lane_100_reads_100"
+    },
+    {
+      "tick": 876487,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 100.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "coord_lane_100_reads_100"
+    },
+    {
+      "tick": 876488,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 100.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "coord_lane_100_reads_100"
+    },
+    {
+      "tick": 876489,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 100.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "coord_lane_100_reads_100"
+    },
+    {
+      "tick": 876490,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 100.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "coord_lane_100_reads_100"
+    },
+    {
+      "tick": 876491,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 2000.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 100.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "coord_lane_2000_reads_2000"
+    },
+    {
+      "tick": 876492,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 2000.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 100.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "coord_lane_2000_reads_2000"
+    },
+    {
+      "tick": 876493,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 2000.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 100.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "coord_lane_2000_reads_2000"
+    },
+    {
+      "tick": 876494,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 2000.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 2000.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "coord_lane_2000_reads_2000"
+    },
+    {
+      "tick": 876495,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 2000.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 2000.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "coord_lane_2000_reads_2000"
+    },
+    {
+      "tick": 876496,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 2000.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 2000.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "coord_lane_2000_reads_2000"
+    },
+    {
+      "tick": 876497,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 2000.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 2000.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "coord_lane_2000_reads_2000"
+    },
+    {
+      "tick": 876498,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 2000.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 2000.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "coord_lane_2000_reads_2000"
+    },
+    {
+      "tick": 876499,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 47.0,
+          "signal-apostrophe": 2000.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 2000.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "coord_lane_2000_reads_2000"
+    },
+    {
+      "tick": 876500,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 2000.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "lane_in_writes_one_addressed_lane"
+    },
+    {
+      "tick": 876501,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 2000.0,
+          "signal-ampersand": 3012285.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "lane_in_writes_one_addressed_lane"
+    },
+    {
+      "tick": 876502,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 2000.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "lane_in_writes_one_addressed_lane"
+    },
+    {
+      "tick": 876503,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "lane_in_writes_one_addressed_lane"
+    },
+    {
+      "tick": 876504,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "lane_in_writes_one_addressed_lane"
+    },
+    {
+      "tick": 876505,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 42.0,
+          "signal-ampersand": 42.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "lane_in_writes_one_addressed_lane"
+    },
+    {
+      "tick": 876506,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 42.0,
+          "signal-ampersand": 42.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "lane_in_writes_one_addressed_lane"
+    },
+    {
+      "tick": 876507,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 42.0,
+          "signal-ampersand": 42.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "lane_in_writes_one_addressed_lane"
+    },
+    {
+      "tick": 876508,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 42.0,
+          "signal-ampersand": 42.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "lane_in_writes_one_addressed_lane"
+    },
+    {
+      "tick": 876509,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 8.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 42.0,
+          "signal-ampersand": 42.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "lane_in_leaves_neighbouring_lane_empty"
+    },
+    {
+      "tick": 876510,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 8.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 42.0,
+          "signal-ampersand": 42.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "lane_in_leaves_neighbouring_lane_empty"
+    },
+    {
+      "tick": 876511,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 8.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 42.0,
+          "signal-ampersand": 42.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "lane_in_leaves_neighbouring_lane_empty"
+    },
+    {
+      "tick": 876512,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 8.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 42.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "lane_in_leaves_neighbouring_lane_empty"
+    },
+    {
+      "tick": 876513,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 8.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 42.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "lane_in_leaves_neighbouring_lane_empty"
+    },
+    {
+      "tick": 876514,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 8.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 42.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "lane_in_leaves_neighbouring_lane_empty"
+    },
+    {
+      "tick": 876515,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 8.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 42.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "lane_in_leaves_neighbouring_lane_empty"
+    },
+    {
+      "tick": 876516,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 8.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 42.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "lane_in_leaves_neighbouring_lane_empty"
+    },
+    {
+      "tick": 876517,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 8.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 42.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "lane_in_leaves_neighbouring_lane_empty"
+    },
+    {
+      "tick": 876518,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 42.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "lane_in_carries_negatives"
+    },
+    {
+      "tick": 876519,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 42.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "lane_in_carries_negatives"
+    },
+    {
+      "tick": 876520,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 42.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "lane_in_carries_negatives"
+    },
+    {
+      "tick": 876521,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 42.0,
+          "signal-ampersand": -9.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "lane_in_carries_negatives"
+    },
+    {
+      "tick": 876522,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": -9.0,
+          "signal-ampersand": -9.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "lane_in_carries_negatives"
+    },
+    {
+      "tick": 876523,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": -9.0,
+          "signal-ampersand": -9.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "lane_in_carries_negatives"
+    },
+    {
+      "tick": 876524,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": -9.0,
+          "signal-ampersand": -9.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "lane_in_carries_negatives"
+    },
+    {
+      "tick": 876525,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": -9.0,
+          "signal-ampersand": -9.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "lane_in_carries_negatives"
+    },
+    {
+      "tick": 876526,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 48.0,
+          "signal-apostrophe": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": -9.0,
+          "signal-ampersand": -9.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "lane_in_carries_negatives"
+    },
+    {
+      "tick": 876527,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 3.0
+        },
+        "vec_bus": {
+          "signal-0": 77.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": -9.0,
+          "signal-ampersand": -9.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "lane_out_reads_an_arbitrary_bus_frame"
+    },
+    {
+      "tick": 876528,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 3.0
+        },
+        "vec_bus": {
+          "signal-0": 77.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": -9.0,
+          "signal-ampersand": 68.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "lane_out_reads_an_arbitrary_bus_frame"
+    },
+    {
+      "tick": 876529,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 3.0
+        },
+        "vec_bus": {
+          "signal-0": 77.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": -9.0,
+          "signal-ampersand": 77.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "lane_out_reads_an_arbitrary_bus_frame"
+    },
+    {
+      "tick": 876530,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 3.0
+        },
+        "vec_bus": {
+          "signal-0": 77.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 77.0,
+          "signal-ampersand": 77.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "lane_out_reads_an_arbitrary_bus_frame"
+    },
+    {
+      "tick": 876531,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 3.0
+        },
+        "vec_bus": {
+          "signal-0": 77.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 77.0,
+          "signal-ampersand": 77.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "lane_out_reads_an_arbitrary_bus_frame"
+    },
+    {
+      "tick": 876532,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 3.0
+        },
+        "vec_bus": {
+          "signal-0": 77.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 77.0,
+          "signal-ampersand": 77.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "lane_out_reads_an_arbitrary_bus_frame"
+    },
+    {
+      "tick": 876533,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 3.0
+        },
+        "vec_bus": {
+          "signal-0": 77.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 77.0,
+          "signal-ampersand": 77.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "lane_out_reads_an_arbitrary_bus_frame"
+    },
+    {
+      "tick": 876534,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 3.0
+        },
+        "vec_bus": {
+          "signal-0": 77.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 77.0,
+          "signal-ampersand": 77.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "lane_out_reads_an_arbitrary_bus_frame"
+    },
+    {
+      "tick": 876535,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 3.0
+        },
+        "vec_bus": {
+          "signal-0": 77.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 77.0,
+          "signal-ampersand": 77.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "lane_out_reads_an_arbitrary_bus_frame"
+    },
+    {
+      "tick": 876536,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 4.0
+        },
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 77.0,
+          "signal-ampersand": 77.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "reduction_sums_every_lane"
+    },
+    {
+      "tick": 876537,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 4.0
+        },
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 77.0,
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "reduction_sums_every_lane"
+    },
+    {
+      "tick": 876538,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 4.0
+        },
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 77.0,
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "reduction_sums_every_lane"
+    },
+    {
+      "tick": 876539,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 4.0
+        },
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 23.0,
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "reduction_sums_every_lane"
+    },
+    {
+      "tick": 876540,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 4.0
+        },
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 23.0,
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "reduction_sums_every_lane"
+    },
+    {
+      "tick": 876541,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 4.0
+        },
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 23.0,
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "reduction_sums_every_lane"
+    },
+    {
+      "tick": 876542,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 4.0
+        },
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 23.0,
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "reduction_sums_every_lane"
+    },
+    {
+      "tick": 876543,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 4.0
+        },
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 23.0,
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "reduction_sums_every_lane"
+    },
+    {
+      "tick": 876544,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-apostrophe": 4.0
+        },
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 23.0,
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "reduction_sums_every_lane"
+    },
+    {
+      "tick": 876545,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 23.0,
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 9,
+      "step_name": "no_read_address_extracts_nothing"
+    },
+    {
+      "tick": 876546,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 23.0,
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 9,
+      "step_name": "no_read_address_extracts_nothing"
+    },
+    {
+      "tick": 876547,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 23.0,
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 9,
+      "step_name": "no_read_address_extracts_nothing"
+    },
+    {
+      "tick": 876548,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 9,
+      "step_name": "no_read_address_extracts_nothing"
+    },
+    {
+      "tick": 876549,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 9,
+      "step_name": "no_read_address_extracts_nothing"
+    },
+    {
+      "tick": 876550,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "no_read_address_extracts_nothing"
+    },
+    {
+      "tick": 876551,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "no_read_address_extracts_nothing"
+    },
+    {
+      "tick": 876552,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "no_read_address_extracts_nothing"
+    },
+    {
+      "tick": 876553,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": 23.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "no_read_address_extracts_nothing"
+    },
+    {
+      "tick": 876554,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": -3.0,
+          "signal-1": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 100.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "vred_count_is_a_popcount_not_a_sum"
+    },
+    {
+      "tick": 876555,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": -3.0,
+          "signal-1": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 11.0,
+          "signal-ampersand~uncommon": 2.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "vred_count_is_a_popcount_not_a_sum"
+    },
+    {
+      "tick": 876556,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": -3.0,
+          "signal-1": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 11.0,
+          "signal-ampersand~uncommon": 3.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "vred_count_is_a_popcount_not_a_sum"
+    },
+    {
+      "tick": 876557,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": -3.0,
+          "signal-1": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 11.0,
+          "signal-ampersand~uncommon": 3.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "vred_count_is_a_popcount_not_a_sum"
+    },
+    {
+      "tick": 876558,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": -3.0,
+          "signal-1": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 11.0,
+          "signal-ampersand~uncommon": 3.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "vred_count_is_a_popcount_not_a_sum"
+    },
+    {
+      "tick": 876559,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": -3.0,
+          "signal-1": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 11.0,
+          "signal-ampersand~uncommon": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "vred_count_is_a_popcount_not_a_sum"
+    },
+    {
+      "tick": 876560,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": -3.0,
+          "signal-1": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 11.0,
+          "signal-ampersand~uncommon": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "vred_count_is_a_popcount_not_a_sum"
+    },
+    {
+      "tick": 876561,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": -3.0,
+          "signal-1": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 11.0,
+          "signal-ampersand~uncommon": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "vred_count_is_a_popcount_not_a_sum"
+    },
+    {
+      "tick": 876562,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": -3.0,
+          "signal-1": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 11.0,
+          "signal-ampersand~uncommon": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "vred_count_is_a_popcount_not_a_sum"
+    },
+    {
+      "tick": 876563,
+      "stimulus": {
+        "vec_bus": {
+          "signal-0": -3.0,
+          "signal-1": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 11.0,
+          "signal-ampersand~uncommon": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "vred_count_is_a_popcount_not_a_sum"
+    },
+    {
+      "tick": 876564,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 45.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 11.0,
+          "signal-ampersand~uncommon": 3.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 11,
+      "step_name": "ones_is_present_in_every_lane"
+    },
+    {
+      "tick": 876565,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 45.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand~uncommon": 3.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 11,
+      "step_name": "ones_is_present_in_every_lane"
+    },
+    {
+      "tick": 876566,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 45.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 11,
+      "step_name": "ones_is_present_in_every_lane"
+    },
+    {
+      "tick": 876567,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 45.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 2454.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 11,
+      "step_name": "ones_is_present_in_every_lane"
+    },
+    {
+      "tick": 876568,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 45.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 2454.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 11,
+      "step_name": "ones_is_present_in_every_lane"
+    },
+    {
+      "tick": 876569,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 45.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 2454.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "ones_is_present_in_every_lane"
+    },
+    {
+      "tick": 876570,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 45.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 2454.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "ones_is_present_in_every_lane"
+    },
+    {
+      "tick": 876571,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 45.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 2454.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "ones_is_present_in_every_lane"
+    },
+    {
+      "tick": 876572,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 45.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 2454.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "ones_is_present_in_every_lane"
+    },
+    {
+      "tick": 876573,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 45.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 2454.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "ones_is_present_in_every_lane"
+    },
+    {
+      "tick": 876574,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 2454.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 12,
+      "step_name": "bcast_puts_one_constant_in_every_lane"
+    },
+    {
+      "tick": 876575,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 2454.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 12,
+      "step_name": "bcast_puts_one_constant_in_every_lane"
+    },
+    {
+      "tick": 876576,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 12,
+      "step_name": "bcast_puts_one_constant_in_every_lane"
+    },
+    {
+      "tick": 876577,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand": 17178.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 12,
+      "step_name": "bcast_puts_one_constant_in_every_lane"
+    },
+    {
+      "tick": 876578,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 7.0,
+          "signal-ampersand": 17178.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 12,
+      "step_name": "bcast_puts_one_constant_in_every_lane"
+    },
+    {
+      "tick": 876579,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 7.0,
+          "signal-ampersand": 17178.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 12,
+      "step_name": "bcast_puts_one_constant_in_every_lane"
+    },
+    {
+      "tick": 876580,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 7.0,
+          "signal-ampersand": 17178.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 12,
+      "step_name": "bcast_puts_one_constant_in_every_lane"
+    },
+    {
+      "tick": 876581,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 7.0,
+          "signal-ampersand": 17178.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 12,
+      "step_name": "bcast_puts_one_constant_in_every_lane"
+    },
+    {
+      "tick": 876582,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 7.0,
+          "signal-ampersand": 17178.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 12,
+      "step_name": "bcast_puts_one_constant_in_every_lane"
+    },
+    {
+      "tick": 876583,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 100.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 7.0,
+          "signal-ampersand": 17178.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 12,
+      "step_name": "bcast_puts_one_constant_in_every_lane"
+    },
+    {
+      "tick": 876584,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 0.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 7.0,
+          "signal-ampersand": 17178.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 13,
+      "step_name": "bcast_of_zero_is_an_empty_frame"
+    },
+    {
+      "tick": 876585,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 0.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 7.0,
+          "signal-ampersand": 17178.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 13,
+      "step_name": "bcast_of_zero_is_an_empty_frame"
+    },
+    {
+      "tick": 876586,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 0.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-apostrophe~epic": 7.0,
+          "signal-ampersand": 17178.0,
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 13,
+      "step_name": "bcast_of_zero_is_an_empty_frame"
+    },
+    {
+      "tick": 876587,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 0.0
+        }
+      },
+      "observed_by_probe": {
+        "membus_out": {
+          "signal-ampersand~uncommon": 2454.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 13,
+      "step_name": "bcast_of_zero_is_an_empty_frame"
+    },
+    {
+      "tick": 876588,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 0.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 13,
+      "step_name": "bcast_of_zero_is_an_empty_frame"
+    },
+    {
+      "tick": 876589,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 0.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 13,
+      "step_name": "bcast_of_zero_is_an_empty_frame"
+    },
+    {
+      "tick": 876590,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 0.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 13,
+      "step_name": "bcast_of_zero_is_an_empty_frame"
+    },
+    {
+      "tick": 876591,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 0.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 13,
+      "step_name": "bcast_of_zero_is_an_empty_frame"
+    },
+    {
+      "tick": 876592,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 0.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 13,
+      "step_name": "bcast_of_zero_is_an_empty_frame"
+    },
+    {
+      "tick": 876593,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 46.0,
+          "signal-apostrophe": 0.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 13,
+      "step_name": "bcast_of_zero_is_an_empty_frame"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "idle_no_select_no_read",
+      "drive_start_tick": 876463,
+      "skipped_ticks": 0,
+      "expected_probe": "membus_out",
+      "expected": {
+        "signal-apostrophe~epic": 0,
+        "signal-ampersand": 0
+      },
+      "observed": {},
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876472
+    },
+    {
+      "step_index": 1,
+      "step_name": "coord_lane_5_reads_5",
+      "drive_start_tick": 876472,
+      "skipped_ticks": 0,
+      "expected_probe": "membus_out",
+      "expected": {
+        "signal-apostrophe~epic": 5
+      },
+      "observed": {
+        "signal-apostrophe~epic": 5.0,
+        "signal-ampersand": 3012285.0,
+        "signal-ampersand~uncommon": 2454.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876481
+    },
+    {
+      "step_index": 2,
+      "step_name": "coord_lane_100_reads_100",
+      "drive_start_tick": 876481,
+      "skipped_ticks": 0,
+      "expected_probe": "membus_out",
+      "expected": {
+        "signal-apostrophe~epic": 100
+      },
+      "observed": {
+        "signal-apostrophe~epic": 100.0,
+        "signal-ampersand": 3012285.0,
+        "signal-ampersand~uncommon": 2454.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876490
+    },
+    {
+      "step_index": 3,
+      "step_name": "coord_lane_2000_reads_2000",
+      "drive_start_tick": 876490,
+      "skipped_ticks": 0,
+      "expected_probe": "membus_out",
+      "expected": {
+        "signal-apostrophe~epic": 2000
+      },
+      "observed": {
+        "signal-apostrophe~epic": 2000.0,
+        "signal-ampersand": 3012285.0,
+        "signal-ampersand~uncommon": 2454.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876499
+    },
+    {
+      "step_index": 4,
+      "step_name": "lane_in_writes_one_addressed_lane",
+      "drive_start_tick": 876499,
+      "skipped_ticks": 0,
+      "expected_probe": "membus_out",
+      "expected": {
+        "signal-apostrophe~epic": 42,
+        "signal-ampersand": 42
+      },
+      "observed": {
+        "signal-apostrophe~epic": 42.0,
+        "signal-ampersand": 42.0,
+        "signal-ampersand~uncommon": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876508
+    },
+    {
+      "step_index": 5,
+      "step_name": "lane_in_leaves_neighbouring_lane_empty",
+      "drive_start_tick": 876508,
+      "skipped_ticks": 0,
+      "expected_probe": "membus_out",
+      "expected": {
+        "signal-apostrophe~epic": 0,
+        "signal-ampersand": 42
+      },
+      "observed": {
+        "signal-ampersand": 42.0,
+        "signal-ampersand~uncommon": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876517
+    },
+    {
+      "step_index": 6,
+      "step_name": "lane_in_carries_negatives",
+      "drive_start_tick": 876517,
+      "skipped_ticks": 0,
+      "expected_probe": "membus_out",
+      "expected": {
+        "signal-apostrophe~epic": -9,
+        "signal-ampersand": -9
+      },
+      "observed": {
+        "signal-apostrophe~epic": -9.0,
+        "signal-ampersand": -9.0,
+        "signal-ampersand~uncommon": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876526
+    },
+    {
+      "step_index": 7,
+      "step_name": "lane_out_reads_an_arbitrary_bus_frame",
+      "drive_start_tick": 876526,
+      "skipped_ticks": 0,
+      "expected_probe": "membus_out",
+      "expected": {
+        "signal-apostrophe~epic": 77,
+        "signal-ampersand": 77
+      },
+      "observed": {
+        "signal-apostrophe~epic": 77.0,
+        "signal-ampersand": 77.0,
+        "signal-ampersand~uncommon": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876535
+    },
+    {
+      "step_index": 8,
+      "step_name": "reduction_sums_every_lane",
+      "drive_start_tick": 876535,
+      "skipped_ticks": 0,
+      "expected_probe": "membus_out",
+      "expected": {
+        "signal-apostrophe~epic": 23,
+        "signal-ampersand": 100
+      },
+      "observed": {
+        "signal-apostrophe~epic": 23.0,
+        "signal-ampersand": 100.0,
+        "signal-ampersand~uncommon": 2.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876544
+    },
+    {
+      "step_index": 9,
+      "step_name": "no_read_address_extracts_nothing",
+      "drive_start_tick": 876544,
+      "skipped_ticks": 0,
+      "expected_probe": "membus_out",
+      "expected": {
+        "signal-apostrophe~epic": 0,
+        "signal-ampersand": 100
+      },
+      "observed": {
+        "signal-ampersand": 100.0,
+        "signal-ampersand~uncommon": 2.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876553
+    },
+    {
+      "step_index": 10,
+      "step_name": "vred_count_is_a_popcount_not_a_sum",
+      "drive_start_tick": 876553,
+      "skipped_ticks": 0,
+      "expected_probe": "membus_out",
+      "expected": {
+        "signal-ampersand~uncommon": 3,
+        "signal-ampersand": 11
+      },
+      "observed": {
+        "signal-ampersand": 11.0,
+        "signal-ampersand~uncommon": 3.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876563
+    },
+    {
+      "step_index": 11,
+      "step_name": "ones_is_present_in_every_lane",
+      "drive_start_tick": 876563,
+      "skipped_ticks": 0,
+      "expected_probe": "membus_out",
+      "expected": {
+        "signal-ampersand~uncommon": 2454,
+        "signal-ampersand": 2454
+      },
+      "observed": {
+        "signal-ampersand": 2454.0,
+        "signal-ampersand~uncommon": 2454.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876573
+    },
+    {
+      "step_index": 12,
+      "step_name": "bcast_puts_one_constant_in_every_lane",
+      "drive_start_tick": 876573,
+      "skipped_ticks": 0,
+      "expected_probe": "membus_out",
+      "expected": {
+        "signal-ampersand~uncommon": 2454,
+        "signal-ampersand": 17178,
+        "signal-apostrophe~epic": 7
+      },
+      "observed": {
+        "signal-apostrophe~epic": 7.0,
+        "signal-ampersand": 17178.0,
+        "signal-ampersand~uncommon": 2454.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876583
+    },
+    {
+      "step_index": 13,
+      "step_name": "bcast_of_zero_is_an_empty_frame",
+      "drive_start_tick": 876583,
+      "skipped_ticks": 0,
+      "expected_probe": "membus_out",
+      "expected": {
+        "signal-ampersand~uncommon": 0,
+        "signal-ampersand": 0
+      },
+      "observed": {},
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876593
+    }
+  ],
+  "pass": true
+}

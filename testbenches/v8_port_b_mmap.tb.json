@@ -1,0 +1,71 @@
+{
+  "name": "v8_port_b_mmap",
+  "description": "fnet v8 component 6: memory-mapped read port B, open loop (a stim plays the memory bus). proc_v8_mmap_port_b semantics: the register row's bus value IS the read address - write the register to re-park, data streams while parked. The register row is the design's $b_reg (memory[310]); $addr_b_stim drives the address net directly (the addr_rd_b path).",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 4,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -6.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "mem_bus": 1,
+      "addr_b": 2
+    },
+    "expected_probe_name": "port_b",
+    "output_probes": [
+      { "name": "port_b", "entity_number": 8, "wire": "green" }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "register_parks_addr6",
+      "drive": {
+        "mem_bus": { "$b_reg": 6, "$mem[6]": 99, "$mem[11]": 55 }
+      },
+      "expect": { "$mem[6]": 99, "$mem[11]": 0 }
+    },
+    {
+      "name": "data_streams_while_parked",
+      "drive": { "mem_bus": { "$b_reg": 6, "$mem[6]": 100, "$mem[11]": 55 } },
+      "expect": { "$mem[6]": 100 }
+    },
+    {
+      "name": "register_write_reparks_addr11",
+      "drive": { "mem_bus": { "$b_reg": 11, "$mem[6]": 100, "$mem[11]": 55 } },
+      "expect": { "$mem[11]": 55, "$mem[6]": 0 }
+    },
+    {
+      "name": "direct_addr_override",
+      "drive": {
+        "mem_bus": { "$mem[16]": 77 },
+        "addr_b": { "$addr_b_stim": 16 }
+      },
+      "expect": { "$mem[16]": 77 }
+    },
+    {
+      "name": "no_register_no_read",
+      "drive": {
+        "mem_bus": { "$mem[6]": 99 },
+        "addr_b": {}
+      },
+      "expect": { "$mem[6]": 0 }
+    },
+    {
+      "name": "negative_register_value_parks",
+      "drive": { "mem_bus": { "$b_reg": 21, "$mem[21]": -4 } },
+      "expect": { "$mem[21]": -4 }
+    }
+  ]
+}

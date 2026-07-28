@@ -1,0 +1,606 @@
+{
+  "name": "v8_write_encoder",
+  "surface": "nauvis",
+  "description": "compiled by netlist.py from v8_write_encoder.fnet (module write_encoder_bench)",
+  "signals": {
+    "file.wsel": {
+      "type": "virtual",
+      "name": "down-arrow",
+      "quality": "uncommon",
+      "display": "down-arrow~uncommon",
+      "auto": true
+    },
+    "wsel": {
+      "type": "virtual",
+      "name": "down-arrow",
+      "quality": "uncommon",
+      "display": "down-arrow~uncommon",
+      "auto": true
+    },
+    "file.wval": {
+      "type": "virtual",
+      "name": "down-left-arrow",
+      "quality": "uncommon",
+      "display": "down-left-arrow~uncommon",
+      "auto": true
+    },
+    "wval": {
+      "type": "virtual",
+      "name": "down-left-arrow",
+      "quality": "uncommon",
+      "display": "down-left-arrow~uncommon",
+      "auto": true
+    },
+    "file.wflag": {
+      "type": "virtual",
+      "name": "down-right-arrow",
+      "quality": "uncommon",
+      "display": "down-right-arrow~uncommon",
+      "auto": true
+    },
+    "wflag": {
+      "type": "virtual",
+      "name": "down-right-arrow",
+      "quality": "uncommon",
+      "display": "down-right-arrow~uncommon",
+      "auto": true
+    },
+    "file.addr_stim": {
+      "type": "virtual",
+      "name": "left-arrow",
+      "quality": "uncommon",
+      "display": "left-arrow~uncommon",
+      "auto": true
+    },
+    "addr_stim": {
+      "type": "virtual",
+      "name": "left-arrow",
+      "quality": "uncommon",
+      "display": "left-arrow~uncommon",
+      "auto": true
+    },
+    "file.value_stim": {
+      "type": "virtual",
+      "name": "right-arrow",
+      "quality": "uncommon",
+      "display": "right-arrow~uncommon",
+      "auto": true
+    },
+    "value_stim": {
+      "type": "virtual",
+      "name": "right-arrow",
+      "quality": "uncommon",
+      "display": "right-arrow~uncommon",
+      "auto": true
+    },
+    "file.trig_stim": {
+      "type": "virtual",
+      "name": "shape-circle",
+      "quality": "uncommon",
+      "display": "shape-circle~uncommon",
+      "auto": true
+    },
+    "trig_stim": {
+      "type": "virtual",
+      "name": "shape-circle",
+      "quality": "uncommon",
+      "display": "shape-circle~uncommon",
+      "auto": true
+    }
+  },
+  "blueprint": {
+    "icons": [
+      {
+        "signal": {
+          "name": "constant-combinator"
+        },
+        "index": 1
+      }
+    ],
+    "entities": [
+      {
+        "entity_number": 1,
+        "name": "constant-combinator",
+        "position": {
+          "x": 12.5,
+          "y": -12.5
+        },
+        "player_description": "write_address",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 2,
+        "name": "constant-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -11.5
+        },
+        "player_description": "write_value",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 3,
+        "name": "constant-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -12.5
+        },
+        "player_description": "write_trigger",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 4,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 11.5,
+          "y": -12.0
+        },
+        "player_description": "write_addr_to_scalar",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "down-arrow",
+              "quality": "uncommon"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 5,
+        "name": "decider-combinator",
+        "position": {
+          "x": 10.5,
+          "y": -12.0
+        },
+        "player_description": "write_addr_latch",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 6,
+        "name": "constant-combinator",
+        "position": {
+          "x": 8.5,
+          "y": -11.5
+        },
+        "player_description": "address_table",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        },
+        "signal_table": {
+          "table": "full_address_space"
+        }
+      },
+      {
+        "entity_number": 7,
+        "name": "decider-combinator",
+        "position": {
+          "x": 9.5,
+          "y": -12.0
+        },
+        "player_description": "write_onehot",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "down-arrow",
+                  "quality": "uncommon"
+                },
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                },
+                "second_signal_networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "copy_count_from_input": false,
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 8,
+        "name": "decider-combinator",
+        "position": {
+          "x": 1.5,
+          "y": -12.0
+        },
+        "player_description": "write_flag",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "down-right-arrow",
+                  "quality": "uncommon"
+                },
+                "copy_count_from_input": false,
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 9,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 5.5,
+          "y": -12.0
+        },
+        "player_description": "write_trigger_product",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_signal": {
+              "type": "virtual",
+              "name": "down-right-arrow",
+              "quality": "uncommon"
+            },
+            "operation": "*",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "first_signal_networks": {
+              "red": true,
+              "green": false
+            },
+            "second_signal_networks": {
+              "red": false,
+              "green": true
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 10,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 3.5,
+          "y": -12.0
+        },
+        "player_description": "write_value_to_scalar",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "down-left-arrow",
+              "quality": "uncommon"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 11,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 6.5,
+          "y": -12.0
+        },
+        "player_description": "write_value_product",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_signal": {
+              "type": "virtual",
+              "name": "down-left-arrow",
+              "quality": "uncommon"
+            },
+            "operation": "*",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "first_signal_networks": {
+              "red": true,
+              "green": false
+            },
+            "second_signal_networks": {
+              "red": false,
+              "green": true
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 12,
+        "name": "constant-combinator",
+        "position": {
+          "x": 8.5,
+          "y": -12.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 13,
+        "name": "constant-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -11.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 14,
+        "name": "constant-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -12.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 15,
+        "name": "constant-combinator",
+        "position": {
+          "x": 4.5,
+          "y": -12.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "wires": [
+      [
+        1,
+        2,
+        4,
+        2
+      ],
+      [
+        2,
+        2,
+        10,
+        2
+      ],
+      [
+        3,
+        1,
+        8,
+        1
+      ],
+      [
+        4,
+        4,
+        5,
+        2
+      ],
+      [
+        5,
+        1,
+        5,
+        3
+      ],
+      [
+        5,
+        4,
+        7,
+        2
+      ],
+      [
+        6,
+        1,
+        7,
+        1
+      ],
+      [
+        7,
+        3,
+        12,
+        1
+      ],
+      [
+        8,
+        4,
+        9,
+        2
+      ],
+      [
+        9,
+        1,
+        11,
+        1
+      ],
+      [
+        9,
+        3,
+        14,
+        1
+      ],
+      [
+        9,
+        4,
+        13,
+        2
+      ],
+      [
+        10,
+        4,
+        11,
+        2
+      ],
+      [
+        11,
+        1,
+        12,
+        1
+      ],
+      [
+        11,
+        4,
+        15,
+        2
+      ]
+    ],
+    "item": "blueprint",
+    "version": 562954248978435
+  }
+}

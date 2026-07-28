@@ -1,0 +1,204 @@
+# v10_op_farm — component 3 of the fnet v10 rebuild: the always-on op farm,
+# with TWO hardwired operand pairs (designer, 2026-07-27).
+#
+# Ops never touch the mux. Each unit computes continuously from its pair's
+# operand faces and presents its result on its own red net, which gets one
+# read-select gate — so from the program's point of view an op output is just
+# another mux source to select and commit, exactly like a register.
+#
+#   pair A = VREG0 (a1, red hold loop) x VREG1 (b1, green face)   full set
+#   pair B = VREG2 (a2, red hold loop) x VREG3 (b2, green face)   core set
+#
+# WHY TWO PAIRS. With one pair, every op needs its operands shuffled into
+# VREG0/VREG1 first, so the inner loop of anything interesting is dominated by
+# moves rather than arithmetic. The motivating case is mandelbrot: `zx*zx`,
+# `zy*zy` and `zx*zy` are three MULs of identical shape, and a second pair
+# lets two of them run concurrently. Pair B carries the core operations only
+# (multiply and subtract); the fuller set stays on pair A.
+#
+# MUX INDEX ASSIGNMENT — BLOCKED, WITH RESERVES IN EVERY BLOCK (2026-07-28).
+# The first two revisions of this map were contiguous, and both had to
+# renumber every downstream index the moment a unit was added. It is now laid
+# out in blocks of 8 with spare slots, so adding an op touches one line:
+#
+#   1..16   registers                    (v10_vec_bank, 12 built, 4 spare)
+#   17..24  pair A ops                   (6 built, 2 spare)
+#   25..32  pair B ops                   (5 built, 3 spare)
+#   33..44  vec-scal ops                 (7 built, 5 spare)
+#   45..52  generators and I/O           (v10_vec_io, 4 built, 4 spare)
+#
+#   17 A_MUL     VREG0 * VREG1              33 VS_MUL   VREG0 * vec_bcast
+#   18 A_SUB     VREG0 - VREG1              34 VS_ADD   VREG0 + vec_bcast
+#   19 A_MAX     max(VREG0, VREG1)          35 VS_SUB   VREG0 - vec_bcast
+#   20 A_MIN     min(VREG0, VREG1)          36 VS_DIV   VREG0 / vec_bcast
+#   21 A_DIV     VREG0 / VREG1              37 VS_MOD   VREG0 % vec_bcast
+#   22 A_MOD     VREG0 % VREG1              38 VS_GT    1 where VREG0 >  bcast
+#                                           39 VS_LT    1 where VREG0 <  bcast
+#   25 B_MUL     VREG2 * VREG3
+#   26 B_SUB     VREG2 - VREG3              45 ONES     1 in every lane
+#   27 B_SQ      VREG2 squared              46 BCAST    vec_bcast2 every lane
+#   28 B_SQG     VREG3 squared              47 COORD    lane index ramp
+#   29 B_SQDIFF  VREG2^2 - VREG3^2          48 LANE_IN  single-lane write
+#
+# A_MIN and VS_LT are there so a comparison and its complement are both one
+# op: with only `>` a program needs an all-ones frame and a subtract to
+# negate a mask. ONES and BCAST (v10_vec_io) exist for the same reason at the
+# frame level — see the note on lane resurrection there.
+#
+# THE SQUARE BLOCK (added 2026-07-27 for mandelbrot) squares a pair-B register
+# WITHOUT needing each-against-itself semantics that nothing here has
+# measured: the bank exports both faces of VREG2 and VREG3, so VREG2^2 is the
+# ordinary `each[red] x each[green]` shape with both faces coming from the one
+# register. With zx in VREG2 and zy in VREG3, ONE pair load then offers zx*zy
+# (B_MUL), zx^2 (B_SQ), zy^2 (B_SQG), zx^2-zy^2 (B_SQDIFF) and — because two
+# mux selections sum — zx^2+zy^2 for free by selecting B_SQ and B_SQG
+# together. That is every quantity the mandelbrot iteration needs, including
+# its escape test, from a single pair load per pass.
+#
+# B_SQDIFF is the only two-deep unit in the farm (square, then subtract), so
+# it is why machine_v8's vector reach table carries a MIN and a MAX depth per
+# control rather than one number — see _VEC_REACH_BY_NAME.
+#
+# THE VEC-SCAL BLOCK reads VREG0's hold loop against `vec_bcast`, an ordinary
+# memory-mapped row read straight off the green bus — no dedicated broadcast
+# wiring, because control and scalar operands share one plane. DIV and MOD
+# earn their place immediately: they are what turn v10_vec_io's COORD ramp
+# (every lane holding its own index) into a 2D grid, `x = i % width` and
+# `y = i / width`, with no per-lane scalar writes at all.
+#
+# No ADD unit anywhere, on purpose: two mux selections sum on the shared write
+# bus, so vector ADD is free (V8.md TODO #4's bus summation, finally cashed
+# in). MAX is the else-branch shape — the two branches source their value from
+# opposite input networks onto ONE output net, so it needs no summing trick.
+#
+# LANE SEMANTICS (both measured live 2026-07-27, neither assumed — and the
+# distinction between them is load-bearing):
+#
+# 1. `each` vs `each` iterates the UNION of both input networks, a lane
+#    missing on one side reading 0. Bench evidence: a lane present only on the
+#    red operand (9) and one present only on the green operand (6) both
+#    survive into SUB (as 9 and -6) and into MAX (as 9 and 6), while MUL drops
+#    both because n*0 = 0.
+#
+# 2. `each` vs a FIXED signal iterates only the FIRST signal's networks. This
+#    is what lets every vec-scal unit take its broadcast straight off the
+#    scalar memory bus without dragging all of chunk1 in as junk lanes — the
+#    bench asserts that a vec-scal result contains no lane at `vec_rsel` or
+#    `vec_bcast`'s own rows. v8 depends on the same rule (v8_onehot compares
+#    the address table against a scalar carrier), which is why it has always
+#    worked; generalising rule 1 to this case would wrongly predict that both
+#    v8's write encoder and this block splatter their control plane.
+#
+# The practical rule: KEEP OPERAND LANE SETS ALIGNED. MUL is self-cleaning —
+# it silently discards any lane not present on both sides — but SUB is not,
+# and will manufacture a negative lane for anything present only on the green
+# operand. A vector holding a stale lane the other operand lacks is therefore
+# a real bug source, which is one more reason the one-tick MOVE primitive
+# (erase + write together) matters: it guarantees the destination's lane set
+# is exactly the source's.
+#
+# `module op_farm` is the reusable component; `op_farm_bench` is the live-test
+# harness, which drives the four operand faces directly with stims (the way
+# v8_alu_bench drives the state bus) rather than dragging in the whole
+# register bank — build with `--top op_farm_bench`.
+#
+# Entity numbering (declaration order; the bench's entity_map relies on it):
+# 1 scalar_membus stim, 2 operand_a1, 3 operand_b1, 4 operand_a2,
+# 5 operand_b2, 6 operand_a2g, 7 operand_b2r, then the farm 8..43 as
+# op/select-gate pairs in index order, then debug probe 44 vbus.
+
+import "lib/v8.fnet";
+import "lib/v10.fnet";
+import "v10_addr_map.fnet";
+
+module op_farm(in_g membus, out_r vbus,
+               in_r a1, in_g b1,        # pair A operands
+               in_r a2, in_g b2,        # pair B operands
+               in_g a2g, in_r b2r) {    # pair B's opposite faces (squares)
+  net red a_mul, a_sub, a_max, a_min, a_div, a_mod;
+  net red b_mul, b_sub;
+  net red b_sq, b_sqg_r, b_sqdiff;
+  net green b_sqg_g;                    # VREG3^2 on green: B_SQDIFF's operand
+  net red vs_mul, vs_add, vs_sub, vs_div, vs_mod, vs_gt, vs_lt;
+
+  # -- pair A: the fuller set ----------------------------------------------
+  v10_vec_vec_op<"*", "VVEC_A_MUL">(in_r: a1, in_g: b1, out_r: a_mul);
+  v10_select_gate<vec_rsel, vec_ssel, 17, "rsel_a_mul">(in_g: membus, in_r: a_mul, out_r: vbus);
+
+  v10_vec_vec_op<"-", "VVEC_A_SUB">(in_r: a1, in_g: b1, out_r: a_sub);
+  v10_select_gate<vec_rsel, vec_ssel, 18, "rsel_a_sub">(in_g: membus, in_r: a_sub, out_r: vbus);
+
+  v10_vec_vec_select<">", "VVEC_A_MAX">(in_r: a1, in_g: b1, out_r: a_max);
+  v10_select_gate<vec_rsel, vec_ssel, 19, "rsel_a_max">(in_g: membus, in_r: a_max, out_r: vbus);
+
+  v10_vec_vec_select<"<", "VVEC_A_MIN">(in_r: a1, in_g: b1, out_r: a_min);
+  v10_select_gate<vec_rsel, vec_ssel, 20, "rsel_a_min">(in_g: membus, in_r: a_min, out_r: vbus);
+
+  v10_vec_vec_op<"/", "VVEC_A_DIV">(in_r: a1, in_g: b1, out_r: a_div);
+  v10_select_gate<vec_rsel, vec_ssel, 21, "rsel_a_div">(in_g: membus, in_r: a_div, out_r: vbus);
+
+  v10_vec_vec_op<"%", "VVEC_A_MOD">(in_r: a1, in_g: b1, out_r: a_mod);
+  v10_select_gate<vec_rsel, vec_ssel, 22, "rsel_a_mod">(in_g: membus, in_r: a_mod, out_r: vbus);
+
+  # -- pair B: core operations only -----------------------------------------
+  v10_vec_vec_op<"*", "VVEC_B_MUL">(in_r: a2, in_g: b2, out_r: b_mul);
+  v10_select_gate<vec_rsel, vec_ssel, 25, "rsel_b_mul">(in_g: membus, in_r: b_mul, out_r: vbus);
+
+  v10_vec_vec_op<"-", "VVEC_B_SUB">(in_r: a2, in_g: b2, out_r: b_sub);
+  v10_select_gate<vec_rsel, vec_ssel, 26, "rsel_b_sub">(in_g: membus, in_r: b_sub, out_r: vbus);
+
+  # -- pair B squares: each register against its OWN opposite face ----------
+  # Ordinary each[red] x each[green], both faces of one register, so no new
+  # combinator semantics are relied on. B_SQ and B_SQG selected together sum
+  # on the write bus, which is the escape test zx^2+zy^2 for free.
+  v10_vec_vec_op<"*", "VVEC_B_SQ">(in_r: a2, in_g: a2g, out_r: b_sq);
+  v10_select_gate<vec_rsel, vec_ssel, 27, "rsel_b_sq">(in_g: membus, in_r: b_sq, out_r: vbus);
+
+  v10_vec_vec_op<"*", "VVEC_B_SQG">(in_r: b2r, in_g: b2, out_r: b_sqg_r, out_g: b_sqg_g);
+  v10_select_gate<vec_rsel, vec_ssel, 28, "rsel_b_sqg">(in_g: membus, in_r: b_sqg_r, out_r: vbus);
+
+  v10_vec_vec_op<"-", "VVEC_B_SQDIFF">(in_r: b_sq, in_g: b_sqg_g, out_r: b_sqdiff);
+  v10_select_gate<vec_rsel, vec_ssel, 29, "rsel_b_sqdiff">(in_g: membus, in_r: b_sqdiff, out_r: vbus);
+
+  # -- vec-scal: VREG0 against the memory-mapped broadcast row --------------
+  v10_vec_scal_op<vec_bcast, "*", "VSVEC_MUL">(in_r: a1, in_g: membus, out_r: vs_mul);
+  v10_select_gate<vec_rsel, vec_ssel, 33, "rsel_vs_mul">(in_g: membus, in_r: vs_mul, out_r: vbus);
+
+  v10_vec_scal_op<vec_bcast, "+", "VSVEC_ADD">(in_r: a1, in_g: membus, out_r: vs_add);
+  v10_select_gate<vec_rsel, vec_ssel, 34, "rsel_vs_add">(in_g: membus, in_r: vs_add, out_r: vbus);
+
+  v10_vec_scal_op<vec_bcast, "-", "VSVEC_SUB">(in_r: a1, in_g: membus, out_r: vs_sub);
+  v10_select_gate<vec_rsel, vec_ssel, 35, "rsel_vs_sub">(in_g: membus, in_r: vs_sub, out_r: vbus);
+
+  v10_vec_scal_op<vec_bcast, "/", "VSVEC_DIV">(in_r: a1, in_g: membus, out_r: vs_div);
+  v10_select_gate<vec_rsel, vec_ssel, 36, "rsel_vs_div">(in_g: membus, in_r: vs_div, out_r: vbus);
+
+  v10_vec_scal_op<vec_bcast, "%", "VSVEC_MOD">(in_r: a1, in_g: membus, out_r: vs_mod);
+  v10_select_gate<vec_rsel, vec_ssel, 37, "rsel_vs_mod">(in_g: membus, in_r: vs_mod, out_r: vbus);
+
+  v10_vec_scal_mask<vec_bcast, ">", "VSVEC_GT_MASK">(in_r: a1, in_g: membus, out_r: vs_gt);
+  v10_select_gate<vec_rsel, vec_ssel, 38, "rsel_vs_gt">(in_g: membus, in_r: vs_gt, out_r: vbus);
+
+  v10_vec_scal_mask<vec_bcast, "<", "VSVEC_LT_MASK">(in_r: a1, in_g: membus, out_r: vs_lt);
+  v10_select_gate<vec_rsel, vec_ssel, 39, "rsel_vs_lt">(in_g: membus, in_r: vs_lt, out_r: vbus);
+}
+
+module op_farm_bench() {
+  net green membus;
+  net red   a1, a2, b2r;
+  net green b1, b2, a2g;
+  debug net red vbus;   # read an op by parking R on its index
+
+  stim<"scalar_membus">(out_g: membus);
+  stim<"operand_a1">(out_r: a1);
+  stim<"operand_b1">(out_g: b1);
+  stim<"operand_a2">(out_r: a2);
+  stim<"operand_b2">(out_g: b2);
+  # The bank drives both faces of a pair-B register from ONE cell, so these
+  # two stims must be driven with the same frame as operand_a2 / operand_b2 —
+  # they stand in for the same register, not for extra operands.
+  stim<"operand_a2g">(out_g: a2g);
+  stim<"operand_b2r">(out_r: b2r);
+  op_farm(membus: membus, vbus: vbus, a1: a1, b1: b1, a2: a2, b2: b2,
+          a2g: a2g, b2r: b2r);
+}

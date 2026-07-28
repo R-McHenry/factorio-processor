@@ -1,0 +1,314 @@
+{
+  "name": "demo_circuit",
+  "surface": "nauvis",
+  "description": "Unencoded source blueprint with full game fields retained",
+  "blueprint": {
+    "icons": [
+      {
+        "signal": {
+          "name": "decider-combinator"
+        },
+        "index": 1
+      },
+      {
+        "signal": {
+          "name": "constant-combinator"
+        },
+        "index": 2
+      }
+    ],
+    "entities": [
+      {
+        "entity_number": 1,
+        "name": "constant-combinator",
+        "position": {
+          "x": -1.5,
+          "y": -12.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": [
+                  {
+                    "index": 1,
+                    "type": "virtual",
+                    "name": "signal-1",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 1
+                  },
+                  {
+                    "index": 2,
+                    "type": "virtual",
+                    "name": "signal-2",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 111
+                  }
+                ]
+              }
+            ]
+          },
+          "is_on": false
+        }
+      },
+      {
+        "entity_number": 2,
+        "name": "decider-combinator",
+        "position": {
+          "x": 2,
+          "y": -12.5
+        },
+        "direction": 4,
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "comparator": ">",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "else_outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 3,
+        "name": "constant-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -15.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": [
+                  {
+                    "index": 1,
+                    "type": "virtual",
+                    "name": "signal-R",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 3
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 4,
+        "name": "constant-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -14.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": [
+                  {
+                    "index": 1,
+                    "type": "virtual",
+                    "name": "signal-0",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 1
+                  },
+                  {
+                    "index": 2,
+                    "type": "virtual",
+                    "name": "signal-1",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 2
+                  },
+                  {
+                    "index": 3,
+                    "type": "virtual",
+                    "name": "signal-2",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 3
+                  },
+                  {
+                    "index": 4,
+                    "type": "virtual",
+                    "name": "signal-3",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 4
+                  },
+                  {
+                    "index": 5,
+                    "type": "virtual",
+                    "name": "signal-4",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 5
+                  },
+                  {
+                    "index": 6,
+                    "type": "virtual",
+                    "name": "signal-5",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 6
+                  },
+                  {
+                    "index": 7,
+                    "type": "virtual",
+                    "name": "signal-6",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 7
+                  },
+                  {
+                    "index": 8,
+                    "type": "virtual",
+                    "name": "signal-7",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 8
+                  },
+                  {
+                    "index": 9,
+                    "type": "virtual",
+                    "name": "signal-8",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 9
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 5,
+        "name": "decider-combinator",
+        "position": {
+          "x": 4,
+          "y": -12.5
+        },
+        "direction": 4,
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "signal-R"
+                },
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                },
+                "second_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 6,
+        "name": "constant-combinator",
+        "position": {
+          "x": 5.5,
+          "y": -12.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "wires": [
+      [1, 2, 2, 2],
+      [2, 1, 2, 3],
+      [2, 4, 5, 2],
+      [3, 1, 5, 1],
+      [4, 1, 5, 1],
+      [5, 4, 6, 2]
+    ],
+    "item": "blueprint",
+    "version": 562954248978435
+  }
+}

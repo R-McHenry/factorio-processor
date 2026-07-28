@@ -1,0 +1,76 @@
+# v8_write_encoder — component 2 of the fnet v8 rebuild (NETLIST_PLAN.md):
+# the write-address/value encoder (masters 2, 3, 6, 8, 9, 10, 13, 14).
+# Chain: address bus -> scalar (sum_to) -> latch (holds after release) ->
+# one-hot decode against the address table -> x write-flag = set/reset
+# products (one combinator's two output colors), x value scalar = the
+# encoded write value. Behavioral bench: testbenches/v8_write_encoder.tb.json
+# (proc_write_encoder semantics: latch hold, one-hot movement, value
+# re-encode while latched, plus trigger gating).
+#
+# `module write_encoder` is the reusable component; `write_encoder_bench`
+# is the live-test harness — build with `--top write_encoder_bench`.
+#
+# Entity numbering (declaration order; the bench's entity_map relies on it):
+# 1 write_address stim, 2 write_value stim, 3 write_trigger stim,
+# 4 addr->scalar, 5 addr latch, 6 address table, 7 one-hot, 8 write flag,
+# 9 trigger product, 10 value->scalar, 11 value product, then debug probes
+# 12 reset_out (green), 13 set_out (red), 14 value_out (green),
+# 15 write_encoder0.onehot (red).
+
+import "lib/v8.fnet";
+
+# Control-plane scalar carriers (auto-assigned; the master used signal-N
+# for both scalars and signal-W for the flag — pinning letters is exactly
+# what the allocator replaces).
+signal wsel;    # latched write address as a scalar
+signal wval;    # write value as a scalar
+signal wflag;   # write-pending flag
+# Bench-facing stimulus carriers (the address/value buses sum any signal;
+# these give the tb symbolic names to drive).
+signal addr_stim;
+signal value_stim;
+signal trig_stim;
+
+module write_encoder(in_g addr_in, in_g value_in, in_r trig_in,
+                     out_r set_out, out_g reset_out, out_g value_out,
+                     out_r onehot) {
+  # onehot (decoded target row, value 1) is exposed as a port so each
+  # context chooses its own probing: the bench harness debug-marks it, the
+  # composed processor leaves it waived (an auto-appended probe would land
+  # rows away from the encoder in the big layout).
+  net green addr_scalar;   # wsel face of the address input
+  net red latch_loop;      # latch self-hold (red face of its output)
+  net green latched;       # held address (green face of the same output)
+  net red table_bus;       # address table rows
+  net green write_flag;    # wflag = 1 while a write is pending
+  net green value_scalar;  # wval face of the value input
+
+  sum_to<wsel, "write_addr_to_scalar">(in_g: addr_in, out_g: addr_scalar);
+  v8_addr_latch(in_g: addr_scalar, in_r: latch_loop,
+                out_r: latch_loop, out_g: latched);
+  addr_table(out_r: table_bus);
+  v8_onehot<wsel>(in_r: table_bus, in_g: latched, out_r: onehot);
+  v8_flag_if_any<wflag, "write_flag">(in_r: trig_in, out_g: write_flag);
+  v8_mul_scalar<wflag, "write_trigger_product">(in_r: onehot, in_g: write_flag,
+                                               out_r: set_out, out_g: reset_out);
+  sum_to<wval, "write_value_to_scalar">(in_g: value_in, out_g: value_scalar);
+  v8_mul_scalar<wval, "write_value_product">(in_r: onehot, in_g: value_scalar,
+                                             out_g: value_out);
+}
+
+module write_encoder_bench() {
+  net green addr_in;
+  net green value_in;
+  net red trig_in;
+  debug net red onehot;
+  debug net red set_out;
+  debug net green reset_out;
+  debug net green value_out;
+
+  stim<"write_address">(out_g: addr_in);
+  stim<"write_value">(out_g: value_in);
+  stim<"write_trigger">(out_r: trig_in);
+  write_encoder(addr_in: addr_in, value_in: value_in, trig_in: trig_in,
+                set_out: set_out, reset_out: reset_out, value_out: value_out,
+                onehot: onehot);
+}

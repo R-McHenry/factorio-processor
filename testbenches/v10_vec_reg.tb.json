@@ -1,0 +1,142 @@
+{
+  "name": "v10_vec_reg",
+  "description": "fnet v10 component 1: the ONE-COMBINATOR vector register (a hold loop whose only condition is the erase test) and its write head. Proves that write heads accumulate onto the loop purely by wire summation, that a second commit adds, that writing the block id to $vec_erase zeroes exactly that register and no other, that the loop stays empty after erase releases, that erase+write in the SAME tick is a one-tick MOVE (replace, not accumulate), and that the register's green output face carries the same frame in the same tick (a B-side op-farm operand). Control is chunk1's green memory bus wired straight in - no mirror stage - so control and data are IN PHASE and every commit here drives $vec_wsel and the write bus in the same one-tick step, exactly as a program would.",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 3,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -6.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "scalar_membus": 1,
+      "vec_write_bus": 2
+    },
+    "expected_probe_name": "loop1",
+    "output_probes": [
+      { "name": "green_face1", "entity_number": 7, "wire": "green" },
+      { "name": "loop1", "entity_number": 8, "wire": "red" },
+      { "name": "loop2", "entity_number": 9, "wire": "red" }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "commit_frame_to_vreg0",
+      "settle_ticks": 1,
+      "trace_ticks": 1,
+      "drive": {
+        "scalar_membus": { "$vec_wsel": 1 },
+        "vec_write_bus": { "$mem[1]": 10, "$mem[2]": 20 }
+      }
+    },
+    {
+      "name": "write_head_summed_onto_loop",
+      "drive": { "scalar_membus": {}, "vec_write_bus": {} },
+      "trace_ticks": 4,
+      "expect": { "$mem[1]": 10, "$mem[2]": 20 }
+    },
+    {
+      "name": "vreg1_untouched",
+      "expect_probe": "loop2",
+      "expect": { "$mem[1]": 0, "$mem[2]": 0 }
+    },
+    {
+      "name": "green_face_carries_same_frame",
+      "expect_probe": "green_face1",
+      "expect": { "$mem[1]": 10, "$mem[2]": 20 }
+    },
+    {
+      "name": "commit_same_frame_again",
+      "settle_ticks": 1,
+      "trace_ticks": 1,
+      "drive": {
+        "scalar_membus": { "$vec_wsel": 1 },
+        "vec_write_bus": { "$mem[1]": 10, "$mem[2]": 20 }
+      }
+    },
+    {
+      "name": "second_commit_accumulated",
+      "drive": { "scalar_membus": {}, "vec_write_bus": {} },
+      "trace_ticks": 4,
+      "expect": { "$mem[1]": 20, "$mem[2]": 40 }
+    },
+    {
+      "name": "commit_different_frame_to_vreg1",
+      "settle_ticks": 1,
+      "trace_ticks": 1,
+      "drive": {
+        "scalar_membus": { "$vec_wsel": 2 },
+        "vec_write_bus": { "$mem[5]": 7 }
+      }
+    },
+    {
+      "name": "vreg1_received_its_own_frame",
+      "expect_probe": "loop2",
+      "drive": { "scalar_membus": {}, "vec_write_bus": {} },
+      "trace_ticks": 4,
+      "expect": { "$mem[5]": 7, "$mem[1]": 0 }
+    },
+    {
+      "name": "vreg0_isolated_from_that_write",
+      "expect": { "$mem[1]": 20, "$mem[2]": 40, "$mem[5]": 0 }
+    },
+    {
+      "name": "erase_block_1_zeroes_vreg0",
+      "drive": { "scalar_membus": { "$vec_erase": 1 } },
+      "trace_ticks": 4,
+      "expect": { "$mem[1]": 0, "$mem[2]": 0 }
+    },
+    {
+      "name": "erase_is_per_block_vreg1_intact",
+      "expect_probe": "loop2",
+      "expect": { "$mem[5]": 7 }
+    },
+    {
+      "name": "loop_stays_empty_after_erase_releases",
+      "drive": { "scalar_membus": {} },
+      "trace_ticks": 4,
+      "expect": { "$mem[1]": 0, "$mem[2]": 0 }
+    },
+    {
+      "name": "refill_vreg0_after_erase",
+      "settle_ticks": 1,
+      "trace_ticks": 1,
+      "drive": {
+        "scalar_membus": { "$vec_wsel": 1 },
+        "vec_write_bus": { "$mem[3]": 9 }
+      }
+    },
+    {
+      "name": "register_alive_after_erase",
+      "drive": { "scalar_membus": {}, "vec_write_bus": {} },
+      "trace_ticks": 4,
+      "expect": { "$mem[3]": 9, "$mem[1]": 0 }
+    },
+    {
+      "name": "erase_and_write_same_tick_is_a_move",
+      "settle_ticks": 1,
+      "trace_ticks": 1,
+      "drive": {
+        "scalar_membus": { "$vec_wsel": 1, "$vec_erase": 1 },
+        "vec_write_bus": { "$mem[4]": 2 }
+      }
+    },
+    {
+      "name": "replaced_not_accumulated",
+      "drive": { "scalar_membus": {}, "vec_write_bus": {} },
+      "trace_ticks": 4,
+      "expect": { "$mem[4]": 2, "$mem[3]": 0 }
+    }
+  ]
+}

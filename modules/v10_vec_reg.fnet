@@ -1,0 +1,65 @@
+# v10_vec_reg — component 1 of the fnet v10 rebuild: the one-combinator
+# vector register and its write head.
+#
+# THE REGISTER IS ONE COMBINATOR (designer, 2026-07-27). An accumulating
+# memory needs no write state: the register is purely a hold loop
+#
+#     vec_erase != <block id>  ->  everything, from RED  ->  back on the loop
+#
+# and WRITE HEADS output directly onto that same loop, so Factorio's wire
+# summation performs the accumulate. Heads are separate combinators; a loop
+# may carry as many as the design needs (here the mux head, later the scalar
+# frame-write path) and they simply sum.
+#
+# Two things this buys over the earlier `each != 0` hold:
+#   - Zeroing is a real operation. Writing the register's block id to the
+#     memory-mapped `vec_erase` row makes the cell emit nothing for a tick,
+#     the loop empties, and the register is clear. The old design could only
+#     clear a lane by writing its negation.
+#   - MOVE, in one tick. Erase and write the SAME register in the SAME tick
+#     and the result is REPLACE, not accumulate: the cell emits nothing while
+#     the head drops the new frame, so the loop's next value is the new frame
+#     alone.
+#
+# CONTROL IS CHUNK1'S GREEN BUS, WIRED STRAIGHT IN (designer, 2026-07-27).
+# `vec_wsel` and `vec_erase` are ordinary memory-mapped rows
+# (v10_addr_map.fnet) riding the scalar memory bus, which is the green input
+# of every gate here. There is no mirror stage and no added latency: a scalar
+# write reaches the hardware as soon as the memory cell emits it.
+#
+# History worth keeping: processor_v10.design.md's open question #1 recorded
+# that register write-through had never shown a sign of life, on any probe, in
+# a 194-entity generated blueprint — while the address map recorded that six
+# of the eight register deciders still held Factorio's unconfigured placement
+# default. Those two facts were the same fact.
+#
+# Two registers rather than one, on purpose: a single register cannot show
+# that W selects, nor that erase is per-block. Build with `--top vec_reg_bench`.
+#
+# Entity numbering (declaration order; the bench's entity_map relies on it):
+# 1 scalar_membus stim, 2 vec_write_bus stim, 3 write head 1, 4 register 1,
+# 5 write head 2, 6 register 2, then debug probes in net-name order:
+# 7 green_face1, 8 loop1, 9 loop2.
+
+import "lib/v8.fnet";
+import "lib/v10.fnet";
+import "v10_addr_map.fnet";
+
+module vec_reg_bench() {
+  net green membus;            # chunk1's memory bus = the control plane
+  net red   vbus;              # the shared vector write bus
+
+  debug net red   loop1;       # register 1's hold loop (its mux-facing frame)
+  debug net red   loop2;
+  debug net green green_face1; # register 1's green face (a B-side op operand)
+
+  stim<"scalar_membus">(out_g: membus);
+  stim<"vec_write_bus">(out_r: vbus);
+
+  v10_wsel_gate<vec_wsel, 1, "whead_vreg0">(in_g: membus, in_r: vbus, out_r: loop1);
+  v10_vreg_cell<vec_erase, 1, "vreg0">(in_g: membus, in_r: loop1,
+                                       out_r: loop1, out_g: green_face1);
+
+  v10_wsel_gate<vec_wsel, 2, "whead_vreg1">(in_g: membus, in_r: vbus, out_r: loop2);
+  v10_vreg_cell<vec_erase, 2, "vreg1">(in_g: membus, in_r: loop2, out_r: loop2);
+}

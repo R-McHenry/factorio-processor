@@ -1,0 +1,4914 @@
+{
+ "blueprint": {
+  "icons": [
+   {
+    "signal": {
+     "name": "decider-combinator"
+    },
+    "index": 1
+   }
+  ],
+  "entities": [
+   {
+    "entity_number": 1,
+    "name": "constant-combinator",
+    "position": {
+     "x": -10.5,
+     "y": -3.5
+    },
+    "control_behavior": {
+     "sections": {
+      "sections": [
+       {
+        "index": 1
+       }
+      ]
+     }
+    }
+   },
+   {
+    "entity_number": 2,
+    "name": "decider-combinator",
+    "position": {
+     "x": -9,
+     "y": -3.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {}
+      ],
+      "outputs": [
+       {}
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 3,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": -7,
+     "y": -3.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_constant": 0,
+      "operation": "*",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 4,
+    "name": "decider-combinator",
+    "position": {
+     "x": -5,
+     "y": -3.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 1,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 5,
+    "name": "decider-combinator",
+    "position": {
+     "x": -3,
+     "y": -3.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {}
+      ],
+      "outputs": [
+       {}
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 6,
+    "name": "decider-combinator",
+    "position": {
+     "x": -1,
+     "y": -3.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 1,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 1,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 7,
+    "name": "constant-combinator",
+    "position": {
+     "x": -10.5,
+     "y": -4.5
+    },
+    "control_behavior": {
+     "sections": {
+      "sections": [
+       {
+        "index": 1
+       }
+      ]
+     }
+    }
+   },
+   {
+    "entity_number": 8,
+    "name": "decider-combinator",
+    "position": {
+     "x": -9,
+     "y": -4.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {}
+      ],
+      "outputs": [
+       {}
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 9,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": -7,
+     "y": -4.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_constant": 0,
+      "operation": "*",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 10,
+    "name": "decider-combinator",
+    "position": {
+     "x": -5,
+     "y": -4.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 2,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 11,
+    "name": "decider-combinator",
+    "position": {
+     "x": -3,
+     "y": -4.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {}
+      ],
+      "outputs": [
+       {}
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 12,
+    "name": "decider-combinator",
+    "position": {
+     "x": -1,
+     "y": -4.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 2,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 2,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 13,
+    "name": "constant-combinator",
+    "position": {
+     "x": -10.5,
+     "y": -5.5
+    },
+    "control_behavior": {
+     "sections": {
+      "sections": [
+       {
+        "index": 1
+       }
+      ]
+     }
+    }
+   },
+   {
+    "entity_number": 14,
+    "name": "decider-combinator",
+    "position": {
+     "x": -9,
+     "y": -5.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {}
+      ],
+      "outputs": [
+       {}
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 15,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": -7,
+     "y": -5.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_constant": 0,
+      "operation": "*",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 16,
+    "name": "decider-combinator",
+    "position": {
+     "x": -5,
+     "y": -5.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 3,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 17,
+    "name": "decider-combinator",
+    "position": {
+     "x": -3,
+     "y": -5.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {}
+      ],
+      "outputs": [
+       {}
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 18,
+    "name": "decider-combinator",
+    "position": {
+     "x": -1,
+     "y": -5.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 3,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 3,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 19,
+    "name": "constant-combinator",
+    "position": {
+     "x": -10.5,
+     "y": -6.5
+    },
+    "control_behavior": {
+     "sections": {
+      "sections": [
+       {
+        "index": 1
+       }
+      ]
+     }
+    }
+   },
+   {
+    "entity_number": 20,
+    "name": "decider-combinator",
+    "position": {
+     "x": -9,
+     "y": -6.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {}
+      ],
+      "outputs": [
+       {}
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 21,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": -7,
+     "y": -6.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_constant": 0,
+      "operation": "*",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 22,
+    "name": "decider-combinator",
+    "position": {
+     "x": -5,
+     "y": -6.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 4,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 23,
+    "name": "decider-combinator",
+    "position": {
+     "x": -3,
+     "y": -6.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {}
+      ],
+      "outputs": [
+       {}
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 24,
+    "name": "decider-combinator",
+    "position": {
+     "x": -1,
+     "y": -6.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 4,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 4,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 25,
+    "name": "constant-combinator",
+    "position": {
+     "x": -10.5,
+     "y": -7.5
+    },
+    "control_behavior": {
+     "sections": {
+      "sections": [
+       {
+        "index": 1
+       }
+      ]
+     }
+    }
+   },
+   {
+    "entity_number": 26,
+    "name": "decider-combinator",
+    "position": {
+     "x": -9,
+     "y": -7.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {}
+      ],
+      "outputs": [
+       {}
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 27,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": -7,
+     "y": -7.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_constant": 0,
+      "operation": "*",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 28,
+    "name": "decider-combinator",
+    "position": {
+     "x": -5,
+     "y": -7.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 5,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 29,
+    "name": "decider-combinator",
+    "position": {
+     "x": -3,
+     "y": -7.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {}
+      ],
+      "outputs": [
+       {}
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 30,
+    "name": "decider-combinator",
+    "position": {
+     "x": -1,
+     "y": -7.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 5,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 5,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 31,
+    "name": "constant-combinator",
+    "position": {
+     "x": -10.5,
+     "y": -8.5
+    },
+    "control_behavior": {
+     "sections": {
+      "sections": [
+       {
+        "index": 1
+       }
+      ]
+     }
+    }
+   },
+   {
+    "entity_number": 32,
+    "name": "decider-combinator",
+    "position": {
+     "x": -9,
+     "y": -8.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {}
+      ],
+      "outputs": [
+       {}
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 33,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": -7,
+     "y": -8.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_constant": 0,
+      "operation": "*",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 34,
+    "name": "decider-combinator",
+    "position": {
+     "x": -5,
+     "y": -8.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 6,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 35,
+    "name": "decider-combinator",
+    "position": {
+     "x": -3,
+     "y": -8.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {}
+      ],
+      "outputs": [
+       {}
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 36,
+    "name": "decider-combinator",
+    "position": {
+     "x": -1,
+     "y": -8.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 6,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 6,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 37,
+    "name": "constant-combinator",
+    "position": {
+     "x": -10.5,
+     "y": -9.5
+    },
+    "control_behavior": {
+     "sections": {
+      "sections": [
+       {
+        "index": 1
+       }
+      ]
+     }
+    }
+   },
+   {
+    "entity_number": 38,
+    "name": "decider-combinator",
+    "position": {
+     "x": -9,
+     "y": -9.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {}
+      ],
+      "outputs": [
+       {}
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 39,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": -7,
+     "y": -9.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_constant": 0,
+      "operation": "*",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 40,
+    "name": "decider-combinator",
+    "position": {
+     "x": -5,
+     "y": -9.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 7,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 41,
+    "name": "decider-combinator",
+    "position": {
+     "x": -3,
+     "y": -9.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {}
+      ],
+      "outputs": [
+       {}
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 42,
+    "name": "decider-combinator",
+    "position": {
+     "x": -1,
+     "y": -9.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 7,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 7,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 43,
+    "name": "constant-combinator",
+    "position": {
+     "x": -10.5,
+     "y": -10.5
+    },
+    "control_behavior": {
+     "sections": {
+      "sections": [
+       {
+        "index": 1
+       }
+      ]
+     }
+    }
+   },
+   {
+    "entity_number": 44,
+    "name": "decider-combinator",
+    "position": {
+     "x": -9,
+     "y": -10.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {}
+      ],
+      "outputs": [
+       {}
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 45,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": -7,
+     "y": -10.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_constant": 0,
+      "operation": "*",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 46,
+    "name": "decider-combinator",
+    "position": {
+     "x": -5,
+     "y": -10.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 8,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 47,
+    "name": "decider-combinator",
+    "position": {
+     "x": -3,
+     "y": -10.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {}
+      ],
+      "outputs": [
+       {}
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 48,
+    "name": "decider-combinator",
+    "position": {
+     "x": -1,
+     "y": -10.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 8,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 8,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 49,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 1,
+     "y": -3.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "operation": "*",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "first_signal_networks": {
+       "red": true,
+       "green": false
+      },
+      "second_signal_networks": {
+       "red": false,
+       "green": true
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 50,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -3.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 9,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 9,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 51,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 1,
+     "y": -4.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "operation": "/",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "first_signal_networks": {
+       "red": true,
+       "green": false
+      },
+      "second_signal_networks": {
+       "red": false,
+       "green": true
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 52,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -4.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 10,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 10,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 53,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 1,
+     "y": -5.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "operation": "-",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "first_signal_networks": {
+       "red": true,
+       "green": false
+      },
+      "second_signal_networks": {
+       "red": false,
+       "green": true
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 54,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -5.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 11,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 11,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 55,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 1,
+     "y": -6.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "operation": "%",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "first_signal_networks": {
+       "red": true,
+       "green": false
+      },
+      "second_signal_networks": {
+       "red": false,
+       "green": true
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 56,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -6.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 12,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 12,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 57,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 1,
+     "y": -7.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "operation": "^",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "first_signal_networks": {
+       "red": true,
+       "green": false
+      },
+      "second_signal_networks": {
+       "red": false,
+       "green": true
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 58,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -7.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 13,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 13,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 59,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 1,
+     "y": -8.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "operation": "AND",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "first_signal_networks": {
+       "red": true,
+       "green": false
+      },
+      "second_signal_networks": {
+       "red": false,
+       "green": true
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 60,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -8.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 14,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 14,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 61,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 1,
+     "y": -9.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "operation": "OR",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "first_signal_networks": {
+       "red": true,
+       "green": false
+      },
+      "second_signal_networks": {
+       "red": false,
+       "green": true
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 62,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -9.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 15,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 15,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 63,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 1,
+     "y": -10.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "operation": "XOR",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "first_signal_networks": {
+       "red": true,
+       "green": false
+      },
+      "second_signal_networks": {
+       "red": false,
+       "green": true
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 64,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -10.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 16,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 16,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 65,
+    "name": "decider-combinator",
+    "position": {
+     "x": 1,
+     "y": -11.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "second_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "first_signal_networks": {
+         "red": true,
+         "green": false
+        },
+        "second_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ]
+     }
+    }
+   },
+   {
+    "entity_number": 66,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -11.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 17,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 17,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 67,
+    "name": "decider-combinator",
+    "position": {
+     "x": 1,
+     "y": -12.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "second_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "first_signal_networks": {
+         "red": true,
+         "green": false
+        },
+        "second_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "comparator": ">"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ]
+     }
+    }
+   },
+   {
+    "entity_number": 68,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -12.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 18,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 18,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 69,
+    "name": "decider-combinator",
+    "position": {
+     "x": 1,
+     "y": -13.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "second_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "first_signal_networks": {
+         "red": true,
+         "green": false
+        },
+        "second_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 70,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -13.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 19,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 19,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 71,
+    "name": "decider-combinator",
+    "position": {
+     "x": 1,
+     "y": -14.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "second_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "first_signal_networks": {
+         "red": true,
+         "green": false
+        },
+        "second_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "comparator": ">"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 72,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -14.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 20,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 20,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 73,
+    "name": "decider-combinator",
+    "position": {
+     "x": 1,
+     "y": -15.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "second_signal": {
+         "type": "virtual",
+         "name": "left-arrow",
+         "quality": "uncommon"
+        },
+        "first_signal_networks": {
+         "red": true,
+         "green": false
+        },
+        "second_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 74,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -15.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 21,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 21,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 75,
+    "name": "decider-combinator",
+    "position": {
+     "x": 1,
+     "y": -16.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "second_signal": {
+         "type": "virtual",
+         "name": "left-arrow",
+         "quality": "uncommon"
+        },
+        "first_signal_networks": {
+         "red": true,
+         "green": false
+        },
+        "second_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "comparator": ">"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 76,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -16.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 22,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 22,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 77,
+    "name": "decider-combinator",
+    "position": {
+     "x": 1,
+     "y": -17.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "second_signal": {
+         "type": "virtual",
+         "name": "left-arrow",
+         "quality": "uncommon"
+        },
+        "first_signal_networks": {
+         "red": true,
+         "green": false
+        },
+        "second_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "copy_count_from_input": false,
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 78,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -17.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 23,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 23,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 79,
+    "name": "decider-combinator",
+    "position": {
+     "x": 1,
+     "y": -18.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "second_signal": {
+         "type": "virtual",
+         "name": "left-arrow",
+         "quality": "uncommon"
+        },
+        "first_signal_networks": {
+         "red": true,
+         "green": false
+        },
+        "second_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "comparator": ">"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "copy_count_from_input": false,
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 80,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -18.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 24,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 24,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 81,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 1,
+     "y": -19.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_signal": {
+       "type": "virtual",
+       "name": "left-arrow",
+       "quality": "uncommon"
+      },
+      "operation": "*",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "first_signal_networks": {
+       "red": true,
+       "green": false
+      },
+      "second_signal_networks": {
+       "red": false,
+       "green": true
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 82,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -19.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 25,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 25,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 83,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 1,
+     "y": -20.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_signal": {
+       "type": "virtual",
+       "name": "left-arrow",
+       "quality": "uncommon"
+      },
+      "operation": "/",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "first_signal_networks": {
+       "red": true,
+       "green": false
+      },
+      "second_signal_networks": {
+       "red": false,
+       "green": true
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 84,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -20.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 26,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 26,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 85,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 1,
+     "y": -21.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_signal": {
+       "type": "virtual",
+       "name": "left-arrow",
+       "quality": "uncommon"
+      },
+      "operation": "+",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "first_signal_networks": {
+       "red": true,
+       "green": false
+      },
+      "second_signal_networks": {
+       "red": false,
+       "green": true
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 86,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -21.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 27,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 27,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 87,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 1,
+     "y": -22.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_signal": {
+       "type": "virtual",
+       "name": "left-arrow",
+       "quality": "uncommon"
+      },
+      "operation": "-",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "first_signal_networks": {
+       "red": true,
+       "green": false
+      },
+      "second_signal_networks": {
+       "red": false,
+       "green": true
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 88,
+    "name": "decider-combinator",
+    "position": {
+     "x": 3,
+     "y": -22.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-left-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 28,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       },
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "down-right-arrow",
+         "quality": "uncommon"
+        },
+        "constant": 28,
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "compare_type": "or"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-everything"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 89,
+    "name": "constant-combinator",
+    "position": {
+     "x": -2.5,
+     "y": -23.5
+    },
+    "control_behavior": {
+     "sections": {
+      "sections": [
+       {
+        "index": 1,
+        "filters": [
+         {
+          "index": 1,
+          "type": "virtual",
+          "name": "signal-W",
+          "quality": "normal",
+          "comparator": "=",
+          "count": 1
+         },
+         {
+          "index": 2,
+          "type": "virtual",
+          "name": "signal-W",
+          "quality": "uncommon",
+          "comparator": "=",
+          "count": 2
+         },
+         {
+          "index": 3,
+          "type": "virtual",
+          "name": "signal-W",
+          "quality": "rare",
+          "comparator": "=",
+          "count": 3
+         },
+         {
+          "index": 4,
+          "type": "virtual",
+          "name": "signal-W",
+          "quality": "epic",
+          "comparator": "=",
+          "count": 4
+         },
+         {
+          "index": 5,
+          "type": "virtual",
+          "name": "signal-W",
+          "quality": "legendary",
+          "comparator": "=",
+          "count": 5
+         }
+        ]
+       }
+      ]
+     }
+    }
+   },
+   {
+    "entity_number": 90,
+    "name": "decider-combinator",
+    "position": {
+     "x": -1,
+     "y": -23.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "second_signal": {
+         "type": "virtual",
+         "name": "shape-corner-2",
+         "quality": "uncommon"
+        },
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "second_signal_networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 91,
+    "name": "selector-combinator",
+    "position": {
+     "x": 1,
+     "y": -23.5
+    },
+    "control_behavior": {
+     "operation": "quality-transfer",
+     "select_quality_from_signal": true,
+     "quality_source_static": {
+      "name": "legendary"
+     },
+     "quality_source_signal": {
+      "type": "virtual",
+      "name": "signal-W"
+     },
+     "quality_destination_signal": {
+      "type": "virtual",
+      "name": "signal-each"
+     }
+    }
+   },
+   {
+    "entity_number": 92,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 10,
+     "y": -3.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_signal": {
+       "type": "virtual",
+       "name": "right-arrow",
+       "quality": "uncommon"
+      },
+      "operation": "*",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-A",
+       "quality": "uncommon"
+      },
+      "first_signal_networks": {
+       "red": true,
+       "green": false
+      },
+      "second_signal_networks": {
+       "red": false,
+       "green": true
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 93,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 10,
+     "y": -4.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_signal": {
+       "type": "virtual",
+       "name": "shape-circle",
+       "quality": "uncommon"
+      },
+      "operation": "/",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-B",
+       "quality": "uncommon"
+      },
+      "first_signal_networks": {
+       "red": true,
+       "green": false
+      },
+      "second_signal_networks": {
+       "red": false,
+       "green": true
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 94,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 10,
+     "y": -5.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_signal": {
+       "type": "virtual",
+       "name": "shape-circle",
+       "quality": "uncommon"
+      },
+      "operation": "+",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-C",
+       "quality": "uncommon"
+      },
+      "first_signal_networks": {
+       "red": true,
+       "green": false
+      },
+      "second_signal_networks": {
+       "red": false,
+       "green": true
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 95,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 10,
+     "y": -6.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_signal": {
+       "type": "virtual",
+       "name": "shape-circle",
+       "quality": "uncommon"
+      },
+      "operation": "-",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-D",
+       "quality": "uncommon"
+      },
+      "first_signal_networks": {
+       "red": true,
+       "green": false
+      },
+      "second_signal_networks": {
+       "red": false,
+       "green": true
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 96,
+    "name": "selector-combinator",
+    "position": {
+     "x": 10,
+     "y": -7.5
+    },
+    "control_behavior": {
+     "operation": "count",
+     "count_signal": {
+      "type": "virtual",
+      "name": "signal-K",
+      "quality": "uncommon"
+     }
+    }
+   },
+   {
+    "entity_number": 97,
+    "name": "selector-combinator",
+    "position": {
+     "x": 10,
+     "y": -8.5
+    },
+    "control_behavior": {
+     "operation": "time",
+     "game_tick_signal": {
+      "type": "virtual",
+      "name": "signal-T",
+      "quality": "rare"
+     },
+     "day_tick_signal": {
+      "type": "virtual",
+      "name": "signal-D",
+      "quality": "rare"
+     },
+     "day_length_signal": {
+      "type": "virtual",
+      "name": "signal-L",
+      "quality": "rare"
+     }
+    }
+   },
+   {
+    "entity_number": 98,
+    "name": "selector-combinator",
+    "position": {
+     "x": 10,
+     "y": -9.5
+    },
+    "control_behavior": {
+     "operation": "select",
+     "select_max": true,
+     "index_constant": 0
+    }
+   },
+   {
+    "entity_number": 99,
+    "name": "selector-combinator",
+    "position": {
+     "x": 10,
+     "y": -10.5
+    },
+    "control_behavior": {
+     "operation": "select",
+     "select_max": false,
+     "index_constant": 0
+    }
+   },
+   {
+    "entity_number": 100,
+    "name": "decider-combinator",
+    "position": {
+     "x": 10,
+     "y": -11.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "second_signal": {
+         "type": "virtual",
+         "name": "shape-corner",
+         "quality": "uncommon"
+        },
+        "first_signal_networks": {
+         "red": true,
+         "green": false
+        },
+        "second_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "comparator": ">"
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-E",
+         "quality": "uncommon"
+        },
+        "copy_count_from_input": false,
+        "networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 101,
+    "name": "decider-combinator",
+    "position": {
+     "x": 10,
+     "y": -12.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "second_signal": {
+         "type": "virtual",
+         "name": "shape-corner",
+         "quality": "uncommon"
+        },
+        "first_signal_networks": {
+         "red": true,
+         "green": false
+        },
+        "second_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-F",
+         "quality": "uncommon"
+        },
+        "copy_count_from_input": false,
+        "networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 102,
+    "name": "decider-combinator",
+    "position": {
+     "x": 10,
+     "y": -13.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "second_signal": {
+         "type": "virtual",
+         "name": "shape-corner",
+         "quality": "uncommon"
+        },
+        "first_signal_networks": {
+         "red": true,
+         "green": false
+        },
+        "second_signal_networks": {
+         "red": false,
+         "green": true
+        },
+        "comparator": "="
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-G",
+         "quality": "uncommon"
+        },
+        "copy_count_from_input": false,
+        "networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 103,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 12,
+     "y": -9.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_constant": 0,
+      "operation": "+",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-M",
+       "quality": "rare"
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 104,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 12,
+     "y": -10.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_constant": 0,
+      "operation": "+",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-N",
+       "quality": "rare"
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 105,
+    "name": "decider-combinator",
+    "position": {
+     "x": 14,
+     "y": -9.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "comparator": "\u2260",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 106,
+    "name": "decider-combinator",
+    "position": {
+     "x": 14,
+     "y": -10.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "comparator": "\u2260",
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 107,
+    "name": "constant-combinator",
+    "position": {
+     "x": 15.5,
+     "y": -9.5
+    },
+    "control_behavior": {
+     "sections": {
+      "sections": [
+       {
+        "index": 1
+       }
+      ]
+     }
+    }
+   },
+   {
+    "entity_number": 108,
+    "name": "constant-combinator",
+    "position": {
+     "x": 15.5,
+     "y": -10.5
+    },
+    "control_behavior": {
+     "sections": {
+      "sections": [
+       {
+        "index": 1
+       }
+      ]
+     }
+    }
+   },
+   {
+    "entity_number": 109,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 17,
+     "y": -9.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_constant": 0,
+      "operation": "+",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-U",
+       "quality": "rare"
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 110,
+    "name": "arithmetic-combinator",
+    "position": {
+     "x": 17,
+     "y": -10.5
+    },
+    "control_behavior": {
+     "arithmetic_conditions": {
+      "first_signal": {
+       "type": "virtual",
+       "name": "signal-each"
+      },
+      "second_constant": 0,
+      "operation": "+",
+      "output_signal": {
+       "type": "virtual",
+       "name": "signal-V",
+       "quality": "rare"
+      }
+     }
+    }
+   },
+   {
+    "entity_number": 111,
+    "name": "constant-combinator",
+    "position": {
+     "x": 4.5,
+     "y": -3.5
+    },
+    "control_behavior": {
+     "sections": {
+      "sections": [
+       {
+        "index": 1,
+        "filters": [
+         {
+          "index": 1,
+          "type": "virtual",
+          "name": "signal-0",
+          "quality": "normal",
+          "comparator": "=",
+          "count": 4961
+         }
+        ]
+       }
+      ]
+     }
+    }
+   },
+   {
+    "entity_number": 112,
+    "name": "decider-combinator",
+    "position": {
+     "x": 6,
+     "y": -3.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "second_signal": {
+         "type": "virtual",
+         "name": "signal-R"
+        },
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": true,
+         "green": false
+        },
+        "second_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "copy_count_from_input": false,
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 113,
+    "name": "decider-combinator",
+    "position": {
+     "x": 8,
+     "y": -3.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "comparator": ">",
+        "constant": 0,
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 114,
+    "name": "constant-combinator",
+    "position": {
+     "x": 4.5,
+     "y": -4.5
+    },
+    "control_behavior": {
+     "sections": {
+      "sections": [
+       {
+        "index": 1,
+        "filters": [
+         {
+          "index": 1,
+          "type": "virtual",
+          "name": "signal-0",
+          "quality": "normal",
+          "comparator": "=",
+          "count": 2481
+         }
+        ]
+       }
+      ]
+     }
+    }
+   },
+   {
+    "entity_number": 115,
+    "name": "decider-combinator",
+    "position": {
+     "x": 6,
+     "y": -4.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "second_signal": {
+         "type": "virtual",
+         "name": "signal-R"
+        },
+        "comparator": "=",
+        "first_signal_networks": {
+         "red": true,
+         "green": false
+        },
+        "second_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "copy_count_from_input": false,
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   },
+   {
+    "entity_number": 116,
+    "name": "decider-combinator",
+    "position": {
+     "x": 8,
+     "y": -4.5
+    },
+    "control_behavior": {
+     "decider_conditions": {
+      "conditions": [
+       {
+        "first_signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "comparator": ">",
+        "constant": 0,
+        "first_signal_networks": {
+         "red": false,
+         "green": true
+        }
+       }
+      ],
+      "outputs": [
+       {
+        "signal": {
+         "type": "virtual",
+         "name": "signal-each"
+        },
+        "networks": {
+         "red": true,
+         "green": false
+        }
+       }
+      ],
+      "else_outputs": []
+     }
+    }
+   }
+  ],
+  "wires": [
+   [
+    6,
+    2,
+    12,
+    2
+   ],
+   [
+    6,
+    3,
+    12,
+    3
+   ],
+   [
+    12,
+    2,
+    18,
+    2
+   ],
+   [
+    12,
+    3,
+    18,
+    3
+   ],
+   [
+    18,
+    2,
+    24,
+    2
+   ],
+   [
+    18,
+    3,
+    24,
+    3
+   ],
+   [
+    24,
+    2,
+    30,
+    2
+   ],
+   [
+    24,
+    3,
+    30,
+    3
+   ],
+   [
+    30,
+    2,
+    36,
+    2
+   ],
+   [
+    30,
+    3,
+    36,
+    3
+   ],
+   [
+    36,
+    2,
+    42,
+    2
+   ],
+   [
+    36,
+    3,
+    42,
+    3
+   ],
+   [
+    42,
+    2,
+    48,
+    2
+   ],
+   [
+    42,
+    3,
+    48,
+    3
+   ],
+   [
+    49,
+    3,
+    50,
+    1
+   ],
+   [
+    51,
+    3,
+    52,
+    1
+   ],
+   [
+    49,
+    1,
+    51,
+    1
+   ],
+   [
+    49,
+    2,
+    51,
+    2
+   ],
+   [
+    50,
+    2,
+    52,
+    2
+   ],
+   [
+    50,
+    3,
+    52,
+    3
+   ],
+   [
+    53,
+    3,
+    54,
+    1
+   ],
+   [
+    51,
+    1,
+    53,
+    1
+   ],
+   [
+    51,
+    2,
+    53,
+    2
+   ],
+   [
+    52,
+    2,
+    54,
+    2
+   ],
+   [
+    52,
+    3,
+    54,
+    3
+   ],
+   [
+    55,
+    3,
+    56,
+    1
+   ],
+   [
+    53,
+    1,
+    55,
+    1
+   ],
+   [
+    53,
+    2,
+    55,
+    2
+   ],
+   [
+    54,
+    2,
+    56,
+    2
+   ],
+   [
+    54,
+    3,
+    56,
+    3
+   ],
+   [
+    57,
+    3,
+    58,
+    1
+   ],
+   [
+    55,
+    1,
+    57,
+    1
+   ],
+   [
+    55,
+    2,
+    57,
+    2
+   ],
+   [
+    56,
+    2,
+    58,
+    2
+   ],
+   [
+    56,
+    3,
+    58,
+    3
+   ],
+   [
+    59,
+    3,
+    60,
+    1
+   ],
+   [
+    57,
+    1,
+    59,
+    1
+   ],
+   [
+    57,
+    2,
+    59,
+    2
+   ],
+   [
+    58,
+    2,
+    60,
+    2
+   ],
+   [
+    58,
+    3,
+    60,
+    3
+   ],
+   [
+    61,
+    3,
+    62,
+    1
+   ],
+   [
+    59,
+    1,
+    61,
+    1
+   ],
+   [
+    59,
+    2,
+    61,
+    2
+   ],
+   [
+    60,
+    2,
+    62,
+    2
+   ],
+   [
+    60,
+    3,
+    62,
+    3
+   ],
+   [
+    63,
+    3,
+    64,
+    1
+   ],
+   [
+    61,
+    1,
+    63,
+    1
+   ],
+   [
+    61,
+    2,
+    63,
+    2
+   ],
+   [
+    62,
+    2,
+    64,
+    2
+   ],
+   [
+    62,
+    3,
+    64,
+    3
+   ],
+   [
+    65,
+    3,
+    66,
+    1
+   ],
+   [
+    63,
+    1,
+    65,
+    1
+   ],
+   [
+    63,
+    2,
+    65,
+    2
+   ],
+   [
+    64,
+    2,
+    66,
+    2
+   ],
+   [
+    64,
+    3,
+    66,
+    3
+   ],
+   [
+    67,
+    3,
+    68,
+    1
+   ],
+   [
+    65,
+    1,
+    67,
+    1
+   ],
+   [
+    65,
+    2,
+    67,
+    2
+   ],
+   [
+    66,
+    2,
+    68,
+    2
+   ],
+   [
+    66,
+    3,
+    68,
+    3
+   ],
+   [
+    69,
+    3,
+    70,
+    1
+   ],
+   [
+    67,
+    1,
+    69,
+    1
+   ],
+   [
+    67,
+    2,
+    69,
+    2
+   ],
+   [
+    68,
+    2,
+    70,
+    2
+   ],
+   [
+    68,
+    3,
+    70,
+    3
+   ],
+   [
+    71,
+    3,
+    72,
+    1
+   ],
+   [
+    69,
+    1,
+    71,
+    1
+   ],
+   [
+    69,
+    2,
+    71,
+    2
+   ],
+   [
+    70,
+    2,
+    72,
+    2
+   ],
+   [
+    70,
+    3,
+    72,
+    3
+   ],
+   [
+    73,
+    3,
+    74,
+    1
+   ],
+   [
+    71,
+    1,
+    73,
+    1
+   ],
+   [
+    71,
+    2,
+    73,
+    2
+   ],
+   [
+    72,
+    2,
+    74,
+    2
+   ],
+   [
+    72,
+    3,
+    74,
+    3
+   ],
+   [
+    75,
+    3,
+    76,
+    1
+   ],
+   [
+    73,
+    1,
+    75,
+    1
+   ],
+   [
+    73,
+    2,
+    75,
+    2
+   ],
+   [
+    74,
+    2,
+    76,
+    2
+   ],
+   [
+    74,
+    3,
+    76,
+    3
+   ],
+   [
+    77,
+    3,
+    78,
+    1
+   ],
+   [
+    75,
+    1,
+    77,
+    1
+   ],
+   [
+    75,
+    2,
+    77,
+    2
+   ],
+   [
+    76,
+    2,
+    78,
+    2
+   ],
+   [
+    76,
+    3,
+    78,
+    3
+   ],
+   [
+    79,
+    3,
+    80,
+    1
+   ],
+   [
+    77,
+    1,
+    79,
+    1
+   ],
+   [
+    77,
+    2,
+    79,
+    2
+   ],
+   [
+    78,
+    2,
+    80,
+    2
+   ],
+   [
+    78,
+    3,
+    80,
+    3
+   ],
+   [
+    81,
+    3,
+    82,
+    1
+   ],
+   [
+    79,
+    1,
+    81,
+    1
+   ],
+   [
+    79,
+    2,
+    81,
+    2
+   ],
+   [
+    80,
+    2,
+    82,
+    2
+   ],
+   [
+    80,
+    3,
+    82,
+    3
+   ],
+   [
+    83,
+    3,
+    84,
+    1
+   ],
+   [
+    81,
+    1,
+    83,
+    1
+   ],
+   [
+    81,
+    2,
+    83,
+    2
+   ],
+   [
+    82,
+    2,
+    84,
+    2
+   ],
+   [
+    82,
+    3,
+    84,
+    3
+   ],
+   [
+    85,
+    3,
+    86,
+    1
+   ],
+   [
+    83,
+    1,
+    85,
+    1
+   ],
+   [
+    83,
+    2,
+    85,
+    2
+   ],
+   [
+    84,
+    2,
+    86,
+    2
+   ],
+   [
+    84,
+    3,
+    86,
+    3
+   ],
+   [
+    87,
+    3,
+    88,
+    1
+   ],
+   [
+    85,
+    1,
+    87,
+    1
+   ],
+   [
+    85,
+    2,
+    87,
+    2
+   ],
+   [
+    86,
+    2,
+    88,
+    2
+   ],
+   [
+    86,
+    3,
+    88,
+    3
+   ],
+   [
+    89,
+    2,
+    90,
+    2
+   ],
+   [
+    90,
+    4,
+    91,
+    2
+   ],
+   [
+    103,
+    2,
+    98,
+    4
+   ],
+   [
+    104,
+    2,
+    99,
+    4
+   ],
+   [
+    107,
+    1,
+    105,
+    1
+   ],
+   [
+    105,
+    2,
+    98,
+    4
+   ],
+   [
+    109,
+    2,
+    105,
+    4
+   ],
+   [
+    108,
+    1,
+    106,
+    1
+   ],
+   [
+    106,
+    2,
+    99,
+    4
+   ],
+   [
+    110,
+    2,
+    106,
+    4
+   ],
+   [
+    111,
+    1,
+    112,
+    1
+   ],
+   [
+    112,
+    4,
+    113,
+    2
+   ],
+   [
+    114,
+    1,
+    115,
+    1
+   ],
+   [
+    115,
+    4,
+    116,
+    2
+   ]
+  ],
+  "item": "blueprint",
+  "version": 562954249175042,
+  "label": "v10 vector zone (generated)"
+ }
+}

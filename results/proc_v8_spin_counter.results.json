@@ -1,0 +1,866 @@
+{
+  "name": "proc_v8_spin_counter",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 0,
+  "rebuild": {
+    "removed": 78,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 77,
+    "revived": 77,
+    "placed": 77
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [
+    {
+      "unit": 124178,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 6
+    },
+    {
+      "unit": 124219,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 44
+    },
+    {
+      "unit": 124233,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 45
+    },
+    {
+      "unit": 124232,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 46
+    }
+  ],
+  "mapping": {
+    "translation": {
+      "dx": 0.0,
+      "dy": 0.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 124185,
+      "2": 124186,
+      "3": 124188,
+      "4": 124187,
+      "5": 124189,
+      "6": 124178,
+      "7": 124194,
+      "8": 124191,
+      "9": 124190,
+      "10": 124193,
+      "11": 124192,
+      "12": 124198,
+      "13": 124196,
+      "14": 124195,
+      "15": 124179,
+      "16": 124181,
+      "17": 124180,
+      "18": 124197,
+      "19": 124184,
+      "20": 124203,
+      "21": 124205,
+      "22": 124182,
+      "23": 124183,
+      "24": 124200,
+      "25": 124199,
+      "26": 124202,
+      "27": 124201,
+      "28": 124204,
+      "29": 124207,
+      "30": 124227,
+      "31": 124229,
+      "32": 124209,
+      "33": 124208,
+      "34": 124211,
+      "35": 124210,
+      "36": 124213,
+      "37": 124212,
+      "38": 124224,
+      "39": 124223,
+      "40": 124226,
+      "41": 124206,
+      "42": 124225,
+      "43": 124228,
+      "44": 124219,
+      "45": 124233,
+      "46": 124232,
+      "47": 124236,
+      "48": 124238,
+      "49": 124215,
+      "50": 124214,
+      "51": 124217,
+      "52": 124216,
+      "53": 124235,
+      "54": 124234,
+      "55": 124237,
+      "56": 124218,
+      "57": 124231,
+      "58": 124230,
+      "59": 124243,
+      "60": 124242,
+      "61": 124245,
+      "62": 124221,
+      "63": 124220,
+      "64": 124222,
+      "65": 124240,
+      "66": 124239,
+      "67": 124241,
+      "68": 124244,
+      "69": 124247,
+      "70": 124249,
+      "71": 124246,
+      "72": 124248,
+      "73": 124251,
+      "74": 124253,
+      "75": 124250,
+      "76": 124252,
+      "77": 124254
+    },
+    "driver_units": {
+      "trig_set": 124179
+    },
+    "output_probes": [
+      {
+        "name": "mem_state",
+        "unit": 124213,
+        "wire": "red"
+      },
+      {
+        "name": "port_a",
+        "unit": 124222,
+        "wire": "green"
+      },
+      {
+        "name": "port_b",
+        "unit": 124240,
+        "wire": "green"
+      },
+      {
+        "name": "instr_port",
+        "unit": 124239,
+        "wire": "green"
+      },
+      {
+        "name": "out4_inject",
+        "unit": 124197,
+        "wire": "green"
+      }
+    ],
+    "expected_probe_name": "mem_state"
+  },
+  "timeline": [
+    {
+      "tick": 888958,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888959,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888960,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 3.0
+        },
+        "instr_port": {
+          "signal-0": 8257792.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888961,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888962,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 5.0
+        },
+        "instr_port": {
+          "signal-0~rare": 4608.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888963,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 6.0
+        },
+        "instr_port": {
+          "signal-0~epic": 598272.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888964,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888965,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 8.0
+        },
+        "instr_port": {
+          "signal-1": 4608.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888966,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 9.0
+        },
+        "instr_port": {
+          "signal-1~uncommon": -30720.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888967,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 10.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888968,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 11.0
+        },
+        "out4_inject": {
+          "signal-1~uncommon": -8.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888969,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888970,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 5.0,
+          "shape-vertical": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888971,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 6.0,
+          "shape-vertical": 1.0
+        },
+        "instr_port": {
+          "signal-0~epic": 598272.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888972,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 7.0,
+          "shape-vertical": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888973,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 8.0,
+          "shape-vertical": 1.0
+        },
+        "instr_port": {
+          "signal-1": 4608.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888974,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 9.0,
+          "shape-vertical": 1.0
+        },
+        "instr_port": {
+          "signal-1~uncommon": -30720.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888975,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 10.0,
+          "shape-vertical": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888976,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 11.0,
+          "shape-vertical": 1.0
+        },
+        "out4_inject": {
+          "signal-1~uncommon": -8.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888977,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 4.0,
+          "shape-vertical": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888978,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 5.0,
+          "shape-vertical": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888979,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 6.0,
+          "shape-vertical": 2.0
+        },
+        "instr_port": {
+          "signal-0~epic": 598272.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888980,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 7.0,
+          "shape-vertical": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888981,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 8.0,
+          "shape-vertical": 2.0
+        },
+        "instr_port": {
+          "signal-1": 4608.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888982,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 9.0,
+          "shape-vertical": 2.0
+        },
+        "instr_port": {
+          "signal-1~uncommon": -30720.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888983,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 10.0,
+          "shape-vertical": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888984,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 11.0,
+          "shape-vertical": 2.0
+        },
+        "out4_inject": {
+          "signal-1~uncommon": -8.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888985,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 4.0,
+          "shape-vertical": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888986,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 5.0,
+          "shape-vertical": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888987,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 6.0,
+          "shape-vertical": 3.0
+        },
+        "instr_port": {
+          "signal-0~epic": 598272.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888988,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 7.0,
+          "shape-vertical": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888989,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 8.0,
+          "shape-vertical": 3.0
+        },
+        "instr_port": {
+          "signal-1": 4608.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888990,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 9.0,
+          "shape-vertical": 3.0
+        },
+        "instr_port": {
+          "signal-1~uncommon": -30720.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888991,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 10.0,
+          "shape-vertical": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888992,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 11.0,
+          "shape-vertical": 3.0
+        },
+        "out4_inject": {
+          "signal-1~uncommon": -8.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888993,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 4.0,
+          "shape-vertical": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888994,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 5.0,
+          "shape-vertical": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888995,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 6.0,
+          "shape-vertical": 4.0
+        },
+        "instr_port": {
+          "signal-0~epic": 598272.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888996,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 7.0,
+          "shape-vertical": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888997,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 8.0,
+          "shape-vertical": 4.0
+        },
+        "instr_port": {
+          "signal-1": 4608.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888998,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 9.0,
+          "shape-vertical": 4.0
+        },
+        "instr_port": {
+          "signal-1~uncommon": -30720.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 888999,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 10.0,
+          "shape-vertical": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 889000,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 11.0,
+          "shape-vertical": 4.0
+        },
+        "out4_inject": {
+          "signal-1~uncommon": -8.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 889001,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 4.0,
+          "shape-vertical": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    },
+    {
+      "tick": 889002,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 1.0,
+          "signal-P": 5.0,
+          "shape-vertical": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "spin"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "spin",
+      "drive_start_tick": 888957,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {},
+      "observed": {
+        "signal-H": 1.0,
+        "signal-P": 5.0,
+        "shape-vertical": 5.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 889002
+    }
+  ],
+  "pass": true
+}

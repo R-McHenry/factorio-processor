@@ -1,0 +1,97 @@
+{
+  "name": "proc_decoder_matrix",
+  "description": "Instruction decoder + 3x4 routing matrix test. Drives port_a_rd/port_b_rd/intruction_rd as matrix data inputs; probes matrix_out1-4. Bits 1/2/4/8 route portA->out1..4, 16/32/64/128 portB->out1..4, 256/512/1024/2048 constant(instr>>12)->out1..4. Note: the v7 master is closed-loop (matrix outs feed the real inputs) with an empty ROM, so driven instructions cause harmless memory side effects; checks only read the matrix outs.",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 3,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -8.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "port_a": 64,
+      "port_b": 65,
+      "instr": 66
+    },
+    "expected_probe_name": "out1",
+    "output_probes": [
+      { "name": "out1", "entity_number": 7, "wire": "green" },
+      { "name": "out2", "entity_number": 11, "wire": "green" },
+      { "name": "out3", "entity_number": 12, "wire": "green" },
+      { "name": "out4", "entity_number": 18, "wire": "green" }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "bit1_portA_to_out1",
+      "drive": {
+        "instr": { "signal-I": 1 },
+        "port_a": { "signal-5": 77 },
+        "port_b": {}
+      },
+      "expect_probe": "out1",
+      "expect": { "signal-5": 77 }
+    },
+    {
+      "name": "bit2_portA_to_out2",
+      "drive": { "instr": { "signal-I": 2 } },
+      "expect_probe": "out2",
+      "expect": { "signal-5": 77 }
+    },
+    {
+      "name": "bit2_out1_now_clear",
+      "expect_probe": "out1",
+      "expect": { "signal-5": 0 }
+    },
+    {
+      "name": "bit64_portB_to_out3",
+      "drive": {
+        "instr": { "signal-I": 64 },
+        "port_a": {},
+        "port_b": { "signal-7": 33 }
+      },
+      "expect_probe": "out3",
+      "expect": { "signal-7": 33 }
+    },
+    {
+      "name": "bit2048_const_to_out4",
+      "drive": {
+        "instr": { "signal-I": 50567168 },
+        "port_b": {}
+      },
+      "expect_probe": "out4",
+      "expect": { "signal-I": 12345 }
+    },
+    {
+      "name": "multi_route_setup_out1",
+      "drive": {
+        "instr": { "signal-I": 407585 },
+        "port_a": { "signal-3": 11 },
+        "port_b": { "signal-4": 22 }
+      },
+      "expect_probe": "out1",
+      "expect": { "signal-3": 11 }
+    },
+    {
+      "name": "multi_route_check_out2",
+      "expect_probe": "out2",
+      "expect": { "signal-4": 22 }
+    },
+    {
+      "name": "multi_route_check_out4",
+      "expect_probe": "out4",
+      "expect": { "signal-I": 99 }
+    }
+  ]
+}

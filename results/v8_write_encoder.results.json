@@ -1,0 +1,2445 @@
+{
+  "name": "v8_write_encoder",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 2,
+  "rebuild": {
+    "removed": 9,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 15,
+    "revived": 15,
+    "placed": 15
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [
+    {
+      "unit": 119548,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 6
+    }
+  ],
+  "mapping": {
+    "translation": {
+      "dx": -6.0,
+      "dy": 12.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 119547,
+      "2": 119540,
+      "3": 119535,
+      "4": 119546,
+      "5": 119545,
+      "6": 119548,
+      "7": 119544,
+      "8": 119534,
+      "9": 119539,
+      "10": 119537,
+      "11": 119542,
+      "12": 119543,
+      "13": 119541,
+      "14": 119536,
+      "15": 119538
+    },
+    "driver_units": {
+      "write_addr": 119547,
+      "write_value": 119540,
+      "write_trig": 119535
+    },
+    "output_probes": [
+      {
+        "name": "encoded_write",
+        "unit": 119538,
+        "wire": "green"
+      },
+      {
+        "name": "trig_set",
+        "unit": 119536,
+        "wire": "red"
+      },
+      {
+        "name": "trig_reset",
+        "unit": 119541,
+        "wire": "green"
+      },
+      {
+        "name": "one_hot",
+        "unit": 119543,
+        "wire": "red"
+      }
+    ],
+    "expected_probe_name": "encoded_write"
+  },
+  "timeline": [
+    {
+      "tick": 875689,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_1"
+    },
+    {
+      "tick": 875690,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_2"
+    },
+    {
+      "tick": 875691,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "encode_addr3_val555"
+    },
+    {
+      "tick": 875692,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "encode_addr3_val555"
+    },
+    {
+      "tick": 875693,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "encode_addr3_val555"
+    },
+    {
+      "tick": 875694,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "encode_addr3_val555"
+    },
+    {
+      "tick": 875695,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "encode_addr3_val555"
+    },
+    {
+      "tick": 875696,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "encode_addr3_val555"
+    },
+    {
+      "tick": 875697,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "encode_addr3_val555"
+    },
+    {
+      "tick": 875698,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "one_hot_marks_addr3"
+    },
+    {
+      "tick": 875699,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "one_hot_marks_addr3"
+    },
+    {
+      "tick": 875700,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "one_hot_marks_addr3"
+    },
+    {
+      "tick": 875701,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "one_hot_marks_addr3"
+    },
+    {
+      "tick": 875702,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "one_hot_marks_addr3"
+    },
+    {
+      "tick": 875703,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "one_hot_marks_addr3"
+    },
+    {
+      "tick": 875704,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "one_hot_marks_addr3"
+    },
+    {
+      "tick": 875705,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "set_product_addr3"
+    },
+    {
+      "tick": 875706,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "set_product_addr3"
+    },
+    {
+      "tick": 875707,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "set_product_addr3"
+    },
+    {
+      "tick": 875708,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "set_product_addr3"
+    },
+    {
+      "tick": 875709,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "set_product_addr3"
+    },
+    {
+      "tick": 875710,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "set_product_addr3"
+    },
+    {
+      "tick": 875711,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "set_product_addr3"
+    },
+    {
+      "tick": 875712,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "reset_product_addr3"
+    },
+    {
+      "tick": 875713,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "reset_product_addr3"
+    },
+    {
+      "tick": 875714,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "reset_product_addr3"
+    },
+    {
+      "tick": 875715,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "reset_product_addr3"
+    },
+    {
+      "tick": 875716,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "reset_product_addr3"
+    },
+    {
+      "tick": 875717,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "reset_product_addr3"
+    },
+    {
+      "tick": 875718,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 3.0
+        },
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "reset_product_addr3"
+    },
+    {
+      "tick": 875719,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "latch_holds_after_addr_release"
+    },
+    {
+      "tick": 875720,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "latch_holds_after_addr_release"
+    },
+    {
+      "tick": 875721,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "latch_holds_after_addr_release"
+    },
+    {
+      "tick": 875722,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "latch_holds_after_addr_release"
+    },
+    {
+      "tick": 875723,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "latch_holds_after_addr_release"
+    },
+    {
+      "tick": 875724,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "latch_holds_after_addr_release"
+    },
+    {
+      "tick": 875725,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "latch_holds_after_addr_release"
+    },
+    {
+      "tick": 875726,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 555.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "latch_holds_after_addr_release"
+    },
+    {
+      "tick": 875727,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "value_change_while_latched"
+    },
+    {
+      "tick": 875728,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 555.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "value_change_while_latched"
+    },
+    {
+      "tick": 875729,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "value_change_while_latched"
+    },
+    {
+      "tick": 875730,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "value_change_while_latched"
+    },
+    {
+      "tick": 875731,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "value_change_while_latched"
+    },
+    {
+      "tick": 875732,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "value_change_while_latched"
+    },
+    {
+      "tick": 875733,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "value_change_while_latched"
+    },
+    {
+      "tick": 875734,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "trig_release_stops_set_product"
+    },
+    {
+      "tick": 875735,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "trig_release_stops_set_product"
+    },
+    {
+      "tick": 875736,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "trig_release_stops_set_product"
+    },
+    {
+      "tick": 875737,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "trig_release_stops_set_product"
+    },
+    {
+      "tick": 875738,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "trig_release_stops_set_product"
+    },
+    {
+      "tick": 875739,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "trig_release_stops_set_product"
+    },
+    {
+      "tick": 875740,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "trig_release_stops_set_product"
+    },
+    {
+      "tick": 875741,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "value_product_survives_trig_release"
+    },
+    {
+      "tick": 875742,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "value_product_survives_trig_release"
+    },
+    {
+      "tick": 875743,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "value_product_survives_trig_release"
+    },
+    {
+      "tick": 875744,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "value_product_survives_trig_release"
+    },
+    {
+      "tick": 875745,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "value_product_survives_trig_release"
+    },
+    {
+      "tick": 875746,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "value_product_survives_trig_release"
+    },
+    {
+      "tick": 875747,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "value_product_survives_trig_release"
+    },
+    {
+      "tick": 875748,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 5.0
+        },
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "new_addr5_moves_one_hot"
+    },
+    {
+      "tick": 875749,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 5.0
+        },
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "new_addr5_moves_one_hot"
+    },
+    {
+      "tick": 875750,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 5.0
+        },
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "new_addr5_moves_one_hot"
+    },
+    {
+      "tick": 875751,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 5.0
+        },
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~rare": 777.0
+        },
+        "trig_set": {
+          "signal-0~rare": 1.0
+        },
+        "trig_reset": {
+          "signal-0~rare": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "new_addr5_moves_one_hot"
+    },
+    {
+      "tick": 875752,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 5.0
+        },
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "new_addr5_moves_one_hot"
+    },
+    {
+      "tick": 875753,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 5.0
+        },
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "new_addr5_moves_one_hot"
+    },
+    {
+      "tick": 875754,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 5.0
+        },
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "new_addr5_moves_one_hot"
+    },
+    {
+      "tick": 875755,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 5.0
+        },
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 9,
+      "step_name": "set_product_follows_to_addr5"
+    },
+    {
+      "tick": 875756,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 5.0
+        },
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 9,
+      "step_name": "set_product_follows_to_addr5"
+    },
+    {
+      "tick": 875757,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 5.0
+        },
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 9,
+      "step_name": "set_product_follows_to_addr5"
+    },
+    {
+      "tick": 875758,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 5.0
+        },
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 9,
+      "step_name": "set_product_follows_to_addr5"
+    },
+    {
+      "tick": 875759,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 5.0
+        },
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "set_product_follows_to_addr5"
+    },
+    {
+      "tick": 875760,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 5.0
+        },
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "set_product_follows_to_addr5"
+    },
+    {
+      "tick": 875761,
+      "stimulus": {
+        "write_addr": {
+          "left-arrow": 5.0
+        },
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "set_product_follows_to_addr5"
+    },
+    {
+      "tick": 875762,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "latch_holds_addr5"
+    },
+    {
+      "tick": 875763,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "latch_holds_addr5"
+    },
+    {
+      "tick": 875764,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "latch_holds_addr5"
+    },
+    {
+      "tick": 875765,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "latch_holds_addr5"
+    },
+    {
+      "tick": 875766,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "latch_holds_addr5"
+    },
+    {
+      "tick": 875767,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "latch_holds_addr5"
+    },
+    {
+      "tick": 875768,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "latch_holds_addr5"
+    },
+    {
+      "tick": 875769,
+      "stimulus": {
+        "write_value": {
+          "right-arrow": 777.0
+        },
+        "write_trig": {
+          "shape-circle": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "encoded_write": {
+          "signal-0~legendary": 777.0
+        },
+        "trig_set": {
+          "signal-0~legendary": 1.0
+        },
+        "trig_reset": {
+          "signal-0~legendary": 1.0
+        },
+        "one_hot": {
+          "signal-0~legendary": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "latch_holds_addr5"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "encode_addr3_val555",
+      "drive_start_tick": 875690,
+      "skipped_ticks": 0,
+      "expected_probe": "encoded_write",
+      "expected": {
+        "signal-0~rare": 555
+      },
+      "observed": {
+        "signal-0~rare": 555.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875697
+    },
+    {
+      "step_index": 1,
+      "step_name": "one_hot_marks_addr3",
+      "drive_start_tick": 875697,
+      "skipped_ticks": 0,
+      "expected_probe": "one_hot",
+      "expected": {
+        "signal-0~rare": 1
+      },
+      "observed": {
+        "signal-0~rare": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875704
+    },
+    {
+      "step_index": 2,
+      "step_name": "set_product_addr3",
+      "drive_start_tick": 875704,
+      "skipped_ticks": 0,
+      "expected_probe": "trig_set",
+      "expected": {
+        "signal-0~rare": 1
+      },
+      "observed": {
+        "signal-0~rare": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875711
+    },
+    {
+      "step_index": 3,
+      "step_name": "reset_product_addr3",
+      "drive_start_tick": 875711,
+      "skipped_ticks": 0,
+      "expected_probe": "trig_reset",
+      "expected": {
+        "signal-0~rare": 1
+      },
+      "observed": {
+        "signal-0~rare": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875718
+    },
+    {
+      "step_index": 4,
+      "step_name": "latch_holds_after_addr_release",
+      "drive_start_tick": 875718,
+      "skipped_ticks": 0,
+      "expected_probe": "encoded_write",
+      "expected": {
+        "signal-0~rare": 555
+      },
+      "observed": {
+        "signal-0~rare": 555.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875726
+    },
+    {
+      "step_index": 5,
+      "step_name": "value_change_while_latched",
+      "drive_start_tick": 875726,
+      "skipped_ticks": 0,
+      "expected_probe": "encoded_write",
+      "expected": {
+        "signal-0~rare": 777
+      },
+      "observed": {
+        "signal-0~rare": 777.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875733
+    },
+    {
+      "step_index": 6,
+      "step_name": "trig_release_stops_set_product",
+      "drive_start_tick": 875733,
+      "skipped_ticks": 0,
+      "expected_probe": "trig_set",
+      "expected": {
+        "signal-0~rare": 0
+      },
+      "observed": {},
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875740
+    },
+    {
+      "step_index": 7,
+      "step_name": "value_product_survives_trig_release",
+      "drive_start_tick": 875740,
+      "skipped_ticks": 0,
+      "expected_probe": "encoded_write",
+      "expected": {
+        "signal-0~rare": 777
+      },
+      "observed": {
+        "signal-0~rare": 777.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875747
+    },
+    {
+      "step_index": 8,
+      "step_name": "new_addr5_moves_one_hot",
+      "drive_start_tick": 875747,
+      "skipped_ticks": 0,
+      "expected_probe": "encoded_write",
+      "expected": {
+        "signal-0~legendary": 777,
+        "signal-0~rare": 0
+      },
+      "observed": {
+        "signal-0~legendary": 777.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875754
+    },
+    {
+      "step_index": 9,
+      "step_name": "set_product_follows_to_addr5",
+      "drive_start_tick": 875754,
+      "skipped_ticks": 0,
+      "expected_probe": "trig_set",
+      "expected": {
+        "signal-0~legendary": 1,
+        "signal-0~rare": 0
+      },
+      "observed": {
+        "signal-0~legendary": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875761
+    },
+    {
+      "step_index": 10,
+      "step_name": "latch_holds_addr5",
+      "drive_start_tick": 875761,
+      "skipped_ticks": 0,
+      "expected_probe": "encoded_write",
+      "expected": {
+        "signal-0~legendary": 777
+      },
+      "observed": {
+        "signal-0~legendary": 777.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875769
+    }
+  ],
+  "pass": true
+}

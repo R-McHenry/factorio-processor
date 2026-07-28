@@ -1,0 +1,109 @@
+{
+  "name": "proc_write_encoder",
+  "description": "Drive write_adress + write_value and verify the v7 address/value encoder: address latch (holds after release), one-hot decode against the full address table (addr 3 = signal-0~rare, addr 5 = signal-0~legendary), and the encoded value product on the write_value injector net (entity 16 green). Trigger products (set on 15 red, reset on 18 green) are probed for the viewer; they pulse only while the address input is present.",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 5,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -8.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "write_addr": 1,
+      "write_value": 4
+    },
+    "expected_probe_name": "encoded_write",
+    "output_probes": [
+      {
+        "name": "encoded_write",
+        "entity_number": 16,
+        "wire": "green"
+      },
+      {
+        "name": "one_hot",
+        "entity_number": 13,
+        "wire": "red"
+      },
+      {
+        "name": "trig_set",
+        "entity_number": 15,
+        "wire": "red"
+      },
+      {
+        "name": "trig_reset",
+        "entity_number": 19,
+        "wire": "green"
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "encode_addr3_val555",
+      "drive": {
+        "write_addr": {
+          "signal-A": 3
+        },
+        "write_value": {
+          "signal-V": 555
+        }
+      },
+      "expect": {
+        "signal-0~rare": 555
+      }
+    },
+    {
+      "name": "latch_holds_after_addr_release",
+      "drive": {
+        "write_addr": {}
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "signal-0~rare": 555
+      }
+    },
+    {
+      "name": "value_change_while_latched",
+      "drive": {
+        "write_value": {
+          "signal-V": 777
+        }
+      },
+      "expect": {
+        "signal-0~rare": 777
+      }
+    },
+    {
+      "name": "new_addr5_moves_one_hot",
+      "drive": {
+        "write_addr": {
+          "signal-A": 5
+        }
+      },
+      "expect": {
+        "signal-0~legendary": 777,
+        "signal-0~rare": 0
+      }
+    },
+    {
+      "name": "latch_holds_addr5",
+      "drive": {
+        "write_addr": {}
+      },
+      "trace_ticks": 4,
+      "expect": {
+        "signal-0~legendary": 777
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+# v8_mem_cell — component 1 of the fnet v8 rebuild (NETLIST_PLAN.md):
+# the v8 memory cell with its direct-write trio (set / value / reset),
+# accumulate mask, and ≠0 negatives, isolated from the write encoder and
+# read ports. Behavioral bench: testbenches/v8_mem_cell.tb.json
+# (proc_memory_raw's write/override/zero-write semantics on the cell alone,
+# plus negative writes and deterministic single-tick accumulate pulses).
+#
+# `module mem_cell` is the reusable component (imported by the eventual
+# processor_v8.fnet); `mem_cell_bench` is the live-test harness — build
+# with `--top mem_cell_bench`.
+#
+# Entity numbering (declaration order; the bench's entity_map relies on it):
+# 1 write_value stim, 2 write_trigger_set stim, 3 write_trigger_reset stim,
+# 4 accumulate_mask, 5 injector, 6 mem_cell, then debug probes
+# 7 mem_out (green), 8 mem_state (red).
+
+import "lib/v8.fnet";
+
+# Accumulate rows are addressable memory, chosen by address (design act —
+# the mask filters and the signals-map "accumulate" flag both derive from
+# this declaration). 300 sits well clear of the ALU block (2090+) and PC.
+region acc = 300;
+signal counter = memory[acc + 0];
+accumulate counter;
+
+# The v8 memory block. `state` is the red self-loop (the held state — the
+# master's mem_state probe point) and is also consumed internally as the
+# cell's hold input; `bus` is the green memory-bus face of the same outputs.
+module mem_cell(in_r set_in, in_g value_in, in_g reset_in,
+                out_r state, out_g bus) {
+  accum_mask(out_g: reset_in);
+  v8_injector(in_r: set_in, in_g: value_in, out_r: state, out_g: bus);
+  v8_cell(in_r: state, in_g: reset_in, out_r: state, out_g: bus);
+}
+
+module mem_cell_bench() {
+  net red set_in;        # write_trigger_set -> injector gate
+  net green value_in;    # write_value -> injector payload
+  net green reset_in;    # write_trigger_reset pulses + standing -1 mask
+  debug net red mem_state;   # cell self-loop: the held state (master 36 red)
+  debug net green mem_out;   # green memory bus face of the same outputs
+
+  stim<"write_value">(out_g: value_in);
+  stim<"write_trigger_set">(out_r: set_in);
+  stim<"write_trigger_reset">(out_g: reset_in);
+  mem_cell(set_in: set_in, value_in: value_in, reset_in: reset_in,
+           state: mem_state, bus: mem_out);
+}

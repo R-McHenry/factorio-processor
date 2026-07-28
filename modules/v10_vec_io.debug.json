@@ -1,0 +1,23 @@
+{
+  "module": "vec_io_bench",
+  "probes": [
+    {
+      "net": "membus_out",
+      "entity_number": 20,
+      "wire": "green",
+      "position": {
+        "x": 4.5,
+        "y": -10.5
+      }
+    },
+    {
+      "net": "vbus",
+      "entity_number": 21,
+      "wire": "red",
+      "position": {
+        "x": 4.5,
+        "y": -9.5
+      }
+    }
+  ]
+}

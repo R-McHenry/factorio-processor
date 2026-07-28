@@ -1,0 +1,101 @@
+{
+  "name": "v8_write_encoder",
+  "description": "fnet v8 component 2: the write-address/value encoder, isolated. proc_write_encoder semantics: address latch (holds after release), one-hot decode against the design's address table, encoded value product; plus explicit write-trigger gating (set/reset products emit only while the trigger input is driven - in the master the trigger comes from the decode row, here it is a stim). All rows are $mem[N]; the stimulus carriers are the design's declared signals ($addr_stim/$value_stim/$trig_stim, auto-assigned).",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 5,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -6.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "write_addr": 1,
+      "write_value": 2,
+      "write_trig": 3
+    },
+    "expected_probe_name": "encoded_write",
+    "output_probes": [
+      { "name": "encoded_write", "entity_number": 15, "wire": "green" },
+      { "name": "trig_set", "entity_number": 14, "wire": "red" },
+      { "name": "trig_reset", "entity_number": 13, "wire": "green" },
+      { "name": "one_hot", "entity_number": 12, "wire": "red" }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "encode_addr3_val555",
+      "drive": {
+        "write_addr": { "$addr_stim": 3 },
+        "write_value": { "$value_stim": 555 },
+        "write_trig": { "$trig_stim": 1 }
+      },
+      "expect": { "$mem[3]": 555 }
+    },
+    {
+      "name": "one_hot_marks_addr3",
+      "expect_probe": "one_hot",
+      "expect": { "$mem[3]": 1 }
+    },
+    {
+      "name": "set_product_addr3",
+      "expect_probe": "trig_set",
+      "expect": { "$mem[3]": 1 }
+    },
+    {
+      "name": "reset_product_addr3",
+      "expect_probe": "trig_reset",
+      "expect": { "$mem[3]": 1 }
+    },
+    {
+      "name": "latch_holds_after_addr_release",
+      "drive": { "write_addr": {} },
+      "trace_ticks": 4,
+      "expect": { "$mem[3]": 555 }
+    },
+    {
+      "name": "value_change_while_latched",
+      "drive": { "write_value": { "$value_stim": 777 } },
+      "expect": { "$mem[3]": 777 }
+    },
+    {
+      "name": "trig_release_stops_set_product",
+      "drive": { "write_trig": {} },
+      "expect_probe": "trig_set",
+      "expect": { "$mem[3]": 0 }
+    },
+    {
+      "name": "value_product_survives_trig_release",
+      "expect": { "$mem[3]": 777 }
+    },
+    {
+      "name": "new_addr5_moves_one_hot",
+      "drive": {
+        "write_addr": { "$addr_stim": 5 },
+        "write_trig": { "$trig_stim": 1 }
+      },
+      "expect": { "$mem[5]": 777, "$mem[3]": 0 }
+    },
+    {
+      "name": "set_product_follows_to_addr5",
+      "expect_probe": "trig_set",
+      "expect": { "$mem[5]": 1, "$mem[3]": 0 }
+    },
+    {
+      "name": "latch_holds_addr5",
+      "drive": { "write_addr": {} },
+      "trace_ticks": 4,
+      "expect": { "$mem[5]": 777 }
+    }
+  ]
+}

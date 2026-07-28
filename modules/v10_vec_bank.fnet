@@ -1,0 +1,170 @@
+# v10_vec_bank — component 2 of the fnet v10 rebuild: the twelve-register
+# vector bank plus its read mux, built on the one-combinator register proven
+# live by v10_vec_reg.
+#
+# Three combinators per register, and only ONE of them is the register:
+#
+#   [W == k]                 write head  ── shared write bus ──> hold loop
+#   [vec_erase != k]         THE REGISTER ── hold loop ──> hold loop
+#   [R == k OR S == k]       mux gate    ── hold loop ──> shared write bus
+#
+# The write head does not hand the frame to the register; it drops it on the
+# register's own loop, and Factorio's wire summation does the accumulate
+# (designer, 2026-07-27: "we don't have to implement write state at all in an
+# accumulating memory"). A loop can carry any number of heads — they sum — so
+# the scalar frame-write path can be added later as another head with no
+# change to the register.
+#
+# WHY TWELVE (2026-07-27, widened from eight for the mandelbrot kernel). The
+# kernel needs four operand-pair slots plus cx, cy, zx, zy, a sticky escape
+# mask, its running sum, and one temporary — eleven live registers, where eight
+# forced a spill through the one-lane scalar port every pass. Registers are
+# mechanical repetition, so widening is the cheapest thing in the zone.
+#
+# MUX INDEX SPACE. Registers own indices 1..16 — SIXTEEN, four more than are
+# built — and op outputs start at 17 (v10_op_farm.fnet). Reserving the gap is
+# the point: adding a register now costs three combinators and renumbers
+# nothing, where the original layout (registers 1..8, ops from 9) would have
+# shifted every op index, every testbench that names one, and every program.
+#
+# COLOR DISCIPLINE: green is control and it is chunk1's own memory bus wired
+# STRAIGHT IN (designer, 2026-07-27) — every control value is a memory-mapped
+# row (v10_addr_map.fnet), so a scalar write IS the vector control action,
+# with no mirror stage and no added latency. Red is vector data: hold loops,
+# the write bus, op outputs. Every gate is the same shape — condition off
+# green, pass a red frame through.
+#
+# The mux feeds the WRITE path only. Op farm operands are HARDWIRED and never
+# come through the mux, which is what makes two simultaneous selections a
+# feature rather than an ambiguity: R and S both drive the one write bus, so
+# their frames SUM and vector ADD costs zero combinators. R = S = k selects
+# that register once, not twice.
+#
+# OPERAND FACES — TWO PAIRS (designer, 2026-07-27). A decider's two output
+# faces carry the same value in the same tick, so a register hands the op farm
+# a skew-free operand with no mirror stage: the A-side register offers its red
+# hold loop, the B-side register a dedicated green face.
+#
+#   pair A = VREG0 (a1, red loop) x VREG1 (b1, green face)
+#   pair B = VREG2 (a2, red loop) x VREG3 (b2, green face)
+#
+# Pair B ALSO exports the opposite face of each of its two registers — a2g
+# (VREG2 on green) and b2r (VREG3 on red). Those are what let the op farm
+# square a single register with the ordinary each[red] x each[green] shape
+# instead of needing each-against-itself semantics that nothing here has
+# measured: VREG2 x VREG2 is `in_r: a2, in_g: a2g`. The mandelbrot inner loop
+# wants zx^2 and zy^2 alongside zx*zy, and this is what makes all three
+# available from ONE pair load.
+#
+# Consequence of the face asymmetry: an A operand rides a hold loop, so it
+# also carries any in-flight write head output during a commit tick, while a
+# B face does not. Don't read an op result on the tick a write commits to an
+# A-side register — same coherence-window class as v8's I=H+H transient.
+#
+# TIMING (measured live 2026-07-27):
+#   - A select is a PARK, a write is a PULSE. The mux output only reaches the
+#     write head on the next tick, so park R/S, let the bus settle, then pulse
+#     W for one tick.
+#   - DESELECT LAGS THE SAME WAY, and this one bites: clearing R/S in the same
+#     tick as the W pulse commits the PREVIOUS selection. The bench caught
+#     VREG7 capturing VREG0's stale frame summed with the intended one.
+#   - Control and data are IN PHASE (no mirror), so a direct frame write drives
+#     W and the bus in the same tick. Only mux-sourced writes need the park.
+#
+# MOVE PRIMITIVE (verified live): erase and write the SAME register in the
+# SAME tick gives REPLACE, in one tick, not accumulate — the cell emits
+# nothing that tick while the write head drops the new frame. So a
+# register-to-register move is `{R: src, W: dst, erase: dst}` in one commit,
+# with no separate erase step. This is the workhorse of any loop feeding the
+# hardwired operand pairs.
+#
+# `module vec_bank` is the reusable component; `vec_bank_bench` is the
+# live-test harness — build with `--top vec_bank_bench`.
+#
+# Entity numbering (declaration order; the bench's entity_map relies on it):
+# 1 scalar_membus stim, 2 vec_write_bus stim, then the bank 3..38 as
+# head/register/mux per register in block-id order, then debug probes in
+# net-name order: 39 a1, 40 a2, 41 a2g, 42 b1, 43 b2, 44 b2r, 45 vbus.
+
+import "lib/v8.fnet";
+import "lib/v10.fnet";
+import "v10_addr_map.fnet";
+
+module vec_bank(in_g membus, out_r vbus,
+                out_r a1,  out_g b1,      # op farm pair A: VREG0 x VREG1
+                out_r a2,  out_g b2,      # op farm pair B: VREG2 x VREG3
+                out_g a2g, out_r b2r) {   # pair B's opposite faces (squares)
+  net red loop1, loop4, loop5, loop6, loop7, loop8, loop9, loop10, loop11;
+  # VREG0's loop is a1, VREG2's is a2 and VREG3's is b2r — exported directly.
+
+  # -- VREG0 (block 1): A-side operand of pair A ---------------------------
+  v10_wsel_gate<vec_wsel, 1, "whead_vreg0">(in_g: membus, in_r: vbus, out_r: a1);
+  v10_vreg_cell<vec_erase, 1, "vreg0">(in_g: membus, in_r: a1, out_r: a1);
+  v10_select_gate<vec_rsel, vec_ssel, 1, "rsel_vreg0">(in_g: membus, in_r: a1, out_r: vbus);
+
+  # -- VREG1 (block 2): B-side operand of pair A ---------------------------
+  v10_wsel_gate<vec_wsel, 2, "whead_vreg1">(in_g: membus, in_r: vbus, out_r: loop1);
+  v10_vreg_cell<vec_erase, 2, "vreg1">(in_g: membus, in_r: loop1, out_r: loop1, out_g: b1);
+  v10_select_gate<vec_rsel, vec_ssel, 2, "rsel_vreg1">(in_g: membus, in_r: loop1, out_r: vbus);
+
+  # -- VREG2 (block 3): A-side operand of pair B, both faces exported ------
+  v10_wsel_gate<vec_wsel, 3, "whead_vreg2">(in_g: membus, in_r: vbus, out_r: a2);
+  v10_vreg_cell<vec_erase, 3, "vreg2">(in_g: membus, in_r: a2, out_r: a2, out_g: a2g);
+  v10_select_gate<vec_rsel, vec_ssel, 3, "rsel_vreg2">(in_g: membus, in_r: a2, out_r: vbus);
+
+  # -- VREG3 (block 4): B-side operand of pair B, both faces exported ------
+  v10_wsel_gate<vec_wsel, 4, "whead_vreg3">(in_g: membus, in_r: vbus, out_r: b2r);
+  v10_vreg_cell<vec_erase, 4, "vreg3">(in_g: membus, in_r: b2r, out_r: b2r, out_g: b2);
+  v10_select_gate<vec_rsel, vec_ssel, 4, "rsel_vreg3">(in_g: membus, in_r: b2r, out_r: vbus);
+
+  # -- VREG4..VREG11: plain accumulators, mux-visible only -----------------
+  v10_wsel_gate<vec_wsel, 5, "whead_vreg4">(in_g: membus, in_r: vbus, out_r: loop4);
+  v10_vreg_cell<vec_erase, 5, "vreg4">(in_g: membus, in_r: loop4, out_r: loop4);
+  v10_select_gate<vec_rsel, vec_ssel, 5, "rsel_vreg4">(in_g: membus, in_r: loop4, out_r: vbus);
+
+  v10_wsel_gate<vec_wsel, 6, "whead_vreg5">(in_g: membus, in_r: vbus, out_r: loop5);
+  v10_vreg_cell<vec_erase, 6, "vreg5">(in_g: membus, in_r: loop5, out_r: loop5);
+  v10_select_gate<vec_rsel, vec_ssel, 6, "rsel_vreg5">(in_g: membus, in_r: loop5, out_r: vbus);
+
+  v10_wsel_gate<vec_wsel, 7, "whead_vreg6">(in_g: membus, in_r: vbus, out_r: loop6);
+  v10_vreg_cell<vec_erase, 7, "vreg6">(in_g: membus, in_r: loop6, out_r: loop6);
+  v10_select_gate<vec_rsel, vec_ssel, 7, "rsel_vreg6">(in_g: membus, in_r: loop6, out_r: vbus);
+
+  v10_wsel_gate<vec_wsel, 8, "whead_vreg7">(in_g: membus, in_r: vbus, out_r: loop7);
+  v10_vreg_cell<vec_erase, 8, "vreg7">(in_g: membus, in_r: loop7, out_r: loop7);
+  v10_select_gate<vec_rsel, vec_ssel, 8, "rsel_vreg7">(in_g: membus, in_r: loop7, out_r: vbus);
+
+  v10_wsel_gate<vec_wsel, 9, "whead_vreg8">(in_g: membus, in_r: vbus, out_r: loop8);
+  v10_vreg_cell<vec_erase, 9, "vreg8">(in_g: membus, in_r: loop8, out_r: loop8);
+  v10_select_gate<vec_rsel, vec_ssel, 9, "rsel_vreg8">(in_g: membus, in_r: loop8, out_r: vbus);
+
+  v10_wsel_gate<vec_wsel, 10, "whead_vreg9">(in_g: membus, in_r: vbus, out_r: loop9);
+  v10_vreg_cell<vec_erase, 10, "vreg9">(in_g: membus, in_r: loop9, out_r: loop9);
+  v10_select_gate<vec_rsel, vec_ssel, 10, "rsel_vreg9">(in_g: membus, in_r: loop9, out_r: vbus);
+
+  v10_wsel_gate<vec_wsel, 11, "whead_vreg10">(in_g: membus, in_r: vbus, out_r: loop10);
+  v10_vreg_cell<vec_erase, 11, "vreg10">(in_g: membus, in_r: loop10, out_r: loop10);
+  v10_select_gate<vec_rsel, vec_ssel, 11, "rsel_vreg10">(in_g: membus, in_r: loop10, out_r: vbus);
+
+  v10_wsel_gate<vec_wsel, 12, "whead_vreg11">(in_g: membus, in_r: vbus, out_r: loop11);
+  v10_vreg_cell<vec_erase, 12, "vreg11">(in_g: membus, in_r: loop11, out_r: loop11);
+  v10_select_gate<vec_rsel, vec_ssel, 12, "rsel_vreg11">(in_g: membus, in_r: loop11, out_r: vbus);
+}
+
+module vec_bank_bench() {
+  net green membus;       # stands in for chunk1's memory bus
+  debug net red vbus;     # the shared write bus — also the read-back window
+  debug net red   a1;     # VREG0 loop  (pair A, A-side)
+  debug net green b1;     # VREG1 face  (pair A, B-side)
+  debug net red   a2;     # VREG2 loop  (pair B, A-side)
+  debug net green b2;     # VREG3 face  (pair B, B-side)
+  debug net green a2g;    # VREG2's green face — the square operand
+  debug net red   b2r;    # VREG3's red face   — the square operand
+
+  stim<"scalar_membus">(out_g: membus);
+  # Stands in for the scalar core's frame-write path: a second write head on
+  # the shared bus, which the bank's own mux also drives.
+  stim<"vec_write_bus">(out_r: vbus);
+  vec_bank(membus: membus, vbus: vbus, a1: a1, b1: b1, a2: a2, b2: b2,
+           a2g: a2g, b2r: b2r);
+}

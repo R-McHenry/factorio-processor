@@ -1,0 +1,318 @@
+{
+  "name": "v8_proc_accumulate_halt",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 0,
+  "rebuild": {
+    "removed": 105,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 104,
+    "revived": 104,
+    "placed": 104
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [
+    {
+      "unit": 121554,
+      "slots_written": 2452,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 40
+    },
+    {
+      "unit": 121577,
+      "slots_written": 2452,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 75
+    },
+    {
+      "unit": 121596,
+      "slots_written": 2452,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 81
+    },
+    {
+      "unit": 121585,
+      "slots_written": 2452,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 97
+    }
+  ],
+  "mapping": {
+    "translation": {
+      "dx": -7.0,
+      "dy": 7.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 121494,
+      "2": 121493,
+      "3": 121499,
+      "4": 121498,
+      "5": 121505,
+      "6": 121504,
+      "7": 121512,
+      "8": 121511,
+      "9": 121550,
+      "10": 121556,
+      "11": 121555,
+      "12": 121562,
+      "13": 121561,
+      "14": 121568,
+      "15": 121567,
+      "16": 121496,
+      "17": 121495,
+      "18": 121501,
+      "19": 121500,
+      "20": 121507,
+      "21": 121506,
+      "22": 121514,
+      "23": 121513,
+      "24": 121552,
+      "25": 121551,
+      "26": 121558,
+      "27": 121557,
+      "28": 121564,
+      "29": 121563,
+      "30": 121570,
+      "31": 121569,
+      "32": 121497,
+      "33": 121503,
+      "34": 121502,
+      "35": 121510,
+      "36": 121509,
+      "37": 121508,
+      "38": 121516,
+      "39": 121515,
+      "40": 121554,
+      "41": 121560,
+      "42": 121559,
+      "43": 121566,
+      "44": 121565,
+      "45": 121573,
+      "46": 121572,
+      "47": 121571,
+      "48": 121518,
+      "49": 121517,
+      "50": 121524,
+      "51": 121523,
+      "52": 121522,
+      "53": 121534,
+      "54": 121533,
+      "55": 121544,
+      "56": 121543,
+      "57": 121575,
+      "58": 121580,
+      "59": 121579,
+      "60": 121587,
+      "61": 121586,
+      "62": 121594,
+      "63": 121593,
+      "64": 121519,
+      "65": 121528,
+      "66": 121527,
+      "67": 121526,
+      "68": 121525,
+      "69": 121538,
+      "70": 121537,
+      "71": 121536,
+      "72": 121535,
+      "73": 121546,
+      "74": 121545,
+      "75": 121577,
+      "76": 121583,
+      "77": 121582,
+      "78": 121581,
+      "79": 121589,
+      "80": 121588,
+      "81": 121596,
+      "82": 121595,
+      "83": 121521,
+      "84": 121520,
+      "85": 121532,
+      "86": 121531,
+      "87": 121530,
+      "88": 121529,
+      "89": 121542,
+      "90": 121541,
+      "91": 121540,
+      "92": 121539,
+      "93": 121549,
+      "94": 121548,
+      "95": 121547,
+      "96": 121578,
+      "97": 121585,
+      "98": 121584,
+      "99": 121592,
+      "100": 121591,
+      "101": 121590,
+      "102": 121576,
+      "103": 121574,
+      "104": 121553
+    },
+    "driver_units": {
+      "trig_set": 121572
+    },
+    "output_probes": [
+      {
+        "name": "mem_state",
+        "unit": 121590,
+        "wire": "red"
+      },
+      {
+        "name": "mem_bus",
+        "unit": 121591,
+        "wire": "green"
+      },
+      {
+        "name": "port_a",
+        "unit": 121582,
+        "wire": "green"
+      },
+      {
+        "name": "port_b",
+        "unit": 121521,
+        "wire": "green"
+      },
+      {
+        "name": "instr_port",
+        "unit": 121592,
+        "wire": "green"
+      }
+    ],
+    "expected_probe_name": "mem_state"
+  },
+  "timeline": [
+    {
+      "tick": 887295,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-turret~rare": 3.0,
+          "signal-9~legendary": 7.0,
+          "shape-curve-3~epic": 11.0
+        },
+        "mem_bus": {
+          "artillery-turret~rare": 3.0,
+          "signal-0": 205056.0,
+          "signal-0~uncommon": 1229056.0,
+          "signal-0~rare": 29184.0,
+          "signal-0~epic": 4608.0,
+          "signal-0~legendary": 1229056.0,
+          "signal-1": 1229056.0,
+          "signal-1~uncommon": 4608.0,
+          "signal-1~rare": 4608.0,
+          "signal-1~epic": -18432.0,
+          "signal-2~epic": 1233152.0,
+          "signal-3": 455168.0,
+          "signal-9~legendary": 7.0,
+          "shape-curve-3~epic": 10.0,
+          "signal-alarm~epic": 1.0
+        },
+        "instr_port": {
+          "signal-1~epic": -18432.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_to_halt"
+    },
+    {
+      "tick": 887296,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-turret~rare": 3.0,
+          "signal-9~legendary": 7.0,
+          "shape-curve-3~epic": 12.0
+        },
+        "mem_bus": {
+          "artillery-turret~rare": 3.0,
+          "signal-0": 205056.0,
+          "signal-0~uncommon": 1229056.0,
+          "signal-0~rare": 29184.0,
+          "signal-0~epic": 4608.0,
+          "signal-0~legendary": 1229056.0,
+          "signal-1": 1229056.0,
+          "signal-1~uncommon": 4608.0,
+          "signal-1~rare": 4608.0,
+          "signal-1~epic": -18432.0,
+          "signal-2~epic": 1233152.0,
+          "signal-3": 455168.0,
+          "signal-9~legendary": 7.0,
+          "shape-curve-3~epic": 11.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_to_halt"
+    },
+    {
+      "tick": 887297,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "artillery-turret~rare": 3.0,
+          "signal-9~legendary": 7.0,
+          "shape-curve-3~epic": 13.0
+        },
+        "mem_bus": {
+          "artillery-turret~rare": 3.0,
+          "signal-0": 205056.0,
+          "signal-0~uncommon": 1229056.0,
+          "signal-0~rare": 29184.0,
+          "signal-0~epic": 4608.0,
+          "signal-0~legendary": 1229056.0,
+          "signal-1": 1229056.0,
+          "signal-1~uncommon": 4608.0,
+          "signal-1~rare": 4608.0,
+          "signal-1~epic": -18432.0,
+          "signal-2~epic": 1233152.0,
+          "signal-3": 455168.0,
+          "signal-9~legendary": 7.0,
+          "shape-curve-3~epic": 12.0,
+          "signal-alarm~epic": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_to_halt"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "run_to_halt",
+      "drive_start_tick": 887174,
+      "skipped_ticks": 120,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-9~legendary": 7,
+        "artillery-turret~rare": 3,
+        "artillery-turret~epic": 0
+      },
+      "observed": {
+        "artillery-turret~rare": 3.0,
+        "signal-9~legendary": 7.0,
+        "shape-curve-3~epic": 13.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 887297
+    }
+  ],
+  "pass": true
+}

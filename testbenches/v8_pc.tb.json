@@ -1,0 +1,70 @@
+{
+  "name": "v8_pc",
+  "description": "fnet v8 component 7: PC chain, open loop (a stim plays the cell's red state bus, so PC = state + 1 statically from the autoincrement constant). The PC row's value selects the ROM row the instruction port emits; anything on the inject bus sums into PC (relative jumps); driving the carrier on the select net offsets the fetch directly (the addr_rd_pc path). PC row = $pc (memory[2096]), inject rides $pc_stim, fetches are $mem[N].",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 4,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -6.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "state": 1,
+      "inject": 2,
+      "mem_bus": 3,
+      "addr_pc": 4
+    },
+    "expected_probe_name": "instr_port",
+    "output_probes": [
+      { "name": "instr_port", "entity_number": 10, "wire": "green" }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "autoincrement_fetch_row5",
+      "drive": {
+        "state": { "$pc": 4 },
+        "mem_bus": { "$mem[5]": 1234, "$mem[8]": 888 }
+      },
+      "expect": { "$mem[5]": 1234, "$mem[8]": 0 }
+    },
+    {
+      "name": "inject_shifts_fetch_to_row8",
+      "drive": { "inject": { "$pc_stim": 3 } },
+      "expect": { "$mem[8]": 888, "$mem[5]": 0 }
+    },
+    {
+      "name": "inject_release_returns_to_row5",
+      "drive": { "inject": {} },
+      "expect": { "$mem[5]": 1234 }
+    },
+    {
+      "name": "carrier_offset_fetches_row16",
+      "drive": {
+        "addr_pc": { "$read_pc": 11 },
+        "mem_bus": { "$mem[5]": 1234, "$mem[16]": 321 }
+      },
+      "expect": { "$mem[16]": 321, "$mem[5]": 0 }
+    },
+    {
+      "name": "release_all_new_state_row10",
+      "drive": {
+        "addr_pc": {},
+        "state": { "$pc": 9 },
+        "mem_bus": { "$mem[10]": 77 }
+      },
+      "expect": { "$mem[10]": 77 }
+    }
+  ]
+}

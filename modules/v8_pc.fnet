@@ -1,0 +1,50 @@
+# v8_pc — component 7 of the fnet v8 rebuild (NETLIST_PLAN.md): the
+# program counter chain (masters 29 pc_autoincrement, 26 pc_inject +
+# 40 each+0 -> PC, 39 PC+0 -> carrier, 25 addr_rd_pc, 46 address table,
+# 58 port decider, 66 instruction_rd anchor). The autoincrement constant
+# sums +1 onto the red state bus every tick; anything on the inject bus
+# becomes PC and sums in for one tick (relative jumps); the PC row's
+# value selects the ROM row the instruction port emits. Behavioral bench:
+# testbenches/v8_pc.tb.json (open loop: state stim replaces the cell, so
+# PC = stim + 1 statically; inject and carrier offsets shift the fetch).
+#
+# pc_autoincrement is fnet-owned config stated inline (`<pc> = 1`); the
+# PC row is a memory[...] declaration (master signal-P = address 2096).
+#
+# `module pc` is the reusable component; `pc_bench` is the live-test
+# harness — build with `--top pc_bench`.
+#
+# Entity numbering: 1 state stim, 2 pc_inject stim, 3 bus stim,
+# 4 addr_rd_pc stim, 5 pc_autoincrement, 6 inject sum, 7 pc->carrier,
+# 8 address table, 9 port decider, 10 instruction_rd anchor.
+
+import "lib/v8.fnet";
+
+signal read_pc;       # instruction-port carrier — on the table net, excluded
+exclude read_pc;
+signal pc = memory[2096];   # the PC row (the master's signal-P address)
+signal pc_stim;       # bench-facing inject carrier (any signal sums to PC)
+
+module pc(in_r state_bus, in_g inject_in, in_g bus_in, in_r select_in,
+          out_g instr_out) {
+  v8_mask_const<pc, 1, "pc_autoincrement">(out_r: state_bus);
+  sum_to<pc, "pc_inject_sum">(in_g: inject_in, out_r: state_bus);
+  v8_sig_to<pc, read_pc, "pc_carrier">(in_r: state_bus, out_r: select_in);
+  addr_table(out_r: select_in);
+  v8_port_read<read_pc, "instruction_read">(in_r: select_in, in_g: bus_in,
+                                            out_g: instr_out);
+  stim<"instruction_rd">(out_g: instr_out);
+}
+
+module pc_bench(out_g instr_out) {
+  net red state_bus;    # stands in for the cell's red state loop
+  net green inject_in, bus_in;
+  net red select_in;
+
+  stim<"state_stim">(out_r: state_bus);
+  stim<"pc_inject">(out_g: inject_in);
+  stim<"mem_bus_stim">(out_g: bus_in);
+  stim<"addr_rd_pc">(out_r: select_in);
+  pc(state_bus: state_bus, inject_in: inject_in, bus_in: bus_in,
+     select_in: select_in, instr_out: instr_out);
+}

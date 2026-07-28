@@ -1,0 +1,1121 @@
+{
+  "name": "v8_alu",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 2,
+  "rebuild": {
+    "removed": 36,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 12,
+    "revived": 12,
+    "placed": 12
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [],
+  "mapping": {
+    "translation": {
+      "dx": -6.0,
+      "dy": 12.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 119646,
+      "2": 119640,
+      "3": 119639,
+      "4": 119641,
+      "5": 119643,
+      "6": 119638,
+      "7": 119636,
+      "8": 119642,
+      "9": 119645,
+      "10": 119637,
+      "11": 119635,
+      "12": 119644
+    },
+    "driver_units": {
+      "state": 119646
+    },
+    "output_probes": [
+      {
+        "name": "alu_out",
+        "unit": 119644,
+        "wire": "green"
+      }
+    ],
+    "expected_probe_name": "alu_out"
+  },
+  "timeline": [
+    {
+      "tick": 875896,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_1"
+    },
+    {
+      "tick": 875897,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_out": {
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_2"
+    },
+    {
+      "tick": 875898,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "mul_6x7"
+    },
+    {
+      "tick": 875899,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4": 42.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "mul_6x7"
+    },
+    {
+      "tick": 875900,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4": 42.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "mul_6x7"
+    },
+    {
+      "tick": 875901,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4": 42.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "mul_6x7"
+    },
+    {
+      "tick": 875902,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4": 42.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "mul_6x7"
+    },
+    {
+      "tick": 875903,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4": 42.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "mul_6x7"
+    },
+    {
+      "tick": 875904,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4": 42.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "div_42_by_5"
+    },
+    {
+      "tick": 875905,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-3~rare": 8.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "div_42_by_5"
+    },
+    {
+      "tick": 875906,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-3~rare": 8.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "div_42_by_5"
+    },
+    {
+      "tick": 875907,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-3~rare": 8.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "div_42_by_5"
+    },
+    {
+      "tick": 875908,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-3~rare": 8.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "div_42_by_5"
+    },
+    {
+      "tick": 875909,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-3~rare": 8.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "div_42_by_5"
+    },
+    {
+      "tick": 875910,
+      "stimulus": {
+        "state": {
+          "shape-t-2": 10.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-3~rare": 8.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "add_neg3_plus_10"
+    },
+    {
+      "tick": 875911,
+      "stimulus": {
+        "state": {
+          "shape-t-2": 10.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~legendary": 7.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "add_neg3_plus_10"
+    },
+    {
+      "tick": 875912,
+      "stimulus": {
+        "state": {
+          "shape-t-2": 10.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~legendary": 7.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "add_neg3_plus_10"
+    },
+    {
+      "tick": 875913,
+      "stimulus": {
+        "state": {
+          "shape-t-2": 10.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~legendary": 7.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "add_neg3_plus_10"
+    },
+    {
+      "tick": 875914,
+      "stimulus": {
+        "state": {
+          "shape-t-2": 10.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~legendary": 7.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "add_neg3_plus_10"
+    },
+    {
+      "tick": 875915,
+      "stimulus": {
+        "state": {
+          "shape-t-2": 10.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~legendary": 7.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "add_neg3_plus_10"
+    },
+    {
+      "tick": 875916,
+      "stimulus": {
+        "state": {
+          "shape-diagonal-2": 3.0,
+          "shape-t-2": 10.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~legendary": 7.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "sub_3_minus_10"
+    },
+    {
+      "tick": 875917,
+      "stimulus": {
+        "state": {
+          "shape-diagonal-2": 3.0,
+          "shape-t-2": 10.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~uncommon": -7.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "sub_3_minus_10"
+    },
+    {
+      "tick": 875918,
+      "stimulus": {
+        "state": {
+          "shape-diagonal-2": 3.0,
+          "shape-t-2": 10.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~uncommon": -7.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "sub_3_minus_10"
+    },
+    {
+      "tick": 875919,
+      "stimulus": {
+        "state": {
+          "shape-diagonal-2": 3.0,
+          "shape-t-2": 10.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~uncommon": -7.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "sub_3_minus_10"
+    },
+    {
+      "tick": 875920,
+      "stimulus": {
+        "state": {
+          "shape-diagonal-2": 3.0,
+          "shape-t-2": 10.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~uncommon": -7.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "sub_3_minus_10"
+    },
+    {
+      "tick": 875921,
+      "stimulus": {
+        "state": {
+          "shape-diagonal-2": 3.0,
+          "shape-t-2": 10.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~uncommon": -7.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "sub_3_minus_10"
+    },
+    {
+      "tick": 875922,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 4.0,
+          "shape-t-2": 8.0,
+          "shape-diagonal-2": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~uncommon": -7.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "all_ops_in_parallel"
+    },
+    {
+      "tick": 875923,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 4.0,
+          "shape-t-2": 8.0,
+          "shape-diagonal-2": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~uncommon": 42.0,
+          "shape-t-2~legendary": 70.0,
+          "shape-t-4": 144.0,
+          "shape-t-3~rare": 25.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "all_ops_in_parallel"
+    },
+    {
+      "tick": 875924,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 4.0,
+          "shape-t-2": 8.0,
+          "shape-diagonal-2": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~uncommon": 42.0,
+          "shape-t-2~legendary": 70.0,
+          "shape-t-4": 144.0,
+          "shape-t-3~rare": 25.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "all_ops_in_parallel"
+    },
+    {
+      "tick": 875925,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 4.0,
+          "shape-t-2": 8.0,
+          "shape-diagonal-2": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~uncommon": 42.0,
+          "shape-t-2~legendary": 70.0,
+          "shape-t-4": 144.0,
+          "shape-t-3~rare": 25.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "all_ops_in_parallel"
+    },
+    {
+      "tick": 875926,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 4.0,
+          "shape-t-2": 8.0,
+          "shape-diagonal-2": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~uncommon": 42.0,
+          "shape-t-2~legendary": 70.0,
+          "shape-t-4": 144.0,
+          "shape-t-3~rare": 25.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "all_ops_in_parallel"
+    },
+    {
+      "tick": 875927,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 4.0,
+          "shape-t-2": 8.0,
+          "shape-diagonal-2": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~uncommon": 42.0,
+          "shape-t-2~legendary": 70.0,
+          "shape-t-4": 144.0,
+          "shape-t-3~rare": 25.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "all_ops_in_parallel"
+    },
+    {
+      "tick": 875928,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 3.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~uncommon": 42.0,
+          "shape-t-2~legendary": 70.0,
+          "shape-t-4": 144.0,
+          "shape-t-3~rare": 25.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "cmp_m7_n3_flags_on"
+    },
+    {
+      "tick": 875929,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 3.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "signal-alarm": 1.0,
+          "signal-alarm~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "cmp_m7_n3_flags_on"
+    },
+    {
+      "tick": 875930,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 3.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4~epic": 3.0,
+          "shape-t-4~legendary": 7.0,
+          "signal-alarm": 1.0,
+          "signal-alarm~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "cmp_m7_n3_flags_on"
+    },
+    {
+      "tick": 875931,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 3.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4~epic": 3.0,
+          "shape-t-4~legendary": 7.0,
+          "signal-alarm": 1.0,
+          "signal-alarm~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "cmp_m7_n3_flags_on"
+    },
+    {
+      "tick": 875932,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 3.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4~epic": 3.0,
+          "shape-t-4~legendary": 7.0,
+          "signal-alarm": 1.0,
+          "signal-alarm~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "cmp_m7_n3_flags_on"
+    },
+    {
+      "tick": 875933,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 3.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4~epic": 3.0,
+          "shape-t-4~legendary": 7.0,
+          "signal-alarm": 1.0,
+          "signal-alarm~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "cmp_m7_n3_flags_on"
+    },
+    {
+      "tick": 875934,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 3.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4~epic": 3.0,
+          "shape-t-4~legendary": 7.0,
+          "signal-alarm": 1.0,
+          "signal-alarm~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "cmp_m7_n3_flags_on"
+    },
+    {
+      "tick": 875935,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4~epic": 3.0,
+          "shape-t-4~legendary": 7.0,
+          "signal-alarm": 1.0,
+          "signal-alarm~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "cmp_m2_n9_flags_off"
+    },
+    {
+      "tick": 875936,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4~epic": 3.0,
+          "shape-t-4~legendary": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "cmp_m2_n9_flags_off"
+    },
+    {
+      "tick": 875937,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4~epic": 2.0,
+          "shape-t-4~legendary": 9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "cmp_m2_n9_flags_off"
+    },
+    {
+      "tick": 875938,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4~epic": 2.0,
+          "shape-t-4~legendary": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "cmp_m2_n9_flags_off"
+    },
+    {
+      "tick": 875939,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4~epic": 2.0,
+          "shape-t-4~legendary": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "cmp_m2_n9_flags_off"
+    },
+    {
+      "tick": 875940,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4~epic": 2.0,
+          "shape-t-4~legendary": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "cmp_m2_n9_flags_off"
+    },
+    {
+      "tick": 875941,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4~epic": 2.0,
+          "shape-t-4~legendary": 9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "cmp_m5_n5_gte_fires"
+    },
+    {
+      "tick": 875942,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4~epic": 2.0,
+          "shape-t-4~legendary": 9.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "cmp_m5_n5_gte_fires"
+    },
+    {
+      "tick": 875943,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4~epic": 5.0,
+          "shape-t-4~legendary": 5.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "cmp_m5_n5_gte_fires"
+    },
+    {
+      "tick": 875944,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4~epic": 5.0,
+          "shape-t-4~legendary": 5.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "cmp_m5_n5_gte_fires"
+    },
+    {
+      "tick": 875945,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4~epic": 5.0,
+          "shape-t-4~legendary": 5.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "cmp_m5_n5_gte_fires"
+    },
+    {
+      "tick": 875946,
+      "stimulus": {
+        "state": {
+          "shape-t-4": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4~epic": 5.0,
+          "shape-t-4~legendary": 5.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "cmp_m5_n5_gte_fires"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "mul_6x7",
+      "drive_start_tick": 875897,
+      "skipped_ticks": 0,
+      "expected_probe": "alu_out",
+      "expected": {
+        "shape-t-4": 42
+      },
+      "observed": {
+        "shape-t-4": 42.0,
+        "signal-alarm": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875903
+    },
+    {
+      "step_index": 1,
+      "step_name": "div_42_by_5",
+      "drive_start_tick": 875903,
+      "skipped_ticks": 0,
+      "expected_probe": "alu_out",
+      "expected": {
+        "shape-t-3~rare": 8,
+        "shape-t-4": 0
+      },
+      "observed": {
+        "shape-t-3~rare": 8.0,
+        "signal-alarm": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875909
+    },
+    {
+      "step_index": 2,
+      "step_name": "add_neg3_plus_10",
+      "drive_start_tick": 875909,
+      "skipped_ticks": 0,
+      "expected_probe": "alu_out",
+      "expected": {
+        "shape-t-2~legendary": 7
+      },
+      "observed": {
+        "shape-t-2~legendary": 7.0,
+        "signal-alarm": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875915
+    },
+    {
+      "step_index": 3,
+      "step_name": "sub_3_minus_10",
+      "drive_start_tick": 875915,
+      "skipped_ticks": 0,
+      "expected_probe": "alu_out",
+      "expected": {
+        "shape-t-2~uncommon": -7
+      },
+      "observed": {
+        "shape-t-2~uncommon": -7.0,
+        "signal-alarm": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875921
+    },
+    {
+      "step_index": 4,
+      "step_name": "all_ops_in_parallel",
+      "drive_start_tick": 875921,
+      "skipped_ticks": 0,
+      "expected_probe": "alu_out",
+      "expected": {
+        "shape-t-4": 144,
+        "shape-t-3~rare": 25,
+        "shape-t-2~legendary": 70,
+        "shape-t-2~uncommon": 42
+      },
+      "observed": {
+        "shape-t-2~uncommon": 42.0,
+        "shape-t-2~legendary": 70.0,
+        "shape-t-4": 144.0,
+        "shape-t-3~rare": 25.0,
+        "signal-alarm": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875927
+    },
+    {
+      "step_index": 5,
+      "step_name": "cmp_m7_n3_flags_on",
+      "drive_start_tick": 875927,
+      "skipped_ticks": 0,
+      "expected_probe": "alu_out",
+      "expected": {
+        "shape-t-4~legendary": 7,
+        "shape-t-4~epic": 3,
+        "signal-alarm": 1,
+        "signal-alarm~uncommon": 1
+      },
+      "observed": {
+        "shape-t-4~epic": 3.0,
+        "shape-t-4~legendary": 7.0,
+        "signal-alarm": 1.0,
+        "signal-alarm~uncommon": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875934
+    },
+    {
+      "step_index": 6,
+      "step_name": "cmp_m2_n9_flags_off",
+      "drive_start_tick": 875934,
+      "skipped_ticks": 0,
+      "expected_probe": "alu_out",
+      "expected": {
+        "shape-t-4~legendary": 9,
+        "shape-t-4~epic": 2,
+        "signal-alarm": 0,
+        "signal-alarm~uncommon": 0
+      },
+      "observed": {
+        "shape-t-4~epic": 2.0,
+        "shape-t-4~legendary": 9.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875940
+    },
+    {
+      "step_index": 7,
+      "step_name": "cmp_m5_n5_gte_fires",
+      "drive_start_tick": 875940,
+      "skipped_ticks": 0,
+      "expected_probe": "alu_out",
+      "expected": {
+        "shape-t-4~legendary": 5,
+        "shape-t-4~epic": 5,
+        "signal-alarm": 1,
+        "signal-alarm~uncommon": 0
+      },
+      "observed": {
+        "shape-t-4~epic": 5.0,
+        "shape-t-4~legendary": 5.0,
+        "signal-alarm": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875946
+    }
+  ],
+  "pass": true
+}

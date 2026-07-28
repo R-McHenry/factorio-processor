@@ -1,0 +1,85 @@
+{
+  "name": "v8_alu",
+  "description": "fnet v8 component 4: SUB/ADD/DIV/MUL + CMP block, isolated - operand rows driven directly on the red state bus (no memory cell), results probed on the green result bus. proc_cmp's CMP cases (m>n, m<n, m=n: min/max on their rows, >=/> flags) plus each ALU op and a parallel step proving all results coexist on the summing bus. Rows are the design's alu region (2090+), referenced as $sub_a/$mul_res/... symbolically.",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 4,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -6.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "state": 1
+    },
+    "expected_probe_name": "alu_out",
+    "output_probes": [
+      { "name": "alu_out", "entity_number": 12, "wire": "green" }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "mul_6x7",
+      "drive": { "state": { "$mul_a": 6, "$mul_b": 7 } },
+      "expect": { "$mul_res": 42 }
+    },
+    {
+      "name": "div_42_by_5",
+      "drive": { "state": { "$div_a": 42, "$div_b": 5 } },
+      "expect": { "$div_res": 8, "$mul_res": 0 }
+    },
+    {
+      "name": "add_neg3_plus_10",
+      "drive": { "state": { "$add_a": -3, "$add_b": 10 } },
+      "expect": { "$add_res": 7 }
+    },
+    {
+      "name": "sub_3_minus_10",
+      "drive": { "state": { "$sub_a": 3, "$sub_b": 10 } },
+      "expect": { "$sub_res": -7 }
+    },
+    {
+      "name": "all_ops_in_parallel",
+      "drive": {
+        "state": {
+          "$mul_a": 12, "$mul_b": 12,
+          "$div_a": 100, "$div_b": 4,
+          "$add_a": 30, "$add_b": 40,
+          "$sub_a": 50, "$sub_b": 8
+        }
+      },
+      "expect": {
+        "$mul_res": 144,
+        "$div_res": 25,
+        "$add_res": 70,
+        "$sub_res": 42
+      }
+    },
+    {
+      "name": "cmp_m7_n3_flags_on",
+      "drive": { "state": { "$cmp_m": 7, "$cmp_n": 3 } },
+      "trace_ticks": 4,
+      "expect": { "$cmp_max": 7, "$cmp_min": 3, "$flag_ge": 1, "$flag_gt": 1 }
+    },
+    {
+      "name": "cmp_m2_n9_flags_off",
+      "drive": { "state": { "$cmp_m": 2, "$cmp_n": 9 } },
+      "expect": { "$cmp_max": 9, "$cmp_min": 2, "$flag_ge": 0, "$flag_gt": 0 }
+    },
+    {
+      "name": "cmp_m5_n5_gte_fires",
+      "drive": { "state": { "$cmp_m": 5, "$cmp_n": 5 } },
+      "expect": { "$cmp_max": 5, "$cmp_min": 5, "$flag_ge": 1, "$flag_gt": 0 }
+    }
+  ]
+}

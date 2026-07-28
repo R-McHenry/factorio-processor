@@ -1,0 +1,1502 @@
+{
+  "name": "v10_vec_reg",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 2,
+  "rebuild": {
+    "removed": 11,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 9,
+    "revived": 9,
+    "placed": 9
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [],
+  "mapping": {
+    "translation": {
+      "dx": -3.0,
+      "dy": 12.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 119717,
+      "2": 119722,
+      "3": 119719,
+      "4": 119716,
+      "5": 119721,
+      "6": 119718,
+      "7": 119714,
+      "8": 119715,
+      "9": 119720
+    },
+    "driver_units": {
+      "scalar_membus": 119717,
+      "vec_write_bus": 119722
+    },
+    "output_probes": [
+      {
+        "name": "green_face1",
+        "unit": 119714,
+        "wire": "green"
+      },
+      {
+        "name": "loop1",
+        "unit": 119715,
+        "wire": "red"
+      },
+      {
+        "name": "loop2",
+        "unit": 119720,
+        "wire": "red"
+      }
+    ],
+    "expected_probe_name": "loop1"
+  },
+  "timeline": [
+    {
+      "tick": 876065,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_1"
+    },
+    {
+      "tick": 876066,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_2"
+    },
+    {
+      "tick": 876067,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alarm": 1.0
+        },
+        "vec_write_bus": {
+          "signal-0": 20.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "commit_frame_to_vreg0"
+    },
+    {
+      "tick": 876068,
+      "stimulus": {},
+      "observed_by_probe": {
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "write_head_summed_onto_loop"
+    },
+    {
+      "tick": 876069,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "write_head_summed_onto_loop"
+    },
+    {
+      "tick": 876070,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "write_head_summed_onto_loop"
+    },
+    {
+      "tick": 876071,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "write_head_summed_onto_loop"
+    },
+    {
+      "tick": 876072,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "write_head_summed_onto_loop"
+    },
+    {
+      "tick": 876073,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "write_head_summed_onto_loop"
+    },
+    {
+      "tick": 876074,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "vreg1_untouched"
+    },
+    {
+      "tick": 876075,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "vreg1_untouched"
+    },
+    {
+      "tick": 876076,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "vreg1_untouched"
+    },
+    {
+      "tick": 876077,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "vreg1_untouched"
+    },
+    {
+      "tick": 876078,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "vreg1_untouched"
+    },
+    {
+      "tick": 876079,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "green_face_carries_same_frame"
+    },
+    {
+      "tick": 876080,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "green_face_carries_same_frame"
+    },
+    {
+      "tick": 876081,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "green_face_carries_same_frame"
+    },
+    {
+      "tick": 876082,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "green_face_carries_same_frame"
+    },
+    {
+      "tick": 876083,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "green_face_carries_same_frame"
+    },
+    {
+      "tick": 876084,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alarm": 1.0
+        },
+        "vec_write_bus": {
+          "signal-0": 20.0
+        }
+      },
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "commit_same_frame_again"
+    },
+    {
+      "tick": 876085,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 20.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "second_commit_accumulated"
+    },
+    {
+      "tick": 876086,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "second_commit_accumulated"
+    },
+    {
+      "tick": 876087,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "second_commit_accumulated"
+    },
+    {
+      "tick": 876088,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "second_commit_accumulated"
+    },
+    {
+      "tick": 876089,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "second_commit_accumulated"
+    },
+    {
+      "tick": 876090,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "second_commit_accumulated"
+    },
+    {
+      "tick": 876091,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alarm": 2.0
+        },
+        "vec_write_bus": {
+          "signal-0": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "commit_different_frame_to_vreg1"
+    },
+    {
+      "tick": 876092,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "vreg1_received_its_own_frame"
+    },
+    {
+      "tick": 876093,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "vreg1_received_its_own_frame"
+    },
+    {
+      "tick": 876094,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "vreg1_received_its_own_frame"
+    },
+    {
+      "tick": 876095,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "vreg1_received_its_own_frame"
+    },
+    {
+      "tick": 876096,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "vreg1_received_its_own_frame"
+    },
+    {
+      "tick": 876097,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "vreg1_received_its_own_frame"
+    },
+    {
+      "tick": 876098,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "vreg0_isolated_from_that_write"
+    },
+    {
+      "tick": 876099,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "vreg0_isolated_from_that_write"
+    },
+    {
+      "tick": 876100,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "vreg0_isolated_from_that_write"
+    },
+    {
+      "tick": 876101,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "vreg0_isolated_from_that_write"
+    },
+    {
+      "tick": 876102,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "vreg0_isolated_from_that_write"
+    },
+    {
+      "tick": 876103,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop1": {
+          "signal-0": 20.0,
+          "signal-0~uncommon": 40.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 9,
+      "step_name": "erase_block_1_zeroes_vreg0"
+    },
+    {
+      "tick": 876104,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 9,
+      "step_name": "erase_block_1_zeroes_vreg0"
+    },
+    {
+      "tick": 876105,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "erase_block_1_zeroes_vreg0"
+    },
+    {
+      "tick": 876106,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "erase_block_1_zeroes_vreg0"
+    },
+    {
+      "tick": 876107,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "erase_block_1_zeroes_vreg0"
+    },
+    {
+      "tick": 876108,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "erase_block_1_zeroes_vreg0"
+    },
+    {
+      "tick": 876109,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "erase_is_per_block_vreg1_intact"
+    },
+    {
+      "tick": 876110,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "erase_is_per_block_vreg1_intact"
+    },
+    {
+      "tick": 876111,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "erase_is_per_block_vreg1_intact"
+    },
+    {
+      "tick": 876112,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "erase_is_per_block_vreg1_intact"
+    },
+    {
+      "tick": 876113,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "erase_is_per_block_vreg1_intact"
+    },
+    {
+      "tick": 876114,
+      "stimulus": {},
+      "observed_by_probe": {
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 11,
+      "step_name": "loop_stays_empty_after_erase_releases"
+    },
+    {
+      "tick": 876115,
+      "stimulus": {},
+      "observed_by_probe": {
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 11,
+      "step_name": "loop_stays_empty_after_erase_releases"
+    },
+    {
+      "tick": 876116,
+      "stimulus": {},
+      "observed_by_probe": {
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "loop_stays_empty_after_erase_releases"
+    },
+    {
+      "tick": 876117,
+      "stimulus": {},
+      "observed_by_probe": {
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "loop_stays_empty_after_erase_releases"
+    },
+    {
+      "tick": 876118,
+      "stimulus": {},
+      "observed_by_probe": {
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "loop_stays_empty_after_erase_releases"
+    },
+    {
+      "tick": 876119,
+      "stimulus": {},
+      "observed_by_probe": {
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "loop_stays_empty_after_erase_releases"
+    },
+    {
+      "tick": 876120,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alarm": 1.0
+        },
+        "vec_write_bus": {
+          "signal-0": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 12,
+      "step_name": "refill_vreg0_after_erase"
+    },
+    {
+      "tick": 876121,
+      "stimulus": {},
+      "observed_by_probe": {
+        "loop1": {
+          "signal-0~rare": 9.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 13,
+      "step_name": "register_alive_after_erase"
+    },
+    {
+      "tick": 876122,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0~rare": 9.0
+        },
+        "loop1": {
+          "signal-0~rare": 9.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 13,
+      "step_name": "register_alive_after_erase"
+    },
+    {
+      "tick": 876123,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0~rare": 9.0
+        },
+        "loop1": {
+          "signal-0~rare": 9.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 13,
+      "step_name": "register_alive_after_erase"
+    },
+    {
+      "tick": 876124,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0~rare": 9.0
+        },
+        "loop1": {
+          "signal-0~rare": 9.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 13,
+      "step_name": "register_alive_after_erase"
+    },
+    {
+      "tick": 876125,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0~rare": 9.0
+        },
+        "loop1": {
+          "signal-0~rare": 9.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 13,
+      "step_name": "register_alive_after_erase"
+    },
+    {
+      "tick": 876126,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0~rare": 9.0
+        },
+        "loop1": {
+          "signal-0~rare": 9.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 13,
+      "step_name": "register_alive_after_erase"
+    },
+    {
+      "tick": 876127,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alarm": 1.0,
+          "signal-alert": 1.0
+        },
+        "vec_write_bus": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0~rare": 9.0
+        },
+        "loop1": {
+          "signal-0~rare": 9.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 14,
+      "step_name": "erase_and_write_same_tick_is_a_move"
+    },
+    {
+      "tick": 876128,
+      "stimulus": {},
+      "observed_by_probe": {
+        "loop1": {
+          "signal-0~epic": 2.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 15,
+      "step_name": "replaced_not_accumulated"
+    },
+    {
+      "tick": 876129,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0~epic": 2.0
+        },
+        "loop1": {
+          "signal-0~epic": 2.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 15,
+      "step_name": "replaced_not_accumulated"
+    },
+    {
+      "tick": 876130,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0~epic": 2.0
+        },
+        "loop1": {
+          "signal-0~epic": 2.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 15,
+      "step_name": "replaced_not_accumulated"
+    },
+    {
+      "tick": 876131,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0~epic": 2.0
+        },
+        "loop1": {
+          "signal-0~epic": 2.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 15,
+      "step_name": "replaced_not_accumulated"
+    },
+    {
+      "tick": 876132,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0~epic": 2.0
+        },
+        "loop1": {
+          "signal-0~epic": 2.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 15,
+      "step_name": "replaced_not_accumulated"
+    },
+    {
+      "tick": 876133,
+      "stimulus": {},
+      "observed_by_probe": {
+        "green_face1": {
+          "signal-0~epic": 2.0
+        },
+        "loop1": {
+          "signal-0~epic": 2.0
+        },
+        "loop2": {
+          "signal-0~legendary": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 15,
+      "step_name": "replaced_not_accumulated"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "commit_frame_to_vreg0",
+      "drive_start_tick": 876066,
+      "skipped_ticks": 0,
+      "expected_probe": "loop1",
+      "expected": {},
+      "observed": {},
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876067
+    },
+    {
+      "step_index": 1,
+      "step_name": "write_head_summed_onto_loop",
+      "drive_start_tick": 876067,
+      "skipped_ticks": 0,
+      "expected_probe": "loop1",
+      "expected": {
+        "signal-0": 10,
+        "signal-0~uncommon": 20
+      },
+      "observed": {
+        "signal-0": 10.0,
+        "signal-0~uncommon": 20.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876073
+    },
+    {
+      "step_index": 2,
+      "step_name": "vreg1_untouched",
+      "drive_start_tick": 876073,
+      "skipped_ticks": 0,
+      "expected_probe": "loop2",
+      "expected": {
+        "signal-0": 0,
+        "signal-0~uncommon": 0
+      },
+      "observed": {},
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876078
+    },
+    {
+      "step_index": 3,
+      "step_name": "green_face_carries_same_frame",
+      "drive_start_tick": 876078,
+      "skipped_ticks": 0,
+      "expected_probe": "green_face1",
+      "expected": {
+        "signal-0": 10,
+        "signal-0~uncommon": 20
+      },
+      "observed": {
+        "signal-0": 10.0,
+        "signal-0~uncommon": 20.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876083
+    },
+    {
+      "step_index": 4,
+      "step_name": "commit_same_frame_again",
+      "drive_start_tick": 876083,
+      "skipped_ticks": 0,
+      "expected_probe": "loop1",
+      "expected": {},
+      "observed": {
+        "signal-0": 10.0,
+        "signal-0~uncommon": 20.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876084
+    },
+    {
+      "step_index": 5,
+      "step_name": "second_commit_accumulated",
+      "drive_start_tick": 876084,
+      "skipped_ticks": 0,
+      "expected_probe": "loop1",
+      "expected": {
+        "signal-0": 20,
+        "signal-0~uncommon": 40
+      },
+      "observed": {
+        "signal-0": 20.0,
+        "signal-0~uncommon": 40.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876090
+    },
+    {
+      "step_index": 6,
+      "step_name": "commit_different_frame_to_vreg1",
+      "drive_start_tick": 876090,
+      "skipped_ticks": 0,
+      "expected_probe": "loop1",
+      "expected": {},
+      "observed": {
+        "signal-0": 20.0,
+        "signal-0~uncommon": 40.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876091
+    },
+    {
+      "step_index": 7,
+      "step_name": "vreg1_received_its_own_frame",
+      "drive_start_tick": 876091,
+      "skipped_ticks": 0,
+      "expected_probe": "loop2",
+      "expected": {
+        "signal-0~legendary": 7,
+        "signal-0": 0
+      },
+      "observed": {
+        "signal-0~legendary": 7.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876097
+    },
+    {
+      "step_index": 8,
+      "step_name": "vreg0_isolated_from_that_write",
+      "drive_start_tick": 876097,
+      "skipped_ticks": 0,
+      "expected_probe": "loop1",
+      "expected": {
+        "signal-0": 20,
+        "signal-0~uncommon": 40,
+        "signal-0~legendary": 0
+      },
+      "observed": {
+        "signal-0": 20.0,
+        "signal-0~uncommon": 40.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876102
+    },
+    {
+      "step_index": 9,
+      "step_name": "erase_block_1_zeroes_vreg0",
+      "drive_start_tick": 876102,
+      "skipped_ticks": 0,
+      "expected_probe": "loop1",
+      "expected": {
+        "signal-0": 0,
+        "signal-0~uncommon": 0
+      },
+      "observed": {},
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876108
+    },
+    {
+      "step_index": 10,
+      "step_name": "erase_is_per_block_vreg1_intact",
+      "drive_start_tick": 876108,
+      "skipped_ticks": 0,
+      "expected_probe": "loop2",
+      "expected": {
+        "signal-0~legendary": 7
+      },
+      "observed": {
+        "signal-0~legendary": 7.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876113
+    },
+    {
+      "step_index": 11,
+      "step_name": "loop_stays_empty_after_erase_releases",
+      "drive_start_tick": 876113,
+      "skipped_ticks": 0,
+      "expected_probe": "loop1",
+      "expected": {
+        "signal-0": 0,
+        "signal-0~uncommon": 0
+      },
+      "observed": {},
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876119
+    },
+    {
+      "step_index": 12,
+      "step_name": "refill_vreg0_after_erase",
+      "drive_start_tick": 876119,
+      "skipped_ticks": 0,
+      "expected_probe": "loop1",
+      "expected": {},
+      "observed": {},
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876120
+    },
+    {
+      "step_index": 13,
+      "step_name": "register_alive_after_erase",
+      "drive_start_tick": 876120,
+      "skipped_ticks": 0,
+      "expected_probe": "loop1",
+      "expected": {
+        "signal-0~rare": 9,
+        "signal-0": 0
+      },
+      "observed": {
+        "signal-0~rare": 9.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876126
+    },
+    {
+      "step_index": 14,
+      "step_name": "erase_and_write_same_tick_is_a_move",
+      "drive_start_tick": 876126,
+      "skipped_ticks": 0,
+      "expected_probe": "loop1",
+      "expected": {},
+      "observed": {
+        "signal-0~rare": 9.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876127
+    },
+    {
+      "step_index": 15,
+      "step_name": "replaced_not_accumulated",
+      "drive_start_tick": 876127,
+      "skipped_ticks": 0,
+      "expected_probe": "loop1",
+      "expected": {
+        "signal-0~epic": 2,
+        "signal-0~rare": 0
+      },
+      "observed": {
+        "signal-0~epic": 2.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876133
+    }
+  ],
+  "pass": true
+}

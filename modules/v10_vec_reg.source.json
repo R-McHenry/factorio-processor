@@ -1,0 +1,677 @@
+{
+  "name": "v10_vec_reg",
+  "surface": "nauvis",
+  "description": "compiled by netlist.py from v10_vec_reg.fnet (module vec_reg_bench)",
+  "signals": {
+    "file.vec_wsel": {
+      "type": "virtual",
+      "name": "signal-alarm",
+      "quality": "legendary",
+      "display": "signal-alarm~legendary",
+      "auto": false,
+      "address": 2130
+    },
+    "vec_wsel": {
+      "type": "virtual",
+      "name": "signal-alarm",
+      "quality": "legendary",
+      "display": "signal-alarm~legendary",
+      "auto": false,
+      "address": 2130
+    },
+    "file.vec_rsel": {
+      "type": "virtual",
+      "name": "signal-alert",
+      "quality": "normal",
+      "display": "signal-alert",
+      "auto": false,
+      "address": 2131
+    },
+    "vec_rsel": {
+      "type": "virtual",
+      "name": "signal-alert",
+      "quality": "normal",
+      "display": "signal-alert",
+      "auto": false,
+      "address": 2131
+    },
+    "file.vec_ssel": {
+      "type": "virtual",
+      "name": "signal-alert",
+      "quality": "uncommon",
+      "display": "signal-alert~uncommon",
+      "auto": false,
+      "address": 2132
+    },
+    "vec_ssel": {
+      "type": "virtual",
+      "name": "signal-alert",
+      "quality": "uncommon",
+      "display": "signal-alert~uncommon",
+      "auto": false,
+      "address": 2132
+    },
+    "file.vec_erase": {
+      "type": "virtual",
+      "name": "signal-alert",
+      "quality": "rare",
+      "display": "signal-alert~rare",
+      "auto": false,
+      "address": 2133
+    },
+    "vec_erase": {
+      "type": "virtual",
+      "name": "signal-alert",
+      "quality": "rare",
+      "display": "signal-alert~rare",
+      "auto": false,
+      "address": 2133
+    },
+    "file.vec_bcast": {
+      "type": "virtual",
+      "name": "signal-alert",
+      "quality": "epic",
+      "display": "signal-alert~epic",
+      "auto": false,
+      "address": 2134
+    },
+    "vec_bcast": {
+      "type": "virtual",
+      "name": "signal-alert",
+      "quality": "epic",
+      "display": "signal-alert~epic",
+      "auto": false,
+      "address": 2134
+    },
+    "file.vred_sum": {
+      "type": "virtual",
+      "name": "signal-alert",
+      "quality": "legendary",
+      "display": "signal-alert~legendary",
+      "auto": false,
+      "address": 2135
+    },
+    "vred_sum": {
+      "type": "virtual",
+      "name": "signal-alert",
+      "quality": "legendary",
+      "display": "signal-alert~legendary",
+      "auto": false,
+      "address": 2135
+    },
+    "file.vred_count": {
+      "type": "virtual",
+      "name": "signal-ampersand",
+      "quality": "normal",
+      "display": "signal-ampersand",
+      "auto": false,
+      "address": 2136
+    },
+    "vred_count": {
+      "type": "virtual",
+      "name": "signal-ampersand",
+      "quality": "normal",
+      "display": "signal-ampersand",
+      "auto": false,
+      "address": 2136
+    },
+    "file.vred_max": {
+      "type": "virtual",
+      "name": "signal-ampersand",
+      "quality": "uncommon",
+      "display": "signal-ampersand~uncommon",
+      "auto": false,
+      "address": 2137
+    },
+    "vred_max": {
+      "type": "virtual",
+      "name": "signal-ampersand",
+      "quality": "uncommon",
+      "display": "signal-ampersand~uncommon",
+      "auto": false,
+      "address": 2137
+    },
+    "file.vred_min": {
+      "type": "virtual",
+      "name": "signal-ampersand",
+      "quality": "rare",
+      "display": "signal-ampersand~rare",
+      "auto": false,
+      "address": 2138
+    },
+    "vred_min": {
+      "type": "virtual",
+      "name": "signal-ampersand",
+      "quality": "rare",
+      "display": "signal-ampersand~rare",
+      "auto": false,
+      "address": 2138
+    },
+    "file.vred_argmax": {
+      "type": "virtual",
+      "name": "signal-ampersand",
+      "quality": "epic",
+      "display": "signal-ampersand~epic",
+      "auto": false,
+      "address": 2139
+    },
+    "vred_argmax": {
+      "type": "virtual",
+      "name": "signal-ampersand",
+      "quality": "epic",
+      "display": "signal-ampersand~epic",
+      "auto": false,
+      "address": 2139
+    },
+    "file.vred_argmin": {
+      "type": "virtual",
+      "name": "signal-ampersand",
+      "quality": "legendary",
+      "display": "signal-ampersand~legendary",
+      "auto": false,
+      "address": 2140
+    },
+    "vred_argmin": {
+      "type": "virtual",
+      "name": "signal-ampersand",
+      "quality": "legendary",
+      "display": "signal-ampersand~legendary",
+      "auto": false,
+      "address": 2140
+    },
+    "file.vred_cmp_gt": {
+      "type": "virtual",
+      "name": "signal-anticlockwise-circle-arrow",
+      "quality": "normal",
+      "display": "signal-anticlockwise-circle-arrow",
+      "auto": false,
+      "address": 2141
+    },
+    "vred_cmp_gt": {
+      "type": "virtual",
+      "name": "signal-anticlockwise-circle-arrow",
+      "quality": "normal",
+      "display": "signal-anticlockwise-circle-arrow",
+      "auto": false,
+      "address": 2141
+    },
+    "file.vred_cmp_lt": {
+      "type": "virtual",
+      "name": "signal-anticlockwise-circle-arrow",
+      "quality": "uncommon",
+      "display": "signal-anticlockwise-circle-arrow~uncommon",
+      "auto": false,
+      "address": 2142
+    },
+    "vred_cmp_lt": {
+      "type": "virtual",
+      "name": "signal-anticlockwise-circle-arrow",
+      "quality": "uncommon",
+      "display": "signal-anticlockwise-circle-arrow~uncommon",
+      "auto": false,
+      "address": 2142
+    },
+    "file.vred_cmp_eq": {
+      "type": "virtual",
+      "name": "signal-anticlockwise-circle-arrow",
+      "quality": "rare",
+      "display": "signal-anticlockwise-circle-arrow~rare",
+      "auto": false,
+      "address": 2143
+    },
+    "vred_cmp_eq": {
+      "type": "virtual",
+      "name": "signal-anticlockwise-circle-arrow",
+      "quality": "rare",
+      "display": "signal-anticlockwise-circle-arrow~rare",
+      "auto": false,
+      "address": 2143
+    },
+    "file.vqual_level": {
+      "type": "virtual",
+      "name": "signal-anticlockwise-circle-arrow",
+      "quality": "epic",
+      "display": "signal-anticlockwise-circle-arrow~epic",
+      "auto": false,
+      "address": 2144
+    },
+    "vqual_level": {
+      "type": "virtual",
+      "name": "signal-anticlockwise-circle-arrow",
+      "quality": "epic",
+      "display": "signal-anticlockwise-circle-arrow~epic",
+      "auto": false,
+      "address": 2144
+    },
+    "file.vec_wlane_addr": {
+      "type": "virtual",
+      "name": "signal-anticlockwise-circle-arrow",
+      "quality": "legendary",
+      "display": "signal-anticlockwise-circle-arrow~legendary",
+      "auto": false,
+      "address": 2145
+    },
+    "vec_wlane_addr": {
+      "type": "virtual",
+      "name": "signal-anticlockwise-circle-arrow",
+      "quality": "legendary",
+      "display": "signal-anticlockwise-circle-arrow~legendary",
+      "auto": false,
+      "address": 2145
+    },
+    "file.vec_wlane_value": {
+      "type": "virtual",
+      "name": "signal-apostrophe",
+      "quality": "normal",
+      "display": "signal-apostrophe",
+      "auto": false,
+      "address": 2146
+    },
+    "vec_wlane_value": {
+      "type": "virtual",
+      "name": "signal-apostrophe",
+      "quality": "normal",
+      "display": "signal-apostrophe",
+      "auto": false,
+      "address": 2146
+    },
+    "file.vec_rlane_addr": {
+      "type": "virtual",
+      "name": "signal-apostrophe",
+      "quality": "uncommon",
+      "display": "signal-apostrophe~uncommon",
+      "auto": false,
+      "address": 2147
+    },
+    "vec_rlane_addr": {
+      "type": "virtual",
+      "name": "signal-apostrophe",
+      "quality": "uncommon",
+      "display": "signal-apostrophe~uncommon",
+      "auto": false,
+      "address": 2147
+    },
+    "file.vec_rlane_data": {
+      "type": "virtual",
+      "name": "signal-apostrophe",
+      "quality": "rare",
+      "display": "signal-apostrophe~rare",
+      "auto": false,
+      "address": 2148
+    },
+    "vec_rlane_data": {
+      "type": "virtual",
+      "name": "signal-apostrophe",
+      "quality": "rare",
+      "display": "signal-apostrophe~rare",
+      "auto": false,
+      "address": 2148
+    },
+    "file.vec_bcast2": {
+      "type": "virtual",
+      "name": "signal-apostrophe",
+      "quality": "epic",
+      "display": "signal-apostrophe~epic",
+      "auto": false,
+      "address": 2149
+    },
+    "vec_bcast2": {
+      "type": "virtual",
+      "name": "signal-apostrophe",
+      "quality": "epic",
+      "display": "signal-apostrophe~epic",
+      "auto": false,
+      "address": 2149
+    }
+  },
+  "blueprint": {
+    "icons": [
+      {
+        "signal": {
+          "name": "constant-combinator"
+        },
+        "index": 1
+      }
+    ],
+    "entities": [
+      {
+        "entity_number": 1,
+        "name": "constant-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -11.5
+        },
+        "player_description": "scalar_membus",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 2,
+        "name": "constant-combinator",
+        "position": {
+          "x": 6.5,
+          "y": -11.5
+        },
+        "player_description": "vec_write_bus",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 3,
+        "name": "decider-combinator",
+        "position": {
+          "x": 4.5,
+          "y": -12.0
+        },
+        "player_description": "whead_vreg0",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-alarm",
+                  "quality": "legendary"
+                },
+                "constant": 1,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 4,
+        "name": "decider-combinator",
+        "position": {
+          "x": 1.5,
+          "y": -12.0
+        },
+        "player_description": "vreg0",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-alert",
+                  "quality": "rare"
+                },
+                "constant": 1,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 5,
+        "name": "decider-combinator",
+        "position": {
+          "x": 5.5,
+          "y": -12.0
+        },
+        "player_description": "whead_vreg1",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-alarm",
+                  "quality": "legendary"
+                },
+                "constant": 2,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 6,
+        "name": "decider-combinator",
+        "position": {
+          "x": 3.5,
+          "y": -12.0
+        },
+        "player_description": "vreg1",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-alert",
+                  "quality": "rare"
+                },
+                "constant": 2,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 7,
+        "name": "constant-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -12.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 8,
+        "name": "constant-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -12.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 9,
+        "name": "constant-combinator",
+        "position": {
+          "x": 6.5,
+          "y": -12.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "wires": [
+      [
+        1,
+        2,
+        4,
+        2
+      ],
+      [
+        1,
+        2,
+        6,
+        2
+      ],
+      [
+        2,
+        1,
+        5,
+        1
+      ],
+      [
+        3,
+        1,
+        5,
+        1
+      ],
+      [
+        3,
+        2,
+        5,
+        2
+      ],
+      [
+        3,
+        2,
+        6,
+        2
+      ],
+      [
+        3,
+        3,
+        8,
+        1
+      ],
+      [
+        4,
+        1,
+        4,
+        3
+      ],
+      [
+        4,
+        3,
+        8,
+        1
+      ],
+      [
+        4,
+        4,
+        7,
+        2
+      ],
+      [
+        5,
+        3,
+        6,
+        3
+      ],
+      [
+        5,
+        3,
+        9,
+        1
+      ],
+      [
+        6,
+        1,
+        6,
+        3
+      ]
+    ],
+    "item": "blueprint",
+    "version": 562954248978435
+  }
+}

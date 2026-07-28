@@ -1,0 +1,23 @@
+{
+  "module": "processor",
+  "probes": [
+    {
+      "net": "membus",
+      "entity_number": 100,
+      "wire": "green",
+      "position": {
+        "x": 11.5,
+        "y": -1.5
+      }
+    },
+    {
+      "net": "state",
+      "entity_number": 101,
+      "wire": "red",
+      "position": {
+        "x": 12.5,
+        "y": -2.5
+      }
+    }
+  ]
+}

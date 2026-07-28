@@ -1,0 +1,2198 @@
+{
+  "name": "proc_memory_raw",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 2,
+  "rebuild": {
+    "removed": 105,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 77,
+    "revived": 77,
+    "placed": 77
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [
+    {
+      "unit": 122306,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 6
+    },
+    {
+      "unit": 122347,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 44
+    },
+    {
+      "unit": 122361,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 45
+    },
+    {
+      "unit": 122360,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 46
+    }
+  ],
+  "mapping": {
+    "translation": {
+      "dx": 0.0,
+      "dy": 0.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 122313,
+      "2": 122314,
+      "3": 122316,
+      "4": 122315,
+      "5": 122317,
+      "6": 122306,
+      "7": 122322,
+      "8": 122319,
+      "9": 122318,
+      "10": 122321,
+      "11": 122320,
+      "12": 122326,
+      "13": 122324,
+      "14": 122323,
+      "15": 122307,
+      "16": 122309,
+      "17": 122308,
+      "18": 122325,
+      "19": 122312,
+      "20": 122331,
+      "21": 122333,
+      "22": 122310,
+      "23": 122311,
+      "24": 122328,
+      "25": 122327,
+      "26": 122330,
+      "27": 122329,
+      "28": 122332,
+      "29": 122335,
+      "30": 122355,
+      "31": 122357,
+      "32": 122337,
+      "33": 122336,
+      "34": 122339,
+      "35": 122338,
+      "36": 122341,
+      "37": 122340,
+      "38": 122352,
+      "39": 122351,
+      "40": 122354,
+      "41": 122334,
+      "42": 122353,
+      "43": 122356,
+      "44": 122347,
+      "45": 122361,
+      "46": 122360,
+      "47": 122364,
+      "48": 122366,
+      "49": 122343,
+      "50": 122342,
+      "51": 122345,
+      "52": 122344,
+      "53": 122363,
+      "54": 122362,
+      "55": 122365,
+      "56": 122346,
+      "57": 122359,
+      "58": 122358,
+      "59": 122371,
+      "60": 122370,
+      "61": 122373,
+      "62": 122349,
+      "63": 122348,
+      "64": 122350,
+      "65": 122368,
+      "66": 122367,
+      "67": 122369,
+      "68": 122372,
+      "69": 122375,
+      "70": 122377,
+      "71": 122374,
+      "72": 122376,
+      "73": 122379,
+      "74": 122381,
+      "75": 122378,
+      "76": 122380,
+      "77": 122382
+    },
+    "driver_units": {
+      "write_value": 122309,
+      "trig_set": 122307,
+      "trig_reset": 122312,
+      "addr_a": 122308,
+      "addr_b": 122328
+    },
+    "output_probes": [
+      {
+        "name": "mem_state",
+        "unit": 122341,
+        "wire": "red"
+      },
+      {
+        "name": "mem_out_bus",
+        "unit": 122346,
+        "wire": "green"
+      },
+      {
+        "name": "port_a",
+        "unit": 122350,
+        "wire": "green"
+      },
+      {
+        "name": "port_b",
+        "unit": 122368,
+        "wire": "green"
+      },
+      {
+        "name": "instr_port",
+        "unit": 122367,
+        "wire": "green"
+      }
+    ],
+    "expected_probe_name": "mem_state"
+  },
+  "timeline": [
+    {
+      "tick": 888135,
+      "stimulus": {
+        "trig_reset": {
+          "shape-vertical": -1.0,
+          "shape-horizontal": -1.0,
+          "shape-curve": -1.0,
+          "shape-curve-2": -1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 1.0
+        }
+      },
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_1"
+    },
+    {
+      "tick": 888136,
+      "stimulus": {
+        "trig_reset": {
+          "shape-vertical": -1.0,
+          "shape-horizontal": -1.0,
+          "shape-curve": -1.0,
+          "shape-curve-2": -1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 2.0
+        },
+        "mem_out_bus": {
+          "signal-P": 1.0,
+          "signal-Q": 1.0
+        }
+      },
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_2"
+    },
+    {
+      "tick": 888137,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 42.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 3.0
+        },
+        "mem_out_bus": {
+          "signal-P": 2.0,
+          "signal-Q": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "write_s0_42"
+    },
+    {
+      "tick": 888138,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 42.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0,
+          "signal-P": 4.0
+        },
+        "mem_out_bus": {
+          "signal-0": 42.0,
+          "signal-P": 3.0,
+          "signal-Q": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "write_s0_42"
+    },
+    {
+      "tick": 888139,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 42.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0,
+          "signal-P": 5.0
+        },
+        "mem_out_bus": {
+          "signal-0": 42.0,
+          "signal-P": 4.0,
+          "signal-Q": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "write_s0_42"
+    },
+    {
+      "tick": 888140,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 42.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0,
+          "signal-P": 6.0
+        },
+        "mem_out_bus": {
+          "signal-0": 42.0,
+          "signal-P": 5.0,
+          "signal-Q": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "write_s0_42"
+    },
+    {
+      "tick": 888141,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 42.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0,
+          "signal-P": 7.0
+        },
+        "mem_out_bus": {
+          "signal-0": 42.0,
+          "signal-P": 6.0,
+          "signal-Q": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "write_s0_42"
+    },
+    {
+      "tick": 888142,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0,
+          "signal-P": 8.0
+        },
+        "mem_out_bus": {
+          "signal-0": 42.0,
+          "signal-P": 7.0,
+          "signal-Q": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "release_write_hold_42"
+    },
+    {
+      "tick": 888143,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0,
+          "signal-P": 9.0
+        },
+        "mem_out_bus": {
+          "signal-0": 42.0,
+          "signal-P": 8.0,
+          "signal-Q": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "release_write_hold_42"
+    },
+    {
+      "tick": 888144,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0,
+          "signal-P": 10.0
+        },
+        "mem_out_bus": {
+          "signal-0": 42.0,
+          "signal-P": 9.0,
+          "signal-Q": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "release_write_hold_42"
+    },
+    {
+      "tick": 888145,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0,
+          "signal-P": 11.0
+        },
+        "mem_out_bus": {
+          "signal-0": 42.0,
+          "signal-P": 10.0,
+          "signal-Q": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "release_write_hold_42"
+    },
+    {
+      "tick": 888146,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0,
+          "signal-P": 12.0
+        },
+        "mem_out_bus": {
+          "signal-0": 42.0,
+          "signal-P": 11.0,
+          "signal-Q": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "release_write_hold_42"
+    },
+    {
+      "tick": 888147,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0,
+          "signal-P": 13.0
+        },
+        "mem_out_bus": {
+          "signal-0": 42.0,
+          "signal-P": 12.0,
+          "signal-Q": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "release_write_hold_42"
+    },
+    {
+      "tick": 888148,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0,
+          "signal-P": 14.0
+        },
+        "mem_out_bus": {
+          "signal-0": 42.0,
+          "signal-P": 13.0,
+          "signal-Q": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "read_addr1_via_port_a"
+    },
+    {
+      "tick": 888149,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0,
+          "signal-P": 15.0
+        },
+        "mem_out_bus": {
+          "signal-0": 42.0,
+          "signal-P": 14.0,
+          "signal-Q": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "read_addr1_via_port_a"
+    },
+    {
+      "tick": 888150,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0,
+          "signal-P": 16.0
+        },
+        "mem_out_bus": {
+          "signal-0": 42.0,
+          "signal-P": 15.0,
+          "signal-Q": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "read_addr1_via_port_a"
+    },
+    {
+      "tick": 888151,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0,
+          "signal-P": 17.0
+        },
+        "mem_out_bus": {
+          "signal-0": 42.0,
+          "signal-P": 16.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "read_addr1_via_port_a"
+    },
+    {
+      "tick": 888152,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0,
+          "signal-P": 18.0
+        },
+        "mem_out_bus": {
+          "signal-0": 42.0,
+          "signal-P": 17.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "read_addr1_via_port_a"
+    },
+    {
+      "tick": 888153,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 99.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        },
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 42.0,
+          "signal-P": 19.0
+        },
+        "mem_out_bus": {
+          "signal-0": 42.0,
+          "signal-P": 18.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "override_s0_99"
+    },
+    {
+      "tick": 888154,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 99.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        },
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 20.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 19.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "override_s0_99"
+    },
+    {
+      "tick": 888155,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 99.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        },
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 21.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 20.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "override_s0_99"
+    },
+    {
+      "tick": 888156,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 99.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        },
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 22.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 21.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "override_s0_99"
+    },
+    {
+      "tick": 888157,
+      "stimulus": {
+        "write_value": {
+          "signal-0": 99.0
+        },
+        "trig_set": {
+          "signal-0": 1.0
+        },
+        "trig_reset": {
+          "signal-0": 1.0
+        },
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 23.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 22.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "override_s0_99"
+    },
+    {
+      "tick": 888158,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 24.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 23.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "release_hold_99"
+    },
+    {
+      "tick": 888159,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 25.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 24.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "release_hold_99"
+    },
+    {
+      "tick": 888160,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 26.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 25.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "release_hold_99"
+    },
+    {
+      "tick": 888161,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 27.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 26.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "release_hold_99"
+    },
+    {
+      "tick": 888162,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 28.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 27.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "release_hold_99"
+    },
+    {
+      "tick": 888163,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 29.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 28.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "port_a_sees_override"
+    },
+    {
+      "tick": 888164,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 30.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 29.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "port_a_sees_override"
+    },
+    {
+      "tick": 888165,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 31.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 30.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "port_a_sees_override"
+    },
+    {
+      "tick": 888166,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 32.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 31.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "port_a_sees_override"
+    },
+    {
+      "tick": 888167,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 33.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 32.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "port_a_sees_override"
+    },
+    {
+      "tick": 888168,
+      "stimulus": {
+        "write_value": {
+          "signal-1": 7.0
+        },
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        },
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 34.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 33.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "write_second_signal_s1_7"
+    },
+    {
+      "tick": 888169,
+      "stimulus": {
+        "write_value": {
+          "signal-1": 7.0
+        },
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        },
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 35.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 34.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "write_second_signal_s1_7"
+    },
+    {
+      "tick": 888170,
+      "stimulus": {
+        "write_value": {
+          "signal-1": 7.0
+        },
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        },
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 36.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 35.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "write_second_signal_s1_7"
+    },
+    {
+      "tick": 888171,
+      "stimulus": {
+        "write_value": {
+          "signal-1": 7.0
+        },
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        },
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 37.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 36.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "write_second_signal_s1_7"
+    },
+    {
+      "tick": 888172,
+      "stimulus": {
+        "write_value": {
+          "signal-1": 7.0
+        },
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        },
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 38.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 37.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "write_second_signal_s1_7"
+    },
+    {
+      "tick": 888173,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 39.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 38.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "release_both_held"
+    },
+    {
+      "tick": 888174,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 40.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 39.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "release_both_held"
+    },
+    {
+      "tick": 888175,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 41.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 40.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "release_both_held"
+    },
+    {
+      "tick": 888176,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 42.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 41.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "release_both_held"
+    },
+    {
+      "tick": 888177,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 43.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 42.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "release_both_held"
+    },
+    {
+      "tick": 888178,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 44.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 43.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "read_addr6_signal1_via_port_b"
+    },
+    {
+      "tick": 888179,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 45.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 44.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 8,
+      "step_name": "read_addr6_signal1_via_port_b"
+    },
+    {
+      "tick": 888180,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 46.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 45.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        },
+        "port_b": {
+          "signal-1": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "read_addr6_signal1_via_port_b"
+    },
+    {
+      "tick": 888181,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 47.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 46.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        },
+        "port_b": {
+          "signal-1": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "read_addr6_signal1_via_port_b"
+    },
+    {
+      "tick": 888182,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 48.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 47.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        },
+        "port_b": {
+          "signal-1": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "read_addr6_signal1_via_port_b"
+    },
+    {
+      "tick": 888183,
+      "stimulus": {
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        },
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 49.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-1": 7.0,
+          "signal-P": 48.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        },
+        "port_b": {
+          "signal-1": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 9,
+      "step_name": "zero_write_clears_s1"
+    },
+    {
+      "tick": 888184,
+      "stimulus": {
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        },
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 50.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 49.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        },
+        "port_b": {
+          "signal-1": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 9,
+      "step_name": "zero_write_clears_s1"
+    },
+    {
+      "tick": 888185,
+      "stimulus": {
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        },
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 51.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 50.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "zero_write_clears_s1"
+    },
+    {
+      "tick": 888186,
+      "stimulus": {
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        },
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 52.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 51.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "zero_write_clears_s1"
+    },
+    {
+      "tick": 888187,
+      "stimulus": {
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        },
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 53.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 52.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "zero_write_clears_s1"
+    },
+    {
+      "tick": 888188,
+      "stimulus": {
+        "trig_set": {
+          "signal-1": 1.0
+        },
+        "trig_reset": {
+          "signal-1": 1.0
+        },
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 54.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 53.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "zero_write_clears_s1"
+    },
+    {
+      "tick": 888189,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 55.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 54.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "zero_write_holds_after_release"
+    },
+    {
+      "tick": 888190,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 56.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 55.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "zero_write_holds_after_release"
+    },
+    {
+      "tick": 888191,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 57.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 56.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "zero_write_holds_after_release"
+    },
+    {
+      "tick": 888192,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 58.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 57.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "zero_write_holds_after_release"
+    },
+    {
+      "tick": 888193,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 59.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 58.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "zero_write_holds_after_release"
+    },
+    {
+      "tick": 888194,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 60.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 59.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "zero_write_holds_after_release"
+    },
+    {
+      "tick": 888195,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 61.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 60.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 11,
+      "step_name": "port_b_confirms_zero"
+    },
+    {
+      "tick": 888196,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 62.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 61.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 11,
+      "step_name": "port_b_confirms_zero"
+    },
+    {
+      "tick": 888197,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 63.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 62.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "port_b_confirms_zero"
+    },
+    {
+      "tick": 888198,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 64.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 63.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "port_b_confirms_zero"
+    },
+    {
+      "tick": 888199,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        },
+        "addr_b": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-0": 99.0,
+          "signal-P": 65.0
+        },
+        "mem_out_bus": {
+          "signal-0": 99.0,
+          "signal-P": 64.0,
+          "signal-Q": 1.0
+        },
+        "port_a": {
+          "signal-0": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "port_b_confirms_zero"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "write_s0_42",
+      "drive_start_tick": 888136,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-0": 42
+      },
+      "observed": {
+        "signal-0": 42.0,
+        "signal-P": 7.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888141
+    },
+    {
+      "step_index": 1,
+      "step_name": "release_write_hold_42",
+      "drive_start_tick": 888141,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-0": 42
+      },
+      "observed": {
+        "signal-0": 42.0,
+        "signal-P": 13.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888147
+    },
+    {
+      "step_index": 2,
+      "step_name": "read_addr1_via_port_a",
+      "drive_start_tick": 888147,
+      "skipped_ticks": 0,
+      "expected_probe": "port_a",
+      "expected": {
+        "signal-0": 42
+      },
+      "observed": {
+        "signal-0": 42.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888152
+    },
+    {
+      "step_index": 3,
+      "step_name": "override_s0_99",
+      "drive_start_tick": 888152,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-0": 99
+      },
+      "observed": {
+        "signal-0": 99.0,
+        "signal-P": 23.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888157
+    },
+    {
+      "step_index": 4,
+      "step_name": "release_hold_99",
+      "drive_start_tick": 888157,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-0": 99
+      },
+      "observed": {
+        "signal-0": 99.0,
+        "signal-P": 28.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888162
+    },
+    {
+      "step_index": 5,
+      "step_name": "port_a_sees_override",
+      "drive_start_tick": 888162,
+      "skipped_ticks": 0,
+      "expected_probe": "port_a",
+      "expected": {
+        "signal-0": 99
+      },
+      "observed": {
+        "signal-0": 99.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888167
+    },
+    {
+      "step_index": 6,
+      "step_name": "write_second_signal_s1_7",
+      "drive_start_tick": 888167,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-1": 7
+      },
+      "observed": {
+        "signal-0": 99.0,
+        "signal-1": 7.0,
+        "signal-P": 38.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888172
+    },
+    {
+      "step_index": 7,
+      "step_name": "release_both_held",
+      "drive_start_tick": 888172,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-0": 99,
+        "signal-1": 7
+      },
+      "observed": {
+        "signal-0": 99.0,
+        "signal-1": 7.0,
+        "signal-P": 43.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888177
+    },
+    {
+      "step_index": 8,
+      "step_name": "read_addr6_signal1_via_port_b",
+      "drive_start_tick": 888177,
+      "skipped_ticks": 0,
+      "expected_probe": "port_b",
+      "expected": {
+        "signal-1": 7
+      },
+      "observed": {
+        "signal-1": 7.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888182
+    },
+    {
+      "step_index": 9,
+      "step_name": "zero_write_clears_s1",
+      "drive_start_tick": 888182,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-1": 0,
+        "signal-0": 99
+      },
+      "observed": {
+        "signal-0": 99.0,
+        "signal-P": 54.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888188
+    },
+    {
+      "step_index": 10,
+      "step_name": "zero_write_holds_after_release",
+      "drive_start_tick": 888188,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-1": 0,
+        "signal-0": 99
+      },
+      "observed": {
+        "signal-0": 99.0,
+        "signal-P": 60.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888194
+    },
+    {
+      "step_index": 11,
+      "step_name": "port_b_confirms_zero",
+      "drive_start_tick": 888194,
+      "skipped_ticks": 0,
+      "expected_probe": "port_b",
+      "expected": {
+        "signal-1": 0
+      },
+      "observed": {},
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888199
+    }
+  ],
+  "pass": true
+}

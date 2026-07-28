@@ -1,0 +1,49 @@
+# v8_port_b_mmap — component 6 of the fnet v8 rebuild (NETLIST_PLAN.md):
+# the memory-mapped read port B (masters 59 mmap_addr, 53 mmap gate,
+# 24 addr_rd_b, 38 each+0 -> carrier, 45 address table, 57 port decider,
+# 65 port_b_rd anchor). The gate passes the designated register row's
+# green-bus value; that value IS port B's read address — write the
+# register row to re-park the stream. Behavioral bench:
+# testbenches/v8_port_b_mmap.tb.json (proc_v8_mmap_port_b's park/stream
+# semantics, open loop).
+#
+# The register row is memory-mapped config (NETLIST_PLAN): declaring
+# `b_reg = memory[io + 0]` IS the configuration act — the mask template
+# references the declaration, and machine_v8 reads the chosen row from
+# the signals map at composition.
+#
+# `module port_b_mmap` is the reusable component; `port_b_mmap_bench` is
+# the live-test harness — build with `--top port_b_mmap_bench`.
+#
+# Entity numbering: 1 bus stim, 2 addr_rd_b stim, 3 mmap_addr mask,
+# 4 mmap gate, 5 carrier sum, 6 address table, 7 port decider,
+# 8 port_b_rd anchor.
+
+import "lib/v8.fnet";
+
+signal read_b;        # port B read carrier — on the table net, excluded
+exclude read_b;
+signal addr_b_stim;   # bench-facing direct-address carrier
+
+region io = 310;
+signal b_reg = memory[io + 0];   # port B's read-address register row
+
+module port_b_mmap(in_g bus_in, in_g addr_in, out_g data_out) {
+  net red mask;      # mmap_addr -> gate: which row is the register
+  net red select;    # address table + carrier
+
+  v8_mask_const<b_reg, 1, "mmap_addr">(out_r: mask);
+  v8_mmap_gate(in_r: mask, in_g: bus_in, out_g: addr_in);
+  sum_to<read_b, "b_carrier">(in_g: addr_in, out_r: select);
+  addr_table(out_r: select);
+  v8_port_read<read_b, "port_b_read">(in_r: select, in_g: bus_in, out_g: data_out);
+  stim<"port_b_rd">(out_g: data_out);
+}
+
+module port_b_mmap_bench(out_g data_out) {
+  net green bus_in, addr_in;
+
+  stim<"mem_bus_stim">(out_g: bus_in);
+  stim<"addr_rd_b">(out_g: addr_in);
+  port_b_mmap(bus_in: bus_in, addr_in: addr_in, data_out: data_out);
+}

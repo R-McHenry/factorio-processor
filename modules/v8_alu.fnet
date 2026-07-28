@@ -1,0 +1,67 @@
+# v8_alu — component 4 of the fnet v8 rebuild (NETLIST_PLAN.md):
+# SUB/ADD/DIV/MUL + the CMP block (masters 32-35 ops, 49/50 min/max
+# selects, 51/52 >=/> flags, 62/63 min/max scalar collapses). All units
+# read operand rows off the red memory-state bus; results sum onto the
+# green memory bus as their own rows. Behavioral bench:
+# testbenches/v8_alu.tb.json (proc_cmp's CMP semantics driven directly on
+# the state bus, plus all four ALU ops and a parallel-op step).
+#
+# Operand/result rows are memory-space setup (NETLIST_PLAN "memory-mapped
+# operands"): region alu = 2110 replaces the master's hardcoded letter
+# signals (machine_v8's ALU_MAP) — machine_v8 reads these addresses from
+# the compiled signals map at composition. 2110 keeps the block clear of
+# the PC row at 2096 (the master's letter block contained P; separate
+# regions can't overlap).
+#
+# `module alu` is the reusable component; `alu_bench` is the live-test
+# harness — build with `--top alu_bench`.
+#
+# Entity numbering (bench entity_map relies on it): 1 state stim,
+# 2 ALU_SUB, 3 ALU_ADD, 4 ALU_DIV, 5 ALU_MUL, 6 CMP_MIN, 7 CMP_MAX,
+# 8 CMP_GE, 9 CMP_GT, 10 min scalar, 11 max scalar, 12 alu_out probe.
+
+import "lib/v8.fnet";
+
+region alu = 2110;
+signal sub_a   = memory[alu + 0];
+signal sub_b   = memory[alu + 1];
+signal sub_res = memory[alu + 2];
+signal add_a   = memory[alu + 3];
+signal add_b   = memory[alu + 4];
+signal add_res = memory[alu + 5];
+signal div_a   = memory[alu + 6];
+signal div_b   = memory[alu + 7];
+signal div_res = memory[alu + 8];
+signal mul_a   = memory[alu + 9];
+signal mul_b   = memory[alu + 10];
+signal mul_res = memory[alu + 11];
+signal cmp_m   = memory[alu + 12];
+signal cmp_n   = memory[alu + 13];
+signal cmp_min = memory[alu + 14];   # master signal-S
+signal cmp_max = memory[alu + 15];   # master signal-T
+signal flag_ge = memory[alu + 16];   # master signal-Q
+signal flag_gt = memory[alu + 17];   # master signal-O
+
+module alu(in_r state_in, out_g result_out) {
+  net green min_raw;   # winner's own row signal, pre-collapse
+  net green max_raw;
+
+  v8_alu_op<sub_a, sub_b, "-", sub_res, "ALU_SUB">(in_r: state_in, out_g: result_out);
+  v8_alu_op<add_a, add_b, "+", add_res, "ALU_ADD">(in_r: state_in, out_g: result_out);
+  v8_alu_op<div_a, div_b, "/", div_res, "ALU_DIV">(in_r: state_in, out_g: result_out);
+  v8_alu_op<mul_a, mul_b, "*", mul_res, "ALU_MUL">(in_r: state_in, out_g: result_out);
+  v8_cmp_select<cmp_m, cmp_n, "<", "CMP_MIN">(in_r: state_in, out_g: min_raw);
+  v8_cmp_select<cmp_m, cmp_n, ">", "CMP_MAX">(in_r: state_in, out_g: max_raw);
+  v8_cmp_flag<cmp_m, cmp_n, "≥", flag_ge, "CMP_GE">(in_r: state_in, out_g: result_out);
+  v8_cmp_flag<cmp_m, cmp_n, ">", flag_gt, "CMP_GT">(in_r: state_in, out_g: result_out);
+  sum_to<cmp_min, "CMP_MIN_scalar">(in_g: min_raw, out_g: result_out);
+  sum_to<cmp_max, "CMP_MAX_scalar">(in_g: max_raw, out_g: result_out);
+}
+
+module alu_bench() {
+  net red state_in;
+  debug net green alu_out;
+
+  stim<"alu_state_stim">(out_r: state_in);
+  alu(state_in: state_in, result_out: alu_out);
+}

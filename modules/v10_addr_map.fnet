@@ -1,0 +1,72 @@
+# v10_addr_map — the vector zone's memory map. ONE source of truth for every
+# address the compiler will target when it starts emitting vector ops
+# (designer, 2026-07-27: "assign memory mapped addresses to all of those, so
+# that later flow steps can use them when compiling alu operations").
+#
+# Every row here is `memory[...]`, i.e. a real address in the design's own
+# scalar space — not a free carrier. That is the whole point: the vector zone
+# has no private control wires a program cannot name. A scalar `write_imm` to
+# one of these rows IS the vector control action, and machine_v8 reads the
+# addresses back out of the compiled signals map exactly as it already does
+# for the ALU block (NETLIST_PLAN "memory-mapped operands").
+#
+# How a row reaches the hardware: the vector zone's red `ctl` net is a mirror
+# of the scalar green memory bus (one `v10_ctl_mirror` combinator per zone).
+# So writing row `vec_wsel` is how a program drives W — there is no separate
+# path. Cost is one tick of latency on every control change; see the timing
+# note in v10_vec_bank.fnet.
+#
+# ADDRESS CHOICE. Region base 2130 sits above the v8 ALU block (region
+# alu = 2110, 18 rows -> 2110..2127) and clear of the PC row (2096), inside
+# the appended-virtuals stretch (2101..2480) that signal_space.py documents as
+# safe to grow into. Regions may not overlap, so anything added here must stay
+# below the next region's base. Reduction outputs are declared NOW, before the
+# op farm exists, so their addresses are stable from the start rather than
+# being promoted from placeholders later — which is the mistake
+# processor_v10.design.md's open question #2 records.
+
+region vec = 2130;
+
+# -- control plane: what a program writes to drive the zone ------------------
+signal vec_wsel  = memory[vec + 0];   # W: which register a write head commits to
+signal vec_rsel  = memory[vec + 1];   # R: mux read-select port A
+signal vec_ssel  = memory[vec + 2];   # S: mux read-select port B
+signal vec_erase = memory[vec + 3];   # zero the register with this block id
+signal vec_bcast = memory[vec + 4];   # broadcast scalar operand (vec-scal ops)
+
+# -- reduction outputs: what a program reads back ---------------------------
+# These join the scalar green memory bus as ordinary rows, so they are read
+# exactly like v8's CMP flags (Q/O) — no vector-bus involvement.
+signal vred_sum    = memory[vec + 5];    # each+0 over all lanes
+signal vred_count  = memory[vec + 6];    # selector: count (popcount)
+signal vred_max    = memory[vec + 7];    # selector: select_max = true
+signal vred_min    = memory[vec + 8];    # selector: select_max = false
+signal vred_argmax = memory[vec + 9];    # address-table decode of vred_max
+signal vred_argmin = memory[vec + 10];   # address-table decode of vred_min
+signal vred_cmp_gt = memory[vec + 11];   # lanes > vec_bcast
+signal vred_cmp_lt = memory[vec + 12];   # lanes < vec_bcast
+signal vred_cmp_eq = memory[vec + 13];   # lanes = vec_bcast
+
+# -- unary / quality op ------------------------------------------------------
+signal vqual_level = memory[vec + 14];   # requested quality tier, 1..5
+
+# -- I/O ports: how data crosses between scalar and vector land --------------
+# DATA IN is a single-lane write: the program names a lane by ADDRESS and a
+# value, and the pair decodes to a one-lane frame that appears as an ordinary
+# mux source. Bulk seeding does not go through here — that is what the
+# coordinate source is for (a whole ramp in one selection, no scalar writes).
+signal vec_wlane_addr  = memory[vec + 15];   # which lane a scalar write targets
+signal vec_wlane_value = memory[vec + 16];   # the value to place in it
+
+# DATA OUT is a single-lane read off the shared write bus: park R/S on any
+# source, name a lane, and its value appears as an ordinary scalar row.
+signal vec_rlane_addr  = memory[vec + 17];   # which lane to extract
+signal vec_rlane_data  = memory[vec + 18];   # where its value shows up
+
+# -- second broadcast carrier ------------------------------------------------
+# A SECOND scalar operand, so one move can use two of them. It exists because
+# the BCAST source (a frame holding this value in EVERY lane) is most useful
+# summed onto the bus alongside a vec-scal op that is already using
+# `vec_bcast` — `frame*k1 + k2` in one move, which is the shape every
+# coordinate seed has. Sharing one carrier would serialise those into two.
+signal vec_bcast2 = memory[vec + 19];

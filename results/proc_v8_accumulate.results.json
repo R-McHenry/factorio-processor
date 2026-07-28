@@ -1,0 +1,629 @@
+{
+  "name": "proc_v8_accumulate",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 0,
+  "rebuild": {
+    "removed": 78,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 77,
+    "revived": 77,
+    "placed": 77
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [
+    {
+      "unit": 123710,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 6
+    },
+    {
+      "unit": 123751,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 44
+    },
+    {
+      "unit": 123765,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 45
+    },
+    {
+      "unit": 123764,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 46
+    }
+  ],
+  "mapping": {
+    "translation": {
+      "dx": 0.0,
+      "dy": 0.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 123717,
+      "2": 123718,
+      "3": 123720,
+      "4": 123719,
+      "5": 123721,
+      "6": 123710,
+      "7": 123726,
+      "8": 123723,
+      "9": 123722,
+      "10": 123725,
+      "11": 123724,
+      "12": 123730,
+      "13": 123728,
+      "14": 123727,
+      "15": 123711,
+      "16": 123713,
+      "17": 123712,
+      "18": 123729,
+      "19": 123716,
+      "20": 123735,
+      "21": 123737,
+      "22": 123714,
+      "23": 123715,
+      "24": 123732,
+      "25": 123731,
+      "26": 123734,
+      "27": 123733,
+      "28": 123736,
+      "29": 123739,
+      "30": 123759,
+      "31": 123761,
+      "32": 123741,
+      "33": 123740,
+      "34": 123743,
+      "35": 123742,
+      "36": 123745,
+      "37": 123744,
+      "38": 123756,
+      "39": 123755,
+      "40": 123758,
+      "41": 123738,
+      "42": 123757,
+      "43": 123760,
+      "44": 123751,
+      "45": 123765,
+      "46": 123764,
+      "47": 123768,
+      "48": 123770,
+      "49": 123747,
+      "50": 123746,
+      "51": 123749,
+      "52": 123748,
+      "53": 123767,
+      "54": 123766,
+      "55": 123769,
+      "56": 123750,
+      "57": 123763,
+      "58": 123762,
+      "59": 123775,
+      "60": 123774,
+      "61": 123777,
+      "62": 123753,
+      "63": 123752,
+      "64": 123754,
+      "65": 123772,
+      "66": 123771,
+      "67": 123773,
+      "68": 123776,
+      "69": 123779,
+      "70": 123781,
+      "71": 123778,
+      "72": 123780,
+      "73": 123783,
+      "74": 123785,
+      "75": 123782,
+      "76": 123784,
+      "77": 123786
+    },
+    "driver_units": {
+      "trig_set": 123711
+    },
+    "output_probes": [
+      {
+        "name": "mem_state",
+        "unit": 123745,
+        "wire": "red"
+      },
+      {
+        "name": "port_a",
+        "unit": 123754,
+        "wire": "green"
+      },
+      {
+        "name": "port_b",
+        "unit": 123772,
+        "wire": "green"
+      },
+      {
+        "name": "instr_port",
+        "unit": 123771,
+        "wire": "green"
+      },
+      {
+        "name": "out4_inject",
+        "unit": 123729,
+        "wire": "green"
+      }
+    ],
+    "expected_probe_name": "mem_state"
+  },
+  "timeline": [
+    {
+      "tick": 888525,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888526,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888527,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 3.0
+        },
+        "instr_port": {
+          "signal-0": 598272.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888528,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888529,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 5.0
+        },
+        "instr_port": {
+          "signal-0~rare": 20992.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888530,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 6.0
+        },
+        "instr_port": {
+          "signal-0~epic": 20992.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888531,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 7.0
+        },
+        "instr_port": {
+          "signal-0~legendary": -11776.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888532,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 8.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888533,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 9.0
+        },
+        "instr_port": {
+          "signal-1~uncommon": 8257792.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888534,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 10.0,
+          "shape-vertical": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888535,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 11.0,
+          "shape-vertical": 10.0
+        },
+        "instr_port": {
+          "signal-1~epic": 20992.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888536,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 12.0,
+          "shape-vertical": 7.0
+        },
+        "instr_port": {
+          "signal-1~legendary": 20992.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888537,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 13.0,
+          "shape-vertical": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888538,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 14.0,
+          "shape-vertical": 7.0
+        },
+        "instr_port": {
+          "signal-2~uncommon": 8237312.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888539,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 15.0,
+          "shape-vertical": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888540,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 5.0,
+          "signal-P": 16.0,
+          "shape-vertical": 7.0
+        },
+        "instr_port": {
+          "signal-2~epic": -36352.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888541,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 5.0,
+          "signal-P": 17.0,
+          "shape-vertical": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888542,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 5.0,
+          "signal-P": 18.0,
+          "shape-vertical": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888543,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 5.0,
+          "signal-P": 19.0,
+          "shape-vertical": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888544,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 5.0,
+          "signal-P": 20.0,
+          "shape-vertical": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888545,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": -9.0,
+          "signal-H": 5.0,
+          "signal-P": 21.0,
+          "shape-vertical": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888546,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": -9.0,
+          "signal-H": 5.0,
+          "signal-P": 22.0,
+          "shape-vertical": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888547,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": -9.0,
+          "signal-H": 5.0,
+          "signal-P": 23.0,
+          "shape-vertical": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888548,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": -9.0,
+          "signal-H": 5.0,
+          "signal-P": 24.0,
+          "shape-vertical": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888549,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": -9.0,
+          "signal-H": 5.0,
+          "signal-P": 25.0,
+          "shape-vertical": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888550,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": -9.0,
+          "signal-H": 5.0,
+          "signal-P": 26.0,
+          "shape-vertical": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888551,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": -9.0,
+          "signal-H": 5.0,
+          "signal-P": 27.0,
+          "shape-vertical": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888552,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": -9.0,
+          "signal-H": 5.0,
+          "signal-P": 28.0,
+          "shape-vertical": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888553,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": -9.0,
+          "signal-H": 5.0,
+          "signal-P": 29.0,
+          "shape-vertical": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    },
+    {
+      "tick": 888554,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": -9.0,
+          "signal-H": 5.0,
+          "signal-P": 30.0,
+          "shape-vertical": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "acc_sums_plain_replaces_neg_holds",
+      "drive_start_tick": 888524,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "shape-vertical": 7,
+        "signal-H": 5,
+        "signal-G": -9
+      },
+      "observed": {
+        "signal-G": -9.0,
+        "signal-H": 5.0,
+        "signal-P": 30.0,
+        "shape-vertical": 7.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888554
+    }
+  ],
+  "pass": true
+}

@@ -1,0 +1,41 @@
+{
+  "module": "write_encoder_bench",
+  "probes": [
+    {
+      "net": "onehot",
+      "entity_number": 12,
+      "wire": "red",
+      "position": {
+        "x": 8.5,
+        "y": -12.5
+      }
+    },
+    {
+      "net": "reset_out",
+      "entity_number": 13,
+      "wire": "green",
+      "position": {
+        "x": 2.5,
+        "y": -11.5
+      }
+    },
+    {
+      "net": "set_out",
+      "entity_number": 14,
+      "wire": "red",
+      "position": {
+        "x": 2.5,
+        "y": -12.5
+      }
+    },
+    {
+      "net": "value_out",
+      "entity_number": 15,
+      "wire": "green",
+      "position": {
+        "x": 4.5,
+        "y": -12.5
+      }
+    }
+  ]
+}

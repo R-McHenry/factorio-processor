@@ -1,0 +1,114 @@
+{
+  "name": "v8_processor_smoke",
+  "description": "Composed fnet v8 processor smoke test. 1) Direct-write trio -> cell holds row 50, port A parks and reads it. 2) A two-instruction program is loaded by DRIVING the ROM constant ($mem[1]=const->write_addr 6, $mem[3]=const->write_value 99), the PC row is zero-written through the trio (while held, P pins at 1; on release it ramps 2,3,... fetching slots in order), and the machine executes the write closed-loop: decode -> matrix -> write encoder -> trigger sense (bit 512) -> cell. 3) The mmap register row is written -> port B streams the freshly written row. All rows symbolic ($mem[N], $pc, $b_reg, $addr_a_stim).",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 3,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -16.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "write_addr_enc": 1,
+      "write_value_enc": 2,
+      "trig_set": 46,
+      "write_value": 47,
+      "trig_reset": 48,
+      "rom": 66,
+      "addr_b": 67,
+      "addr_a": 72,
+      "addr_pc": 84,
+      "inject": 93
+    },
+    "expected_probe_name": "mem_state",
+    "output_probes": [
+      { "name": "mem_state", "entity_number": 101, "wire": "red" },
+      { "name": "mem_bus", "entity_number": 100, "wire": "green" },
+      { "name": "port_a", "entity_number": 77, "wire": "green" },
+      { "name": "port_b", "entity_number": 83, "wire": "green" },
+      { "name": "instr_port", "entity_number": 99, "wire": "green" },
+      { "name": "out1", "entity_number": 9, "wire": "green" },
+      { "name": "out2", "entity_number": 16, "wire": "green" }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "direct_write_row50",
+      "drive": {
+        "write_value": { "$mem[50]": 42 },
+        "trig_set": { "$mem[50]": 1 },
+        "trig_reset": { "$mem[50]": 1 }
+      },
+      "expect": { "$mem[50]": 42 }
+    },
+    {
+      "name": "release_holds_42",
+      "drive": { "write_value": {}, "trig_set": {}, "trig_reset": {} },
+      "trace_ticks": 4,
+      "expect": { "$mem[50]": 42 }
+    },
+    {
+      "name": "port_a_parks_and_reads_row50",
+      "drive": { "addr_a": { "$addr_a_stim": 50 } },
+      "settle_ticks": 6,
+      "expect_probe": "port_a",
+      "expect": { "$mem[50]": 42 }
+    },
+    {
+      "name": "load_rom_write6_99",
+      "drive": {
+        "rom": { "$mem[1]": 24832, "$mem[3]": 406016 }
+      },
+      "expect": {}
+    },
+    {
+      "name": "pc_reset_pins_p_at_1",
+      "drive": {
+        "trig_set": { "$pc": 1 },
+        "trig_reset": { "$pc": 1 }
+      },
+      "settle_ticks": 6,
+      "expect": {}
+    },
+    {
+      "name": "program_executes_write_on_release",
+      "drive": { "trig_set": {}, "trig_reset": {} },
+      "settle_ticks": 20,
+      "trace_ticks": 6,
+      "expect": { "$mem[6]": 99, "$mem[50]": 42 }
+    },
+    {
+      "name": "port_a_park_survived_program",
+      "expect_probe": "port_a",
+      "expect": { "$mem[50]": 42 }
+    },
+    {
+      "name": "mmap_park_port_b_on_row6",
+      "drive": {
+        "write_value": { "$b_reg": 6 },
+        "trig_set": { "$b_reg": 1 },
+        "trig_reset": { "$b_reg": 1 }
+      },
+      "settle_ticks": 6,
+      "expect": {}
+    },
+    {
+      "name": "port_b_streams_row6",
+      "drive": { "write_value": {}, "trig_set": {}, "trig_reset": {} },
+      "settle_ticks": 10,
+      "expect_probe": "port_b",
+      "expect": { "$mem[6]": 99 }
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+# v10_vec_io — component 4 of the fnet v10 rebuild: the ports that let data
+# cross between scalar and vector land. Until this existed the vector zone was
+# a closed loop — it could shuffle and compute between registers, but nothing
+# could get in or out except a bench stim standing in for a missing path.
+#
+# Everything here plugs into the EXISTING mux rather than inventing new
+# plumbing: a data source is just another selectable index, so `R = <index>`
+# then `W = <register>` loads it, exactly like a register-to-register copy.
+#
+#   ONES     (index 45)  a frame with 1 in EVERY lane, and BCAST (46) the
+#                        same frame scaled by `vec_bcast2`. The only way to
+#                        put a value on a lane that computed to zero — see
+#                        the note in the module body.
+#
+#   COORD    (index 47)  "nothing -> vec": an address table wired straight
+#                        onto a red net, so every lane holds its own index,
+#                        1..N. A whole coordinate ramp in one selection with
+#                        zero scalar writes — feed it through the vec-scal
+#                        MOD/DIV units to get (x, y) for a 2D grid.
+#
+#   LANE_IN  (index 48)  DATA IN, one lane at a time. The program writes an
+#                        address to `vec_wlane_addr` and a value to
+#                        `vec_wlane_value`; a one-hot decode against the
+#                        address table picks the lane and a scalar multiply
+#                        gives it the value, producing a one-lane frame.
+#                        Bulk seeding is COORD's job, not this one's.
+#
+#   LANE_OUT             DATA OUT, one lane at a time. Park R/S on any source,
+#                        write the lane's address to `vec_rlane_addr`, and its
+#                        value appears on the scalar memory bus as
+#                        `vec_rlane_data`. This is what lets a program branch
+#                        on vector state.
+#
+#   VRED_SUM             DATA OUT, whole frame. `each+0` collapses every lane
+#                        of the write bus into one scalar row, read exactly
+#                        like a v8 CMP flag.
+#
+#   VRED_COUNT           DATA OUT, whole frame, but HOW MANY rather than how
+#                        much: flatten every present lane to 1, then sum. With
+#                        a comparison selected on the bus this answers "how
+#                        many lanes satisfy X" in one read.
+#
+# WHY LANE_IN DECODES INSTEAD OF COPYING SCALAR MEMORY. The obvious data-in
+# path — mirror the scalar memory bus onto red and commit it — would drag the
+# PC, the ALU rows and every control row into the register as junk lanes, and
+# registers accumulate, so the junk would compound. Decoding one named lane
+# keeps the frame exactly as clean as the program intends.
+#
+# CARRIER EXCLUSION (structural, not a workaround). LANE_OUT's table and its
+# read carrier must share one green net so `each` can compare table rows to
+# the carrier — which means the carrier is itself a table row unless it is
+# excluded from the address space. Memory-mapped rows can never be excluded
+# (being addressable is the point), so the port takes an excluded auto carrier
+# and a `v8_sig_to` converts the memory-mapped `vec_rlane_addr` into it. Same
+# split v8_port_a uses for `read_a`.
+#
+# LANE_IN needs no such split: its one-hot compares the table (red) against
+# the carrier on GREEN — a different net — so nothing rides the table.
+#
+# `module vec_io` is the reusable component; `vec_io_bench` is the live-test
+# harness — build with `--top vec_io_bench`.
+#
+# Entity numbering (declaration order; the bench's entity_map relies on it):
+# 1 scalar_membus stim, 2 vec_bus stim, then the component 3..19:
+# 3 coord table, 4 coord select, 5 ones mask, 6 ones select, 7 bcast multiply,
+# 8 bcast select, 9 lane_in table, 10 lane_in one-hot, 11 lane_in value
+# multiply, 12 lane_in select, 13 lane_out carrier, 14 lane_out table,
+# 15 lane_out read, 16 lane_out relabel, 17 sum reduce, 18 count mask,
+# 19 count reduce, then debug probes in net-name order: 20 membus_out, 21 vbus.
+
+import "lib/v8.fnet";
+import "lib/v10.fnet";
+import "v10_addr_map.fnet";
+
+# LANE_OUT's read carrier: rides the table net, so it must leave the address
+# space. Auto-assigned — it is a wire-level tag, never program-visible.
+signal rlane_carrier;
+exclude rlane_carrier;
+
+module vec_io(in_g membus, out_r vbus, out_g scalar_out) {
+  net red coord_frame;    # every lane = its own address
+  net red ones_frame;     # every lane = 1
+  net red bcast_frame;    # every lane = vec_bcast2
+  net red wtable;         # LANE_IN's address table (compared against green)
+  net red onehot;         # 1 on the addressed lane
+  net red lane_frame;     # that lane, carrying its value
+  net green rtable;       # LANE_OUT's table + read carrier
+  net red lane_value;     # the extracted lane, still on its own signal
+  net red count_mask;     # 1 on every present lane of the write bus
+
+  # -- COORD (47): nothing -> vec ------------------------------------------
+  addr_table(out_r: coord_frame);
+  v10_select_gate<vec_rsel, vec_ssel, 47, "rsel_coord">(in_g: membus, in_r: coord_frame, out_r: vbus);
+
+  # -- ONES (45) and BCAST (46): lane resurrection -------------------------
+  # ZERO AND ABSENT ARE THE SAME THING, and `each` against a fixed signal
+  # iterates only the first operand's lanes — so once a lane computes to zero
+  # NOTHING in the vec-scal block can bring it back. That cost a live run: the
+  # mandelbrot grid seed lost its whole x=0 column and y=0 row at the modulo,
+  # and the following subtract never saw those lanes to offset them.
+  #
+  # A frame present in EVERY lane is the fix, because the SECOND mux selector
+  # sums onto the bus and a sum reaches lanes the op did not. COORD's lanes are
+  # 1..N, all positive, so one masking decider turns the ramp into ones, and
+  # multiplying that by a second broadcast carrier turns it into any constant.
+  # Two carriers rather than one is the whole point: `frame*k1 + k2` is then a
+  # SINGLE move, which is the shape every coordinate seed has.
+  v10_lane_mask<">", 0, "ones_frame">(in_r: coord_frame, out_r: ones_frame);
+  v10_select_gate<vec_rsel, vec_ssel, 45, "rsel_ones">(in_g: membus, in_r: ones_frame, out_r: vbus);
+
+  v10_vec_scal_op<vec_bcast2, "*", "bcast_frame">(in_r: ones_frame, in_g: membus, out_r: bcast_frame);
+  v10_select_gate<vec_rsel, vec_ssel, 46, "rsel_bcast">(in_g: membus, in_r: bcast_frame, out_r: vbus);
+
+  # -- LANE_IN (48): one addressed lane, carrying one value ----------------
+  addr_table(out_r: wtable);
+  v8_onehot<vec_wlane_addr>(in_r: wtable, in_g: membus, out_r: onehot);
+  v8_mul_scalar<vec_wlane_value, "lane_in_value">(in_r: onehot, in_g: membus, out_r: lane_frame);
+  v10_select_gate<vec_rsel, vec_ssel, 48, "rsel_lane_in">(in_g: membus, in_r: lane_frame, out_r: vbus);
+
+  # -- LANE_OUT: extract one lane of the write bus onto a scalar row -------
+  v8_sig_to<vec_rlane_addr, rlane_carrier, "rlane_carrier">(in_g: membus, out_g: rtable);
+  addr_table(out_g: rtable);
+  v10_lane_read<rlane_carrier, "lane_out_read">(in_g: rtable, in_r: vbus, out_r: lane_value);
+  sum_to<vec_rlane_data, "lane_out_relabel">(in_r: lane_value, out_g: scalar_out);
+
+  # -- VRED_SUM: whole-frame reduction onto a scalar row -------------------
+  v10_reduce_sum<vred_sum, "vred_sum">(in_r: vbus, out_g: scalar_out);
+
+  # -- VRED_COUNT: how many lanes are present, not what they hold ----------
+  # Popcount, and the only scalar readout that answers "how many lanes satisfy
+  # X" directly — mask the bus with a comparison, select it, and read this.
+  # Before it existed that question cost a sticky mask, a register and a
+  # whole-frame sum. Two combinators, both shapes already proven here: flatten
+  # every present lane to 1, then reuse the sum reducer.
+  v10_lane_mask<"!=", 0, "count_mask">(in_r: vbus, out_r: count_mask);
+  v10_reduce_sum<vred_count, "vred_count">(in_r: count_mask, out_g: scalar_out);
+}
+
+module vec_io_bench() {
+  net green membus;             # chunk1's memory bus (control + scalar rows)
+  debug net red   vbus;         # the shared write bus
+  debug net green membus_out;   # where the out-ports deposit their results
+
+  stim<"scalar_membus">(out_g: membus);
+  # Stands in for the register bank's mux gates driving the shared bus, so the
+  # out-ports can be tested without dragging the bank in.
+  stim<"vec_bus">(out_r: vbus);
+  vec_io(membus: membus, vbus: vbus, scalar_out: membus_out);
+}

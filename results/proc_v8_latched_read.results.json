@@ -1,0 +1,728 @@
+{
+  "name": "proc_v8_latched_read",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 0,
+  "rebuild": {
+    "removed": 78,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 77,
+    "revived": 77,
+    "placed": 77
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [
+    {
+      "unit": 123554,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 6
+    },
+    {
+      "unit": 123595,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 44
+    },
+    {
+      "unit": 123609,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 45
+    },
+    {
+      "unit": 123608,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 46
+    }
+  ],
+  "mapping": {
+    "translation": {
+      "dx": 0.0,
+      "dy": 0.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 123561,
+      "2": 123562,
+      "3": 123564,
+      "4": 123563,
+      "5": 123565,
+      "6": 123554,
+      "7": 123570,
+      "8": 123567,
+      "9": 123566,
+      "10": 123569,
+      "11": 123568,
+      "12": 123574,
+      "13": 123572,
+      "14": 123571,
+      "15": 123555,
+      "16": 123557,
+      "17": 123556,
+      "18": 123573,
+      "19": 123560,
+      "20": 123579,
+      "21": 123581,
+      "22": 123558,
+      "23": 123559,
+      "24": 123576,
+      "25": 123575,
+      "26": 123578,
+      "27": 123577,
+      "28": 123580,
+      "29": 123583,
+      "30": 123603,
+      "31": 123605,
+      "32": 123585,
+      "33": 123584,
+      "34": 123587,
+      "35": 123586,
+      "36": 123589,
+      "37": 123588,
+      "38": 123600,
+      "39": 123599,
+      "40": 123602,
+      "41": 123582,
+      "42": 123601,
+      "43": 123604,
+      "44": 123595,
+      "45": 123609,
+      "46": 123608,
+      "47": 123612,
+      "48": 123614,
+      "49": 123591,
+      "50": 123590,
+      "51": 123593,
+      "52": 123592,
+      "53": 123611,
+      "54": 123610,
+      "55": 123613,
+      "56": 123594,
+      "57": 123607,
+      "58": 123606,
+      "59": 123619,
+      "60": 123618,
+      "61": 123621,
+      "62": 123597,
+      "63": 123596,
+      "64": 123598,
+      "65": 123616,
+      "66": 123615,
+      "67": 123617,
+      "68": 123620,
+      "69": 123623,
+      "70": 123625,
+      "71": 123622,
+      "72": 123624,
+      "73": 123627,
+      "74": 123629,
+      "75": 123626,
+      "76": 123628,
+      "77": 123630
+    },
+    "driver_units": {
+      "trig_set": 123555
+    },
+    "output_probes": [
+      {
+        "name": "mem_state",
+        "unit": 123589,
+        "wire": "red"
+      },
+      {
+        "name": "port_a",
+        "unit": 123598,
+        "wire": "green"
+      },
+      {
+        "name": "port_b",
+        "unit": 123616,
+        "wire": "green"
+      },
+      {
+        "name": "instr_port",
+        "unit": 123615,
+        "wire": "green"
+      },
+      {
+        "name": "out4_inject",
+        "unit": 123573,
+        "wire": "green"
+      }
+    ],
+    "expected_probe_name": "mem_state"
+  },
+  "timeline": [
+    {
+      "tick": 888489,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888490,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888491,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 3.0
+        },
+        "instr_port": {
+          "signal-0": 8257792.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888492,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888493,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 5.0
+        },
+        "instr_port": {
+          "signal-0~rare": 172544.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888494,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 6.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888495,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 7.0
+        },
+        "instr_port": {
+          "signal-0~legendary": 8237312.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888496,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 8.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888497,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 9.0
+        },
+        "instr_port": {
+          "signal-1~uncommon": 315904.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888498,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 42.0,
+          "signal-P": 10.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888499,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 42.0,
+          "signal-P": 11.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888500,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 42.0,
+          "signal-P": 12.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888501,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-H": 42.0,
+          "signal-P": 13.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888502,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 14.0
+        },
+        "instr_port": {
+          "signal-2~uncommon": 8258560.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888503,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 15.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888504,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 16.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888505,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 17.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888506,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 18.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888507,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 19.0
+        },
+        "port_a": {
+          "signal-H": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H"
+    },
+    {
+      "tick": 888508,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 20.0
+        },
+        "port_a": {
+          "signal-H": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "port_a_reparked_on_G"
+    },
+    {
+      "tick": 888509,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 21.0
+        },
+        "port_a": {
+          "signal-H": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "port_a_reparked_on_G"
+    },
+    {
+      "tick": 888510,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 22.0
+        },
+        "port_a": {
+          "signal-H": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "port_a_reparked_on_G"
+    },
+    {
+      "tick": 888511,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 23.0
+        },
+        "port_a": {
+          "signal-H": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "port_a_reparked_on_G"
+    },
+    {
+      "tick": 888512,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 24.0
+        },
+        "port_a": {
+          "signal-H": 42.0
+        },
+        "instr_port": {
+          "signal-4~uncommon": 8238080.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "port_a_reparked_on_G"
+    },
+    {
+      "tick": 888513,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 25.0
+        },
+        "port_a": {
+          "signal-H": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "port_a_reparked_on_G"
+    },
+    {
+      "tick": 888514,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 26.0
+        },
+        "port_a": {
+          "signal-H": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "port_a_reparked_on_G"
+    },
+    {
+      "tick": 888515,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 27.0
+        },
+        "port_a": {
+          "signal-H": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "port_a_reparked_on_G"
+    },
+    {
+      "tick": 888516,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 28.0
+        },
+        "port_a": {
+          "signal-H": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "port_a_reparked_on_G"
+    },
+    {
+      "tick": 888517,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 29.0
+        },
+        "port_a": {
+          "signal-G": 77.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "port_a_reparked_on_G"
+    },
+    {
+      "tick": 888518,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 30.0
+        },
+        "port_a": {
+          "signal-G": 77.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "port_a_reparked_on_G"
+    },
+    {
+      "tick": 888519,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 31.0
+        },
+        "port_a": {
+          "signal-G": 77.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "port_a_reparked_on_G"
+    },
+    {
+      "tick": 888520,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 32.0
+        },
+        "port_a": {
+          "signal-G": 77.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "port_a_reparked_on_G"
+    },
+    {
+      "tick": 888521,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 33.0
+        },
+        "port_a": {
+          "signal-G": 77.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "port_a_reparked_on_G"
+    },
+    {
+      "tick": 888522,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-G": 77.0,
+          "signal-H": 42.0,
+          "signal-P": 34.0
+        },
+        "port_a": {
+          "signal-G": 77.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "port_a_reparked_on_G"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "port_a_latched_on_H",
+      "drive_start_tick": 888488,
+      "skipped_ticks": 0,
+      "expected_probe": "port_a",
+      "expected": {
+        "signal-H": 42
+      },
+      "observed": {
+        "signal-H": 42.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888507
+    },
+    {
+      "step_index": 1,
+      "step_name": "port_a_reparked_on_G",
+      "drive_start_tick": 888507,
+      "skipped_ticks": 0,
+      "expected_probe": "port_a",
+      "expected": {
+        "signal-G": 77,
+        "signal-H": 0
+      },
+      "observed": {
+        "signal-G": 77.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888522
+    }
+  ],
+  "pass": true
+}

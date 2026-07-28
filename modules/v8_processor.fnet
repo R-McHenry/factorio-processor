@@ -1,0 +1,108 @@
+# v8_processor — component 8 of the fnet v8 rebuild (NETLIST_PLAN.md): the
+# full v8 machine composed from the seven live-verified component modules
+# plus ROM and the bench-driver stims (masters 1/4/15/16/19/17/24/25/26/41).
+# Build with `--top processor`.
+#
+# Bus map (master net -> here):
+#   red state bus      = state      (cell loop + ALU/CMP reads + PC autoinc/inject)
+#   green memory bus   = membus     (cell + ALU results + ROM + port feeds + mmap)
+#   matrix out1        = waddr_bus  -> write_encoder addr_in
+#   matrix out2        = wvalue_bus -> write_encoder value_in
+#   matrix out3        = park_a_bus -> port_a addr_in
+#   matrix out4        = inject_bus -> pc inject_in
+#   write trigger      = trig_bus   (decoder sensor out_r -> encoder trig_in)
+#   set / reset / value buses between encoder and mem_cell (+ direct-write trio)
+#   port data returns  = porta_data / portb_data / instr_data -> decoder inputs
+#
+# LAYOUT IS LOAD-BEARING (14-tile rows, 9-tile reach, ~12 rows). Declaration
+# order was hand-packed: the 3 one-tile stims before decoder_matrix reproduce
+# the offset its internal phasing needs; br_* stims are inert bus anchors
+# bridging the vertical descents (the master uses matrix_out/port_rd
+# constants the same way). Reordering ANYTHING here moves every row below
+# it — recompile and expect the reach checker to complain loudly.
+
+import "v8_mem_cell.fnet";
+import "v8_write_encoder.fnet";
+import "v8_decoder_matrix.fnet";
+import "v8_alu.fnet";
+import "v8_port_a.fnet";
+import "v8_port_b_mmap.fnet";
+import "v8_pc.fnet";
+
+# A second accumulate row (counter@300 comes from v8_mem_cell.fnet's import):
+# program benches use counter as a loop/instruction counter and poison_ctr
+# as the post-halt poison canary (only reachable if a halt spin fails).
+signal poison_ctr = memory[301];
+accumulate poison_ctr;
+
+# `membus` is a port so the v10 vector zone can hang off the scalar memory
+# bus (it is the vector zone's entire control plane — see v10_processor.fnet).
+# Unbound in the standalone v8 build, where a top-level port waives the
+# driver/consumer requirement and the compiled output is byte-identical.
+module processor(out_r enc_onehot, out_g membus) {
+  net red state;
+  net green waddr_bus, wvalue_bus, park_a_bus, inject_bus;
+  net red trig_bus;
+  net red set_bus;
+  net green reset_bus, value_bus;
+  net green porta_data, portb_data, instr_data;
+  net green addr_b_bus;
+  net red pc_select;
+  debug state, membus;
+
+  # -- rows 1-5: decoder (3-tile phase prefix), bridges, encoder -----------
+  stim<"write_adress">(out_g: waddr_bus);
+  stim<"write_value_bus">(out_g: wvalue_bus);
+  stim<"br_porta_hi">(out_g: porta_data);
+  decoder_matrix(instr_in: instr_data, port_a_in: porta_data,
+                 port_b_in: portb_data,
+                 out1: waddr_bus, out2: wvalue_bus, out3: park_a_bus,
+                 out4: inject_bus, write_trig: trig_bus);
+  stim<"br_trig">(out_r: trig_bus);
+  stim<"br_porta_mid">(out_g: porta_data);
+  stim<"br_park_1">(out_g: park_a_bus);
+  write_encoder(addr_in: waddr_bus, value_in: wvalue_bus, trig_in: trig_bus,
+                set_out: set_bus, reset_out: reset_bus, value_out: value_bus,
+                onehot: enc_onehot);
+
+  # -- row 6 tail: direct-write trio + right-side descent bridges ----------
+  stim<"write_trigger_set">(out_r: set_bus);
+  stim<"write_value">(out_g: value_bus);
+  stim<"write_trigger_reset">(out_g: reset_bus);
+  stim<"br_porta_r6">(out_g: porta_data);
+  stim<"br_portb">(out_g: portb_data);
+  stim<"br_inject_1">(out_g: inject_bus);
+
+  # -- rows 7-8: memory cell, ALU, ROM -------------------------------------
+  mem_cell(set_in: set_bus, value_in: value_bus, reset_in: reset_bus,
+           state: state, bus: membus);
+  alu(state_in: state, result_out: membus);
+  stim<"br_instr_2">(out_g: instr_data);
+  stim<"ROM">(out_g: membus);
+
+  # -- row 9: port A (right-aligned) + its stims/bridges -------------------
+  stim<"addr_rd_b">(out_g: addr_b_bus);
+  stim<"br_state_1">(out_r: state);
+  stim<"br_membus_1">(out_g: membus);
+  stim<"br_park_2">(out_g: park_a_bus);
+  stim<"br_membus_2">(out_g: membus);
+  stim<"addr_rd_a">(out_g: park_a_bus);
+  port_a(addr_in: park_a_bus, bus_in: membus, data_out: porta_data);
+
+  # -- row 10: port B + descent bridges ------------------------------------
+  port_b_mmap(bus_in: membus, addr_in: addr_b_bus, data_out: portb_data);
+  stim<"addr_rd_pc">(out_r: pc_select);
+  stim<"br_state_2">(out_r: state);
+  stim<"br_instr_3">(out_g: instr_data);
+  stim<"br_inject_3">(out_g: inject_bus);
+  stim<"br_membus_3">(out_g: membus);
+
+  # -- row 11: PC (right-aligned) + fillers --------------------------------
+  stim<"br_state_3">(out_r: state);
+  stim<"br_membus_4">(out_g: membus);
+  stim<"br_inject_4">(out_g: inject_bus);
+  stim<"br_park_3">(out_g: park_a_bus);
+  stim<"pc_inject">(out_g: inject_bus);
+  pc(state_bus: state, inject_in: inject_bus, bus_in: membus,
+     select_in: pc_select, instr_out: instr_data);
+}

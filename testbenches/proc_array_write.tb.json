@@ -1,0 +1,85 @@
+{
+  "name": "proc_array_write",
+  "description": "Offset array write: PC free-runs, port A reads the PC slot (addr 2071) so a->write_addr makes the write address track P. ROM streams h,e,l,l,o via const->write_value on 5 consecutive instructions; the letters land on 5 consecutive memory addresses. Expectations pinned from the observed landing offset.",
+  "pre_stimulus_dead_ticks": 0,
+  "settle_ticks": 1,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -8.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "addr_a": 17
+    },
+    "expected_probe_name": "port_a",
+    "output_probes": [
+      {
+        "name": "mem_state",
+        "entity_number": 36,
+        "wire": "red"
+      },
+      {
+        "name": "port_a",
+        "entity_number": 64,
+        "wire": "green"
+      },
+      {
+        "name": "port_b",
+        "entity_number": 65,
+        "wire": "green"
+      },
+      {
+        "name": "instr_port",
+        "entity_number": 66,
+        "wire": "green"
+      },
+      {
+        "name": "enc_write",
+        "entity_number": 16,
+        "wire": "green"
+      },
+      {
+        "name": "out1",
+        "entity_number": 7,
+        "wire": "green"
+      },
+      {
+        "name": "out2",
+        "entity_number": 11,
+        "wire": "green"
+      }
+    ]
+  },
+  "save_after_run": "claude_processor_test",
+  "timeline": [
+    {
+      "name": "run_program",
+      "drive": {
+        "addr_a": {
+          "signal-R": 2071
+        }
+      },
+      "settle_ticks": 1,
+      "trace_ticks": 34,
+      "expect_probe": "mem_state",
+      "expect": {
+        "signal-0~uncommon": 104,
+        "signal-0~rare": 101,
+        "signal-0~epic": 108,
+        "signal-0~legendary": 108,
+        "signal-1": 111
+      }
+    }
+  ]
+}

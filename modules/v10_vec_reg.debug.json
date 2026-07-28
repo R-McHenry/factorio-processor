@@ -1,0 +1,32 @@
+{
+  "module": "vec_reg_bench",
+  "probes": [
+    {
+      "net": "green_face1",
+      "entity_number": 7,
+      "wire": "green",
+      "position": {
+        "x": 0.5,
+        "y": -12.5
+      }
+    },
+    {
+      "net": "loop1",
+      "entity_number": 8,
+      "wire": "red",
+      "position": {
+        "x": 2.5,
+        "y": -12.5
+      }
+    },
+    {
+      "net": "loop2",
+      "entity_number": 9,
+      "wire": "red",
+      "position": {
+        "x": 6.5,
+        "y": -12.5
+      }
+    }
+  ]
+}

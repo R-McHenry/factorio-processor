@@ -1,0 +1,6397 @@
+{
+  "name": "proc_fib_loop",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 0,
+  "rebuild": {
+    "removed": 73,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 72,
+    "revived": 72,
+    "placed": 72
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [
+    {
+      "unit": 8147,
+      "slots_written": 2100,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 6
+    },
+    {
+      "unit": 8186,
+      "slots_written": 2100,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 41
+    },
+    {
+      "unit": 8199,
+      "slots_written": 2100,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 42
+    },
+    {
+      "unit": 8198,
+      "slots_written": 2100,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 43
+    }
+  ],
+  "mapping": {
+    "translation": {
+      "dx": 0.0,
+      "dy": 0.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 8153,
+      "2": 8154,
+      "3": 8156,
+      "4": 8155,
+      "5": 8157,
+      "6": 8147,
+      "7": 8162,
+      "8": 8159,
+      "9": 8158,
+      "10": 8161,
+      "11": 8160,
+      "12": 8166,
+      "13": 8164,
+      "14": 8163,
+      "15": 8148,
+      "16": 8149,
+      "17": 8165,
+      "18": 8152,
+      "19": 8170,
+      "20": 8172,
+      "21": 8150,
+      "22": 8151,
+      "23": 8168,
+      "24": 8167,
+      "25": 8169,
+      "26": 8171,
+      "27": 8174,
+      "28": 8193,
+      "29": 8195,
+      "30": 8176,
+      "31": 8175,
+      "32": 8178,
+      "33": 8177,
+      "34": 8180,
+      "35": 8179,
+      "36": 8191,
+      "37": 8190,
+      "38": 8173,
+      "39": 8192,
+      "40": 8194,
+      "41": 8186,
+      "42": 8199,
+      "43": 8198,
+      "44": 8201,
+      "45": 8203,
+      "46": 8182,
+      "47": 8181,
+      "48": 8184,
+      "49": 8183,
+      "50": 8200,
+      "51": 8202,
+      "52": 8185,
+      "53": 8197,
+      "54": 8196,
+      "55": 8207,
+      "56": 8209,
+      "57": 8188,
+      "58": 8187,
+      "59": 8189,
+      "60": 8205,
+      "61": 8204,
+      "62": 8206,
+      "63": 8208,
+      "64": 8211,
+      "65": 8213,
+      "66": 8210,
+      "67": 8212,
+      "68": 8215,
+      "69": 8217,
+      "70": 8214,
+      "71": 8216,
+      "72": 8218
+    },
+    "driver_units": {
+      "addr_a": 8151
+    },
+    "output_probes": [
+      {
+        "name": "mem_state",
+        "unit": 8180,
+        "wire": "red"
+      },
+      {
+        "name": "port_a",
+        "unit": 8189,
+        "wire": "green"
+      },
+      {
+        "name": "port_b",
+        "unit": 8205,
+        "wire": "green"
+      },
+      {
+        "name": "instr_port",
+        "unit": 8204,
+        "wire": "green"
+      },
+      {
+        "name": "enc_write",
+        "unit": 8149,
+        "wire": "green"
+      },
+      {
+        "name": "out1",
+        "unit": 8162,
+        "wire": "green"
+      },
+      {
+        "name": "out2",
+        "unit": 8160,
+        "wire": "green"
+      }
+    ],
+    "expected_probe_name": "port_a"
+  },
+  "timeline": [
+    {
+      "tick": 744524,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744525,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744526,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 3.0
+        },
+        "instr_port": {
+          "signal-0": 8298752.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744527,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 4.0
+        },
+        "instr_port": {
+          "signal-0~uncommon": 8298752.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744528,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 5.0
+        },
+        "instr_port": {
+          "signal-0~rare": 8298752.0
+        },
+        "out1": {
+          "signal-0": 2026.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744529,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 6.0
+        },
+        "instr_port": {
+          "signal-0~epic": 8360192.0
+        },
+        "out1": {
+          "signal-0~uncommon": 2026.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744530,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 7.0
+        },
+        "instr_port": {
+          "signal-0~legendary": 410112.0
+        },
+        "out1": {
+          "signal-0~rare": 2026.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744531,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 8.0
+        },
+        "instr_port": {
+          "signal-1": 4608.0
+        },
+        "out1": {
+          "signal-0~epic": 2041.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744532,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 9.0
+        },
+        "out2": {
+          "signal-0~legendary": 100.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744533,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 10.0
+        },
+        "out2": {
+          "signal-1": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744534,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 11.0
+        },
+        "enc_write": {
+          "signal-E": 100.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744535,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-E": 100.0,
+          "signal-P": 12.0
+        },
+        "instr_port": {
+          "signal-1~legendary": 8360960.0
+        },
+        "enc_write": {
+          "signal-H": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744536,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-E": 100.0,
+          "signal-H": 1.0,
+          "signal-P": 13.0
+        },
+        "instr_port": {
+          "signal-2": 8339712.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744537,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-E": 100.0,
+          "signal-H": 1.0,
+          "signal-P": 14.0
+        },
+        "instr_port": {
+          "signal-2~uncommon": 8382464.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744538,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-E": 100.0,
+          "signal-H": 1.0,
+          "signal-P": 15.0
+        },
+        "instr_port": {
+          "signal-2~rare": 8360194.0
+        },
+        "out1": {
+          "signal-2": 2036.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744539,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-E": 100.0,
+          "signal-H": 1.0,
+          "signal-P": 16.0
+        },
+        "port_a": {
+          "signal-H": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744540,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-E": 100.0,
+          "signal-H": 1.0,
+          "signal-P": 17.0
+        },
+        "instr_port": {
+          "signal-2~legendary": 32.0
+        },
+        "out1": {
+          "signal-2~rare": 2041.0
+        },
+        "out2": {
+          "signal-H": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744541,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-E": 100.0,
+          "signal-H": 1.0,
+          "signal-P": 18.0
+        },
+        "port_b": {
+          "signal-I": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744542,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-E": 100.0,
+          "signal-H": 1.0,
+          "signal-P": 19.0
+        },
+        "enc_write": {
+          "signal-G": 1.0
+        },
+        "out2": {
+          "signal-I": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744543,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 20.0
+        },
+        "instr_port": {
+          "signal-3~rare": 8361984.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744544,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 21.0
+        },
+        "instr_port": {
+          "signal-3~epic": 8278272.0
+        },
+        "enc_write": {
+          "signal-H": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744545,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 22.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744546,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 23.0
+        },
+        "instr_port": {
+          "signal-4": 32.0
+        },
+        "out1": {
+          "signal-3~epic": 2021.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744547,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 24.0
+        },
+        "port_b": {
+          "signal-H": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744548,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 25.0
+        },
+        "out2": {
+          "signal-H": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744549,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 26.0
+        },
+        "instr_port": {
+          "signal-4~epic": 8321024.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744550,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 27.0
+        },
+        "enc_write": {
+          "signal-D": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744551,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 28.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744552,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 29.0
+        },
+        "instr_port": {
+          "signal-5~uncommon": 8585488.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744553,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744554,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 31.0
+        },
+        "instr_port": {
+          "signal-5~epic": 37376.0
+        },
+        "out1": {
+          "signal-5~uncommon": 2096.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744555,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 32.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744556,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 33.0
+        },
+        "out2": {
+          "signal-5~epic": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744557,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744558,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 35.0
+        },
+        "enc_write": {
+          "signal-P": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744559,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 10.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744560,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 11.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744561,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 12.0
+        },
+        "instr_port": {
+          "signal-1~legendary": 8360960.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744562,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 13.0
+        },
+        "instr_port": {
+          "signal-2": 8339712.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744563,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 14.0
+        },
+        "instr_port": {
+          "signal-2~uncommon": 8382464.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744564,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 15.0
+        },
+        "instr_port": {
+          "signal-2~rare": 8360194.0
+        },
+        "out1": {
+          "signal-2": 2036.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744565,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 16.0
+        },
+        "port_a": {
+          "signal-H": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744566,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 17.0
+        },
+        "instr_port": {
+          "signal-2~legendary": 32.0
+        },
+        "out1": {
+          "signal-2~rare": 2041.0
+        },
+        "out2": {
+          "signal-H": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744567,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 18.0
+        },
+        "port_b": {
+          "signal-I": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744568,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 19.0
+        },
+        "enc_write": {
+          "signal-G": 1.0
+        },
+        "out2": {
+          "signal-I": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744569,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 20.0
+        },
+        "instr_port": {
+          "signal-3~rare": 8361984.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744570,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 1.0,
+          "signal-P": 21.0
+        },
+        "instr_port": {
+          "signal-3~epic": 8278272.0
+        },
+        "enc_write": {
+          "signal-H": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744571,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 22.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744572,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 23.0
+        },
+        "instr_port": {
+          "signal-4": 32.0
+        },
+        "out1": {
+          "signal-3~epic": 2021.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744573,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 24.0
+        },
+        "port_b": {
+          "signal-H": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744574,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 25.0
+        },
+        "out2": {
+          "signal-H": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744575,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 26.0
+        },
+        "instr_port": {
+          "signal-4~epic": 8321024.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744576,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 1.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 27.0
+        },
+        "enc_write": {
+          "signal-D": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744577,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 28.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744578,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 29.0
+        },
+        "instr_port": {
+          "signal-5~uncommon": 8585488.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744579,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744580,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 31.0
+        },
+        "instr_port": {
+          "signal-5~epic": 37376.0
+        },
+        "out1": {
+          "signal-5~uncommon": 2096.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744581,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 32.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744582,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 33.0
+        },
+        "out2": {
+          "signal-5~epic": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744583,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744584,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 35.0
+        },
+        "enc_write": {
+          "signal-P": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744585,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 10.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744586,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 11.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744587,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 12.0
+        },
+        "instr_port": {
+          "signal-1~legendary": 8360960.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744588,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 13.0
+        },
+        "instr_port": {
+          "signal-2": 8339712.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744589,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 14.0
+        },
+        "instr_port": {
+          "signal-2~uncommon": 8382464.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744590,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 15.0
+        },
+        "instr_port": {
+          "signal-2~rare": 8360194.0
+        },
+        "out1": {
+          "signal-2": 2036.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744591,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 16.0
+        },
+        "port_a": {
+          "signal-H": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744592,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 17.0
+        },
+        "instr_port": {
+          "signal-2~legendary": 32.0
+        },
+        "out1": {
+          "signal-2~rare": 2041.0
+        },
+        "out2": {
+          "signal-H": 2.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744593,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 18.0
+        },
+        "port_b": {
+          "signal-I": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744594,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 1.0,
+          "signal-H": 2.0,
+          "signal-P": 19.0
+        },
+        "enc_write": {
+          "signal-G": 2.0
+        },
+        "out2": {
+          "signal-I": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744595,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 2.0,
+          "signal-P": 20.0
+        },
+        "instr_port": {
+          "signal-3~rare": 8361984.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744596,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 2.0,
+          "signal-P": 21.0
+        },
+        "instr_port": {
+          "signal-3~epic": 8278272.0
+        },
+        "enc_write": {
+          "signal-H": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744597,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 22.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744598,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 23.0
+        },
+        "instr_port": {
+          "signal-4": 32.0
+        },
+        "out1": {
+          "signal-3~epic": 2021.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744599,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 24.0
+        },
+        "port_b": {
+          "signal-H": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744600,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 25.0
+        },
+        "out2": {
+          "signal-H": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744601,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 26.0
+        },
+        "instr_port": {
+          "signal-4~epic": 8321024.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744602,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 2.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 27.0
+        },
+        "enc_write": {
+          "signal-D": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744603,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 28.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744604,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 29.0
+        },
+        "instr_port": {
+          "signal-5~uncommon": 8585488.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744605,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744606,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 31.0
+        },
+        "instr_port": {
+          "signal-5~epic": 37376.0
+        },
+        "out1": {
+          "signal-5~uncommon": 2096.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744607,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 32.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744608,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 33.0
+        },
+        "out2": {
+          "signal-5~epic": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744609,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744610,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 35.0
+        },
+        "enc_write": {
+          "signal-P": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744611,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 10.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744612,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 11.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744613,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 12.0
+        },
+        "instr_port": {
+          "signal-1~legendary": 8360960.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744614,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 13.0
+        },
+        "instr_port": {
+          "signal-2": 8339712.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744615,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 14.0
+        },
+        "instr_port": {
+          "signal-2~uncommon": 8382464.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744616,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 15.0
+        },
+        "instr_port": {
+          "signal-2~rare": 8360194.0
+        },
+        "out1": {
+          "signal-2": 2036.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744617,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 16.0
+        },
+        "port_a": {
+          "signal-H": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744618,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 17.0
+        },
+        "instr_port": {
+          "signal-2~legendary": 32.0
+        },
+        "out1": {
+          "signal-2~rare": 2041.0
+        },
+        "out2": {
+          "signal-H": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744619,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 18.0
+        },
+        "port_b": {
+          "signal-I": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744620,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 2.0,
+          "signal-H": 3.0,
+          "signal-P": 19.0
+        },
+        "enc_write": {
+          "signal-G": 3.0
+        },
+        "out2": {
+          "signal-I": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744621,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 3.0,
+          "signal-P": 20.0
+        },
+        "instr_port": {
+          "signal-3~rare": 8361984.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744622,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 3.0,
+          "signal-P": 21.0
+        },
+        "instr_port": {
+          "signal-3~epic": 8278272.0
+        },
+        "enc_write": {
+          "signal-H": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744623,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 22.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744624,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 23.0
+        },
+        "instr_port": {
+          "signal-4": 32.0
+        },
+        "out1": {
+          "signal-3~epic": 2021.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744625,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 24.0
+        },
+        "port_b": {
+          "signal-H": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744626,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 25.0
+        },
+        "out2": {
+          "signal-H": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744627,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 26.0
+        },
+        "instr_port": {
+          "signal-4~epic": 8321024.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744628,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 3.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 27.0
+        },
+        "enc_write": {
+          "signal-D": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744629,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 28.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744630,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 29.0
+        },
+        "instr_port": {
+          "signal-5~uncommon": 8585488.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744631,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744632,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 31.0
+        },
+        "instr_port": {
+          "signal-5~epic": 37376.0
+        },
+        "out1": {
+          "signal-5~uncommon": 2096.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744633,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 32.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744634,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 33.0
+        },
+        "out2": {
+          "signal-5~epic": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744635,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744636,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 35.0
+        },
+        "enc_write": {
+          "signal-P": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744637,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 10.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744638,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 11.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744639,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 12.0
+        },
+        "instr_port": {
+          "signal-1~legendary": 8360960.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744640,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 13.0
+        },
+        "instr_port": {
+          "signal-2": 8339712.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744641,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 14.0
+        },
+        "instr_port": {
+          "signal-2~uncommon": 8382464.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744642,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 15.0
+        },
+        "instr_port": {
+          "signal-2~rare": 8360194.0
+        },
+        "out1": {
+          "signal-2": 2036.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744643,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 16.0
+        },
+        "port_a": {
+          "signal-H": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744644,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 17.0
+        },
+        "instr_port": {
+          "signal-2~legendary": 32.0
+        },
+        "out1": {
+          "signal-2~rare": 2041.0
+        },
+        "out2": {
+          "signal-H": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744645,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 18.0
+        },
+        "port_b": {
+          "signal-I": 8.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744646,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 3.0,
+          "signal-H": 5.0,
+          "signal-P": 19.0
+        },
+        "enc_write": {
+          "signal-G": 5.0
+        },
+        "out2": {
+          "signal-I": 8.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744647,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 5.0,
+          "signal-P": 20.0
+        },
+        "instr_port": {
+          "signal-3~rare": 8361984.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744648,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 5.0,
+          "signal-P": 21.0
+        },
+        "instr_port": {
+          "signal-3~epic": 8278272.0
+        },
+        "enc_write": {
+          "signal-H": 8.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744649,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 22.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744650,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 23.0
+        },
+        "instr_port": {
+          "signal-4": 32.0
+        },
+        "out1": {
+          "signal-3~epic": 2021.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744651,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 24.0
+        },
+        "port_b": {
+          "signal-H": 8.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744652,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 25.0
+        },
+        "out2": {
+          "signal-H": 8.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744653,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 26.0
+        },
+        "instr_port": {
+          "signal-4~epic": 8321024.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744654,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 5.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 27.0
+        },
+        "enc_write": {
+          "signal-D": 8.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744655,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 28.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744656,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 29.0
+        },
+        "instr_port": {
+          "signal-5~uncommon": 8585488.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744657,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744658,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 31.0
+        },
+        "instr_port": {
+          "signal-5~epic": 37376.0
+        },
+        "out1": {
+          "signal-5~uncommon": 2096.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744659,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 32.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744660,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 33.0
+        },
+        "out2": {
+          "signal-5~epic": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744661,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744662,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 35.0
+        },
+        "enc_write": {
+          "signal-P": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744663,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 10.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744664,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 11.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744665,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 12.0
+        },
+        "instr_port": {
+          "signal-1~legendary": 8360960.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744666,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 13.0
+        },
+        "instr_port": {
+          "signal-2": 8339712.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744667,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 14.0
+        },
+        "instr_port": {
+          "signal-2~uncommon": 8382464.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744668,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 15.0
+        },
+        "instr_port": {
+          "signal-2~rare": 8360194.0
+        },
+        "out1": {
+          "signal-2": 2036.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744669,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 16.0
+        },
+        "port_a": {
+          "signal-H": 8.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744670,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 17.0
+        },
+        "instr_port": {
+          "signal-2~legendary": 32.0
+        },
+        "out1": {
+          "signal-2~rare": 2041.0
+        },
+        "out2": {
+          "signal-H": 8.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744671,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 18.0
+        },
+        "port_b": {
+          "signal-I": 13.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744672,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 5.0,
+          "signal-H": 8.0,
+          "signal-P": 19.0
+        },
+        "enc_write": {
+          "signal-G": 8.0
+        },
+        "out2": {
+          "signal-I": 13.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744673,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 8.0,
+          "signal-P": 20.0
+        },
+        "instr_port": {
+          "signal-3~rare": 8361984.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744674,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 8.0,
+          "signal-P": 21.0
+        },
+        "instr_port": {
+          "signal-3~epic": 8278272.0
+        },
+        "enc_write": {
+          "signal-H": 13.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744675,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 22.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744676,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 23.0
+        },
+        "instr_port": {
+          "signal-4": 32.0
+        },
+        "out1": {
+          "signal-3~epic": 2021.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744677,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 24.0
+        },
+        "port_b": {
+          "signal-H": 13.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744678,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 25.0
+        },
+        "out2": {
+          "signal-H": 13.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744679,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 26.0
+        },
+        "instr_port": {
+          "signal-4~epic": 8321024.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744680,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 8.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 27.0
+        },
+        "enc_write": {
+          "signal-D": 13.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744681,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 28.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744682,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 29.0
+        },
+        "instr_port": {
+          "signal-5~uncommon": 8585488.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744683,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744684,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 31.0
+        },
+        "instr_port": {
+          "signal-5~epic": 37376.0
+        },
+        "out1": {
+          "signal-5~uncommon": 2096.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744685,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 32.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744686,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 33.0
+        },
+        "out2": {
+          "signal-5~epic": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744687,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744688,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 35.0
+        },
+        "enc_write": {
+          "signal-P": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744689,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 10.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744690,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 11.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744691,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 12.0
+        },
+        "instr_port": {
+          "signal-1~legendary": 8360960.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744692,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 13.0
+        },
+        "instr_port": {
+          "signal-2": 8339712.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744693,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 14.0
+        },
+        "instr_port": {
+          "signal-2~uncommon": 8382464.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744694,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 15.0
+        },
+        "instr_port": {
+          "signal-2~rare": 8360194.0
+        },
+        "out1": {
+          "signal-2": 2036.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744695,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 16.0
+        },
+        "port_a": {
+          "signal-H": 13.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744696,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 17.0
+        },
+        "instr_port": {
+          "signal-2~legendary": 32.0
+        },
+        "out1": {
+          "signal-2~rare": 2041.0
+        },
+        "out2": {
+          "signal-H": 13.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744697,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 18.0
+        },
+        "port_b": {
+          "signal-I": 21.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744698,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 8.0,
+          "signal-H": 13.0,
+          "signal-P": 19.0
+        },
+        "enc_write": {
+          "signal-G": 13.0
+        },
+        "out2": {
+          "signal-I": 21.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744699,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 13.0,
+          "signal-P": 20.0
+        },
+        "instr_port": {
+          "signal-3~rare": 8361984.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744700,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 13.0,
+          "signal-P": 21.0
+        },
+        "instr_port": {
+          "signal-3~epic": 8278272.0
+        },
+        "enc_write": {
+          "signal-H": 21.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744701,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 22.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744702,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 23.0
+        },
+        "instr_port": {
+          "signal-4": 32.0
+        },
+        "out1": {
+          "signal-3~epic": 2021.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744703,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 24.0
+        },
+        "port_b": {
+          "signal-H": 21.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744704,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 25.0
+        },
+        "out2": {
+          "signal-H": 21.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744705,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 26.0
+        },
+        "instr_port": {
+          "signal-4~epic": 8321024.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744706,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 13.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 27.0
+        },
+        "enc_write": {
+          "signal-D": 21.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744707,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 28.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744708,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 29.0
+        },
+        "instr_port": {
+          "signal-5~uncommon": 8585488.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744709,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744710,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 31.0
+        },
+        "instr_port": {
+          "signal-5~epic": 37376.0
+        },
+        "out1": {
+          "signal-5~uncommon": 2096.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744711,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 32.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744712,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 33.0
+        },
+        "out2": {
+          "signal-5~epic": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744713,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744714,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 35.0
+        },
+        "enc_write": {
+          "signal-P": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744715,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 10.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744716,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 11.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744717,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 12.0
+        },
+        "instr_port": {
+          "signal-1~legendary": 8360960.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744718,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 13.0
+        },
+        "instr_port": {
+          "signal-2": 8339712.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744719,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 14.0
+        },
+        "instr_port": {
+          "signal-2~uncommon": 8382464.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744720,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 15.0
+        },
+        "instr_port": {
+          "signal-2~rare": 8360194.0
+        },
+        "out1": {
+          "signal-2": 2036.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744721,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 16.0
+        },
+        "port_a": {
+          "signal-H": 21.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744722,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 17.0
+        },
+        "instr_port": {
+          "signal-2~legendary": 32.0
+        },
+        "out1": {
+          "signal-2~rare": 2041.0
+        },
+        "out2": {
+          "signal-H": 21.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744723,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 18.0
+        },
+        "port_b": {
+          "signal-I": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744724,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 13.0,
+          "signal-H": 21.0,
+          "signal-P": 19.0
+        },
+        "enc_write": {
+          "signal-G": 21.0
+        },
+        "out2": {
+          "signal-I": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744725,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 21.0,
+          "signal-P": 20.0
+        },
+        "instr_port": {
+          "signal-3~rare": 8361984.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744726,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 21.0,
+          "signal-P": 21.0
+        },
+        "instr_port": {
+          "signal-3~epic": 8278272.0
+        },
+        "enc_write": {
+          "signal-H": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744727,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 22.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744728,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 23.0
+        },
+        "instr_port": {
+          "signal-4": 32.0
+        },
+        "out1": {
+          "signal-3~epic": 2021.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744729,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 24.0
+        },
+        "port_b": {
+          "signal-H": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744730,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 25.0
+        },
+        "out2": {
+          "signal-H": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744731,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 26.0
+        },
+        "instr_port": {
+          "signal-4~epic": 8321024.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744732,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 21.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 27.0
+        },
+        "enc_write": {
+          "signal-D": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744733,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 28.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744734,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 29.0
+        },
+        "instr_port": {
+          "signal-5~uncommon": 8585488.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744735,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744736,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 31.0
+        },
+        "instr_port": {
+          "signal-5~epic": 37376.0
+        },
+        "out1": {
+          "signal-5~uncommon": 2096.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744737,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 32.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744738,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 33.0
+        },
+        "out2": {
+          "signal-5~epic": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744739,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744740,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 35.0
+        },
+        "enc_write": {
+          "signal-P": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744741,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 10.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744742,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 11.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744743,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 12.0
+        },
+        "instr_port": {
+          "signal-1~legendary": 8360960.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744744,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 13.0
+        },
+        "instr_port": {
+          "signal-2": 8339712.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744745,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 14.0
+        },
+        "instr_port": {
+          "signal-2~uncommon": 8382464.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744746,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 15.0
+        },
+        "instr_port": {
+          "signal-2~rare": 8360194.0
+        },
+        "out1": {
+          "signal-2": 2036.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744747,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 16.0
+        },
+        "port_a": {
+          "signal-H": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744748,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 17.0
+        },
+        "instr_port": {
+          "signal-2~legendary": 32.0
+        },
+        "out1": {
+          "signal-2~rare": 2041.0
+        },
+        "out2": {
+          "signal-H": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744749,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 18.0
+        },
+        "port_b": {
+          "signal-I": 55.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744750,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 21.0,
+          "signal-H": 34.0,
+          "signal-P": 19.0
+        },
+        "enc_write": {
+          "signal-G": 34.0
+        },
+        "out2": {
+          "signal-I": 55.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744751,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 34.0,
+          "signal-P": 20.0
+        },
+        "instr_port": {
+          "signal-3~rare": 8361984.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744752,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 34.0,
+          "signal-P": 21.0
+        },
+        "instr_port": {
+          "signal-3~epic": 8278272.0
+        },
+        "enc_write": {
+          "signal-H": 55.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744753,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 22.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744754,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 23.0
+        },
+        "instr_port": {
+          "signal-4": 32.0
+        },
+        "out1": {
+          "signal-3~epic": 2021.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744755,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 24.0
+        },
+        "port_b": {
+          "signal-H": 55.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744756,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 25.0
+        },
+        "out2": {
+          "signal-H": 55.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744757,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 26.0
+        },
+        "instr_port": {
+          "signal-4~epic": 8321024.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744758,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 34.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 27.0
+        },
+        "enc_write": {
+          "signal-D": 55.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744759,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 28.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744760,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 29.0
+        },
+        "instr_port": {
+          "signal-5~uncommon": 8585488.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744761,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744762,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 31.0
+        },
+        "instr_port": {
+          "signal-5~epic": 37376.0
+        },
+        "out1": {
+          "signal-5~uncommon": 2096.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744763,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 32.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744764,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 33.0
+        },
+        "out2": {
+          "signal-5~epic": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744765,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744766,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 35.0
+        },
+        "enc_write": {
+          "signal-P": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744767,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 10.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744768,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 11.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744769,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 12.0
+        },
+        "instr_port": {
+          "signal-1~legendary": 8360960.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744770,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 13.0
+        },
+        "instr_port": {
+          "signal-2": 8339712.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744771,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 14.0
+        },
+        "instr_port": {
+          "signal-2~uncommon": 8382464.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744772,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 15.0
+        },
+        "instr_port": {
+          "signal-2~rare": 8360194.0
+        },
+        "out1": {
+          "signal-2": 2036.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744773,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 16.0
+        },
+        "port_a": {
+          "signal-H": 55.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744774,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 17.0
+        },
+        "instr_port": {
+          "signal-2~legendary": 32.0
+        },
+        "out1": {
+          "signal-2~rare": 2041.0
+        },
+        "out2": {
+          "signal-H": 55.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744775,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 18.0
+        },
+        "port_b": {
+          "signal-I": 89.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744776,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 34.0,
+          "signal-H": 55.0,
+          "signal-P": 19.0
+        },
+        "enc_write": {
+          "signal-G": 55.0
+        },
+        "out2": {
+          "signal-I": 89.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744777,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 55.0,
+          "signal-P": 20.0
+        },
+        "instr_port": {
+          "signal-3~rare": 8361984.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744778,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 55.0,
+          "signal-P": 21.0
+        },
+        "instr_port": {
+          "signal-3~epic": 8278272.0
+        },
+        "enc_write": {
+          "signal-H": 89.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744779,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 22.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744780,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 23.0
+        },
+        "instr_port": {
+          "signal-4": 32.0
+        },
+        "out1": {
+          "signal-3~epic": 2021.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744781,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 24.0
+        },
+        "port_b": {
+          "signal-H": 89.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744782,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 25.0
+        },
+        "out2": {
+          "signal-H": 89.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744783,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 26.0
+        },
+        "instr_port": {
+          "signal-4~epic": 8321024.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744784,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 55.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 27.0
+        },
+        "enc_write": {
+          "signal-D": 89.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744785,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 28.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744786,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 29.0
+        },
+        "instr_port": {
+          "signal-5~uncommon": 8585488.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744787,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744788,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 31.0
+        },
+        "instr_port": {
+          "signal-5~epic": 37376.0
+        },
+        "out1": {
+          "signal-5~uncommon": 2096.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744789,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 32.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744790,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 33.0
+        },
+        "out2": {
+          "signal-5~epic": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744791,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744792,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 35.0
+        },
+        "enc_write": {
+          "signal-P": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744793,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 10.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744794,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 11.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744795,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 12.0
+        },
+        "instr_port": {
+          "signal-1~legendary": 8360960.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744796,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 13.0
+        },
+        "instr_port": {
+          "signal-2": 8339712.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744797,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 14.0
+        },
+        "instr_port": {
+          "signal-2~uncommon": 8382464.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744798,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 15.0
+        },
+        "instr_port": {
+          "signal-2~rare": 8360194.0
+        },
+        "out1": {
+          "signal-2": 2036.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744799,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 16.0
+        },
+        "port_a": {
+          "signal-H": 89.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744800,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 17.0
+        },
+        "instr_port": {
+          "signal-2~legendary": 32.0
+        },
+        "out1": {
+          "signal-2~rare": 2041.0
+        },
+        "out2": {
+          "signal-H": 89.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744801,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 18.0
+        },
+        "port_b": {
+          "signal-I": 144.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744802,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 55.0,
+          "signal-H": 89.0,
+          "signal-P": 19.0
+        },
+        "enc_write": {
+          "signal-G": 89.0
+        },
+        "out2": {
+          "signal-I": 144.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744803,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 89.0,
+          "signal-P": 20.0
+        },
+        "instr_port": {
+          "signal-3~rare": 8361984.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744804,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 89.0,
+          "signal-P": 21.0
+        },
+        "instr_port": {
+          "signal-3~epic": 8278272.0
+        },
+        "enc_write": {
+          "signal-H": 144.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744805,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 22.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744806,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 23.0
+        },
+        "instr_port": {
+          "signal-4": 32.0
+        },
+        "out1": {
+          "signal-3~epic": 2021.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744807,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 24.0
+        },
+        "port_b": {
+          "signal-H": 144.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744808,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 25.0
+        },
+        "out2": {
+          "signal-H": 144.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744809,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 26.0
+        },
+        "instr_port": {
+          "signal-4~epic": 8321024.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744810,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 89.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 27.0
+        },
+        "enc_write": {
+          "signal-D": 144.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744811,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 28.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744812,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 29.0
+        },
+        "instr_port": {
+          "signal-5~uncommon": 8585488.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744813,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 30.0
+        },
+        "port_b": {
+          "signal-F": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744814,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 31.0
+        },
+        "instr_port": {
+          "signal-5~epic": 37376.0
+        },
+        "out1": {
+          "signal-5~uncommon": 2096.0,
+          "signal-F": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744815,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 32.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744816,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 33.0
+        },
+        "out2": {
+          "signal-5~epic": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744817,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 34.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744818,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 35.0
+        },
+        "enc_write": {
+          "signal-P~uncommon": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744819,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 36.0,
+          "signal-P~uncommon": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744820,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 37.0,
+          "signal-P~uncommon": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744821,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 38.0,
+          "signal-P~uncommon": 9.0
+        },
+        "instr_port": {
+          "signal-7": 844032.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744822,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 39.0,
+          "signal-P~uncommon": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744823,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 40.0,
+          "signal-P~uncommon": 9.0
+        },
+        "instr_port": {
+          "signal-7~rare": 4092416.0
+        },
+        "out1": {
+          "signal-7": 206.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744824,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 41.0,
+          "signal-P~uncommon": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744825,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 42.0,
+          "signal-P~uncommon": 9.0
+        },
+        "out2": {
+          "signal-7~rare": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744826,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 43.0,
+          "signal-P~uncommon": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744827,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 44.0,
+          "signal-P~uncommon": 9.0
+        },
+        "enc_write": {
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744828,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 45.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744829,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 46.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744830,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 47.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744831,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 48.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744832,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 49.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744833,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 50.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744834,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 51.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744835,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 52.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744836,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 53.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744837,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 54.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744838,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 55.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744839,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 56.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744840,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 57.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744841,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 58.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744842,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 59.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744843,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 60.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744844,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 61.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744845,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 62.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744846,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 63.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744847,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 64.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744848,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 65.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744849,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 66.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744850,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 67.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744851,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 68.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744852,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 69.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    },
+    {
+      "tick": 744853,
+      "stimulus": {},
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-D": 144.0,
+          "signal-E": 100.0,
+          "signal-G": 89.0,
+          "signal-H": 144.0,
+          "signal-P": 70.0,
+          "signal-P~uncommon": 9.0,
+          "signal-heart": 999.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "run_program"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "run_program",
+      "drive_start_tick": 744523,
+      "skipped_ticks": 0,
+      "expected_probe": "mem_state",
+      "expected": {
+        "signal-G": 89,
+        "signal-H": 144,
+        "signal-D": 144,
+        "signal-E": 100,
+        "signal-heart": 999
+      },
+      "observed": {
+        "signal-D": 144.0,
+        "signal-E": 100.0,
+        "signal-G": 89.0,
+        "signal-H": 144.0,
+        "signal-P": 70.0,
+        "signal-P~uncommon": 9.0,
+        "signal-heart": 999.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 744853
+    }
+  ],
+  "pass": true
+}

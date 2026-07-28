@@ -1,0 +1,307 @@
+{
+  "name": "v8_port_a",
+  "surface": "nauvis",
+  "description": "compiled by netlist.py from v8_port_a.fnet (module port_a_bench)",
+  "signals": {
+    "file.read_a": {
+      "type": "virtual",
+      "name": "down-arrow",
+      "quality": "uncommon",
+      "display": "down-arrow~uncommon",
+      "auto": true,
+      "excluded": true
+    },
+    "read_a": {
+      "type": "virtual",
+      "name": "down-arrow",
+      "quality": "uncommon",
+      "display": "down-arrow~uncommon",
+      "auto": true,
+      "excluded": true
+    },
+    "file.addr_a_stim": {
+      "type": "virtual",
+      "name": "down-left-arrow",
+      "quality": "uncommon",
+      "display": "down-left-arrow~uncommon",
+      "auto": true
+    },
+    "addr_a_stim": {
+      "type": "virtual",
+      "name": "down-left-arrow",
+      "quality": "uncommon",
+      "display": "down-left-arrow~uncommon",
+      "auto": true
+    }
+  },
+  "blueprint": {
+    "icons": [
+      {
+        "signal": {
+          "name": "constant-combinator"
+        },
+        "index": 1
+      }
+    ],
+    "entities": [
+      {
+        "entity_number": 1,
+        "name": "constant-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -12.5
+        },
+        "player_description": "addr_rd_a",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 2,
+        "name": "constant-combinator",
+        "position": {
+          "x": 5.5,
+          "y": -12.5
+        },
+        "player_description": "mem_bus_stim",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 3,
+        "name": "decider-combinator",
+        "position": {
+          "x": 1.5,
+          "y": -12.0
+        },
+        "player_description": "a_rd_latch",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "second_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 4,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -12.0
+        },
+        "player_description": "a_carrier",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "down-arrow",
+              "quality": "uncommon"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 5,
+        "name": "constant-combinator",
+        "position": {
+          "x": 3.5,
+          "y": -12.5
+        },
+        "player_description": "address_table",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        },
+        "signal_table": {
+          "table": "full_address_space",
+          "exclude": [
+            {
+              "type": "virtual",
+              "name": "down-arrow",
+              "quality": "uncommon"
+            }
+          ]
+        }
+      },
+      {
+        "entity_number": 6,
+        "name": "decider-combinator",
+        "position": {
+          "x": 4.5,
+          "y": -12.0
+        },
+        "player_description": "port_a_read",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "down-arrow",
+                  "quality": "uncommon"
+                },
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                },
+                "second_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 7,
+        "name": "constant-combinator",
+        "position": {
+          "x": 5.5,
+          "y": -11.5
+        },
+        "player_description": "port_a_rd",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "wires": [
+      [
+        1,
+        2,
+        3,
+        2
+      ],
+      [
+        2,
+        2,
+        6,
+        2
+      ],
+      [
+        3,
+        1,
+        3,
+        3
+      ],
+      [
+        3,
+        4,
+        4,
+        2
+      ],
+      [
+        4,
+        3,
+        5,
+        1
+      ],
+      [
+        5,
+        1,
+        6,
+        1
+      ],
+      [
+        6,
+        4,
+        7,
+        2
+      ]
+    ],
+    "item": "blueprint",
+    "version": 562954248978435
+  }
+}

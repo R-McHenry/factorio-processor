@@ -1,0 +1,76 @@
+{
+  "name": "v8_proc_bus_summation",
+  "description": "The interconnect summing, end to end. Two sources aimed at one matrix dest both land on its net carrying DIFFERENT signals, and the consumer sanitises with each+0 -> carrier, so the dest's value is their sum: add-immediate in flight (a+const on out2, 35+7=42), mem+mem with no ALU at all (a+b on out2, 42+35=77), an indexed LOAD with the read address computed on out3 (const base + streamed index: arr[2]=33, arr[3]=44, arr[0]=11) and an indexed STORE with the write address computed the same way on out1 (arr[2]=555, arr[3]=666, neighbours untouched). The index is a variable bumped by the very adder under test, so no case passes by accident of a constant. None of it is a new combinator - each is a different subset of the same 12 route bits, which is what a programmable interconnect buys instead of an instruction set.",
+  "pre_stimulus_dead_ticks": 0,
+  "settle_ticks": 1,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -16.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "trig_set": 46
+    },
+    "expected_probe_name": "mem_state",
+    "output_probes": [
+      {
+        "name": "mem_state",
+        "entity_number": 101,
+        "wire": "red"
+      },
+      {
+        "name": "mem_bus",
+        "entity_number": 100,
+        "wire": "green"
+      },
+      {
+        "name": "port_a",
+        "entity_number": 77,
+        "wire": "green"
+      },
+      {
+        "name": "port_b",
+        "entity_number": 83,
+        "wire": "green"
+      },
+      {
+        "name": "instr_port",
+        "entity_number": 99,
+        "wire": "green"
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "run_to_halt",
+      "skip_ticks": 260,
+      "settle_ticks": 1,
+      "trace_ticks": 3,
+      "expect_probe": "mem_state",
+      "expect": {
+        "$mem[620]": 42,
+        "$mem[621]": 77,
+        "$mem[623]": 33,
+        "$mem[624]": 44,
+        "$mem[622]": 11,
+        "$mem[702]": 555,
+        "$mem[703]": 666,
+        "$mem[700]": 11,
+        "$mem[701]": 22,
+        "$mem[610]": 0,
+        "$poison_ctr": 0
+      }
+    }
+  ]
+}

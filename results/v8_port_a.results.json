@@ -1,0 +1,843 @@
+{
+  "name": "v8_port_a",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 2,
+  "rebuild": {
+    "removed": 13,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 7,
+    "revived": 7,
+    "placed": 7
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [
+    {
+      "unit": 119660,
+      "slots_written": 2454,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 5
+    }
+  ],
+  "mapping": {
+    "translation": {
+      "dx": -3.0,
+      "dy": 12.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 119656,
+      "2": 119661,
+      "3": 119658,
+      "4": 119657,
+      "5": 119660,
+      "6": 119659,
+      "7": 119662
+    },
+    "driver_units": {
+      "addr_a": 119656,
+      "mem_bus": 119661
+    },
+    "output_probes": [
+      {
+        "name": "port_a",
+        "unit": 119662,
+        "wire": "green"
+      }
+    ],
+    "expected_probe_name": "port_a"
+  },
+  "timeline": [
+    {
+      "tick": 875949,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_1"
+    },
+    {
+      "tick": 875950,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_2"
+    },
+    {
+      "tick": 875951,
+      "stimulus": {
+        "addr_a": {
+          "down-left-arrow": 6.0
+        },
+        "mem_bus": {
+          "signal-1": 42.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "park_addr6"
+    },
+    {
+      "tick": 875952,
+      "stimulus": {
+        "addr_a": {
+          "down-left-arrow": 6.0
+        },
+        "mem_bus": {
+          "signal-1": 42.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "park_addr6"
+    },
+    {
+      "tick": 875953,
+      "stimulus": {
+        "addr_a": {
+          "down-left-arrow": 6.0
+        },
+        "mem_bus": {
+          "signal-1": 42.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "park_addr6"
+    },
+    {
+      "tick": 875954,
+      "stimulus": {
+        "addr_a": {
+          "down-left-arrow": 6.0
+        },
+        "mem_bus": {
+          "signal-1": 42.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "park_addr6"
+    },
+    {
+      "tick": 875955,
+      "stimulus": {
+        "addr_a": {
+          "down-left-arrow": 6.0
+        },
+        "mem_bus": {
+          "signal-1": 42.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "park_addr6"
+    },
+    {
+      "tick": 875956,
+      "stimulus": {
+        "addr_a": {
+          "down-left-arrow": 6.0
+        },
+        "mem_bus": {
+          "signal-1": 42.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "park_addr6"
+    },
+    {
+      "tick": 875957,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 42.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "park_persists_after_release"
+    },
+    {
+      "tick": 875958,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 42.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "park_persists_after_release"
+    },
+    {
+      "tick": 875959,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 42.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "park_persists_after_release"
+    },
+    {
+      "tick": 875960,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 42.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "park_persists_after_release"
+    },
+    {
+      "tick": 875961,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 42.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "park_persists_after_release"
+    },
+    {
+      "tick": 875962,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 42.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "park_persists_after_release"
+    },
+    {
+      "tick": 875963,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 42.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 42.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "park_persists_after_release"
+    },
+    {
+      "tick": 875964,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 42.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "data_streams_while_parked"
+    },
+    {
+      "tick": 875965,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 43.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "data_streams_while_parked"
+    },
+    {
+      "tick": 875966,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 43.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "data_streams_while_parked"
+    },
+    {
+      "tick": 875967,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 43.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "data_streams_while_parked"
+    },
+    {
+      "tick": 875968,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 43.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "data_streams_while_parked"
+    },
+    {
+      "tick": 875969,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 43.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "data_streams_while_parked"
+    },
+    {
+      "tick": 875970,
+      "stimulus": {
+        "addr_a": {
+          "down-left-arrow": 11.0
+        },
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 43.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "repark_addr11"
+    },
+    {
+      "tick": 875971,
+      "stimulus": {
+        "addr_a": {
+          "down-left-arrow": 11.0
+        },
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 43.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "repark_addr11"
+    },
+    {
+      "tick": 875972,
+      "stimulus": {
+        "addr_a": {
+          "down-left-arrow": 11.0
+        },
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-1": 43.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "repark_addr11"
+    },
+    {
+      "tick": 875973,
+      "stimulus": {
+        "addr_a": {
+          "down-left-arrow": 11.0
+        },
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-2": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "repark_addr11"
+    },
+    {
+      "tick": 875974,
+      "stimulus": {
+        "addr_a": {
+          "down-left-arrow": 11.0
+        },
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-2": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "repark_addr11"
+    },
+    {
+      "tick": 875975,
+      "stimulus": {
+        "addr_a": {
+          "down-left-arrow": 11.0
+        },
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-2": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "repark_addr11"
+    },
+    {
+      "tick": 875976,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-2": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "repark_persists"
+    },
+    {
+      "tick": 875977,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-2": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "repark_persists"
+    },
+    {
+      "tick": 875978,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-2": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "repark_persists"
+    },
+    {
+      "tick": 875979,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-2": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "repark_persists"
+    },
+    {
+      "tick": 875980,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-2": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "repark_persists"
+    },
+    {
+      "tick": 875981,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-2": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "repark_persists"
+    },
+    {
+      "tick": 875982,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 43.0,
+          "signal-2": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-2": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "repark_persists"
+    },
+    {
+      "tick": 875983,
+      "stimulus": {
+        "mem_bus": {
+          "signal-2": -9.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-2": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "negative_value_reads"
+    },
+    {
+      "tick": 875984,
+      "stimulus": {
+        "mem_bus": {
+          "signal-2": -9.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-2": -9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "negative_value_reads"
+    },
+    {
+      "tick": 875985,
+      "stimulus": {
+        "mem_bus": {
+          "signal-2": -9.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-2": -9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "negative_value_reads"
+    },
+    {
+      "tick": 875986,
+      "stimulus": {
+        "mem_bus": {
+          "signal-2": -9.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-2": -9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "negative_value_reads"
+    },
+    {
+      "tick": 875987,
+      "stimulus": {
+        "mem_bus": {
+          "signal-2": -9.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-2": -9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "negative_value_reads"
+    },
+    {
+      "tick": 875988,
+      "stimulus": {
+        "mem_bus": {
+          "signal-2": -9.0
+        }
+      },
+      "observed_by_probe": {
+        "port_a": {
+          "signal-2": -9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "negative_value_reads"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "park_addr6",
+      "drive_start_tick": 875950,
+      "skipped_ticks": 0,
+      "expected_probe": "port_a",
+      "expected": {
+        "signal-1": 42,
+        "signal-2": 0
+      },
+      "observed": {
+        "signal-1": 42.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875956
+    },
+    {
+      "step_index": 1,
+      "step_name": "park_persists_after_release",
+      "drive_start_tick": 875956,
+      "skipped_ticks": 0,
+      "expected_probe": "port_a",
+      "expected": {
+        "signal-1": 42
+      },
+      "observed": {
+        "signal-1": 42.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875963
+    },
+    {
+      "step_index": 2,
+      "step_name": "data_streams_while_parked",
+      "drive_start_tick": 875963,
+      "skipped_ticks": 0,
+      "expected_probe": "port_a",
+      "expected": {
+        "signal-1": 43
+      },
+      "observed": {
+        "signal-1": 43.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875969
+    },
+    {
+      "step_index": 3,
+      "step_name": "repark_addr11",
+      "drive_start_tick": 875969,
+      "skipped_ticks": 0,
+      "expected_probe": "port_a",
+      "expected": {
+        "signal-2": 7,
+        "signal-1": 0
+      },
+      "observed": {
+        "signal-2": 7.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875975
+    },
+    {
+      "step_index": 4,
+      "step_name": "repark_persists",
+      "drive_start_tick": 875975,
+      "skipped_ticks": 0,
+      "expected_probe": "port_a",
+      "expected": {
+        "signal-2": 7
+      },
+      "observed": {
+        "signal-2": 7.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875982
+    },
+    {
+      "step_index": 5,
+      "step_name": "negative_value_reads",
+      "drive_start_tick": 875982,
+      "skipped_ticks": 0,
+      "expected_probe": "port_a",
+      "expected": {
+        "signal-2": -9
+      },
+      "observed": {
+        "signal-2": -9.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875988
+    }
+  ],
+  "pass": true
+}

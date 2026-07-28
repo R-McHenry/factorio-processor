@@ -1,0 +1,372 @@
+{
+  "name": "v8_pc",
+  "surface": "nauvis",
+  "description": "compiled by netlist.py from v8_pc.fnet (module pc_bench)",
+  "signals": {
+    "file.read_pc": {
+      "type": "virtual",
+      "name": "down-arrow",
+      "quality": "uncommon",
+      "display": "down-arrow~uncommon",
+      "auto": true,
+      "excluded": true
+    },
+    "read_pc": {
+      "type": "virtual",
+      "name": "down-arrow",
+      "quality": "uncommon",
+      "display": "down-arrow~uncommon",
+      "auto": true,
+      "excluded": true
+    },
+    "file.pc": {
+      "type": "virtual",
+      "name": "shape-curve-3",
+      "quality": "uncommon",
+      "display": "shape-curve-3~uncommon",
+      "auto": false,
+      "address": 2096
+    },
+    "pc": {
+      "type": "virtual",
+      "name": "shape-curve-3",
+      "quality": "uncommon",
+      "display": "shape-curve-3~uncommon",
+      "auto": false,
+      "address": 2096
+    },
+    "file.pc_stim": {
+      "type": "virtual",
+      "name": "down-left-arrow",
+      "quality": "uncommon",
+      "display": "down-left-arrow~uncommon",
+      "auto": true
+    },
+    "pc_stim": {
+      "type": "virtual",
+      "name": "down-left-arrow",
+      "quality": "uncommon",
+      "display": "down-left-arrow~uncommon",
+      "auto": true
+    }
+  },
+  "blueprint": {
+    "icons": [
+      {
+        "signal": {
+          "name": "constant-combinator"
+        },
+        "index": 1
+      }
+    ],
+    "entities": [
+      {
+        "entity_number": 1,
+        "name": "constant-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -12.5
+        },
+        "player_description": "state_stim",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 2,
+        "name": "constant-combinator",
+        "position": {
+          "x": 0.5,
+          "y": -12.5
+        },
+        "player_description": "pc_inject",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 3,
+        "name": "constant-combinator",
+        "position": {
+          "x": 6.5,
+          "y": -12.5
+        },
+        "player_description": "mem_bus_stim",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 4,
+        "name": "constant-combinator",
+        "position": {
+          "x": 4.5,
+          "y": -12.5
+        },
+        "player_description": "addr_rd_pc",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 5,
+        "name": "constant-combinator",
+        "position": {
+          "x": 2.5,
+          "y": -11.5
+        },
+        "player_description": "pc_autoincrement",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": [
+                  {
+                    "index": 1,
+                    "type": "virtual",
+                    "name": "shape-curve-3",
+                    "quality": "uncommon",
+                    "comparator": "=",
+                    "count": 1
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 6,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 1.5,
+          "y": -12.0
+        },
+        "player_description": "pc_inject_sum",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "shape-curve-3",
+              "quality": "uncommon"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 7,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 3.5,
+          "y": -12.0
+        },
+        "player_description": "pc_carrier",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "shape-curve-3",
+              "quality": "uncommon"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "down-arrow",
+              "quality": "uncommon"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 8,
+        "name": "constant-combinator",
+        "position": {
+          "x": 4.5,
+          "y": -11.5
+        },
+        "player_description": "address_table",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        },
+        "signal_table": {
+          "table": "full_address_space",
+          "exclude": [
+            {
+              "type": "virtual",
+              "name": "down-arrow",
+              "quality": "uncommon"
+            }
+          ]
+        }
+      },
+      {
+        "entity_number": 9,
+        "name": "decider-combinator",
+        "position": {
+          "x": 5.5,
+          "y": -12.0
+        },
+        "player_description": "instruction_read",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "down-arrow",
+                  "quality": "uncommon"
+                },
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                },
+                "second_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
+          }
+        }
+      },
+      {
+        "entity_number": 10,
+        "name": "constant-combinator",
+        "position": {
+          "x": 6.5,
+          "y": -11.5
+        },
+        "player_description": "instruction_rd",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "wires": [
+      [
+        1,
+        1,
+        5,
+        1
+      ],
+      [
+        1,
+        1,
+        6,
+        3
+      ],
+      [
+        1,
+        1,
+        7,
+        1
+      ],
+      [
+        2,
+        2,
+        6,
+        2
+      ],
+      [
+        3,
+        2,
+        9,
+        2
+      ],
+      [
+        4,
+        1,
+        7,
+        3
+      ],
+      [
+        4,
+        1,
+        8,
+        1
+      ],
+      [
+        4,
+        1,
+        9,
+        1
+      ],
+      [
+        9,
+        4,
+        10,
+        2
+      ]
+    ],
+    "item": "blueprint",
+    "version": 562954248978435
+  }
+}

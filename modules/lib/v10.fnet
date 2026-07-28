@@ -1,0 +1,290 @@
+# lib/v10.fnet — shared combinator templates for the fnet v10 vector zone.
+# Companion to lib/v8.fnet (the scalar core's templates, verbatim from the v8
+# master).
+#
+# COLOR DISCIPLINE (designer, 2026-07-27). One rule makes every combinator in
+# the zone the same shape:
+#
+#   GREEN = control. It is chunk1's own memory bus, wired STRAIGHT IN — no
+#           mirror, no copy, no private control wiring. Every control value
+#           (W, R, S, erase, the broadcast operand) is an ordinary
+#           memory-mapped row, so a scalar `write_imm` IS the vector control
+#           action, and it arrives with zero added latency.
+#   RED   = vector data. Register hold loops, the shared write bus, and every
+#           op output are red.
+#
+# So every gate reads its condition off the green memory bus and passes a red
+# frame through: `in_g: membus, in_r: <data>`, output `signal-everything`
+# sourced from red. The two input connectors never compete.
+#
+# (An earlier revision had these colors the other way round and needed a
+# `v10_ctl_mirror` combinator to copy the scalar bus onto a red control net,
+# costing one tick on every control change. That combinator is gone — the
+# tick was an artifact of the color choice, not a requirement.)
+#
+# DATAPATH (designer, 2026-07-27):
+#
+#   VREG0.loop (red) ─┐
+#   VREG1.face (green)┴─> op farm pair A ─┐
+#   VREG2.loop (red) ─┐                   ├─> op outputs, each its own
+#   VREG3.face (green)┴─> op farm pair B ─┘    mux source
+#
+#   registers + op outputs ──> 28 mux sources
+#          [R == k OR S == k] gate, one per source
+#                      v
+#          vbus (shared write bus, red) — two selections SUM here,
+#                      │                  so vector ADD is free
+#          [W == k] write head, one per register
+#                      v
+#          register k's hold loop (accumulate by wire summation)
+#
+# The op farm operands are HARDWIRED and never come through the mux, which is
+# what makes two simultaneous selections a feature rather than an ambiguity.
+#
+# OPERAND FACES. A decider's two output faces carry the same value in the same
+# tick, so a register can hand the op farm a skew-free operand with no mirror
+# stage: the A-side register offers its red hold loop, the B-side register a
+# dedicated green face. That asymmetry is deliberate but has one consequence —
+# the A operand rides the loop, so it also carries any in-flight write head
+# output during a commit tick, while the B face does not. Don't read an op
+# result on the tick a write commits to an A-side register (same
+# coherence-window class as v8's I=H+H transient).
+
+# Generic stimulus / config constant is `stim`, from lib/v8.fnet.
+
+# THE REGISTER (one combinator): hold everything on the loop, unless the erase
+# row names this register's block id — in which case it emits nothing, the
+# loop goes empty, and the register is zeroed in one tick. Writes are not its
+# business: write heads sum onto the same loop.
+# [param0] = erase carrier, [param1] = this register's block id,
+# [param2] = player_description.
+#
+# Wire out_r to the loop; wire out_g to a private green net when this register
+# is a B-side op operand.
+v10_vreg_cell = decider-combinator({
+  "player_description": "[param2]",
+  "decider_conditions": {
+    "conditions": [
+      { "first_signal": { [param0] },
+        "constant": [param1],
+        "comparator": "≠",
+        "first_signal_networks": { "red": false, "green": true } }
+    ],
+    "outputs": [
+      { "signal": { "type": "virtual", "name": "signal-everything" },
+        "networks": { "red": true, "green": false } }
+    ],
+    "else_outputs": []
+  }
+});
+
+# Write head (one per register, per write path): while W names this register,
+# pass the shared write bus onto its hold loop, where wire summation adds it
+# to the held frame. A loop may carry several heads — they simply sum.
+# [param0] = W carrier, [param1] = this register's block id,
+# [param2] = player_description.
+v10_wsel_gate = decider-combinator({
+  "player_description": "[param2]",
+  "decider_conditions": {
+    "conditions": [
+      { "first_signal": { [param0] },
+        "constant": [param1],
+        "comparator": "=",
+        "first_signal_networks": { "red": false, "green": true } }
+    ],
+    "outputs": [
+      { "signal": { "type": "virtual", "name": "signal-everything" },
+        "networks": { "red": true, "green": false } }
+    ],
+    "else_outputs": []
+  }
+});
+
+# Read-select gate (one per mux source): pass this source's red frame onto the
+# shared write bus while either selector names it. R = S = k passes it once.
+# [param0] = R carrier, [param1] = S carrier, [param2] = this source's index,
+# [param3] = player_description.
+v10_select_gate = decider-combinator({
+  "player_description": "[param3]",
+  "decider_conditions": {
+    "conditions": [
+      { "first_signal": { [param0] },
+        "constant": [param2],
+        "comparator": "=",
+        "first_signal_networks": { "red": false, "green": true } },
+      { "first_signal": { [param1] },
+        "constant": [param2],
+        "comparator": "=",
+        "first_signal_networks": { "red": false, "green": true },
+        "compare_type": "or" }
+    ],
+    "outputs": [
+      { "signal": { "type": "virtual", "name": "signal-everything" },
+        "networks": { "red": true, "green": false } }
+    ],
+    "else_outputs": []
+  }
+});
+
+# Vec-vec arithmetic op (always-on): each[A] op each[B] -> each, operands
+# hardwired to a pair's red loop and green face.
+# [param0] = operation, [param1] = player_description.
+v10_vec_vec_op = arithmetic-combinator({
+  "player_description": "[param1]",
+  "arithmetic_conditions": {
+    "first_signal": { "type": "virtual", "name": "signal-each" },
+    "second_signal": { "type": "virtual", "name": "signal-each" },
+    "operation": "[param0]",
+    "output_signal": { "type": "virtual", "name": "signal-each" },
+    "first_signal_networks": { "red": true, "green": false },
+    "second_signal_networks": { "red": false, "green": true }
+  }
+});
+
+# Vec-vec elementwise select (always-on): true elementwise MAX (">") or MIN
+# ("<"). The two branches source their value from OPPOSITE input networks —
+# winner's own lane either way — onto ONE output net, so no summing trick is
+# needed. [param0] = comparator, [param1] = player_description.
+v10_vec_vec_select = decider-combinator({
+  "player_description": "[param1]",
+  "decider_conditions": {
+    "conditions": [
+      { "first_signal": { "type": "virtual", "name": "signal-each" },
+        "second_signal": { "type": "virtual", "name": "signal-each" },
+        "comparator": "[param0]",
+        "first_signal_networks": { "red": true, "green": false },
+        "second_signal_networks": { "red": false, "green": true } }
+    ],
+    "outputs": [
+      { "signal": { "type": "virtual", "name": "signal-each" },
+        "networks": { "red": true, "green": false } }
+    ],
+    "else_outputs": [
+      { "signal": { "type": "virtual", "name": "signal-each" },
+        "networks": { "red": false, "green": true } }
+    ]
+  }
+});
+
+# Vec-scal->vec op: each[R] op BROADCAST -> each. The vector operand is a red
+# frame; the scalar is a memory-mapped row read straight off the green bus.
+# [param0] = broadcast carrier, [param1] = operation,
+# [param2] = player_description.
+v10_vec_scal_op = arithmetic-combinator({
+  "player_description": "[param2]",
+  "arithmetic_conditions": {
+    "first_signal": { "type": "virtual", "name": "signal-each" },
+    "second_signal": { [param0] },
+    "operation": "[param1]",
+    "output_signal": { "type": "virtual", "name": "signal-each" },
+    "first_signal_networks": { "red": true, "green": false },
+    "second_signal_networks": { "red": false, "green": true }
+  }
+});
+
+# Vec-scal->vec mask: 1 on every lane where `each [cmp] BROADCAST` holds, 0
+# elsewhere (copy_count_from_input false). The escape test for anything
+# iterative. [param0] = broadcast carrier, [param1] = comparator,
+# [param2] = player_description.
+v10_vec_scal_mask = decider-combinator({
+  "player_description": "[param2]",
+  "decider_conditions": {
+    "conditions": [
+      { "first_signal": { "type": "virtual", "name": "signal-each" },
+        "second_signal": { [param0] },
+        "comparator": "[param1]",
+        "first_signal_networks": { "red": true, "green": false },
+        "second_signal_networks": { "red": false, "green": true } }
+    ],
+    "outputs": [
+      { "signal": { "type": "virtual", "name": "signal-each" },
+        "copy_count_from_input": false,
+        "networks": { "red": true, "green": false } }
+    ],
+    "else_outputs": []
+  }
+});
+
+# Lane mask against a CONSTANT (not a carrier): 1 on every lane where
+# `each [cmp] const` holds, 0 elsewhere. Two jobs, one shape:
+#   - ONES: `> 0` over the coordinate ramp, whose lanes are 1..N, so the
+#     result is a frame with 1 in EVERY lane. That is the only way to
+#     resurrect a lane that computed to zero, since zero and absent are the
+#     same thing on a wire and `each` against a fixed signal iterates only the
+#     first operand's lanes.
+#   - popcount: `!= 0` over the write bus, which then sums to a lane count.
+# [param0] = comparator, [param1] = constant, [param2] = player_description.
+v10_lane_mask = decider-combinator({
+  "player_description": "[param2]",
+  "decider_conditions": {
+    "conditions": [
+      { "first_signal": { "type": "virtual", "name": "signal-each" },
+        "constant": [param1],
+        "comparator": "[param0]",
+        "first_signal_networks": { "red": true, "green": false } }
+    ],
+    "outputs": [
+      { "signal": { "type": "virtual", "name": "signal-each" },
+        "copy_count_from_input": false,
+        "networks": { "red": true, "green": false } }
+    ],
+    "else_outputs": []
+  }
+});
+
+# Lane read (the data-out port): the address table and a read carrier share
+# one private GREEN net, so `each` iterates the table rows and compares each
+# row's value to the carrier; the matching row's SIGNAL IDENTITY then selects
+# that lane's value from the RED data net. Mirror image of v8_port_read, whose
+# table rides red because v8's data is green.
+#
+# The carrier must be EXCLUDED from the address space — it rides the table net
+# and would otherwise be a table row comparing against itself. That is why the
+# port takes a separate excluded auto carrier rather than reading the
+# memory-mapped `vec_rlane_addr` row directly; a `v8_sig_to` converts one to
+# the other. Memory rows can never be excluded — being addressable is their
+# whole point — so the two-signal split is structural, not a workaround.
+# [param0] = excluded read carrier, [param1] = player_description.
+v10_lane_read = decider-combinator({
+  "player_description": "[param1]",
+  "decider_conditions": {
+    "conditions": [
+      { "first_signal": { "type": "virtual", "name": "signal-each" },
+        "second_signal": { [param0] },
+        "comparator": "=",
+        "first_signal_networks": { "red": false, "green": true },
+        "second_signal_networks": { "red": false, "green": true } }
+    ],
+    "outputs": [
+      { "signal": { "type": "virtual", "name": "signal-each" },
+        "networks": { "red": true, "green": false } }
+    ],
+    "else_outputs": []
+  }
+});
+
+# Vec->scal reduction: each+0 -> [param0]. Factorio sums every lane into the
+# single fixed output row, which joins the scalar green memory bus and is read
+# exactly like a v8 CMP flag. [param1] = player_description.
+v10_reduce_sum = arithmetic-combinator({
+  "player_description": "[param1]",
+  "arithmetic_conditions": {
+    "first_signal": { "type": "virtual", "name": "signal-each" },
+    "second_constant": 0,
+    "operation": "+",
+    "output_signal": { [param0] },
+    "first_signal_networks": { "red": true, "green": false }
+  }
+});
+
+# Offset address table: the design's own address space with every value
+# shifted by [param0], so chunk k of the unified space reads
+# `chunk_base + row`. Slot LAYOUT is identical across chunks — only the values
+# differ — so a read decider comparing a parked address against all nine
+# tables matches in exactly one chunk. Populated over RCON at paste, like
+# lib/v8.fnet's addr_table. [param1] = player_description.
+v10_addr_table_chunk = constant-combinator({
+  "player_description": "[param1]",
+  "signal_table": { "table": "full_address_space", "offset": [param0] },
+  "sections": { "sections": [ { "index": 1, "filters": [] } ] }
+});

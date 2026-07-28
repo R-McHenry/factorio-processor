@@ -1,0 +1,68 @@
+{
+  "module": "vec_bank_bench",
+  "probes": [
+    {
+      "net": "a1",
+      "entity_number": 39,
+      "wire": "red",
+      "position": {
+        "x": 10.5,
+        "y": -8.5
+      }
+    },
+    {
+      "net": "a2",
+      "entity_number": 40,
+      "wire": "red",
+      "position": {
+        "x": 10.5,
+        "y": -7.5
+      }
+    },
+    {
+      "net": "a2g",
+      "entity_number": 41,
+      "wire": "green",
+      "position": {
+        "x": 11.5,
+        "y": -8.5
+      }
+    },
+    {
+      "net": "b1",
+      "entity_number": 42,
+      "wire": "green",
+      "position": {
+        "x": 11.5,
+        "y": -7.5
+      }
+    },
+    {
+      "net": "b2",
+      "entity_number": 43,
+      "wire": "green",
+      "position": {
+        "x": 12.5,
+        "y": -8.5
+      }
+    },
+    {
+      "net": "b2r",
+      "entity_number": 44,
+      "wire": "red",
+      "position": {
+        "x": 12.5,
+        "y": -7.5
+      }
+    },
+    {
+      "net": "vbus",
+      "entity_number": 45,
+      "wire": "red",
+      "position": {
+        "x": 13.5,
+        "y": -8.5
+      }
+    }
+  ]
+}

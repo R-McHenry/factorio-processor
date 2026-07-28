@@ -1,0 +1,53 @@
+# v10_processor — the composed machine: the live-verified fnet v8 scalar core
+# with the vector zone hung off its memory bus.
+#
+# The join is one net. Chunk1's green memory bus IS the vector zone's entire
+# control plane, so composition is nothing more than handing `membus` to every
+# vector component:
+#
+#   processor  ── membus (green) ──┬──> vec_bank   (W / R / S / erase)
+#                                  ├──> op_farm    (R / S / vec_bcast)
+#                                  └──> vec_io     (R / S / lane addr+value)
+#
+#   vec_io.scalar_out ── back onto membus: `vec_rlane_data` and `vred_sum`
+#                        become ordinary scalar rows the program can read.
+#
+# So a vector operation is a scalar `write_imm` to a memory row and nothing
+# else — no new instructions, no second bus, no decoder. That is the whole
+# payoff of making the control plane memory-mapped.
+#
+# LANE DISCIPLINE (the one rule composition adds). `vec_io`'s out-ports DRIVE
+# membus, and a memory cell may hold a value at the same row; Factorio sums
+# them. So a program must never write the `vec_rlane_data` or `vred_sum` rows
+# — they are hardware outputs, read-only by convention, exactly like v8's CMP
+# flags. Same class of rule as SIMD.md's IO lane discipline.
+#
+# WHY vbus IS NEVER PROBED. Selecting COORD puts ~2478 lanes on the vector
+# write bus. A testbench probe samples every signal on its net, and RCON
+# RESPONSES corrupt past ~4096 bytes, so probing vbus would break the run
+# rather than fail it. Vector state is observed through the out-ports, which
+# is both the realistic access pattern and the only safe one at full width.
+#
+# Build with `--top v10_processor`.
+
+import "v8_processor.fnet";
+import "v10_vec_bank.fnet";
+import "v10_op_farm.fnet";
+import "v10_vec_io.fnet";
+
+module v10_processor() {
+  net green membus;          # chunk1 memory bus: scalar data AND vector control
+  net red   vbus;            # the vector write bus (deliberately unprobed)
+  net red   a1, a2;          # op farm pair A / pair B, A-side operands
+  net green b1, b2;          # op farm pair A / pair B, B-side operands
+  net green a2g;             # VREG2's other face — the square block's operand
+  net red   b2r;             # VREG3's other face — likewise
+  debug net red enc_onehot;  # v8's write-encoder one-hot (probe point)
+
+  processor(enc_onehot: enc_onehot, membus: membus);
+  vec_bank(membus: membus, vbus: vbus, a1: a1, b1: b1, a2: a2, b2: b2,
+           a2g: a2g, b2r: b2r);
+  op_farm(membus: membus, vbus: vbus, a1: a1, b1: b1, a2: a2, b2: b2,
+          a2g: a2g, b2r: b2r);
+  vec_io(membus: membus, vbus: vbus, scalar_out: membus);
+}

@@ -1,0 +1,23 @@
+{
+  "module": "mem_cell_bench",
+  "probes": [
+    {
+      "net": "mem_out",
+      "entity_number": 7,
+      "wire": "green",
+      "position": {
+        "x": 2.5,
+        "y": -11.5
+      }
+    },
+    {
+      "net": "mem_state",
+      "entity_number": 8,
+      "wire": "red",
+      "position": {
+        "x": 3.5,
+        "y": -12.5
+      }
+    }
+  ]
+}

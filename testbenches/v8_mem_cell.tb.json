@@ -1,0 +1,159 @@
+{
+  "name": "v8_mem_cell",
+  "description": "fnet v8 component 1: the memory cell + direct write trio + accumulate mask, isolated (no encoder, no ports). proc_memory_raw semantics on the cell itself: set+value+reset writes, hold across release, override, zero-write, plus negative values and accumulate rows. Accumulate pulses use settle_ticks=1/trace_ticks=1 steps (the runner single-steps a paused game), so each pulse holds the write for exactly ONE tick = exactly one add; the following release step checks the settled sum. Memory rows are $mem[N] / $counter (the design's accumulate row at address 300) - no game-signal literals.",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 3,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -6.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "write_value": 1,
+      "trig_set": 2,
+      "trig_reset": 3
+    },
+    "expected_probe_name": "mem_state",
+    "output_probes": [
+      { "name": "mem_state", "entity_number": 8, "wire": "red" },
+      { "name": "mem_out", "entity_number": 7, "wire": "green" }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "write_addr1_42",
+      "drive": {
+        "write_value": { "$mem[1]": 42 },
+        "trig_set": { "$mem[1]": 1 },
+        "trig_reset": { "$mem[1]": 1 }
+      },
+      "expect": { "$mem[1]": 42 }
+    },
+    {
+      "name": "release_holds_42",
+      "drive": { "write_value": {}, "trig_set": {}, "trig_reset": {} },
+      "trace_ticks": 4,
+      "expect": { "$mem[1]": 42 }
+    },
+    {
+      "name": "green_bus_mirrors_42",
+      "expect_probe": "mem_out",
+      "expect": { "$mem[1]": 42 }
+    },
+    {
+      "name": "override_addr1_99",
+      "drive": {
+        "write_value": { "$mem[1]": 99 },
+        "trig_set": { "$mem[1]": 1 },
+        "trig_reset": { "$mem[1]": 1 }
+      },
+      "expect": { "$mem[1]": 99 }
+    },
+    {
+      "name": "release_holds_99",
+      "drive": { "write_value": {}, "trig_set": {}, "trig_reset": {} },
+      "expect": { "$mem[1]": 99 }
+    },
+    {
+      "name": "write_addr6_7",
+      "drive": {
+        "write_value": { "$mem[6]": 7 },
+        "trig_set": { "$mem[6]": 1 },
+        "trig_reset": { "$mem[6]": 1 }
+      },
+      "expect": { "$mem[6]": 7 }
+    },
+    {
+      "name": "release_both_held",
+      "drive": { "write_value": {}, "trig_set": {}, "trig_reset": {} },
+      "expect": { "$mem[1]": 99, "$mem[6]": 7 }
+    },
+    {
+      "name": "zero_write_clears_addr6",
+      "drive": {
+        "trig_set": { "$mem[6]": 1 },
+        "trig_reset": { "$mem[6]": 1 }
+      },
+      "trace_ticks": 4,
+      "expect": { "$mem[6]": 0, "$mem[1]": 99 }
+    },
+    {
+      "name": "zero_write_holds_after_release",
+      "drive": { "trig_set": {}, "trig_reset": {} },
+      "trace_ticks": 4,
+      "expect": { "$mem[6]": 0, "$mem[1]": 99 }
+    },
+    {
+      "name": "write_addr11_negative",
+      "drive": {
+        "write_value": { "$mem[11]": -5 },
+        "trig_set": { "$mem[11]": 1 },
+        "trig_reset": { "$mem[11]": 1 }
+      },
+      "expect": { "$mem[11]": -5 }
+    },
+    {
+      "name": "release_holds_negative",
+      "drive": { "write_value": {}, "trig_set": {}, "trig_reset": {} },
+      "expect": { "$mem[11]": -5, "$mem[1]": 99 }
+    },
+    {
+      "name": "acc_pulse_add_5",
+      "settle_ticks": 1,
+      "trace_ticks": 1,
+      "drive": {
+        "write_value": { "$counter": 5 },
+        "trig_set": { "$counter": 1 }
+      }
+    },
+    {
+      "name": "acc_settled_at_5",
+      "drive": { "write_value": {}, "trig_set": {} },
+      "expect": { "$counter": 5 }
+    },
+    {
+      "name": "acc_pulse_add_3",
+      "settle_ticks": 1,
+      "trace_ticks": 1,
+      "drive": {
+        "write_value": { "$counter": 3 },
+        "trig_set": { "$counter": 1 }
+      }
+    },
+    {
+      "name": "acc_settled_at_8",
+      "drive": { "write_value": {}, "trig_set": {} },
+      "expect": { "$counter": 8 }
+    },
+    {
+      "name": "acc_zero_write_blocked",
+      "drive": {
+        "trig_set": { "$counter": 1 },
+        "trig_reset": { "$counter": 1 }
+      },
+      "trace_ticks": 4,
+      "expect": { "$counter": 8 }
+    },
+    {
+      "name": "acc_blocked_after_release",
+      "drive": { "trig_set": {}, "trig_reset": {} },
+      "expect": { "$counter": 8, "$mem[1]": 99 }
+    },
+    {
+      "name": "green_bus_final_state",
+      "expect_probe": "mem_out",
+      "expect": { "$counter": 8, "$mem[11]": -5, "$mem[1]": 99 }
+    }
+  ]
+}

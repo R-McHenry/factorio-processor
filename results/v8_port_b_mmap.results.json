@@ -1,0 +1,762 @@
+{
+  "name": "v8_port_b_mmap",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 2,
+  "rebuild": {
+    "removed": 8,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 8,
+    "revived": 8,
+    "placed": 8
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [
+    {
+      "unit": 119679,
+      "slots_written": 2454,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 6
+    }
+  ],
+  "mapping": {
+    "translation": {
+      "dx": -3.0,
+      "dy": 12.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 119675,
+      "2": 119676,
+      "3": 119673,
+      "4": 119674,
+      "5": 119678,
+      "6": 119679,
+      "7": 119677,
+      "8": 119680
+    },
+    "driver_units": {
+      "mem_bus": 119675,
+      "addr_b": 119676
+    },
+    "output_probes": [
+      {
+        "name": "port_b",
+        "unit": 119680,
+        "wire": "green"
+      }
+    ],
+    "expected_probe_name": "port_b"
+  },
+  "timeline": [
+    {
+      "tick": 875991,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_1"
+    },
+    {
+      "tick": 875992,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_2"
+    },
+    {
+      "tick": 875993,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 6.0,
+          "signal-1": 99.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "register_parks_addr6"
+    },
+    {
+      "tick": 875994,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 6.0,
+          "signal-1": 99.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "register_parks_addr6"
+    },
+    {
+      "tick": 875995,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 6.0,
+          "signal-1": 99.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "register_parks_addr6"
+    },
+    {
+      "tick": 875996,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 6.0,
+          "signal-1": 99.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "register_parks_addr6"
+    },
+    {
+      "tick": 875997,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 6.0,
+          "signal-1": 99.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "register_parks_addr6"
+    },
+    {
+      "tick": 875998,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 6.0,
+          "signal-1": 99.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "register_parks_addr6"
+    },
+    {
+      "tick": 875999,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 6.0,
+          "signal-1": 100.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-1": 99.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "data_streams_while_parked"
+    },
+    {
+      "tick": 876000,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 6.0,
+          "signal-1": 100.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-1": 100.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "data_streams_while_parked"
+    },
+    {
+      "tick": 876001,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 6.0,
+          "signal-1": 100.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-1": 100.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "data_streams_while_parked"
+    },
+    {
+      "tick": 876002,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 6.0,
+          "signal-1": 100.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-1": 100.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "data_streams_while_parked"
+    },
+    {
+      "tick": 876003,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 6.0,
+          "signal-1": 100.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-1": 100.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "data_streams_while_parked"
+    },
+    {
+      "tick": 876004,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 6.0,
+          "signal-1": 100.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-1": 100.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "data_streams_while_parked"
+    },
+    {
+      "tick": 876005,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 11.0,
+          "signal-1": 100.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-1": 100.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "register_write_reparks_addr11"
+    },
+    {
+      "tick": 876006,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 11.0,
+          "signal-1": 100.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-1": 100.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "register_write_reparks_addr11"
+    },
+    {
+      "tick": 876007,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 11.0,
+          "signal-1": 100.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-1": 100.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "register_write_reparks_addr11"
+    },
+    {
+      "tick": 876008,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 11.0,
+          "signal-1": 100.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-2": 55.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "register_write_reparks_addr11"
+    },
+    {
+      "tick": 876009,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 11.0,
+          "signal-1": 100.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-2": 55.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "register_write_reparks_addr11"
+    },
+    {
+      "tick": 876010,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 11.0,
+          "signal-1": 100.0,
+          "signal-2": 55.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-2": 55.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "register_write_reparks_addr11"
+    },
+    {
+      "tick": 876011,
+      "stimulus": {
+        "mem_bus": {
+          "signal-3": 77.0
+        },
+        "addr_b": {
+          "down-left-arrow": 16.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-2": 55.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "direct_addr_override"
+    },
+    {
+      "tick": 876012,
+      "stimulus": {
+        "mem_bus": {
+          "signal-3": 77.0
+        },
+        "addr_b": {
+          "down-left-arrow": 16.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "direct_addr_override"
+    },
+    {
+      "tick": 876013,
+      "stimulus": {
+        "mem_bus": {
+          "signal-3": 77.0
+        },
+        "addr_b": {
+          "down-left-arrow": 16.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "direct_addr_override"
+    },
+    {
+      "tick": 876014,
+      "stimulus": {
+        "mem_bus": {
+          "signal-3": 77.0
+        },
+        "addr_b": {
+          "down-left-arrow": 16.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-3": 77.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "direct_addr_override"
+    },
+    {
+      "tick": 876015,
+      "stimulus": {
+        "mem_bus": {
+          "signal-3": 77.0
+        },
+        "addr_b": {
+          "down-left-arrow": 16.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-3": 77.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "direct_addr_override"
+    },
+    {
+      "tick": 876016,
+      "stimulus": {
+        "mem_bus": {
+          "signal-3": 77.0
+        },
+        "addr_b": {
+          "down-left-arrow": 16.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-3": 77.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "direct_addr_override"
+    },
+    {
+      "tick": 876017,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 99.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-3": 77.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "no_register_no_read"
+    },
+    {
+      "tick": 876018,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 99.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "no_register_no_read"
+    },
+    {
+      "tick": 876019,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 99.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "no_register_no_read"
+    },
+    {
+      "tick": 876020,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 99.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "no_register_no_read"
+    },
+    {
+      "tick": 876021,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 99.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "no_register_no_read"
+    },
+    {
+      "tick": 876022,
+      "stimulus": {
+        "mem_bus": {
+          "signal-1": 99.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "no_register_no_read"
+    },
+    {
+      "tick": 876023,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 21.0,
+          "signal-4": -4.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "negative_register_value_parks"
+    },
+    {
+      "tick": 876024,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 21.0,
+          "signal-4": -4.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "negative_register_value_parks"
+    },
+    {
+      "tick": 876025,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 21.0,
+          "signal-4": -4.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "negative_register_value_parks"
+    },
+    {
+      "tick": 876026,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 21.0,
+          "signal-4": -4.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-4": -4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "negative_register_value_parks"
+    },
+    {
+      "tick": 876027,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 21.0,
+          "signal-4": -4.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-4": -4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "negative_register_value_parks"
+    },
+    {
+      "tick": 876028,
+      "stimulus": {
+        "mem_bus": {
+          "artillery-wagon-cannon": 21.0,
+          "signal-4": -4.0
+        }
+      },
+      "observed_by_probe": {
+        "port_b": {
+          "signal-4": -4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "negative_register_value_parks"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "register_parks_addr6",
+      "drive_start_tick": 875992,
+      "skipped_ticks": 0,
+      "expected_probe": "port_b",
+      "expected": {
+        "signal-1": 99,
+        "signal-2": 0
+      },
+      "observed": {
+        "signal-1": 99.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875998
+    },
+    {
+      "step_index": 1,
+      "step_name": "data_streams_while_parked",
+      "drive_start_tick": 875998,
+      "skipped_ticks": 0,
+      "expected_probe": "port_b",
+      "expected": {
+        "signal-1": 100
+      },
+      "observed": {
+        "signal-1": 100.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876004
+    },
+    {
+      "step_index": 2,
+      "step_name": "register_write_reparks_addr11",
+      "drive_start_tick": 876004,
+      "skipped_ticks": 0,
+      "expected_probe": "port_b",
+      "expected": {
+        "signal-2": 55,
+        "signal-1": 0
+      },
+      "observed": {
+        "signal-2": 55.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876010
+    },
+    {
+      "step_index": 3,
+      "step_name": "direct_addr_override",
+      "drive_start_tick": 876010,
+      "skipped_ticks": 0,
+      "expected_probe": "port_b",
+      "expected": {
+        "signal-3": 77
+      },
+      "observed": {
+        "signal-3": 77.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876016
+    },
+    {
+      "step_index": 4,
+      "step_name": "no_register_no_read",
+      "drive_start_tick": 876016,
+      "skipped_ticks": 0,
+      "expected_probe": "port_b",
+      "expected": {
+        "signal-1": 0
+      },
+      "observed": {},
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876022
+    },
+    {
+      "step_index": 5,
+      "step_name": "negative_register_value_parks",
+      "drive_start_tick": 876022,
+      "skipped_ticks": 0,
+      "expected_probe": "port_b",
+      "expected": {
+        "signal-4": -4
+      },
+      "observed": {
+        "signal-4": -4.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 876028
+    }
+  ],
+  "pass": true
+}

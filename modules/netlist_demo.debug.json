@@ -1,0 +1,14 @@
+{
+  "module": "main",
+  "probes": [
+    {
+      "net": "read_out",
+      "entity_number": 6,
+      "wire": "green",
+      "position": {
+        "x": 3.5,
+        "y": -12.5
+      }
+    }
+  ]
+}

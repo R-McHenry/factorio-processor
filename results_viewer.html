@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Factorio TB Results Viewer</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel-2: #1f2937;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --ok: #22c55e;
+      --fail: #ef4444;
+      --accent: #38bdf8;
+      --border: #334155;
+      --axis-left-w: 220px;
+      --axis-top-h: 26px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    body {
+      font-family: Consolas, Menlo, Monaco, "Courier New", monospace;
+      background: radial-gradient(circle at 20% 0%, #1e293b 0, var(--bg) 45%);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      padding: 12px;
+      gap: 10px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #111827, #0b1222);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .pill {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 12px;
+      color: var(--muted);
+      background: #0b1222;
+    }
+
+    .pill.ok { color: #dcfce7; border-color: #15803d; background: #052e16; }
+    .pill.fail { color: #fee2e2; border-color: #b91c1c; background: #450a0a; }
+
+    button, .file {
+      border: 1px solid var(--border);
+      background: var(--panel-2);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 7px 10px;
+      font: inherit;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    button:disabled { opacity: 0.5; cursor: wait; }
+
+    #rerunBtn { border-color: #0e7490; background: #164e63; }
+
+    input[type="file"] { display: none; }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      border-radius: 3px;
+      margin-right: 6px;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* ILA: 2x2 grid — corner | top axis / left axis | plot.
+       Only the plot scrolls (the page's only two scrollbars);
+       the axes are overflow:hidden and follow via scroll sync. */
+    .ila {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: var(--axis-left-w) 1fr;
+      grid-template-rows: var(--axis-top-h) 1fr;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #0b1222;
+      overflow: hidden;
+    }
+
+    .ila-corner {
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: #111827;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .ila-axis-top {
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+      background: #111827;
+    }
+
+    .ila-axis-left {
+      overflow: hidden;
+      border-right: 1px solid var(--border);
+      background: #111827;
+    }
+
+    .ila-plot {
+      overflow: auto;
+    }
+
+    .ila-axis-top svg, .ila-plot svg { display: block; }
+
+    .axis-row {
+      height: 28px;
+      line-height: 28px;
+      font-size: 12px;
+      padding: 0 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border-bottom: 1px solid #172036;
+      color: #cbd5e1;
+    }
+
+    .axis-row.group {
+      cursor: pointer;
+      background: #16213a;
+      color: #e2e8f0;
+      user-select: none;
+    }
+
+    .axis-row.group:hover { background: #1b2947; }
+
+    .axis-row.sig { padding-left: 26px; }
+
+    .toggle {
+      display: inline-block;
+      width: 14px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="row" style="justify-content: space-between;">
+      <h1>Factorio TB — ILA Viewer</h1>
+      <div class="row">
+        <button id="rerunBtn">Rerun &amp; Reload</button>
+        <label class="file" for="fileInput">Open Results JSON</label>
+        <input id="fileInput" type="file" accept=".json,application/json" />
+        <button id="loadDefault">Load results/memory_basic.results.json</button>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 8px; justify-content: space-between;">
+      <div id="summary" class="row"></div>
+      <div class="row">
+        <span class="pill"><span class="dot" style="background:#22c55e"></span>driver stimulus (color per driver)</span>
+        <span class="pill"><span class="dot" style="background:#f59e0b"></span>observed probe</span>
+      </div>
+    </div>
+    <div id="message" class="hint" style="margin-top: 6px;">Pick a results JSON file to start.</div>
+  </div>
+
+  <div class="ila">
+    <div class="ila-corner">signal \ tick</div>
+    <div class="ila-axis-top" id="axisTop"></div>
+    <div class="ila-axis-left" id="axisLeft"></div>
+    <div class="ila-plot" id="plot"><div class="hint" style="padding: 12px;">No data loaded.</div></div>
+  </div>
+
+  <script>
+    const fileInput = document.getElementById('fileInput');
+    const loadDefaultBtn = document.getElementById('loadDefault');
+    const rerunBtn = document.getElementById('rerunBtn');
+    const summary = document.getElementById('summary');
+    const message = document.getElementById('message');
+    const axisTop = document.getElementById('axisTop');
+    const axisLeft = document.getElementById('axisLeft');
+    const plot = document.getElementById('plot');
+
+    const LANE_H = 28;
+    const TICK_W = 90;
+    const PAD_RIGHT = 20;
+    const PAD_BOTTOM = 10;
+    const AXIS_TOP_H = 26;
+    const AXIS_LEFT_W = 220;
+
+    let model = null;
+
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function renderSummary(data) {
+      const checks = Array.isArray(data.checks) ? data.checks : (data.vectors || []);
+      const total = checks.length;
+      const passed = checks.filter(v => v.pass).length;
+      const failed = total - passed;
+
+      summary.innerHTML = `
+        <span class="pill">name: ${escapeHtml(data.name || 'n/a')}</span>
+        <span class="pill">steps: ${total}</span>
+        <span class="pill ok">passed: ${passed}</span>
+        <span class="pill ${failed ? 'fail' : 'ok'}">failed: ${failed}</span>
+        <span class="pill ${data.pass ? 'ok' : 'fail'}">overall: ${data.pass ? 'PASS' : 'FAIL'}</span>
+      `;
+    }
+
+    function normalizeOutputByProbe(row) {
+      const grouped = {};
+      if (row && row.observed_by_probe && typeof row.observed_by_probe === 'object') {
+        for (const [probe, sigs] of Object.entries(row.observed_by_probe)) {
+          grouped[probe] = { ...(sigs || {}) };
+        }
+      }
+      return grouped;
+    }
+
+    function collectSignalsFromRows(rows) {
+      const set = new Set();
+      for (const row of rows) {
+        const probes = normalizeOutputByProbe(row);
+        for (const [role, sigs] of Object.entries(row.stimulus || {})) {
+          for (const k of Object.keys(sigs || {})) set.add(`in:${role}:${k}`);
+        }
+        for (const [probe, sigs] of Object.entries(probes)) {
+          for (const k of Object.keys(sigs || {})) set.add(`out:${probe}:${k}`);
+        }
+      }
+      return Array.from(set).sort((a, b) => a.localeCompare(b));
+    }
+
+    function buildContiguousRows(data) {
+      if (Array.isArray(data.timeline)) {
+        return [...data.timeline].sort((a, b) => Number(a.tick) - Number(b.tick));
+      }
+      const out = [];
+      for (const vec of (data.vectors || [])) {
+        for (const row of (vec.timeline || [])) {
+          out.push({
+            tick: row.tick,
+            stimulus: row.stimulus || {},
+            observed_by_probe: row.observed_by_probe || {},
+          });
+        }
+      }
+      out.sort((a, b) => Number(a.tick) - Number(b.tick));
+      return out;
+    }
+
+    function signalValue(sample, signalId) {
+      const splitAt = signalId.indexOf(':');
+      if (splitAt < 0) return undefined;
+      const kind = signalId.slice(0, splitAt);
+      const name = signalId.slice(splitAt + 1);
+
+      const secondSplit = name.indexOf(':');
+      if (secondSplit < 0) return undefined;
+      const key = name.slice(0, secondSplit);
+      const signal = name.slice(secondSplit + 1);
+      if (kind === 'in') return (((sample.stimulus || {})[key]) || {})[signal];
+      const probes = normalizeOutputByProbe(sample);
+      return ((probes[key] || {})[signal]);
+    }
+
+    const DRIVER_PALETTE = ['#22c55e', '#38bdf8', '#a78bfa', '#f472b6', '#facc15', '#34d399', '#fb923c', '#e879f9'];
+    const driverColors = new Map();
+
+    function signalColor(signalId) {
+      if (signalId.startsWith('in:')) {
+        const group = groupOf(signalId);
+        if (!driverColors.has(group)) {
+          driverColors.set(group, DRIVER_PALETTE[driverColors.size % DRIVER_PALETTE.length]);
+        }
+        return driverColors.get(group);
+      }
+      return '#f59e0b';
+    }
+
+    const collapsedGroups = new Set();
+
+    function groupOf(signalId) {
+      const i = signalId.lastIndexOf(':');
+      return i > 0 ? signalId.slice(0, i) : signalId;
+    }
+
+    function buildRowLayout(signals) {
+      const groups = [];
+      const byGroup = new Map();
+      for (const sig of signals) {
+        const g = groupOf(sig);
+        if (!byGroup.has(g)) {
+          byGroup.set(g, []);
+          groups.push(g);
+        }
+        byGroup.get(g).push(sig);
+      }
+
+      const rows = [];
+      for (const g of groups) {
+        const members = byGroup.get(g);
+        const collapsed = collapsedGroups.has(g);
+        rows.push({ type: 'group', group: g, collapsed, members });
+        if (!collapsed) {
+          for (const sig of members) rows.push({ type: 'signal', signalId: sig, group: g });
+        }
+      }
+      return rows;
+    }
+
+    function collapsedCell(sample, members) {
+      const hits = [];
+      for (const sig of members) {
+        const val = signalValue(sample, sig);
+        if (val !== undefined) hits.push({ sig, val });
+      }
+      if (!hits.length) return null;
+      if (hits.length === 1) {
+        const name = hits[0].sig;
+        return `${hits[0].val}·${name.charAt(name.length - 1)}`;
+      }
+      return '(...)';
+    }
+
+    function renderIla(data) {
+      const timeline = buildContiguousRows(data);
+      const signals = collectSignalsFromRows(timeline);
+
+      if (!timeline.length || !signals.length) {
+        axisTop.innerHTML = '';
+        axisLeft.innerHTML = '';
+        plot.innerHTML = '<div class="hint" style="padding: 12px;">No timeline data to render.</div>';
+        return;
+      }
+
+      const rows = buildRowLayout(signals);
+      const ticks = timeline.map(r => Number(r.tick));
+      const plotW = ticks.length * TICK_W + PAD_RIGHT;
+      const plotH = rows.length * LANE_H + PAD_BOTTOM;
+
+      // Top axis: tick labels, same width as the plot content.
+      let topSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="${plotW}" height="${AXIS_TOP_H}" viewBox="0 0 ${plotW} ${AXIS_TOP_H}">`;
+      for (let i = 0; i < ticks.length; i++) {
+        const x = i * TICK_W;
+        topSvg += `<line x1="${x}" y1="${AXIS_TOP_H - 6}" x2="${x}" y2="${AXIS_TOP_H}" stroke="#475569" stroke-width="1"/>`;
+        topSvg += `<text x="${x + 4}" y="17" fill="#94a3b8" font-size="11" font-family="Consolas, monospace">${ticks[i]}</text>`;
+      }
+      topSvg += '</svg>';
+      axisTop.innerHTML = topSvg;
+
+      // Left axis: HTML rows (group headers with toggles + indented signal names).
+      let leftHtml = `<div style="height:${plotH}px">`;
+      for (const row of rows) {
+        if (row.type === 'group') {
+          leftHtml += `<div class="axis-row group" data-group="${escapeHtml(row.group)}" title="click to ${row.collapsed ? 'expand' : 'minimize'}">` +
+            `<span class="toggle">${row.collapsed ? '+' : '−'}</span>${escapeHtml(row.group)}</div>`;
+        } else {
+          leftHtml += `<div class="axis-row sig">${escapeHtml(row.signalId.slice(row.group.length + 1))}</div>`;
+        }
+      }
+      leftHtml += '</div>';
+      axisLeft.innerHTML = leftHtml;
+
+      for (const el of axisLeft.querySelectorAll('.axis-row.group')) {
+        el.addEventListener('click', () => {
+          const g = el.dataset.group;
+          if (collapsedGroups.has(g)) collapsedGroups.delete(g);
+          else collapsedGroups.add(g);
+          const sl = plot.scrollLeft, st = plot.scrollTop;
+          renderIla(model);
+          plot.scrollLeft = sl;
+          plot.scrollTop = st;
+        });
+      }
+
+      // Plot interior: gridlines, lanes, value boxes.
+      let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${plotW}" height="${plotH}" viewBox="0 0 ${plotW} ${plotH}">`;
+      svg += `<rect x="0" y="0" width="${plotW}" height="${plotH}" fill="#0b1222"/>`;
+
+      for (let i = 0; i < ticks.length; i++) {
+        const x = i * TICK_W;
+        svg += `<line x1="${x}" y1="0" x2="${x}" y2="${plotH}" stroke="#1f2937" stroke-width="1"/>`;
+      }
+
+      for (let r = 0; r < rows.length; r++) {
+        const y = r * LANE_H;
+        const row = rows[r];
+
+        if (row.type === 'group') {
+          svg += `<rect x="0" y="${y}" width="${plotW}" height="${LANE_H}" fill="#16213a" opacity="0.55"/>`;
+          svg += `<line x1="0" y1="${y + LANE_H}" x2="${plotW}" y2="${y + LANE_H}" stroke="#172036" stroke-width="1"/>`;
+          if (!row.collapsed) continue;
+
+          const color = signalColor(row.members[0]);
+          for (let i = 0; i < timeline.length; i++) {
+            const cell = collapsedCell(timeline[i], row.members);
+            if (cell === null) continue;
+            const x = i * TICK_W + (TICK_W / 2);
+            svg += `<rect x="${x - 30}" y="${y + 5}" width="60" height="${LANE_H - 10}" fill="${color}" opacity="0.2" stroke="${color}" stroke-width="1" rx="4"/>`;
+            svg += `<text x="${x}" y="${y + 18}" text-anchor="middle" fill="${color}" font-size="11" font-family="Consolas, monospace">${escapeHtml(cell)}</text>`;
+          }
+          continue;
+        }
+
+        const sig = row.signalId;
+        const color = signalColor(sig);
+
+        svg += `<line x1="0" y1="${y + LANE_H / 2}" x2="${plotW}" y2="${y + LANE_H / 2}" stroke="#172036" stroke-width="1"/>`;
+        svg += `<line x1="0" y1="${y + LANE_H}" x2="${plotW}" y2="${y + LANE_H}" stroke="#172036" stroke-width="1"/>`;
+
+        for (let i = 0; i < timeline.length; i++) {
+          const x = i * TICK_W + (TICK_W / 2);
+          const val = signalValue(timeline[i], sig);
+          if (val === undefined) continue;
+
+          svg += `<rect x="${x - 30}" y="${y + 5}" width="60" height="${LANE_H - 10}" fill="${color}" opacity="0.2" stroke="${color}" stroke-width="1" rx="4"/>`;
+          svg += `<text x="${x}" y="${y + 18}" text-anchor="middle" fill="${color}" font-size="11" font-family="Consolas, monospace">${escapeHtml(val)}</text>`;
+        }
+      }
+
+      svg += '</svg>';
+      plot.innerHTML = svg;
+    }
+
+    // Keep axes pinned: they mirror the plot's scroll offsets.
+    plot.addEventListener('scroll', () => {
+      axisTop.scrollLeft = plot.scrollLeft;
+      axisLeft.scrollTop = plot.scrollTop;
+    });
+
+    function setModel(data, originLabel) {
+      if (!data || (!Array.isArray(data.timeline) && !Array.isArray(data.vectors))) {
+        throw new Error('Invalid results JSON: expected top-level timeline or vectors array.');
+      }
+      model = data;
+      renderSummary(model);
+      renderIla(model);
+      message.textContent = `Loaded ${originLabel}`;
+    }
+
+    async function loadDefaultFile() {
+      let target = 'results/memory_basic.results.json';
+      try {
+        const cfgRes = await fetch('/config', { cache: 'no-store' });
+        if (cfgRes.ok) {
+          const cfg = await cfgRes.json();
+          if (cfg && cfg.results) target = cfg.results;
+        }
+      } catch (_) { /* plain-file mode: keep hardcoded default */ }
+      const res = await fetch(target, { cache: 'no-store' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      setModel(data, `${target} (${new Date().toLocaleTimeString()})`);
+    }
+
+    fileInput.addEventListener('change', async (ev) => {
+      const file = ev.target.files && ev.target.files[0];
+      if (!file) return;
+      try {
+        const text = await file.text();
+        const data = JSON.parse(text);
+        setModel(data, file.name);
+      } catch (err) {
+        message.textContent = `Failed to parse file: ${err.message}`;
+      }
+    });
+
+    loadDefaultBtn.addEventListener('click', async () => {
+      try {
+        await loadDefaultFile();
+      } catch (err) {
+        message.textContent = 'Could not load default file directly. Serve via serve_results.py or use Open Results JSON.';
+      }
+    });
+
+    rerunBtn.addEventListener('click', async () => {
+      rerunBtn.disabled = true;
+      message.textContent = 'Rerunning testbench…';
+      try {
+        const res = await fetch('/rerun', { method: 'POST' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const status = await res.json();
+        if (!status.ok) {
+          message.textContent = `Rerun failed (exit ${status.returncode}): ${status.stderr || 'see server console'}`;
+          return;
+        }
+        await loadDefaultFile();
+        message.textContent = `Rerun complete — reloaded results (${new Date().toLocaleTimeString()})`;
+      } catch (err) {
+        message.textContent = `Rerun unavailable: ${err.message}. Start the viewer with serve_results.py to enable rerun.`;
+      } finally {
+        rerunBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

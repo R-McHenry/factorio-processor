@@ -1,0 +1,83 @@
+{
+  "name": "v10_proc_mandelbrot_dsl",
+  "description": "The mandelbrot set over the whole vector: 2451 lanes, 64 wide, 20 iterations of z = z^2 + c in 360ths fixed point, COMPILED FROM THE vlang DSL - the source is the four-line kernel `r2 = zx*zx + zy*zy; esc = r2 > 4*S*S; e = vmax(e, esc); zx, zy = (zx*zx - zy*zy)//S + cx, (zx*zy)//(S//2) + cy` and nothing else. Selection, allocation and lowering to IR8 produce 8 moves of grid seed and 11 per pass, the same as the hand-written kernel, which is why this bench carries the identical expectations: any divergence between the two is a failure here. `zx*zx` appears in two statements and is ONE DAG node, which is how the allocator knows the pair-B load already stands and skips three reloads. Seeding costs zero scalar writes: COORD gives each lane its own index and the vec-scal MOD/DIV units turn that into x = i % 64, y = i / 64, then cx = x*DX - OX and cy = y*DY - OY, with the offset applied as an ADDEND on the second mux selector so the x = 0 column and y = 0 row survive. One pair-B load per pass then yields every quantity the iteration needs at once - B_SQ and B_SQG summed on the write bus give the escape radius zx^2+zy^2 for free, B_SQDIFF gives zx^2-zy^2 and B_MUL gives zx*zy. The per-lane escape counter needs no adder either: VS_GT masks the lanes outside radius 2, A_MAX against the previous mask makes it sticky, and a register write with no erase accumulates it, so after K passes each lane holds K minus its own escape iteration. Checked against a Python model lane by lane: 1749 of 2451 lanes escape, the escape-iteration sum over the whole frame is 26963, a 32-lane scanline through row 19 comes back exactly (@%*:+++=######################=*), and the grid itself is spot-checked at lane 1248. Stickiness is what makes the answer defined rather than merely large: escaped lanes go on iterating and overflow within a couple of passes, but max(1, x) = 1, so nothing they do afterwards can reach either output.",
+  "pre_stimulus_dead_ticks": 0,
+  "settle_ticks": 1,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -24.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "trig_set": 46
+    },
+    "expected_probe_name": "mem_state",
+    "output_probes": [
+      {
+        "name": "mem_state",
+        "entity_number": 191,
+        "wire": "red"
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "run_to_halt",
+      "skip_ticks": 5119,
+      "settle_ticks": 1,
+      "trace_ticks": 3,
+      "expect_probe": "mem_state",
+      "expect": {
+        "$mem[2200]": 1749,
+        "$mem[2201]": 26963,
+        "$mem[2202]": -272,
+        "$mem[2203]": -13,
+        "$mem[2204]": 0,
+        "$poison_ctr": 0,
+        "$mem[2210]": 19,
+        "$mem[2211]": 15,
+        "$mem[2212]": 14,
+        "$mem[2213]": 4,
+        "$mem[2214]": 12,
+        "$mem[2215]": 11,
+        "$mem[2216]": 11,
+        "$mem[2217]": 9,
+        "$mem[2218]": 0,
+        "$mem[2219]": 0,
+        "$mem[2220]": 0,
+        "$mem[2221]": 0,
+        "$mem[2222]": 0,
+        "$mem[2223]": 0,
+        "$mem[2224]": 0,
+        "$mem[2225]": 0,
+        "$mem[2226]": 0,
+        "$mem[2227]": 0,
+        "$mem[2228]": 0,
+        "$mem[2229]": 0,
+        "$mem[2230]": 0,
+        "$mem[2231]": 0,
+        "$mem[2232]": 0,
+        "$mem[2233]": 0,
+        "$mem[2234]": 0,
+        "$mem[2235]": 0,
+        "$mem[2236]": 0,
+        "$mem[2237]": 0,
+        "$mem[2238]": 0,
+        "$mem[2239]": 0,
+        "$mem[2240]": 9,
+        "$mem[2241]": 14
+      }
+    }
+  ]
+}

@@ -1,0 +1,1296 @@
+{
+  "name": "memory_basic",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 2,
+  "rebuild": {
+    "removed": 78,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 6,
+    "revived": 6,
+    "placed": 6
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [],
+  "mapping": {
+    "translation": {
+      "dx": -2.0,
+      "dy": 14.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 119479,
+      "2": 119480,
+      "3": 119482,
+      "4": 119481,
+      "5": 119483,
+      "6": 119484
+    },
+    "driver_units": {
+      "write": 119479,
+      "read": 119482
+    },
+    "output_probes": [
+      {
+        "name": "read_output",
+        "unit": 119484,
+        "wire": "green"
+      },
+      {
+        "name": "memory_state_g",
+        "unit": 119480,
+        "wire": "green"
+      },
+      {
+        "name": "memory_state_r",
+        "unit": 119480,
+        "wire": "red"
+      }
+    ],
+    "expected_probe_name": "read_output"
+  },
+  "timeline": [
+    {
+      "tick": 875516,
+      "stimulus": {
+        "write": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "read": {
+          "signal-R": 3.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_1"
+    },
+    {
+      "tick": 875517,
+      "stimulus": {
+        "write": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "read": {
+          "signal-R": 3.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_2"
+    },
+    {
+      "tick": 875518,
+      "stimulus": {
+        "write": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "read": {
+          "signal-R": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "memory_state_g": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "seed_initial_input_state"
+    },
+    {
+      "tick": 875519,
+      "stimulus": {
+        "write": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "read": {
+          "signal-R": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "memory_state_g": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "memory_state_r": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "seed_initial_input_state"
+    },
+    {
+      "tick": 875520,
+      "stimulus": {
+        "write": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "read": {
+          "signal-R": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-1": 1.0
+        },
+        "memory_state_g": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "memory_state_r": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "seed_initial_input_state"
+    },
+    {
+      "tick": 875521,
+      "stimulus": {
+        "write": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "read": {
+          "signal-R": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-1": 1.0
+        },
+        "memory_state_g": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "memory_state_r": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "read_preloaded_addr_2"
+    },
+    {
+      "tick": 875522,
+      "stimulus": {
+        "write": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "read": {
+          "signal-R": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-1": 1.0
+        },
+        "memory_state_g": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "memory_state_r": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "read_preloaded_addr_2"
+    },
+    {
+      "tick": 875523,
+      "stimulus": {
+        "write": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "read": {
+          "signal-R": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-1": 1.0
+        },
+        "memory_state_g": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "memory_state_r": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "read_preloaded_addr_2"
+    },
+    {
+      "tick": 875524,
+      "stimulus": {
+        "write": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "read": {
+          "signal-R": 3.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-1": 1.0
+        },
+        "memory_state_g": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "memory_state_r": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "read_preloaded_addr_3"
+    },
+    {
+      "tick": 875525,
+      "stimulus": {
+        "write": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "read": {
+          "signal-R": 3.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-2": 111.0
+        },
+        "memory_state_g": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "memory_state_r": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "read_preloaded_addr_3"
+    },
+    {
+      "tick": 875526,
+      "stimulus": {
+        "write": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "read": {
+          "signal-R": 3.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-2": 111.0
+        },
+        "memory_state_g": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        },
+        "memory_state_r": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "read_preloaded_addr_3"
+    },
+    {
+      "tick": 875527,
+      "stimulus": {
+        "write": {
+          "signal-0": 1000.0
+        },
+        "read": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-2": 111.0
+        },
+        "memory_state_g": {
+          "signal-0": 1000.0
+        },
+        "memory_state_r": {
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "write_signal_0"
+    },
+    {
+      "tick": 875528,
+      "stimulus": {
+        "write": {
+          "signal-0": 1000.0
+        },
+        "read": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "memory_state_g": {
+          "signal-0": 1000.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "write_signal_0"
+    },
+    {
+      "tick": 875529,
+      "stimulus": {
+        "write": {
+          "signal-0": 1000.0
+        },
+        "read": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-0": 1000.0
+        },
+        "memory_state_g": {
+          "signal-0": 1000.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "write_signal_0"
+    },
+    {
+      "tick": 875530,
+      "stimulus": {
+        "write": {
+          "signal-1": 1001.0
+        },
+        "read": {
+          "signal-R": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-0": 1000.0
+        },
+        "memory_state_g": {
+          "signal-1": 1001.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1.0,
+          "signal-2": 111.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "write_signal_1"
+    },
+    {
+      "tick": 875531,
+      "stimulus": {
+        "write": {
+          "signal-1": 1001.0
+        },
+        "read": {
+          "signal-R": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-1": 1.0
+        },
+        "memory_state_g": {
+          "signal-1": 1001.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 111.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "write_signal_1"
+    },
+    {
+      "tick": 875532,
+      "stimulus": {
+        "write": {
+          "signal-1": 1001.0
+        },
+        "read": {
+          "signal-R": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-1": 1001.0
+        },
+        "memory_state_g": {
+          "signal-1": 1001.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 111.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "write_signal_1"
+    },
+    {
+      "tick": 875533,
+      "stimulus": {
+        "write": {
+          "signal-2": 1002.0
+        },
+        "read": {
+          "signal-R": 3.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-1": 1001.0
+        },
+        "memory_state_g": {
+          "signal-2": 1002.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 111.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "write_signal_2"
+    },
+    {
+      "tick": 875534,
+      "stimulus": {
+        "write": {
+          "signal-2": 1002.0
+        },
+        "read": {
+          "signal-R": 3.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-2": 111.0
+        },
+        "memory_state_g": {
+          "signal-2": 1002.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "write_signal_2"
+    },
+    {
+      "tick": 875535,
+      "stimulus": {
+        "write": {
+          "signal-2": 1002.0
+        },
+        "read": {
+          "signal-R": 3.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-2": 1002.0
+        },
+        "memory_state_g": {
+          "signal-2": 1002.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "write_signal_2"
+    },
+    {
+      "tick": 875536,
+      "stimulus": {
+        "write": {
+          "signal-3": 1003.0
+        },
+        "read": {
+          "signal-R": 4.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-2": 1002.0
+        },
+        "memory_state_g": {
+          "signal-3": 1003.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "write_signal_3"
+    },
+    {
+      "tick": 875537,
+      "stimulus": {
+        "write": {
+          "signal-3": 1003.0
+        },
+        "read": {
+          "signal-R": 4.0
+        }
+      },
+      "observed_by_probe": {
+        "memory_state_g": {
+          "signal-3": 1003.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0,
+          "signal-3": 1003.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "write_signal_3"
+    },
+    {
+      "tick": 875538,
+      "stimulus": {
+        "write": {
+          "signal-3": 1003.0
+        },
+        "read": {
+          "signal-R": 4.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-3": 1003.0
+        },
+        "memory_state_g": {
+          "signal-3": 1003.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0,
+          "signal-3": 1003.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "write_signal_3"
+    },
+    {
+      "tick": 875539,
+      "stimulus": {
+        "write": {
+          "signal-4": 1004.0
+        },
+        "read": {
+          "signal-R": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-3": 1003.0
+        },
+        "memory_state_g": {
+          "signal-4": 1004.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0,
+          "signal-3": 1003.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "write_signal_4"
+    },
+    {
+      "tick": 875540,
+      "stimulus": {
+        "write": {
+          "signal-4": 1004.0
+        },
+        "read": {
+          "signal-R": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "memory_state_g": {
+          "signal-4": 1004.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0,
+          "signal-3": 1003.0,
+          "signal-4": 1004.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "write_signal_4"
+    },
+    {
+      "tick": 875541,
+      "stimulus": {
+        "write": {
+          "signal-4": 1004.0
+        },
+        "read": {
+          "signal-R": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-4": 1004.0
+        },
+        "memory_state_g": {
+          "signal-4": 1004.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0,
+          "signal-3": 1003.0,
+          "signal-4": 1004.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "write_signal_4"
+    },
+    {
+      "tick": 875542,
+      "stimulus": {
+        "write": {
+          "signal-5": 1005.0
+        },
+        "read": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-4": 1004.0
+        },
+        "memory_state_g": {
+          "signal-5": 1005.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0,
+          "signal-3": 1003.0,
+          "signal-4": 1004.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "write_signal_5"
+    },
+    {
+      "tick": 875543,
+      "stimulus": {
+        "write": {
+          "signal-5": 1005.0
+        },
+        "read": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "memory_state_g": {
+          "signal-5": 1005.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0,
+          "signal-3": 1003.0,
+          "signal-4": 1004.0,
+          "signal-5": 1005.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "write_signal_5"
+    },
+    {
+      "tick": 875544,
+      "stimulus": {
+        "write": {
+          "signal-5": 1005.0
+        },
+        "read": {
+          "signal-R": 6.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-5": 1005.0
+        },
+        "memory_state_g": {
+          "signal-5": 1005.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0,
+          "signal-3": 1003.0,
+          "signal-4": 1004.0,
+          "signal-5": 1005.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "write_signal_5"
+    },
+    {
+      "tick": 875545,
+      "stimulus": {
+        "write": {
+          "signal-6": 1006.0
+        },
+        "read": {
+          "signal-R": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-5": 1005.0
+        },
+        "memory_state_g": {
+          "signal-6": 1006.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0,
+          "signal-3": 1003.0,
+          "signal-4": 1004.0,
+          "signal-5": 1005.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "write_signal_6"
+    },
+    {
+      "tick": 875546,
+      "stimulus": {
+        "write": {
+          "signal-6": 1006.0
+        },
+        "read": {
+          "signal-R": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "memory_state_g": {
+          "signal-6": 1006.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0,
+          "signal-3": 1003.0,
+          "signal-4": 1004.0,
+          "signal-5": 1005.0,
+          "signal-6": 1006.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "write_signal_6"
+    },
+    {
+      "tick": 875547,
+      "stimulus": {
+        "write": {
+          "signal-6": 1006.0
+        },
+        "read": {
+          "signal-R": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-6": 1006.0
+        },
+        "memory_state_g": {
+          "signal-6": 1006.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0,
+          "signal-3": 1003.0,
+          "signal-4": 1004.0,
+          "signal-5": 1005.0,
+          "signal-6": 1006.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "write_signal_6"
+    },
+    {
+      "tick": 875548,
+      "stimulus": {
+        "write": {
+          "signal-7": 1007.0
+        },
+        "read": {
+          "signal-R": 8.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-6": 1006.0
+        },
+        "memory_state_g": {
+          "signal-7": 1007.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0,
+          "signal-3": 1003.0,
+          "signal-4": 1004.0,
+          "signal-5": 1005.0,
+          "signal-6": 1006.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "write_signal_7"
+    },
+    {
+      "tick": 875549,
+      "stimulus": {
+        "write": {
+          "signal-7": 1007.0
+        },
+        "read": {
+          "signal-R": 8.0
+        }
+      },
+      "observed_by_probe": {
+        "memory_state_g": {
+          "signal-7": 1007.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0,
+          "signal-3": 1003.0,
+          "signal-4": 1004.0,
+          "signal-5": 1005.0,
+          "signal-6": 1006.0,
+          "signal-7": 1007.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "write_signal_7"
+    },
+    {
+      "tick": 875550,
+      "stimulus": {
+        "write": {
+          "signal-7": 1007.0
+        },
+        "read": {
+          "signal-R": 8.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-7": 1007.0
+        },
+        "memory_state_g": {
+          "signal-7": 1007.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0,
+          "signal-3": 1003.0,
+          "signal-4": 1004.0,
+          "signal-5": 1005.0,
+          "signal-6": 1006.0,
+          "signal-7": 1007.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "write_signal_7"
+    },
+    {
+      "tick": 875551,
+      "stimulus": {
+        "write": {
+          "signal-8": 1008.0
+        },
+        "read": {
+          "signal-R": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-7": 1007.0
+        },
+        "memory_state_g": {
+          "signal-8": 1008.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0,
+          "signal-3": 1003.0,
+          "signal-4": 1004.0,
+          "signal-5": 1005.0,
+          "signal-6": 1006.0,
+          "signal-7": 1007.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "write_signal_8"
+    },
+    {
+      "tick": 875552,
+      "stimulus": {
+        "write": {
+          "signal-8": 1008.0
+        },
+        "read": {
+          "signal-R": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "memory_state_g": {
+          "signal-8": 1008.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0,
+          "signal-3": 1003.0,
+          "signal-4": 1004.0,
+          "signal-5": 1005.0,
+          "signal-6": 1006.0,
+          "signal-7": 1007.0,
+          "signal-8": 1008.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "write_signal_8"
+    },
+    {
+      "tick": 875553,
+      "stimulus": {
+        "write": {
+          "signal-8": 1008.0
+        },
+        "read": {
+          "signal-R": 9.0
+        }
+      },
+      "observed_by_probe": {
+        "read_output": {
+          "signal-8": 1008.0
+        },
+        "memory_state_g": {
+          "signal-8": 1008.0
+        },
+        "memory_state_r": {
+          "signal-0": 1000.0,
+          "signal-1": 1001.0,
+          "signal-2": 1002.0,
+          "signal-3": 1003.0,
+          "signal-4": 1004.0,
+          "signal-5": 1005.0,
+          "signal-6": 1006.0,
+          "signal-7": 1007.0,
+          "signal-8": 1008.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "write_signal_8"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "seed_initial_input_state",
+      "drive_start_tick": 875517,
+      "skipped_ticks": 0,
+      "expected_probe": "read_output",
+      "expected": {
+        "signal-1": 1
+      },
+      "observed": {
+        "signal-1": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875520
+    },
+    {
+      "step_index": 1,
+      "step_name": "read_preloaded_addr_2",
+      "drive_start_tick": 875520,
+      "skipped_ticks": 0,
+      "expected_probe": "read_output",
+      "expected": {
+        "signal-1": 1
+      },
+      "observed": {
+        "signal-1": 1.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875523
+    },
+    {
+      "step_index": 2,
+      "step_name": "read_preloaded_addr_3",
+      "drive_start_tick": 875523,
+      "skipped_ticks": 0,
+      "expected_probe": "read_output",
+      "expected": {
+        "signal-2": 111
+      },
+      "observed": {
+        "signal-2": 111.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875526
+    },
+    {
+      "step_index": 3,
+      "step_name": "write_signal_0",
+      "drive_start_tick": 875526,
+      "skipped_ticks": 0,
+      "expected_probe": "read_output",
+      "expected": {
+        "signal-0": 1000
+      },
+      "observed": {
+        "signal-0": 1000.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875529
+    },
+    {
+      "step_index": 4,
+      "step_name": "write_signal_1",
+      "drive_start_tick": 875529,
+      "skipped_ticks": 0,
+      "expected_probe": "read_output",
+      "expected": {
+        "signal-1": 1001
+      },
+      "observed": {
+        "signal-1": 1001.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875532
+    },
+    {
+      "step_index": 5,
+      "step_name": "write_signal_2",
+      "drive_start_tick": 875532,
+      "skipped_ticks": 0,
+      "expected_probe": "read_output",
+      "expected": {
+        "signal-2": 1002
+      },
+      "observed": {
+        "signal-2": 1002.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875535
+    },
+    {
+      "step_index": 6,
+      "step_name": "write_signal_3",
+      "drive_start_tick": 875535,
+      "skipped_ticks": 0,
+      "expected_probe": "read_output",
+      "expected": {
+        "signal-3": 1003
+      },
+      "observed": {
+        "signal-3": 1003.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875538
+    },
+    {
+      "step_index": 7,
+      "step_name": "write_signal_4",
+      "drive_start_tick": 875538,
+      "skipped_ticks": 0,
+      "expected_probe": "read_output",
+      "expected": {
+        "signal-4": 1004
+      },
+      "observed": {
+        "signal-4": 1004.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875541
+    },
+    {
+      "step_index": 8,
+      "step_name": "write_signal_5",
+      "drive_start_tick": 875541,
+      "skipped_ticks": 0,
+      "expected_probe": "read_output",
+      "expected": {
+        "signal-5": 1005
+      },
+      "observed": {
+        "signal-5": 1005.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875544
+    },
+    {
+      "step_index": 9,
+      "step_name": "write_signal_6",
+      "drive_start_tick": 875544,
+      "skipped_ticks": 0,
+      "expected_probe": "read_output",
+      "expected": {
+        "signal-6": 1006
+      },
+      "observed": {
+        "signal-6": 1006.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875547
+    },
+    {
+      "step_index": 10,
+      "step_name": "write_signal_7",
+      "drive_start_tick": 875547,
+      "skipped_ticks": 0,
+      "expected_probe": "read_output",
+      "expected": {
+        "signal-7": 1007
+      },
+      "observed": {
+        "signal-7": 1007.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875550
+    },
+    {
+      "step_index": 11,
+      "step_name": "write_signal_8",
+      "drive_start_tick": 875550,
+      "skipped_ticks": 0,
+      "expected_probe": "read_output",
+      "expected": {
+        "signal-8": 1008
+      },
+      "observed": {
+        "signal-8": 1008.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 875553
+    }
+  ],
+  "pass": true
+}

@@ -1,0 +1,1566 @@
+{
+  "name": "proc_cmp",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 2,
+  "rebuild": {
+    "removed": 78,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 77,
+    "revived": 77,
+    "placed": 77
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [
+    {
+      "unit": 122774,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 6
+    },
+    {
+      "unit": 122815,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 44
+    },
+    {
+      "unit": 122829,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 45
+    },
+    {
+      "unit": 122828,
+      "slots_written": 2455,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 46
+    }
+  ],
+  "mapping": {
+    "translation": {
+      "dx": 0.0,
+      "dy": 0.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 122781,
+      "2": 122782,
+      "3": 122784,
+      "4": 122783,
+      "5": 122785,
+      "6": 122774,
+      "7": 122790,
+      "8": 122787,
+      "9": 122786,
+      "10": 122789,
+      "11": 122788,
+      "12": 122794,
+      "13": 122792,
+      "14": 122791,
+      "15": 122775,
+      "16": 122777,
+      "17": 122776,
+      "18": 122793,
+      "19": 122780,
+      "20": 122799,
+      "21": 122801,
+      "22": 122778,
+      "23": 122779,
+      "24": 122796,
+      "25": 122795,
+      "26": 122798,
+      "27": 122797,
+      "28": 122800,
+      "29": 122803,
+      "30": 122823,
+      "31": 122825,
+      "32": 122805,
+      "33": 122804,
+      "34": 122807,
+      "35": 122806,
+      "36": 122809,
+      "37": 122808,
+      "38": 122820,
+      "39": 122819,
+      "40": 122822,
+      "41": 122802,
+      "42": 122821,
+      "43": 122824,
+      "44": 122815,
+      "45": 122829,
+      "46": 122828,
+      "47": 122832,
+      "48": 122834,
+      "49": 122811,
+      "50": 122810,
+      "51": 122813,
+      "52": 122812,
+      "53": 122831,
+      "54": 122830,
+      "55": 122833,
+      "56": 122814,
+      "57": 122827,
+      "58": 122826,
+      "59": 122839,
+      "60": 122838,
+      "61": 122841,
+      "62": 122817,
+      "63": 122816,
+      "64": 122818,
+      "65": 122836,
+      "66": 122835,
+      "67": 122837,
+      "68": 122840,
+      "69": 122843,
+      "70": 122845,
+      "71": 122842,
+      "72": 122844,
+      "73": 122847,
+      "74": 122849,
+      "75": 122846,
+      "76": 122848,
+      "77": 122850
+    },
+    "driver_units": {
+      "write_value": 122777,
+      "trig_set": 122775,
+      "trig_reset": 122780,
+      "addr_a": 122776
+    },
+    "output_probes": [
+      {
+        "name": "alu_bus",
+        "unit": 122814,
+        "wire": "green"
+      },
+      {
+        "name": "mem_state",
+        "unit": 122809,
+        "wire": "red"
+      },
+      {
+        "name": "port_a",
+        "unit": 122818,
+        "wire": "green"
+      }
+    ],
+    "expected_probe_name": "alu_bus"
+  },
+  "timeline": [
+    {
+      "tick": 888287,
+      "stimulus": {
+        "trig_reset": {
+          "shape-vertical": -1.0,
+          "shape-horizontal": -1.0,
+          "shape-curve": -1.0,
+          "shape-curve-2": -1.0
+        }
+      },
+      "observed_by_probe": {
+        "mem_state": {
+          "signal-P": 1.0
+        }
+      },
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_1"
+    },
+    {
+      "tick": 888288,
+      "stimulus": {
+        "trig_reset": {
+          "shape-vertical": -1.0,
+          "shape-horizontal": -1.0,
+          "shape-curve": -1.0,
+          "shape-curve-2": -1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-P": 1.0,
+          "signal-Q": 1.0
+        },
+        "mem_state": {
+          "signal-P": 2.0
+        }
+      },
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_2"
+    },
+    {
+      "tick": 888289,
+      "stimulus": {
+        "write_value": {
+          "signal-M": 7.0,
+          "signal-N": 3.0
+        },
+        "trig_set": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        },
+        "trig_reset": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-P": 2.0,
+          "signal-Q": 1.0
+        },
+        "mem_state": {
+          "signal-P": 3.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "write_m7_n3"
+    },
+    {
+      "tick": 888290,
+      "stimulus": {
+        "write_value": {
+          "signal-M": 7.0,
+          "signal-N": 3.0
+        },
+        "trig_set": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        },
+        "trig_reset": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-P": 3.0,
+          "signal-Q": 1.0
+        },
+        "mem_state": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-P": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "write_m7_n3"
+    },
+    {
+      "tick": 888291,
+      "stimulus": {
+        "write_value": {
+          "signal-M": 7.0,
+          "signal-N": 3.0
+        },
+        "trig_set": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        },
+        "trig_reset": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-O": 1.0,
+          "signal-P": 4.0,
+          "signal-Q": 1.0
+        },
+        "mem_state": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-P": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "write_m7_n3"
+    },
+    {
+      "tick": 888292,
+      "stimulus": {
+        "write_value": {
+          "signal-M": 7.0,
+          "signal-N": 3.0
+        },
+        "trig_set": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        },
+        "trig_reset": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-O": 1.0,
+          "signal-P": 5.0,
+          "signal-Q": 1.0,
+          "signal-S": 3.0,
+          "signal-T": 7.0
+        },
+        "mem_state": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-P": 6.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "write_m7_n3"
+    },
+    {
+      "tick": 888293,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-O": 1.0,
+          "signal-P": 6.0,
+          "signal-Q": 1.0,
+          "signal-S": 3.0,
+          "signal-T": 7.0
+        },
+        "mem_state": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-P": 7.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "m7_n3_max7_min3_flags_on"
+    },
+    {
+      "tick": 888294,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-O": 1.0,
+          "signal-P": 7.0,
+          "signal-Q": 1.0,
+          "signal-S": 3.0,
+          "signal-T": 7.0
+        },
+        "mem_state": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-P": 8.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "m7_n3_max7_min3_flags_on"
+    },
+    {
+      "tick": 888295,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-O": 1.0,
+          "signal-P": 8.0,
+          "signal-Q": 1.0,
+          "signal-S": 3.0,
+          "signal-T": 7.0
+        },
+        "mem_state": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-P": 9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "m7_n3_max7_min3_flags_on"
+    },
+    {
+      "tick": 888296,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-O": 1.0,
+          "signal-P": 9.0,
+          "signal-Q": 1.0,
+          "signal-S": 3.0,
+          "signal-T": 7.0
+        },
+        "mem_state": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-P": 10.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "m7_n3_max7_min3_flags_on"
+    },
+    {
+      "tick": 888297,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-O": 1.0,
+          "signal-P": 10.0,
+          "signal-Q": 1.0,
+          "signal-S": 3.0,
+          "signal-T": 7.0
+        },
+        "mem_state": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-P": 11.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "m7_n3_max7_min3_flags_on"
+    },
+    {
+      "tick": 888298,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-O": 1.0,
+          "signal-P": 11.0,
+          "signal-Q": 1.0,
+          "signal-S": 3.0,
+          "signal-T": 7.0
+        },
+        "mem_state": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-P": 12.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "m7_n3_max7_min3_flags_on"
+    },
+    {
+      "tick": 888299,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-O": 1.0,
+          "signal-P": 12.0,
+          "signal-Q": 1.0,
+          "signal-S": 3.0,
+          "signal-T": 7.0
+        },
+        "mem_state": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-P": 13.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "m7_n3_max7_min3_flags_on"
+    },
+    {
+      "tick": 888300,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-O": 1.0,
+          "signal-P": 13.0,
+          "signal-Q": 1.0,
+          "signal-S": 3.0,
+          "signal-T": 7.0
+        },
+        "mem_state": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-P": 14.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "m7_n3_max7_min3_flags_on"
+    },
+    {
+      "tick": 888301,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-O": 1.0,
+          "signal-P": 14.0,
+          "signal-Q": 1.0,
+          "signal-S": 3.0,
+          "signal-T": 7.0
+        },
+        "mem_state": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-P": 15.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "m7_n3_max7_min3_flags_on"
+    },
+    {
+      "tick": 888302,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-O": 1.0,
+          "signal-P": 15.0,
+          "signal-Q": 1.0,
+          "signal-S": 3.0,
+          "signal-T": 7.0
+        },
+        "mem_state": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-P": 16.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "m7_n3_max7_min3_flags_on"
+    },
+    {
+      "tick": 888303,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-O": 1.0,
+          "signal-P": 16.0,
+          "signal-Q": 1.0,
+          "signal-S": 3.0,
+          "signal-T": 7.0
+        },
+        "mem_state": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-P": 17.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "m7_n3_max7_min3_flags_on"
+    },
+    {
+      "tick": 888304,
+      "stimulus": {
+        "write_value": {
+          "signal-M": 2.0,
+          "signal-N": 9.0
+        },
+        "trig_set": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        },
+        "trig_reset": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-O": 1.0,
+          "signal-P": 17.0,
+          "signal-Q": 1.0,
+          "signal-S": 3.0,
+          "signal-T": 7.0
+        },
+        "mem_state": {
+          "signal-M": 7.0,
+          "signal-N": 3.0,
+          "signal-P": 18.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "write_m2_n9"
+    },
+    {
+      "tick": 888305,
+      "stimulus": {
+        "write_value": {
+          "signal-M": 2.0,
+          "signal-N": 9.0
+        },
+        "trig_set": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        },
+        "trig_reset": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-O": 1.0,
+          "signal-P": 18.0,
+          "signal-Q": 1.0,
+          "signal-S": 3.0,
+          "signal-T": 7.0
+        },
+        "mem_state": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 19.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "write_m2_n9"
+    },
+    {
+      "tick": 888306,
+      "stimulus": {
+        "write_value": {
+          "signal-M": 2.0,
+          "signal-N": 9.0
+        },
+        "trig_set": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        },
+        "trig_reset": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 19.0,
+          "signal-S": 3.0,
+          "signal-T": 7.0
+        },
+        "mem_state": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 20.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "write_m2_n9"
+    },
+    {
+      "tick": 888307,
+      "stimulus": {
+        "write_value": {
+          "signal-M": 2.0,
+          "signal-N": 9.0
+        },
+        "trig_set": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        },
+        "trig_reset": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 20.0,
+          "signal-S": 2.0,
+          "signal-T": 9.0
+        },
+        "mem_state": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 21.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "write_m2_n9"
+    },
+    {
+      "tick": 888308,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 21.0,
+          "signal-S": 2.0,
+          "signal-T": 9.0
+        },
+        "mem_state": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 22.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "m2_n9_max9_min2_flags_off"
+    },
+    {
+      "tick": 888309,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 22.0,
+          "signal-S": 2.0,
+          "signal-T": 9.0
+        },
+        "mem_state": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 23.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "m2_n9_max9_min2_flags_off"
+    },
+    {
+      "tick": 888310,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 23.0,
+          "signal-S": 2.0,
+          "signal-T": 9.0
+        },
+        "mem_state": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 24.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "m2_n9_max9_min2_flags_off"
+    },
+    {
+      "tick": 888311,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 24.0,
+          "signal-S": 2.0,
+          "signal-T": 9.0
+        },
+        "mem_state": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 25.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "m2_n9_max9_min2_flags_off"
+    },
+    {
+      "tick": 888312,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 25.0,
+          "signal-S": 2.0,
+          "signal-T": 9.0
+        },
+        "mem_state": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 26.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "m2_n9_max9_min2_flags_off"
+    },
+    {
+      "tick": 888313,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 26.0,
+          "signal-S": 2.0,
+          "signal-T": 9.0
+        },
+        "mem_state": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 27.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "m2_n9_max9_min2_flags_off"
+    },
+    {
+      "tick": 888314,
+      "stimulus": {
+        "write_value": {
+          "signal-M": 5.0,
+          "signal-N": 5.0
+        },
+        "trig_set": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        },
+        "trig_reset": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 27.0,
+          "signal-S": 2.0,
+          "signal-T": 9.0
+        },
+        "mem_state": {
+          "signal-M": 2.0,
+          "signal-N": 9.0,
+          "signal-P": 28.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "write_m5_n5"
+    },
+    {
+      "tick": 888315,
+      "stimulus": {
+        "write_value": {
+          "signal-M": 5.0,
+          "signal-N": 5.0
+        },
+        "trig_set": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        },
+        "trig_reset": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 28.0,
+          "signal-S": 2.0,
+          "signal-T": 9.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 29.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "write_m5_n5"
+    },
+    {
+      "tick": 888316,
+      "stimulus": {
+        "write_value": {
+          "signal-M": 5.0,
+          "signal-N": 5.0
+        },
+        "trig_set": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        },
+        "trig_reset": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 29.0,
+          "signal-Q": 1.0,
+          "signal-S": 2.0,
+          "signal-T": 9.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 30.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "write_m5_n5"
+    },
+    {
+      "tick": 888317,
+      "stimulus": {
+        "write_value": {
+          "signal-M": 5.0,
+          "signal-N": 5.0
+        },
+        "trig_set": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        },
+        "trig_reset": {
+          "signal-M": 1.0,
+          "signal-N": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 30.0,
+          "signal-Q": 1.0,
+          "signal-S": 5.0,
+          "signal-T": 5.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 31.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "write_m5_n5"
+    },
+    {
+      "tick": 888318,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 31.0,
+          "signal-Q": 1.0,
+          "signal-S": 5.0,
+          "signal-T": 5.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 32.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "m5_n5_equal_gte_fires"
+    },
+    {
+      "tick": 888319,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 32.0,
+          "signal-Q": 1.0,
+          "signal-S": 5.0,
+          "signal-T": 5.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 33.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "m5_n5_equal_gte_fires"
+    },
+    {
+      "tick": 888320,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 33.0,
+          "signal-Q": 1.0,
+          "signal-S": 5.0,
+          "signal-T": 5.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 34.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "m5_n5_equal_gte_fires"
+    },
+    {
+      "tick": 888321,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 34.0,
+          "signal-Q": 1.0,
+          "signal-S": 5.0,
+          "signal-T": 5.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 35.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "m5_n5_equal_gte_fires"
+    },
+    {
+      "tick": 888322,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 35.0,
+          "signal-Q": 1.0,
+          "signal-S": 5.0,
+          "signal-T": 5.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 36.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "m5_n5_equal_gte_fires"
+    },
+    {
+      "tick": 888323,
+      "stimulus": {},
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 36.0,
+          "signal-Q": 1.0,
+          "signal-S": 5.0,
+          "signal-T": 5.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 37.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "m5_n5_equal_gte_fires"
+    },
+    {
+      "tick": 888324,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 2066.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 37.0,
+          "signal-Q": 1.0,
+          "signal-S": 5.0,
+          "signal-T": 5.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 38.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "max_port_readable_at_its_own_row"
+    },
+    {
+      "tick": 888325,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 2066.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 38.0,
+          "signal-Q": 1.0,
+          "signal-S": 5.0,
+          "signal-T": 5.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 39.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "max_port_readable_at_its_own_row"
+    },
+    {
+      "tick": 888326,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 2066.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 39.0,
+          "signal-Q": 1.0,
+          "signal-S": 5.0,
+          "signal-T": 5.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 40.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "max_port_readable_at_its_own_row"
+    },
+    {
+      "tick": 888327,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 2066.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 40.0,
+          "signal-Q": 1.0,
+          "signal-S": 5.0,
+          "signal-T": 5.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 41.0
+        },
+        "port_a": {
+          "signal-T": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "max_port_readable_at_its_own_row"
+    },
+    {
+      "tick": 888328,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 2066.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 41.0,
+          "signal-Q": 1.0,
+          "signal-S": 5.0,
+          "signal-T": 5.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 42.0
+        },
+        "port_a": {
+          "signal-T": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "max_port_readable_at_its_own_row"
+    },
+    {
+      "tick": 888329,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 42.0,
+          "signal-Q": 1.0,
+          "signal-S": 5.0,
+          "signal-T": 5.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 43.0
+        },
+        "port_a": {
+          "signal-T": 5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "carrier_leak_gone_read_empty_addr1"
+    },
+    {
+      "tick": 888330,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 43.0,
+          "signal-Q": 1.0,
+          "signal-S": 5.0,
+          "signal-T": 5.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 44.0
+        },
+        "port_a": {
+          "signal-T": 5.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 7,
+      "step_name": "carrier_leak_gone_read_empty_addr1"
+    },
+    {
+      "tick": 888331,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 44.0,
+          "signal-Q": 1.0,
+          "signal-S": 5.0,
+          "signal-T": 5.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 45.0
+        },
+        "port_a": {
+          "signal-T": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "carrier_leak_gone_read_empty_addr1"
+    },
+    {
+      "tick": 888332,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 45.0,
+          "signal-Q": 1.0,
+          "signal-S": 5.0,
+          "signal-T": 5.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 46.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "carrier_leak_gone_read_empty_addr1"
+    },
+    {
+      "tick": 888333,
+      "stimulus": {
+        "addr_a": {
+          "signal-R": 1.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_bus": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 46.0,
+          "signal-Q": 1.0,
+          "signal-S": 5.0,
+          "signal-T": 5.0
+        },
+        "mem_state": {
+          "signal-M": 5.0,
+          "signal-N": 5.0,
+          "signal-P": 47.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "carrier_leak_gone_read_empty_addr1"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "write_m7_n3",
+      "drive_start_tick": 888288,
+      "skipped_ticks": 0,
+      "expected_probe": "alu_bus",
+      "expected": {},
+      "observed": {
+        "signal-M": 7.0,
+        "signal-N": 3.0,
+        "signal-O": 1.0,
+        "signal-P": 5.0,
+        "signal-Q": 1.0,
+        "signal-S": 3.0,
+        "signal-T": 7.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888292
+    },
+    {
+      "step_index": 1,
+      "step_name": "m7_n3_max7_min3_flags_on",
+      "drive_start_tick": 888292,
+      "skipped_ticks": 0,
+      "expected_probe": "alu_bus",
+      "expected": {
+        "signal-T": 7,
+        "signal-S": 3,
+        "signal-O": 1,
+        "signal-Q": 1
+      },
+      "observed": {
+        "signal-M": 7.0,
+        "signal-N": 3.0,
+        "signal-O": 1.0,
+        "signal-P": 16.0,
+        "signal-Q": 1.0,
+        "signal-S": 3.0,
+        "signal-T": 7.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888303
+    },
+    {
+      "step_index": 2,
+      "step_name": "write_m2_n9",
+      "drive_start_tick": 888303,
+      "skipped_ticks": 0,
+      "expected_probe": "alu_bus",
+      "expected": {},
+      "observed": {
+        "signal-M": 2.0,
+        "signal-N": 9.0,
+        "signal-P": 20.0,
+        "signal-S": 2.0,
+        "signal-T": 9.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888307
+    },
+    {
+      "step_index": 3,
+      "step_name": "m2_n9_max9_min2_flags_off",
+      "drive_start_tick": 888307,
+      "skipped_ticks": 0,
+      "expected_probe": "alu_bus",
+      "expected": {
+        "signal-T": 9,
+        "signal-S": 2,
+        "signal-O": 0,
+        "signal-Q": 0
+      },
+      "observed": {
+        "signal-M": 2.0,
+        "signal-N": 9.0,
+        "signal-P": 26.0,
+        "signal-S": 2.0,
+        "signal-T": 9.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888313
+    },
+    {
+      "step_index": 4,
+      "step_name": "write_m5_n5",
+      "drive_start_tick": 888313,
+      "skipped_ticks": 0,
+      "expected_probe": "alu_bus",
+      "expected": {},
+      "observed": {
+        "signal-M": 5.0,
+        "signal-N": 5.0,
+        "signal-P": 30.0,
+        "signal-Q": 1.0,
+        "signal-S": 5.0,
+        "signal-T": 5.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888317
+    },
+    {
+      "step_index": 5,
+      "step_name": "m5_n5_equal_gte_fires",
+      "drive_start_tick": 888317,
+      "skipped_ticks": 0,
+      "expected_probe": "alu_bus",
+      "expected": {
+        "signal-T": 5,
+        "signal-S": 5,
+        "signal-O": 0,
+        "signal-Q": 1
+      },
+      "observed": {
+        "signal-M": 5.0,
+        "signal-N": 5.0,
+        "signal-P": 36.0,
+        "signal-Q": 1.0,
+        "signal-S": 5.0,
+        "signal-T": 5.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888323
+    },
+    {
+      "step_index": 6,
+      "step_name": "max_port_readable_at_its_own_row",
+      "drive_start_tick": 888323,
+      "skipped_ticks": 0,
+      "expected_probe": "port_a",
+      "expected": {
+        "signal-T": 5
+      },
+      "observed": {
+        "signal-T": 5.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888328
+    },
+    {
+      "step_index": 7,
+      "step_name": "carrier_leak_gone_read_empty_addr1",
+      "drive_start_tick": 888328,
+      "skipped_ticks": 0,
+      "expected_probe": "port_a",
+      "expected": {
+        "signal-R": 0,
+        "signal-T": 0
+      },
+      "observed": {},
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 888333
+    }
+  ],
+  "pass": true
+}
