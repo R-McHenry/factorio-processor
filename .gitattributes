@@ -1,0 +1,14 @@
+# Normalise line endings: LF in the repository, native in the working tree.
+# Without this every commit on Windows warns about LF -> CRLF conversion.
+* text=auto
+
+# A blueprint string is one ~300KB base64 line. A diff of it is never useful
+# and always enormous.
+*.bp.txt -diff
+
+# Compiled artifacts: keep them out of GitHub's language statistics so the
+# repo reads as the Python project it is, rather than as a pile of JSON.
+*.source.json linguist-generated
+*.debug.json  linguist-generated
+*.bp.txt      linguist-generated
+*.tb.json     linguist-generated
