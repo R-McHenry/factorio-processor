@@ -1,6 +1,7 @@
 {
   "name": "v8_pc",
   "execution_model": "single_step_paused",
+  "saved_world": null,
   "pre_stimulus_dead_ticks": 2,
   "rebuild": {
     "removed": 9,
@@ -23,7 +24,7 @@
   ],
   "signal_tables": [
     {
-      "unit": 146093,
+      "unit": 161025,
       "slots_written": 2454,
       "slots_failed": 0,
       "sections": 3,
@@ -36,27 +37,27 @@
       "dy": 12.0
     },
     "entity_number_to_unit_number": {
-      "1": 146087,
-      "2": 146085,
-      "3": 146092,
-      "4": 146090,
-      "5": 146088,
-      "6": 146086,
-      "7": 146089,
-      "8": 146093,
-      "9": 146091,
-      "10": 146094
+      "1": 161019,
+      "2": 161017,
+      "3": 161024,
+      "4": 161022,
+      "5": 161020,
+      "6": 161018,
+      "7": 161021,
+      "8": 161025,
+      "9": 161023,
+      "10": 161026
     },
     "driver_units": {
-      "state": 146087,
-      "inject": 146085,
-      "mem_bus": 146092,
-      "addr_pc": 146090
+      "state": 161019,
+      "inject": 161017,
+      "mem_bus": 161024,
+      "addr_pc": 161022
     },
     "output_probes": [
       {
         "name": "instr_port",
-        "unit": 146094,
+        "unit": 161026,
         "wire": "green"
       }
     ],
@@ -64,7 +65,7 @@
   },
   "timeline": [
     {
-      "tick": 915935,
+      "tick": 928042,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -72,7 +73,7 @@
       "step_name": "pre_dead_1"
     },
     {
-      "tick": 915936,
+      "tick": 928043,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -80,7 +81,7 @@
       "step_name": "pre_dead_2"
     },
     {
-      "tick": 915937,
+      "tick": 928044,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -96,7 +97,7 @@
       "step_name": "autoincrement_fetch_row5"
     },
     {
-      "tick": 915938,
+      "tick": 928045,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -112,7 +113,7 @@
       "step_name": "autoincrement_fetch_row5"
     },
     {
-      "tick": 915939,
+      "tick": 928046,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -132,7 +133,7 @@
       "step_name": "autoincrement_fetch_row5"
     },
     {
-      "tick": 915940,
+      "tick": 928047,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -152,7 +153,7 @@
       "step_name": "autoincrement_fetch_row5"
     },
     {
-      "tick": 915941,
+      "tick": 928048,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -172,7 +173,7 @@
       "step_name": "autoincrement_fetch_row5"
     },
     {
-      "tick": 915942,
+      "tick": 928049,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -192,7 +193,7 @@
       "step_name": "autoincrement_fetch_row5"
     },
     {
-      "tick": 915943,
+      "tick": 928050,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -215,7 +216,7 @@
       "step_name": "inject_shifts_fetch_to_row8"
     },
     {
-      "tick": 915944,
+      "tick": 928051,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -238,7 +239,7 @@
       "step_name": "inject_shifts_fetch_to_row8"
     },
     {
-      "tick": 915945,
+      "tick": 928052,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -261,7 +262,7 @@
       "step_name": "inject_shifts_fetch_to_row8"
     },
     {
-      "tick": 915946,
+      "tick": 928053,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -284,7 +285,7 @@
       "step_name": "inject_shifts_fetch_to_row8"
     },
     {
-      "tick": 915947,
+      "tick": 928054,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -307,7 +308,7 @@
       "step_name": "inject_shifts_fetch_to_row8"
     },
     {
-      "tick": 915948,
+      "tick": 928055,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -330,7 +331,7 @@
       "step_name": "inject_shifts_fetch_to_row8"
     },
     {
-      "tick": 915949,
+      "tick": 928056,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -350,7 +351,7 @@
       "step_name": "inject_release_returns_to_row5"
     },
     {
-      "tick": 915950,
+      "tick": 928057,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -370,7 +371,7 @@
       "step_name": "inject_release_returns_to_row5"
     },
     {
-      "tick": 915951,
+      "tick": 928058,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -390,7 +391,7 @@
       "step_name": "inject_release_returns_to_row5"
     },
     {
-      "tick": 915952,
+      "tick": 928059,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -410,7 +411,7 @@
       "step_name": "inject_release_returns_to_row5"
     },
     {
-      "tick": 915953,
+      "tick": 928060,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -430,7 +431,7 @@
       "step_name": "inject_release_returns_to_row5"
     },
     {
-      "tick": 915954,
+      "tick": 928061,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -450,7 +451,7 @@
       "step_name": "inject_release_returns_to_row5"
     },
     {
-      "tick": 915955,
+      "tick": 928062,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -473,7 +474,7 @@
       "step_name": "carrier_offset_fetches_row16"
     },
     {
-      "tick": 915956,
+      "tick": 928063,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -496,7 +497,7 @@
       "step_name": "carrier_offset_fetches_row16"
     },
     {
-      "tick": 915957,
+      "tick": 928064,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -519,7 +520,7 @@
       "step_name": "carrier_offset_fetches_row16"
     },
     {
-      "tick": 915958,
+      "tick": 928065,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -542,7 +543,7 @@
       "step_name": "carrier_offset_fetches_row16"
     },
     {
-      "tick": 915959,
+      "tick": 928066,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -565,7 +566,7 @@
       "step_name": "carrier_offset_fetches_row16"
     },
     {
-      "tick": 915960,
+      "tick": 928067,
       "stimulus": {
         "state": {
           "shape-curve-3": 4.0
@@ -588,7 +589,7 @@
       "step_name": "carrier_offset_fetches_row16"
     },
     {
-      "tick": 915961,
+      "tick": 928068,
       "stimulus": {
         "state": {
           "shape-curve-3": 9.0
@@ -607,7 +608,7 @@
       "step_name": "release_all_new_state_row10"
     },
     {
-      "tick": 915962,
+      "tick": 928069,
       "stimulus": {
         "state": {
           "shape-curve-3": 9.0
@@ -622,7 +623,7 @@
       "step_name": "release_all_new_state_row10"
     },
     {
-      "tick": 915963,
+      "tick": 928070,
       "stimulus": {
         "state": {
           "shape-curve-3": 9.0
@@ -641,7 +642,7 @@
       "step_name": "release_all_new_state_row10"
     },
     {
-      "tick": 915964,
+      "tick": 928071,
       "stimulus": {
         "state": {
           "shape-curve-3": 9.0
@@ -660,7 +661,7 @@
       "step_name": "release_all_new_state_row10"
     },
     {
-      "tick": 915965,
+      "tick": 928072,
       "stimulus": {
         "state": {
           "shape-curve-3": 9.0
@@ -679,7 +680,7 @@
       "step_name": "release_all_new_state_row10"
     },
     {
-      "tick": 915966,
+      "tick": 928073,
       "stimulus": {
         "state": {
           "shape-curve-3": 9.0
@@ -702,7 +703,7 @@
     {
       "step_index": 0,
       "step_name": "autoincrement_fetch_row5",
-      "drive_start_tick": 915936,
+      "drive_start_tick": 928043,
       "skipped_ticks": 0,
       "expected_probe": "instr_port",
       "expected": {
@@ -714,12 +715,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915942
+      "last_sample_tick": 928049
     },
     {
       "step_index": 1,
       "step_name": "inject_shifts_fetch_to_row8",
-      "drive_start_tick": 915942,
+      "drive_start_tick": 928049,
       "skipped_ticks": 0,
       "expected_probe": "instr_port",
       "expected": {
@@ -731,12 +732,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915948
+      "last_sample_tick": 928055
     },
     {
       "step_index": 2,
       "step_name": "inject_release_returns_to_row5",
-      "drive_start_tick": 915948,
+      "drive_start_tick": 928055,
       "skipped_ticks": 0,
       "expected_probe": "instr_port",
       "expected": {
@@ -747,12 +748,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915954
+      "last_sample_tick": 928061
     },
     {
       "step_index": 3,
       "step_name": "carrier_offset_fetches_row16",
-      "drive_start_tick": 915954,
+      "drive_start_tick": 928061,
       "skipped_ticks": 0,
       "expected_probe": "instr_port",
       "expected": {
@@ -764,12 +765,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915960
+      "last_sample_tick": 928067
     },
     {
       "step_index": 4,
       "step_name": "release_all_new_state_row10",
-      "drive_start_tick": 915960,
+      "drive_start_tick": 928067,
       "skipped_ticks": 0,
       "expected_probe": "instr_port",
       "expected": {
@@ -780,7 +781,7 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915966
+      "last_sample_tick": 928073
     }
   ],
   "pass": true

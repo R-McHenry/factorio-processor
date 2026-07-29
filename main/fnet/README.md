@@ -71,8 +71,8 @@ ISA layer discovers a design's own addresses instead of being told them.
 **Address tables are markers.** A constant combinator carrying a
 `signal_table` marker is expanded by the test harness after every paste —
 ~2451 rows × seven tables is more than anyone wants in checked-in JSON.
-`processor/tools/export_bp.py` inlines them when you want a blueprint to paste
-by hand.
+`bench/export_bp.py` (or `--export-bp` on a run) inlines them when you want a
+blueprint to paste by hand.
 
 ## Layout: optimize, then repair
 

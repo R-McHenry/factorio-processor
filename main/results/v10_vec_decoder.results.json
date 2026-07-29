@@ -1,6 +1,7 @@
 {
   "name": "v10_vec_decoder",
   "execution_model": "single_step_paused",
+  "saved_world": null,
   "pre_stimulus_dead_ticks": 2,
   "rebuild": {
     "removed": 23,
@@ -23,7 +24,7 @@
   ],
   "signal_tables": [
     {
-      "unit": 146368,
+      "unit": 161300,
       "slots_written": 2454,
       "slots_failed": 0,
       "sections": 3,
@@ -36,41 +37,41 @@
       "dy": 11.0
     },
     "entity_number_to_unit_number": {
-      "1": 146369,
-      "2": 146368,
-      "3": 146371,
-      "4": 146370,
-      "5": 146373,
-      "6": 146372,
-      "7": 146375,
-      "8": 146374,
-      "9": 146382,
-      "10": 146384,
-      "11": 146383,
-      "12": 146386,
-      "13": 146385,
-      "14": 146388,
-      "15": 146387,
-      "16": 146376,
-      "17": 146378,
-      "18": 146377,
-      "19": 146380,
-      "20": 146379,
-      "21": 146381
+      "1": 161301,
+      "2": 161300,
+      "3": 161303,
+      "4": 161302,
+      "5": 161305,
+      "6": 161304,
+      "7": 161307,
+      "8": 161306,
+      "9": 161314,
+      "10": 161316,
+      "11": 161315,
+      "12": 161318,
+      "13": 161317,
+      "14": 161320,
+      "15": 161319,
+      "16": 161308,
+      "17": 161310,
+      "18": 161309,
+      "19": 161312,
+      "20": 161311,
+      "21": 161313
     },
     "driver_units": {
-      "fetch_addr": 146369,
-      "ROM2": 146371
+      "fetch_addr": 161301,
+      "ROM2": 161303
     },
     "output_probes": [
       {
         "name": "ctl_out",
-        "unit": 146380,
+        "unit": 161312,
         "wire": "green"
       },
       {
         "name": "word2_out",
-        "unit": 146379,
+        "unit": 161311,
         "wire": "green"
       }
     ],
@@ -78,7 +79,7 @@
   },
   "timeline": [
     {
-      "tick": 916490,
+      "tick": 928597,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -86,7 +87,7 @@
       "step_name": "pre_dead_1"
     },
     {
-      "tick": 916491,
+      "tick": 928598,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -94,7 +95,7 @@
       "step_name": "pre_dead_2"
     },
     {
-      "tick": 916492,
+      "tick": 928599,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -110,7 +111,7 @@
       "step_name": "fetch_word_two_at_the_instruction_address"
     },
     {
-      "tick": 916493,
+      "tick": 928600,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -130,7 +131,7 @@
       "step_name": "fetch_word_two_at_the_instruction_address"
     },
     {
-      "tick": 916494,
+      "tick": 928601,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -150,7 +151,7 @@
       "step_name": "fetch_word_two_at_the_instruction_address"
     },
     {
-      "tick": 916495,
+      "tick": 928602,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -170,7 +171,7 @@
       "step_name": "fetch_word_two_at_the_instruction_address"
     },
     {
-      "tick": 916496,
+      "tick": 928603,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -194,7 +195,7 @@
       "step_name": "fetch_word_two_at_the_instruction_address"
     },
     {
-      "tick": 916497,
+      "tick": 928604,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -220,7 +221,7 @@
       "step_name": "fetch_word_two_at_the_instruction_address"
     },
     {
-      "tick": 916498,
+      "tick": 928605,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -246,7 +247,7 @@
       "step_name": "fetch_word_two_at_the_instruction_address"
     },
     {
-      "tick": 916499,
+      "tick": 928606,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -272,7 +273,7 @@
       "step_name": "fetch_word_two_at_the_instruction_address"
     },
     {
-      "tick": 916500,
+      "tick": 928607,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -298,7 +299,7 @@
       "step_name": "fetch_word_two_at_the_instruction_address"
     },
     {
-      "tick": 916501,
+      "tick": 928608,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -324,7 +325,7 @@
       "step_name": "fetch_word_two_at_the_instruction_address"
     },
     {
-      "tick": 916502,
+      "tick": 928609,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -350,7 +351,7 @@
       "step_name": "all_four_fields_decode_to_plain_values"
     },
     {
-      "tick": 916503,
+      "tick": 928610,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -376,7 +377,7 @@
       "step_name": "all_four_fields_decode_to_plain_values"
     },
     {
-      "tick": 916504,
+      "tick": 928611,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -402,7 +403,7 @@
       "step_name": "all_four_fields_decode_to_plain_values"
     },
     {
-      "tick": 916505,
+      "tick": 928612,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -428,7 +429,7 @@
       "step_name": "all_four_fields_decode_to_plain_values"
     },
     {
-      "tick": 916506,
+      "tick": 928613,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -454,7 +455,7 @@
       "step_name": "all_four_fields_decode_to_plain_values"
     },
     {
-      "tick": 916507,
+      "tick": 928614,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -480,7 +481,7 @@
       "step_name": "all_four_fields_decode_to_plain_values"
     },
     {
-      "tick": 916508,
+      "tick": 928615,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -506,7 +507,7 @@
       "step_name": "all_four_fields_decode_to_plain_values"
     },
     {
-      "tick": 916509,
+      "tick": 928616,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -532,7 +533,7 @@
       "step_name": "all_four_fields_decode_to_plain_values"
     },
     {
-      "tick": 916510,
+      "tick": 928617,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -558,7 +559,7 @@
       "step_name": "all_four_fields_decode_to_plain_values"
     },
     {
-      "tick": 916511,
+      "tick": 928618,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 5.0
@@ -584,7 +585,7 @@
       "step_name": "all_four_fields_decode_to_plain_values"
     },
     {
-      "tick": 916512,
+      "tick": 928619,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 6.0
@@ -610,33 +611,7 @@
       "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
     },
     {
-      "tick": 916513,
-      "stimulus": {
-        "fetch_addr": {
-          "down-arrow": 6.0
-        },
-        "ROM2": {
-          "signal-0": 407323.0,
-          "signal-1": 52208.0
-        }
-      },
-      "observed_by_probe": {
-        "ctl_out": {
-          "signal-battery-full": 27.0,
-          "signal-battery-full~uncommon": 28.0,
-          "signal-battery-full~rare": 3.0,
-          "signal-battery-full~epic": 3.0
-        },
-        "word2_out": {
-          "signal-1": 585.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 2,
-      "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
-    },
-    {
-      "tick": 916514,
+      "tick": 928620,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 6.0
@@ -662,7 +637,7 @@
       "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
     },
     {
-      "tick": 916515,
+      "tick": 928621,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 6.0
@@ -688,7 +663,33 @@
       "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
     },
     {
-      "tick": 916516,
+      "tick": 928622,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 6.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-1": 585.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
+    },
+    {
+      "tick": 928623,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 6.0
@@ -714,7 +715,7 @@
       "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
     },
     {
-      "tick": 916517,
+      "tick": 928624,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 6.0
@@ -738,7 +739,7 @@
       "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
     },
     {
-      "tick": 916518,
+      "tick": 928625,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 6.0
@@ -762,7 +763,7 @@
       "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
     },
     {
-      "tick": 916519,
+      "tick": 928626,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 6.0
@@ -786,7 +787,7 @@
       "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
     },
     {
-      "tick": 916520,
+      "tick": 928627,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 6.0
@@ -810,7 +811,7 @@
       "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
     },
     {
-      "tick": 916521,
+      "tick": 928628,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 6.0
@@ -834,7 +835,7 @@
       "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
     },
     {
-      "tick": 916522,
+      "tick": 928629,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -858,7 +859,7 @@
       "step_name": "a_scalar_slot_has_no_word_two_at_all"
     },
     {
-      "tick": 916523,
+      "tick": 928630,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -879,7 +880,7 @@
       "step_name": "a_scalar_slot_has_no_word_two_at_all"
     },
     {
-      "tick": 916524,
+      "tick": 928631,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -900,7 +901,7 @@
       "step_name": "a_scalar_slot_has_no_word_two_at_all"
     },
     {
-      "tick": 916525,
+      "tick": 928632,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -921,7 +922,7 @@
       "step_name": "a_scalar_slot_has_no_word_two_at_all"
     },
     {
-      "tick": 916526,
+      "tick": 928633,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -942,7 +943,7 @@
       "step_name": "a_scalar_slot_has_no_word_two_at_all"
     },
     {
-      "tick": 916527,
+      "tick": 928634,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -963,7 +964,7 @@
       "step_name": "a_scalar_slot_has_no_word_two_at_all"
     },
     {
-      "tick": 916528,
+      "tick": 928635,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -984,7 +985,7 @@
       "step_name": "a_scalar_slot_has_no_word_two_at_all"
     },
     {
-      "tick": 916529,
+      "tick": 928636,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1005,7 +1006,7 @@
       "step_name": "a_scalar_slot_has_no_word_two_at_all"
     },
     {
-      "tick": 916530,
+      "tick": 928637,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1026,7 +1027,7 @@
       "step_name": "a_scalar_slot_has_no_word_two_at_all"
     },
     {
-      "tick": 916531,
+      "tick": 928638,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1047,7 +1048,7 @@
       "step_name": "a_scalar_slot_has_no_word_two_at_all"
     },
     {
-      "tick": 916532,
+      "tick": 928639,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1068,7 +1069,7 @@
       "step_name": "the_park_survives_a_scalar_instruction"
     },
     {
-      "tick": 916533,
+      "tick": 928640,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1089,7 +1090,7 @@
       "step_name": "the_park_survives_a_scalar_instruction"
     },
     {
-      "tick": 916534,
+      "tick": 928641,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1110,7 +1111,7 @@
       "step_name": "the_park_survives_a_scalar_instruction"
     },
     {
-      "tick": 916535,
+      "tick": 928642,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1131,7 +1132,7 @@
       "step_name": "the_park_survives_a_scalar_instruction"
     },
     {
-      "tick": 916536,
+      "tick": 928643,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1152,7 +1153,7 @@
       "step_name": "the_park_survives_a_scalar_instruction"
     },
     {
-      "tick": 916537,
+      "tick": 928644,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1173,7 +1174,7 @@
       "step_name": "the_park_survives_a_scalar_instruction"
     },
     {
-      "tick": 916538,
+      "tick": 928645,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1194,7 +1195,7 @@
       "step_name": "the_park_survives_a_scalar_instruction"
     },
     {
-      "tick": 916539,
+      "tick": 928646,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1215,7 +1216,7 @@
       "step_name": "the_park_survives_a_scalar_instruction"
     },
     {
-      "tick": 916540,
+      "tick": 928647,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1236,7 +1237,7 @@
       "step_name": "the_park_survives_a_scalar_instruction"
     },
     {
-      "tick": 916541,
+      "tick": 928648,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1257,7 +1258,7 @@
       "step_name": "the_park_survives_a_scalar_instruction"
     },
     {
-      "tick": 916542,
+      "tick": 928649,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 8.0
@@ -1278,31 +1279,7 @@
       "step_name": "an_accumulating_move_carries_w_without_erase"
     },
     {
-      "tick": 916543,
-      "stimulus": {
-        "fetch_addr": {
-          "down-arrow": 8.0
-        },
-        "ROM2": {
-          "signal-0": 407323.0,
-          "signal-1": 52208.0
-        }
-      },
-      "observed_by_probe": {
-        "ctl_out": {
-          "signal-battery-full": 9.0,
-          "signal-battery-full~uncommon": 9.0
-        },
-        "word2_out": {
-          "signal-1~rare": 52208.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 5,
-      "step_name": "an_accumulating_move_carries_w_without_erase"
-    },
-    {
-      "tick": 916544,
+      "tick": 928650,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 8.0
@@ -1326,7 +1303,7 @@
       "step_name": "an_accumulating_move_carries_w_without_erase"
     },
     {
-      "tick": 916545,
+      "tick": 928651,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 8.0
@@ -1350,7 +1327,31 @@
       "step_name": "an_accumulating_move_carries_w_without_erase"
     },
     {
-      "tick": 916546,
+      "tick": 928652,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 8.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        },
+        "word2_out": {
+          "signal-1~rare": 52208.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "an_accumulating_move_carries_w_without_erase"
+    },
+    {
+      "tick": 928653,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 8.0
@@ -1374,7 +1375,7 @@
       "step_name": "an_accumulating_move_carries_w_without_erase"
     },
     {
-      "tick": 916547,
+      "tick": 928654,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 8.0
@@ -1399,7 +1400,7 @@
       "step_name": "an_accumulating_move_carries_w_without_erase"
     },
     {
-      "tick": 916548,
+      "tick": 928655,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 8.0
@@ -1424,32 +1425,7 @@
       "step_name": "an_accumulating_move_carries_w_without_erase"
     },
     {
-      "tick": 916549,
-      "stimulus": {
-        "fetch_addr": {
-          "down-arrow": 8.0
-        },
-        "ROM2": {
-          "signal-0": 407323.0,
-          "signal-1": 52208.0
-        }
-      },
-      "observed_by_probe": {
-        "ctl_out": {
-          "signal-battery-full": 48.0,
-          "signal-battery-full~uncommon": 47.0,
-          "signal-battery-full~rare": 12.0
-        },
-        "word2_out": {
-          "signal-1~rare": 52208.0
-        }
-      },
-      "phase": "stimulus",
-      "step_index": 5,
-      "step_name": "an_accumulating_move_carries_w_without_erase"
-    },
-    {
-      "tick": 916550,
+      "tick": 928656,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 8.0
@@ -1474,7 +1450,7 @@
       "step_name": "an_accumulating_move_carries_w_without_erase"
     },
     {
-      "tick": 916551,
+      "tick": 928657,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 8.0
@@ -1499,7 +1475,32 @@
       "step_name": "an_accumulating_move_carries_w_without_erase"
     },
     {
-      "tick": 916552,
+      "tick": 928658,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 8.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 48.0,
+          "signal-battery-full~uncommon": 47.0,
+          "signal-battery-full~rare": 12.0
+        },
+        "word2_out": {
+          "signal-1~rare": 52208.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "an_accumulating_move_carries_w_without_erase"
+    },
+    {
+      "tick": 928659,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1524,7 +1525,7 @@
       "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
     },
     {
-      "tick": 916553,
+      "tick": 928660,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1546,7 +1547,7 @@
       "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
     },
     {
-      "tick": 916554,
+      "tick": 928661,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1568,7 +1569,7 @@
       "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
     },
     {
-      "tick": 916555,
+      "tick": 928662,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1590,7 +1591,7 @@
       "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
     },
     {
-      "tick": 916556,
+      "tick": 928663,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1612,7 +1613,7 @@
       "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
     },
     {
-      "tick": 916557,
+      "tick": 928664,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1633,7 +1634,7 @@
       "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
     },
     {
-      "tick": 916558,
+      "tick": 928665,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1654,7 +1655,7 @@
       "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
     },
     {
-      "tick": 916559,
+      "tick": 928666,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1675,7 +1676,7 @@
       "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
     },
     {
-      "tick": 916560,
+      "tick": 928667,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1696,7 +1697,7 @@
       "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
     },
     {
-      "tick": 916561,
+      "tick": 928668,
       "stimulus": {
         "fetch_addr": {
           "down-arrow": 7.0
@@ -1721,7 +1722,7 @@
     {
       "step_index": 0,
       "step_name": "fetch_word_two_at_the_instruction_address",
-      "drive_start_tick": 916491,
+      "drive_start_tick": 928598,
       "skipped_ticks": 0,
       "expected_probe": "word2_out",
       "expected": {
@@ -1732,12 +1733,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916501
+      "last_sample_tick": 928608
     },
     {
       "step_index": 1,
       "step_name": "all_four_fields_decode_to_plain_values",
-      "drive_start_tick": 916501,
+      "drive_start_tick": 928608,
       "skipped_ticks": 0,
       "expected_probe": "ctl_out",
       "expected": {
@@ -1754,12 +1755,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916511
+      "last_sample_tick": 928618
     },
     {
       "step_index": 2,
       "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero",
-      "drive_start_tick": 916511,
+      "drive_start_tick": 928618,
       "skipped_ticks": 0,
       "expected_probe": "ctl_out",
       "expected": {
@@ -1774,12 +1775,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916521
+      "last_sample_tick": 928628
     },
     {
       "step_index": 3,
       "step_name": "a_scalar_slot_has_no_word_two_at_all",
-      "drive_start_tick": 916521,
+      "drive_start_tick": 928628,
       "skipped_ticks": 0,
       "expected_probe": "word2_out",
       "expected": {
@@ -1790,12 +1791,12 @@
       "observed": {},
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916531
+      "last_sample_tick": 928638
     },
     {
       "step_index": 4,
       "step_name": "the_park_survives_a_scalar_instruction",
-      "drive_start_tick": 916531,
+      "drive_start_tick": 928638,
       "skipped_ticks": 0,
       "expected_probe": "ctl_out",
       "expected": {
@@ -1810,12 +1811,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916541
+      "last_sample_tick": 928648
     },
     {
       "step_index": 5,
       "step_name": "an_accumulating_move_carries_w_without_erase",
-      "drive_start_tick": 916541,
+      "drive_start_tick": 928648,
       "skipped_ticks": 0,
       "expected_probe": "ctl_out",
       "expected": {
@@ -1831,12 +1832,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916551
+      "last_sample_tick": 928658
     },
     {
       "step_index": 6,
       "step_name": "the_commit_line_drops_as_soon_as_the_word_does",
-      "drive_start_tick": 916551,
+      "drive_start_tick": 928658,
       "skipped_ticks": 0,
       "expected_probe": "ctl_out",
       "expected": {
@@ -1851,7 +1852,7 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916561
+      "last_sample_tick": 928668
     }
   ],
   "pass": true

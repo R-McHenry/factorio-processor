@@ -1,6 +1,7 @@
 {
   "name": "v10_vec_io",
   "execution_model": "single_step_paused",
+  "saved_world": null,
   "pre_stimulus_dead_ticks": 2,
   "rebuild": {
     "removed": 45,
@@ -23,21 +24,21 @@
   ],
   "signal_tables": [
     {
-      "unit": 146326,
+      "unit": 161258,
       "slots_written": 2454,
       "slots_failed": 0,
       "sections": 3,
       "entity_number": 3
     },
     {
-      "unit": 146338,
+      "unit": 161270,
       "slots_written": 2454,
       "slots_failed": 0,
       "sections": 3,
       "entity_number": 9
     },
     {
-      "unit": 146344,
+      "unit": 161276,
       "slots_written": 2454,
       "slots_failed": 0,
       "sections": 3,
@@ -50,37 +51,37 @@
       "dy": 11.0
     },
     "entity_number_to_unit_number": {
-      "1": 146324,
-      "2": 146323,
-      "3": 146326,
-      "4": 146325,
-      "5": 146328,
-      "6": 146327,
-      "7": 146330,
-      "8": 146329,
-      "9": 146338,
-      "10": 146340,
-      "11": 146339,
-      "12": 146342,
-      "13": 146341,
-      "14": 146344,
-      "15": 146343,
-      "16": 146331,
-      "17": 146333,
-      "18": 146332,
-      "19": 146336,
-      "20": 146335,
-      "21": 146334,
-      "22": 146337
+      "1": 161256,
+      "2": 161255,
+      "3": 161258,
+      "4": 161257,
+      "5": 161260,
+      "6": 161259,
+      "7": 161262,
+      "8": 161261,
+      "9": 161270,
+      "10": 161272,
+      "11": 161271,
+      "12": 161274,
+      "13": 161273,
+      "14": 161276,
+      "15": 161275,
+      "16": 161263,
+      "17": 161265,
+      "18": 161264,
+      "19": 161268,
+      "20": 161267,
+      "21": 161266,
+      "22": 161269
     },
     "driver_units": {
-      "scalar_membus": 146324,
-      "vec_bus": 146323
+      "scalar_membus": 161256,
+      "vec_bus": 161255
     },
     "output_probes": [
       {
         "name": "membus_out",
-        "unit": 146335,
+        "unit": 161267,
         "wire": "green"
       }
     ],
@@ -88,7 +89,7 @@
   },
   "timeline": [
     {
-      "tick": 916358,
+      "tick": 928465,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -96,7 +97,7 @@
       "step_name": "pre_dead_1"
     },
     {
-      "tick": 916359,
+      "tick": 928466,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -104,7 +105,7 @@
       "step_name": "pre_dead_2"
     },
     {
-      "tick": 916360,
+      "tick": 928467,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "settle",
@@ -112,7 +113,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 916361,
+      "tick": 928468,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "settle",
@@ -120,7 +121,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 916362,
+      "tick": 928469,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "settle",
@@ -128,7 +129,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 916363,
+      "tick": 928470,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "settle",
@@ -136,7 +137,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 916364,
+      "tick": 928471,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "settle",
@@ -144,7 +145,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 916365,
+      "tick": 928472,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "stimulus",
@@ -152,7 +153,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 916366,
+      "tick": 928473,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "stimulus",
@@ -160,7 +161,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 916367,
+      "tick": 928474,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "stimulus",
@@ -168,7 +169,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 916368,
+      "tick": 928475,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "stimulus",
@@ -176,7 +177,7 @@
       "step_name": "idle_no_select_no_read"
     },
     {
-      "tick": 916369,
+      "tick": 928476,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -189,7 +190,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 916370,
+      "tick": 928477,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -202,7 +203,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 916371,
+      "tick": 928478,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -219,7 +220,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 916372,
+      "tick": 928479,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -238,7 +239,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 916373,
+      "tick": 928480,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -257,7 +258,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 916374,
+      "tick": 928481,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -276,7 +277,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 916375,
+      "tick": 928482,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -295,7 +296,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 916376,
+      "tick": 928483,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -314,7 +315,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 916377,
+      "tick": 928484,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -333,7 +334,7 @@
       "step_name": "coord_lane_5_reads_5"
     },
     {
-      "tick": 916378,
+      "tick": 928485,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -352,7 +353,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 916379,
+      "tick": 928486,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -371,7 +372,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 916380,
+      "tick": 928487,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -390,7 +391,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 916381,
+      "tick": 928488,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -409,7 +410,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 916382,
+      "tick": 928489,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -428,7 +429,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 916383,
+      "tick": 928490,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -447,7 +448,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 916384,
+      "tick": 928491,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -466,7 +467,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 916385,
+      "tick": 928492,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -485,7 +486,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 916386,
+      "tick": 928493,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -504,7 +505,7 @@
       "step_name": "coord_lane_100_reads_100"
     },
     {
-      "tick": 916387,
+      "tick": 928494,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -523,7 +524,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 916388,
+      "tick": 928495,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -542,7 +543,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 916389,
+      "tick": 928496,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -561,7 +562,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 916390,
+      "tick": 928497,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -580,7 +581,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 916391,
+      "tick": 928498,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -599,7 +600,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 916392,
+      "tick": 928499,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -618,7 +619,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 916393,
+      "tick": 928500,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -637,7 +638,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 916394,
+      "tick": 928501,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -656,7 +657,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 916395,
+      "tick": 928502,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 47.0,
@@ -675,7 +676,7 @@
       "step_name": "coord_lane_2000_reads_2000"
     },
     {
-      "tick": 916396,
+      "tick": 928503,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -694,7 +695,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 916397,
+      "tick": 928504,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -713,7 +714,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 916398,
+      "tick": 928505,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -731,7 +732,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 916399,
+      "tick": 928506,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -744,7 +745,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 916400,
+      "tick": 928507,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -761,7 +762,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 916401,
+      "tick": 928508,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -780,7 +781,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 916402,
+      "tick": 928509,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -799,7 +800,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 916403,
+      "tick": 928510,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -818,7 +819,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 916404,
+      "tick": 928511,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -837,7 +838,7 @@
       "step_name": "lane_in_writes_one_addressed_lane"
     },
     {
-      "tick": 916405,
+      "tick": 928512,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -856,7 +857,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 916406,
+      "tick": 928513,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -875,7 +876,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 916407,
+      "tick": 928514,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -894,7 +895,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 916408,
+      "tick": 928515,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -912,7 +913,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 916409,
+      "tick": 928516,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -930,7 +931,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 916410,
+      "tick": 928517,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -948,7 +949,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 916411,
+      "tick": 928518,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -966,7 +967,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 916412,
+      "tick": 928519,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -984,7 +985,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 916413,
+      "tick": 928520,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1002,7 +1003,7 @@
       "step_name": "lane_in_leaves_neighbouring_lane_empty"
     },
     {
-      "tick": 916414,
+      "tick": 928521,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1020,7 +1021,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 916415,
+      "tick": 928522,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1038,7 +1039,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 916416,
+      "tick": 928523,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1056,7 +1057,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 916417,
+      "tick": 928524,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1075,7 +1076,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 916418,
+      "tick": 928525,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1094,7 +1095,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 916419,
+      "tick": 928526,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1113,7 +1114,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 916420,
+      "tick": 928527,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1132,7 +1133,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 916421,
+      "tick": 928528,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1151,7 +1152,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 916422,
+      "tick": 928529,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 48.0,
@@ -1170,7 +1171,7 @@
       "step_name": "lane_in_carries_negatives"
     },
     {
-      "tick": 916423,
+      "tick": 928530,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1191,7 +1192,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 916424,
+      "tick": 928531,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1212,7 +1213,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 916425,
+      "tick": 928532,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1233,7 +1234,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 916426,
+      "tick": 928533,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1254,7 +1255,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 916427,
+      "tick": 928534,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1275,7 +1276,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 916428,
+      "tick": 928535,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1296,7 +1297,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 916429,
+      "tick": 928536,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1317,7 +1318,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 916430,
+      "tick": 928537,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1338,7 +1339,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 916431,
+      "tick": 928538,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 3.0
@@ -1359,7 +1360,7 @@
       "step_name": "lane_out_reads_an_arbitrary_bus_frame"
     },
     {
-      "tick": 916432,
+      "tick": 928539,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1380,7 +1381,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 916433,
+      "tick": 928540,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1401,7 +1402,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 916434,
+      "tick": 928541,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1422,7 +1423,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 916435,
+      "tick": 928542,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1443,7 +1444,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 916436,
+      "tick": 928543,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1464,7 +1465,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 916437,
+      "tick": 928544,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1485,7 +1486,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 916438,
+      "tick": 928545,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1506,7 +1507,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 916439,
+      "tick": 928546,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1527,7 +1528,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 916440,
+      "tick": 928547,
       "stimulus": {
         "scalar_membus": {
           "signal-apostrophe": 4.0
@@ -1548,7 +1549,7 @@
       "step_name": "reduction_sums_every_lane"
     },
     {
-      "tick": 916441,
+      "tick": 928548,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1566,7 +1567,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 916442,
+      "tick": 928549,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1584,7 +1585,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 916443,
+      "tick": 928550,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1602,7 +1603,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 916444,
+      "tick": 928551,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1619,7 +1620,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 916445,
+      "tick": 928552,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1636,7 +1637,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 916446,
+      "tick": 928553,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1653,7 +1654,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 916447,
+      "tick": 928554,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1670,7 +1671,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 916448,
+      "tick": 928555,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1687,7 +1688,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 916449,
+      "tick": 928556,
       "stimulus": {
         "vec_bus": {
           "signal-0": 23.0
@@ -1704,7 +1705,7 @@
       "step_name": "no_read_address_extracts_nothing"
     },
     {
-      "tick": 916450,
+      "tick": 928557,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1722,7 +1723,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 916451,
+      "tick": 928558,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1740,7 +1741,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 916452,
+      "tick": 928559,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1758,7 +1759,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 916453,
+      "tick": 928560,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1776,7 +1777,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 916454,
+      "tick": 928561,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1794,7 +1795,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 916455,
+      "tick": 928562,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1812,7 +1813,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 916456,
+      "tick": 928563,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1830,7 +1831,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 916457,
+      "tick": 928564,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1848,7 +1849,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 916458,
+      "tick": 928565,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1866,7 +1867,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 916459,
+      "tick": 928566,
       "stimulus": {
         "vec_bus": {
           "signal-0": -3.0,
@@ -1884,7 +1885,7 @@
       "step_name": "vred_count_is_a_popcount_not_a_sum"
     },
     {
-      "tick": 916460,
+      "tick": 928567,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -1901,7 +1902,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 916461,
+      "tick": 928568,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -1917,7 +1918,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 916462,
+      "tick": 928569,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -1933,7 +1934,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 916463,
+      "tick": 928570,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -1950,7 +1951,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 916464,
+      "tick": 928571,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -1967,7 +1968,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 916465,
+      "tick": 928572,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -1984,7 +1985,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 916466,
+      "tick": 928573,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -2001,7 +2002,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 916467,
+      "tick": 928574,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -2018,7 +2019,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 916468,
+      "tick": 928575,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -2035,7 +2036,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 916469,
+      "tick": 928576,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 45.0
@@ -2052,7 +2053,7 @@
       "step_name": "ones_is_present_in_every_lane"
     },
     {
-      "tick": 916470,
+      "tick": 928577,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2070,7 +2071,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 916471,
+      "tick": 928578,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2088,7 +2089,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 916472,
+      "tick": 928579,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2105,7 +2106,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 916473,
+      "tick": 928580,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2122,7 +2123,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 916474,
+      "tick": 928581,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2141,7 +2142,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 916475,
+      "tick": 928582,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2160,7 +2161,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 916476,
+      "tick": 928583,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2179,7 +2180,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 916477,
+      "tick": 928584,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2198,7 +2199,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 916478,
+      "tick": 928585,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2217,7 +2218,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 916479,
+      "tick": 928586,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2236,7 +2237,7 @@
       "step_name": "bcast_puts_one_constant_in_every_lane"
     },
     {
-      "tick": 916480,
+      "tick": 928587,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2255,7 +2256,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 916481,
+      "tick": 928588,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2274,7 +2275,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 916482,
+      "tick": 928589,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2293,7 +2294,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 916483,
+      "tick": 928590,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2310,7 +2311,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 916484,
+      "tick": 928591,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2323,7 +2324,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 916485,
+      "tick": 928592,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2336,7 +2337,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 916486,
+      "tick": 928593,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2349,7 +2350,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 916487,
+      "tick": 928594,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2362,7 +2363,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 916488,
+      "tick": 928595,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2375,7 +2376,7 @@
       "step_name": "bcast_of_zero_is_an_empty_frame"
     },
     {
-      "tick": 916489,
+      "tick": 928596,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 46.0,
@@ -2392,7 +2393,7 @@
     {
       "step_index": 0,
       "step_name": "idle_no_select_no_read",
-      "drive_start_tick": 916359,
+      "drive_start_tick": 928466,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2402,12 +2403,12 @@
       "observed": {},
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916368
+      "last_sample_tick": 928475
     },
     {
       "step_index": 1,
       "step_name": "coord_lane_5_reads_5",
-      "drive_start_tick": 916368,
+      "drive_start_tick": 928475,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2420,12 +2421,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916377
+      "last_sample_tick": 928484
     },
     {
       "step_index": 2,
       "step_name": "coord_lane_100_reads_100",
-      "drive_start_tick": 916377,
+      "drive_start_tick": 928484,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2438,12 +2439,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916386
+      "last_sample_tick": 928493
     },
     {
       "step_index": 3,
       "step_name": "coord_lane_2000_reads_2000",
-      "drive_start_tick": 916386,
+      "drive_start_tick": 928493,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2456,12 +2457,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916395
+      "last_sample_tick": 928502
     },
     {
       "step_index": 4,
       "step_name": "lane_in_writes_one_addressed_lane",
-      "drive_start_tick": 916395,
+      "drive_start_tick": 928502,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2475,12 +2476,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916404
+      "last_sample_tick": 928511
     },
     {
       "step_index": 5,
       "step_name": "lane_in_leaves_neighbouring_lane_empty",
-      "drive_start_tick": 916404,
+      "drive_start_tick": 928511,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2493,12 +2494,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916413
+      "last_sample_tick": 928520
     },
     {
       "step_index": 6,
       "step_name": "lane_in_carries_negatives",
-      "drive_start_tick": 916413,
+      "drive_start_tick": 928520,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2512,12 +2513,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916422
+      "last_sample_tick": 928529
     },
     {
       "step_index": 7,
       "step_name": "lane_out_reads_an_arbitrary_bus_frame",
-      "drive_start_tick": 916422,
+      "drive_start_tick": 928529,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2531,12 +2532,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916431
+      "last_sample_tick": 928538
     },
     {
       "step_index": 8,
       "step_name": "reduction_sums_every_lane",
-      "drive_start_tick": 916431,
+      "drive_start_tick": 928538,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2550,12 +2551,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916440
+      "last_sample_tick": 928547
     },
     {
       "step_index": 9,
       "step_name": "no_read_address_extracts_nothing",
-      "drive_start_tick": 916440,
+      "drive_start_tick": 928547,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2568,12 +2569,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916449
+      "last_sample_tick": 928556
     },
     {
       "step_index": 10,
       "step_name": "vred_count_is_a_popcount_not_a_sum",
-      "drive_start_tick": 916449,
+      "drive_start_tick": 928556,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2586,12 +2587,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916459
+      "last_sample_tick": 928566
     },
     {
       "step_index": 11,
       "step_name": "ones_is_present_in_every_lane",
-      "drive_start_tick": 916459,
+      "drive_start_tick": 928566,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2604,12 +2605,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916469
+      "last_sample_tick": 928576
     },
     {
       "step_index": 12,
       "step_name": "bcast_puts_one_constant_in_every_lane",
-      "drive_start_tick": 916469,
+      "drive_start_tick": 928576,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2624,12 +2625,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916479
+      "last_sample_tick": 928586
     },
     {
       "step_index": 13,
       "step_name": "bcast_of_zero_is_an_empty_frame",
-      "drive_start_tick": 916479,
+      "drive_start_tick": 928586,
       "skipped_ticks": 0,
       "expected_probe": "membus_out",
       "expected": {
@@ -2639,7 +2640,7 @@
       "observed": {},
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 916489
+      "last_sample_tick": 928596
     }
   ],
   "pass": true

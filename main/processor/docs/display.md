@@ -28,7 +28,7 @@ control_behavior one. Without it a lamp only lights when it is dark, so the
 display works at night and quietly does nothing in daylight. (Missed on the
 first cut; the designer caught it in game.)
 
-## The files (all in `modules/`, all pasteable as-is)
+## The files (all in `processor/modules/`, all pasteable as-is)
 
 | file | what it is |
 |---|---|
@@ -42,7 +42,7 @@ Regenerate any of them:
 ```
 .\.venv\Scripts\python.exe tools/build_v10_tests.py     # program + ROM
 .\.venv\Scripts\python.exe -m tools.build_display       # all three display bps
-.\.venv\Scripts\python.exe -m tools.export_bp           # machine alone
+.\.venv\Scripts\python.exe mainench\export_bp.py --source ...  # machine alone
 ```
 
 ## Running it
@@ -83,7 +83,7 @@ tables are constant combinators carrying a `signal_table` **marker**, not
 filters — the test runner expands them over RCON after every paste, because
 ~2451 rows x 7 tables is more than anyone wants checked into JSON. Paste the
 runner's blueprint into a game by hand and you get a processor whose address
-decode is empty, which fails *silently*. `tools/export_bp.py` inlines all
+decode is empty, which fails *silently*. `bench/export_bp.py` inlines all
 17157 rows so the output is self-contained.
 
 ## What is verified

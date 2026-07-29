@@ -289,7 +289,7 @@ def build_combined(args, space, lamps, lamp_wires, at, rows):
 
     Everything in here is positioned by this script, so the wire run is a
     solved problem rather than something to do by hand at 9-tile reach."""
-    from processor.tools.export_bp import inline_signal_tables, merge_fixture
+    from bench.processor_tb import inline_signal_tables, merge_fixture
     import processor.tools.build_v10_tests as v10
 
     source = json.loads((ROOT / args.machine).read_text(encoding="utf-8"))

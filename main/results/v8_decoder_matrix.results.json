@@ -1,6 +1,7 @@
 {
   "name": "v8_decoder_matrix",
   "execution_model": "single_step_paused",
+  "saved_world": null,
   "pre_stimulus_dead_ticks": 2,
   "rebuild": {
     "removed": 16,
@@ -28,71 +29,71 @@
       "dy": 10.0
     },
     "entity_number_to_unit_number": {
-      "1": 145978,
-      "2": 145980,
-      "3": 145982,
-      "4": 145981,
-      "5": 145986,
-      "6": 145985,
-      "7": 145990,
-      "8": 145989,
-      "9": 145998,
-      "10": 146001,
-      "11": 146000,
-      "12": 146005,
-      "13": 146004,
-      "14": 146009,
-      "15": 146008,
-      "16": 145979,
-      "17": 145994,
-      "18": 145984,
-      "19": 145983,
-      "20": 145988,
-      "21": 145987,
-      "22": 145992,
-      "23": 145991,
-      "24": 145999,
-      "25": 146012,
-      "26": 146003,
-      "27": 146002,
-      "28": 146007,
-      "29": 146006,
-      "30": 146011,
-      "31": 146010,
-      "32": 145993,
-      "33": 145996,
-      "34": 145995,
-      "35": 145997
+      "1": 160910,
+      "2": 160912,
+      "3": 160914,
+      "4": 160913,
+      "5": 160918,
+      "6": 160917,
+      "7": 160922,
+      "8": 160921,
+      "9": 160930,
+      "10": 160933,
+      "11": 160932,
+      "12": 160937,
+      "13": 160936,
+      "14": 160941,
+      "15": 160940,
+      "16": 160911,
+      "17": 160926,
+      "18": 160916,
+      "19": 160915,
+      "20": 160920,
+      "21": 160919,
+      "22": 160924,
+      "23": 160923,
+      "24": 160931,
+      "25": 160944,
+      "26": 160935,
+      "27": 160934,
+      "28": 160939,
+      "29": 160938,
+      "30": 160943,
+      "31": 160942,
+      "32": 160925,
+      "33": 160928,
+      "34": 160927,
+      "35": 160929
     },
     "driver_units": {
-      "instr": 145978,
-      "port_a": 145980,
-      "port_b": 145982
+      "instr": 160910,
+      "port_a": 160912,
+      "port_b": 160914
     },
     "output_probes": [
       {
         "name": "out1",
-        "unit": 145998,
+        "unit": 160930,
         "wire": "green"
       },
       {
         "name": "out2",
-        "unit": 145979,
+        "unit": 160911,
         "wire": "green"
       },
       {
         "name": "out3",
-        "unit": 145994,
+        "unit": 160926,
         "wire": "green"
       },
       {
         "name": "out4",
-        "unit": 145999,
+        "unit": 160931,
         "wire": "green"
       },
       {
         "name": "write_trig",
-        "unit": 145997,
+        "unit": 160929,
         "wire": "red"
       }
     ],
@@ -100,7 +101,7 @@
   },
   "timeline": [
     {
-      "tick": 915684,
+      "tick": 927791,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -108,7 +109,7 @@
       "step_name": "pre_dead_1"
     },
     {
-      "tick": 915685,
+      "tick": 927792,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -116,7 +117,7 @@
       "step_name": "pre_dead_2"
     },
     {
-      "tick": 915686,
+      "tick": 927793,
       "stimulus": {
         "instr": {
           "down-arrow": 1.0
@@ -131,7 +132,7 @@
       "step_name": "bit1_portA_to_out1"
     },
     {
-      "tick": 915687,
+      "tick": 927794,
       "stimulus": {
         "instr": {
           "down-arrow": 1.0
@@ -146,7 +147,7 @@
       "step_name": "bit1_portA_to_out1"
     },
     {
-      "tick": 915688,
+      "tick": 927795,
       "stimulus": {
         "instr": {
           "down-arrow": 1.0
@@ -165,7 +166,7 @@
       "step_name": "bit1_portA_to_out1"
     },
     {
-      "tick": 915689,
+      "tick": 927796,
       "stimulus": {
         "instr": {
           "down-arrow": 1.0
@@ -184,7 +185,7 @@
       "step_name": "bit1_portA_to_out1"
     },
     {
-      "tick": 915690,
+      "tick": 927797,
       "stimulus": {
         "instr": {
           "down-arrow": 1.0
@@ -203,7 +204,7 @@
       "step_name": "bit1_portA_to_out1"
     },
     {
-      "tick": 915691,
+      "tick": 927798,
       "stimulus": {
         "instr": {
           "down-arrow": 1.0
@@ -222,7 +223,7 @@
       "step_name": "bit1_no_write_trigger"
     },
     {
-      "tick": 915692,
+      "tick": 927799,
       "stimulus": {
         "instr": {
           "down-arrow": 1.0
@@ -241,7 +242,7 @@
       "step_name": "bit1_no_write_trigger"
     },
     {
-      "tick": 915693,
+      "tick": 927800,
       "stimulus": {
         "instr": {
           "down-arrow": 1.0
@@ -260,7 +261,7 @@
       "step_name": "bit1_no_write_trigger"
     },
     {
-      "tick": 915694,
+      "tick": 927801,
       "stimulus": {
         "instr": {
           "down-arrow": 1.0
@@ -279,7 +280,7 @@
       "step_name": "bit1_no_write_trigger"
     },
     {
-      "tick": 915695,
+      "tick": 927802,
       "stimulus": {
         "instr": {
           "down-arrow": 1.0
@@ -298,7 +299,7 @@
       "step_name": "bit1_no_write_trigger"
     },
     {
-      "tick": 915696,
+      "tick": 927803,
       "stimulus": {
         "instr": {
           "down-arrow": 2.0
@@ -317,7 +318,7 @@
       "step_name": "bit2_portA_to_out2"
     },
     {
-      "tick": 915697,
+      "tick": 927804,
       "stimulus": {
         "instr": {
           "down-arrow": 2.0
@@ -336,29 +337,7 @@
       "step_name": "bit2_portA_to_out2"
     },
     {
-      "tick": 915698,
-      "stimulus": {
-        "instr": {
-          "down-arrow": 2.0
-        },
-        "port_a": {
-          "signal-4": 77.0
-        }
-      },
-      "observed_by_probe": {
-        "out2": {
-          "signal-4": 77.0
-        },
-        "write_trig": {
-          "down-left-arrow~uncommon": 1.0
-        }
-      },
-      "phase": "stimulus",
-      "step_index": 2,
-      "step_name": "bit2_portA_to_out2"
-    },
-    {
-      "tick": 915699,
+      "tick": 927805,
       "stimulus": {
         "instr": {
           "down-arrow": 2.0
@@ -380,7 +359,7 @@
       "step_name": "bit2_portA_to_out2"
     },
     {
-      "tick": 915700,
+      "tick": 927806,
       "stimulus": {
         "instr": {
           "down-arrow": 2.0
@@ -402,7 +381,29 @@
       "step_name": "bit2_portA_to_out2"
     },
     {
-      "tick": 915701,
+      "tick": 927807,
+      "stimulus": {
+        "instr": {
+          "down-arrow": 2.0
+        },
+        "port_a": {
+          "signal-4": 77.0
+        }
+      },
+      "observed_by_probe": {
+        "out2": {
+          "signal-4": 77.0
+        },
+        "write_trig": {
+          "down-left-arrow~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "bit2_portA_to_out2"
+    },
+    {
+      "tick": 927808,
       "stimulus": {
         "instr": {
           "down-arrow": 2.0
@@ -424,7 +425,7 @@
       "step_name": "bit2_out1_now_clear"
     },
     {
-      "tick": 915702,
+      "tick": 927809,
       "stimulus": {
         "instr": {
           "down-arrow": 2.0
@@ -446,7 +447,7 @@
       "step_name": "bit2_out1_now_clear"
     },
     {
-      "tick": 915703,
+      "tick": 927810,
       "stimulus": {
         "instr": {
           "down-arrow": 2.0
@@ -468,7 +469,7 @@
       "step_name": "bit2_out1_now_clear"
     },
     {
-      "tick": 915704,
+      "tick": 927811,
       "stimulus": {
         "instr": {
           "down-arrow": 2.0
@@ -490,7 +491,7 @@
       "step_name": "bit2_out1_now_clear"
     },
     {
-      "tick": 915705,
+      "tick": 927812,
       "stimulus": {
         "instr": {
           "down-arrow": 2.0
@@ -512,7 +513,7 @@
       "step_name": "bit2_out1_now_clear"
     },
     {
-      "tick": 915706,
+      "tick": 927813,
       "stimulus": {
         "instr": {
           "down-arrow": 2.0
@@ -534,7 +535,7 @@
       "step_name": "bit2_raises_write_trigger"
     },
     {
-      "tick": 915707,
+      "tick": 927814,
       "stimulus": {
         "instr": {
           "down-arrow": 2.0
@@ -556,7 +557,7 @@
       "step_name": "bit2_raises_write_trigger"
     },
     {
-      "tick": 915708,
+      "tick": 927815,
       "stimulus": {
         "instr": {
           "down-arrow": 2.0
@@ -578,7 +579,7 @@
       "step_name": "bit2_raises_write_trigger"
     },
     {
-      "tick": 915709,
+      "tick": 927816,
       "stimulus": {
         "instr": {
           "down-arrow": 2.0
@@ -600,7 +601,7 @@
       "step_name": "bit2_raises_write_trigger"
     },
     {
-      "tick": 915710,
+      "tick": 927817,
       "stimulus": {
         "instr": {
           "down-arrow": 2.0
@@ -622,7 +623,7 @@
       "step_name": "bit2_raises_write_trigger"
     },
     {
-      "tick": 915711,
+      "tick": 927818,
       "stimulus": {
         "instr": {
           "down-arrow": 64.0
@@ -644,7 +645,7 @@
       "step_name": "bit64_portB_to_out3"
     },
     {
-      "tick": 915712,
+      "tick": 927819,
       "stimulus": {
         "instr": {
           "down-arrow": 64.0
@@ -663,7 +664,7 @@
       "step_name": "bit64_portB_to_out3"
     },
     {
-      "tick": 915713,
+      "tick": 927820,
       "stimulus": {
         "instr": {
           "down-arrow": 64.0
@@ -682,7 +683,7 @@
       "step_name": "bit64_portB_to_out3"
     },
     {
-      "tick": 915714,
+      "tick": 927821,
       "stimulus": {
         "instr": {
           "down-arrow": 64.0
@@ -701,7 +702,7 @@
       "step_name": "bit64_portB_to_out3"
     },
     {
-      "tick": 915715,
+      "tick": 927822,
       "stimulus": {
         "instr": {
           "down-arrow": 64.0
@@ -720,7 +721,7 @@
       "step_name": "bit64_portB_to_out3"
     },
     {
-      "tick": 915716,
+      "tick": 927823,
       "stimulus": {
         "instr": {
           "down-arrow": 64.0
@@ -739,7 +740,7 @@
       "step_name": "bit64_trigger_off_again"
     },
     {
-      "tick": 915717,
+      "tick": 927824,
       "stimulus": {
         "instr": {
           "down-arrow": 64.0
@@ -758,7 +759,7 @@
       "step_name": "bit64_trigger_off_again"
     },
     {
-      "tick": 915718,
+      "tick": 927825,
       "stimulus": {
         "instr": {
           "down-arrow": 64.0
@@ -777,7 +778,7 @@
       "step_name": "bit64_trigger_off_again"
     },
     {
-      "tick": 915719,
+      "tick": 927826,
       "stimulus": {
         "instr": {
           "down-arrow": 64.0
@@ -796,7 +797,7 @@
       "step_name": "bit64_trigger_off_again"
     },
     {
-      "tick": 915720,
+      "tick": 927827,
       "stimulus": {
         "instr": {
           "down-arrow": 64.0
@@ -815,7 +816,7 @@
       "step_name": "bit64_trigger_off_again"
     },
     {
-      "tick": 915721,
+      "tick": 927828,
       "stimulus": {
         "instr": {
           "down-arrow": 50567168.0
@@ -831,7 +832,7 @@
       "step_name": "bit2048_const_to_out4"
     },
     {
-      "tick": 915722,
+      "tick": 927829,
       "stimulus": {
         "instr": {
           "down-arrow": 50567168.0
@@ -843,7 +844,7 @@
       "step_name": "bit2048_const_to_out4"
     },
     {
-      "tick": 915723,
+      "tick": 927830,
       "stimulus": {
         "instr": {
           "down-arrow": 50567168.0
@@ -859,7 +860,7 @@
       "step_name": "bit2048_const_to_out4"
     },
     {
-      "tick": 915724,
+      "tick": 927831,
       "stimulus": {
         "instr": {
           "down-arrow": 50567168.0
@@ -875,7 +876,7 @@
       "step_name": "bit2048_const_to_out4"
     },
     {
-      "tick": 915725,
+      "tick": 927832,
       "stimulus": {
         "instr": {
           "down-arrow": 50567168.0
@@ -891,7 +892,7 @@
       "step_name": "bit2048_const_to_out4"
     },
     {
-      "tick": 915726,
+      "tick": 927833,
       "stimulus": {
         "instr": {
           "down-arrow": 225792.0
@@ -907,7 +908,7 @@
       "step_name": "bit512_const_write_raises_trigger"
     },
     {
-      "tick": 915727,
+      "tick": 927834,
       "stimulus": {
         "instr": {
           "down-arrow": 225792.0
@@ -923,7 +924,7 @@
       "step_name": "bit512_const_write_raises_trigger"
     },
     {
-      "tick": 915728,
+      "tick": 927835,
       "stimulus": {
         "instr": {
           "down-arrow": 225792.0
@@ -942,7 +943,7 @@
       "step_name": "bit512_const_write_raises_trigger"
     },
     {
-      "tick": 915729,
+      "tick": 927836,
       "stimulus": {
         "instr": {
           "down-arrow": 225792.0
@@ -961,7 +962,7 @@
       "step_name": "bit512_const_write_raises_trigger"
     },
     {
-      "tick": 915730,
+      "tick": 927837,
       "stimulus": {
         "instr": {
           "down-arrow": 225792.0
@@ -980,7 +981,7 @@
       "step_name": "bit512_const_write_raises_trigger"
     },
     {
-      "tick": 915731,
+      "tick": 927838,
       "stimulus": {
         "instr": {
           "down-arrow": 225792.0
@@ -999,7 +1000,7 @@
       "step_name": "bit512_value_on_out2"
     },
     {
-      "tick": 915732,
+      "tick": 927839,
       "stimulus": {
         "instr": {
           "down-arrow": 225792.0
@@ -1018,7 +1019,7 @@
       "step_name": "bit512_value_on_out2"
     },
     {
-      "tick": 915733,
+      "tick": 927840,
       "stimulus": {
         "instr": {
           "down-arrow": 225792.0
@@ -1037,7 +1038,7 @@
       "step_name": "bit512_value_on_out2"
     },
     {
-      "tick": 915734,
+      "tick": 927841,
       "stimulus": {
         "instr": {
           "down-arrow": 225792.0
@@ -1056,7 +1057,7 @@
       "step_name": "bit512_value_on_out2"
     },
     {
-      "tick": 915735,
+      "tick": 927842,
       "stimulus": {
         "instr": {
           "down-arrow": 225792.0
@@ -1075,29 +1076,7 @@
       "step_name": "bit512_value_on_out2"
     },
     {
-      "tick": 915736,
-      "stimulus": {
-        "instr": {
-          "down-arrow": 32.0
-        },
-        "port_b": {
-          "signal-5": 5.0
-        }
-      },
-      "observed_by_probe": {
-        "out2": {
-          "down-arrow~uncommon": 55.0
-        },
-        "write_trig": {
-          "down-left-arrow~uncommon": 1.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 10,
-      "step_name": "bit32_portB_write_raises_trigger"
-    },
-    {
-      "tick": 915737,
+      "tick": 927843,
       "stimulus": {
         "instr": {
           "down-arrow": 32.0
@@ -1119,7 +1098,29 @@
       "step_name": "bit32_portB_write_raises_trigger"
     },
     {
-      "tick": 915738,
+      "tick": 927844,
+      "stimulus": {
+        "instr": {
+          "down-arrow": 32.0
+        },
+        "port_b": {
+          "signal-5": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "out2": {
+          "down-arrow~uncommon": 55.0
+        },
+        "write_trig": {
+          "down-left-arrow~uncommon": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 10,
+      "step_name": "bit32_portB_write_raises_trigger"
+    },
+    {
+      "tick": 927845,
       "stimulus": {
         "instr": {
           "down-arrow": 32.0
@@ -1141,7 +1142,7 @@
       "step_name": "bit32_portB_write_raises_trigger"
     },
     {
-      "tick": 915739,
+      "tick": 927846,
       "stimulus": {
         "instr": {
           "down-arrow": 32.0
@@ -1163,7 +1164,7 @@
       "step_name": "bit32_portB_write_raises_trigger"
     },
     {
-      "tick": 915740,
+      "tick": 927847,
       "stimulus": {
         "instr": {
           "down-arrow": 32.0
@@ -1185,7 +1186,7 @@
       "step_name": "bit32_portB_write_raises_trigger"
     },
     {
-      "tick": 915741,
+      "tick": 927848,
       "stimulus": {
         "instr": {
           "down-arrow": 407585.0
@@ -1210,7 +1211,7 @@
       "step_name": "multi_route_setup_out1"
     },
     {
-      "tick": 915742,
+      "tick": 927849,
       "stimulus": {
         "instr": {
           "down-arrow": 407585.0
@@ -1235,38 +1236,7 @@
       "step_name": "multi_route_setup_out1"
     },
     {
-      "tick": 915743,
-      "stimulus": {
-        "instr": {
-          "down-arrow": 407585.0
-        },
-        "port_a": {
-          "signal-3": 11.0
-        },
-        "port_b": {
-          "signal-5": 22.0
-        }
-      },
-      "observed_by_probe": {
-        "out1": {
-          "signal-3": 11.0
-        },
-        "out2": {
-          "signal-5": 22.0
-        },
-        "out4": {
-          "down-arrow~uncommon": 99.0
-        },
-        "write_trig": {
-          "down-left-arrow~uncommon": 1.0
-        }
-      },
-      "phase": "stimulus",
-      "step_index": 11,
-      "step_name": "multi_route_setup_out1"
-    },
-    {
-      "tick": 915744,
+      "tick": 927850,
       "stimulus": {
         "instr": {
           "down-arrow": 407585.0
@@ -1297,7 +1267,7 @@
       "step_name": "multi_route_setup_out1"
     },
     {
-      "tick": 915745,
+      "tick": 927851,
       "stimulus": {
         "instr": {
           "down-arrow": 407585.0
@@ -1328,7 +1298,38 @@
       "step_name": "multi_route_setup_out1"
     },
     {
-      "tick": 915746,
+      "tick": 927852,
+      "stimulus": {
+        "instr": {
+          "down-arrow": 407585.0
+        },
+        "port_a": {
+          "signal-3": 11.0
+        },
+        "port_b": {
+          "signal-5": 22.0
+        }
+      },
+      "observed_by_probe": {
+        "out1": {
+          "signal-3": 11.0
+        },
+        "out2": {
+          "signal-5": 22.0
+        },
+        "out4": {
+          "down-arrow~uncommon": 99.0
+        },
+        "write_trig": {
+          "down-left-arrow~uncommon": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 11,
+      "step_name": "multi_route_setup_out1"
+    },
+    {
+      "tick": 927853,
       "stimulus": {
         "instr": {
           "down-arrow": 407585.0
@@ -1359,7 +1360,7 @@
       "step_name": "multi_route_check_out2"
     },
     {
-      "tick": 915747,
+      "tick": 927854,
       "stimulus": {
         "instr": {
           "down-arrow": 407585.0
@@ -1390,7 +1391,7 @@
       "step_name": "multi_route_check_out2"
     },
     {
-      "tick": 915748,
+      "tick": 927855,
       "stimulus": {
         "instr": {
           "down-arrow": 407585.0
@@ -1421,7 +1422,7 @@
       "step_name": "multi_route_check_out2"
     },
     {
-      "tick": 915749,
+      "tick": 927856,
       "stimulus": {
         "instr": {
           "down-arrow": 407585.0
@@ -1452,7 +1453,7 @@
       "step_name": "multi_route_check_out2"
     },
     {
-      "tick": 915750,
+      "tick": 927857,
       "stimulus": {
         "instr": {
           "down-arrow": 407585.0
@@ -1483,7 +1484,7 @@
       "step_name": "multi_route_check_out2"
     },
     {
-      "tick": 915751,
+      "tick": 927858,
       "stimulus": {
         "instr": {
           "down-arrow": 407585.0
@@ -1514,7 +1515,7 @@
       "step_name": "multi_route_check_out4"
     },
     {
-      "tick": 915752,
+      "tick": 927859,
       "stimulus": {
         "instr": {
           "down-arrow": 407585.0
@@ -1545,7 +1546,7 @@
       "step_name": "multi_route_check_out4"
     },
     {
-      "tick": 915753,
+      "tick": 927860,
       "stimulus": {
         "instr": {
           "down-arrow": 407585.0
@@ -1576,7 +1577,7 @@
       "step_name": "multi_route_check_out4"
     },
     {
-      "tick": 915754,
+      "tick": 927861,
       "stimulus": {
         "instr": {
           "down-arrow": 407585.0
@@ -1607,7 +1608,7 @@
       "step_name": "multi_route_check_out4"
     },
     {
-      "tick": 915755,
+      "tick": 927862,
       "stimulus": {
         "instr": {
           "down-arrow": 407585.0
@@ -1638,7 +1639,7 @@
       "step_name": "multi_route_check_out4"
     },
     {
-      "tick": 915756,
+      "tick": 927863,
       "stimulus": {
         "instr": {
           "down-arrow": 4.0
@@ -1666,7 +1667,7 @@
       "step_name": "bit4_portA_to_out3"
     },
     {
-      "tick": 915757,
+      "tick": 927864,
       "stimulus": {
         "instr": {
           "down-arrow": 4.0
@@ -1691,7 +1692,7 @@
       "step_name": "bit4_portA_to_out3"
     },
     {
-      "tick": 915758,
+      "tick": 927865,
       "stimulus": {
         "instr": {
           "down-arrow": 4.0
@@ -1710,7 +1711,7 @@
       "step_name": "bit4_portA_to_out3"
     },
     {
-      "tick": 915759,
+      "tick": 927866,
       "stimulus": {
         "instr": {
           "down-arrow": 4.0
@@ -1729,7 +1730,7 @@
       "step_name": "bit4_portA_to_out3"
     },
     {
-      "tick": 915760,
+      "tick": 927867,
       "stimulus": {
         "instr": {
           "down-arrow": 4.0
@@ -1748,7 +1749,7 @@
       "step_name": "bit4_portA_to_out3"
     },
     {
-      "tick": 915761,
+      "tick": 927868,
       "stimulus": {
         "instr": {
           "down-arrow": 8.0
@@ -1767,7 +1768,7 @@
       "step_name": "bit8_portA_to_out4_the_conditional_jump_path"
     },
     {
-      "tick": 915762,
+      "tick": 927869,
       "stimulus": {
         "instr": {
           "down-arrow": 8.0
@@ -1786,7 +1787,7 @@
       "step_name": "bit8_portA_to_out4_the_conditional_jump_path"
     },
     {
-      "tick": 915763,
+      "tick": 927870,
       "stimulus": {
         "instr": {
           "down-arrow": 8.0
@@ -1805,7 +1806,7 @@
       "step_name": "bit8_portA_to_out4_the_conditional_jump_path"
     },
     {
-      "tick": 915764,
+      "tick": 927871,
       "stimulus": {
         "instr": {
           "down-arrow": 8.0
@@ -1824,7 +1825,7 @@
       "step_name": "bit8_portA_to_out4_the_conditional_jump_path"
     },
     {
-      "tick": 915765,
+      "tick": 927872,
       "stimulus": {
         "instr": {
           "down-arrow": 8.0
@@ -1843,7 +1844,7 @@
       "step_name": "bit8_portA_to_out4_the_conditional_jump_path"
     },
     {
-      "tick": 915766,
+      "tick": 927873,
       "stimulus": {
         "instr": {
           "down-arrow": 16.0
@@ -1862,7 +1863,7 @@
       "step_name": "bit16_portB_to_out1"
     },
     {
-      "tick": 915767,
+      "tick": 927874,
       "stimulus": {
         "instr": {
           "down-arrow": 16.0
@@ -1877,7 +1878,7 @@
       "step_name": "bit16_portB_to_out1"
     },
     {
-      "tick": 915768,
+      "tick": 927875,
       "stimulus": {
         "instr": {
           "down-arrow": 16.0
@@ -1896,7 +1897,7 @@
       "step_name": "bit16_portB_to_out1"
     },
     {
-      "tick": 915769,
+      "tick": 927876,
       "stimulus": {
         "instr": {
           "down-arrow": 16.0
@@ -1915,7 +1916,7 @@
       "step_name": "bit16_portB_to_out1"
     },
     {
-      "tick": 915770,
+      "tick": 927877,
       "stimulus": {
         "instr": {
           "down-arrow": 16.0
@@ -1934,7 +1935,7 @@
       "step_name": "bit16_portB_to_out1"
     },
     {
-      "tick": 915771,
+      "tick": 927878,
       "stimulus": {
         "instr": {
           "down-arrow": 128.0
@@ -1953,7 +1954,7 @@
       "step_name": "bit128_portB_to_out4"
     },
     {
-      "tick": 915772,
+      "tick": 927879,
       "stimulus": {
         "instr": {
           "down-arrow": 128.0
@@ -1972,7 +1973,7 @@
       "step_name": "bit128_portB_to_out4"
     },
     {
-      "tick": 915773,
+      "tick": 927880,
       "stimulus": {
         "instr": {
           "down-arrow": 128.0
@@ -1991,7 +1992,7 @@
       "step_name": "bit128_portB_to_out4"
     },
     {
-      "tick": 915774,
+      "tick": 927881,
       "stimulus": {
         "instr": {
           "down-arrow": 128.0
@@ -2010,7 +2011,7 @@
       "step_name": "bit128_portB_to_out4"
     },
     {
-      "tick": 915775,
+      "tick": 927882,
       "stimulus": {
         "instr": {
           "down-arrow": 128.0
@@ -2029,7 +2030,7 @@
       "step_name": "bit128_portB_to_out4"
     },
     {
-      "tick": 915776,
+      "tick": 927883,
       "stimulus": {
         "instr": {
           "down-arrow": 181248.0
@@ -2045,7 +2046,7 @@
       "step_name": "bit1024_const_to_out3"
     },
     {
-      "tick": 915777,
+      "tick": 927884,
       "stimulus": {
         "instr": {
           "down-arrow": 181248.0
@@ -2057,23 +2058,7 @@
       "step_name": "bit1024_const_to_out3"
     },
     {
-      "tick": 915778,
-      "stimulus": {
-        "instr": {
-          "down-arrow": 181248.0
-        }
-      },
-      "observed_by_probe": {
-        "out3": {
-          "down-arrow~uncommon": 44.0
-        }
-      },
-      "phase": "stimulus",
-      "step_index": 18,
-      "step_name": "bit1024_const_to_out3"
-    },
-    {
-      "tick": 915779,
+      "tick": 927885,
       "stimulus": {
         "instr": {
           "down-arrow": 181248.0
@@ -2089,7 +2074,7 @@
       "step_name": "bit1024_const_to_out3"
     },
     {
-      "tick": 915780,
+      "tick": 927886,
       "stimulus": {
         "instr": {
           "down-arrow": 181248.0
@@ -2105,7 +2090,23 @@
       "step_name": "bit1024_const_to_out3"
     },
     {
-      "tick": 915781,
+      "tick": 927887,
+      "stimulus": {
+        "instr": {
+          "down-arrow": 181248.0
+        }
+      },
+      "observed_by_probe": {
+        "out3": {
+          "down-arrow~uncommon": 44.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 18,
+      "step_name": "bit1024_const_to_out3"
+    },
+    {
+      "tick": 927888,
       "stimulus": {
         "instr": {
           "down-arrow": 17.0
@@ -2127,7 +2128,7 @@
       "step_name": "two_ports_sum_on_out1_when_they_share_a_signal"
     },
     {
-      "tick": 915782,
+      "tick": 927889,
       "stimulus": {
         "instr": {
           "down-arrow": 17.0
@@ -2149,29 +2150,7 @@
       "step_name": "two_ports_sum_on_out1_when_they_share_a_signal"
     },
     {
-      "tick": 915783,
-      "stimulus": {
-        "instr": {
-          "down-arrow": 17.0
-        },
-        "port_a": {
-          "signal-4": 77.0
-        },
-        "port_b": {
-          "signal-4": 33.0
-        }
-      },
-      "observed_by_probe": {
-        "out1": {
-          "signal-4": 110.0
-        }
-      },
-      "phase": "stimulus",
-      "step_index": 19,
-      "step_name": "two_ports_sum_on_out1_when_they_share_a_signal"
-    },
-    {
-      "tick": 915784,
+      "tick": 927890,
       "stimulus": {
         "instr": {
           "down-arrow": 17.0
@@ -2193,7 +2172,7 @@
       "step_name": "two_ports_sum_on_out1_when_they_share_a_signal"
     },
     {
-      "tick": 915785,
+      "tick": 927891,
       "stimulus": {
         "instr": {
           "down-arrow": 17.0
@@ -2215,7 +2194,29 @@
       "step_name": "two_ports_sum_on_out1_when_they_share_a_signal"
     },
     {
-      "tick": 915786,
+      "tick": 927892,
+      "stimulus": {
+        "instr": {
+          "down-arrow": 17.0
+        },
+        "port_a": {
+          "signal-4": 77.0
+        },
+        "port_b": {
+          "signal-4": 33.0
+        }
+      },
+      "observed_by_probe": {
+        "out1": {
+          "signal-4": 110.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 19,
+      "step_name": "two_ports_sum_on_out1_when_they_share_a_signal"
+    },
+    {
+      "tick": 927893,
       "stimulus": {
         "instr": {
           "down-arrow": 20994.0
@@ -2234,7 +2235,7 @@
       "step_name": "const_and_port_sum_on_out2"
     },
     {
-      "tick": 915787,
+      "tick": 927894,
       "stimulus": {
         "instr": {
           "down-arrow": 20994.0
@@ -2253,7 +2254,7 @@
       "step_name": "const_and_port_sum_on_out2"
     },
     {
-      "tick": 915788,
+      "tick": 927895,
       "stimulus": {
         "instr": {
           "down-arrow": 20994.0
@@ -2275,7 +2276,7 @@
       "step_name": "const_and_port_sum_on_out2"
     },
     {
-      "tick": 915789,
+      "tick": 927896,
       "stimulus": {
         "instr": {
           "down-arrow": 20994.0
@@ -2297,7 +2298,7 @@
       "step_name": "const_and_port_sum_on_out2"
     },
     {
-      "tick": 915790,
+      "tick": 927897,
       "stimulus": {
         "instr": {
           "down-arrow": 20994.0
@@ -2319,7 +2320,7 @@
       "step_name": "const_and_port_sum_on_out2"
     },
     {
-      "tick": 915791,
+      "tick": 927898,
       "stimulus": {
         "instr": {
           "down-arrow": 20994.0
@@ -2341,7 +2342,7 @@
       "step_name": "summed_write_still_raises_the_trigger"
     },
     {
-      "tick": 915792,
+      "tick": 927899,
       "stimulus": {
         "instr": {
           "down-arrow": 20994.0
@@ -2363,7 +2364,7 @@
       "step_name": "summed_write_still_raises_the_trigger"
     },
     {
-      "tick": 915793,
+      "tick": 927900,
       "stimulus": {
         "instr": {
           "down-arrow": 20994.0
@@ -2385,7 +2386,7 @@
       "step_name": "summed_write_still_raises_the_trigger"
     },
     {
-      "tick": 915794,
+      "tick": 927901,
       "stimulus": {
         "instr": {
           "down-arrow": 20994.0
@@ -2407,7 +2408,7 @@
       "step_name": "summed_write_still_raises_the_trigger"
     },
     {
-      "tick": 915795,
+      "tick": 927902,
       "stimulus": {
         "instr": {
           "down-arrow": 20994.0
@@ -2429,7 +2430,7 @@
       "step_name": "summed_write_still_raises_the_trigger"
     },
     {
-      "tick": 915796,
+      "tick": 927903,
       "stimulus": {
         "instr": {
           "down-arrow": 4097028.0
@@ -2451,7 +2452,7 @@
       "step_name": "base_plus_index_sums_on_out3"
     },
     {
-      "tick": 915797,
+      "tick": 927904,
       "stimulus": {
         "instr": {
           "down-arrow": 4097028.0
@@ -2473,7 +2474,7 @@
       "step_name": "base_plus_index_sums_on_out3"
     },
     {
-      "tick": 915798,
+      "tick": 927905,
       "stimulus": {
         "instr": {
           "down-arrow": 4097028.0
@@ -2492,7 +2493,7 @@
       "step_name": "base_plus_index_sums_on_out3"
     },
     {
-      "tick": 915799,
+      "tick": 927906,
       "stimulus": {
         "instr": {
           "down-arrow": 4097028.0
@@ -2511,7 +2512,7 @@
       "step_name": "base_plus_index_sums_on_out3"
     },
     {
-      "tick": 915800,
+      "tick": 927907,
       "stimulus": {
         "instr": {
           "down-arrow": 4097028.0
@@ -2530,7 +2531,7 @@
       "step_name": "base_plus_index_sums_on_out3"
     },
     {
-      "tick": 915801,
+      "tick": 927908,
       "stimulus": {
         "instr": {
           "down-arrow": 68.0
@@ -2552,7 +2553,7 @@
       "step_name": "distinct_signals_both_survive_on_out3"
     },
     {
-      "tick": 915802,
+      "tick": 927909,
       "stimulus": {
         "instr": {
           "down-arrow": 68.0
@@ -2575,7 +2576,7 @@
       "step_name": "distinct_signals_both_survive_on_out3"
     },
     {
-      "tick": 915803,
+      "tick": 927910,
       "stimulus": {
         "instr": {
           "down-arrow": 68.0
@@ -2598,7 +2599,7 @@
       "step_name": "distinct_signals_both_survive_on_out3"
     },
     {
-      "tick": 915804,
+      "tick": 927911,
       "stimulus": {
         "instr": {
           "down-arrow": 68.0
@@ -2621,7 +2622,7 @@
       "step_name": "distinct_signals_both_survive_on_out3"
     },
     {
-      "tick": 915805,
+      "tick": 927912,
       "stimulus": {
         "instr": {
           "down-arrow": 68.0
@@ -2648,7 +2649,7 @@
     {
       "step_index": 0,
       "step_name": "bit1_portA_to_out1",
-      "drive_start_tick": 915685,
+      "drive_start_tick": 927792,
       "skipped_ticks": 0,
       "expected_probe": "out1",
       "expected": {
@@ -2659,12 +2660,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915690
+      "last_sample_tick": 927797
     },
     {
       "step_index": 1,
       "step_name": "bit1_no_write_trigger",
-      "drive_start_tick": 915690,
+      "drive_start_tick": 927797,
       "skipped_ticks": 0,
       "expected_probe": "write_trig",
       "expected": {
@@ -2673,12 +2674,12 @@
       "observed": {},
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915695
+      "last_sample_tick": 927802
     },
     {
       "step_index": 2,
       "step_name": "bit2_portA_to_out2",
-      "drive_start_tick": 915695,
+      "drive_start_tick": 927802,
       "skipped_ticks": 0,
       "expected_probe": "out2",
       "expected": {
@@ -2689,12 +2690,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915700
+      "last_sample_tick": 927807
     },
     {
       "step_index": 3,
       "step_name": "bit2_out1_now_clear",
-      "drive_start_tick": 915700,
+      "drive_start_tick": 927807,
       "skipped_ticks": 0,
       "expected_probe": "out1",
       "expected": {
@@ -2703,12 +2704,12 @@
       "observed": {},
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915705
+      "last_sample_tick": 927812
     },
     {
       "step_index": 4,
       "step_name": "bit2_raises_write_trigger",
-      "drive_start_tick": 915705,
+      "drive_start_tick": 927812,
       "skipped_ticks": 0,
       "expected_probe": "write_trig",
       "expected": {
@@ -2719,12 +2720,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915710
+      "last_sample_tick": 927817
     },
     {
       "step_index": 5,
       "step_name": "bit64_portB_to_out3",
-      "drive_start_tick": 915710,
+      "drive_start_tick": 927817,
       "skipped_ticks": 0,
       "expected_probe": "out3",
       "expected": {
@@ -2735,12 +2736,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915715
+      "last_sample_tick": 927822
     },
     {
       "step_index": 6,
       "step_name": "bit64_trigger_off_again",
-      "drive_start_tick": 915715,
+      "drive_start_tick": 927822,
       "skipped_ticks": 0,
       "expected_probe": "write_trig",
       "expected": {
@@ -2749,12 +2750,12 @@
       "observed": {},
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915720
+      "last_sample_tick": 927827
     },
     {
       "step_index": 7,
       "step_name": "bit2048_const_to_out4",
-      "drive_start_tick": 915720,
+      "drive_start_tick": 927827,
       "skipped_ticks": 0,
       "expected_probe": "out4",
       "expected": {
@@ -2765,12 +2766,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915725
+      "last_sample_tick": 927832
     },
     {
       "step_index": 8,
       "step_name": "bit512_const_write_raises_trigger",
-      "drive_start_tick": 915725,
+      "drive_start_tick": 927832,
       "skipped_ticks": 0,
       "expected_probe": "write_trig",
       "expected": {
@@ -2781,12 +2782,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915730
+      "last_sample_tick": 927837
     },
     {
       "step_index": 9,
       "step_name": "bit512_value_on_out2",
-      "drive_start_tick": 915730,
+      "drive_start_tick": 927837,
       "skipped_ticks": 0,
       "expected_probe": "out2",
       "expected": {
@@ -2797,12 +2798,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915735
+      "last_sample_tick": 927842
     },
     {
       "step_index": 10,
       "step_name": "bit32_portB_write_raises_trigger",
-      "drive_start_tick": 915735,
+      "drive_start_tick": 927842,
       "skipped_ticks": 0,
       "expected_probe": "write_trig",
       "expected": {
@@ -2813,12 +2814,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915740
+      "last_sample_tick": 927847
     },
     {
       "step_index": 11,
       "step_name": "multi_route_setup_out1",
-      "drive_start_tick": 915740,
+      "drive_start_tick": 927847,
       "skipped_ticks": 0,
       "expected_probe": "out1",
       "expected": {
@@ -2829,12 +2830,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915745
+      "last_sample_tick": 927852
     },
     {
       "step_index": 12,
       "step_name": "multi_route_check_out2",
-      "drive_start_tick": 915745,
+      "drive_start_tick": 927852,
       "skipped_ticks": 0,
       "expected_probe": "out2",
       "expected": {
@@ -2845,12 +2846,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915750
+      "last_sample_tick": 927857
     },
     {
       "step_index": 13,
       "step_name": "multi_route_check_out4",
-      "drive_start_tick": 915750,
+      "drive_start_tick": 927857,
       "skipped_ticks": 0,
       "expected_probe": "out4",
       "expected": {
@@ -2861,12 +2862,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915755
+      "last_sample_tick": 927862
     },
     {
       "step_index": 14,
       "step_name": "bit4_portA_to_out3",
-      "drive_start_tick": 915755,
+      "drive_start_tick": 927862,
       "skipped_ticks": 0,
       "expected_probe": "out3",
       "expected": {
@@ -2877,12 +2878,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915760
+      "last_sample_tick": 927867
     },
     {
       "step_index": 15,
       "step_name": "bit8_portA_to_out4_the_conditional_jump_path",
-      "drive_start_tick": 915760,
+      "drive_start_tick": 927867,
       "skipped_ticks": 0,
       "expected_probe": "out4",
       "expected": {
@@ -2893,12 +2894,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915765
+      "last_sample_tick": 927872
     },
     {
       "step_index": 16,
       "step_name": "bit16_portB_to_out1",
-      "drive_start_tick": 915765,
+      "drive_start_tick": 927872,
       "skipped_ticks": 0,
       "expected_probe": "out1",
       "expected": {
@@ -2909,12 +2910,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915770
+      "last_sample_tick": 927877
     },
     {
       "step_index": 17,
       "step_name": "bit128_portB_to_out4",
-      "drive_start_tick": 915770,
+      "drive_start_tick": 927877,
       "skipped_ticks": 0,
       "expected_probe": "out4",
       "expected": {
@@ -2925,12 +2926,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915775
+      "last_sample_tick": 927882
     },
     {
       "step_index": 18,
       "step_name": "bit1024_const_to_out3",
-      "drive_start_tick": 915775,
+      "drive_start_tick": 927882,
       "skipped_ticks": 0,
       "expected_probe": "out3",
       "expected": {
@@ -2941,12 +2942,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915780
+      "last_sample_tick": 927887
     },
     {
       "step_index": 19,
       "step_name": "two_ports_sum_on_out1_when_they_share_a_signal",
-      "drive_start_tick": 915780,
+      "drive_start_tick": 927887,
       "skipped_ticks": 0,
       "expected_probe": "out1",
       "expected": {
@@ -2957,12 +2958,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915785
+      "last_sample_tick": 927892
     },
     {
       "step_index": 20,
       "step_name": "const_and_port_sum_on_out2",
-      "drive_start_tick": 915785,
+      "drive_start_tick": 927892,
       "skipped_ticks": 0,
       "expected_probe": "out2",
       "expected": {
@@ -2973,12 +2974,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915790
+      "last_sample_tick": 927897
     },
     {
       "step_index": 21,
       "step_name": "summed_write_still_raises_the_trigger",
-      "drive_start_tick": 915790,
+      "drive_start_tick": 927897,
       "skipped_ticks": 0,
       "expected_probe": "write_trig",
       "expected": {
@@ -2989,12 +2990,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915795
+      "last_sample_tick": 927902
     },
     {
       "step_index": 22,
       "step_name": "base_plus_index_sums_on_out3",
-      "drive_start_tick": 915795,
+      "drive_start_tick": 927902,
       "skipped_ticks": 0,
       "expected_probe": "out3",
       "expected": {
@@ -3005,12 +3006,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915800
+      "last_sample_tick": 927907
     },
     {
       "step_index": 23,
       "step_name": "distinct_signals_both_survive_on_out3",
-      "drive_start_tick": 915800,
+      "drive_start_tick": 927907,
       "skipped_ticks": 0,
       "expected_probe": "out3",
       "expected": {
@@ -3023,7 +3024,7 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 915805
+      "last_sample_tick": 927912
     }
   ],
   "pass": true

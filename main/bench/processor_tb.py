@@ -13,6 +13,7 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # main/ on the path
 
+from blueprint_codec import decode_blueprint_string, encode_blueprint_string
 from rcon.source import Client
 
 
@@ -383,6 +384,112 @@ def signal_table_rows(exclude: list[tuple[str, str]] | None = None,
             }
         )
     return rows
+
+
+# ---------------------------------------------------------------------------
+# Export: turn the design under test into a blueprint string a human can paste
+# ---------------------------------------------------------------------------
+# WHY THIS IS NOT JUST `encode_blueprint_from_source`. A design's address
+# tables are constant combinators carrying a `signal_table` MARKER, not
+# filters — the runner expands them over RCON after every paste, because
+# ~2451 rows x 7 tables is far more than anyone wants in a checked-in JSON.
+# That is fine for a bench and useless for a human: paste the runner's
+# blueprint into your own game and you get a machine whose address decode is
+# empty, which fails SILENTLY rather than loudly.
+
+
+def inline_signal_tables(blueprint: dict[str, Any]) -> list[tuple[int, int]]:
+    """Replace every `signal_table` marker with the rows it stands for.
+
+    Identical tables share one exclusion set, so the rows are computed once per
+    (exclude, offset) key — the same caching the runner does, for the same
+    reason. Returns [(entity_number, row count)]."""
+    cache: dict = {}
+    filled: list[tuple[int, int]] = []
+    for entity in blueprint["entities"]:
+        marker = entity.pop("signal_table", None)
+        if marker is None:
+            continue
+        exclude = tuple((e["name"], e.get("quality", "normal"))
+                        for e in marker.get("exclude", []))
+        offset = int(marker.get("offset", 0))
+        key = (exclude, offset)
+        if key not in cache:
+            cache[key] = signal_table_rows(list(exclude), offset=offset)
+        sections: dict = {}
+        for row in cache[key]:
+            sections.setdefault(row["section"], []).append({
+                "index": row["slot"], "type": row["type"], "name": row["name"],
+                "quality": row["quality"], "comparator": "=",
+                "count": row["count"],
+            })
+        entity["control_behavior"] = {
+            "sections": {"sections": [{"index": i, "filters": f}
+                                      for i, f in sorted(sections.items())]}
+        }
+        filled.append((entity["entity_number"], len(cache[key])))
+    return filled
+
+
+def merge_fixture(blueprint: dict[str, Any], fixture_string: str,
+                  dx: float, dy: float) -> int:
+    """Append another blueprint's entities, shifted and renumbered.
+
+    Entity numbers are rewritten past the host's highest, and the fixture's own
+    wires are rewritten with them — a fixture with no wires (the power seed)
+    simply contributes none."""
+    fixture = decode_blueprint_string(fixture_string)["blueprint"]
+    base = max((e["entity_number"] for e in blueprint["entities"]), default=0)
+    remap: dict[int, int] = {}
+    for entity in fixture.get("entities", []):
+        old = entity["entity_number"]
+        remap[old] = base + len(remap) + 1
+        moved = json.loads(json.dumps(entity))
+        moved["entity_number"] = remap[old]
+        moved["position"] = {"x": entity["position"]["x"] + dx,
+                             "y": entity["position"]["y"] + dy}
+        blueprint["entities"].append(moved)
+    for a, ca, b, cb in fixture.get("wires", []):
+        blueprint.setdefault("wires", []).append([remap[a], ca, remap[b], cb])
+    return len(remap)
+
+
+def export_blueprint(source: dict[str, Any], tb: dict[str, Any] | None,
+                     out_path: Path, with_fixtures: bool = True) -> dict[str, Any]:
+    """Write `source` as a SELF-CONTAINED, pasteable blueprint string.
+
+    Address tables are inlined and — unless `with_fixtures` is off — the
+    testbench's own fixtures (the power seed) are folded in on the same
+    offsets, so the result needs no power network of its own. A `.bp.json`
+    sidecar is written beside it for inspection.
+
+    This is what `--export-bp` on a run calls, and what `bench/export_bp.py`
+    calls standalone. One implementation, so a hand-pasted machine is always
+    exactly the machine the bench verified."""
+    payload = json.loads(json.dumps({"blueprint": source["blueprint"]}))
+    blueprint = payload["blueprint"]
+    blueprint.setdefault("item", "blueprint")
+    blueprint.setdefault("label", source.get("name", out_path.stem))
+    if source.get("description"):
+        blueprint["description"] = source["description"][:490]
+
+    filled = inline_signal_tables(blueprint)
+    added = 0
+    if with_fixtures and tb:
+        for fixture in tb.get("fixture_blueprints", []):
+            if fixture.get("blueprint_string"):
+                added += merge_fixture(blueprint, fixture["blueprint_string"],
+                                       float(fixture.get("origin_x", 0.0)),
+                                       float(fixture.get("origin_y", 0.0)))
+
+    string = encode_blueprint_string(payload)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(string, encoding="utf-8")
+    out_path.with_suffix(".json").write_text(json.dumps(payload, indent=1),
+                                             encoding="utf-8")
+    return {"path": str(out_path), "entities": len(blueprint["entities"]),
+            "fixture_entities": added, "tables_inlined": len(filled),
+            "table_rows": sum(n for _e, n in filled), "chars": len(string)}
 
 
 def write_signal_table(
@@ -900,6 +1007,7 @@ def run_memory_tb(
     password: str,
     source: dict[str, Any],
     tb: dict[str, Any],
+    save_world: str | None = None,
 ) -> dict[str, Any]:
     surface = source.get("surface", "nauvis")
     source_entities = source["blueprint"]["entities"]
@@ -1198,11 +1306,18 @@ def run_memory_tb(
                     "last_sample_tick": step_samples[-1]["tick"] if step_samples else None,
                 }
             )
-        save_name = str(tb.get("save_after_run", "")).strip()
+        # SAVE THE TEST WORLD. `--save-world NAME` on the command line wins
+        # over the tb's own `save_after_run`, so any bench can be turned into
+        # "leave me a world I can open" without editing its JSON. The save
+        # happens AFTER the checks, so what lands on disk is the finished
+        # state the assertions just passed against.
+        save_name = (save_world if save_world is not None
+                     else str(tb.get("save_after_run", ""))).strip()
         if save_name:
             save_out = run_sc(host, port, password, f"game.server_save({lua_quote(save_name)})")
             ensure_ok(save_out)
-            print(f"Saved game as '{save_name}' after run", file=sys.stderr)
+            saved_as = save_name
+            print(f"saved the test world as '{save_name}.zip'", file=sys.stderr)
     finally:
         if sim_speed and sim_speed != 1:
             set_game_speed(host, port, password, 1.0)
@@ -1213,6 +1328,7 @@ def run_memory_tb(
     return {
         "name": tb["name"],
         "execution_model": "single_step_paused",
+        "saved_world": saved_as if "saved_as" in locals() else None,
         "pre_stimulus_dead_ticks": pre_stimulus_dead_ticks,
         "rebuild": rebuild_status,
         "fixtures": fixture_statuses,
@@ -1248,6 +1364,18 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--source", required=True, help="Decoded source blueprint JSON")
     run.add_argument("--testbench", required=True)
     run.add_argument("--results", required=True)
+    run.add_argument("--save-world", metavar="NAME", default=None,
+                     help="after the run, save the game as NAME.zip so you can "
+                          "open the finished machine in your own client. "
+                          "Overrides the tb's `save_after_run`; pass an empty "
+                          "string to suppress one.")
+    run.add_argument("--export-bp", metavar="PATH", default=None,
+                     help="also write the design under test as a SELF-CONTAINED "
+                          "blueprint string you can paste by hand: address "
+                          "tables inlined, the tb's power fixture folded in. "
+                          "A .json sidecar is written beside it.")
+    run.add_argument("--no-fixtures-in-bp", action="store_true",
+                     help="with --export-bp, leave the power fixture out")
     run.set_defaults(which="run")
 
     return parser
@@ -1288,7 +1416,22 @@ def main() -> int:
 
     source = load_json(Path(args.source))
     tb = load_json(Path(args.testbench))
-    result = run_memory_tb(args.host, args.port, args.password, source, tb)
+
+    # Export first: it is pure JSON work, so it still produces a pasteable
+    # blueprint even if the server is down or the run fails.
+    if args.export_bp:
+        info = export_blueprint(source, tb, Path(args.export_bp),
+                                with_fixtures=not args.no_fixtures_in_bp)
+        print(f"exported {info['entities']} entities "
+              f"({info['fixture_entities']} from fixtures), "
+              f"{info['tables_inlined']} address tables inlined "
+              f"({info['table_rows']} rows), {info['chars']} chars "
+              f"-> {info['path']}", file=sys.stderr)
+
+    result = run_memory_tb(args.host, args.port, args.password, source, tb,
+                           save_world=args.save_world)
+    if args.export_bp:
+        result["exported_blueprint"] = info
     write_json(Path(args.results), result)
     print(json.dumps(result, indent=2))
     return 0
