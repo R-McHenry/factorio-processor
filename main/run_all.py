@@ -44,6 +44,7 @@ SUITE = [
     ("processor/modules/v10_vec_bank.source.json", "processor/testbenches/v10_vec_bank.tb.json"),
     ("processor/modules/v10_op_farm.source.json", "processor/testbenches/v10_op_farm.tb.json"),
     ("processor/modules/v10_vec_io.source.json", "processor/testbenches/v10_vec_io.tb.json"),
+    ("processor/modules/v10_vec_decoder.source.json", "processor/testbenches/v10_vec_decoder.tb.json"),
     # -- whole machines running programs
     ("processor/modules/v8_processor.source.json", "processor/testbenches/v8_processor_smoke.tb.json"),
     ("processor/modules/v8_processor_accumulate_halt.source.json", "processor/testbenches/v8_proc_accumulate_halt.tb.json"),
@@ -73,6 +74,7 @@ FNET_MODULES = [
     ("processor/modules/v10_vec_bank.fnet", "vec_bank_bench"),
     ("processor/modules/v10_op_farm.fnet", "op_farm_bench"),
     ("processor/modules/v10_vec_io.fnet", "vec_io_bench"),
+    ("processor/modules/v10_vec_decoder.fnet", "vec_decoder_bench"),
     ("processor/modules/v10_processor.fnet", "v10_processor"),
 ]
 

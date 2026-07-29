@@ -70,3 +70,23 @@ signal vec_rlane_data  = memory[vec + 18];   # where its value shows up
 # `vec_bcast` — `frame*k1 + k2` in one move, which is the shape every
 # coordinate seed has. Sharing one carrier would serialise those into two.
 signal vec_bcast2 = memory[vec + 19];
+
+# -- the decoder's own carriers (v10_vec_decoder.fnet) -----------------------
+# The four select/erase lines have a SECOND driver: the vector-zone instruction
+# decoder, which fetches a private second word per instruction and drives these
+# rows straight out of it. Every gate in the zone ORs the two paths (the
+# register cell ANDs the two erase tests), so both control planes coexist and
+# the memory-mapped one keeps working exactly as before.
+#
+# WHY THESE ARE MEMORY ROWS AND NOT EXCLUDED CARRIERS. They ride the green
+# memory bus, because that is the connector every gate's condition already
+# reads. An excluded carrier would work electrically — but excluding a signal
+# COMPACTS the design's address space, which changes every address, the lane
+# count, and therefore the mandelbrot expectations. Reserving four addresses
+# instead costs nothing and leaves the space (and the picture) untouched.
+# A program must never write them; they are hardware outputs, read-only by the
+# same convention as `vred_sum` and `vec_rlane_data`.
+signal vdec_rsel  = memory[vec + 20];   # R from the instruction word (latched)
+signal vdec_ssel  = memory[vec + 21];   # S from the instruction word (latched)
+signal vdec_wsel  = memory[vec + 22];   # W from the instruction word (one tick)
+signal vdec_erase = memory[vec + 23];   # erase from the word   (one tick)

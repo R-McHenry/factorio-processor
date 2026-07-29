@@ -28,64 +28,64 @@
       "dy": 10.0
     },
     "entity_number_to_unit_number": {
-      "1": 140626,
-      "2": 140633,
-      "3": 140634,
-      "4": 140594,
-      "5": 140615,
-      "6": 140591,
-      "7": 140611,
-      "8": 140627,
-      "9": 140604,
-      "10": 140629,
-      "11": 140613,
-      "12": 140628,
-      "13": 140617,
-      "14": 140631,
-      "15": 140616,
-      "16": 140630,
-      "17": 140621,
-      "18": 140632,
-      "19": 140620,
-      "20": 140598,
-      "21": 140619,
-      "22": 140602,
-      "23": 140618,
-      "24": 140593,
-      "25": 140601,
-      "26": 140612,
-      "27": 140625,
-      "28": 140597,
-      "29": 140614,
-      "30": 140624,
-      "31": 140623,
-      "32": 140605,
-      "33": 140592,
-      "34": 140607,
-      "35": 140596,
-      "36": 140606,
-      "37": 140595,
-      "38": 140609,
-      "39": 140600,
-      "40": 140608,
-      "41": 140599,
-      "42": 140610,
-      "43": 140603,
-      "44": 140622
+      "1": 146290,
+      "2": 146297,
+      "3": 146298,
+      "4": 146258,
+      "5": 146279,
+      "6": 146255,
+      "7": 146275,
+      "8": 146291,
+      "9": 146268,
+      "10": 146293,
+      "11": 146277,
+      "12": 146292,
+      "13": 146281,
+      "14": 146295,
+      "15": 146280,
+      "16": 146294,
+      "17": 146285,
+      "18": 146296,
+      "19": 146284,
+      "20": 146262,
+      "21": 146283,
+      "22": 146266,
+      "23": 146282,
+      "24": 146257,
+      "25": 146265,
+      "26": 146276,
+      "27": 146289,
+      "28": 146261,
+      "29": 146278,
+      "30": 146288,
+      "31": 146287,
+      "32": 146269,
+      "33": 146256,
+      "34": 146271,
+      "35": 146260,
+      "36": 146270,
+      "37": 146259,
+      "38": 146273,
+      "39": 146264,
+      "40": 146272,
+      "41": 146263,
+      "42": 146274,
+      "43": 146267,
+      "44": 146286
     },
     "driver_units": {
-      "scalar_membus": 140626,
-      "operand_a1": 140633,
-      "operand_b1": 140634,
-      "operand_a2": 140594,
-      "operand_b2": 140615,
-      "operand_a2g": 140591,
-      "operand_b2r": 140611
+      "scalar_membus": 146290,
+      "operand_a1": 146297,
+      "operand_b1": 146298,
+      "operand_a2": 146258,
+      "operand_b2": 146279,
+      "operand_a2g": 146255,
+      "operand_b2r": 146275
     },
     "output_probes": [
       {
         "name": "vbus",
-        "unit": 140622,
+        "unit": 146286,
         "wire": "red"
       }
     ],
@@ -93,7 +93,7 @@
   },
   "timeline": [
     {
-      "tick": 898064,
+      "tick": 916194,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -101,7 +101,7 @@
       "step_name": "pre_dead_1"
     },
     {
-      "tick": 898065,
+      "tick": 916195,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -109,7 +109,7 @@
       "step_name": "pre_dead_2"
     },
     {
-      "tick": 898066,
+      "tick": 916196,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 2.0
@@ -139,7 +139,7 @@
       "step_name": "park_operands_no_select"
     },
     {
-      "tick": 898067,
+      "tick": 916197,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 2.0
@@ -169,7 +169,7 @@
       "step_name": "park_operands_no_select"
     },
     {
-      "tick": 898068,
+      "tick": 916198,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 2.0
@@ -199,7 +199,7 @@
       "step_name": "park_operands_no_select"
     },
     {
-      "tick": 898069,
+      "tick": 916199,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 2.0
@@ -229,7 +229,7 @@
       "step_name": "park_operands_no_select"
     },
     {
-      "tick": 898070,
+      "tick": 916200,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 2.0
@@ -259,7 +259,7 @@
       "step_name": "park_operands_no_select"
     },
     {
-      "tick": 898071,
+      "tick": 916201,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 2.0
@@ -289,7 +289,7 @@
       "step_name": "park_operands_no_select"
     },
     {
-      "tick": 898072,
+      "tick": 916202,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 17.0
@@ -319,7 +319,7 @@
       "step_name": "read_a_mul"
     },
     {
-      "tick": 898073,
+      "tick": 916203,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 17.0
@@ -354,7 +354,7 @@
       "step_name": "read_a_mul"
     },
     {
-      "tick": 898074,
+      "tick": 916204,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 17.0
@@ -389,7 +389,7 @@
       "step_name": "read_a_mul"
     },
     {
-      "tick": 898075,
+      "tick": 916205,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 17.0
@@ -424,7 +424,7 @@
       "step_name": "read_a_mul"
     },
     {
-      "tick": 898076,
+      "tick": 916206,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 17.0
@@ -459,7 +459,7 @@
       "step_name": "read_a_mul"
     },
     {
-      "tick": 898077,
+      "tick": 916207,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 17.0
@@ -494,7 +494,7 @@
       "step_name": "read_a_mul"
     },
     {
-      "tick": 898078,
+      "tick": 916208,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 18.0
@@ -529,44 +529,7 @@
       "step_name": "read_a_sub_keeps_one_sided_lanes"
     },
     {
-      "tick": 898079,
-      "stimulus": {
-        "scalar_membus": {
-          "signal-alert": 18.0
-        },
-        "operand_a1": {
-          "signal-0": 9.0
-        },
-        "operand_b1": {
-          "signal-0": 6.0
-        },
-        "operand_a2": {
-          "signal-0": 7.0
-        },
-        "operand_b2": {
-          "signal-0": 2.0
-        },
-        "operand_a2g": {
-          "signal-0": 7.0
-        },
-        "operand_b2r": {
-          "signal-0": 2.0
-        }
-      },
-      "observed_by_probe": {
-        "vbus": {
-          "signal-0": 8.0,
-          "signal-0~uncommon": -1.0,
-          "signal-0~rare": 9.0,
-          "signal-0~epic": -6.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 2,
-      "step_name": "read_a_sub_keeps_one_sided_lanes"
-    },
-    {
-      "tick": 898080,
+      "tick": 916209,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 18.0
@@ -598,12 +561,12 @@
           "signal-0~epic": -6.0
         }
       },
-      "phase": "stimulus",
+      "phase": "settle",
       "step_index": 2,
       "step_name": "read_a_sub_keeps_one_sided_lanes"
     },
     {
-      "tick": 898081,
+      "tick": 916210,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 18.0
@@ -640,7 +603,7 @@
       "step_name": "read_a_sub_keeps_one_sided_lanes"
     },
     {
-      "tick": 898082,
+      "tick": 916211,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 18.0
@@ -677,7 +640,7 @@
       "step_name": "read_a_sub_keeps_one_sided_lanes"
     },
     {
-      "tick": 898083,
+      "tick": 916212,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 18.0
@@ -714,7 +677,44 @@
       "step_name": "read_a_sub_keeps_one_sided_lanes"
     },
     {
-      "tick": 898084,
+      "tick": 916213,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 18.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 8.0,
+          "signal-0~uncommon": -1.0,
+          "signal-0~rare": 9.0,
+          "signal-0~epic": -6.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "read_a_sub_keeps_one_sided_lanes"
+    },
+    {
+      "tick": 916214,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 19.0
@@ -751,44 +751,7 @@
       "step_name": "read_a_max"
     },
     {
-      "tick": 898085,
-      "stimulus": {
-        "scalar_membus": {
-          "signal-alert": 19.0
-        },
-        "operand_a1": {
-          "signal-0": 9.0
-        },
-        "operand_b1": {
-          "signal-0": 6.0
-        },
-        "operand_a2": {
-          "signal-0": 7.0
-        },
-        "operand_b2": {
-          "signal-0": 2.0
-        },
-        "operand_a2g": {
-          "signal-0": 7.0
-        },
-        "operand_b2r": {
-          "signal-0": 2.0
-        }
-      },
-      "observed_by_probe": {
-        "vbus": {
-          "signal-0": 12.0,
-          "signal-0~uncommon": 6.0,
-          "signal-0~rare": 9.0,
-          "signal-0~epic": 6.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 3,
-      "step_name": "read_a_max"
-    },
-    {
-      "tick": 898086,
+      "tick": 916215,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 19.0
@@ -820,12 +783,12 @@
           "signal-0~epic": 6.0
         }
       },
-      "phase": "stimulus",
+      "phase": "settle",
       "step_index": 3,
       "step_name": "read_a_max"
     },
     {
-      "tick": 898087,
+      "tick": 916216,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 19.0
@@ -862,7 +825,7 @@
       "step_name": "read_a_max"
     },
     {
-      "tick": 898088,
+      "tick": 916217,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 19.0
@@ -899,7 +862,7 @@
       "step_name": "read_a_max"
     },
     {
-      "tick": 898089,
+      "tick": 916218,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 19.0
@@ -936,7 +899,44 @@
       "step_name": "read_a_max"
     },
     {
-      "tick": 898090,
+      "tick": 916219,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 19.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 12.0,
+          "signal-0~uncommon": 6.0,
+          "signal-0~rare": 9.0,
+          "signal-0~epic": 6.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "read_a_max"
+    },
+    {
+      "tick": 916220,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 21.0
@@ -973,41 +973,7 @@
       "step_name": "read_a_div"
     },
     {
-      "tick": 898091,
-      "stimulus": {
-        "scalar_membus": {
-          "signal-alert": 21.0
-        },
-        "operand_a1": {
-          "signal-0": 9.0
-        },
-        "operand_b1": {
-          "signal-0": 6.0
-        },
-        "operand_a2": {
-          "signal-0": 7.0
-        },
-        "operand_b2": {
-          "signal-0": 2.0
-        },
-        "operand_a2g": {
-          "signal-0": 7.0
-        },
-        "operand_b2r": {
-          "signal-0": 2.0
-        }
-      },
-      "observed_by_probe": {
-        "vbus": {
-          "signal-0": 3.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 4,
-      "step_name": "read_a_div"
-    },
-    {
-      "tick": 898092,
+      "tick": 916221,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 21.0
@@ -1036,12 +1002,12 @@
           "signal-0": 3.0
         }
       },
-      "phase": "stimulus",
+      "phase": "settle",
       "step_index": 4,
       "step_name": "read_a_div"
     },
     {
-      "tick": 898093,
+      "tick": 916222,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 21.0
@@ -1075,7 +1041,7 @@
       "step_name": "read_a_div"
     },
     {
-      "tick": 898094,
+      "tick": 916223,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 21.0
@@ -1109,7 +1075,7 @@
       "step_name": "read_a_div"
     },
     {
-      "tick": 898095,
+      "tick": 916224,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 21.0
@@ -1143,7 +1109,41 @@
       "step_name": "read_a_div"
     },
     {
-      "tick": 898096,
+      "tick": 916225,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 21.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 3.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "read_a_div"
+    },
+    {
+      "tick": 916226,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 22.0
@@ -1177,41 +1177,7 @@
       "step_name": "read_a_mod"
     },
     {
-      "tick": 898097,
-      "stimulus": {
-        "scalar_membus": {
-          "signal-alert": 22.0
-        },
-        "operand_a1": {
-          "signal-0": 9.0
-        },
-        "operand_b1": {
-          "signal-0": 6.0
-        },
-        "operand_a2": {
-          "signal-0": 7.0
-        },
-        "operand_b2": {
-          "signal-0": 2.0
-        },
-        "operand_a2g": {
-          "signal-0": 7.0
-        },
-        "operand_b2r": {
-          "signal-0": 2.0
-        }
-      },
-      "observed_by_probe": {
-        "vbus": {
-          "signal-0~uncommon": 5.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 5,
-      "step_name": "read_a_mod"
-    },
-    {
-      "tick": 898098,
+      "tick": 916227,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 22.0
@@ -1240,12 +1206,12 @@
           "signal-0~uncommon": 5.0
         }
       },
-      "phase": "stimulus",
+      "phase": "settle",
       "step_index": 5,
       "step_name": "read_a_mod"
     },
     {
-      "tick": 898099,
+      "tick": 916228,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 22.0
@@ -1279,7 +1245,7 @@
       "step_name": "read_a_mod"
     },
     {
-      "tick": 898100,
+      "tick": 916229,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 22.0
@@ -1313,7 +1279,7 @@
       "step_name": "read_a_mod"
     },
     {
-      "tick": 898101,
+      "tick": 916230,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 22.0
@@ -1347,7 +1313,41 @@
       "step_name": "read_a_mod"
     },
     {
-      "tick": 898102,
+      "tick": 916231,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 22.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "read_a_mod"
+    },
+    {
+      "tick": 916232,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 25.0
@@ -1381,41 +1381,7 @@
       "step_name": "read_b_mul"
     },
     {
-      "tick": 898103,
-      "stimulus": {
-        "scalar_membus": {
-          "signal-alert": 25.0
-        },
-        "operand_a1": {
-          "signal-0": 9.0
-        },
-        "operand_b1": {
-          "signal-0": 6.0
-        },
-        "operand_a2": {
-          "signal-0": 7.0
-        },
-        "operand_b2": {
-          "signal-0": 2.0
-        },
-        "operand_a2g": {
-          "signal-0": 7.0
-        },
-        "operand_b2r": {
-          "signal-0": 2.0
-        }
-      },
-      "observed_by_probe": {
-        "vbus": {
-          "signal-0": 14.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 6,
-      "step_name": "read_b_mul"
-    },
-    {
-      "tick": 898104,
+      "tick": 916233,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 25.0
@@ -1444,12 +1410,12 @@
           "signal-0": 14.0
         }
       },
-      "phase": "stimulus",
+      "phase": "settle",
       "step_index": 6,
       "step_name": "read_b_mul"
     },
     {
-      "tick": 898105,
+      "tick": 916234,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 25.0
@@ -1483,7 +1449,7 @@
       "step_name": "read_b_mul"
     },
     {
-      "tick": 898106,
+      "tick": 916235,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 25.0
@@ -1517,7 +1483,7 @@
       "step_name": "read_b_mul"
     },
     {
-      "tick": 898107,
+      "tick": 916236,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 25.0
@@ -1551,7 +1517,41 @@
       "step_name": "read_b_mul"
     },
     {
-      "tick": 898108,
+      "tick": 916237,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 25.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 14.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "read_b_mul"
+    },
+    {
+      "tick": 916238,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 26.0
@@ -1585,41 +1585,7 @@
       "step_name": "read_b_sub"
     },
     {
-      "tick": 898109,
-      "stimulus": {
-        "scalar_membus": {
-          "signal-alert": 26.0
-        },
-        "operand_a1": {
-          "signal-0": 9.0
-        },
-        "operand_b1": {
-          "signal-0": 6.0
-        },
-        "operand_a2": {
-          "signal-0": 7.0
-        },
-        "operand_b2": {
-          "signal-0": 2.0
-        },
-        "operand_a2g": {
-          "signal-0": 7.0
-        },
-        "operand_b2r": {
-          "signal-0": 2.0
-        }
-      },
-      "observed_by_probe": {
-        "vbus": {
-          "signal-0": 5.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 7,
-      "step_name": "read_b_sub"
-    },
-    {
-      "tick": 898110,
+      "tick": 916239,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 26.0
@@ -1648,12 +1614,12 @@
           "signal-0": 5.0
         }
       },
-      "phase": "stimulus",
+      "phase": "settle",
       "step_index": 7,
       "step_name": "read_b_sub"
     },
     {
-      "tick": 898111,
+      "tick": 916240,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 26.0
@@ -1687,7 +1653,7 @@
       "step_name": "read_b_sub"
     },
     {
-      "tick": 898112,
+      "tick": 916241,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 26.0
@@ -1721,7 +1687,7 @@
       "step_name": "read_b_sub"
     },
     {
-      "tick": 898113,
+      "tick": 916242,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 26.0
@@ -1755,7 +1721,41 @@
       "step_name": "read_b_sub"
     },
     {
-      "tick": 898114,
+      "tick": 916243,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 26.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 5.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 7,
+      "step_name": "read_b_sub"
+    },
+    {
+      "tick": 916244,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 27.0
@@ -1789,41 +1789,7 @@
       "step_name": "read_b_sq_vreg2_squared"
     },
     {
-      "tick": 898115,
-      "stimulus": {
-        "scalar_membus": {
-          "signal-alert": 27.0
-        },
-        "operand_a1": {
-          "signal-0": 9.0
-        },
-        "operand_b1": {
-          "signal-0": 6.0
-        },
-        "operand_a2": {
-          "signal-0": 7.0
-        },
-        "operand_b2": {
-          "signal-0": 2.0
-        },
-        "operand_a2g": {
-          "signal-0": 7.0
-        },
-        "operand_b2r": {
-          "signal-0": 2.0
-        }
-      },
-      "observed_by_probe": {
-        "vbus": {
-          "signal-0": 49.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 8,
-      "step_name": "read_b_sq_vreg2_squared"
-    },
-    {
-      "tick": 898116,
+      "tick": 916245,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 27.0
@@ -1852,12 +1818,12 @@
           "signal-0": 49.0
         }
       },
-      "phase": "stimulus",
+      "phase": "settle",
       "step_index": 8,
       "step_name": "read_b_sq_vreg2_squared"
     },
     {
-      "tick": 898117,
+      "tick": 916246,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 27.0
@@ -1891,7 +1857,7 @@
       "step_name": "read_b_sq_vreg2_squared"
     },
     {
-      "tick": 898118,
+      "tick": 916247,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 27.0
@@ -1925,7 +1891,7 @@
       "step_name": "read_b_sq_vreg2_squared"
     },
     {
-      "tick": 898119,
+      "tick": 916248,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 27.0
@@ -1959,7 +1925,41 @@
       "step_name": "read_b_sq_vreg2_squared"
     },
     {
-      "tick": 898120,
+      "tick": 916249,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 27.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 49.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 8,
+      "step_name": "read_b_sq_vreg2_squared"
+    },
+    {
+      "tick": 916250,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 28.0
@@ -1993,41 +1993,7 @@
       "step_name": "read_b_sqg_vreg3_squared"
     },
     {
-      "tick": 898121,
-      "stimulus": {
-        "scalar_membus": {
-          "signal-alert": 28.0
-        },
-        "operand_a1": {
-          "signal-0": 9.0
-        },
-        "operand_b1": {
-          "signal-0": 6.0
-        },
-        "operand_a2": {
-          "signal-0": 7.0
-        },
-        "operand_b2": {
-          "signal-0": 2.0
-        },
-        "operand_a2g": {
-          "signal-0": 7.0
-        },
-        "operand_b2r": {
-          "signal-0": 2.0
-        }
-      },
-      "observed_by_probe": {
-        "vbus": {
-          "signal-0": 4.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 9,
-      "step_name": "read_b_sqg_vreg3_squared"
-    },
-    {
-      "tick": 898122,
+      "tick": 916251,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 28.0
@@ -2056,12 +2022,12 @@
           "signal-0": 4.0
         }
       },
-      "phase": "stimulus",
+      "phase": "settle",
       "step_index": 9,
       "step_name": "read_b_sqg_vreg3_squared"
     },
     {
-      "tick": 898123,
+      "tick": 916252,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 28.0
@@ -2095,7 +2061,7 @@
       "step_name": "read_b_sqg_vreg3_squared"
     },
     {
-      "tick": 898124,
+      "tick": 916253,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 28.0
@@ -2129,7 +2095,7 @@
       "step_name": "read_b_sqg_vreg3_squared"
     },
     {
-      "tick": 898125,
+      "tick": 916254,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 28.0
@@ -2163,7 +2129,41 @@
       "step_name": "read_b_sqg_vreg3_squared"
     },
     {
-      "tick": 898126,
+      "tick": 916255,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 28.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 9,
+      "step_name": "read_b_sqg_vreg3_squared"
+    },
+    {
+      "tick": 916256,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 29.0
@@ -2197,41 +2197,7 @@
       "step_name": "read_b_sqdiff"
     },
     {
-      "tick": 898127,
-      "stimulus": {
-        "scalar_membus": {
-          "signal-alert": 29.0
-        },
-        "operand_a1": {
-          "signal-0": 9.0
-        },
-        "operand_b1": {
-          "signal-0": 6.0
-        },
-        "operand_a2": {
-          "signal-0": 7.0
-        },
-        "operand_b2": {
-          "signal-0": 2.0
-        },
-        "operand_a2g": {
-          "signal-0": 7.0
-        },
-        "operand_b2r": {
-          "signal-0": 2.0
-        }
-      },
-      "observed_by_probe": {
-        "vbus": {
-          "signal-0": 45.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 10,
-      "step_name": "read_b_sqdiff"
-    },
-    {
-      "tick": 898128,
+      "tick": 916257,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 29.0
@@ -2260,12 +2226,12 @@
           "signal-0": 45.0
         }
       },
-      "phase": "stimulus",
+      "phase": "settle",
       "step_index": 10,
       "step_name": "read_b_sqdiff"
     },
     {
-      "tick": 898129,
+      "tick": 916258,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 29.0
@@ -2299,7 +2265,7 @@
       "step_name": "read_b_sqdiff"
     },
     {
-      "tick": 898130,
+      "tick": 916259,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 29.0
@@ -2333,7 +2299,7 @@
       "step_name": "read_b_sqdiff"
     },
     {
-      "tick": 898131,
+      "tick": 916260,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 29.0
@@ -2367,7 +2333,41 @@
       "step_name": "read_b_sqdiff"
     },
     {
-      "tick": 898132,
+      "tick": 916261,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 29.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 45.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 10,
+      "step_name": "read_b_sqdiff"
+    },
+    {
+      "tick": 916262,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 28.0
@@ -2401,7 +2401,7 @@
       "step_name": "the_two_squares_sum_on_the_bus_free_r2"
     },
     {
-      "tick": 898133,
+      "tick": 916263,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 28.0
@@ -2435,7 +2435,7 @@
       "step_name": "the_two_squares_sum_on_the_bus_free_r2"
     },
     {
-      "tick": 898134,
+      "tick": 916264,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 28.0
@@ -2469,7 +2469,7 @@
       "step_name": "the_two_squares_sum_on_the_bus_free_r2"
     },
     {
-      "tick": 898135,
+      "tick": 916265,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 28.0
@@ -2503,7 +2503,7 @@
       "step_name": "the_two_squares_sum_on_the_bus_free_r2"
     },
     {
-      "tick": 898136,
+      "tick": 916266,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 28.0
@@ -2537,7 +2537,7 @@
       "step_name": "the_two_squares_sum_on_the_bus_free_r2"
     },
     {
-      "tick": 898137,
+      "tick": 916267,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 28.0
@@ -2571,7 +2571,7 @@
       "step_name": "the_two_squares_sum_on_the_bus_free_r2"
     },
     {
-      "tick": 898138,
+      "tick": 916268,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 33.0
@@ -2605,43 +2605,7 @@
       "step_name": "read_vs_mul_and_no_control_row_leak"
     },
     {
-      "tick": 898139,
-      "stimulus": {
-        "scalar_membus": {
-          "signal-alert": 33.0
-        },
-        "operand_a1": {
-          "signal-0": 9.0
-        },
-        "operand_b1": {
-          "signal-0": 6.0
-        },
-        "operand_a2": {
-          "signal-0": 7.0
-        },
-        "operand_b2": {
-          "signal-0": 2.0
-        },
-        "operand_a2g": {
-          "signal-0": 7.0
-        },
-        "operand_b2r": {
-          "signal-0": 2.0
-        }
-      },
-      "observed_by_probe": {
-        "vbus": {
-          "signal-0": 24.0,
-          "signal-0~uncommon": 10.0,
-          "signal-0~rare": 18.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 12,
-      "step_name": "read_vs_mul_and_no_control_row_leak"
-    },
-    {
-      "tick": 898140,
+      "tick": 916269,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 33.0
@@ -2672,12 +2636,12 @@
           "signal-0~rare": 18.0
         }
       },
-      "phase": "stimulus",
+      "phase": "settle",
       "step_index": 12,
       "step_name": "read_vs_mul_and_no_control_row_leak"
     },
     {
-      "tick": 898141,
+      "tick": 916270,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 33.0
@@ -2713,7 +2677,7 @@
       "step_name": "read_vs_mul_and_no_control_row_leak"
     },
     {
-      "tick": 898142,
+      "tick": 916271,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 33.0
@@ -2749,7 +2713,7 @@
       "step_name": "read_vs_mul_and_no_control_row_leak"
     },
     {
-      "tick": 898143,
+      "tick": 916272,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 33.0
@@ -2785,7 +2749,43 @@
       "step_name": "read_vs_mul_and_no_control_row_leak"
     },
     {
-      "tick": 898144,
+      "tick": 916273,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 33.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 24.0,
+          "signal-0~uncommon": 10.0,
+          "signal-0~rare": 18.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 12,
+      "step_name": "read_vs_mul_and_no_control_row_leak"
+    },
+    {
+      "tick": 916274,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 35.0
@@ -2821,43 +2821,7 @@
       "step_name": "read_vs_sub"
     },
     {
-      "tick": 898145,
-      "stimulus": {
-        "scalar_membus": {
-          "signal-alert": 35.0
-        },
-        "operand_a1": {
-          "signal-0": 9.0
-        },
-        "operand_b1": {
-          "signal-0": 6.0
-        },
-        "operand_a2": {
-          "signal-0": 7.0
-        },
-        "operand_b2": {
-          "signal-0": 2.0
-        },
-        "operand_a2g": {
-          "signal-0": 7.0
-        },
-        "operand_b2r": {
-          "signal-0": 2.0
-        }
-      },
-      "observed_by_probe": {
-        "vbus": {
-          "signal-0": 10.0,
-          "signal-0~uncommon": 3.0,
-          "signal-0~rare": 7.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 13,
-      "step_name": "read_vs_sub"
-    },
-    {
-      "tick": 898146,
+      "tick": 916275,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 35.0
@@ -2888,12 +2852,12 @@
           "signal-0~rare": 7.0
         }
       },
-      "phase": "stimulus",
+      "phase": "settle",
       "step_index": 13,
       "step_name": "read_vs_sub"
     },
     {
-      "tick": 898147,
+      "tick": 916276,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 35.0
@@ -2929,7 +2893,7 @@
       "step_name": "read_vs_sub"
     },
     {
-      "tick": 898148,
+      "tick": 916277,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 35.0
@@ -2965,7 +2929,7 @@
       "step_name": "read_vs_sub"
     },
     {
-      "tick": 898149,
+      "tick": 916278,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 35.0
@@ -3001,7 +2965,43 @@
       "step_name": "read_vs_sub"
     },
     {
-      "tick": 898150,
+      "tick": 916279,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 35.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 10.0,
+          "signal-0~uncommon": 3.0,
+          "signal-0~rare": 7.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 13,
+      "step_name": "read_vs_sub"
+    },
+    {
+      "tick": 916280,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 36.0
@@ -3037,43 +3037,7 @@
       "step_name": "read_vs_div"
     },
     {
-      "tick": 898151,
-      "stimulus": {
-        "scalar_membus": {
-          "signal-alert": 36.0
-        },
-        "operand_a1": {
-          "signal-0": 9.0
-        },
-        "operand_b1": {
-          "signal-0": 6.0
-        },
-        "operand_a2": {
-          "signal-0": 7.0
-        },
-        "operand_b2": {
-          "signal-0": 2.0
-        },
-        "operand_a2g": {
-          "signal-0": 7.0
-        },
-        "operand_b2r": {
-          "signal-0": 2.0
-        }
-      },
-      "observed_by_probe": {
-        "vbus": {
-          "signal-0": 6.0,
-          "signal-0~uncommon": 2.0,
-          "signal-0~rare": 4.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 14,
-      "step_name": "read_vs_div"
-    },
-    {
-      "tick": 898152,
+      "tick": 916281,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 36.0
@@ -3104,12 +3068,12 @@
           "signal-0~rare": 4.0
         }
       },
-      "phase": "stimulus",
+      "phase": "settle",
       "step_index": 14,
       "step_name": "read_vs_div"
     },
     {
-      "tick": 898153,
+      "tick": 916282,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 36.0
@@ -3145,7 +3109,7 @@
       "step_name": "read_vs_div"
     },
     {
-      "tick": 898154,
+      "tick": 916283,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 36.0
@@ -3181,7 +3145,7 @@
       "step_name": "read_vs_div"
     },
     {
-      "tick": 898155,
+      "tick": 916284,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 36.0
@@ -3217,7 +3181,43 @@
       "step_name": "read_vs_div"
     },
     {
-      "tick": 898156,
+      "tick": 916285,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 36.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 6.0,
+          "signal-0~uncommon": 2.0,
+          "signal-0~rare": 4.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 14,
+      "step_name": "read_vs_div"
+    },
+    {
+      "tick": 916286,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 37.0
@@ -3253,42 +3253,7 @@
       "step_name": "read_vs_mod"
     },
     {
-      "tick": 898157,
-      "stimulus": {
-        "scalar_membus": {
-          "signal-alert": 37.0
-        },
-        "operand_a1": {
-          "signal-0": 9.0
-        },
-        "operand_b1": {
-          "signal-0": 6.0
-        },
-        "operand_a2": {
-          "signal-0": 7.0
-        },
-        "operand_b2": {
-          "signal-0": 2.0
-        },
-        "operand_a2g": {
-          "signal-0": 7.0
-        },
-        "operand_b2r": {
-          "signal-0": 2.0
-        }
-      },
-      "observed_by_probe": {
-        "vbus": {
-          "signal-0~uncommon": 1.0,
-          "signal-0~rare": 1.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 15,
-      "step_name": "read_vs_mod"
-    },
-    {
-      "tick": 898158,
+      "tick": 916287,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 37.0
@@ -3318,12 +3283,12 @@
           "signal-0~rare": 1.0
         }
       },
-      "phase": "stimulus",
+      "phase": "settle",
       "step_index": 15,
       "step_name": "read_vs_mod"
     },
     {
-      "tick": 898159,
+      "tick": 916288,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 37.0
@@ -3358,7 +3323,7 @@
       "step_name": "read_vs_mod"
     },
     {
-      "tick": 898160,
+      "tick": 916289,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 37.0
@@ -3393,7 +3358,7 @@
       "step_name": "read_vs_mod"
     },
     {
-      "tick": 898161,
+      "tick": 916290,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 37.0
@@ -3428,7 +3393,42 @@
       "step_name": "read_vs_mod"
     },
     {
-      "tick": 898162,
+      "tick": 916291,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 37.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0~uncommon": 1.0,
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 15,
+      "step_name": "read_vs_mod"
+    },
+    {
+      "tick": 916292,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 38.0
@@ -3463,43 +3463,7 @@
       "step_name": "read_vs_gt_escape_mask"
     },
     {
-      "tick": 898163,
-      "stimulus": {
-        "scalar_membus": {
-          "signal-alert": 38.0
-        },
-        "operand_a1": {
-          "signal-0": 9.0
-        },
-        "operand_b1": {
-          "signal-0": 6.0
-        },
-        "operand_a2": {
-          "signal-0": 7.0
-        },
-        "operand_b2": {
-          "signal-0": 2.0
-        },
-        "operand_a2g": {
-          "signal-0": 7.0
-        },
-        "operand_b2r": {
-          "signal-0": 2.0
-        }
-      },
-      "observed_by_probe": {
-        "vbus": {
-          "signal-0": 1.0,
-          "signal-0~uncommon": 1.0,
-          "signal-0~rare": 1.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 16,
-      "step_name": "read_vs_gt_escape_mask"
-    },
-    {
-      "tick": 898164,
+      "tick": 916293,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 38.0
@@ -3526,15 +3490,16 @@
       "observed_by_probe": {
         "vbus": {
           "signal-0": 1.0,
+          "signal-0~uncommon": 1.0,
           "signal-0~rare": 1.0
         }
       },
-      "phase": "stimulus",
+      "phase": "settle",
       "step_index": 16,
       "step_name": "read_vs_gt_escape_mask"
     },
     {
-      "tick": 898165,
+      "tick": 916294,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 38.0
@@ -3569,7 +3534,7 @@
       "step_name": "read_vs_gt_escape_mask"
     },
     {
-      "tick": 898166,
+      "tick": 916295,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 38.0
@@ -3604,7 +3569,7 @@
       "step_name": "read_vs_gt_escape_mask"
     },
     {
-      "tick": 898167,
+      "tick": 916296,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 38.0
@@ -3639,7 +3604,42 @@
       "step_name": "read_vs_gt_escape_mask"
     },
     {
-      "tick": 898168,
+      "tick": 916297,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 38.0
+        },
+        "operand_a1": {
+          "signal-0": 9.0
+        },
+        "operand_b1": {
+          "signal-0": 6.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": 1.0,
+          "signal-0~rare": 1.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 16,
+      "step_name": "read_vs_gt_escape_mask"
+    },
+    {
+      "tick": 916298,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 25.0
@@ -3674,7 +3674,7 @@
       "step_name": "two_op_outputs_sum_on_the_bus"
     },
     {
-      "tick": 898169,
+      "tick": 916299,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 25.0
@@ -3709,7 +3709,7 @@
       "step_name": "two_op_outputs_sum_on_the_bus"
     },
     {
-      "tick": 898170,
+      "tick": 916300,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 25.0
@@ -3744,7 +3744,7 @@
       "step_name": "two_op_outputs_sum_on_the_bus"
     },
     {
-      "tick": 898171,
+      "tick": 916301,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 25.0
@@ -3779,7 +3779,7 @@
       "step_name": "two_op_outputs_sum_on_the_bus"
     },
     {
-      "tick": 898172,
+      "tick": 916302,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 25.0
@@ -3814,7 +3814,7 @@
       "step_name": "two_op_outputs_sum_on_the_bus"
     },
     {
-      "tick": 898173,
+      "tick": 916303,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 25.0
@@ -3849,7 +3849,7 @@
       "step_name": "two_op_outputs_sum_on_the_bus"
     },
     {
-      "tick": 898174,
+      "tick": 916304,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 17.0
@@ -3884,7 +3884,7 @@
       "step_name": "negative_operand_multiplies"
     },
     {
-      "tick": 898175,
+      "tick": 916305,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 17.0
@@ -3919,41 +3919,7 @@
       "step_name": "negative_operand_multiplies"
     },
     {
-      "tick": 898176,
-      "stimulus": {
-        "scalar_membus": {
-          "signal-alert": 17.0
-        },
-        "operand_a1": {
-          "signal-0": -3.0
-        },
-        "operand_b1": {
-          "signal-0": 4.0
-        },
-        "operand_a2": {
-          "signal-0": 7.0
-        },
-        "operand_b2": {
-          "signal-0": 2.0
-        },
-        "operand_a2g": {
-          "signal-0": 7.0
-        },
-        "operand_b2r": {
-          "signal-0": 2.0
-        }
-      },
-      "observed_by_probe": {
-        "vbus": {
-          "signal-0": -12.0
-        }
-      },
-      "phase": "stimulus",
-      "step_index": 18,
-      "step_name": "negative_operand_multiplies"
-    },
-    {
-      "tick": 898177,
+      "tick": 916306,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 17.0
@@ -3987,7 +3953,7 @@
       "step_name": "negative_operand_multiplies"
     },
     {
-      "tick": 898178,
+      "tick": 916307,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 17.0
@@ -4021,7 +3987,7 @@
       "step_name": "negative_operand_multiplies"
     },
     {
-      "tick": 898179,
+      "tick": 916308,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 17.0
@@ -4055,7 +4021,41 @@
       "step_name": "negative_operand_multiplies"
     },
     {
-      "tick": 898180,
+      "tick": 916309,
+      "stimulus": {
+        "scalar_membus": {
+          "signal-alert": 17.0
+        },
+        "operand_a1": {
+          "signal-0": -3.0
+        },
+        "operand_b1": {
+          "signal-0": 4.0
+        },
+        "operand_a2": {
+          "signal-0": 7.0
+        },
+        "operand_b2": {
+          "signal-0": 2.0
+        },
+        "operand_a2g": {
+          "signal-0": 7.0
+        },
+        "operand_b2r": {
+          "signal-0": 2.0
+        }
+      },
+      "observed_by_probe": {
+        "vbus": {
+          "signal-0": -12.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 18,
+      "step_name": "negative_operand_multiplies"
+    },
+    {
+      "tick": 916310,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 36.0
@@ -4089,7 +4089,7 @@
       "step_name": "negative_division_truncates_toward_zero"
     },
     {
-      "tick": 898181,
+      "tick": 916311,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 36.0
@@ -4123,7 +4123,7 @@
       "step_name": "negative_division_truncates_toward_zero"
     },
     {
-      "tick": 898182,
+      "tick": 916312,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 36.0
@@ -4159,7 +4159,7 @@
       "step_name": "negative_division_truncates_toward_zero"
     },
     {
-      "tick": 898183,
+      "tick": 916313,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 36.0
@@ -4195,7 +4195,7 @@
       "step_name": "negative_division_truncates_toward_zero"
     },
     {
-      "tick": 898184,
+      "tick": 916314,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 36.0
@@ -4231,7 +4231,7 @@
       "step_name": "negative_division_truncates_toward_zero"
     },
     {
-      "tick": 898185,
+      "tick": 916315,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 36.0
@@ -4267,7 +4267,7 @@
       "step_name": "negative_division_truncates_toward_zero"
     },
     {
-      "tick": 898186,
+      "tick": 916316,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 37.0
@@ -4303,7 +4303,7 @@
       "step_name": "negative_modulo_takes_the_dividend_sign"
     },
     {
-      "tick": 898187,
+      "tick": 916317,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 37.0
@@ -4339,7 +4339,7 @@
       "step_name": "negative_modulo_takes_the_dividend_sign"
     },
     {
-      "tick": 898188,
+      "tick": 916318,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 37.0
@@ -4375,7 +4375,7 @@
       "step_name": "negative_modulo_takes_the_dividend_sign"
     },
     {
-      "tick": 898189,
+      "tick": 916319,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 37.0
@@ -4411,7 +4411,7 @@
       "step_name": "negative_modulo_takes_the_dividend_sign"
     },
     {
-      "tick": 898190,
+      "tick": 916320,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 37.0
@@ -4447,7 +4447,7 @@
       "step_name": "negative_modulo_takes_the_dividend_sign"
     },
     {
-      "tick": 898191,
+      "tick": 916321,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 37.0
@@ -4483,7 +4483,7 @@
       "step_name": "negative_modulo_takes_the_dividend_sign"
     },
     {
-      "tick": 898192,
+      "tick": 916322,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 29.0
@@ -4519,7 +4519,7 @@
       "step_name": "squares_of_negatives_are_positive"
     },
     {
-      "tick": 898193,
+      "tick": 916323,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 29.0
@@ -4553,7 +4553,7 @@
       "step_name": "squares_of_negatives_are_positive"
     },
     {
-      "tick": 898194,
+      "tick": 916324,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 29.0
@@ -4587,7 +4587,7 @@
       "step_name": "squares_of_negatives_are_positive"
     },
     {
-      "tick": 898195,
+      "tick": 916325,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 29.0
@@ -4621,7 +4621,7 @@
       "step_name": "squares_of_negatives_are_positive"
     },
     {
-      "tick": 898196,
+      "tick": 916326,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 29.0
@@ -4655,7 +4655,7 @@
       "step_name": "squares_of_negatives_are_positive"
     },
     {
-      "tick": 898197,
+      "tick": 916327,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 29.0
@@ -4689,7 +4689,7 @@
       "step_name": "squares_of_negatives_are_positive"
     },
     {
-      "tick": 898198,
+      "tick": 916328,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 28.0
@@ -4723,7 +4723,7 @@
       "step_name": "squares_of_negatives_sum"
     },
     {
-      "tick": 898199,
+      "tick": 916329,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 28.0
@@ -4757,7 +4757,7 @@
       "step_name": "squares_of_negatives_sum"
     },
     {
-      "tick": 898200,
+      "tick": 916330,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 28.0
@@ -4791,7 +4791,7 @@
       "step_name": "squares_of_negatives_sum"
     },
     {
-      "tick": 898201,
+      "tick": 916331,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 28.0
@@ -4825,7 +4825,7 @@
       "step_name": "squares_of_negatives_sum"
     },
     {
-      "tick": 898202,
+      "tick": 916332,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 28.0
@@ -4859,7 +4859,7 @@
       "step_name": "squares_of_negatives_sum"
     },
     {
-      "tick": 898203,
+      "tick": 916333,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 28.0
@@ -4893,7 +4893,7 @@
       "step_name": "squares_of_negatives_sum"
     },
     {
-      "tick": 898204,
+      "tick": 916334,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 20.0
@@ -4927,7 +4927,7 @@
       "step_name": "read_a_min_collapses_one_sided_lanes"
     },
     {
-      "tick": 898205,
+      "tick": 916335,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 20.0
@@ -4962,7 +4962,7 @@
       "step_name": "read_a_min_collapses_one_sided_lanes"
     },
     {
-      "tick": 898206,
+      "tick": 916336,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 20.0
@@ -4997,7 +4997,7 @@
       "step_name": "read_a_min_collapses_one_sided_lanes"
     },
     {
-      "tick": 898207,
+      "tick": 916337,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 20.0
@@ -5032,7 +5032,7 @@
       "step_name": "read_a_min_collapses_one_sided_lanes"
     },
     {
-      "tick": 898208,
+      "tick": 916338,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 20.0
@@ -5067,7 +5067,7 @@
       "step_name": "read_a_min_collapses_one_sided_lanes"
     },
     {
-      "tick": 898209,
+      "tick": 916339,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 20.0
@@ -5102,7 +5102,7 @@
       "step_name": "read_a_min_collapses_one_sided_lanes"
     },
     {
-      "tick": 898210,
+      "tick": 916340,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 34.0
@@ -5137,7 +5137,7 @@
       "step_name": "read_vs_add"
     },
     {
-      "tick": 898211,
+      "tick": 916341,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 34.0
@@ -5173,7 +5173,7 @@
       "step_name": "read_vs_add"
     },
     {
-      "tick": 898212,
+      "tick": 916342,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 34.0
@@ -5209,7 +5209,7 @@
       "step_name": "read_vs_add"
     },
     {
-      "tick": 898213,
+      "tick": 916343,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 34.0
@@ -5245,7 +5245,7 @@
       "step_name": "read_vs_add"
     },
     {
-      "tick": 898214,
+      "tick": 916344,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 34.0
@@ -5281,7 +5281,7 @@
       "step_name": "read_vs_add"
     },
     {
-      "tick": 898215,
+      "tick": 916345,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 34.0
@@ -5317,7 +5317,7 @@
       "step_name": "read_vs_add"
     },
     {
-      "tick": 898216,
+      "tick": 916346,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 39.0
@@ -5353,7 +5353,7 @@
       "step_name": "read_vs_lt_is_the_complement_of_gt"
     },
     {
-      "tick": 898217,
+      "tick": 916347,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 39.0
@@ -5383,7 +5383,7 @@
       "step_name": "read_vs_lt_is_the_complement_of_gt"
     },
     {
-      "tick": 898218,
+      "tick": 916348,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 39.0
@@ -5417,7 +5417,7 @@
       "step_name": "read_vs_lt_is_the_complement_of_gt"
     },
     {
-      "tick": 898219,
+      "tick": 916349,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 39.0
@@ -5451,7 +5451,7 @@
       "step_name": "read_vs_lt_is_the_complement_of_gt"
     },
     {
-      "tick": 898220,
+      "tick": 916350,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 39.0
@@ -5485,7 +5485,7 @@
       "step_name": "read_vs_lt_is_the_complement_of_gt"
     },
     {
-      "tick": 898221,
+      "tick": 916351,
       "stimulus": {
         "scalar_membus": {
           "signal-alert": 39.0
@@ -5519,7 +5519,7 @@
       "step_name": "read_vs_lt_is_the_complement_of_gt"
     },
     {
-      "tick": 898222,
+      "tick": 916352,
       "stimulus": {
         "operand_a1": {
           "signal-0": 9.0
@@ -5550,7 +5550,7 @@
       "step_name": "no_select_leaves_bus_empty"
     },
     {
-      "tick": 898223,
+      "tick": 916353,
       "stimulus": {
         "operand_a1": {
           "signal-0": 9.0
@@ -5577,7 +5577,7 @@
       "step_name": "no_select_leaves_bus_empty"
     },
     {
-      "tick": 898224,
+      "tick": 916354,
       "stimulus": {
         "operand_a1": {
           "signal-0": 9.0
@@ -5604,7 +5604,7 @@
       "step_name": "no_select_leaves_bus_empty"
     },
     {
-      "tick": 898225,
+      "tick": 916355,
       "stimulus": {
         "operand_a1": {
           "signal-0": 9.0
@@ -5631,7 +5631,7 @@
       "step_name": "no_select_leaves_bus_empty"
     },
     {
-      "tick": 898226,
+      "tick": 916356,
       "stimulus": {
         "operand_a1": {
           "signal-0": 9.0
@@ -5658,7 +5658,7 @@
       "step_name": "no_select_leaves_bus_empty"
     },
     {
-      "tick": 898227,
+      "tick": 916357,
       "stimulus": {
         "operand_a1": {
           "signal-0": 9.0
@@ -5689,7 +5689,7 @@
     {
       "step_index": 0,
       "step_name": "park_operands_no_select",
-      "drive_start_tick": 898065,
+      "drive_start_tick": 916195,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -5699,12 +5699,12 @@
       "observed": {},
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898071
+      "last_sample_tick": 916201
     },
     {
       "step_index": 1,
       "step_name": "read_a_mul",
-      "drive_start_tick": 898071,
+      "drive_start_tick": 916201,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -5719,12 +5719,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898077
+      "last_sample_tick": 916207
     },
     {
       "step_index": 2,
       "step_name": "read_a_sub_keeps_one_sided_lanes",
-      "drive_start_tick": 898077,
+      "drive_start_tick": 916207,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -5741,12 +5741,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898083
+      "last_sample_tick": 916213
     },
     {
       "step_index": 3,
       "step_name": "read_a_max",
-      "drive_start_tick": 898083,
+      "drive_start_tick": 916213,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -5763,12 +5763,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898089
+      "last_sample_tick": 916219
     },
     {
       "step_index": 4,
       "step_name": "read_a_div",
-      "drive_start_tick": 898089,
+      "drive_start_tick": 916219,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -5780,12 +5780,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898095
+      "last_sample_tick": 916225
     },
     {
       "step_index": 5,
       "step_name": "read_a_mod",
-      "drive_start_tick": 898095,
+      "drive_start_tick": 916225,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -5797,12 +5797,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898101
+      "last_sample_tick": 916231
     },
     {
       "step_index": 6,
       "step_name": "read_b_mul",
-      "drive_start_tick": 898101,
+      "drive_start_tick": 916231,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -5813,12 +5813,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898107
+      "last_sample_tick": 916237
     },
     {
       "step_index": 7,
       "step_name": "read_b_sub",
-      "drive_start_tick": 898107,
+      "drive_start_tick": 916237,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -5829,12 +5829,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898113
+      "last_sample_tick": 916243
     },
     {
       "step_index": 8,
       "step_name": "read_b_sq_vreg2_squared",
-      "drive_start_tick": 898113,
+      "drive_start_tick": 916243,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -5845,12 +5845,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898119
+      "last_sample_tick": 916249
     },
     {
       "step_index": 9,
       "step_name": "read_b_sqg_vreg3_squared",
-      "drive_start_tick": 898119,
+      "drive_start_tick": 916249,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -5861,12 +5861,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898125
+      "last_sample_tick": 916255
     },
     {
       "step_index": 10,
       "step_name": "read_b_sqdiff",
-      "drive_start_tick": 898125,
+      "drive_start_tick": 916255,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -5877,12 +5877,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898131
+      "last_sample_tick": 916261
     },
     {
       "step_index": 11,
       "step_name": "the_two_squares_sum_on_the_bus_free_r2",
-      "drive_start_tick": 898131,
+      "drive_start_tick": 916261,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -5893,12 +5893,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898137
+      "last_sample_tick": 916267
     },
     {
       "step_index": 12,
       "step_name": "read_vs_mul_and_no_control_row_leak",
-      "drive_start_tick": 898137,
+      "drive_start_tick": 916267,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -5915,12 +5915,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898143
+      "last_sample_tick": 916273
     },
     {
       "step_index": 13,
       "step_name": "read_vs_sub",
-      "drive_start_tick": 898143,
+      "drive_start_tick": 916273,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -5935,12 +5935,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898149
+      "last_sample_tick": 916279
     },
     {
       "step_index": 14,
       "step_name": "read_vs_div",
-      "drive_start_tick": 898149,
+      "drive_start_tick": 916279,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -5955,12 +5955,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898155
+      "last_sample_tick": 916285
     },
     {
       "step_index": 15,
       "step_name": "read_vs_mod",
-      "drive_start_tick": 898155,
+      "drive_start_tick": 916285,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -5974,12 +5974,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898161
+      "last_sample_tick": 916291
     },
     {
       "step_index": 16,
       "step_name": "read_vs_gt_escape_mask",
-      "drive_start_tick": 898161,
+      "drive_start_tick": 916291,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -5993,12 +5993,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898167
+      "last_sample_tick": 916297
     },
     {
       "step_index": 17,
       "step_name": "two_op_outputs_sum_on_the_bus",
-      "drive_start_tick": 898167,
+      "drive_start_tick": 916297,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -6011,12 +6011,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898173
+      "last_sample_tick": 916303
     },
     {
       "step_index": 18,
       "step_name": "negative_operand_multiplies",
-      "drive_start_tick": 898173,
+      "drive_start_tick": 916303,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -6028,12 +6028,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898179
+      "last_sample_tick": 916309
     },
     {
       "step_index": 19,
       "step_name": "negative_division_truncates_toward_zero",
-      "drive_start_tick": 898179,
+      "drive_start_tick": 916309,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -6048,12 +6048,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898185
+      "last_sample_tick": 916315
     },
     {
       "step_index": 20,
       "step_name": "negative_modulo_takes_the_dividend_sign",
-      "drive_start_tick": 898185,
+      "drive_start_tick": 916315,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -6068,12 +6068,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898191
+      "last_sample_tick": 916321
     },
     {
       "step_index": 21,
       "step_name": "squares_of_negatives_are_positive",
-      "drive_start_tick": 898191,
+      "drive_start_tick": 916321,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -6084,12 +6084,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898197
+      "last_sample_tick": 916327
     },
     {
       "step_index": 22,
       "step_name": "squares_of_negatives_sum",
-      "drive_start_tick": 898197,
+      "drive_start_tick": 916327,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -6100,12 +6100,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898203
+      "last_sample_tick": 916333
     },
     {
       "step_index": 23,
       "step_name": "read_a_min_collapses_one_sided_lanes",
-      "drive_start_tick": 898203,
+      "drive_start_tick": 916333,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -6120,12 +6120,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898209
+      "last_sample_tick": 916339
     },
     {
       "step_index": 24,
       "step_name": "read_vs_add",
-      "drive_start_tick": 898209,
+      "drive_start_tick": 916339,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -6141,12 +6141,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898215
+      "last_sample_tick": 916345
     },
     {
       "step_index": 25,
       "step_name": "read_vs_lt_is_the_complement_of_gt",
-      "drive_start_tick": 898215,
+      "drive_start_tick": 916345,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -6159,12 +6159,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898221
+      "last_sample_tick": 916351
     },
     {
       "step_index": 26,
       "step_name": "no_select_leaves_bus_empty",
-      "drive_start_tick": 898221,
+      "drive_start_tick": 916351,
       "skipped_ticks": 0,
       "expected_probe": "vbus",
       "expected": {
@@ -6174,7 +6174,7 @@
       "observed": {},
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 898227
+      "last_sample_tick": 916357
     }
   ],
   "pass": true

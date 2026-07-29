@@ -59,12 +59,15 @@ already owns verification. Nothing below the language needs to change for the
 language to exist — which is the reason it is worth doing now rather than after
 the other open items.
 
-**IR8 is the contract, and it was widened for this on 2026-07-28.**
-`IR8.vec_move` / `vec_select` / `vec_read_lane` are the *only* places that know
-a vector action is currently realized as writes to memory-mapped control rows.
-The language emits `vec_move`; it never writes a control row. That matters
-because the planned instruction-decoder rework (§7) changes the expansion and
-nothing else — no program, no compiler pass, no bench.
+**IR8 is the contract, and the isolation it buys was cashed in on
+2026-07-28.** `IR8.vec_move` / `vec_select` / `vec_read_lane` are the *only*
+places that know how a vector action is realized. The language emits
+`vec_move`; it never writes a control row. When the vector-zone decoder landed
+that same day and moved the whole control plane from memory-mapped writes into
+a second instruction word — a 4x speedup on vector code — **`lang.py` needed
+not one line**, no program changed, and every bench re-verified against
+byte-identical expectations. That was the prediction this paragraph used to
+make in the future tense.
 
 ---
 

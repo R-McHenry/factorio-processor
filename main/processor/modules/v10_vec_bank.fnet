@@ -98,57 +98,57 @@ module vec_bank(in_g membus, out_r vbus,
   # VREG0's loop is a1, VREG2's is a2 and VREG3's is b2r — exported directly.
 
   # -- VREG0 (block 1): A-side operand of pair A ---------------------------
-  v10_wsel_gate<vec_wsel, 1, "whead_vreg0">(in_g: membus, in_r: vbus, out_r: a1);
-  v10_vreg_cell<vec_erase, 1, "vreg0">(in_g: membus, in_r: a1, out_r: a1);
-  v10_select_gate<vec_rsel, vec_ssel, 1, "rsel_vreg0">(in_g: membus, in_r: a1, out_r: vbus);
+  v10_wsel_gate<vec_wsel, vdec_wsel, 1, "whead_vreg0">(in_g: membus, in_r: vbus, out_r: a1);
+  v10_vreg_cell<vec_erase, vdec_erase, 1, "vreg0">(in_g: membus, in_r: a1, out_r: a1);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 1, "rsel_vreg0">(in_g: membus, in_r: a1, out_r: vbus);
 
   # -- VREG1 (block 2): B-side operand of pair A ---------------------------
-  v10_wsel_gate<vec_wsel, 2, "whead_vreg1">(in_g: membus, in_r: vbus, out_r: loop1);
-  v10_vreg_cell<vec_erase, 2, "vreg1">(in_g: membus, in_r: loop1, out_r: loop1, out_g: b1);
-  v10_select_gate<vec_rsel, vec_ssel, 2, "rsel_vreg1">(in_g: membus, in_r: loop1, out_r: vbus);
+  v10_wsel_gate<vec_wsel, vdec_wsel, 2, "whead_vreg1">(in_g: membus, in_r: vbus, out_r: loop1);
+  v10_vreg_cell<vec_erase, vdec_erase, 2, "vreg1">(in_g: membus, in_r: loop1, out_r: loop1, out_g: b1);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 2, "rsel_vreg1">(in_g: membus, in_r: loop1, out_r: vbus);
 
   # -- VREG2 (block 3): A-side operand of pair B, both faces exported ------
-  v10_wsel_gate<vec_wsel, 3, "whead_vreg2">(in_g: membus, in_r: vbus, out_r: a2);
-  v10_vreg_cell<vec_erase, 3, "vreg2">(in_g: membus, in_r: a2, out_r: a2, out_g: a2g);
-  v10_select_gate<vec_rsel, vec_ssel, 3, "rsel_vreg2">(in_g: membus, in_r: a2, out_r: vbus);
+  v10_wsel_gate<vec_wsel, vdec_wsel, 3, "whead_vreg2">(in_g: membus, in_r: vbus, out_r: a2);
+  v10_vreg_cell<vec_erase, vdec_erase, 3, "vreg2">(in_g: membus, in_r: a2, out_r: a2, out_g: a2g);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 3, "rsel_vreg2">(in_g: membus, in_r: a2, out_r: vbus);
 
   # -- VREG3 (block 4): B-side operand of pair B, both faces exported ------
-  v10_wsel_gate<vec_wsel, 4, "whead_vreg3">(in_g: membus, in_r: vbus, out_r: b2r);
-  v10_vreg_cell<vec_erase, 4, "vreg3">(in_g: membus, in_r: b2r, out_r: b2r, out_g: b2);
-  v10_select_gate<vec_rsel, vec_ssel, 4, "rsel_vreg3">(in_g: membus, in_r: b2r, out_r: vbus);
+  v10_wsel_gate<vec_wsel, vdec_wsel, 4, "whead_vreg3">(in_g: membus, in_r: vbus, out_r: b2r);
+  v10_vreg_cell<vec_erase, vdec_erase, 4, "vreg3">(in_g: membus, in_r: b2r, out_r: b2r, out_g: b2);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 4, "rsel_vreg3">(in_g: membus, in_r: b2r, out_r: vbus);
 
   # -- VREG4..VREG11: plain accumulators, mux-visible only -----------------
-  v10_wsel_gate<vec_wsel, 5, "whead_vreg4">(in_g: membus, in_r: vbus, out_r: loop4);
-  v10_vreg_cell<vec_erase, 5, "vreg4">(in_g: membus, in_r: loop4, out_r: loop4);
-  v10_select_gate<vec_rsel, vec_ssel, 5, "rsel_vreg4">(in_g: membus, in_r: loop4, out_r: vbus);
+  v10_wsel_gate<vec_wsel, vdec_wsel, 5, "whead_vreg4">(in_g: membus, in_r: vbus, out_r: loop4);
+  v10_vreg_cell<vec_erase, vdec_erase, 5, "vreg4">(in_g: membus, in_r: loop4, out_r: loop4);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 5, "rsel_vreg4">(in_g: membus, in_r: loop4, out_r: vbus);
 
-  v10_wsel_gate<vec_wsel, 6, "whead_vreg5">(in_g: membus, in_r: vbus, out_r: loop5);
-  v10_vreg_cell<vec_erase, 6, "vreg5">(in_g: membus, in_r: loop5, out_r: loop5);
-  v10_select_gate<vec_rsel, vec_ssel, 6, "rsel_vreg5">(in_g: membus, in_r: loop5, out_r: vbus);
+  v10_wsel_gate<vec_wsel, vdec_wsel, 6, "whead_vreg5">(in_g: membus, in_r: vbus, out_r: loop5);
+  v10_vreg_cell<vec_erase, vdec_erase, 6, "vreg5">(in_g: membus, in_r: loop5, out_r: loop5);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 6, "rsel_vreg5">(in_g: membus, in_r: loop5, out_r: vbus);
 
-  v10_wsel_gate<vec_wsel, 7, "whead_vreg6">(in_g: membus, in_r: vbus, out_r: loop6);
-  v10_vreg_cell<vec_erase, 7, "vreg6">(in_g: membus, in_r: loop6, out_r: loop6);
-  v10_select_gate<vec_rsel, vec_ssel, 7, "rsel_vreg6">(in_g: membus, in_r: loop6, out_r: vbus);
+  v10_wsel_gate<vec_wsel, vdec_wsel, 7, "whead_vreg6">(in_g: membus, in_r: vbus, out_r: loop6);
+  v10_vreg_cell<vec_erase, vdec_erase, 7, "vreg6">(in_g: membus, in_r: loop6, out_r: loop6);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 7, "rsel_vreg6">(in_g: membus, in_r: loop6, out_r: vbus);
 
-  v10_wsel_gate<vec_wsel, 8, "whead_vreg7">(in_g: membus, in_r: vbus, out_r: loop7);
-  v10_vreg_cell<vec_erase, 8, "vreg7">(in_g: membus, in_r: loop7, out_r: loop7);
-  v10_select_gate<vec_rsel, vec_ssel, 8, "rsel_vreg7">(in_g: membus, in_r: loop7, out_r: vbus);
+  v10_wsel_gate<vec_wsel, vdec_wsel, 8, "whead_vreg7">(in_g: membus, in_r: vbus, out_r: loop7);
+  v10_vreg_cell<vec_erase, vdec_erase, 8, "vreg7">(in_g: membus, in_r: loop7, out_r: loop7);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 8, "rsel_vreg7">(in_g: membus, in_r: loop7, out_r: vbus);
 
-  v10_wsel_gate<vec_wsel, 9, "whead_vreg8">(in_g: membus, in_r: vbus, out_r: loop8);
-  v10_vreg_cell<vec_erase, 9, "vreg8">(in_g: membus, in_r: loop8, out_r: loop8);
-  v10_select_gate<vec_rsel, vec_ssel, 9, "rsel_vreg8">(in_g: membus, in_r: loop8, out_r: vbus);
+  v10_wsel_gate<vec_wsel, vdec_wsel, 9, "whead_vreg8">(in_g: membus, in_r: vbus, out_r: loop8);
+  v10_vreg_cell<vec_erase, vdec_erase, 9, "vreg8">(in_g: membus, in_r: loop8, out_r: loop8);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 9, "rsel_vreg8">(in_g: membus, in_r: loop8, out_r: vbus);
 
-  v10_wsel_gate<vec_wsel, 10, "whead_vreg9">(in_g: membus, in_r: vbus, out_r: loop9);
-  v10_vreg_cell<vec_erase, 10, "vreg9">(in_g: membus, in_r: loop9, out_r: loop9);
-  v10_select_gate<vec_rsel, vec_ssel, 10, "rsel_vreg9">(in_g: membus, in_r: loop9, out_r: vbus);
+  v10_wsel_gate<vec_wsel, vdec_wsel, 10, "whead_vreg9">(in_g: membus, in_r: vbus, out_r: loop9);
+  v10_vreg_cell<vec_erase, vdec_erase, 10, "vreg9">(in_g: membus, in_r: loop9, out_r: loop9);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 10, "rsel_vreg9">(in_g: membus, in_r: loop9, out_r: vbus);
 
-  v10_wsel_gate<vec_wsel, 11, "whead_vreg10">(in_g: membus, in_r: vbus, out_r: loop10);
-  v10_vreg_cell<vec_erase, 11, "vreg10">(in_g: membus, in_r: loop10, out_r: loop10);
-  v10_select_gate<vec_rsel, vec_ssel, 11, "rsel_vreg10">(in_g: membus, in_r: loop10, out_r: vbus);
+  v10_wsel_gate<vec_wsel, vdec_wsel, 11, "whead_vreg10">(in_g: membus, in_r: vbus, out_r: loop10);
+  v10_vreg_cell<vec_erase, vdec_erase, 11, "vreg10">(in_g: membus, in_r: loop10, out_r: loop10);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 11, "rsel_vreg10">(in_g: membus, in_r: loop10, out_r: vbus);
 
-  v10_wsel_gate<vec_wsel, 12, "whead_vreg11">(in_g: membus, in_r: vbus, out_r: loop11);
-  v10_vreg_cell<vec_erase, 12, "vreg11">(in_g: membus, in_r: loop11, out_r: loop11);
-  v10_select_gate<vec_rsel, vec_ssel, 12, "rsel_vreg11">(in_g: membus, in_r: loop11, out_r: vbus);
+  v10_wsel_gate<vec_wsel, vdec_wsel, 12, "whead_vreg11">(in_g: membus, in_r: vbus, out_r: loop11);
+  v10_vreg_cell<vec_erase, vdec_erase, 12, "vreg11">(in_g: membus, in_r: loop11, out_r: loop11);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 12, "rsel_vreg11">(in_g: membus, in_r: loop11, out_r: vbus);
 }
 
 module vec_bank_bench() {

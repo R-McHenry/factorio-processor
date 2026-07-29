@@ -322,6 +322,70 @@
       "display": "signal-apostrophe~epic",
       "auto": false,
       "address": 2149
+    },
+    "file.vdec_rsel": {
+      "type": "virtual",
+      "name": "signal-apostrophe",
+      "quality": "legendary",
+      "display": "signal-apostrophe~legendary",
+      "auto": false,
+      "address": 2150
+    },
+    "vdec_rsel": {
+      "type": "virtual",
+      "name": "signal-apostrophe",
+      "quality": "legendary",
+      "display": "signal-apostrophe~legendary",
+      "auto": false,
+      "address": 2150
+    },
+    "file.vdec_ssel": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "normal",
+      "display": "signal-battery-full",
+      "auto": false,
+      "address": 2151
+    },
+    "vdec_ssel": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "normal",
+      "display": "signal-battery-full",
+      "auto": false,
+      "address": 2151
+    },
+    "file.vdec_wsel": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "uncommon",
+      "display": "signal-battery-full~uncommon",
+      "auto": false,
+      "address": 2152
+    },
+    "vdec_wsel": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "uncommon",
+      "display": "signal-battery-full~uncommon",
+      "auto": false,
+      "address": 2152
+    },
+    "file.vdec_erase": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "rare",
+      "display": "signal-battery-full~rare",
+      "auto": false,
+      "address": 2153
+    },
+    "vdec_erase": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "rare",
+      "display": "signal-battery-full~rare",
+      "auto": false,
+      "address": 2153
     }
   },
   "blueprint": {
@@ -395,6 +459,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "uncommon"
+                },
+                "constant": 1,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -436,6 +514,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "rare"
+                },
+                "constant": 1,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -491,6 +583,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-apostrophe",
+                  "quality": "legendary"
+                },
+                "constant": 1,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "normal"
+                },
+                "constant": 1,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -532,6 +652,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "uncommon"
+                },
+                "constant": 2,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -573,6 +707,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "rare"
+                },
+                "constant": 2,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -628,6 +776,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-apostrophe",
+                  "quality": "legendary"
+                },
+                "constant": 2,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "normal"
+                },
+                "constant": 2,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -669,6 +845,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "uncommon"
+                },
+                "constant": 3,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -710,6 +900,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "rare"
+                },
+                "constant": 3,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -765,6 +969,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-apostrophe",
+                  "quality": "legendary"
+                },
+                "constant": 3,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "normal"
+                },
+                "constant": 3,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -806,6 +1038,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "uncommon"
+                },
+                "constant": 4,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -847,6 +1093,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "rare"
+                },
+                "constant": 4,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -902,6 +1162,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-apostrophe",
+                  "quality": "legendary"
+                },
+                "constant": 4,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "normal"
+                },
+                "constant": 4,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -943,6 +1231,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "uncommon"
+                },
+                "constant": 5,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -984,6 +1286,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "rare"
+                },
+                "constant": 5,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -1039,6 +1355,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-apostrophe",
+                  "quality": "legendary"
+                },
+                "constant": 5,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "normal"
+                },
+                "constant": 5,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -1080,6 +1424,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "uncommon"
+                },
+                "constant": 6,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -1121,6 +1479,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "rare"
+                },
+                "constant": 6,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -1176,6 +1548,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-apostrophe",
+                  "quality": "legendary"
+                },
+                "constant": 6,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "normal"
+                },
+                "constant": 6,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -1217,6 +1617,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "uncommon"
+                },
+                "constant": 7,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -1258,6 +1672,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "rare"
+                },
+                "constant": 7,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -1313,6 +1741,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-apostrophe",
+                  "quality": "legendary"
+                },
+                "constant": 7,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "normal"
+                },
+                "constant": 7,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -1354,6 +1810,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "uncommon"
+                },
+                "constant": 8,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -1395,6 +1865,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "rare"
+                },
+                "constant": 8,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -1450,6 +1934,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-apostrophe",
+                  "quality": "legendary"
+                },
+                "constant": 8,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "normal"
+                },
+                "constant": 8,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -1491,6 +2003,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "uncommon"
+                },
+                "constant": 9,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -1532,6 +2058,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "rare"
+                },
+                "constant": 9,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -1587,6 +2127,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-apostrophe",
+                  "quality": "legendary"
+                },
+                "constant": 9,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "normal"
+                },
+                "constant": 9,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -1628,6 +2196,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "uncommon"
+                },
+                "constant": 10,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -1669,6 +2251,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "rare"
+                },
+                "constant": 10,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -1724,6 +2320,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-apostrophe",
+                  "quality": "legendary"
+                },
+                "constant": 10,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "normal"
+                },
+                "constant": 10,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -1765,6 +2389,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "uncommon"
+                },
+                "constant": 11,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -1806,6 +2444,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "rare"
+                },
+                "constant": 11,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -1861,6 +2513,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-apostrophe",
+                  "quality": "legendary"
+                },
+                "constant": 11,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "normal"
+                },
+                "constant": 11,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -1902,6 +2582,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "uncommon"
+                },
+                "constant": 12,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -1943,6 +2637,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "rare"
+                },
+                "constant": 12,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -1990,6 +2698,34 @@
                   "type": "virtual",
                   "name": "signal-alert",
                   "quality": "uncommon"
+                },
+                "constant": 12,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-apostrophe",
+                  "quality": "legendary"
+                },
+                "constant": 12,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "normal"
                 },
                 "constant": 12,
                 "comparator": "=",

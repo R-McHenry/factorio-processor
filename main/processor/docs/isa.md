@@ -60,6 +60,71 @@ pc_inject 26, mmap_addr 59.
 | halt: `jump_rel` offset −5 lands on itself; n+1..n+4 reserved NOPs; P cycles n..n+4 | | fib bench poison canary stayed 0 |
 | accumulate: exactly ONE add per write instruction (1/tick streams count cleanly) | | relative_jump bench used an accumulate cell as instruction counter |
 
+## Vector control: two planes, one set of gates (measured 2026-07-28)
+
+The v10 vector zone's select/erase lines have **two drivers**, and every gate
+in the zone tests both — the read-selects and write heads OR their two
+conditions, the register cell ANDs its two erase tests. Adding the second plane
+cost one more condition on combinators that already had one — not a single new
+entity among the zone's own gates — and the first plane still works.
+
+| plane | how a control gets there | cost of a move |
+|---|---|---|
+| memory-mapped rows (`vec_rsel`/`vec_ssel`/`vec_wsel`/`vec_erase`) | scalar `write_imm` / `pulse_imm`, so `value_slot + WRITE_TO_CELL` | **15.5 ticks** |
+| decoder (`vdec_*`, `modules/v10_vec_decoder.fnet`) | a field of the slot's SECOND instruction word | **3.9 ticks** |
+
+**Word 2 comes from a second ROM at the same address.** The instruction word is
+full — 12 route bits plus a 20-bit signed immediate, and the immediate is what
+caps the fixed-point scale (`4S² ≤ 524287`) — so the decoder hangs a second
+read port off `pc_select`, the fetch-address net, and reads a private ROM2.
+One PC, one fetch address, every jump offset unchanged. ROM2 rides a private
+net, so unlike ROM it shadows no memory row, and a scalar-only slot simply has
+no ROM2 row: word 2 reads as absent, every field is 0, no gate matches.
+
+```
+bits  0..5   R      mux read-select     latched — a park persists
+bits  6..11  S      second read-select  latched
+bits 12..16  W      commit register     one tick, by construction
+bits 17..21  erase  zero register       one tick, same tick as W
+```
+
+**The decode depths ARE the timing rule.** The bank's park-then-commit rule
+(select, let the bus settle, then pulse W) is met by building the W/erase
+chains one stage deeper than R/S, so both halves of a move ride one word and
+still land a tick apart:
+
+| Rule | Constant | Evidence |
+|---|---|---|
+| R/S of the word at slot n reach the control plane at slot n+2 | `DEC_SEL_SETTLE=2` | mask, collapse, latch |
+| W/erase at slot n+3 — one tick later, always | `DEC_WRITE_SETTLE=3` | mask, shift, collapse, relabel |
+| settle is the same quantity a write reaches at `value_slot + WRITE_TO_CELL`, so the whole `_VEC_REACH_BY_NAME` table applies unchanged | | v10_vec_decoder (7/7), and both mandelbrots identical |
+| back-to-back dependent moves: 4 slots, the `vec_wsel → VEC_BUS` latest depth (through the square block) | | mandelbrot loop, 11 moves in 43 ticks |
+
+R and S are **latched** and W and erase are **not**, which is exactly the
+park/pulse distinction the memory-mapped path had to spell out. A park has to
+persist — a lane read walks the bus with port A long after the instruction that
+steered it — so a scalar instruction leaves R/S standing. A commit must be one
+tick, and it is: the next instruction's field is zero. **That is the entire bug
+class `check_pulse_widths` exists for, gone by construction.** Keep the check
+anyway; the memory-mapped path is live hardware and a design without a decoder
+still drives the zone that way (`IR8.vec_move(..., via="memory")`).
+
+Measured on `v10_proc_mandelbrot_dsl`, which produces **byte-identical
+expectations** on both paths — all 38 of them, same picture, same numbers:
+
+| | memory-mapped | decoder |
+|---|---|---|
+| loop body | 171 ticks/pass | **43** |
+| per move (11 moves/pass) | 15.5 | **3.9** |
+| whole program | 535 slots, 473 ROM words | **238 slots, 152 ROM + 28 word-2 rows** |
+| ticks to halt | 5119 | **1571** |
+
+What is left in the 43 is the zone's own depth, not the control plane: a move
+whose source is a plain register only needs 2 stages, but the scheduler applies
+the 4 the square block can need to every move. Making that depth source-aware
+is the next thing worth doing here and is recorded in `plan/ROADMAP.md`; it has
+not been measured, so no number for it is claimed.
+
 Unmeasured / untested: `a->out4` (conditional/computed relative jump),
 `b->out4`, P=0 mid-jump behavior (suspected self-healing: cell emits nothing at
 0, autoincrement re-seeds next tick), port-A park from a port source

@@ -1,6 +1,6 @@
 {
   "name": "v10_proc_vector_roundtrip",
-  "description": "End-to-end v10 program: the scalar core drives the vector zone with nothing but write_imm to memory rows, and reads results back with copy_a. Parks the mux on COORD and extracts lanes 7 and 250 (both return their own index); reduces the whole ramp to 3004926 = N(N+1)/2 over 2451 lanes, a number only reachable by summing the entire vector in one tick; then writes lane 60 = 4242 through LANE_IN and reads it back, with the frame reduction confirming exactly one lane. Then it MOVES the ramp into VREG0 - erase pulse, then a one-tick W pulse, both free from the write path's pipelining - and proves the register holds the whole frame by re-reading it as a mux source (3004926 again, lane 7 still 7). Finally the op farm computes VS_MOD = VREG0 % 3 over all 2451 lanes, reading back 1 at lane 7 and 2 at lane 8 - the mandelbrot grid step. No vector-specific instruction exists; machine_v8 scheduled all of it with no vector awareness at all.",
+  "description": "End-to-end v10 program: the scalar core drives the vector zone with nothing but write_imm to memory rows, and reads results back with copy_a. Parks the mux on COORD and extracts lanes 7 and 250 (both return their own index); reduces the whole ramp to 3004926 = N(N+1)/2 over 2451 lanes, a number only reachable by summing the entire vector in one tick; then writes lane 60 = 4242 through LANE_IN and reads it back, with the frame reduction confirming exactly one lane. Then it MOVES the ramp into VREG0 - erase pulse, then a one-tick W pulse, both free from the write path's pipelining - and proves the register holds the whole frame by re-reading it as a mux source (3004926 again, lane 7 still 7). Finally the op farm computes VS_MOD = VREG0 % 3 over all 2451 lanes, reading back 1 at lane 7 and 2 at lane 8 - the mandelbrot grid step. No vector-specific instruction exists; processor.isa scheduled all of it with no vector awareness at all.",
   "pre_stimulus_dead_ticks": 0,
   "settle_ticks": 1,
   "poll_seconds": 0.002,
@@ -26,7 +26,7 @@
     "output_probes": [
       {
         "name": "mem_state",
-        "entity_number": 191,
+        "entity_number": 207,
         "wire": "red"
       }
     ]

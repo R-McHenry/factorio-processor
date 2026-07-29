@@ -90,7 +90,7 @@ module vec_io(in_g membus, out_r vbus, out_g scalar_out) {
 
   # -- COORD (47): nothing -> vec ------------------------------------------
   addr_table(out_r: coord_frame);
-  v10_select_gate<vec_rsel, vec_ssel, 47, "rsel_coord">(in_g: membus, in_r: coord_frame, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 47, "rsel_coord">(in_g: membus, in_r: coord_frame, out_r: vbus);
 
   # -- ONES (45) and BCAST (46): lane resurrection -------------------------
   # ZERO AND ABSENT ARE THE SAME THING, and `each` against a fixed signal
@@ -106,16 +106,16 @@ module vec_io(in_g membus, out_r vbus, out_g scalar_out) {
   # Two carriers rather than one is the whole point: `frame*k1 + k2` is then a
   # SINGLE move, which is the shape every coordinate seed has.
   v10_lane_mask<">", 0, "ones_frame">(in_r: coord_frame, out_r: ones_frame);
-  v10_select_gate<vec_rsel, vec_ssel, 45, "rsel_ones">(in_g: membus, in_r: ones_frame, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 45, "rsel_ones">(in_g: membus, in_r: ones_frame, out_r: vbus);
 
   v10_vec_scal_op<vec_bcast2, "*", "bcast_frame">(in_r: ones_frame, in_g: membus, out_r: bcast_frame);
-  v10_select_gate<vec_rsel, vec_ssel, 46, "rsel_bcast">(in_g: membus, in_r: bcast_frame, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 46, "rsel_bcast">(in_g: membus, in_r: bcast_frame, out_r: vbus);
 
   # -- LANE_IN (48): one addressed lane, carrying one value ----------------
   addr_table(out_r: wtable);
   v8_onehot<vec_wlane_addr>(in_r: wtable, in_g: membus, out_r: onehot);
   v8_mul_scalar<vec_wlane_value, "lane_in_value">(in_r: onehot, in_g: membus, out_r: lane_frame);
-  v10_select_gate<vec_rsel, vec_ssel, 48, "rsel_lane_in">(in_g: membus, in_r: lane_frame, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 48, "rsel_lane_in">(in_g: membus, in_r: lane_frame, out_r: vbus);
 
   # -- LANE_OUT: extract one lane of the write bus onto a scalar row -------
   v8_sig_to<vec_rlane_addr, rlane_carrier, "rlane_carrier">(in_g: membus, out_g: rtable);

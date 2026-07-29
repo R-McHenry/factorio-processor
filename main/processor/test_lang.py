@@ -361,7 +361,11 @@ def test_mandelbrot_compiles_to_a_schedule():
     m = mandelbrot_machine()
     ir = m.emit(label="iter")
     prog, sched = schedule8(ir, name="test_mandelbrot_dsl")
-    assert prog.end() > 300 and "iter" in ir.labels
+    # 100+ slots: the readback alone is 32 lane reads. The whole program was
+    # over 500 before the vector decoder landed (2026-07-28) — the bound is
+    # deliberately loose, since what it guards is "a real program came out",
+    # not a particular length.
+    assert prog.end() > 100 and "iter" in ir.labels
     assert sched._label_slot("iter") < prog.end()
     assert [op.kind for op in ir.ops[-1:]] == ["halt"]
     # deterministic: the same source compiles to the same ROM

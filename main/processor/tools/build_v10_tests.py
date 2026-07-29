@@ -2,11 +2,18 @@
 """End-to-end program benches for the composed v10 machine
 (modules/v10_processor.source.json).
 
-The point of these is that a vector operation is NOT a new instruction. The
-vector zone's control plane is chunk1's memory bus, so every vector action is
-an ordinary `write_imm` (or `pulse_imm`) to a memory row, and results come
-back through `copy_a` — the same latched port A the scalar core already had —
-because the out-ports deposit their results as ordinary scalar rows.
+The point of these is that a vector operation is NOT a new instruction. Since
+2026-07-28 a vector move is a field of the slot's SECOND instruction word
+(modules/v10_vec_decoder.fnet) — the routing matrix is untouched, no opcode
+exists, and the memory-mapped control rows it replaced still work and still
+drive the same gates. Results come back through `copy_a`, the same latched
+port A the scalar core already had, because the out-ports deposit their
+results as ordinary scalar rows.
+
+None of the programs below changed for that: they call `IR8.vec_move` /
+`vec_select` / `vec_read_lane`, which is the entire isolation layer, and they
+produce the identical expectations they did on the old backend — a `--regen`
+either reproduces those numbers or the change is wrong.
 
 processor.isa now knows the vector zone's timing (`MachineConfig.vec_reach`), so
 programs here contain NO hand-inserted settle stages: the scheduler spaces
@@ -20,9 +27,12 @@ signals from the design's own exclusion-compacted address space, and bench
 expectations as symbolic "$name" / "$mem[N]" references.
 
 Entity numbers: ROM=66 and the driver trio 46/47/48 are stable because the
-scalar core is declared first, so v8's numbering is preserved. PROBE numbers
-are NOT stable — they are appended last, so any component added to the vector
-zone shifts them. They are read from the compiled `.debug.json` sidecar
+scalar core is declared first, so v8's numbering is preserved. ROM2 is NOT —
+the decoder is declared after the whole vector zone — so both ROMs are found
+by `player_description` and 66 is kept only as a tripwire on the scalar core's
+numbering. PROBE numbers are not stable either: they are appended last, so any
+component added to the vector zone shifts them (the decoder moved them from
+189/190/191 to 205/206/207). They are read from the compiled `.debug.json` sidecar
 instead of being written down here, because writing them down cost a suite
 run: entity 179 stopped being the state loop and started being a combinator
 carrying the whole memory bus, and the bench did not fail, it TIMED OUT on a
@@ -36,10 +46,10 @@ MAIN = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(MAIN))
 ROOT = MAIN / "processor"
 
-from processor.assembler import assemble_program  # noqa: E402
+from processor.assembler import assemble_program, assemble_word2  # noqa: E402
 from bench.processor_tb import design_address_space  # noqa: E402
-from processor.isa import (IR8, WRITE_TO_CELL, check_pulse_widths,  # noqa: E402
-                        config_from_signals_map, schedule8)
+from processor.isa import (IR8, check_pulse_widths,  # noqa: E402
+                        config_from_signals_map, schedule8, vec_control_settles)
 # The mux index map lives in vlang.py — one table, shared by the hand-written
 # programs here and by the compiler's pattern table (v10_op_farm.fnet is where
 # the numbers come from).
@@ -49,6 +59,14 @@ from processor.lang import (A_MAX, A_MIN, A_MUL, A_SUB, B_MUL, B_SQ,  # noqa: E4
                    Machine, vmax)
 
 ROM_ENTITY = 66
+# ROM2 is the vector decoder's private word-2 store. It is NOT a stable entity
+# number — the decoder is declared after the whole vector zone, so anything
+# added there moves it — so it is found by player_description, the same
+# convention `tools/import_master_bp.py` uses. ROM itself is resolved that way
+# too now; 66 is kept only as a cross-check that the scalar core's numbering
+# has not silently shifted.
+ROM_DESCRIPTION = "ROM"
+ROM2_DESCRIPTION = "ROM2"
 
 # Scratch rows the programs copy vector results into. Clear of every region:
 # acc=300/301, pc=2096, alu=2110..2127, vec=2130..2148.
@@ -86,16 +104,16 @@ def check_vector_hazards(ir, cfg):
     The scheduler enforces both while placing ops (`_Sched8._vec_read_lo` and
     `_vec_write_disturbs_read`). This walks the finished schedule as an
     independent audit, off the SAME table on the MachineConfig — one source of
-    truth, checked twice.
+    truth, checked twice. `vec_control_settles` covers both control backends,
+    so the audit does not care whether a move rode the write path or the
+    decoder's second instruction word.
     """
     settles = []          # (order, settle_slot, control addr)
     reads = []            # (order, read_slot, out-port addr)
     for order, op in enumerate(ir.ops):
-        if op.kind in ("write_imm", "pulse_imm") and op.dst in cfg.vec_reach:
-            settles.append((order, op.value_slot + WRITE_TO_CELL, op.dst))
-            if op.kind == "pulse_imm":
-                settles.append((order, op.clear_value_slot + WRITE_TO_CELL, op.dst))
-        elif op.kind == "copy_a" and op.src in cfg.vec_ports:
+        for settle_slot, control in vec_control_settles(op, cfg):
+            settles.append((order, settle_slot, control))
+        if op.kind == "copy_a" and op.src in cfg.vec_ports:
             reads.append((order, op.slot, op.src))
 
     problems = []
@@ -169,7 +187,9 @@ def probe_entity(net_name: str) -> int:
 
 def rom_filters_for_design(instructions, space):
     """ROM filter rows via the DESIGN's address space (slot addr -> its row
-    signal under this design's exclusion set)."""
+    signal under this design's exclusion set). Serves both ROMs: word 2 is
+    keyed by the SAME address, which is the whole point of putting it on a
+    private net instead of moving the PC."""
     filters = []
     for index, (addr, word) in enumerate(instructions, start=1):
         row = space[addr]
@@ -182,6 +202,17 @@ def rom_filters_for_design(instructions, space):
             "count": word,
         })
     return filters
+
+
+def patch_rom(src, description, filters):
+    """Load one ROM's contents into the compiled design, by description."""
+    hits = [e for e in src["blueprint"]["entities"]
+            if e.get("player_description") == description]
+    if len(hits) != 1:
+        raise SystemExit(f"expected exactly one {description!r} entity, found {len(hits)}")
+    hits[0]["control_behavior"] = {
+        "sections": {"sections": [{"index": 1, "filters": filters}]}}
+    return int(hits[0]["entity_number"])
 
 
 def vector_roundtrip(cfg, rows, lane_count):
@@ -749,20 +780,17 @@ def main() -> None:
     state_probe = probe_entity("processor0.state")
     for name, builder in BENCHES.items():
         prog, timeline, description = builder(cfg, rows, lane_count)
-        instructions = assemble_program(prog.rom_entries())
+        entries = prog.rom_entries()
+        instructions = assemble_program(entries)
+        vector_words = assemble_word2(entries)
         src = json.loads(json.dumps(base))
         src["name"] = f"v10_processor_{name}"
         src["description"] = f"v10 program: {description}"
-        patched = 0
-        for entity in src["blueprint"]["entities"]:
-            if entity["entity_number"] == ROM_ENTITY:
-                assert entity.get("player_description") == "ROM", entity
-                entity["control_behavior"] = {
-                    "sections": {"sections": [{"index": 1,
-                                               "filters": rom_filters_for_design(instructions, space)}]}
-                }
-                patched += 1
-        assert patched == 1, f"ROM entity {ROM_ENTITY} not found"
+        rom = patch_rom(src, ROM_DESCRIPTION,
+                        rom_filters_for_design(instructions, space))
+        assert rom == ROM_ENTITY, f"ROM moved to entity {rom} — scalar core renumbered?"
+        patch_rom(src, ROM2_DESCRIPTION,
+                  rom_filters_for_design(vector_words, space))
         tb = json.loads(json.dumps(
             {"name": f"v10_proc_{name}", "description": description,
              **TB_COMMON, "timeline": timeline}))
@@ -771,7 +799,8 @@ def main() -> None:
             json.dumps(src, indent=2), encoding="utf-8")
         (ROOT / "testbenches" / f"v10_proc_{name}.tb.json").write_text(
             json.dumps(tb, indent=2), encoding="utf-8")
-        print(f"{name}: {len(instructions)} ROM words, {lane_count} lanes "
+        print(f"{name}: {len(instructions)} ROM words + {len(vector_words)} "
+              f"vector words, {prog.end()} slots, {lane_count} lanes "
               f"-> v10_processor_{name}.source.json + v10_proc_{name}.tb.json")
 
 

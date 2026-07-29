@@ -1,0 +1,23 @@
+{
+  "module": "vec_decoder_bench",
+  "probes": [
+    {
+      "net": "ctl_out",
+      "entity_number": 19,
+      "wire": "green",
+      "position": {
+        "x": 3.5,
+        "y": -10.5
+      }
+    },
+    {
+      "net": "word2_out",
+      "entity_number": 20,
+      "wire": "green",
+      "position": {
+        "x": 3.5,
+        "y": -9.5
+      }
+    }
+  ]
+}

@@ -123,64 +123,64 @@ module op_farm(in_g membus, out_r vbus,
 
   # -- pair A: the fuller set ----------------------------------------------
   v10_vec_vec_op<"*", "VVEC_A_MUL">(in_r: a1, in_g: b1, out_r: a_mul);
-  v10_select_gate<vec_rsel, vec_ssel, 17, "rsel_a_mul">(in_g: membus, in_r: a_mul, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 17, "rsel_a_mul">(in_g: membus, in_r: a_mul, out_r: vbus);
 
   v10_vec_vec_op<"-", "VVEC_A_SUB">(in_r: a1, in_g: b1, out_r: a_sub);
-  v10_select_gate<vec_rsel, vec_ssel, 18, "rsel_a_sub">(in_g: membus, in_r: a_sub, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 18, "rsel_a_sub">(in_g: membus, in_r: a_sub, out_r: vbus);
 
   v10_vec_vec_select<">", "VVEC_A_MAX">(in_r: a1, in_g: b1, out_r: a_max);
-  v10_select_gate<vec_rsel, vec_ssel, 19, "rsel_a_max">(in_g: membus, in_r: a_max, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 19, "rsel_a_max">(in_g: membus, in_r: a_max, out_r: vbus);
 
   v10_vec_vec_select<"<", "VVEC_A_MIN">(in_r: a1, in_g: b1, out_r: a_min);
-  v10_select_gate<vec_rsel, vec_ssel, 20, "rsel_a_min">(in_g: membus, in_r: a_min, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 20, "rsel_a_min">(in_g: membus, in_r: a_min, out_r: vbus);
 
   v10_vec_vec_op<"/", "VVEC_A_DIV">(in_r: a1, in_g: b1, out_r: a_div);
-  v10_select_gate<vec_rsel, vec_ssel, 21, "rsel_a_div">(in_g: membus, in_r: a_div, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 21, "rsel_a_div">(in_g: membus, in_r: a_div, out_r: vbus);
 
   v10_vec_vec_op<"%", "VVEC_A_MOD">(in_r: a1, in_g: b1, out_r: a_mod);
-  v10_select_gate<vec_rsel, vec_ssel, 22, "rsel_a_mod">(in_g: membus, in_r: a_mod, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 22, "rsel_a_mod">(in_g: membus, in_r: a_mod, out_r: vbus);
 
   # -- pair B: core operations only -----------------------------------------
   v10_vec_vec_op<"*", "VVEC_B_MUL">(in_r: a2, in_g: b2, out_r: b_mul);
-  v10_select_gate<vec_rsel, vec_ssel, 25, "rsel_b_mul">(in_g: membus, in_r: b_mul, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 25, "rsel_b_mul">(in_g: membus, in_r: b_mul, out_r: vbus);
 
   v10_vec_vec_op<"-", "VVEC_B_SUB">(in_r: a2, in_g: b2, out_r: b_sub);
-  v10_select_gate<vec_rsel, vec_ssel, 26, "rsel_b_sub">(in_g: membus, in_r: b_sub, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 26, "rsel_b_sub">(in_g: membus, in_r: b_sub, out_r: vbus);
 
   # -- pair B squares: each register against its OWN opposite face ----------
   # Ordinary each[red] x each[green], both faces of one register, so no new
   # combinator semantics are relied on. B_SQ and B_SQG selected together sum
   # on the write bus, which is the escape test zx^2+zy^2 for free.
   v10_vec_vec_op<"*", "VVEC_B_SQ">(in_r: a2, in_g: a2g, out_r: b_sq);
-  v10_select_gate<vec_rsel, vec_ssel, 27, "rsel_b_sq">(in_g: membus, in_r: b_sq, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 27, "rsel_b_sq">(in_g: membus, in_r: b_sq, out_r: vbus);
 
   v10_vec_vec_op<"*", "VVEC_B_SQG">(in_r: b2r, in_g: b2, out_r: b_sqg_r, out_g: b_sqg_g);
-  v10_select_gate<vec_rsel, vec_ssel, 28, "rsel_b_sqg">(in_g: membus, in_r: b_sqg_r, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 28, "rsel_b_sqg">(in_g: membus, in_r: b_sqg_r, out_r: vbus);
 
   v10_vec_vec_op<"-", "VVEC_B_SQDIFF">(in_r: b_sq, in_g: b_sqg_g, out_r: b_sqdiff);
-  v10_select_gate<vec_rsel, vec_ssel, 29, "rsel_b_sqdiff">(in_g: membus, in_r: b_sqdiff, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 29, "rsel_b_sqdiff">(in_g: membus, in_r: b_sqdiff, out_r: vbus);
 
   # -- vec-scal: VREG0 against the memory-mapped broadcast row --------------
   v10_vec_scal_op<vec_bcast, "*", "VSVEC_MUL">(in_r: a1, in_g: membus, out_r: vs_mul);
-  v10_select_gate<vec_rsel, vec_ssel, 33, "rsel_vs_mul">(in_g: membus, in_r: vs_mul, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 33, "rsel_vs_mul">(in_g: membus, in_r: vs_mul, out_r: vbus);
 
   v10_vec_scal_op<vec_bcast, "+", "VSVEC_ADD">(in_r: a1, in_g: membus, out_r: vs_add);
-  v10_select_gate<vec_rsel, vec_ssel, 34, "rsel_vs_add">(in_g: membus, in_r: vs_add, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 34, "rsel_vs_add">(in_g: membus, in_r: vs_add, out_r: vbus);
 
   v10_vec_scal_op<vec_bcast, "-", "VSVEC_SUB">(in_r: a1, in_g: membus, out_r: vs_sub);
-  v10_select_gate<vec_rsel, vec_ssel, 35, "rsel_vs_sub">(in_g: membus, in_r: vs_sub, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 35, "rsel_vs_sub">(in_g: membus, in_r: vs_sub, out_r: vbus);
 
   v10_vec_scal_op<vec_bcast, "/", "VSVEC_DIV">(in_r: a1, in_g: membus, out_r: vs_div);
-  v10_select_gate<vec_rsel, vec_ssel, 36, "rsel_vs_div">(in_g: membus, in_r: vs_div, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 36, "rsel_vs_div">(in_g: membus, in_r: vs_div, out_r: vbus);
 
   v10_vec_scal_op<vec_bcast, "%", "VSVEC_MOD">(in_r: a1, in_g: membus, out_r: vs_mod);
-  v10_select_gate<vec_rsel, vec_ssel, 37, "rsel_vs_mod">(in_g: membus, in_r: vs_mod, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 37, "rsel_vs_mod">(in_g: membus, in_r: vs_mod, out_r: vbus);
 
   v10_vec_scal_mask<vec_bcast, ">", "VSVEC_GT_MASK">(in_r: a1, in_g: membus, out_r: vs_gt);
-  v10_select_gate<vec_rsel, vec_ssel, 38, "rsel_vs_gt">(in_g: membus, in_r: vs_gt, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 38, "rsel_vs_gt">(in_g: membus, in_r: vs_gt, out_r: vbus);
 
   v10_vec_scal_mask<vec_bcast, "<", "VSVEC_LT_MASK">(in_r: a1, in_g: membus, out_r: vs_lt);
-  v10_select_gate<vec_rsel, vec_ssel, 39, "rsel_vs_lt">(in_g: membus, in_r: vs_lt, out_r: vbus);
+  v10_select_gate<vec_rsel, vec_ssel, vdec_rsel, vdec_ssel, 39, "rsel_vs_lt">(in_g: membus, in_r: vs_lt, out_r: vbus);
 }
 
 module op_farm_bench() {

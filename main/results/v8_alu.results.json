@@ -28,26 +28,26 @@
       "dy": 12.0
     },
     "entity_number_to_unit_number": {
-      "1": 140374,
-      "2": 140368,
-      "3": 140367,
-      "4": 140369,
-      "5": 140371,
-      "6": 140366,
-      "7": 140364,
-      "8": 140370,
-      "9": 140373,
-      "10": 140365,
-      "11": 140363,
-      "12": 140372
+      "1": 146038,
+      "2": 146032,
+      "3": 146031,
+      "4": 146033,
+      "5": 146035,
+      "6": 146030,
+      "7": 146028,
+      "8": 146034,
+      "9": 146037,
+      "10": 146029,
+      "11": 146027,
+      "12": 146036
     },
     "driver_units": {
-      "state": 140374
+      "state": 146038
     },
     "output_probes": [
       {
         "name": "alu_out",
-        "unit": 140372,
+        "unit": 146036,
         "wire": "green"
       }
     ],
@@ -55,7 +55,7 @@
   },
   "timeline": [
     {
-      "tick": 897676,
+      "tick": 915806,
       "stimulus": {},
       "observed_by_probe": {},
       "phase": "pre_stimulus_dead",
@@ -63,7 +63,7 @@
       "step_name": "pre_dead_1"
     },
     {
-      "tick": 897677,
+      "tick": 915807,
       "stimulus": {},
       "observed_by_probe": {
         "alu_out": {
@@ -75,7 +75,7 @@
       "step_name": "pre_dead_2"
     },
     {
-      "tick": 897678,
+      "tick": 915808,
       "stimulus": {
         "state": {
           "shape-t-3": 7.0
@@ -91,24 +91,7 @@
       "step_name": "mul_6x7"
     },
     {
-      "tick": 897679,
-      "stimulus": {
-        "state": {
-          "shape-t-3": 7.0
-        }
-      },
-      "observed_by_probe": {
-        "alu_out": {
-          "shape-t-4": 42.0,
-          "signal-alarm": 1.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 0,
-      "step_name": "mul_6x7"
-    },
-    {
-      "tick": 897680,
+      "tick": 915809,
       "stimulus": {
         "state": {
           "shape-t-3": 7.0
@@ -125,7 +108,24 @@
       "step_name": "mul_6x7"
     },
     {
-      "tick": 897681,
+      "tick": 915810,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 7.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-4": 42.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "mul_6x7"
+    },
+    {
+      "tick": 915811,
       "stimulus": {
         "state": {
           "shape-t-3": 7.0
@@ -142,7 +142,7 @@
       "step_name": "mul_6x7"
     },
     {
-      "tick": 897682,
+      "tick": 915812,
       "stimulus": {
         "state": {
           "shape-t-3": 7.0
@@ -159,7 +159,7 @@
       "step_name": "mul_6x7"
     },
     {
-      "tick": 897683,
+      "tick": 915813,
       "stimulus": {
         "state": {
           "shape-t-3": 7.0
@@ -176,7 +176,7 @@
       "step_name": "mul_6x7"
     },
     {
-      "tick": 897684,
+      "tick": 915814,
       "stimulus": {
         "state": {
           "shape-t-3": 5.0
@@ -193,24 +193,7 @@
       "step_name": "div_42_by_5"
     },
     {
-      "tick": 897685,
-      "stimulus": {
-        "state": {
-          "shape-t-3": 5.0
-        }
-      },
-      "observed_by_probe": {
-        "alu_out": {
-          "shape-t-3~rare": 8.0,
-          "signal-alarm": 1.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 1,
-      "step_name": "div_42_by_5"
-    },
-    {
-      "tick": 897686,
+      "tick": 915815,
       "stimulus": {
         "state": {
           "shape-t-3": 5.0
@@ -227,7 +210,24 @@
       "step_name": "div_42_by_5"
     },
     {
-      "tick": 897687,
+      "tick": 915816,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 5.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-3~rare": 8.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "div_42_by_5"
+    },
+    {
+      "tick": 915817,
       "stimulus": {
         "state": {
           "shape-t-3": 5.0
@@ -244,7 +244,7 @@
       "step_name": "div_42_by_5"
     },
     {
-      "tick": 897688,
+      "tick": 915818,
       "stimulus": {
         "state": {
           "shape-t-3": 5.0
@@ -261,7 +261,7 @@
       "step_name": "div_42_by_5"
     },
     {
-      "tick": 897689,
+      "tick": 915819,
       "stimulus": {
         "state": {
           "shape-t-3": 5.0
@@ -278,7 +278,7 @@
       "step_name": "div_42_by_5"
     },
     {
-      "tick": 897690,
+      "tick": 915820,
       "stimulus": {
         "state": {
           "shape-t-2": 10.0
@@ -295,24 +295,7 @@
       "step_name": "add_neg3_plus_10"
     },
     {
-      "tick": 897691,
-      "stimulus": {
-        "state": {
-          "shape-t-2": 10.0
-        }
-      },
-      "observed_by_probe": {
-        "alu_out": {
-          "shape-t-2~legendary": 7.0,
-          "signal-alarm": 1.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 2,
-      "step_name": "add_neg3_plus_10"
-    },
-    {
-      "tick": 897692,
+      "tick": 915821,
       "stimulus": {
         "state": {
           "shape-t-2": 10.0
@@ -329,7 +312,24 @@
       "step_name": "add_neg3_plus_10"
     },
     {
-      "tick": 897693,
+      "tick": 915822,
+      "stimulus": {
+        "state": {
+          "shape-t-2": 10.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~legendary": 7.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "add_neg3_plus_10"
+    },
+    {
+      "tick": 915823,
       "stimulus": {
         "state": {
           "shape-t-2": 10.0
@@ -346,7 +346,7 @@
       "step_name": "add_neg3_plus_10"
     },
     {
-      "tick": 897694,
+      "tick": 915824,
       "stimulus": {
         "state": {
           "shape-t-2": 10.0
@@ -363,7 +363,7 @@
       "step_name": "add_neg3_plus_10"
     },
     {
-      "tick": 897695,
+      "tick": 915825,
       "stimulus": {
         "state": {
           "shape-t-2": 10.0
@@ -380,7 +380,7 @@
       "step_name": "add_neg3_plus_10"
     },
     {
-      "tick": 897696,
+      "tick": 915826,
       "stimulus": {
         "state": {
           "shape-diagonal-2": 3.0,
@@ -398,25 +398,7 @@
       "step_name": "sub_3_minus_10"
     },
     {
-      "tick": 897697,
-      "stimulus": {
-        "state": {
-          "shape-diagonal-2": 3.0,
-          "shape-t-2": 10.0
-        }
-      },
-      "observed_by_probe": {
-        "alu_out": {
-          "shape-t-2~uncommon": -7.0,
-          "signal-alarm": 1.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 3,
-      "step_name": "sub_3_minus_10"
-    },
-    {
-      "tick": 897698,
+      "tick": 915827,
       "stimulus": {
         "state": {
           "shape-diagonal-2": 3.0,
@@ -434,7 +416,25 @@
       "step_name": "sub_3_minus_10"
     },
     {
-      "tick": 897699,
+      "tick": 915828,
+      "stimulus": {
+        "state": {
+          "shape-diagonal-2": 3.0,
+          "shape-t-2": 10.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~uncommon": -7.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "sub_3_minus_10"
+    },
+    {
+      "tick": 915829,
       "stimulus": {
         "state": {
           "shape-diagonal-2": 3.0,
@@ -452,7 +452,7 @@
       "step_name": "sub_3_minus_10"
     },
     {
-      "tick": 897700,
+      "tick": 915830,
       "stimulus": {
         "state": {
           "shape-diagonal-2": 3.0,
@@ -470,7 +470,7 @@
       "step_name": "sub_3_minus_10"
     },
     {
-      "tick": 897701,
+      "tick": 915831,
       "stimulus": {
         "state": {
           "shape-diagonal-2": 3.0,
@@ -488,7 +488,7 @@
       "step_name": "sub_3_minus_10"
     },
     {
-      "tick": 897702,
+      "tick": 915832,
       "stimulus": {
         "state": {
           "shape-t-3": 4.0,
@@ -507,29 +507,7 @@
       "step_name": "all_ops_in_parallel"
     },
     {
-      "tick": 897703,
-      "stimulus": {
-        "state": {
-          "shape-t-3": 4.0,
-          "shape-t-2": 8.0,
-          "shape-diagonal-2": 50.0
-        }
-      },
-      "observed_by_probe": {
-        "alu_out": {
-          "shape-t-2~uncommon": 42.0,
-          "shape-t-2~legendary": 70.0,
-          "shape-t-4": 144.0,
-          "shape-t-3~rare": 25.0,
-          "signal-alarm": 1.0
-        }
-      },
-      "phase": "settle",
-      "step_index": 4,
-      "step_name": "all_ops_in_parallel"
-    },
-    {
-      "tick": 897704,
+      "tick": 915833,
       "stimulus": {
         "state": {
           "shape-t-3": 4.0,
@@ -551,7 +529,29 @@
       "step_name": "all_ops_in_parallel"
     },
     {
-      "tick": 897705,
+      "tick": 915834,
+      "stimulus": {
+        "state": {
+          "shape-t-3": 4.0,
+          "shape-t-2": 8.0,
+          "shape-diagonal-2": 50.0
+        }
+      },
+      "observed_by_probe": {
+        "alu_out": {
+          "shape-t-2~uncommon": 42.0,
+          "shape-t-2~legendary": 70.0,
+          "shape-t-4": 144.0,
+          "shape-t-3~rare": 25.0,
+          "signal-alarm": 1.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "all_ops_in_parallel"
+    },
+    {
+      "tick": 915835,
       "stimulus": {
         "state": {
           "shape-t-3": 4.0,
@@ -573,7 +573,7 @@
       "step_name": "all_ops_in_parallel"
     },
     {
-      "tick": 897706,
+      "tick": 915836,
       "stimulus": {
         "state": {
           "shape-t-3": 4.0,
@@ -595,7 +595,7 @@
       "step_name": "all_ops_in_parallel"
     },
     {
-      "tick": 897707,
+      "tick": 915837,
       "stimulus": {
         "state": {
           "shape-t-3": 4.0,
@@ -617,7 +617,7 @@
       "step_name": "all_ops_in_parallel"
     },
     {
-      "tick": 897708,
+      "tick": 915838,
       "stimulus": {
         "state": {
           "shape-t-4": 3.0
@@ -637,7 +637,7 @@
       "step_name": "cmp_m7_n3_flags_on"
     },
     {
-      "tick": 897709,
+      "tick": 915839,
       "stimulus": {
         "state": {
           "shape-t-4": 3.0
@@ -654,7 +654,7 @@
       "step_name": "cmp_m7_n3_flags_on"
     },
     {
-      "tick": 897710,
+      "tick": 915840,
       "stimulus": {
         "state": {
           "shape-t-4": 3.0
@@ -673,7 +673,7 @@
       "step_name": "cmp_m7_n3_flags_on"
     },
     {
-      "tick": 897711,
+      "tick": 915841,
       "stimulus": {
         "state": {
           "shape-t-4": 3.0
@@ -692,7 +692,7 @@
       "step_name": "cmp_m7_n3_flags_on"
     },
     {
-      "tick": 897712,
+      "tick": 915842,
       "stimulus": {
         "state": {
           "shape-t-4": 3.0
@@ -711,7 +711,7 @@
       "step_name": "cmp_m7_n3_flags_on"
     },
     {
-      "tick": 897713,
+      "tick": 915843,
       "stimulus": {
         "state": {
           "shape-t-4": 3.0
@@ -730,7 +730,7 @@
       "step_name": "cmp_m7_n3_flags_on"
     },
     {
-      "tick": 897714,
+      "tick": 915844,
       "stimulus": {
         "state": {
           "shape-t-4": 3.0
@@ -749,7 +749,7 @@
       "step_name": "cmp_m7_n3_flags_on"
     },
     {
-      "tick": 897715,
+      "tick": 915845,
       "stimulus": {
         "state": {
           "shape-t-4": 9.0
@@ -768,7 +768,7 @@
       "step_name": "cmp_m2_n9_flags_off"
     },
     {
-      "tick": 897716,
+      "tick": 915846,
       "stimulus": {
         "state": {
           "shape-t-4": 9.0
@@ -785,7 +785,7 @@
       "step_name": "cmp_m2_n9_flags_off"
     },
     {
-      "tick": 897717,
+      "tick": 915847,
       "stimulus": {
         "state": {
           "shape-t-4": 9.0
@@ -802,7 +802,7 @@
       "step_name": "cmp_m2_n9_flags_off"
     },
     {
-      "tick": 897718,
+      "tick": 915848,
       "stimulus": {
         "state": {
           "shape-t-4": 9.0
@@ -819,7 +819,7 @@
       "step_name": "cmp_m2_n9_flags_off"
     },
     {
-      "tick": 897719,
+      "tick": 915849,
       "stimulus": {
         "state": {
           "shape-t-4": 9.0
@@ -836,7 +836,7 @@
       "step_name": "cmp_m2_n9_flags_off"
     },
     {
-      "tick": 897720,
+      "tick": 915850,
       "stimulus": {
         "state": {
           "shape-t-4": 9.0
@@ -853,7 +853,7 @@
       "step_name": "cmp_m2_n9_flags_off"
     },
     {
-      "tick": 897721,
+      "tick": 915851,
       "stimulus": {
         "state": {
           "shape-t-4": 5.0
@@ -870,7 +870,7 @@
       "step_name": "cmp_m5_n5_gte_fires"
     },
     {
-      "tick": 897722,
+      "tick": 915852,
       "stimulus": {
         "state": {
           "shape-t-4": 5.0
@@ -888,7 +888,7 @@
       "step_name": "cmp_m5_n5_gte_fires"
     },
     {
-      "tick": 897723,
+      "tick": 915853,
       "stimulus": {
         "state": {
           "shape-t-4": 5.0
@@ -906,7 +906,7 @@
       "step_name": "cmp_m5_n5_gte_fires"
     },
     {
-      "tick": 897724,
+      "tick": 915854,
       "stimulus": {
         "state": {
           "shape-t-4": 5.0
@@ -924,7 +924,7 @@
       "step_name": "cmp_m5_n5_gte_fires"
     },
     {
-      "tick": 897725,
+      "tick": 915855,
       "stimulus": {
         "state": {
           "shape-t-4": 5.0
@@ -942,7 +942,7 @@
       "step_name": "cmp_m5_n5_gte_fires"
     },
     {
-      "tick": 897726,
+      "tick": 915856,
       "stimulus": {
         "state": {
           "shape-t-4": 5.0
@@ -964,7 +964,7 @@
     {
       "step_index": 0,
       "step_name": "mul_6x7",
-      "drive_start_tick": 897677,
+      "drive_start_tick": 915807,
       "skipped_ticks": 0,
       "expected_probe": "alu_out",
       "expected": {
@@ -976,12 +976,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897683
+      "last_sample_tick": 915813
     },
     {
       "step_index": 1,
       "step_name": "div_42_by_5",
-      "drive_start_tick": 897683,
+      "drive_start_tick": 915813,
       "skipped_ticks": 0,
       "expected_probe": "alu_out",
       "expected": {
@@ -994,12 +994,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897689
+      "last_sample_tick": 915819
     },
     {
       "step_index": 2,
       "step_name": "add_neg3_plus_10",
-      "drive_start_tick": 897689,
+      "drive_start_tick": 915819,
       "skipped_ticks": 0,
       "expected_probe": "alu_out",
       "expected": {
@@ -1011,12 +1011,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897695
+      "last_sample_tick": 915825
     },
     {
       "step_index": 3,
       "step_name": "sub_3_minus_10",
-      "drive_start_tick": 897695,
+      "drive_start_tick": 915825,
       "skipped_ticks": 0,
       "expected_probe": "alu_out",
       "expected": {
@@ -1028,12 +1028,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897701
+      "last_sample_tick": 915831
     },
     {
       "step_index": 4,
       "step_name": "all_ops_in_parallel",
-      "drive_start_tick": 897701,
+      "drive_start_tick": 915831,
       "skipped_ticks": 0,
       "expected_probe": "alu_out",
       "expected": {
@@ -1051,12 +1051,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897707
+      "last_sample_tick": 915837
     },
     {
       "step_index": 5,
       "step_name": "cmp_m7_n3_flags_on",
-      "drive_start_tick": 897707,
+      "drive_start_tick": 915837,
       "skipped_ticks": 0,
       "expected_probe": "alu_out",
       "expected": {
@@ -1073,12 +1073,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897714
+      "last_sample_tick": 915844
     },
     {
       "step_index": 6,
       "step_name": "cmp_m2_n9_flags_off",
-      "drive_start_tick": 897714,
+      "drive_start_tick": 915844,
       "skipped_ticks": 0,
       "expected_probe": "alu_out",
       "expected": {
@@ -1093,12 +1093,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897720
+      "last_sample_tick": 915850
     },
     {
       "step_index": 7,
       "step_name": "cmp_m5_n5_gte_fires",
-      "drive_start_tick": 897720,
+      "drive_start_tick": 915850,
       "skipped_ticks": 0,
       "expected_probe": "alu_out",
       "expected": {
@@ -1114,7 +1114,7 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897726
+      "last_sample_tick": 915856
     }
   ],
   "pass": true

@@ -1,0 +1,97 @@
+{
+  "name": "v10_vec_decoder",
+  "description": "fnet v10 component 5: the vector-zone instruction decoder - a SECOND ROM read at the SAME fetch address, feeding the four select/erase lines straight out of a private word 2. Proves the second read port keys off the same read_pc carrier as the instruction fetch (so one PC drives both words), that ROM2's private net makes a scalar-only slot cost nothing (word 2 reads as literally absent), and that all four bit-fields decode to their plain values through the masks the assembler generates - a drift between assembler.encode_word2 and these masks would silently select the wrong vector source, so this is where it gets caught. It also pins the asymmetry the whole design rests on: R and S are LATCHED, because a park has to persist while port A walks the bus for a lane read, while W and erase follow the word and are therefore high for exactly the tick their instruction executes - the widened-pulse bug class, gone by construction. The remaining invariant, that W lands exactly ONE tick after R/S so a commit can never capture a stale selection, is what the two mandelbrot benches assert end to end: a decoder off by one there does not produce a slightly wrong picture, it produces noise.",
+  "pre_stimulus_dead_ticks": 2,
+  "settle_ticks": 8,
+  "poll_seconds": 0.002,
+  "tick_wait_timeout_seconds": 3.0,
+  "trace_ticks": 3,
+  "rebuild_before_run": true,
+  "paste_origin_x": 0.0,
+  "paste_origin_y": 0.0,
+  "fixture_blueprints": [
+    {
+      "name": "power_seed",
+      "origin_x": 0.0,
+      "origin_y": -6.0,
+      "blueprint_string": "0eNqFz8EKgzAMBuB3ybnCdNVpX2UM0S5KQKO0dcxJ333RwXZcLyEh+X66QTssODviAGYDshN7MNcNPPXcDPuMmxHBAA5ogyObIKPr10Qu0HWNRYgKiO/4BJPGmwLkQIHwwxzNWvMytuhkQf3nFMyTF2HiPV3URCtYpRQS1C5dh6729BIkPX3fHkwBR5F/H1LwQOcPKC+yKteZLqtLqc95jG8gJlKg"
+    }
+  ],
+  "restore_pause_state": true,
+  "entity_map": {
+    "drivers": {
+      "fetch_addr": 1,
+      "ROM2": 3
+    },
+    "expected_probe_name": "ctl_out",
+    "output_probes": [
+      { "name": "ctl_out", "entity_number": 19, "wire": "green" },
+      { "name": "word2_out", "entity_number": 20, "wire": "green" }
+    ]
+  },
+  "timeline": [
+    {
+      "name": "fetch_word_two_at_the_instruction_address",
+      "drive": {
+        "fetch_addr": { "$read_pc": 5 },
+        "ROM2": { "$mem[5]": 407323, "$mem[6]": 585, "$mem[8]": 52208 }
+      },
+      "expect_probe": "word2_out",
+      "expect": { "$mem[5]": 407323 }
+    },
+    {
+      "name": "all_four_fields_decode_to_plain_values",
+      "expect": {
+        "$vdec_rsel": 27,
+        "$vdec_ssel": 28,
+        "$vdec_wsel": 3,
+        "$vdec_erase": 3
+      }
+    },
+    {
+      "name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero",
+      "drive": { "fetch_addr": { "$read_pc": 6 } },
+      "expect": {
+        "$vdec_rsel": 9,
+        "$vdec_ssel": 9,
+        "$vdec_wsel": 0,
+        "$vdec_erase": 0
+      }
+    },
+    {
+      "name": "a_scalar_slot_has_no_word_two_at_all",
+      "drive": { "fetch_addr": { "$read_pc": 7 } },
+      "expect_probe": "word2_out",
+      "expect": { "$mem[7]": 0, "$mem[6]": 0, "$mem[5]": 0 }
+    },
+    {
+      "name": "the_park_survives_a_scalar_instruction",
+      "expect": {
+        "$vdec_rsel": 9,
+        "$vdec_ssel": 9,
+        "$vdec_wsel": 0,
+        "$vdec_erase": 0
+      }
+    },
+    {
+      "name": "an_accumulating_move_carries_w_without_erase",
+      "drive": { "fetch_addr": { "$read_pc": 8 } },
+      "expect": {
+        "$vdec_rsel": 48,
+        "$vdec_ssel": 47,
+        "$vdec_wsel": 12,
+        "$vdec_erase": 0
+      }
+    },
+    {
+      "name": "the_commit_line_drops_as_soon_as_the_word_does",
+      "drive": { "fetch_addr": { "$read_pc": 7 } },
+      "expect": {
+        "$vdec_wsel": 0,
+        "$vdec_erase": 0,
+        "$vdec_rsel": 48,
+        "$vdec_ssel": 47
+      }
+    }
+  ]
+}

@@ -10,9 +10,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # main/ on the path
 
 from signal_space import address_of
-from processor.isa import (ACCUMULATE_CELLS, CELL_TO_USE, IR8, JUMP_REL_RESUME,
+from processor.assembler import (assemble_program, assemble_word2,
+                                 decode_word2, encode_word2)
+from processor.isa import (ACCUMULATE_CELLS, CELL_TO_USE, IR8,
+                        JUMP_ABS_DELAY_SLOTS, JUMP_REL_RESUME,
                         JUMP_REL_SHADOW, MMAP_B, MachineConfig, VEC_BUS,
-                        WRITE_TO_CELL,
+                        WRITE_TO_CELL, check_pulse_widths, vec_control_settles,
                         PARK_A_TO_USE, ScheduleError, schedule8)
 from processor.tools.build_fnet_v8_tests import fib_cmp  # noqa: F401  (import proves it builds)
 
@@ -291,6 +294,140 @@ def test_v8_config_has_no_vector_rules():
     assert not IR8().config.vec_reach
     assert IR8().config.vec_bus_reader is None
     assert IR8().config.vec_ports == frozenset()
+
+
+# ---------------------------------------------------------------------------
+# the vector-zone decoder (plan/ROADMAP §3): control out of a second
+# instruction word instead of three traversals of the scalar write path
+# ---------------------------------------------------------------------------
+
+def _decoder_config():
+    """`_vec_config` plus the four decoder rows, i.e. a v10 machine that has
+    the decoder. Same reach table — the zone downstream of the control plane
+    is the SAME hardware, so what the decoder changes is only how fast a
+    control gets there."""
+    cfg, rsel, wsel, rlane_addr, rlane_data = _vec_config()
+    ssel, erase = 904, 905
+    reach = dict(cfg.vec_reach)
+    reach[ssel] = reach[rsel]
+    reach[erase] = reach[wsel]
+    rows = {"vec_rsel": rsel, "vec_ssel": ssel, "vec_wsel": wsel,
+            "vec_erase": erase, "vec_rlane_addr": rlane_addr,
+            "vec_rlane_data": rlane_data,
+            "vdec_rsel": 910, "vdec_ssel": 911, "vdec_wsel": 912,
+            "vdec_erase": 913}
+    names = {v: k for k, v in rows.items()}
+    return (MachineConfig(pc_addr=address_of("signal-P"), mmap_b=MMAP_B,
+                          accumulate_cells=frozenset(), alu_by_addr={},
+                          namer=lambda a: names.get(a, f"mem[{a}]"),
+                          vec_reach=reach, vec_bus_reader=wsel, vec_rows=rows),
+            rows, rlane_data)
+
+
+def test_decoder_move_is_one_instruction_and_no_rom_word():
+    """The whole point: a move stops being a write_imm pair plus two pulses and
+    becomes one slot's second word — which carries no route bits, so it does
+    not even consume a ROM word."""
+    cfg, rows, _rd = _decoder_config()
+    ir = IR8(cfg)
+    ir.vec_move(3, 27, src2=28)
+    prog, _ = schedule8(ir)
+    assert [op.kind for op in ir.ops] == ["vec_ctl"]
+    move = ir.ops[0]
+    assert prog.word2[move.slot] == encode_word2(rsel=27, ssel=28, wsel=3, erase=3)
+    assert assemble_program(prog.rom_entries()) == []          # no ROM word at all
+    assert assemble_word2(prog.rom_entries()) == [(move.slot, prog.word2[move.slot])]
+
+
+def test_decoder_accumulate_drops_the_erase_field():
+    cfg, _rows, _rd = _decoder_config()
+    ir = IR8(cfg)
+    ir.vec_move(9, 7, accumulate=True)
+    prog, _ = schedule8(ir)
+    assert decode_word2(prog.word2[ir.ops[0].slot]) == {
+        "rsel": 7, "ssel": 7, "wsel": 9, "erase": 0}
+
+
+def test_decoder_commit_lands_one_tick_after_its_own_selects():
+    """The bank's rule is park, let the bus settle, THEN commit. Both halves
+    ride one word here, so the alignment has to come out of the decode chains'
+    depths — and if it ever stops holding, every move captures a stale frame."""
+    cfg, rows, _rd = _decoder_config()
+    ir = IR8(cfg)
+    ir.vec_move(1, 27)
+    schedule8(ir)
+    settles = dict((addr, slot) for slot, addr in
+                   vec_control_settles(ir.ops[0], cfg))
+    assert settles[rows["vec_wsel"]] == settles[rows["vec_rsel"]] + 1
+    assert settles[rows["vec_erase"]] == settles[rows["vec_wsel"]]
+
+
+def test_decoder_move_waits_for_the_mux_to_present_its_source():
+    """A dependent move still pays the zone's own depth — the decoder removes
+    the write path, not the hardware. wsel reaches the bus in at most 4 stages
+    (through the square block), so back-to-back moves sit 4 slots apart."""
+    cfg, _rows, _rd = _decoder_config()
+    ir = IR8(cfg)
+    for _ in range(4):
+        ir.vec_move(1, 27)
+    schedule8(ir)
+    slots = [op.slot for op in ir.ops]
+    assert all(b - a == 4 for a, b in zip(slots, slots[1:])), slots
+
+
+def test_decoder_park_persists_across_a_read():
+    """R and S are LATCHED, so one park instruction steers the mux for as long
+    as port A needs to walk the bus — the read still waits out the zone."""
+    cfg, rows, rlane_data = _decoder_config()
+    ir = IR8(cfg)
+    ir.vec_select(21)
+    ir.barrier()
+    ir.write_imm(rows["vec_rlane_addr"], 7)
+    ir.barrier()
+    ir.copy_a(rlane_data, H)
+    schedule8(ir)
+    park, read = ir.ops[0], ir.ops[2]
+    assert park.wsel == 0 and park.erase == 0
+    # settle at slot + 2, then the zone's 3 stages, then the read's own slot
+    assert read.slot >= park.slot + 2 + 3 + 1
+
+
+def test_a_branch_never_strands_work_placed_before_it():
+    """A vec_ctl takes no route bits and no write latch, so its only floor is
+    the zone's timing — which routinely lands it LATER than a scalar op that
+    follows it in the IR. Measured 2026-07-28: the mandelbrot loop's branch was
+    placed at slot 57 while four of its own body moves sat at 66..83, so those
+    moves ran once instead of once per pass."""
+    cfg, rows, _rd = _decoder_config()
+    ir = IR8(cfg)
+    ir.write_imm(H, 1)
+    ir.barrier()
+    ir.label("top")
+    for _ in range(4):
+        ir.vec_move(1, 27)
+    ir.jump_if_zero(Q_, "top")
+    prog, sched = schedule8(ir)
+    jump = next(op for op in ir.ops if op.kind == "jump_if_zero")
+    body = [op for op in ir.ops if op.kind == "vec_ctl"]
+    last_executed = jump.value_slot + JUMP_ABS_DELAY_SLOTS
+    assert all(op.slot <= last_executed for op in body), (
+        [op.slot for op in body], last_executed)
+
+
+def test_memory_mapped_backend_is_still_reachable():
+    """Both control planes are live hardware, and a v10-class design built
+    without the decoder must still compile — the pulses (and the check that
+    guards their width) are not dead code."""
+    cfg, rows, _rd = _decoder_config()
+    ir = IR8(cfg)
+    ir.vec_move(1, 27, via="memory")
+    schedule8(ir)
+    check_pulse_widths(ir)
+    kinds = [op.kind for op in ir.ops]
+    assert kinds == ["write_imm", "write_imm", "pulse_imm", "pulse_imm"]
+    # ...and a machine WITHOUT the decoder picks that backend by itself
+    plain, _rsel, _wsel, _ra, _rd2 = _vec_config()
+    assert not plain.has_vec_decoder
 
 
 if __name__ == "__main__":

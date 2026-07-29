@@ -14,6 +14,16 @@ and this file records only what does not:
 Reference material for all of it lives in `main/processor/docs/` and
 `main/fnet/README.md`. Items are ordered by what unblocks the most.
 
+**§3, the vector-zone decoder, was BUILT on 2026-07-28** and its record moved
+into `main/` — see `main/processor/docs/isa.md` "Vector control: two planes,
+one set of gates" and `main/processor/modules/v10_vec_decoder.fnet`. A vector
+move went from 15.5 ticks to 3.9 and the mandelbrot loop body from 171 ticks a
+pass to 43, with byte-identical expectations. What is left of it is §3 below,
+which is now only the follow-on tuning.
+
+**Next up: §1**, the top blocker — with vector code no longer the bottleneck,
+what limits programs is control flow.
+
 ---
 
 ## 1. `jump_rel_if` + forward labels — the top blocker
@@ -66,22 +76,43 @@ the lane conventions are in `SIMD.md`.
 
 ---
 
-## 3. The vector-zone decoder — ~5× on vector code
+## 3. Vector-move cost — what is left after the decoder
 
-Worth ~5× and deliberately scheduled AFTER the language, because
-`IR8.vec_move` already hides it: a vector move is three traversals of the
-scalar write path (~15 ticks, about 90% of vector-code time), and the fix
-makes it ~3.
+The decoder itself is **built** (2026-07-28): word 2 of each instruction drives
+`vec_rsel` / `vec_ssel` / `vec_wsel` / `vec_erase` out of a private ROM2 read at
+the same fetch address, every gate in the zone ORs the two control planes, and
+a move went from 15.5 ticks to 3.9 with byte-identical mandelbrot expectations.
+The record lives in `main/`: `main/processor/docs/isa.md` for the measured
+table and the word-2 layout, `main/processor/modules/v10_vec_decoder.fnet` for
+the hardware and why each depth is what it is.
 
-**The philosophy-consistent shape is more interconnect, not an instruction
-set**: out5/out6/out7 matrix dests driving `vec_rsel` / `vec_wsel` /
-`vec_erase` directly, one more column of gates per dest. Purely additive — the
-memory-mapped path keeps working — and it adds no opcodes.
+Three things were deliberately left:
 
-Because `vec_move` / `vec_select` / `vec_read_lane` are the only code that
-knows how a vector action is realised, this is a backend swap: a different
-expansion there plus new entries in `_VEC_REACH_BY_NAME`, and every bench
-re-verifies it unchanged. No program and no compiler pass changes.
+- **Source-aware move depth — the biggest remaining win.** What costs 3.9 ticks
+  a move is no longer the control plane; it is the scheduler applying the
+  `vec_wsel -> VEC_BUS` LATEST depth of 4 to every move, because the op farm's
+  square block can be that deep. A move whose source is a plain register needs
+  2, a one-deep op needs 3, and only B_SQDIFF needs 4 — and the move op already
+  knows its own source index. Summing the real depths over the mandelbrot loop
+  gives 30 rather than 44, so the body should land near 30 ticks. Not attempted
+  yet because the flat bound is the table the zone was verified against, and a
+  wrong depth here is a silently wrong frame, not a crash.
+
+- **The spare mode bit.** Word 2 uses 22 of 32 bits. The intended use for one
+  spare was a flag meaning *"this instruction's scalar immediate is
+  `vec_bcast`"*, so `frame*k` carries its constant in word 1's existing
+  immediate instead of a separate `write_imm` five ticks ahead. In the
+  mandelbrot loop that is three writes a pass out of fourteen instructions.
+  `vec_bcast` / `vec_bcast2` stay memory-mapped either way — they are 20 bits
+  each and there is no room for them as fields.
+
+- **Nothing exercises the memory-mapped move path end to end any more.** The
+  v10 program benches all take the decoder now; the component benches
+  (`v10_vec_reg`, `v10_vec_bank`) still drive the memory-mapped rows directly,
+  and `IR8.vec_move(..., via="memory")` still compiles and is unit-tested, but
+  no whole-machine bench runs a program that way. That is a deliberate
+  trade — the alternative was a 23rd bench duplicating mandelbrot at 4x the
+  ticks — recorded here so it is a decision rather than an oversight.
 
 ---
 

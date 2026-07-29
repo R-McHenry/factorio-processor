@@ -3,29 +3,29 @@
   "probes": [
     {
       "net": "enc_onehot",
-      "entity_number": 189,
+      "entity_number": 205,
       "wire": "red",
       "position": {
-        "x": 2.5,
-        "y": 11.5
+        "x": 4.5,
+        "y": 13.5
       }
     },
     {
       "net": "membus",
-      "entity_number": 190,
+      "entity_number": 206,
       "wire": "green",
       "position": {
-        "x": 2.5,
-        "y": 12.5
+        "x": 4.5,
+        "y": 14.5
       }
     },
     {
       "net": "processor0.state",
-      "entity_number": 191,
+      "entity_number": 207,
       "wire": "red",
       "position": {
-        "x": 3.5,
-        "y": 11.5
+        "x": 5.5,
+        "y": 13.5
       }
     }
   ]

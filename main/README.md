@@ -5,8 +5,8 @@ superseded generations (`../archive/`). If it is described here, it exists and
 a bench proves it.
 
 ```
-.\.venv\Scripts\python.exe main\run_all.py --start-server --regen   # 21 benches, ~2 min
-.\.venv\Scripts\python.exe main\processor\test_isa.py               # 15 scheduler tests
+.\.venv\Scripts\python.exe main\run_all.py --start-server --regen   # 22 benches, ~2 min
+.\.venv\Scripts\python.exe main\processor\test_isa.py               # 22 scheduler tests
 .\.venv\Scripts\python.exe main\processor\test_lang.py              # 23 compiler tests
 .\.venv\Scripts\python.exe main\fnet\test_hdl.py                    # HDL tests
 ```

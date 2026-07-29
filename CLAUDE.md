@@ -101,10 +101,11 @@ RCON, crashed server, block-buffered pipe hiding progress — investigate, don't
 wait):
 
 - Headless boot to RCON-ready: **~15-25s**
-- Any single bench: **0.5-1.5s**, except the two mandelbrots at **~14s** each
-  (~5200 ticks plus a lane-by-lane readback — real compute, not a stall)
+- Any single bench: **0.5-1.5s**, except the two mandelbrots at **~5s** each
+  (~1600 ticks plus a lane-by-lane readback — real compute, not a stall; they
+  were ~14s / ~5200 ticks before the vector decoder landed 2026-07-28)
 - `--regen` (pure Python, no RCON): **~90s**
-- Full 21-bench suite: **~50s**; incl. `--regen`: **~2 min**
+- Full 22-bench suite: **~26s**; incl. `--regen`: **~2 min**
 
 `run_all.py` streams a flushed per-bench progress line — an empty background
 output file does NOT mean the run is hung.
@@ -112,8 +113,8 @@ output file does NOT mean the run is hung.
 ## Common commands
 
 ```
-.\.venv\Scripts\python.exe main\run_all.py --start-server --regen   # 21 benches
-.\.venv\Scripts\python.exe main\processor\test_isa.py               # 15 tests
+.\.venv\Scripts\python.exe main\run_all.py --start-server --regen   # 22 benches
+.\.venv\Scripts\python.exe main\processor\test_isa.py               # 22 tests
 .\.venv\Scripts\python.exe main\processor\test_lang.py              # 23 tests
 .\.venv\Scripts\python.exe main\fnet\test_hdl.py                    # HDL tests
 ```

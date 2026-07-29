@@ -1,9 +1,9 @@
 # v10_processor — the composed machine: the live-verified fnet v8 scalar core
 # with the vector zone hung off its memory bus.
 #
-# The join is one net. Chunk1's green memory bus IS the vector zone's entire
-# control plane, so composition is nothing more than handing `membus` to every
-# vector component:
+# The join is one net. Chunk1's green memory bus IS the vector zone's control
+# plane, so composition is nothing more than handing `membus` to every vector
+# component:
 #
 #   processor  ── membus (green) ──┬──> vec_bank   (W / R / S / erase)
 #                                  ├──> op_farm    (R / S / vec_bcast)
@@ -13,8 +13,20 @@
 #                        become ordinary scalar rows the program can read.
 #
 # So a vector operation is a scalar `write_imm` to a memory row and nothing
-# else — no new instructions, no second bus, no decoder. That is the whole
-# payoff of making the control plane memory-mapped.
+# else — no new instructions and no second bus. That is the payoff of making
+# the control plane memory-mapped, and it is still exactly true.
+#
+# SINCE 2026-07-28 THOSE FOUR LINES HAVE A SECOND DRIVER (v10_vec_decoder.fnet):
+#
+#   processor ── pcsel (red: the fetch address) ──> vec_decoder ──> membus
+#
+# The decoder hangs a second read port off the SAME fetch address the
+# instruction port uses, pulls word 2 out of a private ROM2, and drives
+# `vdec_rsel` / `vdec_ssel` / `vdec_wsel` / `vdec_erase` onto membus alongside
+# the memory-mapped rows. Every gate in the zone tests both, so nothing here
+# is replaced — a move simply stops costing five ticks of write path. Still no
+# new opcode: the routing matrix is untouched, and word 2 is a separate word,
+# not a wider one.
 #
 # LANE DISCIPLINE (the one rule composition adds). `vec_io`'s out-ports DRIVE
 # membus, and a memory cell may hold a value at the same row; Factorio sums
@@ -34,6 +46,7 @@ import "v8_processor.fnet";
 import "v10_vec_bank.fnet";
 import "v10_op_farm.fnet";
 import "v10_vec_io.fnet";
+import "v10_vec_decoder.fnet";
 
 module v10_processor() {
   net green membus;          # chunk1 memory bus: scalar data AND vector control
@@ -42,12 +55,19 @@ module v10_processor() {
   net green b1, b2;          # op farm pair A / pair B, B-side operands
   net green a2g;             # VREG2's other face — the square block's operand
   net red   b2r;             # VREG3's other face — likewise
+  net red   pcsel;           # the fetch address: shared by ROM and ROM2
+  net green word2;           # ROM2's fetched word (deliberately private)
   debug net red enc_onehot;  # v8's write-encoder one-hot (probe point)
 
-  processor(enc_onehot: enc_onehot, membus: membus);
+  processor(enc_onehot: enc_onehot, membus: membus, pc_select: pcsel);
   vec_bank(membus: membus, vbus: vbus, a1: a1, b1: b1, a2: a2, b2: b2,
            a2g: a2g, b2r: b2r);
   op_farm(membus: membus, vbus: vbus, a1: a1, b1: b1, a2: a2, b2: b2,
           a2g: a2g, b2r: b2r);
   vec_io(membus: membus, vbus: vbus, scalar_out: membus);
+  # The second control plane. It drives the SAME select/erase lines the
+  # memory-mapped rows drive — every gate ORs the two — so this is purely
+  # additive: a program that writes `vec_rsel` still works, and one that puts
+  # the same selection in word 2 gets it five ticks earlier and one tick wide.
+  vec_decoder(rom_addr: pcsel, ctl_out: membus, word2_out: word2);
 }

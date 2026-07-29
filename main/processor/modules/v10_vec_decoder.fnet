@@ -1,0 +1,136 @@
+# v10_vec_decoder — the vector-zone instruction decoder (plan/ROADMAP §3,
+# built 2026-07-28). It is what turns a vector move from three traversals of
+# the scalar write path into a single instruction.
+#
+# THE PROBLEM IT SOLVES. Vector control was memory-mapped: `vec_rsel`,
+# `vec_ssel`, `vec_wsel` and `vec_erase` are ordinary rows, so a move cost a
+# write_imm for each selector plus two one-tick pulses, and every one of those
+# paid the write path's five-tick latency. Measured, that is ~15 ticks a move
+# and about 90% of vector-code time.
+#
+# WHERE THE BITS COME FROM. The instruction word is FULL: 32 bits = 12 route
+# bits + a 20-bit signed immediate, and the immediate cannot be raided because
+# 20 signed bits is exactly what caps the fixed-point scale (4S^2 <= 524287,
+# which is why mandelbrot runs at S = 360). So this fetches a SECOND 32-bit
+# word per instruction, from a second ROM at the SAME address:
+#
+#   pc_select (red: address table + the read_pc carrier)
+#        |                                   |
+#        v                                   v
+#   [instruction_read] <- ROM (membus)  [instruction2_read] <- ROM2 (private)
+#
+# One PC, one fetch address, one set of jump offsets. ROM2 rides a PRIVATE
+# green net, so unlike ROM it shadows no memory row at all, and a scalar-only
+# instruction simply has no ROM2 row: word 2 reads as nothing, every field is
+# zero, and no gate matches. The rejected alternatives (PC += 2, or a second
+# PC) are recorded in plan/ROADMAP.md §3 — both cost more and buy nothing that
+# is wanted yet.
+#
+# WORD 2 LAYOUT (22 of 32 bits used, 10 spare):
+#
+#   bits  0..5    R      mux read-select, 1..48
+#   bits  6..11   S      the second mux read-select
+#   bits 12..16   W      which register commits
+#   bits 17..21   erase  which register is zeroed this tick
+#
+# DEPTH IS THE DESIGN, not an accident. The bank's timing rule is that the
+# write bus is one tick behind the selectors, so a commit must sample the bus
+# one tick AFTER R/S land. Both halves ride the same instruction word here, so
+# the alignment is built into the decode chains instead of being scheduled:
+#
+#   R, S       3 stages   mask, collapse-onto-carrier, LATCH
+#   W, erase   4 stages   mask, shift, collapse, relabel
+#
+# One stage apart, by construction, on every instruction — so a whole move is
+# ONE slot and the write head can never capture a stale selection. In the
+# scheduler's frame (processor/isa.py) an instruction at slot n therefore has
+# its R/S settle at n+2 and its W/erase at n+3.
+#
+# R AND S ARE LATCHED, W AND ERASE ARE NOT, and that asymmetry is the whole
+# park/pulse distinction the memory-mapped path had to spell out:
+#
+#   - a select PERSISTS, because reads (`vred_sum`, `vec_rlane_data`) need the
+#     mux held still while port A walks the bus. The latch passes its input
+#     whenever the field is non-zero and holds its own loop otherwise, so a
+#     scalar instruction leaves the park alone.
+#   - a write is EXACTLY ONE TICK, because the field is zero on the very next
+#     instruction. That is the bug class `check_pulse_widths` exists for,
+#     gone by construction: there is no pulse to widen.
+#
+# The four carriers are memory-mapped rows (v10_addr_map.fnet) rather than
+# excluded carriers, because excluding a signal compacts the design's address
+# space — which would change every address, the lane count, and the
+# mandelbrot picture. They join the green memory bus alongside the memory
+# cell's own output for those rows, which no program ever writes, so the sum
+# is the decoder's value alone.
+#
+# `module vec_decoder` is the reusable component; `vec_decoder_bench` is the
+# live-test harness — build with `--top vec_decoder_bench`.
+#
+# Entity numbering (declaration order; the bench's entity_map relies on it):
+# the component is ROM2, instruction2_read, then R (mask, field, latch),
+# S (mask, field, latch), W (mask, shift, field, relabel) and erase (the same
+# four). The bench prepends 1 fetch_addr stim and 2 address table, so the
+# component runs 3..18, then debug probes in net-name order: 19 ctl_out,
+# 20 word2_out.
+
+import "lib/v8.fnet";
+import "lib/v10.fnet";
+import "v8_pc.fnet";
+import "v10_addr_map.fnet";
+
+# Collapsed-but-not-yet-delayed W and erase. Private to their chains, so these
+# are ordinary auto signals: nothing outside this module ever sees them.
+signal vdec_wsel_pre;
+signal vdec_erase_pre;
+
+module vec_decoder(in_r rom_addr, out_g ctl_out, out_g word2_out) {
+  net green rom2;                 # ROM2's private instruction net
+  net green rsel_f, ssel_f;       # masked fields, still on the ROM row's signal
+  net green wsel_f, erase_f;
+  net green wsel_sh, erase_sh;    # ...shifted down to a plain index
+  net green rsel_in, ssel_in;     # collapsed onto the carrier, into the latch
+  net red   rsel_hold, ssel_hold; # the latches' own hold loops
+  net green wsel_pre, erase_pre;  # collapsed onto the pre-carrier
+
+  stim<"ROM2">(out_g: rom2);
+  v8_port_read<read_pc, "instruction2_read">(in_r: rom_addr, in_g: rom2,
+                                             out_g: word2_out);
+
+  # -- R: mask, collapse, latch (3 stages) ---------------------------------
+  v8_route_mask<63, "vdec_rsel_mask">(in_g: word2_out, out_g: rsel_f);
+  v10_field_to<"+", 0, vdec_rsel, "vdec_rsel_field">(in_g: rsel_f, out_g: rsel_in);
+  v8_park_latch<"vdec_rsel_latch">(in_g: rsel_in, in_r: rsel_hold,
+                                   out_g: ctl_out, out_r: rsel_hold);
+
+  # -- S: same shape, the shift folded into the collapse -------------------
+  v8_route_mask<4032, "vdec_ssel_mask">(in_g: word2_out, out_g: ssel_f);
+  v10_field_to<"/", 64, vdec_ssel, "vdec_ssel_field">(in_g: ssel_f, out_g: ssel_in);
+  v8_park_latch<"vdec_ssel_latch">(in_g: ssel_in, in_r: ssel_hold,
+                                   out_g: ctl_out, out_r: ssel_hold);
+
+  # -- W: mask, shift, collapse, relabel (4 stages — one deeper than R/S) --
+  v8_route_mask<126976, "vdec_wsel_mask">(in_g: word2_out, out_g: wsel_f);
+  v10_field_shift<"/", 4096, "vdec_wsel_shift">(in_g: wsel_f, out_g: wsel_sh);
+  v10_field_to<"+", 0, vdec_wsel_pre, "vdec_wsel_field">(in_g: wsel_sh, out_g: wsel_pre);
+  v8_sig_to<vdec_wsel_pre, vdec_wsel, "vdec_wsel_delay">(in_g: wsel_pre, out_g: ctl_out);
+
+  # -- erase: identical chain, so it lands on the SAME tick as W -----------
+  # Same tick is what makes a move a REPLACE: the cell emits nothing while the
+  # head drops the new frame. A shallower erase would be harmless (the register
+  # would simply sit empty for a tick); a DEEPER one would wipe the write.
+  v8_route_mask<4063232, "vdec_erase_mask">(in_g: word2_out, out_g: erase_f);
+  v10_field_shift<"/", 131072, "vdec_erase_shift">(in_g: erase_f, out_g: erase_sh);
+  v10_field_to<"+", 0, vdec_erase_pre, "vdec_erase_field">(in_g: erase_sh, out_g: erase_pre);
+  v8_sig_to<vdec_erase_pre, vdec_erase, "vdec_erase_delay">(in_g: erase_pre, out_g: ctl_out);
+}
+
+module vec_decoder_bench() {
+  net red rom_addr;             # the fetch address: table + the read_pc carrier
+  debug net green ctl_out;      # where the four control carriers land
+  debug net green word2_out;    # the raw fetched word (decode input)
+
+  stim<"fetch_addr">(out_r: rom_addr);
+  addr_table(out_r: rom_addr);
+  vec_decoder(rom_addr: rom_addr, ctl_out: ctl_out, word2_out: word2_out);
+}

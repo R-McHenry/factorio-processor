@@ -56,10 +56,10 @@ module vec_reg_bench() {
   stim<"scalar_membus">(out_g: membus);
   stim<"vec_write_bus">(out_r: vbus);
 
-  v10_wsel_gate<vec_wsel, 1, "whead_vreg0">(in_g: membus, in_r: vbus, out_r: loop1);
-  v10_vreg_cell<vec_erase, 1, "vreg0">(in_g: membus, in_r: loop1,
+  v10_wsel_gate<vec_wsel, vdec_wsel, 1, "whead_vreg0">(in_g: membus, in_r: vbus, out_r: loop1);
+  v10_vreg_cell<vec_erase, vdec_erase, 1, "vreg0">(in_g: membus, in_r: loop1,
                                        out_r: loop1, out_g: green_face1);
 
-  v10_wsel_gate<vec_wsel, 2, "whead_vreg1">(in_g: membus, in_r: vbus, out_r: loop2);
-  v10_vreg_cell<vec_erase, 2, "vreg1">(in_g: membus, in_r: loop2, out_r: loop2);
+  v10_wsel_gate<vec_wsel, vdec_wsel, 2, "whead_vreg1">(in_g: membus, in_r: vbus, out_r: loop2);
+  v10_vreg_cell<vec_erase, vdec_erase, 2, "vreg1">(in_g: membus, in_r: loop2, out_r: loop2);
 }

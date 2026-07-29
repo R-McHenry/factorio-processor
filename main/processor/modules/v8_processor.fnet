@@ -37,9 +37,13 @@ accumulate poison_ctr;
 
 # `membus` is a port so the v10 vector zone can hang off the scalar memory
 # bus (it is the vector zone's entire control plane — see v10_processor.fnet).
-# Unbound in the standalone v8 build, where a top-level port waives the
-# driver/consumer requirement and the compiled output is byte-identical.
-module processor(out_r enc_onehot, out_g membus) {
+# `pc_select` is a port for the same reason: it is the fetch ADDRESS net (the
+# address table plus the read_pc carrier), and the vector-zone decoder hangs a
+# second read port off it to fetch word 2 of the same instruction from a
+# private ROM2 — one PC, one fetch address, two words.
+# Both are unbound in the standalone v8 build, where a top-level port waives
+# the driver/consumer requirement and the compiled output is byte-identical.
+module processor(out_r enc_onehot, out_g membus, out_r pc_select) {
   net red state;
   net green waddr_bus, wvalue_bus, park_a_bus, inject_bus;
   net red trig_bus;
@@ -47,7 +51,6 @@ module processor(out_r enc_onehot, out_g membus) {
   net green reset_bus, value_bus;
   net green porta_data, portb_data, instr_data;
   net green addr_b_bus;
-  net red pc_select;
   debug state, membus;
 
   # -- rows 1-5: decoder (3-tile phase prefix), bridges, encoder -----------

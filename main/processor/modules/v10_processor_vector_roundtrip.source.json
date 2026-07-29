@@ -1,7 +1,7 @@
 {
   "name": "v10_processor_vector_roundtrip",
   "surface": "nauvis",
-  "description": "v10 program: End-to-end v10 program: the scalar core drives the vector zone with nothing but write_imm to memory rows, and reads results back with copy_a. Parks the mux on COORD and extracts lanes 7 and 250 (both return their own index); reduces the whole ramp to 3004926 = N(N+1)/2 over 2451 lanes, a number only reachable by summing the entire vector in one tick; then writes lane 60 = 4242 through LANE_IN and reads it back, with the frame reduction confirming exactly one lane. Then it MOVES the ramp into VREG0 - erase pulse, then a one-tick W pulse, both free from the write path's pipelining - and proves the register holds the whole frame by re-reading it as a mux source (3004926 again, lane 7 still 7). Finally the op farm computes VS_MOD = VREG0 % 3 over all 2451 lanes, reading back 1 at lane 7 and 2 at lane 8 - the mandelbrot grid step. No vector-specific instruction exists; machine_v8 scheduled all of it with no vector awareness at all.",
+  "description": "v10 program: End-to-end v10 program: the scalar core drives the vector zone with nothing but write_imm to memory rows, and reads results back with copy_a. Parks the mux on COORD and extracts lanes 7 and 250 (both return their own index); reduces the whole ramp to 3004926 = N(N+1)/2 over 2451 lanes, a number only reachable by summing the entire vector in one tick; then writes lane 60 = 4242 through LANE_IN and reads it back, with the frame reduction confirming exactly one lane. Then it MOVES the ramp into VREG0 - erase pulse, then a one-tick W pulse, both free from the write path's pipelining - and proves the register holds the whole frame by re-reading it as a mux source (3004926 again, lane 7 still 7). Finally the op farm computes VS_MOD = VREG0 % 3 over all 2451 lanes, reading back 1 at lane 7 and 2 at lane 8 - the mandelbrot grid step. No vector-specific instruction exists; processor.isa scheduled all of it with no vector awareness at all.",
   "signals": {
     "file.counter": {
       "type": "item",
@@ -881,6 +881,70 @@
       "auto": false,
       "address": 2149
     },
+    "file.vdec_rsel": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "epic",
+      "display": "signal-battery-full~epic",
+      "auto": false,
+      "address": 2150
+    },
+    "vdec_rsel": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "epic",
+      "display": "signal-battery-full~epic",
+      "auto": false,
+      "address": 2150
+    },
+    "file.vdec_ssel": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "legendary",
+      "display": "signal-battery-full~legendary",
+      "auto": false,
+      "address": 2151
+    },
+    "vdec_ssel": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "legendary",
+      "display": "signal-battery-full~legendary",
+      "auto": false,
+      "address": 2151
+    },
+    "file.vdec_wsel": {
+      "type": "virtual",
+      "name": "signal-battery-low",
+      "quality": "normal",
+      "display": "signal-battery-low",
+      "auto": false,
+      "address": 2152
+    },
+    "vdec_wsel": {
+      "type": "virtual",
+      "name": "signal-battery-low",
+      "quality": "normal",
+      "display": "signal-battery-low",
+      "auto": false,
+      "address": 2152
+    },
+    "file.vdec_erase": {
+      "type": "virtual",
+      "name": "signal-battery-low",
+      "quality": "uncommon",
+      "display": "signal-battery-low~uncommon",
+      "auto": false,
+      "address": 2153
+    },
+    "vdec_erase": {
+      "type": "virtual",
+      "name": "signal-battery-low",
+      "quality": "uncommon",
+      "display": "signal-battery-low~uncommon",
+      "auto": false,
+      "address": 2153
+    },
     "file.rlane_carrier": {
       "type": "virtual",
       "name": "left-arrow",
@@ -896,6 +960,34 @@
       "display": "left-arrow~uncommon",
       "auto": true,
       "excluded": true
+    },
+    "file.vdec_wsel_pre": {
+      "type": "virtual",
+      "name": "shape-diagonal",
+      "quality": "uncommon",
+      "display": "shape-diagonal~uncommon",
+      "auto": true
+    },
+    "vdec_wsel_pre": {
+      "type": "virtual",
+      "name": "shape-diagonal",
+      "quality": "uncommon",
+      "display": "shape-diagonal~uncommon",
+      "auto": true
+    },
+    "file.vdec_erase_pre": {
+      "type": "virtual",
+      "name": "shape-diagonal-2",
+      "quality": "uncommon",
+      "display": "shape-diagonal-2~uncommon",
+      "auto": true
+    },
+    "vdec_erase_pre": {
+      "type": "virtual",
+      "name": "shape-diagonal-2",
+      "quality": "uncommon",
+      "display": "shape-diagonal-2~uncommon",
+      "auto": true
     }
   },
   "blueprint": {
@@ -2840,39 +2932,39 @@
                     "name": "signal-0",
                     "quality": "normal",
                     "comparator": "=",
-                    "count": 8728832
+                    "count": 8794368
                   },
                   {
                     "index": 2,
                     "type": "virtual",
                     "name": "signal-0",
-                    "quality": "uncommon",
+                    "quality": "rare",
                     "comparator": "=",
-                    "count": 8732928
+                    "count": 29184
                   },
                   {
                     "index": 3,
                     "type": "virtual",
                     "name": "signal-0",
-                    "quality": "rare",
+                    "quality": "epic",
                     "comparator": "=",
-                    "count": 193024
+                    "count": 8794368
                   },
                   {
                     "index": 4,
                     "type": "virtual",
                     "name": "signal-0",
-                    "quality": "epic",
+                    "quality": "legendary",
                     "comparator": "=",
-                    "count": 193024
+                    "count": 8786176
                   },
                   {
                     "index": 5,
                     "type": "virtual",
-                    "name": "signal-0",
-                    "quality": "legendary",
+                    "name": "signal-1",
+                    "quality": "normal",
                     "comparator": "=",
-                    "count": 8794368
+                    "count": 1024512
                   },
                   {
                     "index": 6,
@@ -2880,7 +2972,7 @@
                     "name": "signal-1",
                     "quality": "uncommon",
                     "comparator": "=",
-                    "count": 29184
+                    "count": 246272
                   },
                   {
                     "index": 7,
@@ -2888,7 +2980,7 @@
                     "name": "signal-1",
                     "quality": "rare",
                     "comparator": "=",
-                    "count": 8794368
+                    "count": 8799232
                   },
                   {
                     "index": 8,
@@ -2896,7 +2988,7 @@
                     "name": "signal-1",
                     "quality": "epic",
                     "comparator": "=",
-                    "count": 8786176
+                    "count": 8745984
                   },
                   {
                     "index": 9,
@@ -2904,7 +2996,7 @@
                     "name": "signal-1",
                     "quality": "legendary",
                     "comparator": "=",
-                    "count": 1024512
+                    "count": 2048256
                   },
                   {
                     "index": 10,
@@ -2912,7 +3004,7 @@
                     "name": "signal-2",
                     "quality": "normal",
                     "comparator": "=",
-                    "count": 246272
+                    "count": 2064640
                   },
                   {
                     "index": 11,
@@ -2920,7 +3012,7 @@
                     "name": "signal-2",
                     "quality": "uncommon",
                     "comparator": "=",
-                    "count": 8799232
+                    "count": 8799234
                   },
                   {
                     "index": 12,
@@ -2928,7 +3020,7 @@
                     "name": "signal-2",
                     "quality": "rare",
                     "comparator": "=",
-                    "count": 8745984
+                    "count": 8790274
                   },
                   {
                     "index": 13,
@@ -2936,7 +3028,7 @@
                     "name": "signal-2",
                     "quality": "epic",
                     "comparator": "=",
-                    "count": 2048256
+                    "count": 2052352
                   },
                   {
                     "index": 14,
@@ -2944,7 +3036,7 @@
                     "name": "signal-2",
                     "quality": "legendary",
                     "comparator": "=",
-                    "count": 2064640
+                    "count": 17375744
                   },
                   {
                     "index": 15,
@@ -2952,404 +3044,164 @@
                     "name": "signal-3",
                     "quality": "normal",
                     "comparator": "=",
-                    "count": 8799234
+                    "count": 8794370
                   },
                   {
                     "index": 16,
                     "type": "virtual",
                     "name": "signal-3",
-                    "quality": "uncommon",
+                    "quality": "rare",
                     "comparator": "=",
-                    "count": 8728834
+                    "count": 246272
                   },
                   {
                     "index": 17,
                     "type": "virtual",
                     "name": "signal-3",
-                    "quality": "rare",
+                    "quality": "epic",
                     "comparator": "=",
-                    "count": 2052352
+                    "count": 8794368
                   },
                   {
                     "index": 18,
                     "type": "virtual",
-                    "name": "signal-3",
-                    "quality": "epic",
+                    "name": "signal-4",
+                    "quality": "normal",
                     "comparator": "=",
-                    "count": 197120
+                    "count": 29184
                   },
                   {
                     "index": 19,
                     "type": "virtual",
-                    "name": "signal-3",
-                    "quality": "legendary",
+                    "name": "signal-4",
+                    "quality": "epic",
                     "comparator": "=",
-                    "count": 8732930
+                    "count": 8745984
                   },
                   {
                     "index": 20,
                     "type": "virtual",
                     "name": "signal-4",
-                    "quality": "normal",
+                    "quality": "legendary",
                     "comparator": "=",
-                    "count": 8790272
+                    "count": 2056448
                   },
                   {
                     "index": 21,
                     "type": "virtual",
-                    "name": "signal-4",
-                    "quality": "uncommon",
+                    "name": "signal-5",
+                    "quality": "normal",
                     "comparator": "=",
-                    "count": 197120
+                    "count": 2060544
                   },
                   {
                     "index": 22,
                     "type": "virtual",
-                    "name": "signal-4",
-                    "quality": "rare",
+                    "name": "signal-5",
+                    "quality": "uncommon",
                     "comparator": "=",
-                    "count": 17375744
+                    "count": 8741122
                   },
                   {
                     "index": 23,
                     "type": "virtual",
-                    "name": "signal-4",
-                    "quality": "epic",
+                    "name": "signal-5",
+                    "quality": "rare",
                     "comparator": "=",
-                    "count": 8794368
+                    "count": 2
                   },
                   {
                     "index": 24,
                     "type": "virtual",
                     "name": "signal-5",
-                    "quality": "normal",
+                    "quality": "epic",
                     "comparator": "=",
-                    "count": 246272
+                    "count": 12800
                   },
                   {
                     "index": 25,
                     "type": "virtual",
-                    "name": "signal-5",
-                    "quality": "rare",
+                    "name": "signal-6",
+                    "quality": "uncommon",
                     "comparator": "=",
-                    "count": 8728832
+                    "count": 8799232
                   },
                   {
                     "index": 26,
                     "type": "virtual",
-                    "name": "signal-5",
-                    "quality": "epic",
+                    "name": "signal-6",
+                    "quality": "rare",
                     "comparator": "=",
-                    "count": 8732928
+                    "count": 2068736
                   },
                   {
                     "index": 27,
                     "type": "virtual",
-                    "name": "signal-5",
-                    "quality": "legendary",
+                    "name": "signal-6",
+                    "quality": "epic",
                     "comparator": "=",
-                    "count": 193024
+                    "count": 2072832
                   },
                   {
                     "index": 28,
                     "type": "virtual",
                     "name": "signal-6",
-                    "quality": "normal",
+                    "quality": "legendary",
                     "comparator": "=",
-                    "count": 193024
+                    "count": 2
                   },
                   {
                     "index": 29,
                     "type": "virtual",
-                    "name": "signal-6",
-                    "quality": "uncommon",
+                    "name": "signal-7",
+                    "quality": "normal",
                     "comparator": "=",
-                    "count": 8745984
+                    "count": 8794370
                   },
                   {
                     "index": 30,
                     "type": "virtual",
-                    "name": "signal-6",
-                    "quality": "rare",
-                    "comparator": "=",
-                    "count": 2056448
-                  },
-                  {
-                    "index": 31,
-                    "type": "virtual",
-                    "name": "signal-6",
-                    "quality": "epic",
-                    "comparator": "=",
-                    "count": 2060544
-                  },
-                  {
-                    "index": 32,
-                    "type": "virtual",
-                    "name": "signal-6",
-                    "quality": "legendary",
-                    "comparator": "=",
-                    "count": 8728834
-                  },
-                  {
-                    "index": 33,
-                    "type": "virtual",
                     "name": "signal-7",
-                    "quality": "normal",
-                    "comparator": "=",
-                    "count": 8732930
-                  },
-                  {
-                    "index": 34,
-                    "type": "virtual",
-                    "name": "signal-7",
-                    "quality": "uncommon",
-                    "comparator": "=",
-                    "count": 193024
-                  },
-                  {
-                    "index": 35,
-                    "type": "virtual",
-                    "name": "signal-7",
-                    "quality": "rare",
-                    "comparator": "=",
-                    "count": 193024
-                  },
-                  {
-                    "index": 36,
-                    "type": "virtual",
-                    "name": "signal-7",
-                    "quality": "epic",
-                    "comparator": "=",
-                    "count": 8737024
-                  },
-                  {
-                    "index": 37,
-                    "type": "virtual",
-                    "name": "signal-7",
-                    "quality": "legendary",
-                    "comparator": "=",
-                    "count": 8737024
-                  },
-                  {
-                    "index": 38,
-                    "type": "virtual",
-                    "name": "signal-8",
-                    "quality": "normal",
-                    "comparator": "=",
-                    "count": 4608
-                  },
-                  {
-                    "index": 39,
-                    "type": "virtual",
-                    "name": "signal-8",
-                    "quality": "uncommon",
-                    "comparator": "=",
-                    "count": 512
-                  },
-                  {
-                    "index": 40,
-                    "type": "virtual",
-                    "name": "signal-8",
-                    "quality": "epic",
-                    "comparator": "=",
-                    "count": 8724736
-                  },
-                  {
-                    "index": 41,
-                    "type": "virtual",
-                    "name": "signal-8",
-                    "quality": "legendary",
-                    "comparator": "=",
-                    "count": 8724736
-                  },
-                  {
-                    "index": 42,
-                    "type": "virtual",
-                    "name": "signal-9",
-                    "quality": "normal",
-                    "comparator": "=",
-                    "count": 4608
-                  },
-                  {
-                    "index": 43,
-                    "type": "virtual",
-                    "name": "signal-9",
-                    "quality": "uncommon",
-                    "comparator": "=",
-                    "count": 512
-                  },
-                  {
-                    "index": 44,
-                    "type": "virtual",
-                    "name": "signal-9",
-                    "quality": "rare",
-                    "comparator": "=",
-                    "count": 8728832
-                  },
-                  {
-                    "index": 45,
-                    "type": "virtual",
-                    "name": "signal-9",
-                    "quality": "epic",
-                    "comparator": "=",
-                    "count": 8732928
-                  },
-                  {
-                    "index": 46,
-                    "type": "virtual",
-                    "name": "signal-9",
-                    "quality": "legendary",
-                    "comparator": "=",
-                    "count": 4608
-                  },
-                  {
-                    "index": 47,
-                    "type": "virtual",
-                    "name": "signal-U",
-                    "quality": "normal",
-                    "comparator": "=",
-                    "count": 4608
-                  },
-                  {
-                    "index": 48,
-                    "type": "virtual",
-                    "name": "signal-U",
-                    "quality": "uncommon",
-                    "comparator": "=",
-                    "count": 8794368
-                  },
-                  {
-                    "index": 49,
-                    "type": "virtual",
-                    "name": "signal-U",
-                    "quality": "epic",
-                    "comparator": "=",
-                    "count": 29184
-                  },
-                  {
-                    "index": 50,
-                    "type": "virtual",
-                    "name": "signal-V",
-                    "quality": "normal",
-                    "comparator": "=",
-                    "count": 8741120
-                  },
-                  {
-                    "index": 51,
-                    "type": "virtual",
-                    "name": "signal-V",
-                    "quality": "uncommon",
-                    "comparator": "=",
-                    "count": 2068736
-                  },
-                  {
-                    "index": 52,
-                    "type": "virtual",
-                    "name": "signal-V",
-                    "quality": "rare",
-                    "comparator": "=",
-                    "count": 12800
-                  },
-                  {
-                    "index": 53,
-                    "type": "virtual",
-                    "name": "signal-V",
-                    "quality": "epic",
-                    "comparator": "=",
-                    "count": 8799234
-                  },
-                  {
-                    "index": 54,
-                    "type": "virtual",
-                    "name": "signal-V",
-                    "quality": "legendary",
-                    "comparator": "=",
-                    "count": 8728832
-                  },
-                  {
-                    "index": 55,
-                    "type": "virtual",
-                    "name": "signal-W",
-                    "quality": "normal",
-                    "comparator": "=",
-                    "count": 2072832
-                  },
-                  {
-                    "index": 56,
-                    "type": "virtual",
-                    "name": "signal-W",
-                    "quality": "uncommon",
-                    "comparator": "=",
-                    "count": 152064
-                  },
-                  {
-                    "index": 57,
-                    "type": "virtual",
-                    "name": "signal-W",
-                    "quality": "rare",
-                    "comparator": "=",
-                    "count": 8732930
-                  },
-                  {
-                    "index": 58,
-                    "type": "virtual",
-                    "name": "signal-W",
-                    "quality": "legendary",
-                    "comparator": "=",
-                    "count": 152064
-                  },
-                  {
-                    "index": 59,
-                    "type": "virtual",
-                    "name": "signal-X",
-                    "quality": "normal",
-                    "comparator": "=",
-                    "count": 8794368
-                  },
-                  {
-                    "index": 60,
-                    "type": "virtual",
-                    "name": "signal-X",
-                    "quality": "rare",
-                    "comparator": "=",
-                    "count": 33280
-                  },
-                  {
-                    "index": 61,
-                    "type": "virtual",
-                    "name": "signal-Y",
                     "quality": "uncommon",
                     "comparator": "=",
                     "count": 2076928
                   },
                   {
-                    "index": 62,
+                    "index": 31,
                     "type": "virtual",
-                    "name": "signal-Y",
+                    "name": "signal-7",
+                    "quality": "rare",
+                    "comparator": "=",
+                    "count": 33280
+                  },
+                  {
+                    "index": 32,
+                    "type": "virtual",
+                    "name": "signal-7",
                     "quality": "epic",
                     "comparator": "=",
                     "count": 2
                   },
                   {
-                    "index": 63,
+                    "index": 33,
                     "type": "virtual",
-                    "name": "signal-Y",
+                    "name": "signal-8",
                     "quality": "legendary",
                     "comparator": "=",
                     "count": 2081024
                   },
                   {
-                    "index": 64,
+                    "index": 34,
                     "type": "virtual",
-                    "name": "signal-Z",
+                    "name": "signal-9",
                     "quality": "uncommon",
                     "comparator": "=",
                     "count": 2
                   },
                   {
-                    "index": 65,
+                    "index": 35,
                     "type": "virtual",
-                    "name": "signal-Z",
+                    "name": "signal-9",
                     "quality": "rare",
                     "comparator": "=",
                     "count": -18432
@@ -4278,6 +4130,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "normal"
+                },
+                "constant": 1,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -4319,6 +4185,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "uncommon"
+                },
+                "constant": 1,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -4374,6 +4254,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 1,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 1,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -4415,6 +4323,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "normal"
+                },
+                "constant": 2,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -4456,6 +4378,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "uncommon"
+                },
+                "constant": 2,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -4511,6 +4447,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 2,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 2,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -4552,6 +4516,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "normal"
+                },
+                "constant": 3,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -4593,6 +4571,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "uncommon"
+                },
+                "constant": 3,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -4648,6 +4640,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 3,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 3,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -4689,6 +4709,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "normal"
+                },
+                "constant": 4,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -4730,6 +4764,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "uncommon"
+                },
+                "constant": 4,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -4785,6 +4833,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 4,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 4,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -4826,6 +4902,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "normal"
+                },
+                "constant": 5,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -4867,6 +4957,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "uncommon"
+                },
+                "constant": 5,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -4922,6 +5026,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 5,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 5,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -4963,6 +5095,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "normal"
+                },
+                "constant": 6,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -5004,6 +5150,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "uncommon"
+                },
+                "constant": 6,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -5059,6 +5219,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 6,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 6,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -5100,6 +5288,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "normal"
+                },
+                "constant": 7,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -5141,6 +5343,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "uncommon"
+                },
+                "constant": 7,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -5196,6 +5412,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 7,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 7,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -5237,6 +5481,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "normal"
+                },
+                "constant": 8,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -5278,6 +5536,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "uncommon"
+                },
+                "constant": 8,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -5333,6 +5605,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 8,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 8,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -5374,6 +5674,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "normal"
+                },
+                "constant": 9,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -5415,6 +5729,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "uncommon"
+                },
+                "constant": 9,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -5470,6 +5798,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 9,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 9,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -5511,6 +5867,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "normal"
+                },
+                "constant": 10,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -5552,6 +5922,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "uncommon"
+                },
+                "constant": 10,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -5607,6 +5991,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 10,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 10,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -5648,6 +6060,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "normal"
+                },
+                "constant": 11,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -5689,6 +6115,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "uncommon"
+                },
+                "constant": 11,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -5744,6 +6184,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 11,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 11,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -5785,6 +6253,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "normal"
+                },
+                "constant": 12,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -5826,6 +6308,20 @@
                   "red": false,
                   "green": true
                 }
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-low",
+                  "quality": "uncommon"
+                },
+                "constant": 12,
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "and"
               }
             ],
             "outputs": [
@@ -5873,6 +6369,34 @@
                   "type": "virtual",
                   "name": "signal-ampersand",
                   "quality": "normal"
+                },
+                "constant": 12,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 12,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
                 },
                 "constant": 12,
                 "comparator": "=",
@@ -5970,6 +6494,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 17,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 17,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -6051,6 +6603,34 @@
                   "type": "virtual",
                   "name": "signal-ampersand",
                   "quality": "normal"
+                },
+                "constant": 18,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 18,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
                 },
                 "constant": 18,
                 "comparator": "=",
@@ -6172,6 +6752,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 19,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 19,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -6285,6 +6893,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 20,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 20,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -6366,6 +7002,34 @@
                   "type": "virtual",
                   "name": "signal-ampersand",
                   "quality": "normal"
+                },
+                "constant": 21,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 21,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
                 },
                 "constant": 21,
                 "comparator": "=",
@@ -6463,6 +7127,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 22,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 22,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -6544,6 +7236,34 @@
                   "type": "virtual",
                   "name": "signal-ampersand",
                   "quality": "normal"
+                },
+                "constant": 25,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 25,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
                 },
                 "constant": 25,
                 "comparator": "=",
@@ -6641,6 +7361,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 26,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 26,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -6722,6 +7470,34 @@
                   "type": "virtual",
                   "name": "signal-ampersand",
                   "quality": "normal"
+                },
+                "constant": 27,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 27,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
                 },
                 "constant": 27,
                 "comparator": "=",
@@ -6819,6 +7595,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 28,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 28,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -6900,6 +7704,34 @@
                   "type": "virtual",
                   "name": "signal-ampersand",
                   "quality": "normal"
+                },
+                "constant": 29,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 29,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
                 },
                 "constant": 29,
                 "comparator": "=",
@@ -6998,6 +7830,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 33,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 33,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -7080,6 +7940,34 @@
                   "type": "virtual",
                   "name": "signal-ampersand",
                   "quality": "normal"
+                },
+                "constant": 34,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 34,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
                 },
                 "constant": 34,
                 "comparator": "=",
@@ -7178,6 +8066,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 35,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 35,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -7268,6 +8184,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 36,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 36,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -7350,6 +8294,34 @@
                   "type": "virtual",
                   "name": "signal-ampersand",
                   "quality": "normal"
+                },
+                "constant": 37,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 37,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
                 },
                 "constant": 37,
                 "comparator": "=",
@@ -7462,6 +8434,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 38,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 38,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -7558,6 +8558,34 @@
                   "type": "virtual",
                   "name": "signal-ampersand",
                   "quality": "normal"
+                },
+                "constant": 39,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 39,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
                 },
                 "constant": 39,
                 "comparator": "=",
@@ -7665,6 +8693,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 47,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 47,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -7761,6 +8817,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 45,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
+                },
+                "constant": 45,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -7843,6 +8927,34 @@
                   "type": "virtual",
                   "name": "signal-ampersand",
                   "quality": "normal"
+                },
+                "constant": 46,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 46,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
                 },
                 "constant": 46,
                 "comparator": "=",
@@ -8026,6 +9138,34 @@
                   "type": "virtual",
                   "name": "signal-ampersand",
                   "quality": "normal"
+                },
+                "constant": 48,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "epic"
+                },
+                "constant": 48,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "legendary"
                 },
                 "constant": 48,
                 "comparator": "=",
@@ -8297,12 +9437,62 @@
           "x": 2.5,
           "y": 11.5
         },
+        "player_description": "ROM2",
         "control_behavior": {
           "sections": {
             "sections": [
               {
                 "index": 1,
-                "filters": []
+                "filters": [
+                  {
+                    "index": 1,
+                    "type": "virtual",
+                    "name": "signal-0",
+                    "quality": "epic",
+                    "comparator": "=",
+                    "count": 3055
+                  },
+                  {
+                    "index": 2,
+                    "type": "virtual",
+                    "name": "signal-2",
+                    "quality": "uncommon",
+                    "comparator": "=",
+                    "count": 3120
+                  },
+                  {
+                    "index": 3,
+                    "type": "virtual",
+                    "name": "signal-4",
+                    "quality": "legendary",
+                    "comparator": "=",
+                    "count": 3055
+                  },
+                  {
+                    "index": 4,
+                    "type": "virtual",
+                    "name": "signal-5",
+                    "quality": "normal",
+                    "comparator": "=",
+                    "count": 138223
+                  },
+                  {
+                    "index": 5,
+                    "type": "virtual",
+                    "name": "signal-5",
+                    "quality": "uncommon",
+                    "comparator": "=",
+                    "count": 65
+                  },
+                  {
+                    "index": 6,
+                    "type": "virtual",
+                    "name": "signal-6",
+                    "quality": "uncommon",
+                    "comparator": "=",
+                    "count": 2405
+                  }
+                ]
               }
             ]
           }
@@ -8310,28 +9500,450 @@
       },
       {
         "entity_number": 190,
-        "name": "constant-combinator",
+        "name": "decider-combinator",
         "position": {
-          "x": 2.5,
-          "y": 12.5
+          "x": 3.5,
+          "y": 12.0
         },
+        "player_description": "instruction2_read",
         "control_behavior": {
-          "sections": {
-            "sections": [
+          "decider_conditions": {
+            "conditions": [
               {
-                "index": 1,
-                "filters": []
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "second_signal": {
+                  "type": "virtual",
+                  "name": "down-right-arrow",
+                  "quality": "uncommon"
+                },
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": true,
+                  "green": false
+                },
+                "second_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
               }
-            ]
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-each"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": []
           }
         }
       },
       {
         "entity_number": 191,
-        "name": "constant-combinator",
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 4.5,
+          "y": 12.0
+        },
+        "player_description": "vdec_rsel_mask",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 63,
+            "operation": "AND",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 192,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 5.5,
+          "y": 12.0
+        },
+        "player_description": "vdec_rsel_field",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-battery-full",
+              "quality": "epic"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 193,
+        "name": "decider-combinator",
+        "position": {
+          "x": 6.5,
+          "y": 12.0
+        },
+        "player_description": "vdec_rsel_latch",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "second_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 194,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 8.5,
+          "y": 12.0
+        },
+        "player_description": "vdec_ssel_mask",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 4032,
+            "operation": "AND",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 195,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 9.5,
+          "y": 12.0
+        },
+        "player_description": "vdec_ssel_field",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 64,
+            "operation": "/",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-battery-full",
+              "quality": "legendary"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 196,
+        "name": "decider-combinator",
+        "position": {
+          "x": 10.5,
+          "y": 12.0
+        },
+        "player_description": "vdec_ssel_latch",
+        "control_behavior": {
+          "decider_conditions": {
+            "conditions": [
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-anything"
+                },
+                "comparator": "\u2260",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "second_signal_networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": false,
+                  "green": true
+                }
+              }
+            ],
+            "else_outputs": [
+              {
+                "signal": {
+                  "type": "virtual",
+                  "name": "signal-everything"
+                },
+                "networks": {
+                  "red": true,
+                  "green": false
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 197,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 11.5,
+          "y": 12.0
+        },
+        "player_description": "vdec_wsel_mask",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 126976,
+            "operation": "AND",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 198,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 12.5,
+          "y": 12.0
+        },
+        "player_description": "vdec_wsel_shift",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 4096,
+            "operation": "/",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 199,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 13.5,
+          "y": 12.0
+        },
+        "player_description": "vdec_wsel_field",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "shape-diagonal",
+              "quality": "uncommon"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 200,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 14.5,
+          "y": 12.0
+        },
+        "player_description": "vdec_wsel_delay",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "shape-diagonal",
+              "quality": "uncommon"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-battery-low",
+              "quality": "normal"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 201,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 0.5,
+          "y": 14.0
+        },
+        "player_description": "vdec_erase_mask",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 4063232,
+            "operation": "AND",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 202,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 1.5,
+          "y": 14.0
+        },
+        "player_description": "vdec_erase_shift",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 131072,
+            "operation": "/",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 203,
+        "name": "arithmetic-combinator",
+        "position": {
+          "x": 2.5,
+          "y": 14.0
+        },
+        "player_description": "vdec_erase_field",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "signal-each"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "shape-diagonal-2",
+              "quality": "uncommon"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 204,
+        "name": "arithmetic-combinator",
         "position": {
           "x": 3.5,
-          "y": 11.5
+          "y": 14.0
+        },
+        "player_description": "vdec_erase_delay",
+        "control_behavior": {
+          "arithmetic_conditions": {
+            "first_signal": {
+              "type": "virtual",
+              "name": "shape-diagonal-2",
+              "quality": "uncommon"
+            },
+            "second_constant": 0,
+            "operation": "+",
+            "output_signal": {
+              "type": "virtual",
+              "name": "signal-battery-low",
+              "quality": "uncommon"
+            }
+          }
+        }
+      },
+      {
+        "entity_number": 205,
+        "name": "constant-combinator",
+        "position": {
+          "x": 4.5,
+          "y": 13.5
         },
         "control_behavior": {
           "sections": {
@@ -8345,11 +9957,47 @@
         }
       },
       {
-        "entity_number": 192,
+        "entity_number": 206,
+        "name": "constant-combinator",
+        "position": {
+          "x": 4.5,
+          "y": 14.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 207,
+        "name": "constant-combinator",
+        "position": {
+          "x": 5.5,
+          "y": 13.5
+        },
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 208,
         "name": "constant-combinator",
         "position": {
           "x": 7.5,
-          "y": 1.5
+          "y": 2.5
         },
         "player_description": "repeater_enc_onehot",
         "control_behavior": {
@@ -8364,7 +10012,7 @@
         }
       },
       {
-        "entity_number": 193,
+        "entity_number": 209,
         "name": "constant-combinator",
         "position": {
           "x": 7.5,
@@ -8383,7 +10031,7 @@
         }
       },
       {
-        "entity_number": 194,
+        "entity_number": 210,
         "name": "constant-combinator",
         "position": {
           "x": 7.5,
@@ -8402,7 +10050,26 @@
         }
       },
       {
-        "entity_number": 195,
+        "entity_number": 211,
+        "name": "constant-combinator",
+        "position": {
+          "x": 7.5,
+          "y": 5.5
+        },
+        "player_description": "repeater_pcsel",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 212,
         "name": "constant-combinator",
         "position": {
           "x": 7.5,
@@ -8421,7 +10088,7 @@
         }
       },
       {
-        "entity_number": 196,
+        "entity_number": 213,
         "name": "constant-combinator",
         "position": {
           "x": 7.5,
@@ -8440,11 +10107,11 @@
         }
       },
       {
-        "entity_number": 197,
+        "entity_number": 214,
         "name": "constant-combinator",
         "position": {
           "x": 7.5,
-          "y": 5.5
+          "y": 7.5
         },
         "player_description": "repeater_processor0_state",
         "control_behavior": {
@@ -8459,7 +10126,7 @@
         }
       },
       {
-        "entity_number": 198,
+        "entity_number": 215,
         "name": "constant-combinator",
         "position": {
           "x": 7.5,
@@ -8478,11 +10145,11 @@
         }
       },
       {
-        "entity_number": 199,
+        "entity_number": 216,
         "name": "constant-combinator",
         "position": {
           "x": 7.5,
-          "y": 2.5
+          "y": 3.5
         },
         "player_description": "repeater_vec_bank0_loop10",
         "control_behavior": {
@@ -8497,7 +10164,7 @@
         }
       },
       {
-        "entity_number": 200,
+        "entity_number": 217,
         "name": "constant-combinator",
         "position": {
           "x": 7.5,
@@ -8516,7 +10183,7 @@
         }
       },
       {
-        "entity_number": 201,
+        "entity_number": 218,
         "name": "constant-combinator",
         "position": {
           "x": 7.5,
@@ -8535,11 +10202,11 @@
         }
       },
       {
-        "entity_number": 202,
+        "entity_number": 219,
         "name": "constant-combinator",
         "position": {
           "x": 7.5,
-          "y": 7.5
+          "y": 9.5
         },
         "player_description": "repeater_enc_onehot",
         "control_behavior": {
@@ -8554,11 +10221,30 @@
         }
       },
       {
-        "entity_number": 203,
+        "entity_number": 220,
         "name": "constant-combinator",
         "position": {
           "x": 7.5,
-          "y": -3.5
+          "y": 1.5
+        },
+        "player_description": "repeater_processor0_state",
+        "control_behavior": {
+          "sections": {
+            "sections": [
+              {
+                "index": 1,
+                "filters": []
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity_number": 221,
+        "name": "constant-combinator",
+        "position": {
+          "x": 7.5,
+          "y": -2.5
         },
         "player_description": "repeater_enc_onehot",
         "control_behavior": {
@@ -9009,7 +10695,7 @@
       [
         41,
         3,
-        203,
+        221,
         1
       ],
       [
@@ -9057,7 +10743,7 @@
       [
         45,
         4,
-        198,
+        215,
         2
       ],
       [
@@ -9087,7 +10773,7 @@
       [
         53,
         2,
-        198,
+        215,
         2
       ],
       [
@@ -9201,7 +10887,7 @@
       [
         60,
         4,
-        196,
+        213,
         2
       ],
       [
@@ -9231,7 +10917,7 @@
       [
         64,
         2,
-        196,
+        213,
         2
       ],
       [
@@ -9255,7 +10941,7 @@
       [
         67,
         2,
-        195,
+        212,
         2
       ],
       [
@@ -9351,7 +11037,7 @@
       [
         79,
         4,
-        195,
+        212,
         2
       ],
       [
@@ -9423,7 +11109,7 @@
       [
         94,
         1,
-        197,
+        220,
         1
       ],
       [
@@ -9436,6 +11122,12 @@
         96,
         3,
         97,
+        1
+      ],
+      [
+        96,
+        3,
+        211,
         1
       ],
       [
@@ -9765,7 +11457,7 @@
       [
         115,
         3,
-        200,
+        217,
         1
       ],
       [
@@ -9777,7 +11469,7 @@
       [
         117,
         1,
-        200,
+        217,
         1
       ],
       [
@@ -10029,7 +11721,7 @@
       [
         130,
         3,
-        199,
+        216,
         1
       ],
       [
@@ -10059,7 +11751,7 @@
       [
         132,
         1,
-        199,
+        216,
         1
       ],
       [
@@ -10275,13 +11967,13 @@
       [
         144,
         3,
-        193,
+        209,
         1
       ],
       [
         145,
         1,
-        193,
+        209,
         1
       ],
       [
@@ -10437,13 +12129,13 @@
       [
         158,
         3,
-        194,
+        210,
         1
       ],
       [
         159,
         1,
-        194,
+        210,
         1
       ],
       [
@@ -10641,7 +12333,7 @@
       [
         172,
         1,
-        201,
+        218,
         1
       ],
       [
@@ -10659,7 +12351,7 @@
       [
         174,
         1,
-        201,
+        218,
         1
       ],
       [
@@ -10712,6 +12404,12 @@
       ],
       [
         179,
+        2,
+        193,
+        4
+      ],
+      [
+        179,
         3,
         180,
         1
@@ -10733,6 +12431,12 @@
         2,
         182,
         2
+      ],
+      [
+        182,
+        2,
+        196,
+        4
       ],
       [
         182,
@@ -10765,6 +12469,12 @@
         4
       ],
       [
+        186,
+        4,
+        200,
+        4
+      ],
+      [
         187,
         3,
         188,
@@ -10773,31 +12483,151 @@
       [
         188,
         4,
+        204,
+        4
+      ],
+      [
+        189,
+        2,
         190,
         2
       ],
       [
-        189,
+        190,
         1,
-        202,
+        211,
         1
+      ],
+      [
+        190,
+        4,
+        191,
+        2
+      ],
+      [
+        190,
+        4,
+        201,
+        2
       ],
       [
         191,
+        2,
+        194,
+        2
+      ],
+      [
+        191,
+        4,
+        192,
+        2
+      ],
+      [
+        192,
+        4,
+        193,
+        2
+      ],
+      [
+        193,
         1,
+        193,
+        3
+      ],
+      [
+        194,
+        2,
         197,
-        1
+        2
       ],
       [
-        192,
+        194,
+        4,
+        195,
+        2
+      ],
+      [
+        195,
+        4,
+        196,
+        2
+      ],
+      [
+        196,
         1,
+        196,
+        3
+      ],
+      [
+        197,
+        4,
+        198,
+        2
+      ],
+      [
+        198,
+        4,
+        199,
+        2
+      ],
+      [
+        199,
+        4,
+        200,
+        2
+      ],
+      [
+        201,
+        4,
         202,
+        2
+      ],
+      [
+        202,
+        4,
+        203,
+        2
+      ],
+      [
+        203,
+        4,
+        204,
+        2
+      ],
+      [
+        204,
+        4,
+        206,
+        2
+      ],
+      [
+        205,
+        1,
+        219,
         1
       ],
       [
-        192,
+        207,
         1,
-        203,
+        214,
+        1
+      ],
+      [
+        208,
+        1,
+        219,
+        1
+      ],
+      [
+        208,
+        1,
+        221,
+        1
+      ],
+      [
+        214,
+        1,
+        220,
         1
       ]
     ],

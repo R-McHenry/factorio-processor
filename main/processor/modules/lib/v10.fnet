@@ -52,23 +52,37 @@
 
 # Generic stimulus / config constant is `stim`, from lib/v8.fnet.
 
-# THE REGISTER (one combinator): hold everything on the loop, unless the erase
-# row names this register's block id — in which case it emits nothing, the
+# TWO CONTROL PLANES, ONE SET OF GATES (2026-07-28). Every gate below tests
+# its line TWICE: once against the memory-mapped row a `write_imm` drives, and
+# once against the carrier the vector-zone instruction decoder drives out of
+# the second instruction word (v10_vec_decoder.fnet). Selects and write heads
+# OR the two; the register cell ANDs its two erase tests, since it emits unless
+# EITHER plane names it. That is the whole graft: one more condition on a
+# combinator that already had one, no new entity anywhere, and the
+# memory-mapped path keeps working untouched.
+
+# THE REGISTER (one combinator): hold everything on the loop, unless an erase
+# line names this register's block id — in which case it emits nothing, the
 # loop goes empty, and the register is zeroed in one tick. Writes are not its
 # business: write heads sum onto the same loop.
-# [param0] = erase carrier, [param1] = this register's block id,
-# [param2] = player_description.
+# [param0] = memory-mapped erase row, [param1] = decoder erase carrier,
+# [param2] = this register's block id, [param3] = player_description.
 #
 # Wire out_r to the loop; wire out_g to a private green net when this register
 # is a B-side op operand.
 v10_vreg_cell = decider-combinator({
-  "player_description": "[param2]",
+  "player_description": "[param3]",
   "decider_conditions": {
     "conditions": [
       { "first_signal": { [param0] },
-        "constant": [param1],
+        "constant": [param2],
         "comparator": "≠",
-        "first_signal_networks": { "red": false, "green": true } }
+        "first_signal_networks": { "red": false, "green": true } },
+      { "first_signal": { [param1] },
+        "constant": [param2],
+        "comparator": "≠",
+        "first_signal_networks": { "red": false, "green": true },
+        "compare_type": "and" }
     ],
     "outputs": [
       { "signal": { "type": "virtual", "name": "signal-everything" },
@@ -78,33 +92,12 @@ v10_vreg_cell = decider-combinator({
   }
 });
 
-# Write head (one per register, per write path): while W names this register,
-# pass the shared write bus onto its hold loop, where wire summation adds it
-# to the held frame. A loop may carry several heads — they simply sum.
-# [param0] = W carrier, [param1] = this register's block id,
-# [param2] = player_description.
+# Write head (one per register, per write path): while either W line names this
+# register, pass the shared write bus onto its hold loop, where wire summation
+# adds it to the held frame. A loop may carry several heads — they simply sum.
+# [param0] = memory-mapped W row, [param1] = decoder W carrier,
+# [param2] = this register's block id, [param3] = player_description.
 v10_wsel_gate = decider-combinator({
-  "player_description": "[param2]",
-  "decider_conditions": {
-    "conditions": [
-      { "first_signal": { [param0] },
-        "constant": [param1],
-        "comparator": "=",
-        "first_signal_networks": { "red": false, "green": true } }
-    ],
-    "outputs": [
-      { "signal": { "type": "virtual", "name": "signal-everything" },
-        "networks": { "red": true, "green": false } }
-    ],
-    "else_outputs": []
-  }
-});
-
-# Read-select gate (one per mux source): pass this source's red frame onto the
-# shared write bus while either selector names it. R = S = k passes it once.
-# [param0] = R carrier, [param1] = S carrier, [param2] = this source's index,
-# [param3] = player_description.
-v10_select_gate = decider-combinator({
   "player_description": "[param3]",
   "decider_conditions": {
     "conditions": [
@@ -123,6 +116,73 @@ v10_select_gate = decider-combinator({
         "networks": { "red": true, "green": false } }
     ],
     "else_outputs": []
+  }
+});
+
+# Read-select gate (one per mux source): pass this source's red frame onto the
+# shared write bus while ANY selector names it. R = S = k passes it once, and
+# so does a decoder word naming it on both selectors.
+# [param0] = memory-mapped R row, [param1] = memory-mapped S row,
+# [param2] = decoder R carrier, [param3] = decoder S carrier,
+# [param4] = this source's index, [param5] = player_description.
+v10_select_gate = decider-combinator({
+  "player_description": "[param5]",
+  "decider_conditions": {
+    "conditions": [
+      { "first_signal": { [param0] },
+        "constant": [param4],
+        "comparator": "=",
+        "first_signal_networks": { "red": false, "green": true } },
+      { "first_signal": { [param1] },
+        "constant": [param4],
+        "comparator": "=",
+        "first_signal_networks": { "red": false, "green": true },
+        "compare_type": "or" },
+      { "first_signal": { [param2] },
+        "constant": [param4],
+        "comparator": "=",
+        "first_signal_networks": { "red": false, "green": true },
+        "compare_type": "or" },
+      { "first_signal": { [param3] },
+        "constant": [param4],
+        "comparator": "=",
+        "first_signal_networks": { "red": false, "green": true },
+        "compare_type": "or" }
+    ],
+    "outputs": [
+      { "signal": { "type": "virtual", "name": "signal-everything" },
+        "networks": { "red": true, "green": false } }
+    ],
+    "else_outputs": []
+  }
+});
+
+# Field extractor (the decoder's workhorse): `each [op] [const] -> [carrier]`.
+# `each` with a FIXED output signal sums the results, and the instruction word
+# is one signal, so this collapses a masked bit-field onto a named control
+# carrier in one combinator. [param0] = operation, [param1] = constant,
+# [param2] = output carrier, [param3] = player_description.
+v10_field_to = arithmetic-combinator({
+  "player_description": "[param3]",
+  "arithmetic_conditions": {
+    "first_signal": { "type": "virtual", "name": "signal-each" },
+    "second_constant": [param1],
+    "operation": "[param0]",
+    "output_signal": { [param2] }
+  }
+});
+
+# Field shift, signal identity preserved: `each [op] [const] -> each`. Used
+# between the mask and the collapse when a field needs both a shift and an
+# extra pipeline stage. [param0] = operation, [param1] = constant,
+# [param2] = player_description.
+v10_field_shift = arithmetic-combinator({
+  "player_description": "[param2]",
+  "arithmetic_conditions": {
+    "first_signal": { "type": "virtual", "name": "signal-each" },
+    "second_constant": [param1],
+    "operation": "[param0]",
+    "output_signal": { "type": "virtual", "name": "signal-each" }
   }
 });
 

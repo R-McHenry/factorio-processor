@@ -3,8 +3,9 @@
 The narrative companion to the `.fnet` sources, which are the build:
 `modules/v10_addr_map.fnet` (**the** authority on addresses — every vector
 control value and reduction output is a real `memory[...]` row),
-`modules/lib/v10.fnet` (templates + the colour discipline), and the four live
-components `v10_vec_reg` / `v10_vec_bank` / `v10_op_farm` / `v10_vec_io`.
+`modules/lib/v10.fnet` (templates + the colour discipline), and the five live
+components `v10_vec_reg` / `v10_vec_bank` / `v10_op_farm` / `v10_vec_io` /
+`v10_vec_decoder`.
 
 The Python generator that preceded them — `v10_address_map.py`,
 `generate_v10_processor.py`, `generate_v10_vector_zone.py` and their
@@ -43,13 +44,19 @@ are superseded. Live:
   VRED_SUM (single lane / whole-frame out), plus the frame generators ONES
   and BCAST and the VRED_COUNT popcount, **14/14**
   (`testbenches/v10_vec_io.tb.json`).
-- `modules/v10_processor.fnet` — **the composed machine**, 203 entities: the
+- `modules/v10_vec_decoder.fnet` — the vector-zone instruction decoder
+  (2026-07-28): a second read port on the fetch-address net pulls word 2 of
+  each instruction out of a private ROM2 and drives the four select/erase
+  lines directly. **7/7** (`testbenches/v10_vec_decoder.tb.json`). Purely
+  additive — every gate ORs it with the memory-mapped row it already tested.
+- `modules/v10_processor.fnet` — **the composed machine**, 221 entities: the
   v8 scalar core with the vector zone hung off its memory bus. Two real
   programs run on it: `v10_proc_vector_roundtrip` and `v10_proc_mandelbrot`
-  (both built by `tools/build_v10_tests.py`). Each drives the vector zone
-  with nothing but `write_imm` to memory rows and reads results back with
-  `copy_a`, so machine_v8 schedules them with no vector awareness and **no
-  vector instruction exists**.
+  (both built by `tools/build_v10_tests.py`). Neither contains a vector
+  OPCODE: a move is a field of the instruction's second word, so `processor.
+  isa` schedules them with no new instruction kind in the matrix at all, and
+  `IR8.vec_move` remains the only code that knows how a vector action is
+  realised.
 
 **THE SQUARE BLOCK** (2026-07-27). The bank exports both faces of each pair-B
 register — `a2g` (VREG2 on green) and `b2r` (VREG3 on red) — so a register can
@@ -154,12 +161,31 @@ costing a tick on every control change. That tick was an artifact of the
 colour choice, not a requirement; flipping the discipline removed both the
 combinator and the timing rule that came with it.
 
-**Future direction** (designer, 2026-07-27, not built): a second PC and
-instruction-decoder block feeding the interconnect directly, rather than
-driving it through memory-mapped config. The memory-mapped control plane is
-what makes the zone work today and is a fine substrate — a decoder would
-simply become another driver of the same select/erase lines, so nothing built
-now is wasted if that lands.
+**And it now has a second driver** (2026-07-28, built —
+`modules/v10_vec_decoder.fnet`, measured in `isa.md`). The prediction above
+held exactly: the decoder became **another driver of the same select/erase
+lines**, one extra condition on gates that already had one, and nothing built
+for the memory-mapped plane was wasted. What it dropped was the write path —
+a control now arrives as a field of the slot's second instruction word instead
+of five ticks after a `write_imm` — taking a vector move from 15.5 ticks to
+3.9 and the mandelbrot loop body from 171 ticks a pass to 43, with
+byte-identical expectations.
+
+Two details worth keeping here, because they are properties of the zone rather
+than of the decoder:
+
+- The **second PC** half of the 2026-07-27 sketch was NOT built and was
+  rejected again. Vector compute is combinational and always-on, so there is
+  no long-running vector operation for a second sequencer to overlap with; all
+  a vector "program" does is sequence moves, and one PC sequences them fine.
+  What the decoder fetches is a second WORD at the same address, not a second
+  stream.
+- The "park R/S, let the bus settle, then pulse W" rule below is now met by
+  **construction** rather than by scheduling: the W/erase decode chain is built
+  one combinator deeper than the R/S chain, so both halves of a move ride one
+  instruction word and still land a tick apart. R and S are latched (a park has
+  to persist while port A walks the bus); W and erase are not (a commit must be
+  one tick, and the next instruction's field is zero).
 
 **Color discipline** (makes every gate in the zone the same shape): RED is
 control carriers only — W, R, S, the broadcast scalar — on the `vctl` net,

@@ -241,9 +241,13 @@ never go through the mux, which is what makes two simultaneous selections a
 feature rather than an ambiguity. Control rows are unchanged:
 `modules/v10_addr_map.fnet`, region `vec = 2130`.
 
-`modules/v10_processor.fnet` is now **203 entities** (`--top v10_processor`),
+`modules/v10_processor.fnet` is now **221 entities** (`--top v10_processor`),
 in a compact block since combinators were rotated to stand up (15 one-tile
-columns per row, two tiles tall, with column 7 reserved for repeaters).
+columns per row, two tiles tall, with column 7 reserved for repeaters). The
+last 16 of those are the vector-zone instruction decoder (2026-07-28), which
+took the kernel from 477 ROM words and a 171-tick loop body to **152 ROM words
+plus 28 word-2 rows and a 43-tick body** — same picture, same 38 expectations.
+See `isa.md`.
 
 ---
 
@@ -257,6 +261,14 @@ permanently holding ones to 6 moves and none. `vred_count` answers "how
 many lanes satisfy X" in one read. `A_MIN` and `VS_LT` complete the
 comparison pairs. The kernel is 477 ROM words again, down from 539.
 
+**The vector-zone decoder** (2026-07-28) then took it to **152 ROM words plus
+28 word-2 rows**, 238 slots, and a 43-tick loop body — from 473 words, 535
+slots and 171 ticks. Nothing in this document's kernel changed: the compiler
+emits the same eight seed moves and eleven body moves, and `IR8.vec_move`
+lowers each of them to one instruction instead of two writes and two pulses.
+The bench carries the identical 38 expectations before and after.
+
 ## 7. Not built
 
-Moved to `plan/ROADMAP.md` §4 (vector hardware) and §3 (the decoder).
+Moved to `plan/ROADMAP.md` §4 (vector hardware) and §3 (what is left of the
+decoder — source-aware move depth, and the spare word-2 mode bit).

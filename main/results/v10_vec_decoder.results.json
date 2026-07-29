@@ -1,0 +1,1858 @@
+{
+  "name": "v10_vec_decoder",
+  "execution_model": "single_step_paused",
+  "pre_stimulus_dead_ticks": 2,
+  "rebuild": {
+    "removed": 23,
+    "import_ok": true,
+    "build_ok": true,
+    "build_error": "nil",
+    "ghosts": 21,
+    "revived": 21,
+    "placed": 21
+  },
+  "fixtures": [
+    {
+      "tag": "power_seed",
+      "import_ok": true,
+      "build_ok": true,
+      "build_error": "nil",
+      "ghosts": 1,
+      "revived": 1
+    }
+  ],
+  "signal_tables": [
+    {
+      "unit": 146368,
+      "slots_written": 2454,
+      "slots_failed": 0,
+      "sections": 3,
+      "entity_number": 2
+    }
+  ],
+  "mapping": {
+    "translation": {
+      "dx": -7.0,
+      "dy": 11.0
+    },
+    "entity_number_to_unit_number": {
+      "1": 146369,
+      "2": 146368,
+      "3": 146371,
+      "4": 146370,
+      "5": 146373,
+      "6": 146372,
+      "7": 146375,
+      "8": 146374,
+      "9": 146382,
+      "10": 146384,
+      "11": 146383,
+      "12": 146386,
+      "13": 146385,
+      "14": 146388,
+      "15": 146387,
+      "16": 146376,
+      "17": 146378,
+      "18": 146377,
+      "19": 146380,
+      "20": 146379,
+      "21": 146381
+    },
+    "driver_units": {
+      "fetch_addr": 146369,
+      "ROM2": 146371
+    },
+    "output_probes": [
+      {
+        "name": "ctl_out",
+        "unit": 146380,
+        "wire": "green"
+      },
+      {
+        "name": "word2_out",
+        "unit": 146379,
+        "wire": "green"
+      }
+    ],
+    "expected_probe_name": "ctl_out"
+  },
+  "timeline": [
+    {
+      "tick": 916490,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_1"
+    },
+    {
+      "tick": 916491,
+      "stimulus": {},
+      "observed_by_probe": {},
+      "phase": "pre_stimulus_dead",
+      "step_index": -1,
+      "step_name": "pre_dead_2"
+    },
+    {
+      "tick": 916492,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {},
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "fetch_word_two_at_the_instruction_address"
+    },
+    {
+      "tick": 916493,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "fetch_word_two_at_the_instruction_address"
+    },
+    {
+      "tick": 916494,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "fetch_word_two_at_the_instruction_address"
+    },
+    {
+      "tick": 916495,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "fetch_word_two_at_the_instruction_address"
+    },
+    {
+      "tick": 916496,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0
+        },
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "fetch_word_two_at_the_instruction_address"
+    },
+    {
+      "tick": 916497,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "fetch_word_two_at_the_instruction_address"
+    },
+    {
+      "tick": 916498,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 0,
+      "step_name": "fetch_word_two_at_the_instruction_address"
+    },
+    {
+      "tick": 916499,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "fetch_word_two_at_the_instruction_address"
+    },
+    {
+      "tick": 916500,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "fetch_word_two_at_the_instruction_address"
+    },
+    {
+      "tick": 916501,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 0,
+      "step_name": "fetch_word_two_at_the_instruction_address"
+    },
+    {
+      "tick": 916502,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "all_four_fields_decode_to_plain_values"
+    },
+    {
+      "tick": 916503,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "all_four_fields_decode_to_plain_values"
+    },
+    {
+      "tick": 916504,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "all_four_fields_decode_to_plain_values"
+    },
+    {
+      "tick": 916505,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "all_four_fields_decode_to_plain_values"
+    },
+    {
+      "tick": 916506,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "all_four_fields_decode_to_plain_values"
+    },
+    {
+      "tick": 916507,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "all_four_fields_decode_to_plain_values"
+    },
+    {
+      "tick": 916508,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 1,
+      "step_name": "all_four_fields_decode_to_plain_values"
+    },
+    {
+      "tick": 916509,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "all_four_fields_decode_to_plain_values"
+    },
+    {
+      "tick": 916510,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "all_four_fields_decode_to_plain_values"
+    },
+    {
+      "tick": 916511,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 5.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 1,
+      "step_name": "all_four_fields_decode_to_plain_values"
+    },
+    {
+      "tick": 916512,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 6.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-0~legendary": 407323.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
+    },
+    {
+      "tick": 916513,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 6.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-1": 585.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
+    },
+    {
+      "tick": 916514,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 6.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-1": 585.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
+    },
+    {
+      "tick": 916515,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 6.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 27.0,
+          "signal-battery-full~uncommon": 28.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-1": 585.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
+    },
+    {
+      "tick": 916516,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 6.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0,
+          "signal-battery-full~rare": 3.0,
+          "signal-battery-full~epic": 3.0
+        },
+        "word2_out": {
+          "signal-1": 585.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
+    },
+    {
+      "tick": 916517,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 6.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        },
+        "word2_out": {
+          "signal-1": 585.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
+    },
+    {
+      "tick": 916518,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 6.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        },
+        "word2_out": {
+          "signal-1": 585.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 2,
+      "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
+    },
+    {
+      "tick": 916519,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 6.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        },
+        "word2_out": {
+          "signal-1": 585.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
+    },
+    {
+      "tick": 916520,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 6.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        },
+        "word2_out": {
+          "signal-1": 585.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
+    },
+    {
+      "tick": 916521,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 6.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        },
+        "word2_out": {
+          "signal-1": 585.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 2,
+      "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero"
+    },
+    {
+      "tick": 916522,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        },
+        "word2_out": {
+          "signal-1": 585.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "a_scalar_slot_has_no_word_two_at_all"
+    },
+    {
+      "tick": 916523,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "a_scalar_slot_has_no_word_two_at_all"
+    },
+    {
+      "tick": 916524,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "a_scalar_slot_has_no_word_two_at_all"
+    },
+    {
+      "tick": 916525,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "a_scalar_slot_has_no_word_two_at_all"
+    },
+    {
+      "tick": 916526,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "a_scalar_slot_has_no_word_two_at_all"
+    },
+    {
+      "tick": 916527,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "a_scalar_slot_has_no_word_two_at_all"
+    },
+    {
+      "tick": 916528,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 3,
+      "step_name": "a_scalar_slot_has_no_word_two_at_all"
+    },
+    {
+      "tick": 916529,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "a_scalar_slot_has_no_word_two_at_all"
+    },
+    {
+      "tick": 916530,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "a_scalar_slot_has_no_word_two_at_all"
+    },
+    {
+      "tick": 916531,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 3,
+      "step_name": "a_scalar_slot_has_no_word_two_at_all"
+    },
+    {
+      "tick": 916532,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "the_park_survives_a_scalar_instruction"
+    },
+    {
+      "tick": 916533,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "the_park_survives_a_scalar_instruction"
+    },
+    {
+      "tick": 916534,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "the_park_survives_a_scalar_instruction"
+    },
+    {
+      "tick": 916535,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "the_park_survives_a_scalar_instruction"
+    },
+    {
+      "tick": 916536,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "the_park_survives_a_scalar_instruction"
+    },
+    {
+      "tick": 916537,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "the_park_survives_a_scalar_instruction"
+    },
+    {
+      "tick": 916538,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 4,
+      "step_name": "the_park_survives_a_scalar_instruction"
+    },
+    {
+      "tick": 916539,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "the_park_survives_a_scalar_instruction"
+    },
+    {
+      "tick": 916540,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "the_park_survives_a_scalar_instruction"
+    },
+    {
+      "tick": 916541,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 4,
+      "step_name": "the_park_survives_a_scalar_instruction"
+    },
+    {
+      "tick": 916542,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 8.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "an_accumulating_move_carries_w_without_erase"
+    },
+    {
+      "tick": 916543,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 8.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        },
+        "word2_out": {
+          "signal-1~rare": 52208.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "an_accumulating_move_carries_w_without_erase"
+    },
+    {
+      "tick": 916544,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 8.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        },
+        "word2_out": {
+          "signal-1~rare": 52208.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "an_accumulating_move_carries_w_without_erase"
+    },
+    {
+      "tick": 916545,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 8.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 9.0,
+          "signal-battery-full~uncommon": 9.0
+        },
+        "word2_out": {
+          "signal-1~rare": 52208.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "an_accumulating_move_carries_w_without_erase"
+    },
+    {
+      "tick": 916546,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 8.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 48.0,
+          "signal-battery-full~uncommon": 47.0
+        },
+        "word2_out": {
+          "signal-1~rare": 52208.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "an_accumulating_move_carries_w_without_erase"
+    },
+    {
+      "tick": 916547,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 8.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 48.0,
+          "signal-battery-full~uncommon": 47.0,
+          "signal-battery-full~rare": 12.0
+        },
+        "word2_out": {
+          "signal-1~rare": 52208.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "an_accumulating_move_carries_w_without_erase"
+    },
+    {
+      "tick": 916548,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 8.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 48.0,
+          "signal-battery-full~uncommon": 47.0,
+          "signal-battery-full~rare": 12.0
+        },
+        "word2_out": {
+          "signal-1~rare": 52208.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 5,
+      "step_name": "an_accumulating_move_carries_w_without_erase"
+    },
+    {
+      "tick": 916549,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 8.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 48.0,
+          "signal-battery-full~uncommon": 47.0,
+          "signal-battery-full~rare": 12.0
+        },
+        "word2_out": {
+          "signal-1~rare": 52208.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "an_accumulating_move_carries_w_without_erase"
+    },
+    {
+      "tick": 916550,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 8.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 48.0,
+          "signal-battery-full~uncommon": 47.0,
+          "signal-battery-full~rare": 12.0
+        },
+        "word2_out": {
+          "signal-1~rare": 52208.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "an_accumulating_move_carries_w_without_erase"
+    },
+    {
+      "tick": 916551,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 8.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 48.0,
+          "signal-battery-full~uncommon": 47.0,
+          "signal-battery-full~rare": 12.0
+        },
+        "word2_out": {
+          "signal-1~rare": 52208.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 5,
+      "step_name": "an_accumulating_move_carries_w_without_erase"
+    },
+    {
+      "tick": 916552,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 48.0,
+          "signal-battery-full~uncommon": 47.0,
+          "signal-battery-full~rare": 12.0
+        },
+        "word2_out": {
+          "signal-1~rare": 52208.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
+    },
+    {
+      "tick": 916553,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 48.0,
+          "signal-battery-full~uncommon": 47.0,
+          "signal-battery-full~rare": 12.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
+    },
+    {
+      "tick": 916554,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 48.0,
+          "signal-battery-full~uncommon": 47.0,
+          "signal-battery-full~rare": 12.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
+    },
+    {
+      "tick": 916555,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 48.0,
+          "signal-battery-full~uncommon": 47.0,
+          "signal-battery-full~rare": 12.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
+    },
+    {
+      "tick": 916556,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 48.0,
+          "signal-battery-full~uncommon": 47.0,
+          "signal-battery-full~rare": 12.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
+    },
+    {
+      "tick": 916557,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 48.0,
+          "signal-battery-full~uncommon": 47.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
+    },
+    {
+      "tick": 916558,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 48.0,
+          "signal-battery-full~uncommon": 47.0
+        }
+      },
+      "phase": "settle",
+      "step_index": 6,
+      "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
+    },
+    {
+      "tick": 916559,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 48.0,
+          "signal-battery-full~uncommon": 47.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
+    },
+    {
+      "tick": 916560,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 48.0,
+          "signal-battery-full~uncommon": 47.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
+    },
+    {
+      "tick": 916561,
+      "stimulus": {
+        "fetch_addr": {
+          "down-arrow": 7.0
+        },
+        "ROM2": {
+          "signal-0": 407323.0,
+          "signal-1": 52208.0
+        }
+      },
+      "observed_by_probe": {
+        "ctl_out": {
+          "signal-battery-full": 48.0,
+          "signal-battery-full~uncommon": 47.0
+        }
+      },
+      "phase": "stimulus",
+      "step_index": 6,
+      "step_name": "the_commit_line_drops_as_soon_as_the_word_does"
+    }
+  ],
+  "checks": [
+    {
+      "step_index": 0,
+      "step_name": "fetch_word_two_at_the_instruction_address",
+      "drive_start_tick": 916491,
+      "skipped_ticks": 0,
+      "expected_probe": "word2_out",
+      "expected": {
+        "signal-0~legendary": 407323
+      },
+      "observed": {
+        "signal-0~legendary": 407323.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 916501
+    },
+    {
+      "step_index": 1,
+      "step_name": "all_four_fields_decode_to_plain_values",
+      "drive_start_tick": 916501,
+      "skipped_ticks": 0,
+      "expected_probe": "ctl_out",
+      "expected": {
+        "signal-battery-full": 27,
+        "signal-battery-full~uncommon": 28,
+        "signal-battery-full~rare": 3,
+        "signal-battery-full~epic": 3
+      },
+      "observed": {
+        "signal-battery-full": 27.0,
+        "signal-battery-full~uncommon": 28.0,
+        "signal-battery-full~rare": 3.0,
+        "signal-battery-full~epic": 3.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 916511
+    },
+    {
+      "step_index": 2,
+      "step_name": "a_park_word_moves_the_selectors_and_leaves_w_at_zero",
+      "drive_start_tick": 916511,
+      "skipped_ticks": 0,
+      "expected_probe": "ctl_out",
+      "expected": {
+        "signal-battery-full": 9,
+        "signal-battery-full~uncommon": 9,
+        "signal-battery-full~rare": 0,
+        "signal-battery-full~epic": 0
+      },
+      "observed": {
+        "signal-battery-full": 9.0,
+        "signal-battery-full~uncommon": 9.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 916521
+    },
+    {
+      "step_index": 3,
+      "step_name": "a_scalar_slot_has_no_word_two_at_all",
+      "drive_start_tick": 916521,
+      "skipped_ticks": 0,
+      "expected_probe": "word2_out",
+      "expected": {
+        "signal-1~uncommon": 0,
+        "signal-1": 0,
+        "signal-0~legendary": 0
+      },
+      "observed": {},
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 916531
+    },
+    {
+      "step_index": 4,
+      "step_name": "the_park_survives_a_scalar_instruction",
+      "drive_start_tick": 916531,
+      "skipped_ticks": 0,
+      "expected_probe": "ctl_out",
+      "expected": {
+        "signal-battery-full": 9,
+        "signal-battery-full~uncommon": 9,
+        "signal-battery-full~rare": 0,
+        "signal-battery-full~epic": 0
+      },
+      "observed": {
+        "signal-battery-full": 9.0,
+        "signal-battery-full~uncommon": 9.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 916541
+    },
+    {
+      "step_index": 5,
+      "step_name": "an_accumulating_move_carries_w_without_erase",
+      "drive_start_tick": 916541,
+      "skipped_ticks": 0,
+      "expected_probe": "ctl_out",
+      "expected": {
+        "signal-battery-full": 48,
+        "signal-battery-full~uncommon": 47,
+        "signal-battery-full~rare": 12,
+        "signal-battery-full~epic": 0
+      },
+      "observed": {
+        "signal-battery-full": 48.0,
+        "signal-battery-full~uncommon": 47.0,
+        "signal-battery-full~rare": 12.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 916551
+    },
+    {
+      "step_index": 6,
+      "step_name": "the_commit_line_drops_as_soon_as_the_word_does",
+      "drive_start_tick": 916551,
+      "skipped_ticks": 0,
+      "expected_probe": "ctl_out",
+      "expected": {
+        "signal-battery-full~rare": 0,
+        "signal-battery-full~epic": 0,
+        "signal-battery-full": 48,
+        "signal-battery-full~uncommon": 47
+      },
+      "observed": {
+        "signal-battery-full": 48.0,
+        "signal-battery-full~uncommon": 47.0
+      },
+      "mismatches": {},
+      "pass": true,
+      "last_sample_tick": 916561
+    }
+  ],
+  "pass": true
+}

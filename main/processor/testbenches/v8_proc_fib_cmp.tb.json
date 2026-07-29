@@ -1,6 +1,6 @@
 {
   "name": "v8_proc_fib_cmp",
-  "description": "machine_v8-scheduled fib_cmp against the fnet machine's own addresses (config from the signals map): B streams add_res, latched-A copies, CMP-steered absolute jump, halt spin with poison canary.",
+  "description": "processor.isa-scheduled fib_cmp against the fnet machine's own addresses (config from the signals map): B streams add_res, latched-A copies, CMP-steered absolute jump, halt spin with poison canary.",
   "pre_stimulus_dead_ticks": 0,
   "settle_ticks": 1,
   "poll_seconds": 0.002,

@@ -1,7 +1,7 @@
 {
   "name": "v8_processor_fib_cmp",
   "surface": "nauvis",
-  "description": "fnet v8 program: machine_v8-scheduled fib_cmp against the fnet machine's own addresses (config from the signals map): B streams add_res, latched-A copies, CMP-steered absolute jump, halt spin with poison canary.",
+  "description": "fnet v8 program: processor.isa-scheduled fib_cmp against the fnet machine's own addresses (config from the signals map): B streams add_res, latched-A copies, CMP-steered absolute jump, halt spin with poison canary.",
   "signals": {
     "file.counter": {
       "type": "item",

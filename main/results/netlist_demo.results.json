@@ -23,7 +23,7 @@
   ],
   "signal_tables": [
     {
-      "unit": 140225,
+      "unit": 145889,
       "slots_written": 2454,
       "slots_failed": 0,
       "sections": 3,
@@ -36,31 +36,31 @@
       "dy": 12.0
     },
     "entity_number_to_unit_number": {
-      "1": 140222,
-      "2": 140221,
-      "3": 140226,
-      "4": 140225,
-      "5": 140224,
-      "6": 140223
+      "1": 145886,
+      "2": 145885,
+      "3": 145890,
+      "4": 145889,
+      "5": 145888,
+      "6": 145887
     },
     "driver_units": {
-      "write": 140222,
-      "read": 140226
+      "write": 145886,
+      "read": 145890
     },
     "output_probes": [
       {
         "name": "read_output",
-        "unit": 140223,
+        "unit": 145887,
         "wire": "green"
       },
       {
         "name": "memory_state_g",
-        "unit": 140221,
+        "unit": 145885,
         "wire": "green"
       },
       {
         "name": "memory_state_r",
-        "unit": 140221,
+        "unit": 145885,
         "wire": "red"
       }
     ],
@@ -68,7 +68,7 @@
   },
   "timeline": [
     {
-      "tick": 897344,
+      "tick": 915474,
       "stimulus": {
         "write": {
           "signal-1": 1.0,
@@ -84,7 +84,7 @@
       "step_name": "pre_dead_1"
     },
     {
-      "tick": 897345,
+      "tick": 915475,
       "stimulus": {
         "write": {
           "signal-1": 1.0,
@@ -100,7 +100,7 @@
       "step_name": "pre_dead_2"
     },
     {
-      "tick": 897346,
+      "tick": 915476,
       "stimulus": {
         "write": {
           "signal-1": 1.0,
@@ -121,7 +121,7 @@
       "step_name": "seed_initial_input_state"
     },
     {
-      "tick": 897347,
+      "tick": 915477,
       "stimulus": {
         "write": {
           "signal-1": 1.0,
@@ -146,7 +146,7 @@
       "step_name": "seed_initial_input_state"
     },
     {
-      "tick": 897348,
+      "tick": 915478,
       "stimulus": {
         "write": {
           "signal-1": 1.0,
@@ -174,7 +174,7 @@
       "step_name": "seed_initial_input_state"
     },
     {
-      "tick": 897349,
+      "tick": 915479,
       "stimulus": {
         "write": {
           "signal-1": 1.0,
@@ -202,7 +202,7 @@
       "step_name": "read_preloaded_addr_6"
     },
     {
-      "tick": 897350,
+      "tick": 915480,
       "stimulus": {
         "write": {
           "signal-1": 1.0,
@@ -230,7 +230,7 @@
       "step_name": "read_preloaded_addr_6"
     },
     {
-      "tick": 897351,
+      "tick": 915481,
       "stimulus": {
         "write": {
           "signal-1": 1.0,
@@ -258,7 +258,7 @@
       "step_name": "read_preloaded_addr_6"
     },
     {
-      "tick": 897352,
+      "tick": 915482,
       "stimulus": {
         "write": {
           "signal-1": 1.0,
@@ -286,7 +286,7 @@
       "step_name": "read_preloaded_addr_11"
     },
     {
-      "tick": 897353,
+      "tick": 915483,
       "stimulus": {
         "write": {
           "signal-1": 1.0,
@@ -314,7 +314,7 @@
       "step_name": "read_preloaded_addr_11"
     },
     {
-      "tick": 897354,
+      "tick": 915484,
       "stimulus": {
         "write": {
           "signal-1": 1.0,
@@ -342,7 +342,7 @@
       "step_name": "read_preloaded_addr_11"
     },
     {
-      "tick": 897355,
+      "tick": 915485,
       "stimulus": {
         "write": {
           "signal-0": 1000.0
@@ -368,7 +368,7 @@
       "step_name": "write_addr_1"
     },
     {
-      "tick": 897356,
+      "tick": 915486,
       "stimulus": {
         "write": {
           "signal-0": 1000.0
@@ -392,7 +392,7 @@
       "step_name": "write_addr_1"
     },
     {
-      "tick": 897357,
+      "tick": 915487,
       "stimulus": {
         "write": {
           "signal-0": 1000.0
@@ -419,7 +419,7 @@
       "step_name": "write_addr_1"
     },
     {
-      "tick": 897358,
+      "tick": 915488,
       "stimulus": {
         "write": {
           "signal-1": 1001.0
@@ -446,7 +446,7 @@
       "step_name": "write_addr_6"
     },
     {
-      "tick": 897359,
+      "tick": 915489,
       "stimulus": {
         "write": {
           "signal-1": 1001.0
@@ -473,7 +473,7 @@
       "step_name": "write_addr_6"
     },
     {
-      "tick": 897360,
+      "tick": 915490,
       "stimulus": {
         "write": {
           "signal-1": 1001.0
@@ -500,7 +500,7 @@
       "step_name": "write_addr_6"
     },
     {
-      "tick": 897361,
+      "tick": 915491,
       "stimulus": {
         "write": {
           "signal-2": 1002.0
@@ -527,7 +527,7 @@
       "step_name": "write_addr_11"
     },
     {
-      "tick": 897362,
+      "tick": 915492,
       "stimulus": {
         "write": {
           "signal-2": 1002.0
@@ -554,7 +554,7 @@
       "step_name": "write_addr_11"
     },
     {
-      "tick": 897363,
+      "tick": 915493,
       "stimulus": {
         "write": {
           "signal-2": 1002.0
@@ -581,7 +581,7 @@
       "step_name": "write_addr_11"
     },
     {
-      "tick": 897364,
+      "tick": 915494,
       "stimulus": {
         "write": {
           "signal-3": 1003.0
@@ -608,7 +608,7 @@
       "step_name": "write_addr_16"
     },
     {
-      "tick": 897365,
+      "tick": 915495,
       "stimulus": {
         "write": {
           "signal-3": 1003.0
@@ -633,7 +633,7 @@
       "step_name": "write_addr_16"
     },
     {
-      "tick": 897366,
+      "tick": 915496,
       "stimulus": {
         "write": {
           "signal-3": 1003.0
@@ -661,7 +661,7 @@
       "step_name": "write_addr_16"
     },
     {
-      "tick": 897367,
+      "tick": 915497,
       "stimulus": {
         "write": {
           "signal-4": 1004.0
@@ -689,7 +689,7 @@
       "step_name": "write_addr_21"
     },
     {
-      "tick": 897368,
+      "tick": 915498,
       "stimulus": {
         "write": {
           "signal-4": 1004.0
@@ -715,7 +715,7 @@
       "step_name": "write_addr_21"
     },
     {
-      "tick": 897369,
+      "tick": 915499,
       "stimulus": {
         "write": {
           "signal-4": 1004.0
@@ -744,7 +744,7 @@
       "step_name": "write_addr_21"
     },
     {
-      "tick": 897370,
+      "tick": 915500,
       "stimulus": {
         "write": {
           "signal-5": 1005.0
@@ -773,7 +773,7 @@
       "step_name": "write_addr_26"
     },
     {
-      "tick": 897371,
+      "tick": 915501,
       "stimulus": {
         "write": {
           "signal-5": 1005.0
@@ -800,7 +800,7 @@
       "step_name": "write_addr_26"
     },
     {
-      "tick": 897372,
+      "tick": 915502,
       "stimulus": {
         "write": {
           "signal-5": 1005.0
@@ -830,7 +830,7 @@
       "step_name": "write_addr_26"
     },
     {
-      "tick": 897373,
+      "tick": 915503,
       "stimulus": {
         "write": {
           "signal-6": 1006.0
@@ -860,7 +860,7 @@
       "step_name": "write_addr_31"
     },
     {
-      "tick": 897374,
+      "tick": 915504,
       "stimulus": {
         "write": {
           "signal-6": 1006.0
@@ -888,7 +888,7 @@
       "step_name": "write_addr_31"
     },
     {
-      "tick": 897375,
+      "tick": 915505,
       "stimulus": {
         "write": {
           "signal-6": 1006.0
@@ -919,7 +919,7 @@
       "step_name": "write_addr_31"
     },
     {
-      "tick": 897376,
+      "tick": 915506,
       "stimulus": {
         "write": {
           "signal-7": 1007.0
@@ -950,7 +950,7 @@
       "step_name": "write_addr_36"
     },
     {
-      "tick": 897377,
+      "tick": 915507,
       "stimulus": {
         "write": {
           "signal-7": 1007.0
@@ -979,7 +979,7 @@
       "step_name": "write_addr_36"
     },
     {
-      "tick": 897378,
+      "tick": 915508,
       "stimulus": {
         "write": {
           "signal-7": 1007.0
@@ -1011,7 +1011,7 @@
       "step_name": "write_addr_36"
     },
     {
-      "tick": 897379,
+      "tick": 915509,
       "stimulus": {
         "write": {
           "signal-8": 1008.0
@@ -1043,7 +1043,7 @@
       "step_name": "write_addr_41"
     },
     {
-      "tick": 897380,
+      "tick": 915510,
       "stimulus": {
         "write": {
           "signal-8": 1008.0
@@ -1073,7 +1073,7 @@
       "step_name": "write_addr_41"
     },
     {
-      "tick": 897381,
+      "tick": 915511,
       "stimulus": {
         "write": {
           "signal-8": 1008.0
@@ -1106,7 +1106,7 @@
       "step_name": "write_addr_41"
     },
     {
-      "tick": 897382,
+      "tick": 915512,
       "stimulus": {
         "write": {
           "signal-8": 1008.0
@@ -1139,7 +1139,7 @@
       "step_name": "read_quality_row_addr_2_is_empty"
     },
     {
-      "tick": 897383,
+      "tick": 915513,
       "stimulus": {
         "write": {
           "signal-8": 1008.0
@@ -1169,7 +1169,7 @@
       "step_name": "read_quality_row_addr_2_is_empty"
     },
     {
-      "tick": 897384,
+      "tick": 915514,
       "stimulus": {
         "write": {
           "signal-8": 1008.0
@@ -1203,7 +1203,7 @@
     {
       "step_index": 0,
       "step_name": "seed_initial_input_state",
-      "drive_start_tick": 897345,
+      "drive_start_tick": 915475,
       "skipped_ticks": 0,
       "expected_probe": "read_output",
       "expected": {
@@ -1214,12 +1214,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897348
+      "last_sample_tick": 915478
     },
     {
       "step_index": 1,
       "step_name": "read_preloaded_addr_6",
-      "drive_start_tick": 897348,
+      "drive_start_tick": 915478,
       "skipped_ticks": 0,
       "expected_probe": "read_output",
       "expected": {
@@ -1230,12 +1230,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897351
+      "last_sample_tick": 915481
     },
     {
       "step_index": 2,
       "step_name": "read_preloaded_addr_11",
-      "drive_start_tick": 897351,
+      "drive_start_tick": 915481,
       "skipped_ticks": 0,
       "expected_probe": "read_output",
       "expected": {
@@ -1246,12 +1246,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897354
+      "last_sample_tick": 915484
     },
     {
       "step_index": 3,
       "step_name": "write_addr_1",
-      "drive_start_tick": 897354,
+      "drive_start_tick": 915484,
       "skipped_ticks": 0,
       "expected_probe": "read_output",
       "expected": {
@@ -1262,12 +1262,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897357
+      "last_sample_tick": 915487
     },
     {
       "step_index": 4,
       "step_name": "write_addr_6",
-      "drive_start_tick": 897357,
+      "drive_start_tick": 915487,
       "skipped_ticks": 0,
       "expected_probe": "read_output",
       "expected": {
@@ -1278,12 +1278,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897360
+      "last_sample_tick": 915490
     },
     {
       "step_index": 5,
       "step_name": "write_addr_11",
-      "drive_start_tick": 897360,
+      "drive_start_tick": 915490,
       "skipped_ticks": 0,
       "expected_probe": "read_output",
       "expected": {
@@ -1294,12 +1294,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897363
+      "last_sample_tick": 915493
     },
     {
       "step_index": 6,
       "step_name": "write_addr_16",
-      "drive_start_tick": 897363,
+      "drive_start_tick": 915493,
       "skipped_ticks": 0,
       "expected_probe": "read_output",
       "expected": {
@@ -1310,12 +1310,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897366
+      "last_sample_tick": 915496
     },
     {
       "step_index": 7,
       "step_name": "write_addr_21",
-      "drive_start_tick": 897366,
+      "drive_start_tick": 915496,
       "skipped_ticks": 0,
       "expected_probe": "read_output",
       "expected": {
@@ -1326,12 +1326,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897369
+      "last_sample_tick": 915499
     },
     {
       "step_index": 8,
       "step_name": "write_addr_26",
-      "drive_start_tick": 897369,
+      "drive_start_tick": 915499,
       "skipped_ticks": 0,
       "expected_probe": "read_output",
       "expected": {
@@ -1342,12 +1342,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897372
+      "last_sample_tick": 915502
     },
     {
       "step_index": 9,
       "step_name": "write_addr_31",
-      "drive_start_tick": 897372,
+      "drive_start_tick": 915502,
       "skipped_ticks": 0,
       "expected_probe": "read_output",
       "expected": {
@@ -1358,12 +1358,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897375
+      "last_sample_tick": 915505
     },
     {
       "step_index": 10,
       "step_name": "write_addr_36",
-      "drive_start_tick": 897375,
+      "drive_start_tick": 915505,
       "skipped_ticks": 0,
       "expected_probe": "read_output",
       "expected": {
@@ -1374,12 +1374,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897378
+      "last_sample_tick": 915508
     },
     {
       "step_index": 11,
       "step_name": "write_addr_41",
-      "drive_start_tick": 897378,
+      "drive_start_tick": 915508,
       "skipped_ticks": 0,
       "expected_probe": "read_output",
       "expected": {
@@ -1390,12 +1390,12 @@
       },
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897381
+      "last_sample_tick": 915511
     },
     {
       "step_index": 12,
       "step_name": "read_quality_row_addr_2_is_empty",
-      "drive_start_tick": 897381,
+      "drive_start_tick": 915511,
       "skipped_ticks": 0,
       "expected_probe": "read_output",
       "expected": {
@@ -1404,7 +1404,7 @@
       "observed": {},
       "mismatches": {},
       "pass": true,
-      "last_sample_tick": 897384
+      "last_sample_tick": 915514
     }
   ],
   "pass": true

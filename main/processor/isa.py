@@ -25,6 +25,18 @@ ROM slot whose routes consume the value):
 Accumulate cells (reset-blocked: writes ADD instead of replace):
 shape-vertical / shape-horizontal / shape-curve / shape-curve-2. write_imm
 refuses them (use add_imm); they cannot be zero-write-cleared.
+
+v10 adds a vector zone with TWO control planes, and this file owns the timing
+of both (see docs/isa.md "Vector control"):
+
+  memory-mapped   a control row reached by write_imm/pulse_imm, settling at
+                  value_slot + WRITE_TO_CELL
+  decoder         the same lines driven out of the slot's SECOND instruction
+                  word, settling at slot + DEC_SEL_SETTLE (R/S) or
+                  slot + DEC_WRITE_SETTLE (W/erase)
+
+`_VEC_REACH_BY_NAME` describes what the ZONE does after a control lands, so it
+is shared by both — the decoder changes only how a control gets there.
 """
 from dataclasses import dataclass, field
 from typing import Callable
@@ -32,7 +44,8 @@ from typing import Callable
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # main/ on the path
-from processor.assembler import Program, assemble_program, encode
+from processor.assembler import (Program, assemble_program, assemble_word2,
+                                 encode, encode_word2)
 from signal_space import ALU_MAP, address_of, signal_at, total_addresses
 
 # consumer-frame constants (see module docstring)
@@ -47,6 +60,22 @@ JUMP_REL_SHADOW = 4
 JUMP_REL_RESUME = 5          # resume fetch at n + offset + JUMP_REL_RESUME
 JUMP_ABS_DELAY_SLOTS = 6
 COHERENCE_WINDOW = 6
+
+# v10 vector-zone DECODER (modules/v10_vec_decoder.fnet, plan/ROADMAP §3).
+# A slot's second instruction word drives the four select/erase lines straight
+# out of the ROM2 row, with no write path in between. The decode chains are
+# deliberately one stage apart, so a single instruction is a whole move:
+#
+#   R, S       3 combinator stages after the fetch -> settle at slot n + 2
+#   W, erase   4 stages                            -> settle at slot n + 3
+#
+# "Settle" is the same quantity a memory-mapped write reaches at
+# `value_slot + WRITE_TO_CELL`, which is why every existing vector rule below
+# applies unchanged: the reach table describes what the ZONE does after a
+# control lands on the memory bus, and that hardware is shared. The decoder
+# simply skips the five ticks of write path — which is the whole speedup.
+DEC_SEL_SETTLE = 2
+DEC_WRITE_SETTLE = 3
 
 # Canonical machine configuration (single source of truth — the import tool
 # populates the write_trigger_reset / mmap_addr combinators from these; values
@@ -141,6 +170,16 @@ class MachineConfig:
         return frozenset(port for reach in self.vec_reach.values()
                          for port in reach if port != VEC_BUS)
 
+    @property
+    def has_vec_decoder(self) -> bool:
+        """True when the design carries the vector-zone instruction decoder,
+        i.e. the select/erase lines have a second driver fed from word 2 of
+        each instruction. A v10 design without it still works — IR8 falls back
+        to driving the memory-mapped rows, which is what every bench did until
+        2026-07-28."""
+        return all(name in self.vec_rows for name in
+                   ("vdec_rsel", "vdec_ssel", "vdec_wsel", "vdec_erase"))
+
     def vec_stages(self, control: int, port: int):
         """SOONEST stages carrying `control` to `port` — the anti-dependency
         number: if a read is this far past a later write's settle, it is
@@ -207,7 +246,7 @@ def config_from_signals_map(signals_map: dict) -> MachineConfig:
         vec_bus_reader=(int(rows["vec_wsel"]["address"])
                         if "vec_wsel" in rows else None),
         vec_rows={name: int(entry["address"]) for name, entry in rows.items()
-                  if name.startswith(("vec_", "vred_", "vqual_"))},
+                  if name.startswith(("vec_", "vred_", "vqual_", "vdec_"))},
     )
 
 
@@ -276,6 +315,29 @@ def jump_rel_a_window(op, distance: int) -> range:
     return range(start, op.slot + distance + JUMP_REL_RESUME)
 
 
+def vec_control_settles(op, cfg) -> list[tuple[int, int]]:
+    """(settle slot, control row) pairs a scheduled op imposes on the zone.
+
+    ONE place that knows when each backend's controls actually land, so an
+    independent audit of a finished schedule (build_v10_tests.check_vector_
+    hazards) cannot drift from the scheduler's own model."""
+    if op.kind == "vec_ctl":
+        rows = cfg.vec_rows
+        out = [(op.slot + DEC_SEL_SETTLE, rows["vec_rsel"]),
+               (op.slot + DEC_SEL_SETTLE, rows["vec_ssel"])]
+        if op.wsel:
+            out.append((op.slot + DEC_WRITE_SETTLE, rows["vec_wsel"]))
+        if op.erase:
+            out.append((op.slot + DEC_WRITE_SETTLE, rows["vec_erase"]))
+        return out
+    if op.kind in ("write_imm", "pulse_imm") and op.dst in cfg.vec_reach:
+        out = [(op.value_slot + WRITE_TO_CELL, op.dst)]
+        if op.kind == "pulse_imm":
+            out.append((op.clear_value_slot + WRITE_TO_CELL, op.dst))
+        return out
+    return []
+
+
 def check_pulse_widths(ir) -> None:
     """Every pulsed control row must be high for EXACTLY one tick.
 
@@ -283,7 +345,12 @@ def check_pulse_widths(ir) -> None:
     write-select off a memory row, so a pulse that widened to three ticks
     commits three accumulate copies of the write bus instead of one — a wrong
     answer, silently. `pulse_imm` places the pair atomically to make that
-    impossible; this re-asserts the result on the finished schedule."""
+    impossible; this re-asserts the result on the finished schedule.
+
+    Still required. The decoder backend has no pulses to widen (a control line
+    is high for exactly the tick its instruction executes, by construction),
+    but the memory-mapped path is live hardware and any design without a
+    decoder still drives the zone that way."""
     problems = []
     for op in ir.pulses:
         width = op.clear_value_slot - op.value_slot
@@ -331,6 +398,11 @@ class Op:
     first_slot: int | None = None   # earliest footprint slot incl. parks — what
                                     # a loop label actually re-enters
     last_slot: int | None = None    # latest footprint slot (labels floor past it)
+    # vec_ctl: the four fields of the slot's second instruction word
+    rsel: int = 0
+    ssel: int = 0
+    wsel: int = 0
+    erase: int = 0
 
     def describe(self, namer=_name):
         return {
@@ -348,7 +420,15 @@ class Op:
             "jump_rel_a": lambda: f"PC += {namer(self.src)} (computed, a->out4)",
             "jump_if_zero": lambda: f"jump to '{self.target}' while {namer(self.src)} == 0",
             "halt": lambda: "halt (self-jump spin)",
+            "vec_ctl": lambda: self._describe_vec_ctl(),
         }[self.kind]()
+
+    def _describe_vec_ctl(self):
+        sel = f"R={self.rsel}" + (f"+S={self.ssel}" if self.ssel != self.rsel else "")
+        if not self.wsel:
+            return f"vec park {sel} (word 2)"
+        how = "<-" if self.erase else "+="
+        return f"vec VREG{self.wsel - 1} {how} {sel} (word 2)"
 
 
 class IR8:
@@ -420,17 +500,33 @@ class IR8:
 
     # -- v10 vector zone ------------------------------------------------------
     # THE ISOLATION LAYER. Everything above is scalar v8 and always will be.
-    # The three methods below are the ONLY place that knows how a vector action
-    # is realized on this machine — today, as ordinary writes to memory-mapped
-    # control rows, because the zone's control plane IS chunk1's memory bus.
+    # The methods below are the ONLY place that knows how a vector action is
+    # realized on this machine, which is what made swapping the backend on
+    # 2026-07-28 a change to this file and nothing else — `lang.py` needed not
+    # one line, and every bench re-verified unchanged.
     #
-    # That costs three traversals of the scalar write path per move (~15 ticks;
-    # measured, and about 90% of vector-code time). The planned fix is a second
-    # instruction decoder driving the select/erase/write lines directly, which
-    # would make a move ~3 ticks. Programs must not have to change when that
-    # lands, so they call `vec_move` and never write a control row by hand:
-    # the decoder becomes a different expansion here plus new entries in
-    # _VEC_REACH_BY_NAME, and every bench re-verifies it unchanged.
+    # TWO BACKENDS, one interface:
+    #
+    #   decoder (default where the design has one) — the selects and the
+    #     erase/commit lines are fields of the slot's SECOND instruction word
+    #     (modules/v10_vec_decoder.fnet). A whole move is ONE instruction: the
+    #     decode chains are built one stage apart, so R/S land at n+2 and
+    #     W/erase at n+3, which is exactly the bank's "park, let the bus
+    #     settle, then commit" rule met by construction rather than by
+    #     scheduling. The commit line is one tick wide because the next
+    #     instruction's field is zero — so the whole widened-pulse bug class
+    #     `check_pulse_widths` guards simply cannot occur here.
+    #
+    #   memory-mapped (the original, still live in hardware) — write_imm to
+    #     `vec_rsel`/`vec_ssel`, then one-tick `pulse_imm`s on `vec_erase` and
+    #     `vec_wsel`. Three traversals of the scalar write path, ~15 ticks a
+    #     move, about 90% of vector-code time. Every gate in the zone ORs the
+    #     two planes, so both work at once and this stays the fallback for a
+    #     v10-class design built without the decoder.
+    #
+    # The broadcast operands stay memory-mapped in BOTH: they are 20 bits each
+    # and change rarely (three times per eleven moves in the mandelbrot loop),
+    # so word 2 spends its bits on the four lines that change every move.
 
     def _vec_row(self, name):
         rows = self.config.vec_rows
@@ -440,42 +536,79 @@ class IR8:
                 f"vector ops need a v10-class design")
         return rows[name]
 
-    def vec_select(self, src, src2=None, bcast=None, bcast2=None):
-        """Park the read mux, and optionally the broadcast scalars.
-
-        S is written EVERY time, never left standing: two selections SUM on the
-        write bus, so a stale S is not a no-op, it is a silent extra addend.
-        Pass `src2` to use that deliberately — it is how vector ADD costs zero
-        combinators, and how a frame generator resurrects lanes an op dropped.
-        """
+    def _vec_bcast(self, bcast, bcast2):
         if bcast is not None:
             self.write_imm(self._vec_row("vec_bcast"), bcast)
         if bcast2 is not None:
             self.write_imm(self._vec_row("vec_bcast2"), bcast2)
-        self.write_imm(self._vec_row("vec_rsel"), src)
-        self.write_imm(self._vec_row("vec_ssel"), src if src2 is None else src2)
+
+    def _vec_ctl(self, rsel, ssel, wsel=0, erase=0):
+        """One instruction's worth of vector control, in its second word."""
+        for name in ("vdec_rsel", "vdec_ssel", "vdec_wsel", "vdec_erase"):
+            self._vec_row(name)          # a clear error if the design has none
+        return self._add(Op("vec_ctl", self.stage, rsel=rsel, ssel=ssel,
+                            wsel=wsel, erase=erase))
+
+    def vec_select(self, src, src2=None, bcast=None, bcast2=None, via=None):
+        """Park the read mux, and optionally the broadcast scalars.
+
+        S is set EVERY time, never left standing: two selections SUM on the
+        write bus, so a stale S is not a no-op, it is a silent extra addend.
+        Pass `src2` to use that deliberately — it is how vector ADD costs zero
+        combinators, and how a frame generator resurrects lanes an op dropped.
+
+        A park has to PERSIST (a lane read walks the bus with port A long after
+        the instruction that steered it), which on the decoder path is why R
+        and S are latched and W and erase are not.
+        """
+        self._vec_bcast(bcast, bcast2)
+        if self._vec_via(via) == "decoder":
+            self._vec_ctl(src, src if src2 is None else src2)
+        else:
+            self.write_imm(self._vec_row("vec_rsel"), src)
+            self.write_imm(self._vec_row("vec_ssel"), src if src2 is None else src2)
 
     def vec_move(self, dst, src, src2=None, bcast=None, bcast2=None,
-                 accumulate=False):
+                 accumulate=False, via=None):
         """`dst` (a register block id) <- whatever the mux presents.
 
-        Registers are accumulate-only, so a replace is erase-then-write: the
-        erase leaves the register empty AND holding, and into an empty register
-        a single accumulate pulse IS a replace. `accumulate=True` skips the
-        erase, which is how a per-lane counter works with no adder anywhere.
+        Registers are accumulate-only, so a replace is erase-and-write: the
+        cell emits nothing on the erase tick while the write head drops the new
+        frame, so the loop's next value is the new frame alone.
+        `accumulate=True` drops the erase, which is how a per-lane counter
+        works with no adder anywhere.
 
-        Both pulses must be exactly one tick — `pulse_imm` places each pair
-        atomically on consecutive slots, because two independent writes widen
-        to three ticks once neighbouring stages compete for the slot, and a
-        3-tick pulse commits three accumulate copies of the bus.
+        On the decoder path both halves ride ONE instruction word and land on
+        the same tick, which is the one-tick MOVE primitive the bank bench
+        verified directly. On the memory-mapped path they are two `pulse_imm`s
+        — atomic pairs, because two independent writes widen to three ticks
+        once neighbouring stages compete for the slot, and a 3-tick pulse
+        commits three accumulate copies of the bus.
         """
-        self.vec_select(src, src2, bcast, bcast2)
+        self._vec_bcast(bcast, bcast2)
+        if self._vec_via(via) == "decoder":
+            self._vec_ctl(src, src if src2 is None else src2,
+                          wsel=dst, erase=0 if accumulate else dst)
+            self.barrier()
+            return
+        self.write_imm(self._vec_row("vec_rsel"), src)
+        self.write_imm(self._vec_row("vec_ssel"), src if src2 is None else src2)
         self.barrier()
         if not accumulate:
             self.pulse_imm(self._vec_row("vec_erase"), dst)
             self.barrier()
         self.pulse_imm(self._vec_row("vec_wsel"), dst)
         self.barrier()
+
+    def _vec_via(self, via):
+        if via is None:
+            return "decoder" if self.config.has_vec_decoder else "memory"
+        if via not in ("decoder", "memory"):
+            raise ValueError(f"vector backend must be 'decoder' or 'memory', got {via!r}")
+        if via == "decoder" and not self.config.has_vec_decoder:
+            raise ValueError("this design has no vector-zone decoder "
+                             "(no vdec_* rows) — use via='memory'")
+        return via
 
     def vec_read_lane(self, lane, dst):
         """Extract one lane of whatever the mux presents into a scalar row."""
@@ -889,6 +1022,63 @@ class _Sched8:
 
         self._search(lo, None, attempt)
 
+    def _op_vec_ctl(self, op):
+        """Place one instruction's vector control word.
+
+        NO ROUTE BITS AND NO IMMEDIATE, so this can share a slot with any
+        scalar instruction — a vector move costs no scalar issue bandwidth at
+        all. What it does consume is the slot's ONE ROM2 row, so at most one
+        vector action per slot.
+
+        Timing is the memory-mapped model with the write path deleted. A
+        control the write path would land at `value_slot + WRITE_TO_CELL`
+        arrives here at `slot + DEC_SEL_SETTLE` (R/S) or `slot +
+        DEC_WRITE_SETTLE` (W/erase), so recording the EQUIVALENT value slot —
+        settle minus WRITE_TO_CELL, which is legitimately negative near the
+        start of a program — makes every existing rule apply verbatim:
+        `_vec_read_lo` spaces later reads, `_vec_write_disturbs_read` keeps
+        earlier ones clean, `_vec_bus_write_floor` makes the mux present the
+        intended source before the head samples it.
+
+        The one rule that is now free: W lands exactly one tick after R/S
+        because the decode chains are a stage apart, so a commit can never
+        capture a stale selection however tightly the schedule packs."""
+        rows = self.cfg.vec_rows
+        sel_v = lambda n: n + DEC_SEL_SETTLE - WRITE_TO_CELL       # noqa: E731
+        write_v = lambda n: n + DEC_WRITE_SETTLE - WRITE_TO_CELL   # noqa: E731
+        sel_addrs = [rows["vec_rsel"], rows["vec_ssel"]]
+        write_addrs = ([rows["vec_wsel"]] if op.wsel else []) + \
+                      ([rows["vec_erase"]] if op.erase else [])
+        word = encode_word2(op.rsel, op.ssel, op.wsel, op.erase)
+
+        lo = 1
+        for addr in sel_addrs:
+            lo = max(lo, self._write_floor(addr) + WRITE_TO_CELL - DEC_SEL_SETTLE)
+        for addr in write_addrs:
+            lo = max(lo, self._write_floor(addr) + WRITE_TO_CELL - DEC_WRITE_SETTLE)
+        if op.wsel:
+            lo = max(lo, self._vec_bus_write_floor()
+                     + WRITE_TO_CELL - DEC_WRITE_SETTLE)
+
+        def attempt(n):
+            if n in self.prog.word2:
+                return False
+            if any(self._vec_write_disturbs_read(a, sel_v(n)) for a in sel_addrs):
+                return False
+            if any(self._vec_write_disturbs_read(a, write_v(n)) for a in write_addrs):
+                return False
+            self.prog.at_word2(n, word, why=op.describe(self.cfg.namer))
+            op.slot = op.value_slot = op.first_slot = op.last_slot = n
+            for addr in sel_addrs:
+                self.pending[addr] = sel_v(n)
+            for addr in write_addrs:
+                self.pending[addr] = write_v(n)
+            if op.wsel:
+                self._vec_bus_reads.append(n + DEC_WRITE_SETTLE)
+            return True
+
+        self._search(max(lo, self.floor), None, attempt)
+
     def _op_park_b(self, op):
         self._op_write_imm(op)                 # a plain write to the mmap cell
         self.park_b_slot = op.value_slot
@@ -1150,7 +1340,24 @@ class _Sched8:
             self.floor = n + JUMP_REL_SHADOW + 1
             return True
 
-        self._search(max(read_lo, self.floor), None, attempt)
+        self._search(max(read_lo, self.floor, self._branch_floor(0)), None, attempt)
+
+    def _branch_floor(self, executes_after: int) -> int:
+        """Earliest slot a branch may sit without stranding earlier work.
+
+        A jump is a control-flow boundary: every op ALREADY PLACED comes before
+        it in program order and must still execute. Slots after the branch keep
+        executing for `executes_after` ticks (a jump's delay slots run either
+        way), so the branch may sit that far ahead of the last placed slot and
+        no further.
+
+        This became load-bearing with the vector decoder. A `vec_ctl` op takes
+        no route bits and no write latch, so its only floor is the zone's own
+        timing — which routinely lands it LATER than a scalar op that follows
+        it in the IR. Measured 2026-07-28: the mandelbrot loop's branch was
+        placed at slot 57 while four of the body's own moves sat at 66..83, so
+        those moves executed once instead of once per pass."""
+        return self.prog.end() - executes_after
 
     def _op_jump_rel(self, op):
         if op.target not in self.ir.labels:
@@ -1171,7 +1378,10 @@ class _Sched8:
             self.floor = n + JUMP_REL_SHADOW + 1
             return True
 
-        self._search(self.floor, None, attempt)
+        # the shadow must be EMPTY for a jump_rel, so it cannot overlap already
+        # placed work at all — unlike jump_if_zero, whose delay slots may carry
+        # the tail of the loop body
+        self._search(max(self.floor, self._branch_floor(0)), None, attempt)
 
     def _op_halt(self, op):
         def attempt(n):
@@ -1226,7 +1436,12 @@ class _Sched8:
             self.floor = m + 2 + JUMP_ABS_DELAY_SLOTS + 1
             return True
 
-        self._search(max(read_lo, self.floor), None, attempt)
+        # the write-path jump takes effect at value slot + 7, so slots up to
+        # m + ADDR_TO_VALUE + JUMP_ABS_DELAY_SLOTS still execute — the loop
+        # body's tail is allowed to live there, and `_run_length` counts on it
+        self._search(max(read_lo, self.floor,
+                         self._branch_floor(ADDR_TO_VALUE + JUMP_ABS_DELAY_SLOTS)),
+                     None, attempt)
 
     def run(self):
         self._a_consumers: list[tuple[int, int]] = []

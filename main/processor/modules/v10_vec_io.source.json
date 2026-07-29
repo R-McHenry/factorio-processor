@@ -323,6 +323,70 @@
       "auto": false,
       "address": 2149
     },
+    "file.vdec_rsel": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "normal",
+      "display": "signal-battery-full",
+      "auto": false,
+      "address": 2150
+    },
+    "vdec_rsel": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "normal",
+      "display": "signal-battery-full",
+      "auto": false,
+      "address": 2150
+    },
+    "file.vdec_ssel": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "uncommon",
+      "display": "signal-battery-full~uncommon",
+      "auto": false,
+      "address": 2151
+    },
+    "vdec_ssel": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "uncommon",
+      "display": "signal-battery-full~uncommon",
+      "auto": false,
+      "address": 2151
+    },
+    "file.vdec_wsel": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "rare",
+      "display": "signal-battery-full~rare",
+      "auto": false,
+      "address": 2152
+    },
+    "vdec_wsel": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "rare",
+      "display": "signal-battery-full~rare",
+      "auto": false,
+      "address": 2152
+    },
+    "file.vdec_erase": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "epic",
+      "display": "signal-battery-full~epic",
+      "auto": false,
+      "address": 2153
+    },
+    "vdec_erase": {
+      "type": "virtual",
+      "name": "signal-battery-full",
+      "quality": "epic",
+      "display": "signal-battery-full~epic",
+      "auto": false,
+      "address": 2153
+    },
     "file.rlane_carrier": {
       "type": "virtual",
       "name": "down-arrow",
@@ -454,6 +518,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "normal"
+                },
+                "constant": 47,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "uncommon"
+                },
+                "constant": 47,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -550,6 +642,34 @@
                   "green": true
                 },
                 "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "normal"
+                },
+                "constant": 45,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "uncommon"
+                },
+                "constant": 45,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
               }
             ],
             "outputs": [
@@ -632,6 +752,34 @@
                   "type": "virtual",
                   "name": "signal-alert",
                   "quality": "rare"
+                },
+                "constant": 46,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "normal"
+                },
+                "constant": 46,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "uncommon"
                 },
                 "constant": 46,
                 "comparator": "=",
@@ -800,6 +948,34 @@
                   "type": "virtual",
                   "name": "signal-alert",
                   "quality": "rare"
+                },
+                "constant": 48,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "normal"
+                },
+                "constant": 48,
+                "comparator": "=",
+                "first_signal_networks": {
+                  "red": false,
+                  "green": true
+                },
+                "compare_type": "or"
+              },
+              {
+                "first_signal": {
+                  "type": "virtual",
+                  "name": "signal-battery-full",
+                  "quality": "uncommon"
                 },
                 "constant": 48,
                 "comparator": "=",
